@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Masters/Doctoral Thesis 
 % Class File
-% Version 1.5 (22/11/16)
+% Version 1.6 (27/8/17)
 %
-% This class has been downloaded from:
+% This class was downloaded from:
 % http://www.LaTeXTemplates.com
 %
 % Authors:
@@ -27,9 +27,8 @@
 
 \NeedsTeXFormat{LaTeX2e}[1996/12/01]
 \newcommand{\classname}{MastersDoctoralThesis}
-\ProvidesClass{\classname}[2016/11/22 v1.5 LaTeXTemplates.com]
+\ProvidesClass{\classname}[2017/08/27 v1.6 LaTeXTemplates.com]
 \providecommand{\baseclass}{book}
-
 \RequirePackage{etoolbox}
 \RequirePackage{xparse}
 \newbool{nolistspace}
@@ -56,14 +55,14 @@
 
 \LoadClass{\baseclass}
 
-%  Simple interface for the user to customize the chapter titles 
-\ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{10pt}}
-\ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{20pt}}
-\ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{10pt}}
+%  Simple interface for the user  to customize the chapter titles 
+\ProvideDocumentCommand{\abovechapterskip}{}{\vspace*{20pt}}
+\ProvideDocumentCommand{\chapterbelowskip}{}{\vspace*{40pt}}
+\ProvideDocumentCommand{\chapterinbetweenskip}{}{\vspace*{20pt}}
 \ProvideDocumentCommand{\autodot}{}{}
 \ProvideDocumentCommand{\mdtChapapp}{}{}
 \ProvideDocumentCommand{\chapteralign}{}{\raggedright}
-\ProvideDocumentCommand{\chapterfont}{}{\huge\bfseries}
+\ProvideDocumentCommand{\chapterfont}{}{\Huge\bfseries}
 \ProvideDocumentCommand{\chapterprefixfont}{}{\LARGE\bfseries}
 \DeclareDocumentCommand{\@makechapterhead}{ m }{%
 	\abovechapterskip
@@ -83,6 +82,7 @@
 		\chapterfont #1\par\nobreak
 		\chapterbelowskip
 	}
+	\thispagestyle{\chapter@p@gestyle}
 }
 \def\@makeschapterhead#1{%
 	\abovechapterskip
@@ -92,6 +92,7 @@
 		\chapterfont  #1\par\nobreak
 		\chapterbelowskip
 	}
+	\thispagestyle{\chapter@p@gestyle}
 }
 
 
@@ -206,24 +207,22 @@
 %	DEFINE CUSTOM THESIS INFORMATION COMMANDS
 %----------------------------------------------------------------------------------------
 
-\DeclareDocumentCommand{\thesistitle} { o m }{
-	\IfBooleanTF{#1} {\DeclareDocumentCommand{\shorttitle}{ }{#1}
-	{\DeclareDocumentCommand{\shorttitle}{}{#2}}}
-	\DeclareDocumentCommand{\@title}{ }{#2}
-	\DeclareDocumentCommand{\ttitle}{ }{#2}
+\NewDocumentCommand{\thesistitle} { o m }{%
+ \IfValueTF{#1}{\def\shorttitle{#1}}{\def\shorttitle{#2}}%
+ \def\@title{#2}%
+ \def\ttitle{#2}%
 }
-\DeclareDocumentCommand { \author     } { m } { \DeclareDocumentCommand    { \authorname } { } {#1}
-\DeclareDocumentCommand { \@author    } {   } {#1}   }
-\NewDocumentCommand     { \supervisor } { m } { \DeclareDocumentCommand { \supname       } { } {#1}  }
-\NewDocumentCommand     { \examiner   } { m } { \DeclareDocumentCommand { \examname      } { } {#1}  }
-\NewDocumentCommand     { \degree     } { m } { \DeclareDocumentCommand { \degreename    } { } {#1}  }
-\NewDocumentCommand     { \addresses  } { m } { \DeclareDocumentCommand { \addressname   } { } {#1}  }
-\NewDocumentCommand     { \university } { m } { \DeclareDocumentCommand { \univname      } { } {#1}  }
-\NewDocumentCommand     { \department } { m } { \DeclareDocumentCommand { \deptname      } { } {#1}  }
-\NewDocumentCommand     { \group      } { m } { \DeclareDocumentCommand { \groupname     } { } {#1}  }
-\NewDocumentCommand     { \faculty    } { m } { \DeclareDocumentCommand { \facname       } { } {#1}  }
-\NewDocumentCommand     { \subject    } { m } { \DeclareDocumentCommand { \subjectname   } { } {#1}  }
-\NewDocumentCommand     { \keywords   } { m } { \DeclareDocumentCommand { \keywordnames  } { } {#1}  }
+\DeclareDocumentCommand{\author}{m}{\newcommand{\authorname}{#1}\renewcommand{\@author}{#1}}
+\NewDocumentCommand{\supervisor}{m}{\newcommand{\supname}{#1}}
+\NewDocumentCommand{\examiner}{m}{\newcommand{\examname}{#1}}
+\NewDocumentCommand{\degree}{m}{\newcommand{\degreename}{#1}}
+\NewDocumentCommand{\addresses}{m}{\newcommand{\addressname}{#1}}
+\NewDocumentCommand{\university}{m}{\newcommand{\univname}{#1}}
+\NewDocumentCommand{\department}{m}{\newcommand{\deptname}{#1}}
+\NewDocumentCommand{\group}{m}{\newcommand{\groupname}{#1}}
+\NewDocumentCommand{\faculty}{m}{\newcommand{\facname}{#1}}
+\NewDocumentCommand{\subject}{m}{\newcommand{\subjectname}{#1}}
+\NewDocumentCommand{\keywords}{m}{\newcommand{\keywordnames}{#1}}
 
 \newcommand{\checktoopen}{% New command to move content to the next page which prints to the next odd page if twosided mode is active  
 	\if@openright\cleardoublepage\else\clearpage\fi
@@ -301,12 +300,14 @@ incompatible\MessageBreak with this class}{The pagesyles are defined
 KOMA-script documentation for details.}]{fancyhdr}
 
 
-\NewDocumentCommand{\blank@p@gestyle}{}{empty}
+\newcommand{\blank@p@gestyle}{empty}
+\newcommand{\chapter@p@gestyle}{plain}
 \NewDocumentCommand{\blankpagestyle}{ m }{%
 	\ClassWarning{\classname}{\string\blankpagestyle\space is
-	obsolete,\MessageBreak use \string\setblankpagestyle \space  instead}\DeclareDocumentCommand{\blank@p@gestyle}{}{#1}
+	obsolete,\MessageBreak use \string\setblankpagestyle \space  instead}\renewcommand{\blank@p@gestyle}{}{#1}
 }
-\NewDocumentCommand{\setblankpagestyle}{ m }{\DeclareDocumentCommand{\blank@p@gestyle}{}{#1}}
+\NewDocumentCommand{\setblankpagestyle}{ m }{\renewcommand{\blank@p@gestyle}{#1}}
+\NewDocumentCommand{\setchapterpagestyle}{ m }{\renewcommand{\chapter@p@gestyle}{#1}}
 
 \DeclareDocumentCommand\cleardoublepage{}{\clearpage\if@twoside \ifodd\c@page\else
 	\hbox{}
@@ -328,7 +329,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\begin{longtable}{#1}
 	}{%
 	\end{longtable}
-	\addtocounter{table}{-1} % Don't count this table as one of the document tables
+	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
@@ -345,7 +346,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 \ifbool{consistentlayout}{
 	\DeclareDocumentEnvironment{abstract}{ O{} }{%
 		\addchap*{\abstractname}%
-		{\chapteralign\normalsize\abstractauthorfont \authorname \par} % Author name
+		{\chapteralign\normalsize\abstractauthorfont \authorname \par}% Author name
 		\vspace{\baselineskip}
 		{\chapteralign\parbox{.7\linewidth}{\chapteralign\normalsize\itshape\abstracttitlefont\@title}\par}% Thesis title
 		\bigskip\noindent\ignorespaces
@@ -358,18 +359,18 @@ KOMA-script documentation for details.}]{fancyhdr}
 		#1%added to be able to have abstract more than one page long
 		\thispagestyle{plain}
 		\begin{center}
-			{\normalsize \MakeUppercase{\univname} \par} % University name in capitals
+			{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
 			\bigskip
 			{\huge\textit{\abstractname} \par}
 			\bigskip
-			{\normalsize \facname \par} % Faculty name
-			{\normalsize \deptname \par} % Department name
+			{\normalsize \facname \par}% Faculty name
+			{\normalsize \deptname \par}% Department name
 			\bigskip
-			{\normalsize \degreename\par} % Degree name
+			{\normalsize \degreename\par}% Degree name
 			\bigskip
-			{\normalsize\bfseries \@title \par} % Thesis title
+			{\normalsize\bfseries \@title \par}% Thesis title
 			\medskip
-			{\normalsize \byname{} \authorname \par} % Author name
+			{\normalsize \byname{} \authorname \par}% Author name
 			\bigskip
 		\end{center}
 	}
@@ -384,18 +385,18 @@ KOMA-script documentation for details.}]{fancyhdr}
 	#1%added to be able to have abstract more than one page long
 	\thispagestyle{empty}
 	\begin{center}
-		{\normalsize \MakeUppercase{\univname} \par} % University name in capitals
+		{\normalsize \MakeUppercase{\univname} \par}% University name in capitals
 		\bigskip
 		{\huge\textit{\abstractname} \par}
 		\bigskip
-		{\normalsize \facname \par} % Faculty name
-		{\normalsize \deptname \par} % Department name
+		{\normalsize \facname \par}% Faculty name
+		{\normalsize \deptname \par}% Department name
 		\bigskip
-		{\normalsize \degreename\par} % Degree name
+		{\normalsize \degreename\par}% Degree name
 		\bigskip
-		{\normalsize\bfseries \@title \par} % Thesis title
+		{\normalsize\bfseries \@title \par}% Thesis title
 		\medskip
-		{\normalsize \byname{} \authorname \par} % Author name
+		{\normalsize \byname{} \authorname \par}% Author name
 		\bigskip
 	\end{center}
 }
@@ -491,7 +492,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\begin{longtable}{#1}
 	}{%
 	\end{longtable}
-	\addtocounter{table}{-1} % Don't count this table as one of the document tables
+	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
@@ -509,7 +510,7 @@ KOMA-script documentation for details.}]{fancyhdr}
 	\begin{longtable}{#1}
 	}{%
 	\end{longtable}
-	\addtocounter{table}{-1} % Don't count this table as one of the document tables
+	\addtocounter{table}{-1}% Don't count this table as one of the document tables
 	\ifbool{nolistspace}{\endgroup}{}
 }
 
@@ -521,10 +522,10 @@ KOMA-script documentation for details.}]{fancyhdr}
 bookmarksopen=true,
 bookmarksopenlevel=0,
 hypertexnames=false,
-colorlinks=true, % Set to false to disable coloring links
-citecolor=magenta, % The color of citations
-linkcolor=red, % The color of references to document elements (sections, figures, etc)
-urlcolor=mdtRed, % The color of hyperlinks (URLs)
+colorlinks=true,% Set to false to disable coloring links
+citecolor=magenta,% The color of citations
+linkcolor=red,% The color of references to document elements (sections, figures, etc)
+urlcolor=mdtRed,% The color of hyperlinks (URLs)
 pdfstartview={FitV},
 unicode,
 breaklinks=true,
