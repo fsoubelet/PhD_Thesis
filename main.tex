@@ -1,4 +1,3 @@
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Masters/Doctoral Thesis 
 % LaTeX Template
 % Version 2.5 (27/8/17)
@@ -18,13 +17,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+ 
 %----------------------------------------------------------------------------------------
 %	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
 %----------------------------------------------------------------------------------------
 
 \documentclass[
-11pt, % The default document font size, options: 10pt, 11pt, 12pt
+12pt, % The default document font size, options: 10pt, 11pt, 12pt
 % oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
@@ -43,26 +42,18 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[T1]{fontenc} % Output font encoding for international characters
 \usepackage{utopia} % Use the Palatino font by default / utopia
 \usepackage{amsmath, amsfonts, amssymb}
-\usepackage{tikz}
-\usepackage{envmath}
-\usepackage{mathrsfs}
+\usepackage[StdBrackets]{envmath}
 \usepackage{physics}
 \usepackage[colorlinks=true,allcolors=blue]{hyperref}
-\usepackage{cite}
 \usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
 %\hypersetup{colorlinks=true} % Might want to change that later
 \setcounter{secnumdepth}{3}
 %\usepackage{subcaption}
-\usepackage{color}
 \usepackage{graphicx}
-\usepackage{array}
-\usepackage{subfig}
+\usepackage{subfig}  % this is needed for the tricks I do on the titlepage
 \usepackage{siunitx}
 \usepackage{cleveref}
-\usepackage{tabu}
-% \usepackage{tabularray}
-\usepackage{tabularx}
-
+\usepackage{tabularray}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -124,68 +115,7 @@ headsepline, % Uncomment to get a line under the header
 %	TITLE PAGE HERE
 %----------------------------------------------------------------------------------------
 
-\begin{titlepage}
-\begin{center}
-
-\vspace*{.06\textheight}
-\vspace{1cm}
-{\scshape\LARGE \univname\par} % University name
-\vspace{0.8cm}
-%\textsc{\Large First Year Report}\\[0.5cm] % Thesis type
-
-\begin{figure}[htp]
-  \hspace{1.5cm}
-  \subfloat{\includegraphics[width=4.5cm]{Figures/Logos/LivDATlogo.png}}
-  \hspace{1.5cm}
-  \subfloat{\includegraphics[width=1.1cm]{Figures/Logos/CERN_Logo.jpg}}
-  \hspace{1.5cm}
-  \subfloat{\includegraphics[width=3cm]{Figures/Logos/OMC_logo.png}}
-  %\hspace{0.8cm}
-  %\subfloat{\includegraphics[width=4cm]{Figures/Logos/UoLlogo.eps}}
-\end{figure}
-
-\HRule \\[0.4cm] % Horizontal line
-{\huge \bfseries \ttitle\par}\vspace{0.4cm} % Thesis title
-\HRule \\[1cm] % Horizontal line
- 
-\begin{figure}[ht]
-	\begin{center}
-		\includegraphics[width=10cm]{Figures/Logos/UoLlogo.eps}
-	\end{center}
-\end{figure}
-
-\vspace{1cm}
-
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushleft} \large
-\emph{Author:}\\
-\href{https://www.liverpool.ac.uk/quasar/the-quasars/felix-soubelet/}{\authorname} % Author name - remove the \href bracket to remove the link
-\end{flushleft}
-\end{minipage}
-\begin{minipage}[t]{0.4\textwidth}
-\begin{flushright} \large
-\emph{Supervisors:}\\
-\href{https://www.researchgate.net/profile/Tobias-Persson}{Dr. Tobias~\textsc{Persson}}\\
-\href{https://rtomas.web.cern.ch/rtomas/}{Dr. Rogelio~\textsc{Tom\'as}}\\
-\href{https://www.liverpool.ac.uk/quasar/the-quasars/oznur-apsimon/}{Dr. Oznur~\textsc{Apsimon}}\\
-\href{https://www.liverpool.ac.uk/quasar/the-quasars/carsten_welsch/}{\supname}\\
-\end{flushright}
-\end{minipage}
- 
-\vfill
-
-\large \textit{Thesis submitted in accordance with the requirements of the\\}
-\univname, \ \deptname \\
-\large \textit{for the degree of Doctor in Philosophy}
- 
-\vfill
-
-{\large \today}\\[4.5cm] % Date
-%\includegraphics{Figures/CERNLogo} % University/department logo - uncomment to place it
- 
-\vfill
-\end{center}
-\end{titlepage}
+\include{Titlepage.tex}
 
 
 %----------------------------------------------------------------------------------------
@@ -351,7 +281,7 @@ First and foremost,
 
 \include{Chapters/Introduction}
 \include{Chapters/Chapter1}
-\include{Chapters/Chapter2} 
+\include{Chapters/Chapter2}
 \include{Chapters/Chapter3}
 \include{Chapters/Chapter4}
 \include{Chapters/Chapter5}
@@ -380,6 +310,7 @@ First and foremost,
 \include{Appendices/AppendixA}
 \include{Appendices/AppendixB}
 \include{Appendices/AppendixC}
+\include{Appendices/AppendixD}
 
 %----------------------------------------------------------------------------------------
 
