@@ -55,8 +55,8 @@ headsepline, % Uncomment to get a line under the header
 \usepackage{cleveref}
 
 % \usepackage{tabularray}
-% \usepackage[backend=biber,style=ieee]{biblatex}
-% \addbibresource{Bibliography.bib}
+\usepackage[backend=biber,style=ieee]{biblatex}
+\addbibresource{Bibliography.bib}
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -141,9 +141,10 @@ headsepline, % Uncomment to get a line under the header
 %----------------------------------------------------------------------------------------
 
 %\printbibliography[heading=bibintoc]
-\bibliography{Bibliography}
-\addcontentsline{toc}{chapter}{Bibliography}
-\bibliographystyle{ieeetr}
+% \bibliography{Bibliography}
+% \addcontentsline{toc}{chapter}{Bibliography}
+% \bibliographystyle{ieeetr}
+\printbibliography
 
 
 %----------------------------------------------------------------------------------------
