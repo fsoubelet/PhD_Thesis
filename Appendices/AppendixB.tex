@@ -7,15 +7,23 @@ One can find in this Appendix the fully detailed list of LHC fills considered fo
 
 The derivation in this section follows the approach given in \cite{Tomas_thesis, Franchi_thesis}.
 While the non-linear dynamics can not be described with matrices, it can be described by the transfer map formalism.
-In the frame where the one turn map is represented by a pure rotation - in normal forms coordinates - it can be written as \cite{Tomas_thesis}:
+In the frame where the one turn map is represented by a pure rotation - in normal forms coordinates - it can be written as \cite{Tomas_thesis}:\\
 
 \begin{equation}
-    \mathcal{M} = e^{:\tilde{h_{1}}:} e^{:\tilde{h_{2}}:} \ldots e^{:\tilde{h_{n}}:} R
+    \mathcal{M} = 
+    e^{:\eqnmarkbox[blue]{node1}{\tilde{h_{1}}}:}
+    e^{:\eqnmarkbox[red]{node2}{\tilde{h_{2}}}:}
+    \ldots
+    e^{:\eqnmarkbox[green]{noden}{\tilde{h_{n}}}:}
+    R
     \label{eq:norm_form_one_turn_map}
 \end{equation}
+\annotate[yshift=0.5em]{above, left}{node1}{First element}
+\annotate[yshift=-0.75em]{below}{node2}{Second element}
+\annotate[yshift=0.5em]{above, right}{noden}{Nth element}\\\\
 % ------------------ %
 where \(e^{:\tilde{h_{1}}:}\) is an exponential Lie operator describing a nonlinear element, and \(\mathbf{R}\) is the rotation matrix describing the linear motion.
-This simplifies through the Campbell-Baker-Hausdorff theorem to 
+This simplifies through the Campbell-Baker-Hausdorff theorem to:
 
 \begin{equation}
     \mathcal{M} = e^{:h:} R
