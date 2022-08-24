@@ -2,7 +2,7 @@
 
 \chapter{Theory of Single-Particle Beam Dynamics in the Large Hadron Collider} % Main chapter title
 
-\label{Chapter1} % For referencing the chapter elsewhere, use \ref{Chapter1}
+\label{Chapter1} % For referencing the chapter elsewhere, use \Cref{Chapter1}
 
 %----------------------------------------------------------------------------------------
 
@@ -17,7 +17,7 @@ The chapter begins with a description of the linear dynamics, then progresses to
 Define concept: bend and focus particles to have them remain within the aperture tolerance of the machine.
 Bend with dipoles, focus with quadrupoles typically.
 % Within the linear approximation, non-linear magnetic fields are ignored and the beam dynamics is described by linear differential equations.
-Figure \ref{fig:frenet_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
+\Cref{fig:frenet_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 \bigbreak
 
 \begin{figure}[!htb]
@@ -49,7 +49,7 @@ From Ewen: quadrupolar fields acting on charged particles displaced from the cen
 Tradition: a quadrupole focusing in the horizontal plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
 A quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
 An alternating arrangement of focusing and defocusing quadrupoles, referred to as a $\mathrm{FODO}$ lattice, can create a net focusing in both planes [ref 18 Ewen]. 
-Figure \ref{fig:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole, together with the forces exerted on a positively charged particle travelling into the page.
+\Cref{fig:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole, together with the forces exerted on a positively charged particle travelling into the page.
 \bigbreak
 
 \begin{figure}[!htb]
@@ -61,7 +61,7 @@ Figure \ref{fig:dipole_quadrupole_fields} illustrates magnetic fields in an idea
 \end{figure}
 
 In circular machine focusing from quads is periodic in $s$ with a period of max the circumference of the machine.
-Motion in the transverse plane is described by Hill’s equation, Eq.(\ref{eq:hill_equation}), where $k(s)$ is a periodic coefficient describing the restoring force due to the distribution of focusing fields around the ring.
+Motion in the transverse plane is described by Hill’s equation, \cref{eq:hill_equation}, where $k(s)$ is a periodic coefficient describing the restoring force due to the distribution of focusing fields around the ring.
 \bigbreak
 
 \begin{equation}
@@ -70,7 +70,7 @@ Motion in the transverse plane is described by Hill’s equation, Eq.(\ref{eq:hi
 \end{equation}
 \bigbreak
 
-Solutions to Hill’s equation take the form of Eq.(\ref{eq:hill_solution}),
+Solutions to Hill’s equation take the form of \cref{eq:hill_solution},
 \bigbreak
 
 \begin{equation}
@@ -87,7 +87,7 @@ In particle colliders such as the LHC, it is usual to denote the beta-functions 
 \bigbreak
 
 Particles oscillate around the ring, \emph{betatron oscillations}, and the number of oscillations around the ring is the \emph{tune}, $Q_{x,y}$.
-The tune is defined in Eq.(\ref{eq:tune_definition}), where $\Delta \phi_{x, y}$ is the total betatron phase advance undergone by a particle during one revolution around the accelerator ring.
+The tune is defined in \cref{eq:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron phase advance undergone by a particle during one revolution around the accelerator ring.
 \bigbreak
 
 \begin{equation}
@@ -95,7 +95,7 @@ The tune is defined in Eq.(\ref{eq:tune_definition}), where $\Delta \phi_{x, y}$
     \label{eq:tune_definition}
 \end{equation}
 
-Figure \ref{fig:particle_trajectories} shows a tracking simulation of a particle undergoing such betatron oscillations in the LHC Arc12.
+\Cref{fig:particle_trajectories} shows a tracking simulation of a particle undergoing such betatron oscillations in the LHC Arc12.
 Dipole errors were added which have distorted the closed orbit away from the ideal path.
 \bigbreak
 
@@ -118,8 +118,8 @@ Both are related by the \emph{alpha-function}:
 \bigbreak
 
 In linear regime, trajectories are ellipses in phase space $(x, x\prime, y, y\prime)$.
-$\alpha(s)$, $\beta(s)$, $\gamma(s)$ and $\epsilon$ define the equation of the ellipse, Eq.(\ref{eq:ellipse_equation}).
-Figure \ref{fig:phase_space_ellipse} shows a schematic illustration of the phase space ellipse.
+$\alpha(s)$, $\beta(s)$, $\gamma(s)$ and $\epsilon$ define the equation of the ellipse, \cref{eq:ellipse_equation}.
+\Cref{fig:phase_space_ellipse} shows a schematic illustration of the phase space ellipse.
 \bigbreak
 
 \begin{equation}
@@ -141,7 +141,7 @@ Liouville's theorem: phase space volume (ellipse area) is constant in a closed s
 In the LHC, protons, little synchrotron radiation [ref 20 ewen] we can consider emittance a constant (but at multi-$\mathrm{TeV}$ energy radiation emission may become non-negligible).
 Acceleration -> no more Liouville and \emph{physical emittance} ($\epsilon$) will reduce with increasing energy.
 One can construct \emph{normalized emittance} ($\epsilon_{\gamma}$) which is invariant with beam energy.
-See Eq.(\ref{eq:normalized_emittance}), where $\beta_{rel}$ and $\gamma_{rel}$ are the relativistic beta and gamma functions:
+See \cref{eq:normalized_emittance}, where $\beta_{rel}$ and $\gamma_{rel}$ are the relativistic beta and gamma functions:
 \bigbreak
 
 \begin{equation}
@@ -157,7 +157,7 @@ We can define \emph{beam emittance}: typically defined as the emittance correspo
 \bigbreak
 
 The phase space trajectory of a particle depends on $\alpha(s)$, $\beta(s)$, and $\gamma(s)$.
-The transformation to \emph{Courant-Snyder coordinates} [ref 21 ewen] (sometimes called \emph{normalized Courant-Snyder coordinates}) removes this dependency, see Eq.(\ref{eq:courant_snyder_coordinates}),
+The transformation to \emph{Courant-Snyder coordinates} [ref 21 ewen] (sometimes called \emph{normalized Courant-Snyder coordinates}) removes this dependency, see \cref{eq:courant_snyder_coordinates},
 \bigbreak
 
 \begin{equation}
@@ -179,7 +179,7 @@ In this new system particles follow circular trajectories in phase space.
 \bigbreak
 
 Say particles within the beam have a distribution in momentum, around designed momentum $p_0$.
-For a particle that doesn't have $p_0$ we define the \textit{relative momentum deviation} $\delta$, Eq.(\ref{eq:momentum_deviation}):
+For a particle that doesn't have $p_0$ we define the \textit{relative momentum deviation} $\delta$, \cref{eq:momentum_deviation}:
 \bigbreak
 
 \begin{equation}
@@ -189,7 +189,7 @@ For a particle that doesn't have $p_0$ we define the \textit{relative momentum d
 \bigbreak
 
 Define \textit{magnetic rigidity}: relates magnetic flux $\mathbf{B}$ (perpendicular to motion) with local radius of curvature and particle momentum $\mathbf{P}$.
-See Eq.(\ref{eq:beam_rigidity}):
+See \cref{eq:beam_rigidity}:
 \bigbreak
 
 \begin{equation}
@@ -203,7 +203,7 @@ The most important one is \emph{dispersion}.
 Different momenta(um?) -> different beam rigidity -> different local radius of curvature in dipoles -> different orbit.
 
 Deviation to reference orbit is defined by the \emph{Dispersion function}, $D(s)$ [ref 23 ewen].
-In a region of non-zero dispersion the contribution to the orbit of a particle is described by Eq.(\ref{eq:dispersion_contribution_to_orbit}):
+In a region of non-zero dispersion the contribution to the orbit of a particle is described by \cref{eq:dispersion_contribution_to_orbit}:
 \bigbreak
 
 \begin{equation}
@@ -215,7 +215,7 @@ In a region of non-zero dispersion the contribution to the orbit of a particle i
 \end{equation}
 \bigbreak
 
-The orbit of any given particle is defined by Eq.(\ref{eq:_particle_orbit}):
+The orbit of any given particle is defined by \cref{eq:_particle_orbit}:
 \bigbreak
 
 \begin{equation}
