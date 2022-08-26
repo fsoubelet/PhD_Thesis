@@ -1,0 +1,19 @@
+%----------------------------------------------------------------------------------------
+%	REDEFINE CHAPTER TITLE STYLE
+%----------------------------------------------------------------------------------------
+
+% See doc of titlesec page 22 (https://mirror2.sandyriver.net/pub/ctan/macros/latex/contrib/titlesec/titlesec.pdf)
+% TODO: fix the slight antisymmetry in vspace bellow CHAPTER N
+
+\titleformat{\chapter}[display]
+{\Large\filcenter}
+{\titlerule[1pt]%
+\vspace{1pt}%
+\titlerule
+\vspace{1pc}%
+\LARGE\MakeUppercase{\chaptertitlename} \thechapter}{1pc}
+{\titlerule
+\vspace{1pt}%
+\titlerule[1pt]%
+\vspace{1pc}%
+\Huge}
