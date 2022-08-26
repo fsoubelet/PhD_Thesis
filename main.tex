@@ -29,7 +29,7 @@ english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
 % draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
 %nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
-% liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
+liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
 % toctotoc, % Uncomment to add the main table of contents to the table of contents
 % parskip, % Uncomment to add space between paragraphs
 % nohyperref, % Uncomment to not load the hyperref package
@@ -38,28 +38,29 @@ headsepline, % Uncomment to get a line under the header
 % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\usepackage[utf8]{inputenc} % Required for inputting international characters
-\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage[utf8]{inputenc}  % Required for inputting international characters
+\usepackage[T1]{fontenc}  % Output font encoding for international characters
 \usepackage{amsmath, amsfonts, amssymb}
-\usepackage[StdBrackets]{envmath}
-\usepackage{physics}
-\usepackage[autostyle=true]{csquotes} % Required to generate language-dependent quotes in the bibliography
-\setcounter{secnumdepth}{3}
-%\usepackage{subcaption}
-\usepackage{graphicx}
-\usepackage{subfig}  % this is needed for the tricks I do on the titlepage
+% \usepackage[StdBrackets]{envmath}
+% \usepackage{physics}
+\usepackage[autostyle=true]{csquotes}  % Required to generate language-dependent quotes in the bibliography
+% \usepackage{subcaption}
+% \usepackage{graphicx}
+\usepackage{subfig}  % needed for the tricks I do on the titlepage
 \usepackage{siunitx}
 \usepackage{annotate-equations}
 \usepackage{tabularray}
+% \usepackage{thumbs}  % add thumbs to the sides of pages
+\usepackage{titlesec}  % style chapter titles
 \usepackage[bibstyle=numeric, citestyle=numeric-comp]{biblatex}
-
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}
 \usepackage{cleveref}
 
-% \usepackage{utopia} % Use the Palatino font
-% \usepackage{newtxtext,newtxmath} % Use the TeX Gyre Termes font
-\usepackage{tgheros} % Use the TeX Gyre Heros font
+% \usepackage{utopia}  % Use the Palatino font
+% \usepackage{newtxtext,newtxmath}  % Use the TeX Gyre Termes font
+\usepackage{tgheros}  % Use the TeX Gyre Heros font
 
+\setcounter{secnumdepth}{3}
 \addbibresource{Bibliography.bib}
 \renewcommand{\eqnhighlightheight}{\vphantom{\hat{H}}\mathstrut} % custom 0-width height
 
@@ -133,6 +134,7 @@ headsepline, % Uncomment to get a line under the header
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 
 \include{Chapters/Introduction}
+\include{Toolkit/chapterstyle.tex}
 \include{Chapters/Chapter1}
 \include{Chapters/Chapter2}
 \include{Chapters/Chapter3}
