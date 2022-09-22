@@ -46,6 +46,25 @@ Additionally, concepts of corrections methods are given.
 
 \section{The Operational Cycle of the LHC}
 
+The LHC operational cycle~\cite{Report:LHCModes}, shown in \cref{fig:lhc_cycle}, starts with a pre-cycle of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+During pre-cycle no beams are present in the rings and the respective element currents are increased up to several \qty{}{\tera\electronvolt}, to ensure the reproducibility of the magnetic fields over successive fills.
+After the pre-cycle, beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
+At injection optics the \(\beta^{\ast}_{x,y}\) is \qty{11}{\metre}.
+The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
+For optics measurements a single low intensity bunch of about \num{e10} particles is used for each beam.
+After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the \(\beta^{\ast}\) is squeezed.
+This process, called combined ramp and squeeze has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
+Before then the squeezing process only started once the energy had reached collision value.
+At top energy with squeezed optics, also called as flat-top, the optics is confirmed and eventually adjusted before collisions start with stable beams.
+The fill ends when dumping the beams, after which the cycle ends by a ramp down of the magnets' currents.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/Chapter3/lhc_cycle.pdf}
+    \caption{Illustration of the LHC operational cycle.}
+    \label{fig:lhc_cycle}
+  \end{figure}
+
 %----------------------------------------------------------------------------------------
 
 \section{Measurements and Corrections}
