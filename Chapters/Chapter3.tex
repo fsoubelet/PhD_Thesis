@@ -1,139 +1,82 @@
-% Chapter 3
+% Chapter 2
 
-\chapter{Interaction Region Local Coupling Correction in the LHC} % Main chapter title
+\chapter{Optics Measurements and Corrections at the LHC} % Main chapter title
 
-\label{Chapter3} % For referencing the chapter elsewhere, use \Cref{Chapter3}
-
-%----------------------------------------------------------------------------------------
-
-Some paragraph before the first section.
+\label{Chapter2} % For referencing the chapter elsewhere, use \Cref{Chapter2}
 
 %----------------------------------------------------------------------------------------
 
-\section{Linear Coupling in the Interaction Regions}
-
-\subsection{Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)}
-
-\subsection{Twiss with Coupling and Ripken parameters}
-
-\subsection{Equivalency of Ripken and Tracking when looking at beam size}
-
-\subsection{Plan for Correction (or later?)}
+The LHC requires good control of the optics functions, and for instance a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams.
+Moreover, a good control of the \(\beta^{\ast}\) is necessary to guarantee good luminosity production.
+To validate the machine optics and to identify possible errors beam measurements are performed, from which corrections bringing the machine as close to the nominal scenario as possible are calculated and applied. 
+This chapter gives an overview of the LHC machine and its operational cycle, as well as the essential beam instrumentation used for optics measurements.
+Additionally, concepts of corrections methods are given.
 
 %----------------------------------------------------------------------------------------
 
-\section{The Hunt for an Observable}
-
-\subsection{Combined RDTs}
-
-Some theory here (see Franchi's paper, see Michael's paper), it can use DFFT of x/y only.
-Some studies that it's difficult to use directly (2021.8), maybe SbS?
-
-\subsection{SbS with combined RDTs and that it works better than with RDTs?}
-
-\subsection{Forced RDTs}
-
-Why am I looking into this again?
-Potentially if I have time we can see if using non-compensated stuff gives better corrections.
-Very optional at the moment.
-
-\subsection{Conclusion that we might need to look at outside observables}
+%\section{The CERN Accelerator Complex}
 
 %----------------------------------------------------------------------------------------
 
-\section{Proof of Principle: Measurement and Correction of Local Coupling in the LHC Interaction Regions}
-
-\subsection{Relating to outside observable}
-
-\subsection{Beam-Based Study of IRs Local Coupling}
-
-\subsection{Simulations of IRs Local Coupling}
+\section{The LHC Lattice}
 
 %----------------------------------------------------------------------------------------
 
-% \section{Impact of Local Linear Coupling Correction on Beam Lifetime/Quality? (Moved to chapter 5?)}
+\subsection{The LHC Arcs}
 
-% \subsection{Impact on Tune Footprint (hopefully minimal)?}
+\subsection{The LHC Insertion Regions}
 
-% \subsection{Impact on Dynamic Aperture (hopefully none)?}
-
-% \subsection{Impact on Luminosity (hopefully yayyy)?}
+\subsection{Error Estimates for the LHC Lattice}
 
 %----------------------------------------------------------------------------------------
 
-\section{Operational Correction Procedure (Moved to chapter 5?)}
+\section{The LHC Experimental Interaction Regions (EIR)}
 
-\subsection{Full Procedure Steps}
+\subsection{Interaction Point}
 
-\subsection{Developed Software}
+\subsection{The LHC Triplet}
 
-%----------------------------------------------------------------------------------------
+\subsection{Separation Dipoles}
 
-\section{Mitigation Options in Case of MQSX Failures}
+\subsection{Matching Section}
 
-(A lot here should be taken from my project update V talk at the QUASAR group.)
-
-\subsection{Lifetime Considerations of MQSX Elements}
-
-See F. Cerutti slides (slides 22, 23, and 12 to 16) at 2021 Evian Workshop
-(https://indico.cern.ch/event/1077835/contributions/4533356/attachments/2352134/4012821/Evian.pdf)
-
-Explain that there is a real risk that some of our MQSX magnets die, especially the ones in IR1 (ATLAS).
-In this case, we will need a containment plan, as not only are they used for the but the local corrections they are a part of are a baseline for us to compute higher order terms corrections.
-
-
-This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
-
-\subsection{Tilt of Triplet Elements}
-
-Talk about what we want to do (tilt Q3 or Q2) to induce a skew component + simulation results.
-Found settings of the Q3 or Q2 that would negate the MQSX one determined in beam test / commissioning.
-Show some plots, and come up with the tilt values that would be needed to do the compensation.
-
-Also show we have a very minimal beta-beating from this.
-Show we have had a look at different optics (30cm and 1m betastar) and it works for both.
-
-% \subsubsection{Operational Constraints}
-
-The LHC systems are not meant for this, but for vertical alignment of these magnets!
-System relies on bellows: 2 pieds IP side and 1 pied other side for Q2 for instance.
-This means that inducing rotation is not only not the design purpose, but also imperfect (on move les 2 pieds pour essayer de mimer une rotation mais c'est pas parfait).
-Would be very good to have a plot of the assemblies here to show what I mean. Ask MP people? See in the LHC design report?
-
-It is considered by MP people to be quite dangerous to do this unless forced to (read an MQSX dies), especially in cold mass, as if we damage the belows then we're in for 1 year of shutdown to repair it.
-Say that for these reasons we decided not to test this concept in the machine, unfortunately.
-
-Could show plots here (see "Living with Local Coupling" section of my project update V) about the effect on luminosity: what reduction are we looking at 
-
-\subsection{Warm Skew Quadrupole Replacement}
-
-Here talk about how there is space between D1 and TAN for a magnet, and we could put a warm skew quadrupole there.
-Show some schematic.
-Show some calculations of how the gradient should be, how long the element should be etc.
-
-It has considerations such as being imbalanced (asymmetric) with the remaining MQSX, limiting the available aperture etc.
-
-\subsection{Feed-Down from High Order Correctors}
-
-Mention here that we consider using sextupolar and octupolar (MCSSX and MCSX) magnets to generate feed-down to coupling.
-However, these elements are not strong enough to generate the same effect that the MQSX do, so this is not really an option.
-
-\subsection{Adapting the Optics Squeezing Scheme}
-
-We could change things in the squeeze to compensate for the absence of an MQSX.
-Potentially squeeze harder on one IP (the one with a missing element).
-Potentially squeeze similarly for both but when the unaffected IP stops the squeeze, the other one keeps going to lower $\beta^{*}$, and the lost luminosity at beginning of fill is made up for starting this moment.
-Not cool because LHCb prefers long fill + impact on BBLR?
-
-Plot to show the ratio of luminosity as in PowerPoint?
-
-\subsection{Potential MDs / Results}
-
-Talk about how this could be tested.
-If we do get MD blocks for this in September, include the data here.
+\subsection{Dispersion Suppressor}
 
 %----------------------------------------------------------------------------------------
 
-\section{Conclusions}
+\section{The Operational Cycle of the LHC}
 
 %----------------------------------------------------------------------------------------
+
+\section{Measurements and Corrections}
+
+
+\subsection{Beam Instrumentation for Optics Measurements}
+
+\subsubsection{Beam Position Monitors}
+
+% \subsubsection{Beam Current Monitors}
+
+\subsubsection{BBQ System for Tune Measurements}
+
+\subsubsection{Excitation Devices}
+
+
+Measurements of beam optics are done by generating large transverse beam oscillations, typically much larger than the natural beam size.
+A non-destructive method for beam excitation in hadron machines is achieved using an AC-dipole
+
+\subsection{Optics Measurements}
+
+- excite
+- harmonic analysis
+- optics analysis
+
+\subsubsection{Turn-by-turn Measurements}
+
+\subsection{Correction Principles}
+
+\subsubsection{Global Corrections}
+
+\subsubsection{Local Corrections}
+
+Here mention the need for new stuff as things get hairy with the LHC upgrades.

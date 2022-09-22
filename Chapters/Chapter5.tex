@@ -1,8 +1,8 @@
-% Chapter 5
+% Chapter 4
 
-\chapter{Experimental Measurement and Correction of Interaction Region Local Coupling in the LHC Run III} % Main chapter title
+\chapter{Machine Learning for Interaction Region Local Coupling} % Main chapter title
 
-\label{Chapter5} % For referencing the chapter elsewhere, use \Cref{Chapter5}
+\label{Chapter4} % For referencing the chapter elsewhere, use \Cref{Chapter4}
 
 %----------------------------------------------------------------------------------------
 
@@ -10,19 +10,40 @@ Some paragraph before the first section.
 
 %----------------------------------------------------------------------------------------
 
-\section{Beam Tests 2021 Results}
+\section{Relevant Theory of Machine Learning}
 
-Can refer to appendix \Cref{AppendixB} for the fills used.
+\subsection{Regression and Classification}
 
-\section{Measurement and Correction of Local Coupling in the IRs at $\beta^{*}_{IP} = 0.3m$}
+\subsection{Neural Networks}
 
-Can refer to appendix \Cref{AppendixB} for the fills used.
+\subsection{Decision Trees and Ensemble Methods}
 
-% \subsection{Application of Machine Learning for Correction at $\beta^{*}_{IP} = 0.3m$}
+\subsection{Generalization and Overfitting}
+
+\subsection{Unsupervised Learning?}
 
 %----------------------------------------------------------------------------------------
 
-\section{2022 LHC MD Blocks Results (Containment Plans)}
+\section{Identification of Sources with Machine Learning}
+
+Which magnets are tilted, eventually how tilted are they?
+
+%----------------------------------------------------------------------------------------
+
+\section{Prediction of Corrections for Local Coupling}
+
+Should start here with a simple approach: linear behavior, simple errors only in the region and a Regression model.
+Show results.
+However, move on to add that we need realistic scenario for the training data and that includes nonlinear errors, so maybe another type of model would be better suited.
+Explain additions to simulations for training data, changes to model approach.
+Show results, do a comparison and highlight improvements.
+
+%----------------------------------------------------------------------------------------
+
+\section{Reinforcement Learning for Segment by Segment???}
+
+Currently, the SbS needs manual input, should be a good ground for a RL model to find its way.
+Forget about Jaime's automatic matching, never got it to work anyway.
 
 %----------------------------------------------------------------------------------------
 
