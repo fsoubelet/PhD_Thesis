@@ -12,6 +12,21 @@ Some paragraph before the first section.
 
 \section{Linear Coupling in the Interaction Regions}
 
+Mention that in the machine we have unavoidable tilt errors in the insertion region magnets.
+A tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component.
+This skew component will have an effect in the \(f_{1001}\) resonance driving term given by~\cite{PRAB:Calaga:MergingHamiltonianMatrixApproches}:
+
+\begin{equation}
+    f(s)_{1001} = \frac{-1}{4\left(1-e^{2 \pi i\left(Q_x-Q_y\right)}\right)} \sum_l k L_l \sqrt{\beta_x^l \beta_y^l} e^{i\left(\Delta \phi_x^{s l}-\Delta \phi_y^{s l}\right)}
+    \label{eq:skew_quad_contribution_to_f1001}
+\end{equation}
+where \(k L_l\) is the \(l^{\mathrm{th}}\) skew quadrupole integrated strength, \(\beta^l_{x,y}\) are the \(\beta\)-functions at the position of the \(l^{\mathrm{th}}\) quadrupole, \(\Delta \phi^{sl}_{x,y}\) are the phase advances between the measurement point and the \(l^{\mathrm{th}}\) quadrupole, and \(Q_{x,y}\) are the horizontal and vertical tunes.
+
+As one can see in \ref{}, due to the very large \(\beta\)-functions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \(f_{1001}\) term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine.
+In the LHC, a skew quadrupole corrector is installed on each side of colliding IPs, just before the third triplet quadrupole \(\mathrm{Q3}\) on the side of the IP.
+Due to their location, these correctors are single aperture magnets meaning that both beams are passing through a single cavity, and feel the same magnetic field.
+As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
+
 \subsection{Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)}
 
 \subsection{Twiss with Coupling and Ripken parameters}
@@ -122,7 +137,7 @@ However, these elements are not strong enough to generate the same effect that t
 
 We could change things in the squeeze to compensate for the absence of an MQSX.
 Potentially squeeze harder on one IP (the one with a missing element).
-Potentially squeeze similarly for both but when the unaffected IP stops the squeeze, the other one keeps going to lower $\beta^{*}$, and the lost luminosity at beginning of fill is made up for starting this moment.
+Potentially squeeze similarly for both but when the unaffected IP stops the squeeze, the other one keeps going to lower \betastar, and the lost luminosity at beginning of fill is made up for starting this moment.
 Not cool because LHCb prefers long fill + impact on BBLR?
 
 Plot to show the ratio of luminosity as in PowerPoint?
