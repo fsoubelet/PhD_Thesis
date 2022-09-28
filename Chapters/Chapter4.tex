@@ -22,7 +22,7 @@ This skew component will have an effect on the \foneohone resonance driving term
 \end{equation}
 where \(k L_l\) is the \(l^{\mathrm{th}}\) skew quadrupole integrated strength, \(\beta^l_{x,y}\) are the \betafunctions at the position of the \(l^{\mathrm{th}}\) quadrupole, \(\Delta \phi^{sl}_{x,y}\) are the phase advances between the measurement point and the \(l^{\mathrm{th}}\) quadrupole, and \(Q_{x,y}\) are the horizontal and vertical tunes.
 
-As one can see in \ref{}, due to the very large \betafunctions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \foneohone term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine.
+As one can see in \cref{fig:ir5_and_around}, due to the very large \betafunctions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \foneohone term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine.
 In the LHC, a skew quadrupole corrector is installed on each side of colliding IPs, just before the third triplet quadrupole \(\mathrm{Q3}\) on the side of the IP.
 Due to their location, these correctors are single aperture magnets meaning that both beams are passing through a single cavity, and feel the same magnetic field.
 As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
@@ -33,50 +33,49 @@ As the triplet quadrupoles - also single aperture magnets - are expected to be m
 
 \subsection{Equivalency of Ripken and Tracking when looking at beam size}
 
-\subsection{Plan for Correction (or later?)}
+% \subsection{Plan for Correction (or later?)}
 
 %----------------------------------------------------------------------------------------
 
-\section{The Hunt for an Observable}
+% \section{The Hunt for an Observable}
 
-\subsection{Combined RDTs}
+% \subsection{Combined RDTs}
 
-Some theory here (see Franchi's paper, see Michael's paper), it can use DFFT of x/y only.
-Some studies that it's difficult to use directly (2021.8), maybe SbS?
+% Some theory here (see Franchi's paper, see Michael's paper), it can use DFFT of x/y only.
+% Some studies that it's difficult to use directly (2021.8), maybe SbS?
 
-\subsection{SbS with combined RDTs and that it works better than with RDTs?}
+% \subsection{SbS with combined RDTs and that it works better than with RDTs?}
 
-\subsection{Forced RDTs}
+% \subsection{Forced RDTs}
 
-Why am I looking into this again?
-Potentially if I have time we can see if using non-compensated stuff gives better corrections.
-Very optional at the moment.
+% Why am I looking into this again?
+% Potentially if I have time we can see if using non-compensated stuff gives better corrections.
+% Very optional at the moment.
 
-\subsection{Conclusion that we might need to look at outside observables}
+% \subsection{Conclusion that we might need to look at outside observables}
 
 %----------------------------------------------------------------------------------------
 
 \section{Proof of Principle: Measurement and Correction of Local Coupling in the LHC Interaction Regions}
 
-\subsection{Relating to outside observable}
+\subsection{Concept of Relating to outside observable with RWS}
 
-\subsection{Beam-Based Study of IRs Local Coupling}
+\begin{figure}[htp]
+    \centering
+    \subfloat[.9\linewidth][Horizontal plane]{\includegraphics[width=7cm]{Figures/Chapter4/rigid_waist_shift_effect_horizontal.pdf}}
+    \hspace{0.3cm}
+    \subfloat[.9\linewidth][Vertical plane]{\includegraphics[width=7cm]{Figures/Chapter4/rigid_waist_shift_effect_vertical.pdf}}
+    \caption{Simulated effect of the designed rigid waist shift knob on the collision optics (\betastar of \qty{30}{\centi\metre}) in the horizontal (left) and vertical (right) plane. The blue line represents the waist displacement from the design location and is almost completely linear with the knob setting. The orange line represents the \betafunction change at the IP point itself as the waist is displaced. The minimum of the parabola is not found at the zero knob setting as the design optics include a very small waist.}
+    \label{fig:rigid_waist_shift_knob_effect}
+\end{figure}
 
-\subsection{Simulations of IRs Local Coupling}
+\subsection{Improved RWS}
+
+\subsection{Simulations of IRs Expectations (maybe in subsection 1)}
 
 %----------------------------------------------------------------------------------------
 
-% \section{Impact of Local Linear Coupling Correction on Beam Lifetime/Quality? (Moved to chapter 5?)}
-
-% \subsection{Impact on Tune Footprint (hopefully minimal)?}
-
-% \subsection{Impact on Dynamic Aperture (hopefully none)?}
-
-% \subsection{Impact on Luminosity (hopefully yayyy)?}
-
-%----------------------------------------------------------------------------------------
-
-\section{Operational Correction Procedure (Moved to chapter 5?)}
+\section{Operational Correction Procedure (Move to chapter 6?)}
 
 \subsection{Full Procedure Steps}
 
