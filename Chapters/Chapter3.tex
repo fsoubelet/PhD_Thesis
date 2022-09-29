@@ -1,24 +1,33 @@
-% Chapter 2
-
 \chapter{Optics Measurements and Corrections at the LHC} % Main chapter title
 
-\label{Chapter2} % For referencing the chapter elsewhere, use \Cref{Chapter2}
-
-%----------------------------------------------------------------------------------------
-
-The LHC requires good control of the optics functions, and for instance a good control of the \betafunctions is essential for safe beam operations due to the destructive power of the LHC beams.
-Moreover, a good control of the \(\beta^{\ast}\) is necessary to guarantee good luminosity production.
-To validate the machine optics and to identify possible errors beam measurements are performed, from which corrections bringing the machine as close to the nominal scenario as possible are calculated and applied. 
-This chapter gives an overview of the LHC machine and its operational cycle, as well as the essential beam instrumentation used for optics measurements.
-Additionally, concepts of corrections methods are given.
-
-%----------------------------------------------------------------------------------------
-
-%\section{The CERN Accelerator Complex}
+\label{Chapter:LHC_OMC} % For referencing the chapter elsewhere, use \cref{Chapter:LHC_OMC}
 
 %----------------------------------------------------------------------------------------
 
 \section{The LHC Lattice}
+
+The Large Hadron Collider (LHC) is a \qty{26.659}{\kilo\metre} synchrotron collider located at the European Center for Nuclear Research (CERN).
+The machine circulates two hadron beams in two counter-rotating rings, which are made to collide at four Interaction Points (IPs) to provide data for High Energy Physics (HEP) experiments.
+The main data-taking experiments on the LHC are ATLAS~\cite{Website:ATLAS,Website:ATLAS_CDS}, LHCf~\cite{Website:LHCf,Website:LHCf_CDS}, ALICE~\cite{Website:ALICE,Website:ALICE_CDS}, CMS~\cite{Website:CMS,Website:CMS_CDS}, TOTEM~\cite{Website:TOTEM,Website:TOTEM_CDS}, LHCb~\cite{Website:LHCb,Website:LHCb_CDS} and MoEDAL~\cite{Website:MOEDAL,Website:MOEDAL_CDS}.
+The LHC is currently the world's highest-energy hadron colliding machine, colliding beams at \qty{13.6}{\tera\electronvolt} center-of-mass energy as of Run~3.
+
+The LHC consists of eight \emph{octants} each intersected by an \emph{Insertion Region} (IR).
+Conventionally, the segment between two \IRs is called an \emph{arc} and the arc between IR1 and IR2 is named Arc12, and similarly for other arcs
+An octant is defined as going from mid-arc to mid-arc around a given \IR, which is located at its center.
+Each octant is named according to the \IR at its center: the octant with \(\mathrm{IR1}\) at its center is named Octant1, and similarly for other octants.
+An illustration on naming conventions can be found in \cref{Appendix_Naming_Conventions}.
+The \IRs host either an \emph{Interaction Point} (IP) where beams are made to collide (ATLAS at IP1, ALICE at IP2, CMS at IP5 and LHCb at IP8) or important instrumentation (momentum cleaning at IR3, Radio-Frequency cavities at IR4, beam dump system at IR6 and betatron cleaning at IR7).
+
+Beam~1 rotates clockwise in its ring when viewing the LHC from above, and Beam~2 rotates counter-clockwise as viewed from above.
+The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
+The layout of the LHC can be seen in \cref{figure:lhc_layout}, and full details can be found in the \emph{LHC Design Report}~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics*[width=0.9\linewidth]{Figures/placeholder.png}
+  \caption{Schematic of the LHC layout.}
+  \label{figure:lhc_layout}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 
@@ -33,7 +42,7 @@ Mention for figure that the matching section marked in the plot includes the dis
   \centering
   \includegraphics*[width=0.9\linewidth]{Figures/Chapter3/ir5_surroundings_optics_2.pdf}
   \caption{The horizontal and vertical \betafunctions in the LHC around IP5 at injection optics (top) and collision optics (bottom). Notice the drastically different scales on the vertical axes.}
-  \label{fig:ir5_and_around}
+  \label{figure:ir5_and_around}
 \end{figure}
 
 \subsection{Interaction Point}
@@ -50,7 +59,7 @@ Mention for figure that the matching section marked in the plot includes the dis
 
 \section{The Operational Cycle of the LHC}
 
-The LHC operational cycle~\cite{Report:LHCModes}, shown in \cref{fig:lhc_cycle}, starts with a pre-cycle of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+The LHC operational cycle~\cite{Report:LHCModes}, shown in \cref{figure:lhc_cycle}, starts with a pre-cycle of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
 During pre-cycle no beams are present in the rings and the respective element currents are increased up to several \qty{}{\tera\electronvolt}, to ensure the reproducibility of the magnetic fields over successive fills.
 After the pre-cycle, beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
 At injection optics the \(\beta^{\ast}_{x,y}\) is \qty{11}{\metre}.
@@ -64,15 +73,20 @@ The fill ends when dumping the beams, after which the cycle ends by a ramp down 
 
 \begin{figure}[h]
     \centering
-    \includegraphics*[width=0.99\linewidth]{Figures/Chapter3/lhc_cycle.pdf}
+    \includegraphics*[width=0.9\linewidth]{Figures/Chapter3/lhc_cycle.pdf}
     \caption{Illustration of the LHC operational cycle.}
-    \label{fig:lhc_cycle}
+    \label{figure:lhc_cycle}
   \end{figure}
 
 %----------------------------------------------------------------------------------------
 
 \section{Measurements and Corrections}
 
+The LHC requires good control of the optics functions, and for instance a good control of the \betafunctions is essential for safe beam operations due to the destructive power of the LHC beams.
+Moreover, a good control of the \(\beta^{\ast}\) is necessary to guarantee good luminosity production.
+To validate the machine optics and to identify possible errors beam measurements are performed, from which corrections bringing the machine as close to the nominal scenario as possible are calculated and applied. 
+This chapter gives an overview of the LHC machine and its operational cycle, as well as the essential beam instrumentation used for optics measurements.
+Additionally, concepts of corrections methods are given.
 
 \subsection{Beam Instrumentation for Optics Measurements}
 
