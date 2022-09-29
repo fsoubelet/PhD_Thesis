@@ -1,8 +1,6 @@
-% Chapter 1
-
 \chapter{Theory of Single-Particle Beam Dynamics in the Large Hadron Collider} % Main chapter title
 
-\label{Chapter1} % For referencing the chapter elsewhere, use \Cref{Chapter1}
+\label{Chapter:Theory} % For referencing the chapter elsewhere, use \cref{Chapter:Theory}
 
 %----------------------------------------------------------------------------------------
 
@@ -17,14 +15,14 @@ The chapter begins with a description of the linear dynamics, then progresses to
 Define concept: bend and focus particles to have them remain within the aperture tolerance of the machine.
 Bend with dipoles, focus with quadrupoles typically.
 % Within the linear approximation, non-linear magnetic fields are ignored and the beam dynamics is described by linear differential equations.
-\Cref{fig:frenet_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
+\Cref{figure:frenet_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 \bigbreak
 
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.7\linewidth]{Figures/placeholder.png}
     \caption{Coordinate system for linear accelerator optics.}
-    \label{fig:frenet_system}
+    \label{figure:frenet_system}
     \end{center}
 \end{figure}
 
@@ -49,14 +47,14 @@ From Ewen: quadrupolar fields acting on charged particles displaced from the cen
 Tradition: a quadrupole focusing in the horizontal plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
 A quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
 An alternating arrangement of focusing and defocusing quadrupoles, referred to as a $\mathrm{FODO}$ lattice, can create a net focusing in both planes [ref 18 Ewen]. 
-\Cref{fig:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole, together with the forces exerted on a positively charged particle travelling into the page.
+\Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole, together with the forces exerted on a positively charged particle travelling into the page.
 \bigbreak
 
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.9\linewidth]{Figures/placeholder.png}
     \caption{Magnetic fields and forces in an idealized dipole (having a $cos(\phi)$ current distribution in the circular coil) and an idealized focusing quadrupole (having a $cos(2\phi)$ current distribution in the circular coil). Current in the dipole and quadrupole coils are indicated in colour. Forces exerted by the magnet on a positive charge travelling into the page are illustrated. Adapted from [19].}
-    \label{fig:dipole_quadrupole_fields}
+    \label{figure:dipole_quadrupole_fields}
     \end{center}
 \end{figure}
 
@@ -95,7 +93,7 @@ The tune is defined in \cref{eq:tune_definition}, where $\Delta \phi_{x, y}$ is 
     \label{eq:tune_definition}
 \end{equation}
 
-\Cref{fig:particle_trajectories} shows a tracking simulation of a particle undergoing such betatron oscillations in the LHC Arc12.
+\Cref{figure:particle_trajectories} shows a tracking simulation of a particle undergoing such betatron oscillations in the LHC Arc12.
 Dipole errors were added which have distorted the closed orbit away from the ideal path.
 \bigbreak
 
@@ -103,7 +101,7 @@ Dipole errors were added which have distorted the closed orbit away from the ide
     \begin{center}
     \includegraphics[width = 0.7\linewidth]{Figures/placeholder.png}
     \caption{Tracking simulation in LHC Arc12 of a particle undergoing betatron oscillations.}
-    \label{fig:particle_trajectories}
+    \label{figure:particle_trajectories}
     \end{center}
 \end{figure}
 
@@ -119,7 +117,7 @@ Both are related by the \emph{alpha-function}:
 
 In linear regime, trajectories are ellipses in phase space $(x, x\prime, y, y\prime)$.
 $\alpha(s)$, $\beta(s)$, $\gamma(s)$ and $\epsilon$ define the equation of the ellipse, \cref{eq:ellipse_equation}.
-\Cref{fig:phase_space_ellipse} shows a schematic illustration of the phase space ellipse.
+\Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse.
 \bigbreak
 
 \begin{equation}
@@ -132,7 +130,7 @@ $\alpha(s)$, $\beta(s)$, $\gamma(s)$ and $\epsilon$ define the equation of the e
     \begin{center}
     \includegraphics[width = 0.85\linewidth]{Figures/placeholder.png}
     \caption{Phase space ellipse in the transverse $z$, $z\prime$ plane, where $z$ represents either $x$ or $y$.}
-    \label{fig:phase_space_ellipse}
+    \label{figure:phase_space_ellipse}
     \end{center}
 \end{figure}
 
@@ -387,14 +385,14 @@ Talk about the closest tune approach \(\Delta Q_{\mathrm{min}}\) quantity.
 Without betatron coupling in the machine, horizontal and vertical tunes can be matched to the same fractional value.
 In the presence of betatron coupling, the \emph{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same value and a minimal separation can be observed.
 This separation is called the \emph{closest tune approach} and is given as the \(\Delta Q_{\mathrm{min}}\) quantity.
-\Cref{fig:closest_tune_approach} shows an illustration of the phenomenon, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
+\Cref{figure:closest_tune_approach} shows an illustration of the phenomenon, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
 The closest tune approach is the minimum distance between the two red curves, highlighted by an arrow.
 
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.9\linewidth]{Figures/Chapter2/tune_perturbation.pdf}
     \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split.}
-    \label{fig:closest_tune_approach}
+    \label{figure:closest_tune_approach}
     \end{center}
 \end{figure}
 
