@@ -50,21 +50,22 @@ With this in mind, the general naming convention can be summarized as follows:
 
 \begin{table}[!hbt]
     \centering
-    \begin{tabular}{|c|c|}
-        \toprule
+    \begin{tblr}{colspec={cc}}
+        \hline
         \textbf{Element Type} & \textbf{Prefix}   \\
-        \midrule
-            Bending Magnet    & $\mathrm{MB}$       \\
-            Quadrupole        & $\mathrm{MQ}$       \\
-            Orbit  Corrector  & $\mathrm{MCB}$      \\
-            BPM               & $\mathrm{BPM}$      \\
-            Crab Cavity       & $\mathrm{ACFCA}$    \\
-            Drift             & $\mathrm{DRIFT}$    \\
-        \bottomrule
-    \end{tabular}
+        \hline
+        Bending Magnet    & $\mathrm{MB}$       \\
+        Quadrupole        & $\mathrm{MQ}$       \\
+        Orbit  Corrector  & $\mathrm{MCB}$      \\
+        BPM               & $\mathrm{BPM}$      \\
+        Crab Cavity       & $\mathrm{ACFCA}$    \\
+        Drift             & $\mathrm{DRIFT}$    \\
+        \hline
+    \end{tblr}
     \caption{Example prefixes for different LHC element types.}
     \label{table:element_prefix_examples}
  \end{table}
+
 
 For instance, the element $\mathrm{MQ.25L5.B1}$ is a quadrupole on the left side of $\mathrm{IP5}$, in the $25^{th}$ half-cell and for beam $1$.
 The special identifier can be used in multiple ways, for example $\mathrm{MQML.10R1.B1}$ is a different type of quadrupole in half-cell $10$, on the right side of $\mathrm{IP1}$ for beam $1$.
