@@ -33,7 +33,16 @@ Due to their location, these correctors are single aperture magnets meaning that
 As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
 
 
-Below are plots to be included:
+Below are plots / tables / equations to be included:
+
+\begin{equation}
+    \langle z \rangle = \sqrt{\epsilon_{1} \beta_{1z} + \epsilon_{2} \beta_{2z}}
+    \label{eq:lebedev_beam_size}
+\end{equation}
+where $z$ can be one of $x$, $y$, $\epsilon_{1}$ and $\epsilon_{2}$ are respectively the horizontal and vertical emittances.
+The Ripken parameters are output directly from MAD-X.
+The evolution of both the $|C^{-}|$ and the beam size at IP for a given value of the quadrupole tilt error can be seen in \cref{fig:colin_correction_dqmin_lebedev}.
+
 \begin{figure}
     \centering
     \includegraphics*[width=0.9\linewidth]{Figures/Chapter4/guess_rdts.pdf}
@@ -41,6 +50,56 @@ Below are plots to be included:
     \label{figure:guess_rdts}
 \end{figure}
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/Chapter4/round_lhcb1_ir1.pdf}
+    \caption{LHC IR1 for a round optics configuration at 7~TeV and $\beta^{*} = 25$~cm. The upper plot shows the machine layout with dipoles in blue and quadrupoles in red. The lower plot shows $\beta$ and dispersion functions for both transverse planes. The vertical green lines highlight the location of the skew quadrupole correctors used for corrections.}
+    \label{fig:lhcb1_round_optics_ir1}
+\end{figure}
+
+\begin{table}[!hbt]
+    \centering
+    \begin{tblr}{colspec={ccccc}}
+        \hline
+        \textbf{Magnet} & \textbf{K$_{1S}$ [m$^{-2}$]}    \\
+        \hline
+        MQSX.3R[IP] $\rightarrow K_{1S}$  &  \num{1E-4}   \\
+        MQSX.3L[IP] $\rightarrow K_{1S}$  &  \num{-1E-4}  \\
+        \hline
+    \end{tblr}
+    \caption{Definition of one unit of the colinearity knob, a powering setting of the IR skew quadrupole correctors.}
+    \label{table:colin_knob}
+\end{table}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/Chapter4/waist_shift_leaks_rdts.pdf}
+    \caption{Linear coupling RDTs in the vicinity of IP1 under a coupling bump, with and without a rigid waist shift. The vertical green lines represent the positions of the skew quadrupoles (MQSX.3[RL]1) used to implement the coupling bump. A colinearity knob setting of 10 and a rigidity waist shift knob setting of 1 were used, which results in a \qty{0.5}{\percent} change in the triplet powering knob.}
+    \label{fig:rdt_leak}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/Chapter4/colin_knob_vs_waist_shift.pdf}
+    \caption{Impact of the colinearity knob on the global \AbsCminus with and without applying a rigid waist shift.}
+    \label{fig:knob_to_cminus_with_waist}
+\end{figure}
+
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/Chapter4/beam_size_colin_compensation.pdf}
+    \caption{Resulting beam size increase for various combinations of tilt error and colinearity knob settings.}
+    \label{fig:beam_size_comp}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/Chapter4/colin_correct_dqmin_lebedev_tilt4e-4.pdf}
+    \caption{Resulting \AbsCminus and IP1 beam size, according to \cref{eq:lebedev_beam_size}, for various powering of the skew quadrupole correctors, after introducing a \qty{0.4}{\milli\radian} tilt error on the Q3s left and right of IP1. The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
+    \label{fig:colin_correction_dqmin_lebedev}
+\end{figure}
 
 \subsection{Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)}
 
@@ -80,7 +139,7 @@ Below are plots to be included:
     \centering
     \includegraphics[width=0.9\textwidth]{Figures/Chapter4/rigid_waist_shift_effect_combined.pdf}
     \caption{Simulated effect of the designed rigid waist shift knob on the collision optics (\betastar of \qty{30}{\centi\metre}) in the horizontal and vertical plane. The blue line represents the waist displacement from the design location and is almost completely linear with the knob setting. The orange and green lines represent the horizontal and vertical \betafunctions change at the IP point itself as the waist is displaced, respectively. The minima of the parabolas are not found at the zero knob setting as the design optics include a very small waist.}
-    \label{figure:rigid_waist_shift_knob_effect}
+    \label{figure:rigid_waist_shift_knob_effect1}
 \end{figure}
 
 % Whatever the choice is, remove the unused plots from the repo afterwards
@@ -90,7 +149,7 @@ Below are plots to be included:
     \hspace{0.3cm}
     \subfloat[.9\linewidth][Vertical plane]{\includegraphics[width=7cm]{Figures/Chapter4/rigid_waist_shift_effect_vertical.pdf}}
     \caption{Simulated effect of the designed rigid waist shift knob on the collision optics (\betastar of \qty{30}{\centi\metre}) in the horizontal (left) and vertical (right) plane. The blue line represents the waist displacement from the design location and is almost completely linear with the knob setting. The orange line represents the \betafunction change at the IP point itself as the waist is displaced. The minimum of the parabola is not found at the zero knob setting as the design optics include a very small waist.}
-    \label{figure:rigid_waist_shift_knob_effect}
+    \label{figure:rigid_waist_shift_knob_effect2}
 \end{figure}
 
 \subsection{Improved RWS}
