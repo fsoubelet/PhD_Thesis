@@ -2,6 +2,8 @@
 
 \label{Chapter:IR_Local_Coupling} % For referencing the chapter elsewhere, use \cref{Chapter:IR_Local_Coupling}
 
+Lot of stuff here should be from my PRAB article.
+
 %----------------------------------------------------------------------------------------
 
 Some paragraph before the first section.
@@ -15,7 +17,7 @@ Some paragraph before the first section.
 
 %----------------------------------------------------------------------------------------
 
-\section{Linear Coupling in the Interaction Regions}
+\section{Betatron Coupling in the Interaction Regions}
 
 Mention that in the machine we have unavoidable tilt errors in the insertion region magnets.
 A tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component.
@@ -33,6 +35,9 @@ Due to their location, these correctors are single aperture magnets meaning that
 As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
 
 
+Twiss with Coupling and Ripken parameters
+Equivalency of Ripken and Tracking when looking at beam size
+
 Below are plots / tables / equations to be included:
 
 \begin{equation}
@@ -41,7 +46,7 @@ Below are plots / tables / equations to be included:
 \end{equation}
 where $z$ can be one of $x$, $y$, $\epsilon_{1}$ and $\epsilon_{2}$ are respectively the horizontal and vertical emittances.
 The Ripken parameters are output directly from MAD-X.
-The evolution of both the $|C^{-}|$ and the beam size at IP for a given value of the quadrupole tilt error can be seen in \cref{fig:colin_correction_dqmin_lebedev}.
+The evolution of both the \AbsCminus and the beam size at IP for a given value of the quadrupole tilt error can be seen in \cref{fig:colin_correction_dqmin_lebedev}.
 
 \begin{figure}
     \centering
@@ -101,13 +106,9 @@ The evolution of both the $|C^{-}|$ and the beam size at IP for a given value of
     \label{fig:colin_correction_dqmin_lebedev}
 \end{figure}
 
-\subsection{Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)}
+\section{Current Correction Methods and Limitations}
 
-\subsection{Twiss with Coupling and Ripken parameters}
-
-\subsection{Equivalency of Ripken and Tracking when looking at beam size}
-
-% \subsection{Plan for Correction (or later?)}
+Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)
 
 %----------------------------------------------------------------------------------------
 
@@ -130,9 +131,9 @@ The evolution of both the $|C^{-}|$ and the beam size at IP for a given value of
 
 %----------------------------------------------------------------------------------------
 
-\section{Proof of Principle: Measurement and Correction of Local Coupling in the LHC Interaction Regions}
+\section{Rigid Waist Shift for Local Coupling Correction}
 
-\subsection{Concept of Relating to outside observable with RWS}
+\subsection{Concept and Simulations}
 
 % Whatever the choice is, remove the unused plots from the repo afterwards
 \begin{figure}
@@ -152,21 +153,21 @@ The evolution of both the $|C^{-}|$ and the beam size at IP for a given value of
     \label{figure:rigid_waist_shift_knob_effect2}
 \end{figure}
 
-\subsection{Improved RWS}
-
-\subsection{Simulations of IRs Expectations (maybe in subsection 1)}
+\subsection{Determining Corrections}
 
 %----------------------------------------------------------------------------------------
 
-\section{Operational Correction Procedure (Move to chapter 6?)}
+\section{Experimental Correction of Local Coupling in the LHC \num{2022} Commissioning}
 
-\subsection{Full Procedure Steps}
+All the results here.
 
-\subsection{Developed Software}
+% \subsection{Experimental Procedure?}
 
 %----------------------------------------------------------------------------------------
 
-\section{Mitigation Options in Case of MQSX Failures}
+\section{Operation with Limited Correctors Availability}
+
+Mitigation Options in Case of MQSX Failures
 
 (A lot here should be taken from my project update V talk at the QUASAR group.)
 
@@ -224,7 +225,7 @@ Not cool because LHCb prefers long fill + impact on BBLR?
 
 Plot to show the ratio of luminosity as in PowerPoint?
 
-\subsection{Potential MDs / Results}
+\subsection{Potential MDs / Exp. Results}
 
 Talk about how this could be tested.
 If we do get MD blocks for this in September, include the data here.
