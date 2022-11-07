@@ -3,9 +3,6 @@
 \label{Chapter:IR_Local_Coupling} % For referencing the chapter elsewhere, use \cref{Chapter:IR_Local_Coupling}
 
 Lot of stuff here should be from my PRAB article.
-
-%----------------------------------------------------------------------------------------
-
 Some paragraph before the first section.
 
 \begin{figure}
@@ -17,14 +14,14 @@ Some paragraph before the first section.
 
 %----------------------------------------------------------------------------------------
 
-\section{Betatron Coupling in the Interaction Regions}
+\section{Local Betatron Coupling in the Interaction Regions}
 
 Mention that in the machine we have unavoidable tilt errors in the insertion region magnets.
 A tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component.
 This skew component will have an effect on the \foneohone resonance driving term given by~\cite{PRAB:Calaga:MergingHamiltonianMatrixApproches}:
 
 \begin{equation}
-    f(s)_{1001} = \frac{-1}{4\left(1-e^{2 \pi i\left(Q_x-Q_y\right)}\right)} \sum_l k L_l \sqrt{\beta_x^l \beta_y^l} e^{i\left(\Delta \phi_x^{s l}-\Delta \phi_y^{s l}\right)}
+    f(s)_{1001} = \frac{-1}{4 \left(1 - e^{2 \pi i \left(Q_x - Q_y \right)}\right)} \sum_l k L_l \sqrt{\beta_x^l \beta_y^l} e^{i \left(\Delta \phi_x^{s l} - \Delta \phi_y^{s l}\right)}
     \label{eq:skew_quad_contribution_to_f1001}
 \end{equation}
 where \(k L_l\) is the \(l^{\mathrm{th}}\) skew quadrupole integrated strength, \(\beta^l_{x,y}\) are the \betafunctions at the position of the \(l^{\mathrm{th}}\) quadrupole, \(\Delta \phi^{sl}_{x,y}\) are the phase advances between the measurement point and the \(l^{\mathrm{th}}\) quadrupole, and \(Q_{x,y}\) are the horizontal and vertical tunes.
@@ -106,6 +103,8 @@ The evolution of both the \AbsCminus and the beam size at IP for a given value o
     \label{fig:colin_correction_dqmin_lebedev}
 \end{figure}
 
+%----------------------------------------------------------------------------------------
+
 \section{Current Correction Methods and Limitations}
 
 Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)
@@ -155,13 +154,69 @@ Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments
 
 \subsection{Determining Corrections}
 
+Blah.
+
 %----------------------------------------------------------------------------------------
 
 \section{Experimental Correction of Local Coupling in the LHC \num{2022} Commissioning}
 
 All the results here.
 
-% \subsection{Experimental Procedure?}
+To include somewhere in the chapter:
+
+\begin{figure}[!thb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/Chapter6/ir5_rws_rematching.pdf}
+    \caption{\betabeating observed in the machine from the implementation of the rigid waist shift in IR5 at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}, before and after the trim of the optics re-matching knob. Prior to the application of any knob \betabeating was kept around \qty{5}{\percent} throughout the machine by applied corrections, which is also achieved by the re-matching knob.}
+    \label{fig:ir5_rws_rematching}
+\end{figure}
+
+Can refer to appendix \Cref{AppendixB} for the fills used.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/Chapter6/beamtest_sbs_abs_f1001_ip5.pdf}
+    \caption{Propagation of the measured \absfoneohone around IP5 and of the reconstructed values from the determined correction, measured at \qty{450}{\giga\electronvolt} and \(\beta^{*}=\) \qty{11}{\meter}.}
+    \label{fig:beamtest_sbs_abs_f1001_ip5}
+\end{figure}
+
+Can refer to appendix \Cref{AppendixB} for the fills used.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/Chapter6/commissioning_sbs_real_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Re f_{1001}\) around IP1 and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{fig:commissioning_sbs_real_f1001_ip1}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/Chapter6/commissioning_sbs_imag_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Im f_{1001}\) around IP1 and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{fig:commissioning_sbs_imag_f1001_ip1}
+\end{figure}
+
+\begin{table}[!htb]
+    \centering
+    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from implementing the method's suggested corrections.}
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain \unit{\percent}}                       \\
+        \cline{2,3}                          &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
+        \hline
+        \textbf{ATLAS (IP1)}                 &    \num{9.5}                           &     \num{5.2}                          \\
+        \textbf{CMS (IP5)}                   &    \num{3.5}                           &     \num{1.5}                          \\
+        \hline
+    \end{tblr}
+    \label{tab:rws_lumi_gains}
+\end{table}
+
+Mention that trims (as seen above) are done a bit around and this is indeed the "best".
+The lesser gains at CMS are expected as the method suggests there was less of an error to correct.
+
+\subsection{Beam Tests \num{2021} Results}
+
+\subsection{Measurements and Correction of Local Coupling in the Main LHC IRs during the \num{2022} Coommissioning}
 
 %----------------------------------------------------------------------------------------
 
@@ -191,7 +246,7 @@ Show some plots, and come up with the tilt values that would be needed to do the
 Also show we have a very minimal beta-beating from this.
 Show we have had a look at different optics (30cm and 1m betastar) and it works for both.
 
-% \subsubsection{Operational Constraints}
+\subsubsection{Operational Constraints}
 
 The LHC systems are not meant for this, but for vertical alignment of these magnets!
 System relies on bellows: 2 pieds IP side and 1 pied other side for Q2 for instance.
