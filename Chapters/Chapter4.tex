@@ -235,29 +235,28 @@ In this case, we will need a containment plan, as not only are they used for the
 
 \begin{table}[!htb]
     \centering
-    \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \(^{\ast}\) assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
+    \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
     \begin{tblr}{colspec={ccc}}
         \hline
-        \SetCell[r=3,c=1]{m,c} \textbf{Magnets} &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                    \\
-        \cline{2,3}                             &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                       \\
-        \cline{2,3}                             &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                            \\
+        \SetCell[r=3,c=1]{m,c} \textbf{Magnets}             &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                     \\
+        \cline{2,3}                                         &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                        \\
+        \cline{2,3}                                         &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                             \\
         \hline
-        \textbf{MCBX\num{1} (IR\num{1})}        &    \num{8.5} (\num{8.5})                                  &     \num{11} (\num{11}) $/$ $^{\ast}$ \num{10.5} (\num{10.5})   \\
-        \textbf{MCBX\num{1} (IR\num{5})}        &    \num{6}                                                &     \num{7.5}                                                   \\
-        \textbf{MCBX\num{2} (IR\num{1})}        &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ $^{\ast}$ \num{4} (\num{4})           \\
-        \textbf{MCBX\num{2} (IR\num{5})}        &    \num{2}                                                &     \num{2.5}                                                   \\
-        \textbf{MQSX (IR\num{1})}               &    \num{7.5} (\num{7.5})                                  &     \num{9} (\num{9}) $/$ $^{\ast}$ \num{9} (\num{9})           \\
-        \textbf{MQSX (IR\num{5})}               &    \num{8} (\num{8})                                      &     \num{9.5} (\num{9.5})                                       \\
-        \textbf{MCBX\num{3} (IR\num{1})}        &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ $^{\ast}$ \num{6} (\num{6})         \\
-        \textbf{MCBX\num{3} (IR\num{5})}        &    \num{3}                                                &     \num{3.5}                                                   \\
+        \textcolor{red}{\textbf{MCBX\num{1} (IR\num{1})}}   &    \textcolor{red}{\num{8.5} (\num{8.5})}                 &     \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
+        \textcolor{red}{\textbf{MCBX\num{1} (IR\num{5})}}   &    \num{6}                                                &     \textcolor{red}{\num{7.5}}                                                   \\
+        \textbf{MCBX\num{2} (IR\num{1})}                    &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
+        \textbf{MCBX\num{2} (IR\num{5})}                    &    \num{2}                                                &     \num{2.5}                                                                    \\
+        \textcolor{red}{\textbf{MQSX (IR\num{1})}}          &    \textcolor{red}{\num{7.5} (\num{7.5})}                 &     \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
+        \textcolor{red}{\textbf{MQSX (IR\num{5})}}          &    \textcolor{red}{\num{8} (\num{8})}                     &     \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
+        \textbf{MCBX\num{3} (IR\num{1})}                    &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
+        \textbf{MCBX\num{3} (IR\num{5})}                    &    \num{3}                                                &     \num{3.5}                                                                    \\
         \hline
     \end{tblr}
     \label{table:correctors_peak_dose}
 \end{table}
 
-
-Important quote from the end of the presentation:
-"Assuming a limit of 6 MGy for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024 and (largely) surpassed by then in the octupoles and dodecapoles (around ATLAS)."
+\todo{Important quote from the end of the presentation:}
+"Assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four \(\mathrm{MCBX.1}\) and four \MQSX by the end of \num{2024}."
 
 This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
 
