@@ -22,7 +22,7 @@ This skew component will have an effect on the \foneohone resonance driving term
 
 \begin{equation}
     f(s)_{1001} = \frac{-1}{4 \left(1 - e^{2 \pi i \left(Q_x - Q_y \right)}\right)} \sum_l k L_l \sqrt{\beta_x^l \beta_y^l} e^{i \left(\Delta \phi_x^{s l} - \Delta \phi_y^{s l}\right)}
-    \label{eq:skew_quad_contribution_to_f1001}
+    \label{equation:skew_quad_contribution_to_f1001}
 \end{equation}
 where \(k L_l\) is the \(l^{\mathrm{th}}\) skew quadrupole integrated strength, \(\beta^l_{x,y}\) are the \betafunctions at the position of the \(l^{\mathrm{th}}\) quadrupole, \(\Delta \phi^{sl}_{x,y}\) are the phase advances between the measurement point and the \(l^{\mathrm{th}}\) quadrupole, and \(Q_{x,y}\) are the horizontal and vertical tunes.
 
@@ -38,10 +38,10 @@ Equivalency of Ripken and Tracking when looking at beam size
 Below are plots / tables / equations to be included:
 
 \begin{equation}
-    \langle z \rangle = \sqrt{\epsilon_{1} \beta_{1z} + \epsilon_{2} \beta_{2z}}
-    \label{eq:lebedev_beam_size}
+    \langle z \rangle = \sqrt{\varepsilon_{1} \beta_{1z} + \varepsilon_{2} \beta_{2z}}
+    \label{equation:lebedev_beam_size}
 \end{equation}
-where $z$ can be one of $x$, $y$, $\epsilon_{1}$ and $\epsilon_{2}$ are respectively the horizontal and vertical emittances.
+where $z$ can be one of $x$, $y$, $\varepsilon_{1}$ and $\varepsilon_{2}$ are respectively the horizontal and vertical emittances.
 The Ripken parameters are output directly from MAD-X.
 The evolution of both the \AbsCminus and the beam size at IP for a given value of the quadrupole tilt error can be seen in \cref{fig:colin_correction_dqmin_lebedev}.
 
@@ -99,7 +99,7 @@ The evolution of both the \AbsCminus and the beam size at IP for a given value o
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.99\columnwidth]{Figures/Chapter4/colin_correct_dqmin_lebedev_tilt4e-4.pdf}
-    \caption{Resulting \AbsCminus and IP1 beam size, according to \cref{eq:lebedev_beam_size}, for various powering of the skew quadrupole correctors, after introducing a \qty{0.4}{\milli\radian} tilt error on the Q3s left and right of IP1. The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
+    \caption{Resulting \AbsCminus and IP1 beam size, according to \cref{equation:lebedev_beam_size}, for various powering of the skew quadrupole correctors, after introducing a \qty{0.4}{\milli\radian} tilt error on the Q3s left and right of IP1. The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
     \label{fig:colin_correction_dqmin_lebedev}
 \end{figure}
 
