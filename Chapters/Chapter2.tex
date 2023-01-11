@@ -1,4 +1,4 @@
-\chapter{Theory of Single-Particle Beam Dynamics in the Large Hadron Collider} % Main chapter title
+\chapter{Relevant Theory of Beam Dynamics for the Large Hadron Collider} % Main chapter title
 
 \label{Chapter:Theory} % For referencing the chapter elsewhere, use \cref{Chapter:Theory}
 
@@ -6,6 +6,8 @@
 
 The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics, a field of accelerator science.
 This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
+Most of the material in this section can be found in the literature such as \cite{BOOK:Wilson:Introcution_Particle_Accelerators, BOOK:Lee:Accelerator_physics, BOOK:Minty:Measurements_Control_Charged_Particle_Beams,BOOK:Wolski:Beam_dynamics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
+When not in these works, explicit references to content are given.
 \todo{The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity}.
 
 %----------------------------------------------------------------------------------------
@@ -17,7 +19,7 @@ To force the beam's particles into a closed trajectory, they are subjected to ma
 The force exerted onto the beam is the Lorentz force \(F_{L}\), given by the equation:
 
 \begin{equation}
-    \vec{F_L}= \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) ,
+    \vec{F_L} = \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) ,
     \label{equation:lorentz_force}
 \end{equation}
 where \(p\) is the particle momentum, \(q\) the particle charge, \(\vec{E}\) the electric field, \(\vec{v}\) the particle velocity and \(\vec{B}\) the magnetic field.
@@ -54,14 +56,13 @@ The guiding magnetic field can be expanded into a series of multipolar fields, f
         \node[below of=m4] (l2) {octupole};
         \draw[-,red] (l2) -- (m4);
     }
-    + \ldots    
+    + \ldots
+    \label{equation:magnetic_field_expansion}
 \end{align}
 
-% Within the linear approximation, non-linear magnetic fields are ignored and the beam dynamics is described by linear differential equations.
 Bending forces are supplied by dipole magnets with a magnetic field perpendicular to the beam trajectory, while focusing is typically performed with the use of quadrupole magnets.
 Higher orders belong to the nonlinear dynamics and will be discussed later on.
 \Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
-\bigbreak
 
 \begin{figure}[!htb]
     \begin{center}
@@ -76,21 +77,26 @@ The longitudinal curvilinear coordinate is \(s\), and denotes the position of th
 One can define a local radius of curvature, \(\rho(s)\), which depends on the local magnetic field \(\vec{B}\) and varies along ring.
 The transverse phase space is defined by \((x, x^{\prime}, y, y^{\prime})\), where \(x\) and \(y\) are a particle's coordinates in the transverse plane relative to the reference trajectory.
 The \(x^{\prime}\) and \(y^{\prime}\) coordinates are \emph{divergent angles}, with the prime indicating differentiation with respect to \(s\).
-\bigbreak
+\break
 
 In the linear regime, magnetic dipoles define ideal orbit for a particle of \emph{reference momentum} \(p_0\).
 This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called a \emph{closed orbit}.
 In practice the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors.
 Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
-\bigbreak
+\break
 
-Focusing forces are typically provided by magnetic quadrupoles.
-A quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a divergent (defocusing) force in the other. 
+Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
 As a convention, a quadrupole focusing in the horizontal transverse plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
 Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
 A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the $\mathrm{FODO}$ cell, a layout alternating quadrupoles in equal distance.
+For each magnet applying a field \(B\) one can define the \emph{magnetic rigidity}, which is an indication of the field’s ability to alter a particle’s course based on its charge \(q\) and momentum \(p\), as:
+
+\begin{equation}
+    B \rho = \frac{p}{q}
+    \label{equation:magnetic_rigidity}
+\end{equation}
+
 \Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
-\bigbreak
 
 \begin{figure}[htp]
     \centering
@@ -103,109 +109,106 @@ A net focusing effect in both planes can be obtained with a setup of quadrupoles
         \includegraphics[width=6.5cm]{Figures/Chapter2/ideal_quadrupole_cos_2theta.png}
         \label{fig:ideal_quadrupole}
     }
-    \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. Taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
+    \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
 \end{figure}
 
-In circular machine focusing from quads is periodic in $s$ with a period of max the circumference of the machine.
-Motion in the transverse plane is described by Hill’s equation, \cref{eq:hill_equation}, where $k(s)$ is a periodic coefficient describing the restoring force due to the distribution of focusing fields around the ring.
-\bigbreak
+The focusing from quadrupoles in a circular accelerator such as the LHC is periodic in \(s\), with a period of at most the circumference of the machine.
+Assuming the existence of a closed orbit, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
 \begin{equation}
-    u^{\prime \prime} \pm k(s) u = 0; \quad u = x, y; \quad u^{\prime} = \frac{\mathrm{d}u}{\mathrm{d}s}
-    \label{eq:hill_equation}
+    u^{\prime \prime} + k(s) u = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} ,
+    \label{equation:hill_equation}
 \end{equation}
-\bigbreak
-
-Solutions to Hill’s equation take the form of \cref{eq:hill_solution},
-\bigbreak
+where \(k\) describes the focusing forces action on the beam, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
+A focusing quadrupole has a \(k > 0\), a focusing quadrupole has \(k < 0\), and a drift space has \(k = 0\).
+According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation take the form of \cref{equation:hill_solution}:
 
 \begin{equation}
     \begin{aligned}
-    x &= \sqrt{\beta_{x}(s) \epsilon_{x}} \cos \left(\phi_{x}(s) + \phi_{x_0}\right) \\
-    y &= \sqrt{\beta_{y}(s) \epsilon_{y}} \cos \left(\phi_{y}(s) + \phi_{y_0}\right)
+        x &= \sqrt{\beta_{x}(s) \varepsilon_{x}} \cos \left(\phi_{x}(s) + \phi_{x_0}\right) \\
+        y &= \sqrt{\beta_{y}(s) \varepsilon_{y}} \cos \left(\phi_{y}(s) + \phi_{y_0}\right)
     \end{aligned}
-    \label{eq:hill_solution}
+    \label{equation:hill_solution}
 \end{equation}
 
-where $\epsilon$ is the emittance of a particle and is a constant of the motion at a given energy.
-$\beta(s)$ is called the \emph{beta-function} and describes the variation of the oscillation envelope around the ring. 
-In particle colliders such as the LHC, it is usual to denote the \betafunctions at the Interaction Points (where the beams are made to collide) as \betastar.
-\bigbreak
-
-Particles oscillate around the ring, \emph{betatron oscillations}, and the number of oscillations around the ring is the \emph{tune}, $Q_{x,y}$.
-The tune is defined in \cref{eq:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron phase advance undergone by a particle during one revolution around the accelerator ring.
-\bigbreak
+Here \(\beta(s)\) is the \emph{beta-function} and represents the fluctuation of the oscillation envelope around the ring, while \(\varepsilon\) is the \emph{geometric emittance} of a particle and is a constant of the motion at a given energy. 
+In particle colliders such as the LHC the \betafunctions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta^{\ast}\).
+The difference of the betatron phase functions at two points \(s_1\) and \(s_2\) in the lattice is called the betatron \emph{phase advance} and is defined as:
 
 \begin{equation}
-    Q_{x, y} = \frac{1}{2 \pi} \Delta \phi_{x, y} = \frac{1}{2 \pi} \oint \frac{\mathrm{d}s}{\beta_{x, y}(s)}
-    \label{eq:tune_definition}
+    \mu = \phi(s_{2}) - \phi(s_{1}) = \int_{s_{1}}^{s_{2}} \frac{1}{\beta(s)} ds
 \end{equation}
 
-\Cref{figure:particle_trajectories} shows a tracking simulation of a particle undergoing such betatron oscillations in the LHC Arc12.
-Dipole errors were added which have distorted the closed orbit away from the ideal path.
-\bigbreak
+As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
+The number of these so-called \emph{betatron oscillations} per revolution is the \emph{tune} \(Q_{x,y}\).
+The tune is defined in \cref{equation:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron \emph{phase advance} of a particle3 over a full circumference:
+
+\begin{equation}
+    Q_{x, y} = \frac{1}{2 \pi} \Delta \phi_{x, y} = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_{x, y}(s)}
+    \label{equation:tune_definition}
+\end{equation}
+
+\todo{Here introduce going through a magnetic element and how we can use a matrix to represent. Do transfer matrix then (Tobias phd, eq 2.3). }
+
+Similarly to the \betafunction, the \emph{gamma-function} $\gamma(s)$ describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
+Both quantities are related by the \emph{alpha-function}, defined as:
+
+\begin{equation}
+    \alpha_{x, y}(s) = -\frac{1}{2} \dfrac{d}{ds} \beta_{x, y}(s) = \sqrt{\gamma_{x, y}(s) \beta_{x, y}(s) - 1}
+    \label{equation:alpha_function}
+\end{equation}
+
+In the linear regime all particle trajectories describe ellipses in \((x, x^{\prime})\) and \((y, y^{\prime})\) phase space.
+The geometric emittance \(\varepsilon\) introduced in \cref{equation:hill_solution}, also named the \emph{Courant-Snyder invariant}, defines together with the \emph{Twiss parameters} \(\alpha(s)\), \(\beta(s)\) and \(\gamma(s)\) the equation of the phase space ellispe:
+
+\begin{equation}
+    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon \quad \text { where } u = x, y
+    \label{equation:ellipse_equation}
+\end{equation}
+
+\Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area of which is defined by the geometric emittance according to:
+
+\begin{equation}
+    A = \pi \varepsilon
+    \label{equation:phase_space_ellipse_area}
+\end{equation}
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.7\linewidth]{Figures/placeholder.png}
-    \caption{Tracking simulation in LHC Arc12 of a particle undergoing betatron oscillations.}
-    \label{figure:particle_trajectories}
-    \end{center}
-\end{figure}
-
-Define the \emph{gamma-function} $\gamma(s)$ which describes the envelope of oscillations in $x\prime$ and $y\prime$.
-Both are related by the \emph{alpha-function}:
-\bigbreak
-
-\begin{equation}
-    \alpha_{x, y} = -\frac{1}{2} \frac{\mathrm{d}}{\mathrm{d}s} \beta_{x, y}(s) = \sqrt{\gamma_{x, y}(s) \beta_{x, y}(s) - 1}
-    \label{eq:alpha_function}
-\end{equation}
-\bigbreak
-
-In linear regime, trajectories are ellipses in phase space $(x, x\prime, y, y\prime)$.
-$\alpha(s)$, $\beta(s)$, $\gamma(s)$ and $\epsilon$ define the equation of the ellipse, \cref{eq:ellipse_equation}.
-\Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse.
-\bigbreak
-
-\begin{equation}
-    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u u^{\prime} + \beta_{u}(s) z^{\prime 2} = \epsilon \quad \text { where } u = x, y
-    \label{eq:ellipse_equation}
-\end{equation}
-\bigbreak
-
-\begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.85\linewidth]{Figures/placeholder.png}
-    \caption{Phase space ellipse in the transverse $z$, $z\prime$ plane, where $z$ represents either $x$ or $y$.}
+    \includegraphics[width = 0.85\linewidth]{Figures/Chapter2/Phase_Space.png}
+    \caption{Phase space ellipse in the transverse \((u, u^{\prime})\) plane, where \(u\) represents either transverse coordinate \(x\) or \(y\).}
     \label{figure:phase_space_ellipse}
     \end{center}
 \end{figure}
 
-Say emittance ($\epsilon$) defines phase space ellipse area.
-Liouville's theorem: phase space volume (ellipse area) is constant in a closed system.
-In the LHC, protons, little synchrotron radiation [ref 20 ewen] we can consider emittance a constant (but at multi-$\mathrm{TeV}$ energy radiation emission may become non-negligible).
-Acceleration -> no more Liouville and \emph{physical emittance} ($\epsilon$) will reduce with increasing energy.
-One can construct \emph{normalized emittance} ($\epsilon_{\gamma}$) which is invariant with beam energy.
-See \cref{eq:normalized_emittance}, where $\beta_{rel}$ and $\gamma_{rel}$ are the relativistic beta and gamma functions:
-\bigbreak
+According to the Liouville theorem, the phase space volume, the ellipse area \(A\) is a constant in a closed system.
+When accelerating the beam this theorem no longer holds true and the geometric emittance \(\varepsilon\) will decrease as the beam energy increases.
+One can then construct the \emph{normalized emittance} \(\varepsilon_{\gamma}\), which is invariant with beam energy, based on the relativistic beta and gamma:
 
 \begin{equation}
-    \epsilon_{\gamma} = (\beta_{\mathrm{rel}} \gamma_{\mathrm{rel}}) \epsilon
-    \label{eq:normalized_emittance}
+    \varepsilon_{\gamma} = (\beta_{\mathrm{rel}} \gamma_{\mathrm{rel}}) \varepsilon
+    \label{equation:normalized_emittance}
 \end{equation}
-\bigbreak
 
-For a specific particle we use \emph{single particle emittance}.
-Different particles may have different ones.
-They will go through (undergo?) betatron oscillations of different amplitudes.
-We can define \emph{beam emittance}: typically defined as the emittance corresponding $1\sigma$ amplitude in assumed Gaussian particle distribution.
-\bigbreak
+When referring to the emittance of a specific particle one uses the term \emph{single particle emittance}.
+Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
+For a Gaussian shaped beam the particle at a \(1 \sigma\) orbit offset defines the beam size:
 
-The phase space trajectory of a particle depends on $\alpha(s)$, $\beta(s)$, and $\gamma(s)$.
-The transformation to \emph{Courant-Snyder coordinates} [ref 21 ewen] (sometimes called \emph{normalized Courant-Snyder coordinates}) removes this dependency, see \cref{eq:courant_snyder_coordinates},
-\bigbreak
+\begin{equation}
+    \sigma_u = \sqrt{\varepsilon_u \beta_u} \quad \text { where } u = x, y
+\end{equation}
+
+Its Courant-Snyder invariant is equivalent with the so-called \emph{beam emittance}, which describes the phase space volume occupied by the particles of the beam, typically taken as the emittance corresponding to a particle amplitude of \(1 \sigma\) in the assumed Gaussian particle distribution.
+In the case of more general particle distributions an alternative definition of the beam emittance is often used~\cite{CERN:Muller:Beam_Matter_Covariance_Matrix_Emittance, CERN:Buon:CAS_Beam_Phase_Space_Emittance}:
+
+\begin{equation}
+    \epsilon_{rms,u} = \sqrt{\left\langle u \right\rangle^{2} \left\langle u^{\prime} \right\rangle^{2} - \left\langle uu^{\prime} \right\rangle^{2}} \quad \text { where } u = x, y
+    \label{equation:beam_emittance}
+\end{equation}
+
+The phase space trajectory of a particle depends on the Twiss parameters $\alpha(s)$, $\beta(s)$, and $\gamma(s)$.
+One can remove this dependency by performing a coordinate transformation to the \emph{Courant-Snyder coordinates}~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion}, defined as:
 
 \begin{equation}
     \left(\begin{array}{c}
@@ -218,56 +221,42 @@ The transformation to \emph{Courant-Snyder coordinates} [ref 21 ewen] (sometimes
     u \\
     u^{\prime}
     \end{array}\right) \quad \text{ where } u = x, y
-    \label{eq:courant_snyder_coordinates}
+    \label{equation:courant_snyder_coordinates}
 \end{equation}
 
 where the Courant-Snyder coordinates are denoted by \^{}.
 In this new system particles follow circular trajectories in phase space.
-\bigbreak
 
-Say particles within the beam have a distribution in momentum, around designed momentum $p_0$.
-For a particle that doesn't have $p_0$ we define the \textit{relative momentum deviation} $\delta$, \cref{eq:momentum_deviation}:
-\bigbreak
-
-\begin{equation}
-    \delta = \frac{p - p_0}{p_0}
-    \label{eq:momentum_deviation}
-\end{equation}
-\bigbreak
-
-Define \textit{magnetic rigidity}: relates magnetic flux $\mathbf{B}$ (perpendicular to motion) with local radius of curvature and particle momentum $\mathbf{P}$.
-See \cref{eq:beam_rigidity}:
-\bigbreak
+Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
+Naturally, in practice particles withing the beam have a distribution in energy and momentum.
+For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \textit{relative momentum deviation} \(\delta\): the deviation from the reference orbit from the momentum deviation.
 
 \begin{equation}
-    \lvert \mathbf{B} \rho \rvert = \frac{\lvert \mathbf{P} \lvert}{e}
-    \label{eq:beam_rigidity}
+    \delta = \frac{\Delta p}{p} = \frac{p - p_{0}}{p_{0}}
+    \label{equation:momentum_deviation}
 \end{equation}
-\bigbreak
 
-Say difference to $p_0$ introduce \emph{chromatic} errors into the beam dynamics.
-The most important one is \emph{dispersion}.
+Such momenta offsets introduce \emph{chromatic errors} in the beam dynamics, for instance \emph{dispersion}.
+From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles, and therefore different 
 Different momenta(um?) -> different beam rigidity -> different local radius of curvature in dipoles -> different orbit.
 
-Deviation to reference orbit is defined by the \emph{Dispersion function}, $D(s)$ [ref 23 ewen].
-In a region of non-zero dispersion the contribution to the orbit of a particle is described by \cref{eq:dispersion_contribution_to_orbit}:
-\bigbreak
+The deviation of an off momentum particle orbit from that of the synchronous particle is defined by the \emph{dispersion function} $D(s)$.
+Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
     \begin{aligned}
     \Delta x_{\mathrm{dispersion}} &= D_{x}(s) \delta \\
     \Delta y_{\mathrm{dispersion}} &= D_{y}(s) \delta
     \end{aligned}
-    \label{eq:dispersion_contribution_to_orbit}
+    \label{equation:dispersion_contribution_to_orbit}
 \end{equation}
 \bigbreak
 
-The orbit of any given particle is defined by \cref{eq:_particle_orbit}:
-\bigbreak
+The orbit of any given particle is defined by:
 
 \begin{equation}
-    u = u_{\mathrm{betatronic}} + u_{\mathrm{dispersion}} + \left.u_{\mathrm{closed \ orbit}} \right\rvert_{\delta = 0}
-    \label{eq:_particle_orbit}
+    u = u_{\mathrm{betatronic}} + u_{\mathrm{dispersion}} + \left.u_{\mathrm{closed \ orbit}} \right\rvert_{\delta = 0} \quad \text{ where } u = x, y
+    \label{equation:_particle_orbit}
 \end{equation}
 
 %----------------------------------------------------------------------------------------
@@ -304,7 +293,7 @@ In the frame where the one turn map is represented by a pure rotation - in norma
     \ldots
     e^{:\eqnmarkbox[green]{noden}{\tilde{h_{n}}}:}
     R
-    \label{eq:norm_form_one_turn_map}
+    \label{equation:norm_form_one_turn_map}
 \end{equation}
 \annotate[yshift=0.5em]{above, left}{node1}{First element}
 \annotate[yshift=-0.75em]{below}{node2}{Second element}
@@ -321,14 +310,14 @@ In case the \(\tilde{h_{n}}\) are small, then \(h\) may be approximated by:
 
 \begin{equation}
     h = \sum_{n=1}^{N} \tilde{h}_{n} + \sum_{n, m<n}^{N} \left[\tilde{h}_{m}, \tilde{h}_{n} \right] + \ldots
-    \label{eq:h_expansion}
+    \label{equation:h_expansion}
 \end{equation}
 
-Using only the first order in \(\tilde{h_{n}}\), \(h\) may be expanded according to \cref{eq:h_approximation_first_order} using the action-angle variables TODO.
+Using only the first order in \(\tilde{h_{n}}\), \(h\) may be expanded according to \cref{equation:h_approximation_first_order} using the action-angle variables TODO.
 
 \begin{equation}
     h = \sum_{j k l m} h_{j k l m} \left(2 J_{x}\right)^{\frac{j+k}{2}} \left(2 J_{y}\right)^{\frac{l+m}{2}} e^{i \left[(j-k)\left(\phi_{x}-\phi_{x_{0}}\right) + (l-m)\left(\phi_{y}-\phi_{y_{0}}\right) \right]}
-    \label{eq:h_approximation_first_order}
+    \label{equation:h_approximation_first_order}
 \end{equation}
 
 Here \(h_{j k l m}\) are Hamiltonian coefficients representing the contributions from multipoles of order \(n = j + k + l + m\).
@@ -350,22 +339,22 @@ The formal solution to finding the generating function F is given in \cite{Fores
 
 \begin{equation}
     F = \sum_{j k l m} f_{j k l m} \left(2 I_{x}\right)^{\frac{j+k}{2}}\left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i\left[(j-k)\left(\psi_{x}-\psi_{x_{0}}\right)+(l-m)\left(\psi_{y}-\psi_{y_{0}}\right)\right]}
-    \label{eq:F_generating}
+    \label{equation:F_generating}
 \end{equation}
 % ------------------ %
 where \(f_{jklm}\) are the resonance driving terms corresponding to the Hamiltonian terms \(h_{jklm}\) respectively.
-They can be expressed according to \cref{eq:f_rdts} \cite{Tomas_thesis, Franchi_thesis}, where \(Q_x\) and \(Q_y\) are the unperturbed tunes.
+They can be expressed according to \cref{equation:f_rdts} \cite{Tomas_thesis, Franchi_thesis}, where \(Q_x\) and \(Q_y\) are the unperturbed tunes.
 
 \begin{equation}
     f_{jklm} = \frac{h_{jklm}}{1 - e^{i 2 \pi \left[(j-k) Q_{x} + (l-m) Q_{y} \right]}}
-    \label{eq:f_rdts}
+    \label{equation:f_rdts}
 \end{equation}
 % ------------------ %
-\Cref{eq:f_rdts} diverges when \(j, k, l, m, Q_x\) and \(Q_y\) satisfy the condition:
+\Cref{equation:f_rdts} diverges when \(j, k, l, m, Q_x\) and \(Q_y\) satisfy the condition:
 
 \begin{equation}
     (j-k) Q_{x} + (l-m) Q_{y} = p \quad \text{ where } p \in \mathcal{Z}
-    \label{eq:resonance_condition}
+    \label{equation:resonance_condition}
 \end{equation}
 % ------------------ %
 Hence, the \(f_{jklm}\) terms are the driving terms of the resonances \([(j-k),(l-m)]\).
@@ -377,7 +366,7 @@ The normalized Courant-Snyder coordinates are related to the action-angle variab
     z &= \sqrt{2 J_{z}} \cos (\phi_{z} - \phi_{z_{0}}) \\
     p_{z} &= -\sqrt{2 J_{z}} \sin (\phi_{z} - \phi_{z_{0}}) \quad \text { where } z=x, y
     \end{aligned}
-    \label{eq:courant_snyder_to_action_angle}
+    \label{equation:courant_snyder_to_action_angle}
 \end{equation}
 % ------------------ %
 It is convenient to introduce the resonant basis h defined as
@@ -387,7 +376,7 @@ It is convenient to introduce the resonant basis h defined as
     h_{z}^{\pm} &= z \pm i p_{z} = \sqrt{2 J_{z}} e^{\mp i \left(\phi_{z}-\phi_{z_{0}}\right)} \quad \text { where } z=x, y \\
     \mathbf{h} &= \left( h_{x}^{+}, h_{x}^{-}, h_{y}^{+}, h_{y}^{-} \right)
     \end{aligned}
-    \label{eq:resonant_basis_h}
+    \label{equation:resonant_basis_h}
 \end{equation}
 
 The transformation to a new set of Normal Form coordinates \(\left(\zeta_{x}^{+}, \zeta_{x}^{-}, \zeta_{y}^{+}, \zeta_{y}^{-}\right)\) is given by the operator \(e^{: -F :}\).
@@ -395,7 +384,7 @@ This is expressed as
 
 \begin{equation}
     \zeta_{z}^{\pm} = \sqrt{2 I_{z}} e^{\pm i \left(\phi_{z}+\phi_{z 0} \right)} = e^{:-F:} h_{z}^{\pm}
-    \label{eq:action_angle_to_normal_form}
+    \label{equation:action_angle_to_normal_form}
 \end{equation}
 % ------------------ %
 where \(I_{z}\) is the invariant of motion in the new frame.
@@ -403,17 +392,17 @@ The one-turn map in normal form coordinates is by construction an amplitude depe
 
 \begin{equation}
     \zeta_{z}^{-}(N) = \sqrt{2 I_{z}} e^{2 \pi \nu_{x} N + \phi z_{0}}
-    \label{eq:normal_form_by_turn}
+    \label{equation:normal_form_by_turn}
 \end{equation}
 
 The inverse transformation from the new action-angle variables to the linearly normalized variable is to first order written as
 
 \begin{equation}
     h_{z}^{-} = e^{: F:} \zeta_{z}^{-} \simeq \zeta_{z}^{-} + \left[F, \zeta_{z}^{-}\right]
-    \label{eq:inverse_normal_form_transform}
+    \label{equation:inverse_normal_form_transform}
 \end{equation}
 
-and using \cref{eq:normal_form_by_turn} and \cref{eq:inverse_normal_form_transform} the normalized coordinates can be expressed in the form
+and using \cref{equation:normal_form_by_turn} and \cref{equation:inverse_normal_form_transform} the normalized coordinates can be expressed in the form
 
 \begin{equation}
     \begin{aligned}
@@ -422,13 +411,13 @@ and using \cref{eq:normal_form_by_turn} and \cref{eq:inverse_normal_form_transfo
     h_{y}^{-}(N) &= \sqrt{2 I_{y}} e^{i\left(2 \pi \nu_{y} N - \psi_{y_{0}}\right)} - \\
     & 2 i \sum_{jklm} l f_{jklm} \left(2 I_{x}\right)^{\frac{j+k}{2}} \left(2 I_{y}\right)^{\frac{l+m-1}{2}} e^{i \left[(k-j) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (1-l+m) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]}
     \end{aligned}
-    \label{eq:normal_form_coordinates}
+    \label{equation:normal_form_coordinates}
 \end{equation}
 
 https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
 
 
-\subsection{Betatron Coupling RDTs}
+\section{Betatron Coupling}
 
 Talk about the closest tune approach \(\Delta Q_{\mathrm{min}}\) quantity.
 Without betatron coupling in the machine, horizontal and vertical tunes can be matched to the same fractional value.
