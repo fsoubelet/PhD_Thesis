@@ -4,58 +4,107 @@
 
 %----------------------------------------------------------------------------------------
 
-Beam dynamics is a field of accelerator science which is significant for the design, operation, performance, and protection of an accelerator. 
-In this section an overview is given of the theories of beam dynamics which are relevant to the material presented in this thesis.
-The chapter begins with a description of the linear dynamics, then progresses to deal with aspects of the non-linear dynamics, concluding with a discussion of the luminosity.
+The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics, a field of accelerator science.
+This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
+\todo{The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity}.
 
 %----------------------------------------------------------------------------------------
 
 \section{Linear Beam Dynamics}
 
-Define concept: bend and focus particles to have them remain within the aperture tolerance of the machine.
-Bend with dipoles, focus with quadrupoles typically.
+The linear dynamics of an accelerator are, mainly, the endeavor to bend and focus particle beams to confine them within the machine's aperture.
+To force the beam's particles into a closed trajectory, they are subjected to magnetic fields that deflect their trajectories.
+The force exerted onto the beam is the Lorentz force \(F_{L}\), given by the equation:
+
+\begin{equation}
+    \vec{F_L}= \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) ,
+    \label{equation:lorentz_force}
+\end{equation}
+where \(p\) is the particle momentum, \(q\) the particle charge, \(\vec{E}\) the electric field, \(\vec{v}\) the particle velocity and \(\vec{B}\) the magnetic field.
+In most accelerators, including the LHC, the particles' speed is close to the celerity of light \(c\) and the force from the magnetic field is significantly stronger than that produced by the electric field for realistic values of \(\vec{E}\) and \(\vec{B}\).
+As a result, in high energy particle accelerators magnetic fields are typically used to guide particles.
+The guiding magnetic field can be expanded into a series of multipolar fields, for instance here in the horizontal plane:
+% ---------- Equation ----------
+\begin{align}
+    B_{y} = 
+    \tikz[baseline]{
+        \node[draw=red,rounded corners,anchor=base] (m1)
+        {$\displaystyle B_{y0}$};
+        \node[below of=m1] (l1) {dipole};
+        \draw[-,red] (l1) -- (m1);
+    }
+    +
+    \tikz[baseline]{
+        \node[draw=red,rounded corners,anchor=base] (m2)
+        {$\displaystyle \frac{dB_{y}}{dx} x$};
+        \node[below of=m2] (l2) {quadrupole};
+        \draw[-,red] (l2) -- (m2);
+    }
+    +
+    \tikz[baseline]{
+        \node[draw=red,rounded corners,anchor=base] (m3)
+        {$\displaystyle \frac{1}{2!} \frac{d^2B_{y}}{dx^2} x^2$};
+        \node[below of=m3] (l2) {sextupole};
+        \draw[-,red] (l2) -- (m3);
+    }
+    +
+    \tikz[baseline]{
+        \node[draw=red,rounded corners,anchor=base] (m4)
+        {$\displaystyle \frac{1}{3!} \frac{d^3B_{y}}{dx^3} x^3$};
+        \node[below of=m4] (l2) {octupole};
+        \draw[-,red] (l2) -- (m4);
+    }
+    + \ldots    
+\end{align}
+
 % Within the linear approximation, non-linear magnetic fields are ignored and the beam dynamics is described by linear differential equations.
-\Cref{figure:frenet_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
+Bending forces are supplied by dipole magnets with a magnetic field perpendicular to the beam trajectory, while focusing is typically performed with the use of quadrupole magnets.
+Higher orders belong to the nonlinear dynamics and will be discussed later on.
+\Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 \bigbreak
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.7\linewidth]{Figures/placeholder.png}
-    \caption{Coordinate system for linear accelerator optics.}
-    \label{figure:frenet_system}
+    \includegraphics[width = 0.8\linewidth]{Figures/Chapter2/Frenet_Serret_Coordinate_System.png}
+    \caption{The Frenet-Serret coordinate system used in accelerator physics. Here \(\hat{x}\), \(\hat{y}\), and \(\hat{s}\) form the right-handed orthogonal basis, while \(\rho\) is the local bending radius.}
+    \label{figure:frenet_serret_system}
     \end{center}
 \end{figure}
 
-Coordinate system travels longitudinally with the particle, along a reference trajectory defined by an "ideal" / "reference" / "synchronous" particle.
-Define $s$ as longitudinal / curvilinear coordinate.
-Define $\rho(s)$ local radius of curvature (depends on $\mathbf{B}$ and varies along ring).
-Define $(x, x\prime, y, y\prime)$, coordinates of transverse phase space:
-$x$ and $y$ are particle coordinates in the transverse planes (transverse displacement).
-$x^{'}$ and $y^{'}$ are "divergent angles" (says Ewen) in the $x$ and $y$ plane (differentiation with respect to $s$).
+The coordinate system travels longitudinally with the particle, along a reference trajectory defined by an ideal, or \emph{synchronous}, particle.
+The longitudinal curvilinear coordinate is \(s\), and denotes the position of the particle along the ideal orbit with respect to an arbitrary initial point at \(s = 0\).
+One can define a local radius of curvature, \(\rho(s)\), which depends on the local magnetic field \(\vec{B}\) and varies along ring.
+The transverse phase space is defined by \((x, x^{\prime}, y, y^{\prime})\), where \(x\) and \(y\) are a particle's coordinates in the transverse plane relative to the reference trajectory.
+The \(x^{\prime}\) and \(y^{\prime}\) coordinates are \emph{divergent angles}, with the prime indicating differentiation with respect to \(s\).
 \bigbreak
 
-In linear regime, dipoles define ideal orbit for particle of \emph{reference momentum} $p_0$.
-Ideal orbit goes through magnetic center of all elements and comes back on itself after a revolution, and is called a \emph{closed orbit}.
-In practice dipolar errors (and more) will distort the real closed orbit from the ideal designed orbit.
-Particles within the beam are distributed in amplitude (the beam occupies a finite area in $(x, x\prime, y, y\prime)$ phase space). 
-The closed orbit defines the path of a particle with zero amplitude within the beam.
-In practice particles oscillate around the closed orbit because of the focusing forces. 
-In the LHC this focusing is provided predominantly by quadrupole magnets.
+In the linear regime, magnetic dipoles define ideal orbit for a particle of \emph{reference momentum} \(p_0\).
+This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called a \emph{closed orbit}.
+In practice the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors.
+Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
 \bigbreak
 
-From Ewen: quadrupolar fields acting on charged particles displaced from the central axis provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a divergent (defocusing) force in the other. 
-Tradition: a quadrupole focusing in the horizontal plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
-A quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
-An alternating arrangement of focusing and defocusing quadrupoles, referred to as a $\mathrm{FODO}$ lattice, can create a net focusing in both planes [ref 18 Ewen]. 
-\Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole, together with the forces exerted on a positively charged particle travelling into the page.
+Focusing forces are typically provided by magnetic quadrupoles.
+A quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a divergent (defocusing) force in the other. 
+As a convention, a quadrupole focusing in the horizontal transverse plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
+Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
+A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the $\mathrm{FODO}$ cell, a layout alternating quadrupoles in equal distance.
+\Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 \bigbreak
 
-\begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.9\linewidth]{Figures/placeholder.png}
-    \caption{Magnetic fields and forces in an idealized dipole (having a $cos(\phi)$ current distribution in the circular coil) and an idealized focusing quadrupole (having a $cos(2\phi)$ current distribution in the circular coil). Current in the dipole and quadrupole coils are indicated in colour. Forces exerted by the magnet on a positive charge travelling into the page are illustrated. Adapted from [19].}
+\begin{figure}[htp]
+    \centering
+    \subfloat[.8\linewidth][Ideal dipole.]{
+        \includegraphics[width=6.5cm]{Figures/Chapter2/ideal_dipole_cos_theta.png}
+        \label{fig:ideal_dipole}
+    }
+    \hspace{0.5cm}
+    \subfloat[.8\linewidth][Ideal quadrupole.]{
+        \includegraphics[width=6.5cm]{Figures/Chapter2/ideal_quadrupole_cos_2theta.png}
+        \label{fig:ideal_quadrupole}
+    }
+    \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. Taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
-    \end{center}
 \end{figure}
 
 In circular machine focusing from quads is periodic in $s$ with a period of max the circumference of the machine.
