@@ -6,7 +6,7 @@
 
 The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics, a field of accelerator science.
 This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
-Most of the material in this section can be found in the literature such as \cite{BOOK:Wilson:Introcution_Particle_Accelerators, BOOK:Lee:Accelerator_physics, BOOK:Minty:Measurements_Control_Charged_Particle_Beams,BOOK:Wolski:Beam_dynamics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
+Most of the material in this section can be found in the literature such as \cite{BOOK:Wilson:Introcution_Particle_Accelerators, BOOK:Lee:Accelerator_physics, BOOK:Wiedemann:Particle_Accelerator_Physics, BOOK:Minty:Measurements_Control_Charged_Particle_Beams,BOOK:Wolski:Beam_dynamics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
 When not in these works, explicit references to content are given.
 \todo{The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity}.
 
@@ -19,7 +19,7 @@ To force the beam's particles into a closed trajectory, they are subjected to ma
 The force exerted onto the beam is the Lorentz force \(F_{L}\), given by the equation:
 
 \begin{equation}
-    \vec{F_L} = \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) ,
+    \vec{F_L} = \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) \text{ ,}
     \label{equation:lorentz_force}
 \end{equation}
 where \(p\) is the particle momentum, \(q\) the particle charge, \(\vec{E}\) the electric field, \(\vec{v}\) the particle velocity and \(\vec{B}\) the magnetic field.
@@ -88,11 +88,21 @@ Particles within the beam are distributed in amplitude and oscillate around the 
 Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
 As a convention, a quadrupole focusing in the horizontal transverse plane and defocusing in the vertical is referred to as a \emph{focusing quadrupole}. 
 Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical is referred to as a \emph{defocusing quadrupole}.
-A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the $\mathrm{FODO}$ cell, a layout alternating quadrupoles in equal distance.
+A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \(\mathrm{FODO}\) cell, a layout alternating quadrupoles in equal distance.
+A schematic of a \(\mathrm{FODO}\) cell is shown in \cref{figure:fodo_cell_schematic}.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.8\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Schematic of a \(\mathrm{FODO}\) cell. A focusing quadrupole is denoted with an F while a defocusing one is denoted with a D.}}
+    \label{figure:fodo_cell_schematic}
+    \end{center}
+\end{figure}
+
 For each magnet applying a field \(B\) one can define the \emph{magnetic rigidity}, which is an indication of the field’s ability to alter a particle’s course based on its charge \(q\) and momentum \(p\), as:
 
 \begin{equation}
-    B \rho = \frac{p}{q}
+    B \rho = \frac{p}{q} \text{ .}
     \label{equation:magnetic_rigidity}
 \end{equation}
 
@@ -100,12 +110,12 @@ For each magnet applying a field \(B\) one can define the \emph{magnetic rigidit
 
 \begin{figure}[htp]
     \centering
-    \subfloat[.8\linewidth][Ideal dipole.]{
+    \subfloat[.7\linewidth][Ideal dipole.]{
         \includegraphics[width=6.5cm]{Figures/Chapter2/ideal_dipole_cos_theta.png}
         \label{fig:ideal_dipole}
     }
     \hspace{0.5cm}
-    \subfloat[.8\linewidth][Ideal quadrupole.]{
+    \subfloat[.7\linewidth][Ideal quadrupole.]{
         \includegraphics[width=6.5cm]{Figures/Chapter2/ideal_quadrupole_cos_2theta.png}
         \label{fig:ideal_quadrupole}
     }
@@ -117,60 +127,144 @@ The focusing from quadrupoles in a circular accelerator such as the LHC is perio
 Assuming the existence of a closed orbit, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
 \begin{equation}
-    u^{\prime \prime} + k(s) u = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} ,
+    u^{\prime \prime} + K_u(s) u(s) = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} \text{ ,}
     \label{equation:hill_equation}
 \end{equation}
+
 where \(k\) describes the focusing forces action on the beam, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
 A focusing quadrupole has a \(k > 0\), a focusing quadrupole has \(k < 0\), and a drift space has \(k = 0\).
+The focusing strengths in the transverse planes go as:
+
+\begin{equation}
+	\begin{aligned}
+		K_{x} &= \frac{1}{\rho^2} - k_{1} \text{ ,} \\
+    	K_{y} &= k_{1} \text{ .}
+	\end{aligned}
+    \label{equation:transverse_focusing_strengths}
+\end{equation}
+
+The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
 According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation take the form of \cref{equation:hill_solution}:
 
 \begin{equation}
     \begin{aligned}
-        x &= \sqrt{\beta_{x}(s) \varepsilon_{x}} \cos \left(\phi_{x}(s) + \phi_{x_0}\right) \\
-        y &= \sqrt{\beta_{y}(s) \varepsilon_{y}} \cos \left(\phi_{y}(s) + \phi_{y_0}\right)
+        u(s)          &= \sqrt{\beta_{u}(s) \varepsilon_{u}} \cos \left( \phi_{u}(s) + \phi_{u,0} \right) \text{ ,} \\
+        u^{\prime}(s) &= -\sqrt{\frac{\varepsilon_u}{\beta_u(s)}} \left( \sin \left(\phi_u(s) + \phi_{u, 0} \right) + \alpha(s) \cos \left( \phi_u(s)+\phi_{u, 0} \right) \right) \text{ .}
     \end{aligned}
     \label{equation:hill_solution}
 \end{equation}
 
-Here \(\beta(s)\) is the \emph{beta-function} and represents the fluctuation of the oscillation envelope around the ring, while \(\varepsilon\) is the \emph{geometric emittance} of a particle and is a constant of the motion at a given energy. 
-In particle colliders such as the LHC the \betafunctions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta^{\ast}\).
-The difference of the betatron phase functions at two points \(s_1\) and \(s_2\) in the lattice is called the betatron \emph{phase advance} and is defined as:
+These equations describe a harmonic oscillation in the transverse planes.
+Here \(\varepsilon_u\) is the \emph{geometric emittance} of a particle and is a constant of the motion at a given energy. 
+\(\phi_u(s)\) is the \emph{phase advance} and \(\alpha_u(s)\) is the \emph{alpha-function}.
+\(\beta_u(s)\) is the \emph{beta-function} and represents the fluctuation of the oscillation envelope around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
+In particle colliders such as the LHC the \betafunctions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_u^{\ast}\).
+The solution of Hill's equation can also be written in matrix form as:
 
 \begin{equation}
-    \mu = \phi(s_{2}) - \phi(s_{1}) = \int_{s_{1}}^{s_{2}} \frac{1}{\beta(s)} ds
+    \left(
+        \begin{array}{c}
+            u(s) \\
+            u^{\prime}(s)
+        \end{array} \right) = \mathrm{M} \left( 
+        \begin{array}{c}
+            u(0) \\
+            u^{\prime}(0)
+    \end{array} \right) \text{ ,}
+    \label{equation:hill_solution_matrix}
+\end{equation}
+with M being called a \emph{transfer matrix}.
+This form makes the assumption that the magnetic field of an element is constant along the longitudinal direction. 
+Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively.
+
+\begin{equation}
+    \mathrm{M_{drift}} = \left(
+        \begin{array}{ll}
+            1 & l \\
+            0 & 1
+    \end{array} \right) \text{ ,}
+    \label{equation:drift_transfer_matrix}
+\end{equation}
+
+\begin{equation}
+    \mathrm{M_{dip.}} = \left(
+        \begin{array}{cc}
+            \cos \theta           & \rho \sin \theta \\
+            -1 / \rho \sin \theta & \cos \theta
+    \end{array} \right) \text{ ,}
+    \label{equation:dipole_transfer_matrix}
+\end{equation}
+
+\begin{equation}
+    \mathrm{M_{foc. quad.}} = \left(
+        \begin{array}{cc}
+            \cos \left( \sqrt{k_1} l \right)             & \frac{1}{\sqrt{k_1}} \sin \left( \sqrt{k_1} l \right) \\
+            -\sqrt{k_1} \sin \left( \sqrt{k_1} l \right) & \cos \left( \sqrt{k_1} l \right)
+    \end{array} \right) \text{ ,}
+    \label{equation:focusing_quad_transfer_matrix}
+\end{equation}
+
+\begin{equation}
+    \mathrm{M_{defoc. quad.}} = \left(
+        \begin{array}{cc}
+            \cosh \left(\sqrt{\left| k_1b\right|} l \right)          & \frac{1}{\sqrt{\left| k_1 \right|}} \sinh \left( \sqrt{\left| k_1 \right|} l \right) \\
+            \sqrt{\abs{k_1}} \sinh \left( \sqrt{\abs{k_1} l} \right) & \cosh \left( \sqrt{\abs{k_1}} l \right)
+    \end{array} \right) \text{ ,}
+    \label{equation:defocusing_quad_transfer_matrix}
+\end{equation}
+where \(l\) is the element length and \(\theta = l / \rho\) is the bending angle of the dipole.
+The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
+For example, the transfer matrix corresponding to the \(\mathrm{FODO}\) cell of \cref{figure:fodo_cell_schematic} is:
+
+\begin{equation}
+    \mathrm{M_{FODO}} = \mathrm{M_{foc. quad.}} \mathrm{M_{drift}} \mathrm{M_{defoc. quad.}} \mathrm{M_{drift}} \text{ .}
+    \label{equation:fodo_transfer_matrix}
+\end{equation}
+
+The phase advance \(\phi_u(s)\) mentioned above corresponds to the difference of the betatron phase functions at two points, typically also taken with respect to an arbitrary initial point at \(s = 0\).
+The phase advance between two points at longitudinal positions \(s_1\) and \(s_2\) in the lattice is defined as:
+
+\begin{equation}
+    \phi_{s_1 \rightarrow s_2} = \phi(s_{2}) - \phi(s_{1}) = \int_{s_{1}}^{s_{2}} \frac{1}{\beta(s)} ds \text{ .}
 \end{equation}
 
 As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
-The number of these so-called \emph{betatron oscillations} per revolution is the \emph{tune} \(Q_{x,y}\).
-The tune is defined in \cref{equation:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron \emph{phase advance} of a particle3 over a full circumference:
+The number of these so-called \emph{betatron oscillations} per revolution is the \emph{tune} \(Q_u\).
+The tune is defined in \cref{equation:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron phase advance of a particle over a full circumference:
 
 \begin{equation}
-    Q_{x, y} = \frac{1}{2 \pi} \Delta \phi_{x, y} = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_{x, y}(s)}
+    Q_{u} = \frac{1}{2 \pi} \Delta \phi_{u} = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_{u} (s)} \text{ .}
     \label{equation:tune_definition}
 \end{equation}
 
-\todo{Here introduce going through a magnetic element and how we can use a matrix to represent. Do transfer matrix then (Tobias phd, eq 2.3). }
-
-Similarly to the \betafunction, the \emph{gamma-function} $\gamma(s)$ describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
-Both quantities are related by the \emph{alpha-function}, defined as:
+The \alphafunction is defined via the derivative of the \betafunction by:
 
 \begin{equation}
-    \alpha_{x, y}(s) = -\frac{1}{2} \dfrac{d}{ds} \beta_{x, y}(s) = \sqrt{\gamma_{x, y}(s) \beta_{x, y}(s) - 1}
+    \alpha_u(s) = - \frac{1}{2} \beta^{\prime}_u(s) \text{ .}
     \label{equation:alpha_function}
 \end{equation}
 
-In the linear regime all particle trajectories describe ellipses in \((x, x^{\prime})\) and \((y, y^{\prime})\) phase space.
-The geometric emittance \(\varepsilon\) introduced in \cref{equation:hill_solution}, also named the \emph{Courant-Snyder invariant}, defines together with the \emph{Twiss parameters} \(\alpha(s)\), \(\beta(s)\) and \(\gamma(s)\) the equation of the phase space ellispe:
+Similarly to the \(\beta\)-function, the \emph{gamma-function} $\gamma_u(s)$ describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
+Both quantities are related by the \alphafunction according to:
 
 \begin{equation}
-    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon \quad \text { where } u = x, y
+    \gamma_u(s) = \frac{1 + \alpha_u^2(s)}{\beta_u(s)} \text{ .}
+    \label{equation:gamma_function}
+\end{equation}
+
+The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \emph{Twiss parameters}.
+In the linear regime all particle trajectories describe ellipses in \((x, x^{\prime})\) and \((y, y^{\prime})\) phase space.
+The geometric emittance \(\varepsilon\) introduced in \cref{equation:hill_solution}, also named the \emph{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
+
+\begin{equation}
+    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon \quad \text { where } u = x, y \text{ .}
     \label{equation:ellipse_equation}
 \end{equation}
 
 \Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area of which is defined by the geometric emittance according to:
 
 \begin{equation}
-    A = \pi \varepsilon
+    A = \pi \varepsilon \text{ .}
     \label{equation:phase_space_ellipse_area}
 \end{equation}
 
@@ -419,9 +513,29 @@ https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
 
 \section{Betatron Coupling}
 
-Talk about the closest tune approach \(\Delta Q_{\mathrm{min}}\) quantity.
-Without betatron coupling in the machine, horizontal and vertical tunes can be matched to the same fractional value.
-In the presence of betatron coupling, the \emph{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same value and a minimal separation can be observed.
+When the betatronic motion of particles in transverse planes are independent of each other, they are said to be \emph{uncoupled}.
+In particle colliders such as the LHC, this behaviour is typically desirable.
+When these motions share a dependency, they are said to be \emph{coupled}, and one refers to this phenomenon as \emph{betatron coupling}, or linear coupling.
+The transverse motions of particles in an accelerator may couple due to a variety of factors.
+Solenoid and skew quadrupole fields are the primary sources of linear coupling.
+An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
+
+\begin{figure}
+    \begin{center}
+    \includegraphics[width = 0.9\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Illustration of a skew quadrupole and its magnetic field lines.}}
+    \label{figure:skew_quadrupole}
+    \end{center}
+\end{figure}
+
+\subsection{Parametrization of Betatron Coupling}
+
+\todo{Content}
+
+\subsection{Impact and Visibility on Tunes}
+
+Without any betatron coupling in the machine, the horizontal and vertical tunes can be matched to the same fractional value.
+In the presence of betatron coupling however, the \emph{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same fractional value, and a minimal separation can be observed.
 This separation is called the \emph{closest tune approach} and is given as the \(\Delta Q_{\mathrm{min}}\) quantity.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
 The closest tune approach is the minimum distance between the two red curves, highlighted by an arrow.
