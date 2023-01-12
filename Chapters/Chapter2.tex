@@ -458,22 +458,7 @@ The magnetic field of a multipole of order \(n\) is given by:
 \end{equation}
 
 Here \(B_n(s)\) and \(A_n(s)\) are the normal and skew multipole coefficients, respectively, where a skew magnet is rotated by \(\pi / (2 n)\) with respect to its normal counterpart.
-
-Starting from the Hamiltoninan Equations
-
-\begin{equation}
-    \dfrac{d \vec{p_z}}{d t} = - \frac{\partial \mathcal{H}}{\partial \vec{z}} \quad \dfrac{d \vec{z}}{d t} = \frac{\partial \mathcal{H}}{\partial \vec{p_z}} \text{ ,}
-    \label{equation:hamiltonian_equations}
-\end{equation}
-
-where the Hamiltonian for the transverse planes for a multipole of order n is given by~\cite{PHD:Tomas, PHD:Franchi}
-
-\begin{equation}
-    \mathcal{H} = \frac{q}{p} \operatorname{Re} \left[ \left( b_n +i a_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
-    \label{equation:hamiltonian_multipole_order_n}
-\end{equation}
-
-In the linear regime, it follows that
+In the linear regime, the Hamiltonian may be written as
 
 \begin{equation}
     \mathcal{H} = \frac{1}{2} p_x^2 + \frac{1}{2} p_y^2 + \frac{1}{2} K(s) x^2 - \frac{1}{2} K(s) y^2
@@ -481,19 +466,32 @@ In the linear regime, it follows that
 \end{equation}
 where \(K(s)\) describes the variation of focusing strength around the ring.
 
-The contribution to the Hamiltonian of a multipole of order \(n\) is given by~\cite{PHD:Tomas}:
+Starting from the Hamiltonian equations
 
 \begin{equation}
-    \mathcal{H_n} = \frac{q}{p} \operatorname{Re} \left[ \frac{1}{n} \left[ B_n(s) + i A_n(s) \right](x + i y)^n \right] \text{ .}
+    \dfrac{d \vec{p_z}}{d t} = - \frac{\partial \mathcal{H}}{\partial \vec{z}} \quad \quad \quad \dfrac{d \vec{z}}{d t} = \frac{\partial \mathcal{H}}{\partial \vec{p_z}} \text{ ,}
+    \label{equation:hamiltonian_equations}
+\end{equation}
+the Hamiltonian for the transverse planes for a multipole of order n is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
+
+\begin{equation}
+    \mathcal{H} = \frac{q}{p} \operatorname{Re} \left[ \left( B_n +i A_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
+If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
 
+\begin{equation}
+    \begin{aligned}
+        N_n \propto \operatorname{Re} \left[(x + i y)^n \right] \text{ ,} \\
+        S_n \propto \operatorname{Im} \left[(x + i y)^n \right] \text{ .} \\
+    \end{aligned}
+    \label{equation:hamiltonian_prop_normal_and_skew_multipoles}
+\end{equation}
 
+%----------------------------------------------------------------------------------------
 
-
-
-
+\section{Non-Linear Formalism and Resonance Driving Terms}
 
 
 
@@ -505,158 +503,155 @@ The contribution to the Hamiltonian of a multipole of order \(n\) is given by~\c
 
 
 \clearpage
-%----------------------------------------------------------------------------------------
-
-\section{Formalism of Non-Linear Beam Dynamics}
 
 %----------------------------------------------------------------------------------------
 
-\section{Phenomenology of Non-Linear Beam Dynamics}
+% \section{Phenomenology of Non-Linear Beam Dynamics}
 
-\subsection{Chromaticity}
+% \subsection{Chromaticity}
 
-\subsection{Detuning with Amplitude}
+% \subsection{Detuning with Amplitude}
 
-\subsection{Decoherence}
+% \subsection{Decoherence}
 
 %----------------------------------------------------------------------------------------
 
-\section{Normal Form Formalism and Resonance Driving Terms}
+% \section{Normal Form Formalism and Resonance Driving Terms}
 
 
-The derivation in this section follows the approach given in \cite{Tomas_thesis, Franchi_thesis}.
-While the non-linear dynamics can not be described with matrices, it can be described by the transfer map formalism.
-In the frame where the one turn map is represented by a pure rotation - in normal forms coordinates - it can be written as \cite{Tomas_thesis}:\\
+% The derivation in this section follows the approach given in \cite{Tomas_thesis, Franchi_thesis}.
+% While the non-linear dynamics can not be described with matrices, it can be described by the transfer map formalism.
+% In the frame where the one turn map is represented by a pure rotation - in normal forms coordinates - it can be written as \cite{Tomas_thesis}:\\
 
-\begin{equation}
-    \mathcal{M} = 
-    e^{:\eqnmarkbox[blue]{node1}{\tilde{h_{1}}}:}
-    e^{:\eqnmarkbox[red]{node2}{\tilde{h_{2}}}:}
-    \ldots
-    e^{:\eqnmarkbox[green]{noden}{\tilde{h_{n}}}:}
-    R
-    \label{equation:norm_form_one_turn_map}
-\end{equation}
-\annotate[yshift=0.5em]{above, left}{node1}{First element}
-\annotate[yshift=-0.75em]{below}{node2}{Second element}
-\annotate[yshift=0.5em]{above, right}{noden}{Nth element}\\\\
-% ------------------ %
-where \(e^{:\tilde{h_{1}}:}\) is an exponential Lie operator describing a nonlinear element, and \(\mathbf{R}\) is the rotation matrix describing the linear motion.
-This simplifies through the Campbell-Baker-Hausdorff theorem to:
+% \begin{equation}
+%     \mathcal{M} = 
+%     e^{:\eqnmarkbox[blue]{node1}{\tilde{h_{1}}}:}
+%     e^{:\eqnmarkbox[red]{node2}{\tilde{h_{2}}}:}
+%     \ldots
+%     e^{:\eqnmarkbox[green]{noden}{\tilde{h_{n}}}:}
+%     R
+%     \label{equation:norm_form_one_turn_map}
+% \end{equation}
+% \annotate[yshift=0.5em]{above, left}{node1}{First element}
+% \annotate[yshift=-0.75em]{below}{node2}{Second element}
+% \annotate[yshift=0.5em]{above, right}{noden}{Nth element}\\\\
+% % ------------------ %
+% where \(e^{:\tilde{h_{1}}:}\) is an exponential Lie operator describing a nonlinear element, and \(\mathbf{R}\) is the rotation matrix describing the linear motion.
+% This simplifies through the Campbell-Baker-Hausdorff theorem to:
 
-\begin{equation}
-    \mathcal{M} = e^{:h:} R
-\end{equation}
+% \begin{equation}
+%     \mathcal{M} = e^{:h:} R
+% \end{equation}
 
-In case the \(\tilde{h_{n}}\) are small, then \(h\) may be approximated by:
+% In case the \(\tilde{h_{n}}\) are small, then \(h\) may be approximated by:
 
-\begin{equation}
-    h = \sum_{n=1}^{N} \tilde{h}_{n} + \sum_{n, m<n}^{N} \left[\tilde{h}_{m}, \tilde{h}_{n} \right] + \ldots
-    \label{equation:h_expansion}
-\end{equation}
+% \begin{equation}
+%     h = \sum_{n=1}^{N} \tilde{h}_{n} + \sum_{n, m<n}^{N} \left[\tilde{h}_{m}, \tilde{h}_{n} \right] + \ldots
+%     \label{equation:h_expansion}
+% \end{equation}
 
-Using only the first order in \(\tilde{h_{n}}\), \(h\) may be expanded according to \cref{equation:h_approximation_first_order} using the action-angle variables TODO.
+% Using only the first order in \(\tilde{h_{n}}\), \(h\) may be expanded according to \cref{equation:h_approximation_first_order} using the action-angle variables TODO.
 
-\begin{equation}
-    h = \sum_{j k l m} h_{j k l m} \left(2 J_{x}\right)^{\frac{j+k}{2}} \left(2 J_{y}\right)^{\frac{l+m}{2}} e^{i \left[(j-k)\left(\phi_{x}-\phi_{x_{0}}\right) + (l-m)\left(\phi_{y}-\phi_{y_{0}}\right) \right]}
-    \label{equation:h_approximation_first_order}
-\end{equation}
+% \begin{equation}
+%     h = \sum_{j k l m} h_{j k l m} \left(2 J_{x}\right)^{\frac{j+k}{2}} \left(2 J_{y}\right)^{\frac{l+m}{2}} e^{i \left[(j-k)\left(\phi_{x}-\phi_{x_{0}}\right) + (l-m)\left(\phi_{y}-\phi_{y_{0}}\right) \right]}
+%     \label{equation:h_approximation_first_order}
+% \end{equation}
 
-Here \(h_{j k l m}\) are Hamiltonian coefficients representing the contributions from multipoles of order \(n = j + k + l + m\).
-A multipole of order \(n\) generates terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\), where again \(n = j + k + l + m\).
+% Here \(h_{j k l m}\) are Hamiltonian coefficients representing the contributions from multipoles of order \(n = j + k + l + m\).
+% A multipole of order \(n\) generates terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\), where again \(n = j + k + l + m\).
 
-In the case of a skew quadrupole, such an element gives rise to terms in the Hamiltonian \(\propto xy\), meaning that it contributes to the Hamiltonian terms \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
-The idea behind normal form coordinates is to perform a transformation from a system with amplitude and phase dependence to a simpler form.
-The simplest form is an amplitude dependent rotation, i.e. a rotation in phase space where the angle depends on the amplitude of the particle.
-An excellent approach to normal forms formalism can be found in \cite{Carlier_thesis}.
+% In the case of a skew quadrupole, such an element gives rise to terms in the Hamiltonian \(\propto xy\), meaning that it contributes to the Hamiltonian terms \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
+% The idea behind normal form coordinates is to perform a transformation from a system with amplitude and phase dependence to a simpler form.
+% The simplest form is an amplitude dependent rotation, i.e. a rotation in phase space where the angle depends on the amplitude of the particle.
+% An excellent approach to normal forms formalism can be found in \cite{Carlier_thesis}.
 
-The coordinate change is represented by a similarity transformation of the one turn map:
+% The coordinate change is represented by a similarity transformation of the one turn map:
 
-\begin{equation}
-    e^{-: F:} e^{: h:} R e^{: F:}
-\end{equation}
-% ------------------ %
-where \(F\) is the generating function for the transformation.
-The formal solution to finding the generating function F is given in \cite{Forest_normal_forms} and the explicit expression is obtained in \cite{Tomas_thesis} as
+% \begin{equation}
+%     e^{-: F:} e^{: h:} R e^{: F:}
+% \end{equation}
+% % ------------------ %
+% where \(F\) is the generating function for the transformation.
+% The formal solution to finding the generating function F is given in \cite{Forest_normal_forms} and the explicit expression is obtained in \cite{Tomas_thesis} as
 
-\begin{equation}
-    F = \sum_{j k l m} f_{j k l m} \left(2 I_{x}\right)^{\frac{j+k}{2}}\left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i\left[(j-k)\left(\psi_{x}-\psi_{x_{0}}\right)+(l-m)\left(\psi_{y}-\psi_{y_{0}}\right)\right]}
-    \label{equation:F_generating}
-\end{equation}
-% ------------------ %
-where \(f_{jklm}\) are the resonance driving terms corresponding to the Hamiltonian terms \(h_{jklm}\) respectively.
-They can be expressed according to \cref{equation:f_rdts} \cite{Tomas_thesis, Franchi_thesis}, where \(Q_x\) and \(Q_y\) are the unperturbed tunes.
+% \begin{equation}
+%     F = \sum_{j k l m} f_{j k l m} \left(2 I_{x}\right)^{\frac{j+k}{2}}\left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i\left[(j-k)\left(\psi_{x}-\psi_{x_{0}}\right)+(l-m)\left(\psi_{y}-\psi_{y_{0}}\right)\right]}
+%     \label{equation:F_generating}
+% \end{equation}
+% % ------------------ %
+% where \(f_{jklm}\) are the resonance driving terms corresponding to the Hamiltonian terms \(h_{jklm}\) respectively.
+% They can be expressed according to \cref{equation:f_rdts} \cite{Tomas_thesis, Franchi_thesis}, where \(Q_x\) and \(Q_y\) are the unperturbed tunes.
 
-\begin{equation}
-    f_{jklm} = \frac{h_{jklm}}{1 - e^{i 2 \pi \left[(j-k) Q_{x} + (l-m) Q_{y} \right]}}
-    \label{equation:f_rdts}
-\end{equation}
-% ------------------ %
-\Cref{equation:f_rdts} diverges when \(j, k, l, m, Q_x\) and \(Q_y\) satisfy the condition:
+% \begin{equation}
+%     f_{jklm} = \frac{h_{jklm}}{1 - e^{i 2 \pi \left[(j-k) Q_{x} + (l-m) Q_{y} \right]}}
+%     \label{equation:f_rdts}
+% \end{equation}
+% % ------------------ %
+% \Cref{equation:f_rdts} diverges when \(j, k, l, m, Q_x\) and \(Q_y\) satisfy the condition:
 
-\begin{equation}
-    (j-k) Q_{x} + (l-m) Q_{y} = p \quad \text{ where } p \in \mathcal{Z}
-    \label{equation:resonance_condition}
-\end{equation}
-% ------------------ %
-Hence, the \(f_{jklm}\) terms are the driving terms of the resonances \([(j-k),(l-m)]\).
-Every Hamiltonian term is associated with a resonance, which explains the term Resonance Driving Terms.
-The normalized Courant-Snyder coordinates are related to the action-angle variable as
+% \begin{equation}
+%     (j-k) Q_{x} + (l-m) Q_{y} = p \quad \text{ where } p \in \mathcal{Z}
+%     \label{equation:resonance_condition}
+% \end{equation}
+% % ------------------ %
+% Hence, the \(f_{jklm}\) terms are the driving terms of the resonances \([(j-k),(l-m)]\).
+% Every Hamiltonian term is associated with a resonance, which explains the term Resonance Driving Terms.
+% The normalized Courant-Snyder coordinates are related to the action-angle variable as
 
-\begin{equation}
-    \begin{aligned}
-    z &= \sqrt{2 J_{z}} \cos (\phi_{z} - \phi_{z_{0}}) \\
-    p_{z} &= -\sqrt{2 J_{z}} \sin (\phi_{z} - \phi_{z_{0}}) \quad \text { where } z=x, y
-    \end{aligned}
-    \label{equation:courant_snyder_to_action_angle}
-\end{equation}
-% ------------------ %
-It is convenient to introduce the resonant basis h defined as
+% \begin{equation}
+%     \begin{aligned}
+%     z &= \sqrt{2 J_{z}} \cos (\phi_{z} - \phi_{z_{0}}) \\
+%     p_{z} &= -\sqrt{2 J_{z}} \sin (\phi_{z} - \phi_{z_{0}}) \quad \text { where } z=x, y
+%     \end{aligned}
+%     \label{equation:courant_snyder_to_action_angle}
+% \end{equation}
+% % ------------------ %
+% It is convenient to introduce the resonant basis h defined as
 
-\begin{equation}
-    \begin{aligned}
-    h_{z}^{\pm} &= z \pm i p_{z} = \sqrt{2 J_{z}} e^{\mp i \left(\phi_{z}-\phi_{z_{0}}\right)} \quad \text { where } z=x, y \\
-    \mathbf{h} &= \left( h_{x}^{+}, h_{x}^{-}, h_{y}^{+}, h_{y}^{-} \right)
-    \end{aligned}
-    \label{equation:resonant_basis_h}
-\end{equation}
+% \begin{equation}
+%     \begin{aligned}
+%     h_{z}^{\pm} &= z \pm i p_{z} = \sqrt{2 J_{z}} e^{\mp i \left(\phi_{z}-\phi_{z_{0}}\right)} \quad \text { where } z=x, y \\
+%     \mathbf{h} &= \left( h_{x}^{+}, h_{x}^{-}, h_{y}^{+}, h_{y}^{-} \right)
+%     \end{aligned}
+%     \label{equation:resonant_basis_h}
+% \end{equation}
 
-The transformation to a new set of Normal Form coordinates \(\left(\zeta_{x}^{+}, \zeta_{x}^{-}, \zeta_{y}^{+}, \zeta_{y}^{-}\right)\) is given by the operator \(e^{: -F :}\).
-This is expressed as
+% The transformation to a new set of Normal Form coordinates \(\left(\zeta_{x}^{+}, \zeta_{x}^{-}, \zeta_{y}^{+}, \zeta_{y}^{-}\right)\) is given by the operator \(e^{: -F :}\).
+% This is expressed as
 
-\begin{equation}
-    \zeta_{z}^{\pm} = \sqrt{2 I_{z}} e^{\pm i \left(\phi_{z}+\phi_{z 0} \right)} = e^{:-F:} h_{z}^{\pm}
-    \label{equation:action_angle_to_normal_form}
-\end{equation}
-% ------------------ %
-where \(I_{z}\) is the invariant of motion in the new frame.
-The one-turn map in normal form coordinates is by construction an amplitude dependent rotation, and hence the motion in these coordinates as a function of the turn number N is given by
+% \begin{equation}
+%     \zeta_{z}^{\pm} = \sqrt{2 I_{z}} e^{\pm i \left(\phi_{z}+\phi_{z 0} \right)} = e^{:-F:} h_{z}^{\pm}
+%     \label{equation:action_angle_to_normal_form}
+% \end{equation}
+% % ------------------ %
+% where \(I_{z}\) is the invariant of motion in the new frame.
+% The one-turn map in normal form coordinates is by construction an amplitude dependent rotation, and hence the motion in these coordinates as a function of the turn number N is given by
 
-\begin{equation}
-    \zeta_{z}^{-}(N) = \sqrt{2 I_{z}} e^{2 \pi \nu_{x} N + \phi z_{0}}
-    \label{equation:normal_form_by_turn}
-\end{equation}
+% \begin{equation}
+%     \zeta_{z}^{-}(N) = \sqrt{2 I_{z}} e^{2 \pi \nu_{x} N + \phi z_{0}}
+%     \label{equation:normal_form_by_turn}
+% \end{equation}
 
-The inverse transformation from the new action-angle variables to the linearly normalized variable is to first order written as
+% The inverse transformation from the new action-angle variables to the linearly normalized variable is to first order written as
 
-\begin{equation}
-    h_{z}^{-} = e^{: F:} \zeta_{z}^{-} \simeq \zeta_{z}^{-} + \left[F, \zeta_{z}^{-}\right]
-    \label{equation:inverse_normal_form_transform}
-\end{equation}
+% \begin{equation}
+%     h_{z}^{-} = e^{: F:} \zeta_{z}^{-} \simeq \zeta_{z}^{-} + \left[F, \zeta_{z}^{-}\right]
+%     \label{equation:inverse_normal_form_transform}
+% \end{equation}
 
-and using \cref{equation:normal_form_by_turn} and \cref{equation:inverse_normal_form_transform} the normalized coordinates can be expressed in the form
+% and using \cref{equation:normal_form_by_turn} and \cref{equation:inverse_normal_form_transform} the normalized coordinates can be expressed in the form
 
-\begin{equation}
-    \begin{aligned}
-    h_{x}^{-}(N) &= \sqrt{2 I_{x}} e^{i\left(2 \pi \nu_{x} N - \psi_{x_{0}}\right)} - \\
-    & 2 i \sum_{jklm} j f_{jklm} \left(2 I_{x}\right)^{\frac{j+k-1}{2}} \left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i \left[(1-j+k) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (m-l) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]} \\
-    h_{y}^{-}(N) &= \sqrt{2 I_{y}} e^{i\left(2 \pi \nu_{y} N - \psi_{y_{0}}\right)} - \\
-    & 2 i \sum_{jklm} l f_{jklm} \left(2 I_{x}\right)^{\frac{j+k}{2}} \left(2 I_{y}\right)^{\frac{l+m-1}{2}} e^{i \left[(k-j) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (1-l+m) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]}
-    \end{aligned}
-    \label{equation:normal_form_coordinates}
-\end{equation}
+% \begin{equation}
+%     \begin{aligned}
+%     h_{x}^{-}(N) &= \sqrt{2 I_{x}} e^{i\left(2 \pi \nu_{x} N - \psi_{x_{0}}\right)} - \\
+%     & 2 i \sum_{jklm} j f_{jklm} \left(2 I_{x}\right)^{\frac{j+k-1}{2}} \left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i \left[(1-j+k) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (m-l) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]} \\
+%     h_{y}^{-}(N) &= \sqrt{2 I_{y}} e^{i\left(2 \pi \nu_{y} N - \psi_{y_{0}}\right)} - \\
+%     & 2 i \sum_{jklm} l f_{jklm} \left(2 I_{x}\right)^{\frac{j+k}{2}} \left(2 I_{y}\right)^{\frac{l+m-1}{2}} e^{i \left[(k-j) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (1-l+m) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]}
+%     \end{aligned}
+%     \label{equation:normal_form_coordinates}
+% \end{equation}
 
-https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
+
 
 
 \section{Betatron Coupling}
@@ -699,5 +694,7 @@ The closest tune approach is the minimum distance between the two red curves, hi
 %----------------------------------------------------------------------------------------
 
 \section{Luminosity}
+
+https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
 
 %----------------------------------------------------------------------------------------
