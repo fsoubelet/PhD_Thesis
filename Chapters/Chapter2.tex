@@ -1,4 +1,4 @@
-\chapter{Relevant Theory of Beam Dynamics for the Large Hadron Collider} % Main chapter title
+\chapter{Theory of Beam Dynamics Relevant to the Large Hadron Collider}
 
 \label{Chapter:Theory} % For referencing the chapter elsewhere, use \cref{Chapter:Theory}
 
@@ -15,6 +15,9 @@ When not in these works, explicit references to content are given.
 \section{Linear Beam Dynamics}
 
 The linear dynamics of an accelerator are, mainly, the endeavor to bend and focus particle beams to confine them within the machine's aperture.
+
+\subsection{Transport and Guiding of Charged Particles}
+
 To force the beam's particles into a closed trajectory, they are subjected to magnetic fields that deflect their trajectories.
 The force exerted onto the beam is the Lorentz force \(F_{L}\), given by the equation:
 
@@ -123,6 +126,8 @@ For each magnet applying a field \(B\) one can define the \emph{magnetic rigidit
     \label{figure:dipole_quadrupole_fields}
 \end{figure}
 
+\subsection{Equations of Motion and Twiss Parameters}
+
 The focusing from quadrupoles in a circular accelerator such as the LHC is periodic in \(s\), with a period of at most the circumference of the machine.
 Assuming the existence of a closed orbit, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
@@ -144,6 +149,7 @@ The focusing strengths in the transverse planes go as:
 \end{equation}
 
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
+In the material below, \(u\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
 According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation take the form of \cref{equation:hill_solution}:
 
 \begin{equation}
@@ -253,18 +259,39 @@ Both quantities are related by the \alphafunction according to:
 \end{equation}
 
 The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \emph{Twiss parameters}.
-In the linear regime all particle trajectories describe ellipses in \((x, x^{\prime})\) and \((y, y^{\prime})\) phase space.
-The geometric emittance \(\varepsilon\) introduced in \cref{equation:hill_solution}, also named the \emph{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
+The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
-    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon \quad \text { where } u = x, y \text{ .}
+    \mathrm{M} = 
+    \left( 
+    \begin{array}{ll}
+        m_{11} & m_{12} \\
+        m_{21} & m_{22}
+    \end{array} \right) 
+    = 
+    \left(
+    \begin{array}{cc}
+        \cos(\phi_u) + \alpha_u \sin(\phi_u) & \beta_u \sin(\phi_u) \\
+        - \gamma_u \sin(\phi_u)              & \cos(\phi_u) - \alpha_u \sin(\phi_u)
+    \end{array} 
+    \right) \text{ .}
+    \label{equation:transfer_matrix_twiss_parameters}
+\end{equation}
+
+\subsection{Phase Space Ellipse}
+
+In the linear regime all particle trajectories describe ellipses in \((u, u^{\prime})\) phase space.
+The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \emph{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
+
+\begin{equation}
+    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon_u \text{ .}
     \label{equation:ellipse_equation}
 \end{equation}
 
 \Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area of which is defined by the geometric emittance according to:
 
 \begin{equation}
-    A = \pi \varepsilon \text{ .}
+    A = \pi \varepsilon_u \text{ .}
     \label{equation:phase_space_ellipse_area}
 \end{equation}
 
@@ -281,24 +308,31 @@ When accelerating the beam this theorem no longer holds true and the geometric e
 One can then construct the \emph{normalized emittance} \(\varepsilon_{\gamma}\), which is invariant with beam energy, based on the relativistic beta and gamma:
 
 \begin{equation}
-    \varepsilon_{\gamma} = (\beta_{\mathrm{rel}} \gamma_{\mathrm{rel}}) \varepsilon
+    \varepsilon_u^{\mathrm{norm}} = \beta_{\mathrm{rel}} \gamma_{\mathrm{rel}} \varepsilon_u \text{ ,}
     \label{equation:normalized_emittance}
 \end{equation}
 
 When referring to the emittance of a specific particle one uses the term \emph{single particle emittance}.
-Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
-For a Gaussian shaped beam the particle at a \(1 \sigma\) orbit offset defines the beam size:
+The \emph{action} \(J_u\) is related to the single particle emittance by:
 
 \begin{equation}
-    \sigma_u = \sqrt{\varepsilon_u \beta_u} \quad \text { where } u = x, y
+    2 J_u = \varepsilon_u \text{ .}
+    \label{equation:single_particle_action}
 \end{equation}
 
-Its Courant-Snyder invariant is equivalent with the so-called \emph{beam emittance}, which describes the phase space volume occupied by the particles of the beam, typically taken as the emittance corresponding to a particle amplitude of \(1 \sigma\) in the assumed Gaussian particle distribution.
+Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
+For a Gaussian shaped beam the transverse beam size is defined as:
+
+\begin{equation}
+    \sigma_u = \sqrt{\beta_u(s) \varepsilon_u^{\mathrm{beam}}} \text{ ,}
+    \label{equation:gaussian_beam_transverse_beam_size}
+\end{equation}
+with \(\varepsilon_u^{\mathrm{beam}}\) the beam emittance, typically defined the emittance corresponding to a \(1 \sigma\) amplitude of the Gaussian charge distribution.
 In the case of more general particle distributions an alternative definition of the beam emittance is often used~\cite{CERN:Muller:Beam_Matter_Covariance_Matrix_Emittance, CERN:Buon:CAS_Beam_Phase_Space_Emittance}:
 
 \begin{equation}
-    \epsilon_{rms,u} = \sqrt{\left\langle u \right\rangle^{2} \left\langle u^{\prime} \right\rangle^{2} - \left\langle uu^{\prime} \right\rangle^{2}} \quad \text { where } u = x, y
-    \label{equation:beam_emittance}
+    \varepsilon_u^{\mathrm{rms}} = \sqrt{\left\langle u \right\rangle^{2} \left\langle u^{\prime} \right\rangle^{2} - \left\langle uu^{\prime} \right\rangle^{2}} \text{ .}
+    \label{equation:beam_emittance_general}
 \end{equation}
 
 The phase space trajectory of a particle depends on the Twiss parameters $\alpha(s)$, $\beta(s)$, and $\gamma(s)$.
@@ -314,43 +348,69 @@ One can remove this dependency by performing a coordinate transformation to the 
     \end{array}\right)\left(\begin{array}{c}
     u \\
     u^{\prime}
-    \end{array}\right) \quad \text{ where } u = x, y
+    \end{array}\right) \text{ ,}
     \label{equation:courant_snyder_coordinates}
 \end{equation}
-
 where the Courant-Snyder coordinates are denoted by \^{}.
 In this new system particles follow circular trajectories in phase space.
+
+\subsection{Chromatic Effects}
 
 Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
 Naturally, in practice particles withing the beam have a distribution in energy and momentum.
 For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \textit{relative momentum deviation} \(\delta\): the deviation from the reference orbit from the momentum deviation.
 
 \begin{equation}
-    \delta = \frac{\Delta p}{p} = \frac{p - p_{0}}{p_{0}}
+    \delta = \frac{p - p_{0}}{p_{0}} = \frac{\Delta p}{p} \text{ .}
     \label{equation:momentum_deviation}
 \end{equation}
 
-Such momenta offsets introduce \emph{chromatic errors} in the beam dynamics, for instance \emph{dispersion}.
-From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles, and therefore different 
-Different momenta(um?) -> different beam rigidity -> different local radius of curvature in dipoles -> different orbit.
+Such momenta offsets introduce \emph{chromatic errors} in the beam dynamics.
+Effects and parameters depending on \(\delta_p\) are called \emph{chromatic effects}.
 
+From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
 The deviation of an off momentum particle orbit from that of the synchronous particle is defined by the \emph{dispersion function} $D(s)$.
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
-    \begin{aligned}
-    \Delta x_{\mathrm{dispersion}} &= D_{x}(s) \delta \\
-    \Delta y_{\mathrm{dispersion}} &= D_{y}(s) \delta
-    \end{aligned}
+    \Delta u_{\mathrm{dispersion}} = D_{u}(s) \delta 
     \label{equation:dispersion_contribution_to_orbit}
 \end{equation}
 \bigbreak
 
-The orbit of any given particle is defined by:
+Off-momentum particle positions scale linearly with dispersion, and in its presence \cref{equation:hill_solution} is extended to~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}:
 
 \begin{equation}
-    u = u_{\mathrm{betatronic}} + u_{\mathrm{dispersion}} + \left.u_{\mathrm{closed \ orbit}} \right\rvert_{\delta = 0} \quad \text{ where } u = x, y
-    \label{equation:_particle_orbit}
+    u(s) = \sqrt{\varepsilon_u \beta_u(s)} \cos \left( \phi_u(s) + \phi_{u, 0} \right) + D_u(s) \delta_p
+\end{equation}
+
+Another chromatic parameter is the \emph{chromaticity} \(Q_u^{\prime}\), which describes the tune shift \(\Delta Q_u\) with particle momentum by
+
+\begin{eqnarray}
+    Q^{\prime}_u = \frac{\Delta Q_u}{\delta_p} \text{ .}
+    \label{equation:chromaticity_definition}
+\end{eqnarray}
+
+The effective focusing strength of quadrupoles, which is inversely proportional to the momentum, differs for off momentum particles.
+The change of focusing strength due to energy deviation is:
+
+\begin{equation}
+	\Delta k_{1} = - \dfrac{e}{p^2} \dfrac{d B_{y}}{d x} \Delta p = -k_{1} \delta_p \text{ .}
+    \label{equation:quadrupole_focusing_strength_deviation_from_dispersion}
+\end{equation}
+
+This quadrupole error results in a tune shift proportional to the energy offset:
+
+\begin{equation}
+	\Delta Q = \dfrac{1}{4 \pi} \int \beta(s) \Delta k_{1}(s) ds = \left[ - \frac{1}{4 \pi} \int \beta(s) k_{1}(s) ds \right] \delta \text{ .}
+    \label{equation:tune_shift_from_dispersion}
+\end{equation}
+
+The natural chromaticity of a linear lattice can then be approximated by~\cite{CAS:Guiducci:Chromaticity}:
+
+\begin{equation}
+    Q_u^{\prime} \approx -\frac{1}{4 \pi} \oint \beta_u(s) K_u \mathrm{d}s \text{ .}
+    \label{equation:natural_chromaticity_approximation}
 \end{equation}
 
 %----------------------------------------------------------------------------------------
