@@ -99,31 +99,29 @@ headsepline, % Uncomment to get a line under the header
 %	START OF DOCUMENT - FRONTMATTER
 %----------------------------------------------------------------------------------------
 
-
 \begin{document}
 
 \frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
 \pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
 
-
 \include{Frontmatter/Titlepage.tex}
 \include{Toolkit/mathcommands.tex}
 \include{Toolkit/usercommands.tex}
-% \include{Frontmatter/Dedicatory.tex}
-% \include{Frontmatter/Abstract.tex}
-% \include{Frontmatter/Declaration.tex}
-% \include{Frontmatter/Acknowledgements.tex}
-% \include{Frontmatter/Quotation.tex}
+\include{Frontmatter/Dedicatory.tex}
+\include{Frontmatter/Abstract.tex}
+\include{Frontmatter/Declaration.tex}
+\include{Frontmatter/Acknowledgements.tex}
+\include{Frontmatter/Quotation.tex}
 
 \setcounter{tocdepth}{1}  % Determines how detailed the table of content should be
 \tableofcontents % Prints the main table of contents
 \listoffigures % Prints the list of figures
 \listoftables % Prints the list of tables
 
-% \include{Frontmatter/Abbreviations.tex}
-% \include{Frontmatter/Constants.tex}
-% \include{Frontmatter/Symbols.tex}
+\include{Frontmatter/Abbreviations.tex}
+\include{Frontmatter/Constants.tex}
+\include{Frontmatter/Symbols.tex}
 
 
 %----------------------------------------------------------------------------------------
@@ -135,15 +133,15 @@ headsepline, % Uncomment to get a line under the header
 \pagestyle{thesis} % Return the page headers back to the "thesis" style
 
 \include{Toolkit/chapterstyle.tex}
-% \include{Toolkit/equations_settings.tex}
-% \include{Chapters/testchapter.tex}
-% \include{Chapters/Introduction}
+\include{Toolkit/equations_settings.tex}
+\include{Chapters/testchapter.tex}
+\include{Chapters/Introduction}
 \include{Chapters/Beam_Dynamics_Theory}
-% \include{Chapters/Optics_Measurements_Corrections_at_LHC}
-% \include{Chapters/IR_Coupling_Correction}
-% \include{Chapters/ML_for_IR_Coupling}
-% \include{Chapters/Other_Studies}
-% \include{Chapters/Conclusion}
+\include{Chapters/Optics_Measurements_Corrections_at_LHC}
+\include{Chapters/IR_Coupling_Correction}
+\include{Chapters/ML_for_IR_Coupling}
+\include{Chapters/Other_Studies}
+\include{Chapters/Conclusion}
 
 
 %----------------------------------------------------------------------------------------
@@ -160,10 +158,10 @@ headsepline, % Uncomment to get a line under the header
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
 \include{Appendices/Hamiltonian_Derivation}
-% \include{Appendices/Naming_Conventions}
-% \include{Appendices/Experimental_Knobs}
-% \include{Appendices/Measurement_Fills}
-% \include{Appendices/ML_Models}
+\include{Appendices/Naming_Conventions}
+\include{Appendices/Experimental_Knobs}
+\include{Appendices/Measurement_Fills}
+\include{Appendices/ML_Models}
 
 %----------------------------------------------------------------------------------------
 
