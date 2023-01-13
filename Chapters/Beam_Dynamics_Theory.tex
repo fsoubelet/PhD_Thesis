@@ -497,7 +497,7 @@ the Hamiltonian for the transverse planes for a multipole of order n is given by
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
-If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson} these follow:
+If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
 
 \begin{equation}
     \begin{aligned}
@@ -547,7 +547,7 @@ For the curious reader, a very thourough approach to normal forms can be found i
 
 As introduced in \cref{equation:one_turn_map}, the dynamics of a circular accelerator can be parametrized in terms of \intro{transfer maps} relating final to initial phase space coordinates.
 This approach is described in~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion, JMP:Forest:Hamiltonian_Free_Description_Single_Particle_Dynamics}.
-While the transfer map of a linear element is described by a matrix, that of a non-linear element is itself described by the exponential \intro{Lie operator} \(e^{-:f:}\) defined as:
+While the transfer map of a linear element is described by a matrix, that of a non-linear element is itself described by the exponential \intro{Lie operator} \(e^{-:f:}\) defined as~\cite{BOOK:Wolski:Beam_dynamics}:
 
 \begin{equation}
     \begin{aligned}
@@ -580,13 +580,15 @@ in which, in case the \(h_n\) are small, \(h\) can be approximated as:
     \label{equation:h_thin_kick_approximation}
 \end{equation}
 
-Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in expanded terms using the action and angle variables according to \cref{equation:h_thin_kick_expansion}:
+Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in expanded terms using the action and angle variables according to:
 
 \begin{equation}
-    h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x - \phi_{x_0} \right) + \left(l-m\right) \left(\phi_y - \phi_{y_0} \right) \right]} \text{ ,}
+    h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x - \phi_{x,0} \right) + \left(l-m\right) \left(\phi_y - \phi_{y,0} \right) \right]} \text{ ,}
     \label{equation:h_thin_kick_expansion}
 \end{equation}
 with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
+The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.
+
 A multipole of order \(n = j + k + l + m\) gives rise to terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\).
 In the case of a skew quadrupole (\(n=2\)), for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
 
