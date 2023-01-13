@@ -150,7 +150,7 @@ The focusing strengths in the transverse planes go as:
 
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
 In the material below, \(u\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
-According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation take the form of \cref{equation:hill_solution}:
+According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation takes the form of \cref{equation:hill_solution}:
 
 \begin{equation}
     \begin{aligned}
@@ -186,7 +186,7 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \begin{equation}
     \mathrm{M_{drift}} = \left(
         \begin{array}{ll}
-            1 & l \\
+            1 & L \\
             0 & 1
     \end{array} \right) \text{ ,}
     \label{equation:drift_transfer_matrix}
@@ -196,7 +196,7 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
     \mathrm{M_{dip.}} = \left(
         \begin{array}{cc}
             \cos \theta           & \rho \sin \theta \\
-            -1 / \rho \sin \theta & \cos \theta
+            - \sin \theta / \rho  & \cos \theta
     \end{array} \right) \text{ ,}
     \label{equation:dipole_transfer_matrix}
 \end{equation}
@@ -204,8 +204,8 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \begin{equation}
     \mathrm{M_{foc. quad.}} = \left(
         \begin{array}{cc}
-            \cos \left( \sqrt{k_1} l \right)             & \frac{1}{\sqrt{k_1}} \sin \left( \sqrt{k_1} l \right) \\
-            -\sqrt{k_1} \sin \left( \sqrt{k_1} l \right) & \cos \left( \sqrt{k_1} l \right)
+            \cos \left( \sqrt{k_1} L \right)             & \frac{1}{\sqrt{k_1}} \sin \left( \sqrt{k_1} L \right) \\
+            -\sqrt{k_1} \sin \left( \sqrt{k_1} L \right) & \cos \left( \sqrt{k_1} L \right)
     \end{array} \right) \text{ ,}
     \label{equation:focusing_quad_transfer_matrix}
 \end{equation}
@@ -213,12 +213,12 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \begin{equation}
     \mathrm{M_{defoc. quad.}} = \left(
         \begin{array}{cc}
-            \cosh \left(\sqrt{\left| k_1b\right|} l \right)          & \frac{1}{\sqrt{\left| k_1 \right|}} \sinh \left( \sqrt{\left| k_1 \right|} l \right) \\
-            \sqrt{\abs{k_1}} \sinh \left( \sqrt{\abs{k_1} l} \right) & \cosh \left( \sqrt{\abs{k_1}} l \right)
+            \cosh \left( \sqrt{\abs{k_1}} L \right)                 & \frac{1}{\sqrt{\abs{k_1}}} \sinh \left( \sqrt{\abs{k_1}} L \right) \\
+            \sqrt{\abs{k_1}} \sinh \left( \sqrt{\abs{k_1} L} \right) & \cosh \left( \sqrt{\abs{k_1}} L \right)
     \end{array} \right) \text{ ,}
     \label{equation:defocusing_quad_transfer_matrix}
 \end{equation}
-where \(l\) is the element length and \(\theta = l / \rho\) is the bending angle of the dipole.
+where \(L\) is the element length and \(\theta = L / \rho\) is the bending angle of the dipole.
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the \(\mathrm{FODO}\) cell of \cref{figure:fodo_cell_schematic} is:
 
@@ -321,7 +321,7 @@ The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solu
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.85\linewidth]{Figures/Chapter2/Phase_Space.png}
+    \includegraphics[width = 0.75\linewidth]{Figures/Chapter2/Phase_Space.png}
     \caption{Phase space ellipse in the transverse \((u, u^{\prime})\) plane, where \(u\) represents either transverse coordinate \(x\) or \(y\).}
     \label{figure:phase_space_ellipse}
     \end{center}
@@ -343,6 +343,8 @@ The \intro{action} \(J_u\) is related to the single particle emittance by:
     2 J_u = \varepsilon_u \text{ .}
     \label{equation:single_particle_action}
 \end{equation}
+
+The state of particles in phase space can be fully characterized by the action variable and the corresponding phase variable seen above. 
 
 Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
 For a Gaussian shaped beam the transverse beam size is defined as:
