@@ -1,43 +1,55 @@
-\chapter{Optics Measurements and Corrections at the LHC} % Main chapter title
-
+\chapter{Optics Measurements and Corrections at the LHC}
 \label{Chapter:LHC_OMC} % For referencing the chapter elsewhere, use \cref{Chapter:LHC_OMC}
 
-A little something here?
-https://cds.cern.ch/record/2197559
+The Large Hadron Collider (LHC) is a \qty{26.659}{\kilo\metre} synchrotron collider located at the European Center for Nuclear Research (CERN), on the French-Swiss border.
+It is part of CERN's Accelerator Complex, illustrated in \cref{figure:cern_accelerator_complex}, a chain of particle accelerators progressively bringing protons and heavy ions up to an energy of \qty{6.8}{\tera\electronvolt} per beam, as of \num{2023}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.9\linewidth]{Figures/Chapter3/cern_accelerator_complex.png}
+  \caption{The CERN Accelerator Complex~\cite{Website:CERN_Accelerator_Complex_Resource}. For typical LHC operation, a proton beam is produced in \(\mathrm{LINAC}\)~\num{4} and follows the chain: \(\mathrm{LINAC}\)\num{4} \(\rightarrow\) \(\mathrm{PSB}\) \(\rightarrow\) \(\mathrm{PS}\) \(\rightarrow\) \(\mathrm{SPS}\) \(\rightarrow\) \(\mathrm{LHC}\).}
+  \label{figure:cern_accelerator_complex}
+\end{figure}
+
+Accelerated particles go through a chain of different particle accelerators before reaching their experimental destinations.
+For protons colliding in the LHC, the first step is a linear accelerator, LINAC\num{4}, which accelerates them up to a kinetic energy of \qty{160}{\mega\electronvolt}.
+Next, the protons are injected into the Proton Synchrotron Booster (PSB), where they are accelerated to an energy of \qty{1.4}{\giga\electronvolt}.
+The next stage is the Proton Synchrotron, in which they will reach \qty{25}{\giga\electronvolt}; then the Super Proton Synchrotron (SPS) where they are accelerated to \qty{450}{\giga\electronvolt}, when they are finally injected into the LHC.
+
+The LHC circulates two counter-rotating hadron beams, each in their ring, which are made to collide at four Interaction Points (IPs) to provide data for High Energy Physics (HEP) experiments.
+The main data-taking experiments on the LHC are ATLAS~\cite{Website:ATLAS,Website:ATLAS_CDS}, LHCf~\cite{Website:LHCf,Website:LHCf_CDS}, ALICE~\cite{Website:ALICE,Website:ALICE_CDS}, CMS~\cite{Website:CMS,Website:CMS_CDS}, TOTEM~\cite{Website:TOTEM,Website:TOTEM_CDS}, LHCb~\cite{Website:LHCb,Website:LHCb_CDS} and MoEDAL~\cite{Website:MOEDAL,Website:MOEDAL_CDS}.
+The LHC is currently the world's highest-energy hadron colliding machine, colliding beams at \qty{13.6}{\tera\electronvolt} center-of-mass energy as of Run~\num{3}, \num{2023}.
 
 %----------------------------------------------------------------------------------------
 
 \section{The LHC Lattice}
+\label{section:lhc_lattice}
 
-The Large Hadron Collider (LHC) is a \qty{26.659}{\kilo\metre} synchrotron collider located at the European Center for Nuclear Research (CERN).
-The machine circulates two hadron beams in two counter-rotating rings, which are made to collide at four Interaction Points (IPs) to provide data for High Energy Physics (HEP) experiments.
-The main data-taking experiments on the LHC are ATLAS~\cite{Website:ATLAS,Website:ATLAS_CDS}, LHCf~\cite{Website:LHCf,Website:LHCf_CDS}, ALICE~\cite{Website:ALICE,Website:ALICE_CDS}, CMS~\cite{Website:CMS,Website:CMS_CDS}, TOTEM~\cite{Website:TOTEM,Website:TOTEM_CDS}, LHCb~\cite{Website:LHCb,Website:LHCb_CDS} and MoEDAL~\cite{Website:MOEDAL,Website:MOEDAL_CDS}.
-The LHC is currently the world's highest-energy hadron colliding machine, colliding beams at \qty{13.6}{\tera\electronvolt} center-of-mass energy as of Run~3.
-
-The LHC consists of eight \emph{octants} each intersected by an \emph{Insertion Region} (IR).
-Conventionally, the segment between two \IRs is called an \emph{arc} and the arc between IR1 and IR2 is named Arc12, and similarly for other arcs
+The LHC consists of eight \intro{octants} each intersected by an \intro{Insertion Region} (IR).
+Conventionally, the segment between two \IRs is called an \intro{arc} and the arc between IR1 and IR2 is named Arc12, and similarly for other arcs.
 An octant is defined as going from mid-arc to mid-arc around a given \IR, which is located at its center.
 Each octant is named according to the \IR at its center: the octant with \(\mathrm{IR1}\) at its center is named Octant1, and similarly for other octants.
 An illustration on naming conventions can be found in \cref{Appendix_Naming_Conventions}.
-% The \IRs host either an \emph{Interaction Point} (IP) where beams are made to collide (ATLAS at IP1, ALICE at IP2, CMS at IP5 and LHCb at IP8) or important instrumentation (momentum cleaning at IR3, Radio-Frequency cavities at IR4, beam dump system at IR6 and betatron cleaning at IR7).
+% The \IRs host either an \intro{Interaction Point} (IP) where beams are made to collide (ATLAS at IP1, ALICE at IP2, CMS at IP5 and LHCb at IP8) or important instrumentation (momentum cleaning at IR3, Radio-Frequency cavities at IR4, beam dump system at IR6 and betatron cleaning at IR7).
 
 Beam~1 rotates clockwise in its ring when viewing the LHC from above, and Beam~2 rotates counter-clockwise as viewed from above.
 The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
-The layout of the LHC can be seen in \cref{figure:lhc_layout}, and full details can be found in the \emph{LHC Design Report}~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
+The layout of the LHC can be seen in \cref{figure:lhc_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
 
-\begin{figure}[h]
+\begin{figure}[!htb]
   \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/placeholder.png}
-  \caption{Schematic of the LHC layout.}
+  \includegraphics*[width=0.8\linewidth]{Figures/Chapter3/temp_lhc_schematic_layout.png}
+  \caption{Schematic of the LHC layout, adapted from~\cite{JOI:Aaboud:Comparison_Simulated_Observed_Beam_Background_ATLAS}. \todo{Or get and adapt Axel code.}}
   \label{figure:lhc_layout}
 \end{figure}
 
 %----------------------------------------------------------------------------------------
 
 \subsection{The LHC Arcs}
-
+\label{subsection:lhc_arcs}
 
 \subsection{The LHC Experimental Interaction Regions (EIR)}
+\label{subsection:lhc_eirs}
 
 Mention for figure that the matching section marked in the plot includes the dispersion suppressor.
 
@@ -48,19 +60,25 @@ Mention for figure that the matching section marked in the plot includes the dis
   \label{figure:ir5_and_around}
 \end{figure}
 
-\subsection{Interaction Point}
+\subsection{Interaction Points}
+\label{subsection:interaction_points}
 
 \subsection{The LHC Triplet}
+\label{subsection:lhc_triplet}
 
 \subsection{Separation Dipoles}
+\label{subsection:separation_dipoles}
 
 \subsection{Matching Section}
+\label{subsection:matching_section}
 
 \subsection{Dispersion Suppressor}
+\label{subsection:dispersion_suppressor}
 
 %----------------------------------------------------------------------------------------
 
 \section{The Operational Cycle of the LHC}
+\label{section:lhc_operational_cycle}
 
 The LHC operational cycle~\cite{Report:LHCModes}, shown in \cref{figure:lhc_cycle}, starts with a pre-cycle of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
 During pre-cycle no beams are present in the rings and the respective element currents are increased up to several \qty{}{\tera\electronvolt}, to ensure the reproducibility of the magnetic fields over successive fills.
@@ -84,6 +102,7 @@ The fill ends when dumping the beams, after which the cycle ends by a ramp down 
 %----------------------------------------------------------------------------------------
 
 \section{Measurements and Corrections}
+\label{section:measurements_and_corrections}
 
 The LHC requires good control of the optics functions, and for instance a good control of the \betafunctions is essential for safe beam operations due to the destructive power of the LHC beams.
 Moreover, a good control of the \(\beta^{\ast}\) is necessary to guarantee good luminosity production.
@@ -106,6 +125,7 @@ Measurements of beam optics are done by generating large transverse beam oscilla
 A non-destructive method for beam excitation in hadron machines is achieved using an AC-dipole
 
 \subsection{Optics Measurements}
+\label{subsection:optics_measurements}
 
 - excite
 - harmonic analysis
