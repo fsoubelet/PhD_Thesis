@@ -27,14 +27,10 @@
 % oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
 english, % ngerman for German
 singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
-% draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
-%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
 liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
 % toctotoc, % Uncomment to add the main table of contents to the table of contents
 % parskip, % Uncomment to add space between paragraphs
-% nohyperref, % Uncomment to not load the hyperref package
 headsepline, % Uncomment to get a line under the header
-% chapterinoneline, % Uncomment to place the chapter title next to the number on one line
 % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
@@ -142,8 +138,8 @@ headsepline, % Uncomment to get a line under the header
 % \include{Toolkit/equations_settings.tex}
 % \include{Chapters/testchapter.tex}
 % \include{Chapters/Introduction}
-% \include{Chapters/Beam_Dynamics_Theory}
-\include{Chapters/Optics_Measurements_Corrections_at_LHC}
+\include{Chapters/Beam_Dynamics_Theory}
+% \include{Chapters/Optics_Measurements_Corrections_at_LHC}
 % \include{Chapters/IR_Coupling_Correction}
 % \include{Chapters/ML_for_IR_Coupling}
 % \include{Chapters/Other_Studies}
@@ -163,6 +159,7 @@ headsepline, % Uncomment to get a line under the header
 
 \appendix % Cue to tell LaTeX that the following "chapters" are Appendices
 
+\include{Appendices/Hamiltonian_Derivation}
 % \include{Appendices/Naming_Conventions}
 % \include{Appendices/Experimental_Knobs}
 % \include{Appendices/Measurement_Fills}

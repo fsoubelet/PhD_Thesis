@@ -1,0 +1,173 @@
+\chapter{Appendix Title Here}
+\label{appendix:hamiltonian_derivation}
+
+This derivation is based on
+\href{https://journals.aps.org/prab/pdf/10.1103/PhysRevSTAB.17.074001}{Andrea
+Franchi's Resonance Driving Terms} paper. The derivation has been
+completely redone here, only the notation is followed to stay
+consistent.
+
+As a reminder, the multipole expansion is given below, where we'll only
+consider one type of multipole, so a fixed \(n\):
+\begin{equation}H = \Re \left[(K_n + iJ_n)\frac{(x+iy)^n}{n!} \right]\end{equation}
+
+The variables \(x\) and \(y\) can be expressed as phase action
+variables:
+
+\hl{this is $x_{\pm} = \hat{z} \pm i \hat{p}_z$ right?}
+
+\begin{equation}
+\begin{aligned}
+  x(s) &= \sqrt{2 J_x \beta_x} \cos(\phi_x + \phi_{x0})\\
+  y(s) &= \sqrt{2 J_y \beta_y} \cos(\phi_y + \phi_{y0})
+\end{aligned}
+\end{equation}
+
+Where \(s\) indicates the observed point and \(x_0\) the location of the
+magnet.
+
+Using Euler's formula we can rewrite those variables: \begin{equation}
+\begin{aligned}
+  x &= \sqrt{2 J_x \beta_x} \frac{e^{i(\phi_x + \phi_{x0})} + e^{-i(\phi_x + \phi_{x0})}}{2}\\
+  y &= \sqrt{2 J_y \beta_y} \frac{e^{i(\phi_y + \phi_{y0})} + e^{-i(\phi_y + \phi_{y0})}}{2}\\
+\end{aligned}
+\end{equation}
+
+Which then gives us:
+
+\begin{equation}
+\begin{aligned}
+H = \Re \biggl[\frac{1}{2^n \cdot n!}  (K_n + iJ_n)\biggl(&\sqrt{2 J_x \beta_x} e^{i(\phi_x + \phi_{x0})}\\
+                                                      &+ \sqrt{2 J_x \beta_x} e^{-i(\phi_x + \phi_{x0})}\\
+                                                      &+ i\sqrt{2 J_y \beta_y} e^{i(\phi_y+ \phi_{y0})} \\
+                                                      &+ i\sqrt{2 J_y \beta_y} e^{-i(\phi_y + \phi_{y0})} 
+                                                \biggr)^n\biggr]
+\end{aligned}
+\end{equation}
+
+Now, we can do the multinomial expansion of last term via
+\cref{eq:multinomial_expansion}:
+
+\begin{equation}(a + b + c + d)^n = \sum_{j + k + l + m = n} \frac{n!}{j!k!l!m!} a^j b^k c^l d^m\end{equation}
+
+\begin{equation}\begin{aligned}
+a^j &= \left(\sqrt{2 J_x \beta_x} e^{i(\phi_x + \phi_{x0})} \right)^j\\
+    &= 2^{\frac{j}{2}} J_x^{\frac{j}{2}} \beta_x^{\frac{j}{2}} e^{ij(\phi_x + \phi_{x0})},\\
+b^k &= \left(\sqrt{2 J_x \beta_x} e^{-i(\phi_x + \phi_{x0})}\right)^k \\
+    &= (2J_x)^{\frac{k}{2}} \beta_x^{\frac{k}{2}} e^{-ik(\phi_x + \phi_{x0})}, \\
+c^l &= \left(i \sqrt{2 J_y \beta_y} e^{i(\phi_y + \phi_{y0}}\right)^l \\
+    &= i^l  (2J_y)^{\frac{l}{2}} \beta_y^{\frac{l}{2}} e^{il(\phi_y + \phi_{y0})}, \\
+d^m &= \left( \sqrt{2 J_y \beta_y} e^{i(\phi_y + \phi_{y0})}\right)^m \\
+    &= i^m (2J_y)^{\frac{m}{2}} \beta_y^{\frac{m}{2}} e^{-im(\phi_y + \phi_{y0})} \\
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+a^j b^k &= \phantom{i^{l+m}} (2J_x)^{\frac{j+k}{2}} \beta_x^{\frac{j+k}{2}} e^{i(j-k)(\phi_x + \phi_{x0})}, \\
+c^l d^m &= i^{l+m} (2J_y)^{\frac{l+m}{2}} \beta_y^{\frac{l+m}{2}} e^{i(l-m)(\phi_y + \phi_{y0})}
+\end{aligned}\end{equation}
+
+\begin{equation}\begin{aligned}
+a^j b^k c^l d^m &= i^{l+m} 
+                   (2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+                   \beta_x^{\frac{j+k}{2}} \beta_y^{\frac{l+m}{2}} 
+                   e^{i\left[ (j-k)(\phi_x + \phi_{x0}) + (l-m)(\phi_y + \phi_{y0} \right]}
+\end{aligned}\end{equation}
+
+We can now isolate the terms that are independant of the position \(s\):
+\begin{equation}\begin{aligned}
+a^j b^k c^l d^m &= 
+                   i^{l+m} 
+                   \beta_x^{\frac{j+k}{2}} \beta_y^{\frac{l+m}{2}} 
+                   e^{i\left[ (j-k)\phi_x + (l-m)\phi_y \right]}
+                   (2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+                   e^{i\left[ (j-k)\phi_{x0} + (l-m)\phi_{y0} \right]}
+\end{aligned}\end{equation}
+
+Which gets us to \(H_w\), the Hamiltonian for an element \(w\), noting
+that \(i\) is the imaginary unit (\(i^2 = -1\)):
+
+\begin{equation}\begin{aligned}
+  H_w &=  \Re\left[\frac{1}{2^n \cdot n!} (K_{nw} + iJ_{nw}) (a_w + b_w + c_w + d_w)^n \right] \\
+    &=  \Re\left[ 
+         \frac{1}{2^n \cdot n!} 
+         (K_{nw} + iJ_{nw}) 
+         \sum_{j + k + l + m = n} 
+         \frac{n!}{j!k!l!m!} a^j_w b^k_w c^l_w d^m_w \right] \\
+    &=  \Re\left[ 
+         (K_{nw} + iJ_{nw}) 
+         \sum_{j + k + l + m = n} 
+         \frac{1}{2^{j+k+l+m} \cdot j!k!l!m!} a^j_w b^k_w c^l_w d^m_w \right] \\
+    &=  \Re\biggl[ 
+         (K_{nw} + iJ_{nw})
+         \sum_{j + k + l + m = n}
+         \frac{1}{2^{j+k+l+m} \cdot j!k!l!m!} \\
+    &\begin{aligned}\phantom{ \Re\biggl[ (K_{nw} + iJ_{nw})  \sum_{j + k + l + m = n} \quad}
+           &i^{l+m} 
+           \beta_{xw}^{\frac{j+k}{2}} \beta_{yw}^{\frac{l+m}{2}} 
+           e^{i\left[ (j-k)\phi_{x} + (l-m)\phi_{y} \right]}\\
+           &(2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+           e^{i\left[ (j-k)\phi_{x0} + (l-m)\phi_{y0} \right]}
+           \biggr]
+    \end{aligned}
+\end{aligned}\label{eq:hamiltonian_multinomial_expanded}\end{equation}
+
+We can see that the term \(i^{l+m}\) in the sum will have a decisive
+impact on the result, being multiplied either by \(K_{nw}\) or
+\(iJ_{nw}\). The real part of the sum is then directly influenced by the
+parity of (\(l+m\)).\\
+The equation can be rewritten taking this into account, effectively
+selecting between the two terms:
+
+\begin{equation}
+\Omega(i) =
+\begin{cases} 
+  1, & \mbox{if } i \mbox{ is even}, \\
+  0, & \mbox{if } i \mbox{ is odd}.
+\end{cases}
+\end{equation}
+
+\begin{equation}\begin{aligned}
+ H_w  &=  
+         \sum_{j + k + l + m = n}
+        \biggl[ 
+         \frac{ K_{nw}\Omega(l+m) + iJ_{nw}\Omega(l+m+1) }{2^{j+k+l+m} \cdot j!k!l!m!}
+         i^{l+m} 
+         \beta_{xw}^{\frac{j+k}{2}} \beta_{yw}^{\frac{l+m}{2}} \\
+   &\begin{aligned}\phantom{\biggl[\sum_{j + k + l + m = n} \quad}
+           &(2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+           e^{i\left[ (j-k)(\phi_{x} + \phi_{x0}) + (l-m)(\phi_{y} + \phi_{y0}) \right]}
+           \biggr]
+    \end{aligned}
+\end{aligned}\label{eq:hamiltonian_multinomial_expanded}\end{equation}
+
+We can then define \(h_{w,jklm}\) as:
+
+\begin{equation}
+h_{w,jklm} = \frac{K_{w,n} \Omega(l+m) + iJ_{w,n} \Omega(l+m+1)}{2^{j+k+l+m} \cdot j!k!l!m!} i^{l+m} \beta_{w,x}^{\frac{j+k}{2}}\beta_{w,y}^{\frac{l+m}{2}}
+\end{equation}
+
+Leading to:
+
+\begin{equation}
+H_w = \sum_{j+k+l+m=n} h_{w,jklm}
+           (2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+           e^{i\left[ (j-k)(\phi_{x} + \phi_{x0}) + (l-m)(\phi_{y} + \phi_{y0}) \right]}
+\end{equation}
+
+The beam at the observed position \(b\) can be described by changing the
+position variable.
+
+\begin{equation}\begin{aligned}
+  x_b &= x \cdot e^{i\Delta \phi_{x}^b} \\
+  y_b &= y \cdot e^{i\Delta \phi_{y}^b}
+\end{aligned}\end{equation}
+
+Where \(\Delta \phi_{x,y}^b\) is the phase advance between the locations
+b and w. This simply adds one term to our previous hamiltonian:
+
+\begin{equation}\begin{aligned}
+H_{bw} = \sum_{j+k+l+m=n}& h_{w,jklm}
+           e^{i\left[ (j-k)(\Delta \phi_{w,x}^b) + (l-m)(\Delta \phi_{w,y}^b) \right]}\\
+           &(2J_x)^{\frac{j+k}{2}} (2J_y)^{\frac{l+m}{2}} 
+           e^{i\left[ (j-k)(\phi_{x} + \phi_{x0}) + (l-m)(\phi_{y} + \phi_{y0}) \right]}
+\end{aligned}\end{equation}
