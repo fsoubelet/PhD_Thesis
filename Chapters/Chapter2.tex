@@ -588,7 +588,6 @@ Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in e
 \end{equation}
 with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
 A multipole of order \(n = j + k + l + m\) gives rise to terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\).
-
 In the case of a skew quadrupole (\(n=2\)), for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
 
 \subsection{Normal Form, Resonance Driving Terms and Resonances}
@@ -641,28 +640,128 @@ Specifically, divergence happens when the following relation is satisfied:
 
 A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a resonance in the beam motion.
 The condition in \cref{equation:resonance_condition} corresponds to situations where particles lie on resonant frequencies, typically causing their amplitudes to group unbounded by the dynamics.
-Therefore the \(f_{jklm}\) terms are called \intro{resonance driving terms}.
+Therefore the \(f_{jklm}\) terms are called \intro{resonance driving terms} (RDTs).
 
 For this reason, the tune is one of the single most important design parameters in synchrotrons.
 The chosen operational transverse tunes of a synchrotron are known to as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
+Resonances up to order \(n = 5\) are shown in \cref{figure:tune_diagram_fifth_order}, with lines of different orders differentiated from one another.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.8\linewidth]{Figures/Chapter2/tune_diagram_fifth_order.pdf}
+    \caption{Tunes diagram showing resonance lines up to order \(n = 5\).}
+    \label{figure:tune_diagram_fifth_order}
+    \end{center}
+\end{figure}
+
+Commonly, the label of a given resonance is \(\left( n_1, n_2 \right)\), where \(n_1 = \left( j - k \right)\) and \(n_2 = \left( l - m \right)\).
+Every generating function term \(f_{jklm}\), and equivalently every Hamiltonian term \(h_{jklm}\), is associated with a resonance.
+
+The resonance driving terms vary in amplitude through the machine as they depend on local multipole strength of contributing sources.
+Characteristically, the \(f_{jklm}\) terms show abrupt jumps at the location of relevant sources.
+
+\todo{Maybe a figure of RDTs accross a known machine to illustrate?}
+
+\subsection{Resonance Basis and Normal Form Coordinates}
+
+The normalized Courant-Snyder coordinates \(\left( \hat{u}, \hat{p}_u \right)\) are related to the action and angle variables \(\left( J_u, \phi_u \right)\) by:
+
+\begin{equation}
+    \begin{aligned}
+        \hat{u}   &= \sqrt{2 J_u} \cos \left( \phi_z - \phi_{z_0} \right) \\
+        \hat{p_u} &= - \sqrt{2 J_u} \sin \left( \phi_z - \phi_{z_0} \right) \text{ .}
+    \end{aligned}
+    \label{equation:normalized_courant_snyder_coordinates_from_action_angle}
+\end{equation}
+
+One can define the resonance basis \(\left( h_x^{+}, h_x^{-}, h_y^{+}, h_y^{-} \right)\) by the relation:
+
+\begin{equation}
+    h_u^{\pm} = \hat{u} \pm i \hat{p}_z = \sqrt{2 J_u} e^{\mp i \left( \phi_u + \phi_{u_0} \right)} \text{ .}
+    \label{equation:resonance_basis_definition}
+\end{equation}
+
+The transformation to the normal form coordinates \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\) is expressed as:
+
+\begin{equation}
+    \zeta_u^{\pm} = \sqrt{2 I_u} e^{\mp i \left( \psi_u + \psi_{u_0} \right)} = e^{-:F:} h_u^{\pm} \text{ .}
+    \label{equation:transformation_to_normal_form_coordinates_from_h_pm}
+\end{equation}
+where \((I_u, \psi_u)\) are the terms introduced in \cref{equation:generating_function_expansion}.
+
+By construction of the transformation, the one-turn map in normal form coordinates is an amplitude dependent rotation.
+It follows that the motion of these coordinates as a function of the turn number is then given by:
+
+\begin{equation}
+    \zeta_u^{\pm}(N) = \sqrt{2 I_u} e^{\mp i \left( 2 \pi \nu_u N + \psi_{u_0} \right)} \text{ ,}
+    \label{equation:normal_form_N_turn_expression}
+\end{equation}
+with \(\nu_u\) the transverse tunes.
+
+The inverse transformation from the new action and angle variables to the Courant-Snyder variables is written, to first order, as:
+
+\begin{equation}
+    h_u^{-} = e^{:F:} \zeta_u^{-} \simeq \zeta_u^{-} + \left[ F, \zeta_u^{-} \right] \text{ .}
+    \label{equation:inverse_transformation_normal_form-to_courant_snyder_coordinates}
+\end{equation}
+
+Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_transformation_normal_form-to_courant_snyder_coordinates}, the linearly normalized coordinates can be expressed after \(N\) turns as:
+
+\begin{equation}
+    \begin{aligned}
+        h_x^{-}(N) & = \sqrt{2 I_x} e^{i \left( 2 \pi \nu_x N - \psi_{x_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} j f_{jklm} \left( 2 I_x \right)^{\frac{j+k-1}{2}} \left( 2 I_y \right)^{\frac{l+m}{2}}   e^{i \left[ (1-j+k) \left( 2 \pi \nu_x N-\psi_{x_0} \right) + (m-l)   \left( 2 \pi \nu_y N - \psi_{y_0} \right) \right]} \\
+        h_y^{-}(N) & = \sqrt{2 I_y} e^{i \left( 2 \pi \nu_y N - \psi_{y_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} l f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}}   \left( 2 I_y \right)^{\frac{l+m-1}{2}} e^{i \left[ (k-j)   \left( 2 \pi \nu_x N-\psi_{x_0} \right) + (1-l+m) \left( 2 \pi \nu_y N - \psi_{y_0} \right) \right]} \text{ .}
+    \end{aligned}
+    \label{equation:linearly_normalized_coordinates_after_N_turns}
+\end{equation}
 
 
+\Cref{figure:coordinate_transformations} shows a schematic of the different transformations and changes to the one-turn map.
+While one can calculate the evolution of the Courant-Snyder coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
+Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
+The calculations are simpler than the former method, and conserve non-linearities.
 
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.3\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Figure 2.12 from F Carlier?} Scheme representing the coordinate transformations and change of the one-turn map, where \(N\) is the turn number.}
+    \label{figure:coordinate_transformations}
+    \end{center}
+\end{figure}
 
-\clearpage
+\subsection{Spectral Contribution}
+\label{subsec:spectral_contribution}
+
+Each term in the summations of \cref{equation:linearly_normalized_coordinates_after_N_turns} corresponds to a certain mode in the beam motion and contributes to a specific frequency in the spectrum of the motion~\cite{PHD:Bengtsson}.
+Said spectrum may be determined by a frequency analysis of the turn-by-turn beam position monitor data, through means of a Fourier transform.
+In this spectrum, an RDT \(f_{jklm}\) at a specific location in the machine contributes to lines in the horizontal and vertical spectra according to~\cite{PHD:Bengtsson}:
+
+\begin{equation}
+    \begin{aligned}
+        H(1-j+k, m-l) &= 2 j \abs{f_{jklm}} \left( 2 J_x \right)^{\frac{j+k-1}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} \text{ ,}\\
+        V(k-j, 1-l+m) &= 2 l \abs{f_{jklm}} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m-1}{2}} \text{ ,}
+    \end{aligned}
+    \label{equation:rdt_contribution_to_spectrum_line}
+\end{equation}
+where in the parentheses multipoles of the fractional tune are given.
+For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the horizontal spectrum.
+\Cref{figure:example_spectrum} shows an example of a spectrum from a measurement at the LHC, where the main lines are highlighted.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.3\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Include a plot of a spectrum from an LHC measurement? Something out of omc3, maybe the one in my sextupolar contribution to ampdet ATS note.}}
+    \label{figure:example_spectrum}
+    \end{center}
+\end{figure}
+
+In principle the \(\abs{f_{jklm}}\) may be determined by a comparison of the amplitude of various spectral lines.
+In practice, some additional considerations need to be taken, as decoherence of a kicked beam can lead to a reduction in the amplitude of the spectral lines observed, or the fact that the contributions of different RDTs might not be distinct.
+More details and examples of this method is given in the next section, \cref{section:betatron_coupling}, for the case of betatron coupling RDTs.
 
 %----------------------------------------------------------------------------------------
-
-% \section{Phenomenology of Non-Linear Beam Dynamics}
-
-% \subsection{Chromaticity}
-
-% \subsection{Detuning with Amplitude}
-
-% \subsection{Decoherence}
-
-%----------------------------------------------------------------------------------------
-
 
 \section{Betatron Coupling}
 \label{section:betatron_coupling}
@@ -684,8 +783,6 @@ An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 
 \subsection{Parametrization of Betatron Coupling}
 \label{subsection:parametrization_of_betatron_coupling}
-
-\todo{Content}
 
 \subsection{Impact and Visibility on Tunes}
 \label{subsection:coupling_impact_and_visibility_on_tunes}
