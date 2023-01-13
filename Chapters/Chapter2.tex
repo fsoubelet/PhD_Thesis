@@ -13,10 +13,12 @@ When not in these works, explicit references to content are given.
 %----------------------------------------------------------------------------------------
 
 \section{Linear Beam Dynamics}
+\label{section:linear_beam_dynamics}
 
 The linear dynamics of an accelerator are, mainly, the endeavor to bend and focus particle beams to confine them within the machine's aperture.
 
 \subsection{Transport and Guiding of Charged Particles}
+\label{subsection:transport_and_guiding_of_charged_particles}
 
 To force the beam's particles into a closed trajectory, they are subjected to magnetic fields that deflect their trajectories.
 The force exerted onto the beam is the Lorentz force \(F_{L}\), given by the equation:
@@ -29,7 +31,7 @@ where \(p\) is the particle momentum, \(q\) the particle charge, \(\vec{E}\) the
 In most accelerators, including the LHC, the particles' speed is close to the celerity of light \(c\) and the force from the magnetic field is significantly stronger than that produced by the electric field for realistic values of \(\vec{E}\) and \(\vec{B}\).
 As a result, in high energy particle accelerators magnetic fields are typically used to guide particles.
 The guiding magnetic field can be expanded into a series of multipolar fields, for instance here in the horizontal plane:
-% ---------- Equation ----------
+
 \begin{align}
     B_{y} = 
     \tikz[baseline]{
@@ -127,6 +129,7 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
 \end{figure}
 
 \subsection{Equations of Motion and Twiss Parameters}
+\label{subsection:equations_of_motion_and_twiss_parameters}
 
 The focusing from quadrupoles in a circular accelerator such as the LHC is periodic in \(s\), with a period of at most the circumference of the machine.
 Assuming the existence of a closed orbit, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
@@ -303,6 +306,7 @@ The transfer matrix can be expressed with Twiss parameters according to~\cite{AO
 \end{equation}
 
 \subsection{Phase Space Ellipse}
+\label{subsection:phase_space_ellipse}
 
 In the linear regime all particle trajectories describe ellipses in \((u, u^{\prime})\) phase space.
 The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \intro{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
@@ -375,12 +379,23 @@ One can remove this dependency by performing a coordinate transformation to the 
     u \\
     u^{\prime}
     \end{array}\right) \text{ ,}
-    \label{equation:courant_snyder_coordinates}
+    \label{equation:physical_to_courant_snyder_coordinates}
 \end{equation}
 where the Courant-Snyder coordinates are denoted by \^{}.
 In this new system particles follow circular trajectories in phase space.
+\Cref{figure:physical_to_normalized_courant_snyder_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
+In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and dependeing only on the action and angle variables \((J_u, Q_u)\).
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.75\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Figure 2.6 from F. Carlier PhD?}}
+    \label{figure:physical_to_normalized_courant_snyder_coordinates}
+    \end{center}
+\end{figure}
 
 \subsection{Chromatic Effects}
+\label{subsection:chromatic_effects}
 
 Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
 Naturally, in practice particles withing the beam have a distribution in energy and momentum.
@@ -442,6 +457,7 @@ The natural chromaticity of a linear lattice can then be approximated by~\cite{C
 %----------------------------------------------------------------------------------------
 
 \section{Non-Linear Magnetic Multipoles}
+\label{section:non_linear_magnetic_multipoles}
 
 Magnetic fields of sextupolar and higher order are called \intro{non-linear} magnetic fields.
 While only dipolar and quadrupolar magnetic fields are considered in the linear approximation, non-linear magnetic fields are present in most accelerators.
@@ -481,25 +497,154 @@ the Hamiltonian for the transverse planes for a multipole of order n is given by
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
-If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
+If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson} these follow:
 
 \begin{equation}
     \begin{aligned}
-        N_n \propto \operatorname{Re} \left[(x + i y)^n \right] \text{ ,} \\
-        S_n \propto \operatorname{Im} \left[(x + i y)^n \right] \text{ .} \\
+        N_n & \propto \operatorname{Re} \left[(x + i y)^n \right] \\
+            & \propto \operatorname{Re} \left[ \sum_{k=0}^n \left(
+                \begin{array}{l}
+                    n \\
+                    k
+                \end{array} \right) 
+            i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos \phi_x \right)^{n-k} \left( \sqrt{2 J_y} \cos \phi_y \right)^k \right] \text{ ,}
     \end{aligned}
-    \label{equation:hamiltonian_prop_normal_and_skew_multipoles}
+    \label{equation:hamiltonian_prop_normal_multipoles}
 \end{equation}
+
+\begin{equation}
+    \begin{aligned}
+        S_n & \propto \operatorname{Im} \left[(x + i y)^n \right] \\
+            & \propto \operatorname{Im} \left[ \sum_{k=0}^n \left(
+                \begin{array}{l}
+                    n \\
+                    k
+                \end{array} \right) 
+            i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos \phi_x \right)^{n-k} \left( \sqrt{2 J_y} \cos \phi_y \right)^k \right] \text{ .}
+    \end{aligned}
+    \label{equation:hamiltonian_prop_skew_multipoles}
+\end{equation}
+
+The powering of non-linear magnets and the presence of magnetic errors can have a significant impact on the beam dynamics.
+Geometric errors can contribute to the presence of non-linear components too.
+For instance, when a particle does not pass through the magnetic center of an element it will see not only the primary field component but also perturbations of all lower orders to that of the traversed element~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}.
+
+This effect is called \intro{feed-down} and can be introduced by misalignment of lattice elements, which would cause the closed orbit to deviate from the ideal one and the beam to pass off-axis in magnets.
+Should that happen with a sextupole, for instance, the beam would experience a sextupolar field but also encounter quadrupolar and dipolar components.
+
+The rotational misalignment of elements is also a concern, as rotation a purely normal or skew multipole results in the beam experiencing a combination of both normal and skew fields.
 
 %----------------------------------------------------------------------------------------
 
 \section{Non-Linear Formalism and Resonance Driving Terms}
+\label{section:non_linear_formalism_and_rdts}
 
+The material below is inspired from~\cite{PHD:Tomas, PHD:Franchi,PHD:Maclean, PHD:Persson} where some aspects of it may be found in more details.
+For the curious reader, a very thourough approach to normal forms can be found in~\cite{PRAB:Franchi:First_Simultaneous, PHD:Carlier}.
 
+\subsection{Non-Linear Transfer Maps}
+\label{subsection:non_linear_transfer_maps}
 
+As introduced in \cref{equation:one_turn_map}, the dynamics of a circular accelerator can be parametrized in terms of \intro{transfer maps} relating final to initial phase space coordinates.
+This approach is described in~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion, JMP:Forest:Hamiltonian_Free_Description_Single_Particle_Dynamics}.
+While the transfer map of a linear element is described by a matrix, that of a non-linear element is itself described by the exponential \intro{Lie operator} \(e^{-:f:}\) defined as:
 
+\begin{equation}
+    \begin{aligned}
+        e^{-:f:} g          &= g + \left[f, g\right] + \frac{1}{2} \left[f, \left[f, g \right] \right] + \ldots \text{ ,} \\
+        \left[ f, g \right] &= \sum_i \frac{\partial f}{\partial q_i} \frac{\partial g}{\partial p_i} - \frac{\partial f}{\partial p_i} \frac{\partial g}{\partial q_i} \text{ ,}
+    \end{aligned}
+    \label{equation:lie_operator}
+\end{equation}
+where \(q_i\) and \(p_i\) are the canonical coordinates and momenta, respectively.
+Here \(\left[ f, g \right]\) is the \intro{Poisson bracket} of \(f\) and \(g\).
+When including non-linear sources, the one-turn map introduced in \cref{equation:one_turn_map} becomes:
 
+\begin{equation}
+    \mathcal{M } =e^{-:h_N:} e^{-:h_{N-1}:} \ldots e^{-:h_2:} e^{-:h_1:} R
+    \label{equation:one_turn_map_non_linear}
+\end{equation}
+where \(R\) is a matrix describing the linear dynamics of the machine, and the \(h_i\) terms represent the thin kick Hamiltonians of the non-linear elements in the accelerator.
+\break
 
+Relevant properties of the exponential Lie operator can be found in~\cite{PHD:Tomas, PHD:Franchi}, one of which being that the product of exponential Lie operators can be expressed as another exponential Lie operator following the \emph{Campbell-Baker-Hausdorff} theorem.
+The one-turn map becomes:
+
+\begin{equation}
+    \mathcal{M} = e^{-:h:} R \text{ ,}
+    \label{equation:Campbell_Baker_Hausdorff_theorem}
+\end{equation}
+in which, in case the \(h_n\) are small, \(h\) can be approximated as:
+\begin{equation}
+    h = \sum_{n=1}^N h_n + \sum_{n, m<n}^N \left[ h_m, h_n \right] + \ldots \text{ .}
+    \label{equation:h_thin_kick_approximation}
+\end{equation}
+
+Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in expanded terms using the action and angle variables according to \cref{equation:h_thin_kick_expansion}:
+
+\begin{equation}
+    h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x - \phi_{x_0} \right) + \left(l-m\right) \left(\phi_y - \phi_{y_0} \right) \right]} \text{ ,}
+    \label{equation:h_thin_kick_expansion}
+\end{equation}
+with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
+A multipole of order \(n = j + k + l + m\) gives rise to terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\).
+
+In the case of a skew quadrupole (\(n=2\)), for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
+
+\subsection{Normal Form, Resonance Driving Terms and Resonances}
+\label{subsection:normal_form_and_rdt}
+
+Due to the presence of non-linear sources the linear invariant \(J_u\) introduced in \cref{subsection:phase_space_ellipse} is no longer a constant.
+This leads to the phase space trajectory in normalized, or Courant-Snyder, coordinates no longer describing a circle.
+One may wish to create a new transformation, akin to that to normalized coordinates, that would allow describing betatron motion in phase space by a pure rotation in the presence of non-linear sources.
+
+The change of coordinates is represented by a similarity transformation of the one turn map, written as~\cite{PHD:Tomas}:
+
+\begin{equation}
+    e^{-:F:} e^{:h:} R e^{:F:} \text{ ,}
+    \label{equation:normal_form_transformation}
+\end{equation}
+where \(F\) is the \intro{generating function} of the transformation.
+The coordinates resulting from the transformation are called \intro{normal form coordinates}.
+This is illustrated in \cref{figure:physical_to_normalized_courant_snyder_coordinates}.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.5\linewidth]{Figures/placeholder.png}
+    \caption{\todo{Transformation to normal form coordinates (Ewen fig 1.5, Roro fig 3.1, or Felix fig 2.11)}}
+    \label{figure:phase_space_physical_normalized_normal_form_coordinates}
+    \end{center}
+\end{figure}
+
+The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_u\) can be introduced. 
+Similarly to \(h\) in \cref{equation:h_thin_kick_expansion}, the generating function \(F\) can be expanded in terms of the normal form coordinates according to:
+
+\begin{equation}
+    F = \sum_{jklm} f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}} \left(2 I_y \right)^{\frac{l+m}{2}} e^{i \left[ (j-k) \left( \psi_x - \psi_{x_0} \right) + (l-m) \left( \psi_y - \psi_{y_0} \right) \right]} \text{ ,}
+    \label{equation:generating_function_expansion}
+\end{equation}
+where \((I_u, \psi_u)\) are to normal form coordinates what \((J_u, \phi_u)\) are to normalized coordinates.
+The \(f_{jklm}\) coefficients are related to the \(h_{jklm}\) terms by:
+
+\begin{equation}
+    f_{jklm} = \frac{h_{jklm}}{1 - e^{i 2 \pi \left[ \left(j-k\right) Q_x + \left(l-m\right) Q_y \right]}}
+    \label{equation:resonance_driving_terms}
+\end{equation}
+
+From \cref{equation:resonance_driving_terms} one can see that the \(f_{jklm}\) coefficients diverge for certain values of the tunes.
+Specifically, divergence happens when the following relation is satisfied:
+
+\begin{equation}
+    \left(j-k\right) Q_x + \left(l-m\right) Q_y = p \quad \quad \text { where } j, k, l, m, p \in \mathcal{Z}
+    \label{equation:resonance_condition}
+\end{equation}
+
+A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a resonance in the beam motion.
+The condition in \cref{equation:resonance_condition} corresponds to situations where particles lie on resonant frequencies, typically causing their amplitudes to group unbounded by the dynamics.
+Therefore the \(f_{jklm}\) terms are called \intro{resonance driving terms}.
+
+For this reason, the tune is one of the single most important design parameters in synchrotrons.
+The chosen operational transverse tunes of a synchrotron are known to as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
 
 
 
@@ -518,145 +663,9 @@ If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and
 
 %----------------------------------------------------------------------------------------
 
-% \section{Normal Form Formalism and Resonance Driving Terms}
-
-
-% The derivation in this section follows the approach given in \cite{Tomas_thesis, Franchi_thesis}.
-% While the non-linear dynamics can not be described with matrices, it can be described by the transfer map formalism.
-% In the frame where the one turn map is represented by a pure rotation - in normal forms coordinates - it can be written as \cite{Tomas_thesis}:\\
-
-% \begin{equation}
-%     \mathcal{M} = 
-%     e^{:\eqnmarkbox[blue]{node1}{\tilde{h_{1}}}:}
-%     e^{:\eqnmarkbox[red]{node2}{\tilde{h_{2}}}:}
-%     \ldots
-%     e^{:\eqnmarkbox[green]{noden}{\tilde{h_{n}}}:}
-%     R
-%     \label{equation:norm_form_one_turn_map}
-% \end{equation}
-% \annotate[yshift=0.5em]{above, left}{node1}{First element}
-% \annotate[yshift=-0.75em]{below}{node2}{Second element}
-% \annotate[yshift=0.5em]{above, right}{noden}{Nth element}\\\\
-% % ------------------ %
-% where \(e^{:\tilde{h_{1}}:}\) is an exponential Lie operator describing a nonlinear element, and \(\mathbf{R}\) is the rotation matrix describing the linear motion.
-% This simplifies through the Campbell-Baker-Hausdorff theorem to:
-
-% \begin{equation}
-%     \mathcal{M} = e^{:h:} R
-% \end{equation}
-
-% In case the \(\tilde{h_{n}}\) are small, then \(h\) may be approximated by:
-
-% \begin{equation}
-%     h = \sum_{n=1}^{N} \tilde{h}_{n} + \sum_{n, m<n}^{N} \left[\tilde{h}_{m}, \tilde{h}_{n} \right] + \ldots
-%     \label{equation:h_expansion}
-% \end{equation}
-
-% Using only the first order in \(\tilde{h_{n}}\), \(h\) may be expanded according to \cref{equation:h_approximation_first_order} using the action-angle variables TODO.
-
-% \begin{equation}
-%     h = \sum_{j k l m} h_{j k l m} \left(2 J_{x}\right)^{\frac{j+k}{2}} \left(2 J_{y}\right)^{\frac{l+m}{2}} e^{i \left[(j-k)\left(\phi_{x}-\phi_{x_{0}}\right) + (l-m)\left(\phi_{y}-\phi_{y_{0}}\right) \right]}
-%     \label{equation:h_approximation_first_order}
-% \end{equation}
-
-% Here \(h_{j k l m}\) are Hamiltonian coefficients representing the contributions from multipoles of order \(n = j + k + l + m\).
-% A multipole of order \(n\) generates terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\), where again \(n = j + k + l + m\).
-
-% In the case of a skew quadrupole, such an element gives rise to terms in the Hamiltonian \(\propto xy\), meaning that it contributes to the Hamiltonian terms \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
-% The idea behind normal form coordinates is to perform a transformation from a system with amplitude and phase dependence to a simpler form.
-% The simplest form is an amplitude dependent rotation, i.e. a rotation in phase space where the angle depends on the amplitude of the particle.
-% An excellent approach to normal forms formalism can be found in \cite{Carlier_thesis}.
-
-% The coordinate change is represented by a similarity transformation of the one turn map:
-
-% \begin{equation}
-%     e^{-: F:} e^{: h:} R e^{: F:}
-% \end{equation}
-% % ------------------ %
-% where \(F\) is the generating function for the transformation.
-% The formal solution to finding the generating function F is given in \cite{Forest_normal_forms} and the explicit expression is obtained in \cite{Tomas_thesis} as
-
-% \begin{equation}
-%     F = \sum_{j k l m} f_{j k l m} \left(2 I_{x}\right)^{\frac{j+k}{2}}\left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i\left[(j-k)\left(\psi_{x}-\psi_{x_{0}}\right)+(l-m)\left(\psi_{y}-\psi_{y_{0}}\right)\right]}
-%     \label{equation:F_generating}
-% \end{equation}
-% % ------------------ %
-% where \(f_{jklm}\) are the resonance driving terms corresponding to the Hamiltonian terms \(h_{jklm}\) respectively.
-% They can be expressed according to \cref{equation:f_rdts} \cite{Tomas_thesis, Franchi_thesis}, where \(Q_x\) and \(Q_y\) are the unperturbed tunes.
-
-% \begin{equation}
-%     f_{jklm} = \frac{h_{jklm}}{1 - e^{i 2 \pi \left[(j-k) Q_{x} + (l-m) Q_{y} \right]}}
-%     \label{equation:f_rdts}
-% \end{equation}
-% % ------------------ %
-% \Cref{equation:f_rdts} diverges when \(j, k, l, m, Q_x\) and \(Q_y\) satisfy the condition:
-
-% \begin{equation}
-%     (j-k) Q_{x} + (l-m) Q_{y} = p \quad \text{ where } p \in \mathcal{Z}
-%     \label{equation:resonance_condition}
-% \end{equation}
-% % ------------------ %
-% Hence, the \(f_{jklm}\) terms are the driving terms of the resonances \([(j-k),(l-m)]\).
-% Every Hamiltonian term is associated with a resonance, which explains the term Resonance Driving Terms.
-% The normalized Courant-Snyder coordinates are related to the action-angle variable as
-
-% \begin{equation}
-%     \begin{aligned}
-%     z &= \sqrt{2 J_{z}} \cos (\phi_{z} - \phi_{z_{0}}) \\
-%     p_{z} &= -\sqrt{2 J_{z}} \sin (\phi_{z} - \phi_{z_{0}}) \quad \text { where } z=x, y
-%     \end{aligned}
-%     \label{equation:courant_snyder_to_action_angle}
-% \end{equation}
-% % ------------------ %
-% It is convenient to introduce the resonant basis h defined as
-
-% \begin{equation}
-%     \begin{aligned}
-%     h_{z}^{\pm} &= z \pm i p_{z} = \sqrt{2 J_{z}} e^{\mp i \left(\phi_{z}-\phi_{z_{0}}\right)} \quad \text { where } z=x, y \\
-%     \mathbf{h} &= \left( h_{x}^{+}, h_{x}^{-}, h_{y}^{+}, h_{y}^{-} \right)
-%     \end{aligned}
-%     \label{equation:resonant_basis_h}
-% \end{equation}
-
-% The transformation to a new set of Normal Form coordinates \(\left(\zeta_{x}^{+}, \zeta_{x}^{-}, \zeta_{y}^{+}, \zeta_{y}^{-}\right)\) is given by the operator \(e^{: -F :}\).
-% This is expressed as
-
-% \begin{equation}
-%     \zeta_{z}^{\pm} = \sqrt{2 I_{z}} e^{\pm i \left(\phi_{z}+\phi_{z 0} \right)} = e^{:-F:} h_{z}^{\pm}
-%     \label{equation:action_angle_to_normal_form}
-% \end{equation}
-% % ------------------ %
-% where \(I_{z}\) is the invariant of motion in the new frame.
-% The one-turn map in normal form coordinates is by construction an amplitude dependent rotation, and hence the motion in these coordinates as a function of the turn number N is given by
-
-% \begin{equation}
-%     \zeta_{z}^{-}(N) = \sqrt{2 I_{z}} e^{2 \pi \nu_{x} N + \phi z_{0}}
-%     \label{equation:normal_form_by_turn}
-% \end{equation}
-
-% The inverse transformation from the new action-angle variables to the linearly normalized variable is to first order written as
-
-% \begin{equation}
-%     h_{z}^{-} = e^{: F:} \zeta_{z}^{-} \simeq \zeta_{z}^{-} + \left[F, \zeta_{z}^{-}\right]
-%     \label{equation:inverse_normal_form_transform}
-% \end{equation}
-
-% and using \cref{equation:normal_form_by_turn} and \cref{equation:inverse_normal_form_transform} the normalized coordinates can be expressed in the form
-
-% \begin{equation}
-%     \begin{aligned}
-%     h_{x}^{-}(N) &= \sqrt{2 I_{x}} e^{i\left(2 \pi \nu_{x} N - \psi_{x_{0}}\right)} - \\
-%     & 2 i \sum_{jklm} j f_{jklm} \left(2 I_{x}\right)^{\frac{j+k-1}{2}} \left(2 I_{y}\right)^{\frac{l+m}{2}} e^{i \left[(1-j+k) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (m-l) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]} \\
-%     h_{y}^{-}(N) &= \sqrt{2 I_{y}} e^{i\left(2 \pi \nu_{y} N - \psi_{y_{0}}\right)} - \\
-%     & 2 i \sum_{jklm} l f_{jklm} \left(2 I_{x}\right)^{\frac{j+k}{2}} \left(2 I_{y}\right)^{\frac{l+m-1}{2}} e^{i \left[(k-j) \left(2 \pi \nu_{x} N-\psi_{x_{0}}\right) + (1-l+m) \left(2 \pi \nu_{y} N-\psi_{y_{0}}\right) \right]}
-%     \end{aligned}
-%     \label{equation:normal_form_coordinates}
-% \end{equation}
-
-
-
 
 \section{Betatron Coupling}
+\label{section:betatron_coupling}
 
 When the betatronic motion of particles in transverse planes are independent of each other, they are said to be \intro{uncoupled}.
 In particle colliders such as the LHC, this behaviour is typically desirable.
@@ -665,7 +674,7 @@ The transverse motions of particles in an accelerator may couple due to a variet
 Solenoid and skew quadrupole fields are the primary sources of linear coupling.
 An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 
-\begin{figure}
+\begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.9\linewidth]{Figures/placeholder.png}
     \caption{\todo{Illustration of a skew quadrupole and its magnetic field lines.}}
@@ -674,10 +683,12 @@ An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 \end{figure}
 
 \subsection{Parametrization of Betatron Coupling}
+\label{subsection:parametrization_of_betatron_coupling}
 
 \todo{Content}
 
 \subsection{Impact and Visibility on Tunes}
+\label{subsection:coupling_impact_and_visibility_on_tunes}
 
 Without any betatron coupling in the machine, the horizontal and vertical tunes can be matched to the same fractional value.
 In the presence of betatron coupling however, the \intro{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same fractional value, and a minimal separation can be observed.
@@ -696,6 +707,7 @@ The closest tune approach is the minimum distance between the two red curves, hi
 %----------------------------------------------------------------------------------------
 
 \section{Luminosity}
+\label{section:luminosity}
 
 https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
 
