@@ -36,28 +36,28 @@ The guiding magnetic field can be expanded into a series of multipolar fields, f
     B_{y} = 
     \tikz[baseline]{
         \node[draw=red,rounded corners,anchor=base] (m1)
-        {$\displaystyle B_{y0}$};
+        {\(\displaystyle B_{y0}\)};
         \node[below of=m1] (l1) {dipole};
         \draw[-,red] (l1) -- (m1);
     }
     +
     \tikz[baseline]{
         \node[draw=red,rounded corners,anchor=base] (m2)
-        {$\displaystyle \frac{dB_{y}}{dx} x$};
+        {\(\displaystyle \frac{dB_{y}}{dx} x\)};
         \node[below of=m2] (l2) {quadrupole};
         \draw[-,red] (l2) -- (m2);
     }
     +
     \tikz[baseline]{
         \node[draw=red,rounded corners,anchor=base] (m3)
-        {$\displaystyle \frac{1}{2!} \frac{d^2B_{y}}{dx^2} x^2$};
+        {\(\displaystyle \frac{1}{2!} \frac{d^2B_{y}}{dx^2} x^2\)};
         \node[below of=m3] (l2) {sextupole};
         \draw[-,red] (l2) -- (m3);
     }
     +
     \tikz[baseline]{
         \node[draw=red,rounded corners,anchor=base] (m4)
-        {$\displaystyle \frac{1}{3!} \frac{d^3B_{y}}{dx^3} x^3$};
+        {\(\displaystyle \frac{1}{3!} \frac{d^3B_{y}}{dx^3} x^3\)};
         \node[below of=m4] (l2) {octupole};
         \draw[-,red] (l2) -- (m4);
     }
@@ -263,7 +263,7 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
 
 As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
 The number of these so-called \intro{betatron oscillations} per revolution is the \intro{tune} \(Q_u\).
-The tune is defined in \cref{equation:tune_definition}, where $\Delta \phi_{x, y}$ is the total betatron phase advance of a particle over a full circumference:
+The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
 
 \begin{equation}
     Q_{u} = \frac{1}{2 \pi} \Delta \phi_{u} = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_{u} (s)} \text{ .}
@@ -277,7 +277,7 @@ The \alphafunction is defined via the derivative of the \betafunction by:
     \label{equation:alpha_function}
 \end{equation}
 
-Similarly to the \(\beta\)-function, the \intro{gamma-function} $\gamma_u(s)$ describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
+Similarly to the \(\beta\)-function, the \intro{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
 Both quantities are related by the \alphafunction according to:
 
 \begin{equation}
@@ -365,7 +365,7 @@ In the case of more general particle distributions an alternative definition of 
     \label{equation:beam_emittance_general}
 \end{equation}
 
-The phase space trajectory of a particle depends on the Twiss parameters $\alpha(s)$, $\beta(s)$, and $\gamma(s)$.
+The phase space trajectory of a particle depends on the Twiss parameters \(\alpha(s)\), \(\beta(s)\), and \(\gamma(s)\).
 One can remove this dependency by performing a coordinate transformation to the \intro{Courant-Snyder coordinates}~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion}, defined as:
 
 \begin{equation}
@@ -410,7 +410,7 @@ Such momenta offsets introduce \intro{chromatic errors} in the beam dynamics.
 Effects and parameters depending on \(\delta_p\) are called \intro{chromatic effects}.
 
 From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
-The deviation of an off momentum particle orbit from that of the synchronous particle is defined by the \intro{dispersion function} $D(s)$.
+The deviation of an off momentum particle orbit from that of the synchronous particle is defined by the \intro{dispersion function} \(D(s)\).
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
