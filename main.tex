@@ -38,6 +38,7 @@ headsepline, % Uncomment to get a line under the header
 \usepackage[T1]{fontenc}  % Output font encoding for international characters
 \usepackage{amsmath, amsfonts, amssymb}
 \usepackage{bm}
+\usepackage{tikz}
 % \usepackage[StdBrackets]{envmath}
 % \usepackage{physics}
 \usepackage[autostyle=true]{csquotes}  % Required to generate language-dependent quotes in the bibliography
@@ -57,10 +58,11 @@ headsepline, % Uncomment to get a line under the header
 % \usepackage{utopia}  % Use the Palatino font
 % \usepackage{newtxtext,newtxmath}  % Use the TeX Gyre Termes font
 \usepackage{tgheros}  % Use the TeX Gyre Heros font
+\usetikzlibrary{matrix}
 
 \setcounter{secnumdepth}{3}
 \addbibresource{Bibliography.bib}
-\renewcommand{\eqnhighlightheight}{\vphantom{\hat{H}}\mathstrut} % custom 0-width height
+% \renewcommand{\eqnhighlightheight}{\vphantom{\hat{H}}\mathstrut} % custom 0-width height
 
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
@@ -136,7 +138,7 @@ headsepline, % Uncomment to get a line under the header
 % \include{Toolkit/equations_settings.tex}
 % \include{Chapters/testchapter.tex}
 % \include{Chapters/Introduction}
-% \include{Chapters/Beam_Dynamics_Theory}
+\include{Chapters/Beam_Dynamics_Theory}
 \include{Chapters/Optics_Measurements_Corrections_at_LHC}
 % \include{Chapters/IR_Coupling_Correction}
 % \include{Chapters/ML_for_IR_Coupling}

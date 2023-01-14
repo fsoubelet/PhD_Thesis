@@ -722,15 +722,24 @@ Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_t
 
 \Cref{figure:coordinate_transformations} shows a schematic of the different transformations and changes to the one-turn map.
 While one can calculate the evolution of the Courant-Snyder coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
-Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
-The calculations are simpler than the former method, and conserve non-linearities.
+Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates \(\zeta_{u}^{\pm}\) using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
+These calculations are in practice simpler than the former method, and conserve non-linearities.
 
 \begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.3\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Figure 2.12 from F Carlier?} Scheme representing the coordinate transformations and change of the one-turn map, where \(N\) is the turn number.}
+    \centering
+    \begin{tikzpicture}
+        \matrix (m) [matrix of math nodes,row sep=4em,column sep=4em,minimum width=2em]{
+            \left(u, \hat{p}_u\right)_N    &    \left(u, \hat{p}_u\right)_{N+1} \\
+            \zeta_{u_N}^{\pm}{}            &    \zeta_{u_{N+1}}^{\pm}{}  \\
+        };
+        \path[-stealth]
+        (m-1-1) edge node [above] {\( \mathcal{M} \)} (m-1-2)
+        (m-1-1) edge node [left] {\( e^{:-F:} \)} (m-2-1)
+        (m-2-1.east|-m-2-2) edge node [below] {\( e^{-:h:} R \)} (m-2-2)
+        (m-2-2) edge node [right] {\( e^{:F:} \)} (m-1-2);
+    \end{tikzpicture}
+    \caption{Illustration of the coordinate transformations and change of the one-turn map. This diagram reads from Courant-Snyder coordinates at turn \(N\) in the top left, and shows both paths to reach the Courant-Snyder coordinates at turn \(N+1\) in the top right.}
     \label{figure:coordinate_transformations}
-    \end{center}
 \end{figure}
 
 \subsection{Spectral Contribution}
