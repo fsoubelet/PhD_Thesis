@@ -778,10 +778,12 @@ More details and examples of this method is given in the next section, \cref{sec
 \label{section:betatron_coupling}
 
 When the betatronic motion of particles in transverse planes are independent of each other, they are said to be \intro{uncoupled}.
-In particle colliders such as the LHC, this behaviour is typically desirable.
-When these motions share a dependency, they are said to be \intro{coupled}, and one refers to this phenomenon as \intro{betatron coupling}, or linear coupling.
-The transverse motions of particles in an accelerator may couple due to a variety of factors.
-Solenoid and skew quadrupole fields are the primary sources of linear coupling.
+In particle colliders such as the LHC this is the desired behaviour.
+When these motions share a dependency, they are said to be \intro{coupled}, and one refers to this phenomenon as \intro{betatron coupling}.%, or linear coupling.
+The transverse motions of particles in an accelerator may couple due to a variety of factors, with solenoid and skew quadrupole fields being the primary sources of linear coupling.
+
+In the LHC the main contribution to coupling comes from unwanted skew quadrupolar fields.
+These mostly arise from normal quadrupoles mounted with a rotation error with respect to the longitudinal axis, but also from field imperfection from other magnets and feed-down from higher order magnets.
 An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 
 \begin{figure}[!htb]
@@ -792,19 +794,7 @@ An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
     \end{center}
 \end{figure}
 
-Without any betatron coupling in the machine, the horizontal and vertical tunes can be matched to the same fractional value.
-In the presence of betatron coupling however, the \intro{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same fractional value, and a minimal separation can be observed.
-This separation is called the \intro{closest tune approach} and is given as the \(\Delta Q_{\mathrm{min}}\) quantity.
-\Cref{figure:closest_tune_approach} shows an illustration of the phenomenon, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
-The closest tune approach is the minimum distance between the two red curves, highlighted by an arrow.
-
-\begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/tune_perturbation.pdf}
-    \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split.}
-    \label{figure:closest_tune_approach}
-    \end{center}
-\end{figure}
+Betatron coupling needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, or simply lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics}.
 
 \subsection{Parametrization of Betatron Coupling}
 \label{subsection:parametrization_of_betatron_coupling}
@@ -865,9 +855,24 @@ The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
-\subsection{Measurement of Coupling Resonance Driving Terms}
+% Without any betatron coupling in the machine, the horizontal and vertical tunes can be matched to the same fractional value.
+% In the presence of betatron coupling however, the \intro{coupled fractional tunes} \(Q_1\) and \(Q_2\) cannot be matched to the same fractional value, and a minimal separation can be observed.
+% This separation is called the \intro{closest tune approach} and is given as the \(\Delta Q_{\mathrm{min}}\) quantity.
+% \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
+% The closest tune approach is the minimum distance between the two red curves, highlighted by an arrow.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/tune_perturbation.pdf}
+    \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split.}
+    \label{figure:closest_tune_approach}
+    \end{center}
+\end{figure}
+
+\subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
 
+\todo{Can refer to~\cite{PRAB:Franchi:First_Simultaneous} for table with many RDTs.}
 
 
 %----------------------------------------------------------------------------------------
@@ -875,6 +880,6 @@ The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's
 \section{Luminosity}
 \label{section:luminosity}
 
-https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf
+\todo{https://cds.cern.ch/record/1533084/files/CERN-THESIS-2013-022.pdf}
 
 %----------------------------------------------------------------------------------------
