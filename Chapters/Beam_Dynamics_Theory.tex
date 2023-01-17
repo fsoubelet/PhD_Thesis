@@ -1,6 +1,6 @@
 \chapter{Theory of Beam Dynamics Relevant to the Large Hadron Collider}
 
-\label{Chapter:Theory} % For referencing the chapter elsewhere, use \cref{Chapter:Theory}
+\label{chapter:Theory} % For referencing the chapter elsewhere, use \cref{chapter:Theory}
 
 %----------------------------------------------------------------------------------------
 
@@ -848,6 +848,16 @@ The approach of Mais and Ripken was developed in~\cite{REPORT:Ripken:AllGerman} 
 It defines so-called \intro{Ripken parameters} \(\beta_{kj}, \alpha_{kj}\) and \(\gamma_{kj}\), where \(k = 1 \ldots 3\) refers to the plane (\(x, y, \ldots\)) and the index \(j\) refers to the eigenmodes, that are accurate in the presence of coupling.
 In the coupled case, all \(\beta_N\) are non-zero and \(\beta_{11}, \beta_{22}\) are distinctively different from \(\beta_x, \beta_y\), respectively.
 The relations linking these new parameters to the Twiss parameters can be found in~\cite{IOP:Lebedev:Betatron_Motion_Coupling}.
+% The relations linking these new parameters to the Twiss parameters is~\cite{IOP:Lebedev:Betatron_Motion_Coupling}:
+
+% \begin{equation}
+%     \begin{aligned}
+%     \beta_x &= \frac{\beta_{11}}{1-u} \text{ ,} \quad \alpha_x = \frac{\alpha_{11}}{1-u}, \\
+%     \beta_y &= \frac{\beta_{21}}{1-u} \text{ ,} \quad \alpha_y = \frac{\alpha_{21}}{1-u},
+%     \end{aligned}
+%     \label{equation:ripken_to_twiss_parameters}
+% \end{equation}
+% where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
 The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's (PTC~\cite{CODE:Schmidt_Forest:PTC}) handling of coupled dynamics. 
 
 \todo{Give a coupled phase space ellipse figure, like Ewen?}
@@ -921,15 +931,64 @@ As the studied interactions coming from these collisions are rare, a substantial
 Naturally, the performance of the machine is then described by the number of collisions provided to experiments.
 
 As a figure of merit, for the number of collisions, the \intro{luminosity} is used.
-The \intro{instantaneous luminosity} \(\mathcal{L}\) is the proportional factor between the number of events per unit time \(dR / dt\) and the cross-section \(\sigma_{\mathrm{cross}}\):
+The \intro{instantaneous luminosity} \(\mathcal{L}\) is the proportional factor between the number of events per unit time \(dR / dt\) and the process cross-section \(\sigma_{\mathrm{cross}}\):
 
 \begin{equation}
     \dfrac{dR}{dt} = \mathcal{L} \sigma_{\mathrm{cross}} \text{ .}
     \label{equation:instantaneous_luminosity_definition}
 \end{equation}
 
+For a collider with Gaussian beams, the luminosity can be expressed as~\cite{CERN:Herr:Concept_Luminosity}
 
+\begin{equation}
+    \mathcal{L} = \frac{f_{\mathrm{rev}} N_1 N_2}{4 \pi \sigma_x \sigma_y} S \text{ ,}
+    \label{equation:luminosity_gaussian_beams}
+\end{equation}
+where \(f_{\mathrm{rev}}\) is the revolution frequency of particle bunches, \(N_1\) and \(N_2\) are the number of particles in each beam, and \(\sigma_x\), \(\sigma_y\) are the transverse beam sizes at the interaction points.
+\(S\) is the luminosity reduction factor and depends on the crossing of the beams: crossing angles, orbit offset, non-zero dispersion or even the hourglass effect will impact its value.
+The instantaneous luminosity is given in units of inverse barns per second (\unit{\per\barn\per\second}), where \(\left[ b \right] = \) \qty{1e-24}{\per\square\centi\meter}.
 
-\cite{PHD:Vanbavinckhove, PHD:Keintzel}
+For Gaussian bunches colliding with a \intro{crossing angle} \(\theta\), where \(\sigma_s \gg \sigma{x,y}\) and neglecting other contributions, the luminosity reduction factor is given by~\cite{CERN:Herr:Concept_Luminosity}:
+
+\begin{equation}
+    S \approx \frac{1}{\sqrt{1 + \left( \frac{\theta}{2} \frac{\sigma_s}{\sigma_x} \right)^2}} \text{ ,}
+    \label{equation:luminosity_reduction_factor}
+\end{equation}
+
+As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \betafunction at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
+Indeed, the smaller the \betastar the small the beam sizes, and the more collisions will be produced per revolution. 
+The downside to small beam sizes, which is a direct consequence from the \kl{Louiville theorem}, is that they cause large beam divergence.
+This is illustrated by the evolution of the \betafunction in the drift space around the IP:
+
+\begin{equation}
+    \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}}
+    \label{equation:betafunction_drift_space}
+\end{equation}
+where here \(s\) is the distance from the IP.
+As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \betafunctions low, hence the presence of a substantial drift space.
+The experimental insertion regions will be discussed in more details in \cref{section:lhc_lattice}.
+
+The \intro{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
+
+\begin{equation}
+    \mathcal{L}_{\mathrm{int}} = \int_{t_1}^{t_2} \mathcal{L} \mathrm{d}t \text{ ,}
+    \label{equation:integrated_luminosity}
+\end{equation}
+
+The integrated luminosity is usually in units of \unit{\per\femto\barn} \(=\) \qty{1e39}{\per\square\centi\meter}.
+The total number of collisions, or events, over said time period is then:
+
+\begin{equation}
+    \mathrm{N_{events}} = \mathcal{L}_{\mathrm{int}} \sigma_{\mathrm{cross}} \text{ .}
+    \label{equation:total_number_collisions}
+\end{equation}
+
+Throughout luminosity production, the instantaneous luminosity naturally decreases as more and more particles are lost to collisions~\cite{PRES:Hostettler:LHC_Lumi_Lifetime}.
+Any particle losses happening before colliding the beams will lead to a reduction of the initial \(N_{1,2}\) and of the resulting integrated luminosity of the given fill.\\
+
+Luminosity production requires a good control of the linear optics, both for the quality of the optics themselves but also for a smooth and safe operation.
+Many nonlinear contributions may also influence the dynamics away from the linear regime, leading to a deterioration of the dynamics and, down the line, the luminosity.
+Therefore for a particle collider like the LHC a good control of all effect influencing the beam dynamics is required, and methods to both measure and correct any deviations from the ideal machine are a necessity.
+An overview will be given in \cref{chapter:LHC_OMC}
 
 %----------------------------------------------------------------------------------------

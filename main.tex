@@ -68,6 +68,19 @@ headsepline, % Uncomment to get a line under the header
 \definecolor{wpblue}{RGB}{0, 0, 245}
 \definecolor{wpred}{RGB}{234, 51, 36}
 
+
+%----------------------------------------------------------------------------------------
+%	SIUNITX SETTINGS
+%----------------------------------------------------------------------------------------
+
+\sisetup{
+    exponent-product=\times,      % operator between number and 10^n
+    print-unity-mantissa=false,  % no 1 x 10^3, only 10^3
+    % inter-unit-product=\cdot,
+    % separate-uncertainty,
+    % table-align-uncertainty,
+}
+
 %----------------------------------------------------------------------------------------
 %	MARGIN SETTINGS
 %----------------------------------------------------------------------------------------
