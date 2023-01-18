@@ -113,17 +113,21 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
 
 \Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
-\begin{figure}[htp]
+\begin{figure}[!hbt]
     \centering
-    \subfloat[.7\linewidth][Ideal dipole.]{
-        \includegraphics[width=6.5cm]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
+        \caption{Ideal dipole.}
         \label{fig:ideal_dipole}
-    }
-    \hspace{0.5cm}
-    \subfloat[.7\linewidth][Ideal quadrupole.]{
-        \includegraphics[width=6.5cm]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
+        \caption{Ideal quadrupole.}
         \label{fig:ideal_quadrupole}
-    }
+    \end{subfigure}
     \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
 \end{figure}
@@ -259,6 +263,7 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
 
 \begin{equation}
     \phi_{s_1 \rightarrow s_2} = \phi(s_{2}) - \phi(s_{1}) = \int_{s_{1}}^{s_{2}} \frac{1}{\beta(s)} ds \text{ .}
+    \label{equation:phase_advance_definition}
 \end{equation}
 
 As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
@@ -325,7 +330,7 @@ The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solu
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.75\linewidth]{Figures/Beam_Dynamics_Theory/Phase_Space.png}
+    \includegraphics[width = 0.75\linewidth]{Figures/Beam_Dynamics_Theory/phase_space.png}
     \caption{Phase space ellipse in the transverse \((u, u^{\prime})\) plane, where \(u\) represents either transverse coordinate \(x\) or \(y\).}
     \label{figure:phase_space_ellipse}
     \end{center}
@@ -383,15 +388,26 @@ One can remove this dependency by performing a coordinate transformation to the 
 \end{equation}
 where the Courant-Snyder coordinates are denoted by \^{}.
 In this new system particles follow circular trajectories in phase space.
-\Cref{figure:physical_to_normalized_courant_snyder_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
-In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and dependeing only on the action and angle variables \((J_u, Q_u)\).
+\Cref{figure:phase_space_linear_physical_normalized_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
+In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_u, Q_u)\).
 
-\begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.75\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Figure 2.6 from F. Carlier PhD?}}
-    \label{figure:physical_to_normalized_courant_snyder_coordinates}
-    \end{center}
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_physical.pdf}
+        \caption{Physical coordinates.}
+        \label{fig:phase_space_physical}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.45\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_normalized.pdf}
+        \caption{Normalized coordinates.}
+        \label{fig:phase_space_normalized}
+    \end{subfigure}
+    \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative representation of phase-space in physical coordinates (left) and normalized coordinates (right) for an accelerator with linear elements only. The Courant-Snyder transformation transforms the elliptical phase-space into a much simpler circular one where the motion is described by simple rotations at fixed amplitude. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
+    \label{figure:phase_space_linear_physical_normalized_coordinates}
 \end{figure}
 
 \subsection{Chromatic Effects}
@@ -608,14 +624,32 @@ The change of coordinates is represented by a similarity transformation of the o
 \end{equation}
 where \(F\) is the \intro{generating function} of the transformation.
 The coordinates resulting from the transformation are called \intro{normal form coordinates}.
-This is illustrated in \cref{figure:physical_to_normalized_courant_snyder_coordinates}.
+This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}.
 
-\begin{figure}[!htb]
-    \begin{center}
-    \includegraphics[width = 0.5\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Transformation to normal form coordinates (Ewen fig 1.5, Roro fig 3.1, or Felix fig 2.11)}}
-    \label{figure:phase_space_physical_normalized_normal_form_coordinates}
-    \end{center}
+\begin{figure}[!hbt]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_physical.pdf}
+        \caption{Physical coordinates.}
+        \label{fig:phase_space_physical_nonlinear}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.3\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normalized.pdf}
+        \caption{Normalized coordinates.}
+        \label{fig:phase_space_normalized_nonlinear}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.38\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normal_form.pdf}
+        \caption{Normal form coordinates.}
+        \label{fig:phase_space_normal_form_nonlinear}
+    \end{subfigure}
+    \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative representations of an exagerated phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
+    \label{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}
 \end{figure}
 
 The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_u\) can be introduced. 
