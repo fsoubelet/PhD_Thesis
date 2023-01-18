@@ -1,5 +1,5 @@
-\chapter{Theory of Beam Dynamics Relevant to the Large Hadron Collider}
-
+% \chapter{Theory of Beam Dynamics Relevant to the Large Hadron Collider}
+\chapter{Relevant Theory of Beam Dynamics}
 \label{chapter:Theory} % For referencing the chapter elsewhere, use \cref{chapter:Theory}
 
 %----------------------------------------------------------------------------------------
@@ -114,22 +114,25 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
 \Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
 \begin{figure}[!hbt]
-    \centering
+    \begin{center}
     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
         \caption{Ideal dipole.}
         \label{fig:ideal_dipole}
+        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
         \caption{Ideal quadrupole.}
         \label{fig:ideal_quadrupole}
+        \end{center}
     \end{subfigure}
     \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
+\end{center}
 \end{figure}
 
 \subsection{Equations of Motion and Twiss Parameters}
@@ -392,22 +395,25 @@ In this new system particles follow circular trajectories in phase space.
 In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_u, Q_u)\).
 
 \begin{figure}[!hbt]
-    \centering
+    \begin{center}
     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_physical.pdf}
         \caption{Physical coordinates.}
         \label{fig:phase_space_physical}
+        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_normalized.pdf}
         \caption{Normalized coordinates.}
         \label{fig:phase_space_normalized}
+        \end{center}
     \end{subfigure}
     \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative representation of phase-space in physical coordinates (left) and normalized coordinates (right) for an accelerator with linear elements only. The Courant-Snyder transformation transforms the elliptical phase-space into a much simpler circular one where the motion is described by simple rotations at fixed amplitude. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_linear_physical_normalized_coordinates}
+    \end{center}
 \end{figure}
 
 \subsection{Chromatic Effects}
@@ -614,8 +620,17 @@ In the case of a skew quadrupole (\(n=2\)) for example, one will see terms in th
 
 Due to the presence of non-linear sources the linear invariant \(J_u\) introduced in \cref{subsection:phase_space_ellipse} is no longer a constant.
 This leads to the phase space trajectory in normalized, or Courant-Snyder, coordinates no longer describing a circle.
-One may wish to create a new transformation, akin to that to normalized coordinates, that would allow describing betatron motion in phase space by a pure rotation in the presence of non-linear sources.
+An example of this situation is given in \cref{figure:phase_space_third_order_resonance}, where the phase space trajectories of \num{200} particles are shown in normalized coordinates when exciting a third order resonance.
 
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/phase_space_third_order_resonance.pdf}
+    \caption{Phase space in normalized coordinates from tracking \num{200} particles in a simple FODO-based lattice, when exciting a third order resonance. Points of each color corresponds to the trajectory of a given particle.}
+    \label{figure:phase_space_third_order_resonance}
+    \end{center}
+\end{figure}
+
+One may wish to create a new transformation, akin to that to normalized coordinates, that would allow describing betatron motion in phase space by a pure rotation in the presence of non-linear sources.
 The change of coordinates is represented by a similarity transformation of the one turn map, written as~\cite{PHD:Tomas}:
 
 \begin{equation}
@@ -627,29 +642,33 @@ The coordinates resulting from the transformation are called \intro{normal form 
 This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}.
 
 \begin{figure}[!hbt]
-    \centering
+    \begin{center}
     \begin{subfigure}[b]{0.3\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_physical.pdf}
         \caption{Physical coordinates.}
         \label{fig:phase_space_physical_nonlinear}
+        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normalized.pdf}
         \caption{Normalized coordinates.}
         \label{fig:phase_space_normalized_nonlinear}
+        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.38\textwidth}
-        \centering
+        \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normal_form.pdf}
         \caption{Normal form coordinates.}
         \label{fig:phase_space_normal_form_nonlinear}
+        \end{center}
     \end{subfigure}
     \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative representations of an exagerated phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}
+    \end{center}
 \end{figure}
 
 The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_u\) can be introduced. 
@@ -760,7 +779,7 @@ Solving the one-turn map for the next turn is best done by performing a transfor
 These calculations are in practice simpler than the former method, and conserve non-linearities.
 
 \begin{figure}[!htb]
-    \centering
+    \begin{center}
     \begin{tikzpicture}
         \matrix (m) [matrix of math nodes,row sep=4em,column sep=4em,minimum width=2em]{
             \left(\hat{u}, \hat{p}_u\right)_N    &    \left(\hat{u}, \hat{p}_u\right)_{N+1} \\
@@ -774,6 +793,7 @@ These calculations are in practice simpler than the former method, and conserve 
     \end{tikzpicture}
     \caption{Illustration of the coordinate transformations and change of the one-turn map. This diagram reads from Courant-Snyder coordinates at turn \(N\) in the top left, and shows both paths to reach the Courant-Snyder coordinates at turn \(N+1\) in the top right.}
     \label{figure:coordinate_transformations}
+    \end{center}
 \end{figure}
 
 \subsection{Spectral Contribution}
