@@ -2,87 +2,165 @@
 \label{appendix:experimental_knobs}
 
 One can find in this Appendix the full information of the different experimental knobs that were designed for the LHC.
-The knobs are reported below as they have been implemented in the \emph{LHC Software Architecture} (LSA) framework.
+The knobs are reported below as they have been implemented in the \intro{LHC Software Architecture} (LSA) framework.
 In each case, the values correspond to a trim factor of the knob of \num{1}, and scale linearly with the trim factor.
 
-These knobs have been designed for all beam processes of the LHC Run~3 optics as they were at the time of the 2022 commissioning, for a beam energy of \qty{6800}{\giga\electronvolt}.
+These knobs have been designed for all beam processes of the LHC Run~\num{3} optics as they were at the time of the \num{2022} commissioning, for a beam energy of \qty{6800}{\giga\electronvolt}.
 
 %----------------------------------------------------------------------------------------
 
 \section{Definitions of the Colinearity Knobs}
 
-\Cref{table:lsa_ip1_colinearity_knob,table:lsa_ip5_colinearity_knob} show the settings used in LSA to define the colinearity knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+% \Cref{table:lsa_ip1_colinearity_knob,table:lsa_ip5_colinearity_knob} show the settings used in LSA to define the colinearity knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+\Cref{table:lsa_colinearity_knobs} shows the settings used in LSA to define the colinearity knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
 These knobs control the skew quadrupole correctors left and right of the \(\mathrm{IP}\), the \(\mathrm{MQSX}\) magnets.
 
-\begin{table}[!hbt]
-    \centering
-    \begin{tblr}{colspec={cc}}
-        \hline
-        \textbf{Component} & \textbf{Value} \\
-        \hline
-        \(\mathrm{RQSX3.L1/K1S}\)  &  \num{1E-4}  \\
-        \(\mathrm{RQSX3.R1/K1S}\)  &  \num{-1E-4}  \\
-        \hline
-    \end{tblr}
-    \caption{Definition of the colinearity knob for IR1 as implemented in LSA.}
-    \label{table:lsa_ip1_colinearity_knob}
-\end{table}
+% \begin{table}[!hbt]
+%     \centering
+%     \begin{tblr}{colspec={cc}}
+%         \hline
+%         \textbf{Component} & \textbf{Value} \\
+%         \hline
+%         \(\mathrm{RQSX3.L1/K1S}\)  &  \num{1E-4}  \\
+%         \(\mathrm{RQSX3.R1/K1S}\)  &  \num{-1E-4}  \\
+%         \hline
+%     \end{tblr}
+%     \caption{Definition of the colinearity knob for IR1 as implemented in LSA.}
+%     \label{table:lsa_ip1_colinearity_knob}
+% \end{table}
+
+% \begin{table}[!hbt]
+%     \centering
+%     \begin{tblr}{colspec={cc}}
+%         \hline
+%         \textbf{Component} & \textbf{Value} \\
+%         \hline
+%         \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
+%         \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
+%         \hline
+%     \end{tblr}
+%     \caption{Definition of the colinearity knob for IR5 as implemented in LSA.}
+%     \label{table:lsa_ip5_colinearity_knob}
+% \end{table}
 
 \begin{table}[!hbt]
-    \centering
-    \begin{tblr}{colspec={cc}}
-        \hline
-        \textbf{Component} & \textbf{Value} \\
-        \hline
-        \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
-        \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
-        \hline
-    \end{tblr}
-    \caption{Definition of the colinearity knob for IR5 as implemented in LSA.}
-    \label{table:lsa_ip5_colinearity_knob}
+    \begin{subtable}[h]{0.45\textwidth}
+        \begin{center}
+        \begin{tblr}{colspec={cc}}
+            \hline
+            \textbf{Component} & \textbf{Value} \\
+            \hline
+            \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
+            \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
+            \hline
+        \end{tblr}
+        \end{center}
+        \caption{Colinearity knob for IR1.}
+        \label{table:lsa_ip1_colinearity_knob}
+    \end{subtable}
+    \hfill
+    \begin{subtable}[h]{0.45\textwidth}
+        \begin{center}
+        \begin{tblr}{colspec={cc}}
+            \hline
+            \textbf{Component} & \textbf{Value} \\
+            \hline
+            \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
+            \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
+            \hline
+        \end{tblr}
+        \end{center}
+        \caption{Colinearity knob for IR5.}
+        \label{table:lsa_ip5_colinearity_knob}
+    \end{subtable}
+    \caption{Definition of the colinearity knobs defined for IR1 (left) and IR5 (right) as implemented in LSA.}
+    \label{table:lsa_colinearity_knobs}
 \end{table}
 
 %----------------------------------------------------------------------------------------
 
 \section{Definitions of the Rigid Waist Shift Knobs}
 
-\Cref{table:lsa_ip1_rigid_waist_shift,table:lsa_ip5_rigid_waist_shift} show the settings used in LSA to define the rigid waist shift knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+% \Cref{table:lsa_ip1_rigid_waist_shift,table:lsa_ip5_rigid_waist_shift} show the settings used in LSA to define the rigid waist shift knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+\Cref{table:lsa_rigid_waist_shift_knobs} shows the settings used in LSA to define the rigid waist shift knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
 These knobs control the triplet magnets left and right of the \IP in order to move all four betatron waists simultaneously.
 
-\begin{table}[!hbt]
-    \centering
-    \begin{tblr}{colspec={cc}}
-        \hline
-        \textbf{Component} & \textbf{Value} \\
-        \hline
-        \(\mathrm{MQXA1.L1/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA1.R1/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA3.L1/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA3.R1/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXB2.L1/K1}\)  &  \num{4.38891E-5}  \\
-        \(\mathrm{MQXB2.R1/K1}\)  &  \num{4.38891E-5}  \\
-        \hline
-    \end{tblr}
-    \caption{Definition of the rigid waist shift knob for IR1 as implemented in LSA.}
-    \label{table:lsa_ip1_rigid_waist_shift}
-\end{table}
+% \begin{table}[!hbt]
+%     \centering
+%     \begin{tblr}{colspec={cc}}
+%         \hline
+%         \textbf{Component} & \textbf{Value} \\
+%         \hline
+%         \(\mathrm{MQXA1.L1/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA1.R1/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA3.L1/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA3.R1/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXB2.L1/K1}\)  &  \num{4.38891E-5}  \\
+%         \(\mathrm{MQXB2.R1/K1}\)  &  \num{4.38891E-5}  \\
+%         \hline
+%     \end{tblr}
+%     \caption{Definition of the rigid waist shift knob for IR1 as implemented in LSA.}
+%     \label{table:lsa_ip1_rigid_waist_shift}
+% \end{table}
+
+% \begin{table}[!hbt]
+%     \centering
+%     \begin{tblr}{colspec={cc}}
+%         \hline
+%         \textbf{Component} & \textbf{Value} \\
+%         \hline
+%         \(\mathrm{MQXA1.L5/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA1.R5/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA3.L5/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXA3.R5/K1}\)  &  \num{-4.38891E-5}  \\
+%         \(\mathrm{MQXB2.L5/K1}\)  &  \num{4.38891E-5}  \\
+%         \(\mathrm{MQXB2.R5/K1}\)  &  \num{4.38891E-5}  \\
+%         \hline
+%     \end{tblr}
+%     \caption{Definition of the rigid waist shift knob for IR5 as implemented in LSA.}
+%     \label{table:lsa_ip5_rigid_waist_shift}
+% \end{table}
 
 \begin{table}[!hbt]
-    \centering
-    \begin{tblr}{colspec={cc}}
-        \hline
-        \textbf{Component} & \textbf{Value} \\
-        \hline
-        \(\mathrm{MQXA1.L5/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA1.R5/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA3.L5/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXA3.R5/K1}\)  &  \num{-4.38891E-5}  \\
-        \(\mathrm{MQXB2.L5/K1}\)  &  \num{4.38891E-5}  \\
-        \(\mathrm{MQXB2.R5/K1}\)  &  \num{4.38891E-5}  \\
-        \hline
-    \end{tblr}
-    \caption{Definition of the rigid waist shift knob for IR5 as implemented in LSA.}
-    \label{table:lsa_ip5_rigid_waist_shift}
+    \begin{subtable}[h]{0.45\textwidth}
+        \begin{center}
+        \begin{tblr}{colspec={cc}}
+            \hline
+            \textbf{Component} & \textbf{Value} \\
+            \hline
+            \(\mathrm{MQXA1.L1/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA1.R1/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA3.L1/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA3.R1/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXB2.L1/K1}\)  &  \num{4.38891E-5}  \\
+            \(\mathrm{MQXB2.R1/K1}\)  &  \num{4.38891E-5}  \\
+            \hline
+        \end{tblr}
+        \end{center}
+        \caption{Knobs for IR1.}
+        \label{table:lsa_ip1_rigid_waist_shift}
+    \end{subtable}
+    \hfill
+    \begin{subtable}[h]{0.45\textwidth}
+        \begin{center}
+        \begin{tblr}{colspec={cc}}
+            \hline
+            \textbf{Component} & \textbf{Value} \\
+            \hline
+            \(\mathrm{MQXA1.L5/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA1.R5/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA3.L5/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXA3.R5/K1}\)  &  \num{-4.38891E-5}  \\
+            \(\mathrm{MQXB2.L5/K1}\)  &  \num{4.38891E-5}  \\
+            \(\mathrm{MQXB2.R5/K1}\)  &  \num{4.38891E-5}  \\
+            \hline
+        \end{tblr}
+        \end{center}
+        \caption{Knobs for IR5.}
+        \label{table:lsa_ip5_rigid_waist_shift}
+    \end{subtable}
+    \caption{Definition of the rigid waist shift knobs defined for IR1 (left) and IR5 (right) as implemented in LSA.}
+    \label{table:lsa_rigid_waist_shift_knobs}
 \end{table}
 
 %----------------------------------------------------------------------------------------
