@@ -8,7 +8,7 @@ The design, operation, performance, and safety of a particle accelerator depend 
 This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
 Most of the material in this section can be found in the literature such as \cite{BOOK:Wilson:Introcution_Particle_Accelerators, BOOK:Lee:Accelerator_physics, BOOK:Wiedemann:Particle_Accelerator_Physics, BOOK:Minty:Measurements_Control_Charged_Particle_Beams,BOOK:Wolski:Beam_dynamics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
 When not in these works, explicit references to content are given.
-\todo{The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity}.
+The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity.
 
 %----------------------------------------------------------------------------------------
 
@@ -98,8 +98,8 @@ A schematic of a \(\mathrm{FODO}\) cell is shown in \cref{figure:fodo_cell_schem
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.8\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Schematic of a \(\mathrm{FODO}\) cell. A focusing quadrupole is denoted with an F while a defocusing one is denoted with a D.}}
+    \includegraphics[width = 0.8\linewidth]{Figures/Beam_Dynamics_Theory/fodo_cell_schematic.png}
+    \caption{Schematic of a FODO cell. A focusing quadrupole is denoted with an F while a defocusing one is denoted with a D.}
     \label{figure:fodo_cell_schematic}
     \end{center}
 \end{figure}
@@ -672,7 +672,7 @@ This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_no
 \end{figure}
 
 The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_u\) can be introduced. 
-Similarly to \(h\) in \cref{equation:h_thin_kick_expansion}, the generating function \(F\) can be expanded in terms of the normal form coordinates according to \todo{REF}:
+Similarly to \(h\) in \cref{equation:h_thin_kick_expansion}, the generating function \(F\) can be expanded in terms of the normal form coordinates according to~\cite{PHD:Franchi}:
 
 \begin{equation}
     F = \sum_{jklm} f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}} \left(2 I_y \right)^{\frac{l+m}{2}} e^{i \left[ (j-k) \left( \psi_x - \psi_{x_0} \right) + (l-m) \left( \psi_y - \psi_{y_0} \right) \right]} \text{ ,}
@@ -724,8 +724,8 @@ The normalized Courant-Snyder coordinates \(\left( \hat{u}, \hat{p}_u \right)\) 
 
 \begin{equation}
     \begin{aligned}
-        \hat{u}   &= \sqrt{2 J_u} \cos \left( \phi_z - \phi_{z_0} \right) \text{ ,} \\
-        \hat{p_u} &= - \sqrt{2 J_u} \sin \left( \phi_z - \phi_{z_0} \right) \text{ .}
+        \hat{u}   &= \sqrt{2 J_u} \cos \left( \phi_u - \phi_{u_0} \right) \text{ ,} \\
+        \hat{p_u} &= - \sqrt{2 J_u} \sin \left( \phi_u - \phi_{u_0} \right) \text{ .}
     \end{aligned}
     \label{equation:normalized_courant_snyder_coordinates_from_action_angle}
 \end{equation}
@@ -842,7 +842,7 @@ An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.9\linewidth]{Figures/placeholder.png}
+    \includegraphics[width = 0.5\linewidth]{Figures/placeholder.png}
     \caption{\todo{Illustration of a skew quadrupole and its magnetic field lines.}}
     \label{figure:skew_quadrupole}
     \end{center}
@@ -914,8 +914,6 @@ The relations linking these new parameters to the Twiss parameters can be found 
 % where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
 The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's (PTC~\cite{CODE:Schmidt_Forest:PTC}) handling of coupled dynamics. 
 
-\todo{Give a coupled phase space ellipse figure, like Ewen?}
-
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
@@ -948,17 +946,17 @@ with \(\Delta\) being the unperturbed fractional tune split and \AbsCminus the l
 When \(\Delta \gg \left| C^{-} \right|\), away from the resonance, the observed oscillations modes \(Q_{1,2}\) are almost identical to the uncoupled horizontal and vertical tunes \(Q_{x,y}\).
 When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
 The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \intro{closest tune approach}, corresponds this separation.
-\Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed and coupled fractional tunes are plotted against the uncoupled tune split.
+\Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
 
 \begin{figure}[!htb]
     \begin{center}
-    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/tune_perturbation.pdf}
-    \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split. \todo{GET THE ONE FROM JACQUELINE OR DO IT MYSELF.}}
+    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/closest_tune_approach_schematic.png}
+    \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split. Courtesy of J. Keintzel~\cite{PHD:Keintzel}.}
     \label{figure:closest_tune_approach}
     \end{center}
 \end{figure}
 
-On the other hand, when approaching the sum resonance, the emittance is described by:
+On the other hand, when approaching the sum resonance the emittances follow:
 
 \begin{equation}
     \varepsilon_x - \varepsilon_y = \mathrm{const} \text{ ,}
@@ -971,6 +969,51 @@ In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order
 
 \subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
+
+Linear coupling in the LHC is dominated by the contribution of skew quadrupole fields, which lead to terms \(\propto xy\) in the Hamiltonian.
+According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the resonance driving terms \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
+The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but former is for the horizontal plane while latter is for the vertical plane.
+Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this thesis.
+
+It was mentioned in the \cref{subsection:coupled_motion} that the LHC working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1001}}\).
+These RDTs can be expressed as a function of the uncoupled lattice parameters at the location of both the coupling-contributing elements and the observation point \(s\) as~\cite{PHREV:Guignard:Betatron_Coupling_Radiation}:
+
+\begin{equation}
+    \begin{aligned}
+        f_{1001}(s) &= - \frac{1}{4 \left(1 - e^{2 \pi i \left(Q_x - Q_y \right)}\right)} \sum_l k_l \sqrt{\beta_x^l \beta_y^l} e^{i \left(\Delta \phi_x^{s l} - \Delta \phi_y^{s l}\right)} \text{ ,} \\
+        f_{1010}(s) &= - \frac{1}{4 \left(1 - e^{2 \pi i \left(Q_x + Q_y \right)}\right)} \sum_l k_l \sqrt{\beta_x^l \beta_y^l} e^{i \left(\Delta \phi_x^{s l} + \Delta \phi_y^{s l}\right)} \text{ ,}
+    \end{aligned}
+    \label{equation:coupling_rdts_from_skew_quads}
+\end{equation}
+where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \betafunctions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point \(s\).
+The summation is done over all contributing skew quadrupoles.
+
+These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) is can be expressed in relation to the \(f_{1001}\) RDT.
+In~\cite{PHD:Franchi} this relation was established as:
+
+\begin{equation}
+    \abs{C^{-}} \approx 4 \Delta \frac{1}{N} \sum_{i=1}^N \abs{f_{1001}}_i \text{ ,}
+    \label{equation:deltaqmin_from_f1001_franchi}
+\end{equation}
+where the summation is done over the \(N\) observation points, and \(\Delta\) is the fractional tune split.
+
+A more precise relation was established in~\cite{PRAB:Persson:Improved_Control_Betatron_Coupling}, which is:
+
+\begin{equation}
+    \abs{C^{-}} = \abs{\frac{4 \Delta}{2 \pi R} \oint d s f_{1001} e^{-i \left(\phi_x - \phi_y \right) + i s \Delta / R} } \text{ ,}
+    \label{equation:deltaqmin_from_f1001}
+\end{equation}
+where the dependence of \(\phi_{x,y}\) on the position \(s\) was omitted for clarity.
+
+In~\cite{PHREV:Guignard:Betatron_Coupling_Radiation} the equations of motion are solved perturbatively under the influence of a weak skew quadrupole strength \(j(s)\).
+Assuming that the machine is close to the difference coupling resonance \(\Delta = Q_x - Q_y \rightarrow 0\), the \(\abs{C^{-}}\) can be approximated as:
+
+\begin{equation}
+    \abs{C^{-}} = \frac{1}{2 \pi} \abs{ \oint ds \sqrt{\beta_x(s) \beta_y(s)} j(s) e^{-i \left( \phi_x - \phi_y \right) + i \frac{s \Delta}{R}} } \text{ ,}
+    \label{equation:deltaqmin_guignard}
+\end{equation}
+where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal and vertical \betafunctions, \(\phi_{x,y}\) are the phase advances and \(R\) is the radius of the machine.
+
 
 \todo{Can refer to~\cite{PRAB:Franchi:First_Simultaneous} for table with many RDTs.}
 
