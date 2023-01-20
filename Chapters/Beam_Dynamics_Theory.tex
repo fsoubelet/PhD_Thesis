@@ -4,11 +4,13 @@
 
 %----------------------------------------------------------------------------------------
 
-The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics, a field of accelerator science.
+The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics.
 This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
-Most of the material in this section can be found in the literature such as \cite{BOOK:Wilson:Introcution_Particle_Accelerators, BOOK:Lee:Accelerator_physics, BOOK:Wiedemann:Particle_Accelerator_Physics, BOOK:Minty:Measurements_Control_Charged_Particle_Beams,BOOK:Wolski:Beam_dynamics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
-When not in these works, explicit references to content are given.
-The chapter starts out with a description of linear dynamics, then moves on to aspects of non-linear dynamics, and ends with a discussion of luminosity.
+For a more complete treatment of relevant accelerator physics the reader is best referred to textbooks by Wilson~\cite{BOOK:Wilson:Introcution_Particle_Accelerators}, Lee~\cite{BOOK:Lee:Accelerator_physics}, Wiedemann~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}, Minty and Zimmermann~\cite{BOOK:Minty:Measurements_Control_Charged_Particle_Beams}, Wolski~\cite{BOOK:Wolski:Beam_dynamics} or Chao~\cite{BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
+Most of the material in this section can be found in the aforementioned literature, and when not in these works explicit references to the relevant content are given.
+
+The chapter starts out with a description of linear dynamics and a parametrization of turn-by-turn motion in a circular accelerator.
+It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion, then follows with an introduction to betatron coupling and ends with a discussion of luminosity.
 
 %----------------------------------------------------------------------------------------
 
@@ -66,7 +68,7 @@ The guiding magnetic field can be expanded into a series of multipolar fields, f
 \end{align}
 
 Bending forces are supplied by dipole magnets with a magnetic field perpendicular to the beam trajectory, while focusing is typically performed with the use of quadrupole magnets.
-Higher orders belong to the nonlinear dynamics and will be discussed later on.
+Higher orders belong to the non-linear dynamics and will be discussed later on.
 \Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 
 \begin{figure}[!htb]
@@ -639,7 +641,7 @@ The change of coordinates is represented by a similarity transformation of the o
 \end{equation}
 where \(F\) is the \intro{generating function} of the transformation.
 The coordinates resulting from the transformation are called \intro{normal form coordinates}.
-This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}.
+This is illustrated in \cref{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}.
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -647,7 +649,7 @@ This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_no
         \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_physical.pdf}
         \caption{Physical coordinates.}
-        \label{fig:phase_space_physical_nonlinear}
+        \label{fig:phase_space_physical_non-linear}
         \end{center}
     \end{subfigure}
     \hfill
@@ -655,7 +657,7 @@ This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_no
         \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normalized.pdf}
         \caption{Normalized coordinates.}
-        \label{fig:phase_space_normalized_nonlinear}
+        \label{fig:phase_space_normalized_non-linear}
         \end{center}
     \end{subfigure}
     \hfill
@@ -663,11 +665,11 @@ This is illustrated in \cref{figure:phase_space_nonlinear_physical_normalized_no
         \begin{center}
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normal_form.pdf}
         \caption{Normal form coordinates.}
-        \label{fig:phase_space_normal_form_nonlinear}
+        \label{fig:phase_space_normal_form_non-linear}
         \end{center}
     \end{subfigure}
     \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative exagerated representations of phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
-    \label{figure:phase_space_nonlinear_physical_normalized_normal_form_coordinates}
+    \label{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}
     \end{center}
 \end{figure}
 
@@ -1081,7 +1083,7 @@ Throughout luminosity production, the instantaneous luminosity naturally decreas
 Any particle losses happening before colliding the beams will lead to a reduction of the initial \(N_{1,2}\) and of the resulting integrated luminosity of the given fill.\\
 
 Luminosity production requires a good control of the linear optics, both for the quality of the optics themselves but also for a smooth and safe operation.
-Many nonlinear contributions may also influence the dynamics away from the linear regime, leading to a deterioration of the dynamics and, down the line, the luminosity.
+Many non-linear contributions may also influence the dynamics away from the linear regime, leading to a deterioration of the dynamics and, down the line, the luminosity.
 Therefore for a particle collider like the LHC a good control of all effect influencing the beam dynamics is required, and methods to both measure and correct any deviations from the ideal machine are a necessity.
 An overview will be given in \cref{chapter:LHC_OMC}
 
