@@ -294,7 +294,7 @@ Both quantities are related by the \alphafunction according to:
     \label{equation:gamma_function}
 \end{equation}
 
-The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \intro{Twiss parameters}.
+The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
 The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
@@ -310,22 +310,23 @@ The transfer matrix can be expressed with Twiss parameters according to~\cite{AO
         \cos(\phi_u) + \alpha_u \sin(\phi_u) & \beta_u \sin(\phi_u) \\
         - \gamma_u \sin(\phi_u)              & \cos(\phi_u) - \alpha_u \sin(\phi_u)
     \end{array} 
-    \right) \text{ .}
+    \right) \text{ ,}
     \label{equation:transfer_matrix_twiss_parameters}
 \end{equation}
+where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 
 \subsection{Phase Space Ellipse}
 \label{subsection:phase_space_ellipse}
 
-In the linear regime all particle trajectories describe ellipses in \((u, u^{\prime})\) phase space.
+In the linear regime all particle trajectories describe ellipses in \((u, u^{\prime})\), or \((u, p_u)\) phase space.
 The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \intro{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
 
 \begin{equation}
-    \gamma_{u}(s) u^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon_u \text{ .}
+    \gamma_{u}(s) u(s)^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon_u \text{ .}
     \label{equation:ellipse_equation}
 \end{equation}
 
-\Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area of which is defined by the geometric emittance according to:
+\Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area \(A\) of which is defined by the geometric emittance according to:
 
 \begin{equation}
     A = \pi \varepsilon_u \text{ .}
@@ -340,9 +341,9 @@ The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solu
     \end{center}
 \end{figure}
 
-According to the Liouville theorem, the phase space volume, the ellipse area \(A\) is a constant in a closed system.
+According to the Liouville theorem the phase space volume, the ellipse area \(A\), is a constant in a closed system.
 When accelerating the beam this theorem no longer holds true and the geometric emittance \(\varepsilon\) will decrease as the beam energy increases.
-One can then construct the \intro{normalized emittance} \(\varepsilon_{\gamma}\), which is invariant with beam energy, based on the relativistic beta and gamma:
+One can then construct the \intro{normalized emittance}, which is invariant with beam energy, based on the relativistic beta and gamma:
 
 \begin{equation}
     \varepsilon_u^{\mathrm{norm}} = \beta_{\mathrm{rel}} \gamma_{\mathrm{rel}} \varepsilon_u \text{ .}
@@ -357,13 +358,12 @@ The \intro{action} \(J_u\) is related to the single particle emittance by:
     \label{equation:single_particle_action}
 \end{equation}
 
-The state of particles in phase space can be fully characterized by the action variable and the corresponding phase variable seen above. 
-
+The state of particles in phase space can be fully characterized by the action variable \(J_u\) and the corresponding phase variable \(\phi_u\) seen above. 
 Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
-For a Gaussian shaped beam the transverse beam size is defined as:
+For a Gaussian shaped beam the transverse beam size is:% defined as:
 
 \begin{equation}
-    \sigma_u = \sqrt{\beta_u(s) \varepsilon_u^{\mathrm{beam}}} \text{ ,}
+    \sigma_u = \sqrt{\beta_u \varepsilon_u^{\mathrm{beam}}} \text{ ,}
     \label{equation:gaussian_beam_transverse_beam_size}
 \end{equation}
 with \(\varepsilon_u^{\mathrm{beam}}\) the beam emittance, typically defined the emittance corresponding to a \(1 \sigma\) amplitude of the Gaussian charge distribution.
@@ -378,22 +378,26 @@ The phase space trajectory of a particle depends on the Twiss parameters \(\alph
 One can remove this dependency by performing a coordinate transformation to the \intro{Courant-Snyder coordinates}~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion}, defined as:
 
 \begin{equation}
-    \left(\begin{array}{c}
-    \hat{u} \\
-    \hat{u}^{\prime}
-    \end{array}\right) = \left(\begin{array}{cc}
-    \frac{1}{\sqrt{\beta_{u}(s)}} & \frac{\alpha_{u}(s)}{\sqrt{\beta_{u}(s)}} \\
-    0 & \sqrt{\beta_{u}(s)}
-    \end{array}\right)\left(\begin{array}{c}
-    u \\
-    u^{\prime}
-    \end{array}\right) \text{ ,}
+    \begin{+pmatrix}[cells={r}]
+        \hat{u} \\
+        \hat{u}^{\prime}
+    \end{+pmatrix}
+    =
+    \begin{+pmatrix}[cells={r}]
+        \frac{1}{\sqrt{\beta_u}} & \frac{\alpha_u}{\sqrt{\beta_u}} \\
+        0 & \sqrt{\beta_u}
+    \end{+pmatrix}
+    \begin{+pmatrix}[cells={r}]
+        u \\
+        u^{\prime}
+    \end{+pmatrix} \text{ ,}
     \label{equation:physical_to_courant_snyder_coordinates}
 \end{equation}
 where the Courant-Snyder coordinates are denoted by \^{}.
+% The same transformation is valid for \((u, p_u)\) to \((\hat{u}, \hat{p}_u)\) coordinates.
 In this new system particles follow circular trajectories in phase space.
 \Cref{figure:phase_space_linear_physical_normalized_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
-In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_u, Q_u)\).
+In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_u, \phi_u)\).
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -422,7 +426,7 @@ In the new representation, the elliptical phase space is transformed into a simp
 
 Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
 Naturally, in practice particles withing the beam have a distribution in energy and momentum.
-For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \textit{relative momentum deviation} \(\delta\): the deviation from the reference orbit from the momentum deviation.
+For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \intro{relative momentum deviation} \(\delta\):
 
 \begin{equation}
     \delta = \frac{p - p_{0}}{p_{0}} = \frac{\Delta p}{p} \text{ .}
