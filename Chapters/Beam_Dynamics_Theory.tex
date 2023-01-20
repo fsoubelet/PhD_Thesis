@@ -568,7 +568,7 @@ The rotational misalignment of elements is also a concern, as rotation a purely 
 \label{section:non_linear_formalism_and_rdts}
 
 The material below is inspired from~\cite{PHD:Tomas, PHD:Franchi,PHD:Maclean, PHD:Persson} where some aspects of it may be found in more details.
-For the curious reader, a very thourough approach to normal forms can be found in~\cite{PRAB:Franchi:First_Simultaneous, PHD:Carlier}.
+For the curious reader, a very thourough approach to normal forms can be found in~\cite{PRAB:Franchi:First_Simultaneous} and~\cite{PHD:Carlier}.
 
 \subsection{Non-Linear Transfer Maps}
 \label{subsection:non_linear_transfer_maps}
@@ -595,7 +595,7 @@ When including non-linear sources, the one-turn map introduced in \cref{equation
 where \(R\) is a matrix describing the linear dynamics of the machine, and the \(h_i\) terms represent the thin kick Hamiltonians of the non-linear elements in the accelerator.
 \break
 
-Relevant properties of the exponential Lie operator can be found in~\cite{PHD:Tomas, PHD:Franchi}, one of which being that the product of exponential Lie operators can be expressed as another exponential Lie operator following the \emph{Campbell-Baker-Hausdorff} theorem.
+Relevant properties of the exponential Lie operator can be found in~\cite{PHD:Tomas, PHD:Franchi}, one of which being that the product of exponential Lie operators can be expressed as another exponential Lie operator following the \emph{Baker–Campbell–Hausdorff} theorem~\cite{BOOK:Hall:Lie_Group_Algebra_Representations}.
 The one-turn map becomes:
 
 \begin{equation}
@@ -617,7 +617,7 @@ Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in e
 with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
 The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.
 
-A multipole of order \(n = j + k + l + m\) gives rise to terms in the Hamiltonian \(\propto x^{j+k} y^{l+m}\).
+A multipole of order \(n = j + k + l + m\) gives rise to terms \(\propto x^{j+k} y^{l+m}\) in the Hamiltonian.
 In the case of a skew quadrupole (\(n=2\)) for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
 
 \subsection{Normal Form, Resonance Driving Terms and Resonances}
