@@ -976,10 +976,10 @@ In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order
 
 Linear coupling in the LHC is dominated by the contribution of skew quadrupole fields, which lead to terms \(\propto xy\) in the Hamiltonian.
 According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the resonance driving terms \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
-The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but former is for the horizontal plane while latter is for the vertical plane.
+The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but the former is for the horizontal plane while the latter is for the vertical plane.
 Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this thesis.
 
-It was mentioned in the \cref{subsection:coupled_motion} that the LHC working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1001}}\).
+It was mentioned in \cref{subsection:coupled_motion} that the LHC working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1010}}\).
 These RDTs can be expressed as a function of the uncoupled lattice parameters at the location of both the coupling-contributing elements and the observation point \(s\) as~\cite{PHREV:Guignard:Betatron_Coupling_Radiation}:
 
 \begin{equation}
@@ -989,10 +989,10 @@ These RDTs can be expressed as a function of the uncoupled lattice parameters at
     \end{aligned}
     \label{equation:coupling_rdts_from_skew_quads}
 \end{equation}
-where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \betafunctions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point \(s\).
+where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \betafunctions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
 The summation is done over all contributing skew quadrupoles.
 
-These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) is can be expressed in relation to the \(f_{1001}\) RDT.
+These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) can be expressed in relation to the \(f_{1001}\) RDT.
 In~\cite{PHD:Franchi} this relation was established as:
 
 \begin{equation}
@@ -1000,7 +1000,7 @@ In~\cite{PHD:Franchi} this relation was established as:
     \label{equation:deltaqmin_from_f1001_franchi}
 \end{equation}
 where the summation is done over the \(N\) observation points, and \(\Delta\) is the fractional tune split.
-A more precise relation was established in~\cite{PRAB:Persson:Improved_Control_Betatron_Coupling}, which is:
+A more accurate relation was established in~\cite{PRAB:Persson:Improved_Control_Betatron_Coupling}, which is:
 
 \begin{equation}
     \abs{C^{-}} = \abs{\frac{4 \Delta}{2 \pi R} \oint d s f_{1001} e^{-i \left(\phi_x - \phi_y \right) + i s \Delta / R} } \text{ ,}
@@ -1017,6 +1017,7 @@ Assuming that the machine is close to the difference coupling resonance \(\Delta
 \end{equation}
 where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal and vertical \(\beta\)-functions, \(\phi_{x,y}\) are the phase advances and \(R\) is the radius of the machine.
 
+\todo{I think I would like to mention something about~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches} before ending this section.}
 % \todo{Can refer to~\cite{PRAB:Franchi:First_Simultaneous} for table with many RDTs.}
 
 %----------------------------------------------------------------------------------------
