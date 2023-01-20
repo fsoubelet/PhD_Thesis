@@ -815,7 +815,7 @@ In this spectrum, an RDT \(f_{jklm}\) at a specific location in the machine cont
     \end{aligned}
     \label{equation:rdt_contribution_to_spectrum_line}
 \end{equation}
-where in the parentheses multipoles of the fractional tune are given.
+where in the parentheses multiples of the fractional tunes are given.
 For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the horizontal spectrum.
 \Cref{figure:example_spectrum} shows an example of a spectrum from a measurement at the LHC, where the main lines are highlighted.
 
@@ -829,7 +829,7 @@ For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the ho
 
 In principle the \(\abs{f_{jklm}}\) may be determined by a comparison of the amplitude of various spectral lines.
 In practice, some additional considerations need to be taken, as decoherence of a kicked beam can lead to a reduction in the amplitude of the spectral lines observed, or the fact that the contributions of different RDTs might not be distinct.
-More details and examples of this method is given in the next section, \cref{section:betatron_coupling}, for the case of betatron coupling RDTs.
+More details are given in the next chapter, \cref{chapter:lhc_omc}.
 
 %----------------------------------------------------------------------------------------
 
@@ -941,14 +941,14 @@ The relation between the \intro{unperturbed tunes} \(Q_{x,y}\) and the \intro{co
 
 \begin{equation}
     \begin{aligned}
-        Q_1 &= Q_x- \frac{\Delta}{2} + \frac{\sqrt{\Delta^2 + \left| C^{-} \right|}}{2} \text{ ,} \\
-        Q_2 &= Q_y+ \frac{\Delta}{2} - \frac{\sqrt{\Delta^2 + \left| C^{-} \right|}}{2} \text{ ,}
+        Q_1 &= Q_x- \frac{\Delta}{2} + \frac{\sqrt{\Delta^2 + \abs{C^{-}}}}{2} \text{ ,} \\
+        Q_2 &= Q_y+ \frac{\Delta}{2} - \frac{\sqrt{\Delta^2 + \abs{C^{-}}}}{2} \text{ ,}
     \end{aligned}
     \label{equation:unperturbed_tunes_to_coupled_tunes}
 \end{equation}
 with \(\Delta\) being the unperturbed fractional tune split and \AbsCminus the linear coupling coefficient, a parameter describing the strength of the coupling.
 
-When \(\Delta \gg \left| C^{-} \right|\), away from the resonance, the observed oscillations modes \(Q_{1,2}\) are almost identical to the uncoupled horizontal and vertical tunes \(Q_{x,y}\).
+When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillations modes \(Q_{1,2}\) are almost identical to the uncoupled horizontal and vertical tunes \(Q_{x,y}\).
 When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
 The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \intro{closest tune approach}, corresponds this separation.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
@@ -1088,6 +1088,6 @@ Any particle losses happening before colliding the beams will lead to a reductio
 Luminosity production requires a good control of the linear optics, both for the quality of the optics themselves but also for a smooth and safe operation.
 Many non-linear contributions may also influence the dynamics away from the linear regime, leading to a deterioration of the dynamics and, down the line, the luminosity.
 Therefore for a particle collider like the LHC a good control of all effect influencing the beam dynamics is required, and methods to both measure and correct any deviations from the ideal machine are a necessity.
-An overview will be given in \cref{chapter:LHC_OMC}
+An overview will be given in \cref{chapter:lhc_omc}
 
 %----------------------------------------------------------------------------------------
