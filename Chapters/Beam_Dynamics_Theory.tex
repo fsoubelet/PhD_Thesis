@@ -921,8 +921,8 @@ The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
-In the first order, according to \cref{equation:resonance_condition}, linear coupling drives two resonances: \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
-These are called the \intro{sum and difference resonances}, respectively, and in their vicinity the beam dynamics are heavily influenced.
+In the first order, according to \cref{equation:resonance_condition}, linear coupling drives the two resonances \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
+These are respectively called the \intro{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
 To higher order betatron coupling may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
 
 The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics} and through the normal form / resonance driving term formalism~\cite{PHD:Franchi}.
@@ -951,7 +951,7 @@ When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillati
 When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
 The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \intro{closest tune approach}, corresponds this separation.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
-
+% TODO: adapt this plot to have Q_{1,2} instead of Q_{x,y}
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/closest_tune_approach_schematic.png}
@@ -963,13 +963,13 @@ The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the 
 On the other hand, when approaching the sum resonance the emittances follow:
 
 \begin{equation}
-    \varepsilon_x - \varepsilon_y = \mathrm{const} \text{ ,}
+    \varepsilon_x - \varepsilon_y = \mathrm{const} \text{ .}
     \label{equation:coupled_emittances_sum_resonance}
 \end{equation}
 
 This resonance allows for unstable motion as only the difference in emittance is constrained.
 Therefore, it is common to choose a working point far from the sum resonance.
-In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \(Q_{x,y} = 0.28 \text{,} 0.31\) at injection and \(Q_{x,y} = 0.31 \text{,} 0.32\) for squeezed beams and collisions.
+In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions.
 
 \subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
