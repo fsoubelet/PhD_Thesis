@@ -589,7 +589,7 @@ Here \(\left[ f, g \right]\) is the \intro{Poisson bracket} of \(f\) and \(g\).
 When including non-linear sources, the one-turn map introduced in \cref{equation:one_turn_map} becomes:
 
 \begin{equation}
-    \mathcal{M } =e^{-:h_N:} e^{-:h_{N-1}:} \ldots e^{-:h_2:} e^{-:h_1:} R \text{ ,}
+    \mathrm{M_{OTM}} =e^{-:h_N:} e^{-:h_{N-1}:} \ldots e^{-:h_2:} e^{-:h_1:} R \text{ ,}
     \label{equation:one_turn_map_non_linear}
 \end{equation}
 where \(R\) is a matrix describing the linear dynamics of the machine, and the \(h_i\) terms represent the thin kick Hamiltonians of the non-linear elements in the accelerator.
@@ -599,7 +599,7 @@ Relevant properties of the exponential Lie operator can be found in~\cite{PHD:To
 The one-turn map becomes:
 
 \begin{equation}
-    \mathcal{M} = e^{-:h:} R \text{ ,}
+    \mathrm{M_{OTM}} = e^{-:h:} R \text{ ,}
     \label{equation:Campbell_Baker_Hausdorff_theorem}
 \end{equation}
 in which, in case the \(h_n\) are small, \(h\) can be approximated as:
@@ -644,7 +644,7 @@ The change of coordinates is represented by a similarity transformation of the o
 \end{equation}
 where \(F\) is the \intro{generating function} of the transformation.
 The coordinates resulting from the transformation are called \intro{normal form coordinates}.
-This is illustrated in \cref{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}.
+The different coordinate systems are illustrated in \cref{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}.
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -699,12 +699,12 @@ Specifically, divergence happens when the following relation is satisfied:
     \label{equation:resonance_condition}
 \end{equation}
 
-A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a resonance in the beam motion.
+A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a \intro{resonance} in the beam motion.
 The condition in \cref{equation:resonance_condition} corresponds to situations where particles lie on resonant frequencies, typically causing their amplitudes to grow unbounded by the dynamics.
 Therefore the \(f_{jklm}\) terms are called \intro{resonance driving terms} (RDTs).
 
 For this reason, the tune is one of the single most important design parameters in synchrotrons.
-The chosen operational transverse tunes of a synchrotron are known to as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
+The chosen operational transverse tunes of a synchrotron are known as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
 Resonances up to order \(n = 5\) are shown in \cref{figure:tune_diagram_fifth_order}, with lines of different orders differentiated from one another.
 
 \begin{figure}[!htb]
