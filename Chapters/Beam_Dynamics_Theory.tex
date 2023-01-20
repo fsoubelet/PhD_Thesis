@@ -95,8 +95,9 @@ Particles within the beam are distributed in amplitude and oscillate around the 
 Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
 As a convention, a quadrupole focusing in the horizontal transverse plane and defocusing in the vertical one is referred to as a \intro{focusing quadrupole}. 
 Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical one is referred to as a \intro{defocusing quadrupole}.
+
 A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \intro{FODO cell}.
-A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}.
+A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
 \begin{figure}[!htb]
     \begin{center}
@@ -105,15 +106,6 @@ A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}.
     \label{figure:fodo_cell_schematic}
     \end{center}
 \end{figure}
-
-For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field’s ability to alter a particle’s course based on its charge \(q\) and momentum \(p\), as:
-
-\begin{equation}
-    B \rho = \frac{p}{q} \text{ .}
-    \label{equation:magnetic_rigidity}
-\end{equation}
-
-\Cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -134,33 +126,40 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
     \end{subfigure}
     \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
-\end{center}
+    \end{center}
 \end{figure}
+
+For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
+
+\begin{equation}
+    B \rho = \frac{p}{q} \text{ .}
+    \label{equation:magnetic_rigidity}
+\end{equation}
 
 \subsection{Equations of Motion and Twiss Parameters}
 \label{subsection:equations_of_motion_and_twiss_parameters}
 
 The focusing from quadrupoles in a circular accelerator such as the LHC is periodic in \(s\), with a period of at most the circumference of the machine.
-Assuming the existence of a closed orbit, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
+Assuming the existence of a \kl{closed orbit}, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
 \begin{equation}
-    u^{\prime \prime} + K_u(s) u(s) = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} \text{ ,}
+    u^{\prime \prime}(s) + K_u(s) u(s) = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} \text{ ,}
     \label{equation:hill_equation}
 \end{equation}
-
-where \(k\) describes the focusing forces action on the beam, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
-A focusing quadrupole has a \(k > 0\), a focusing quadrupole has \(k < 0\), and a drift space has \(k = 0\).
-The focusing strengths in the transverse planes go as:
+where \(K_u\) represents the focusing effect of dipoles and quadrupoles in the transverse planes, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
+It can be expressed according to:
 
 \begin{equation}
 	\begin{aligned}
-		K_{x} &= \frac{1}{\rho^2} - k_{1} \text{ ,} \\
-    	K_{y} &= k_{1} \text{ .}
+		K_x(s) &= \frac{1}{\rho^2} - k_1(s) \text{ ,} \\
+    	K_y(s) &= k_1(s) \text{ ,}
 	\end{aligned}
     \label{equation:transverse_focusing_strengths}
 \end{equation}
-
+where \(k_1(s)\) is the normalized quadrupole strength.
+A \kl{focusing quadrupole} has a \(K > 0\), a \kl{defocusing quadrupole} has \(K < 0\), and a drift space has \(K = 0\).
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
+
 In the material below, \(u\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
 According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation takes the form of \cref{equation:hill_solution}:
 
@@ -193,7 +192,7 @@ The solution of Hill's equation can also be written in matrix form as:
 \end{equation}
 
 In this form, which makes the assumption that the magnetic field of an element is constant along the longitudinal direction, M is called a \intro{transfer matrix}. 
-Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively.
+Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively:
 
 \begin{equation}
     \mathrm{M_{drift}} = \left(
@@ -232,23 +231,23 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \end{equation}
 where \(L\) is the element length and \(\theta = L / \rho\) is the bending angle of the dipole.
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
-For example, the transfer matrix corresponding to the \(\mathrm{FODO}\) cell of \cref{figure:fodo_cell_schematic} is:
+For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
 
 \begin{equation}
-    \mathrm{M_{FODO}} = \mathrm{M_{foc. quad.}} \mathrm{M_{drift}} \mathrm{M_{defoc. quad.}} \mathrm{M_{drift}} \text{ .}
+    \mathrm{M_{FODO}} = \mathrm{M_{foc. quad.}} \cdot \mathrm{M_{drift}} \cdot \mathrm{M_{defoc. quad.}} \cdot \mathrm{M_{drift}} \text{ .}
     \label{equation:fodo_transfer_matrix}
 \end{equation}
 
 For a complete machine with hundreds to thousands of elements, the maps of linear elements can still be combined to obtain the coordinates of a particle after a full revolution.
 This specific transfer map is called the \intro{one-turn map} and fully describes the linear evolution of a particle's coordinates over one revolution of the accelerator.
-It can be expressed as
+It can be expressed as:
 
 \begin{equation}
     \mathrm{M_{OTM}} = \mathrm{M_N} \cdot \mathrm{M_{N-1}} \cdot \ldots \cdot \mathrm{M_2} \cdot \mathrm{M_1} \text{ ,}
     \label{equation:one_turn_map}
 \end{equation}
 where \(\mathrm{M_i}\) is the transfer matrix of the \(i\)th element in the machine.
-The transformation of coordinates over a revolution is then given by
+The transformation of coordinates over a revolution is then given by:
 
 \begin{equation}
     \left(
