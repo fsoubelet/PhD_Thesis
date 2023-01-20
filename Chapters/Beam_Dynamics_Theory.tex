@@ -491,7 +491,7 @@ Magnetic fields of sextupolar and higher order are called \intro{non-linear} mag
 While only dipolar and quadrupolar magnetic fields are considered in the linear approximation, non-linear magnetic fields are present in most accelerators.
 They can be introduced by design or by the presence of flaws in lower order magnets, the latter having the potential to seriously disrupt the beam.
 
-The order of a multipole is labeled \(n\), with the convention that \(n = 1\) corresponds to a magnetic dipole, \(n = 2\) to a quadrupole, \(n = 3\) a sextupole etc.
+The order of a multipole is labeled \(n\), with the convention that \(n = 1\) corresponds to a magnetic dipole, \(n = 2\) to a quadrupole, \(n = 3\) a sextupole, etc.
 The magnetic field of a multipole of order \(n\) is given by:
 
 \begin{equation}
@@ -503,29 +503,29 @@ The magnetic field of a multipole of order \(n\) is given by:
     \label{equation:multipole_expansion}
 \end{equation}
 
-Here \(B_n(s)\) and \(A_n(s)\) are the normal and skew multipole coefficients, respectively, where a skew magnet is rotated by \(\pi / (2 n)\) with respect to its normal counterpart.
-In the linear regime, the Hamiltonian may be written as
-
-\begin{equation}
-    \mathcal{H} = \frac{1}{2} p_x^2 + \frac{1}{2} p_y^2 + \frac{1}{2} K(s) x^2 - \frac{1}{2} K(s) y^2 \text{ ,}
-    \label{equation:hamiltonian_linear_lattice}
-\end{equation}
-where \(K(s)\) describes the variation of focusing strength around the ring.
-
-Starting from the Hamiltonian equations
+Here \(B_n(s)\) and \(A_n(s)\) are the normal and skew multipole coefficients, respectively, where a skew magnet of order \(n\) is rotated by \(\pi / (2 n)\) with respect to its normal counterpart.
+Starting from the Hamiltonian equations:
 
 \begin{equation}
     \dfrac{d \vec{p_z}}{d t} = - \frac{\partial \mathcal{H}}{\partial \vec{z}} \text{ ,} \quad \quad \quad \dfrac{d \vec{z}}{d t} = \frac{\partial \mathcal{H}}{\partial \vec{p_z}} \text{ ,}
     \label{equation:hamiltonian_equations}
 \end{equation}
-the Hamiltonian for the transverse planes for a multipole of order n is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
+
+The Hamiltonian for the transverse planes for a multipole of order \(n\) is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
 
 \begin{equation}
     \mathcal{H} = \frac{q}{p} \operatorname{Re} \left[ \left( B_n +i A_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
-If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and the Hamiltonian for a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
+In the linear regime, the Hamiltonian may then be written as:
+
+\begin{equation}
+    \mathcal{H} = \frac{1}{2} p_x^2 + \frac{1}{2} p_y^2 + \frac{1}{2} K(s) x^2 - \frac{1}{2} K(s) y^2 \text{ ,}
+    \label{equation:hamiltonian_linear_lattice}
+\end{equation}
+where \(K(s)\) describes the variation of focusing strength around the ring.
+More generally, if the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\) and that of a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
 
 \begin{equation}
     \begin{aligned}
@@ -554,12 +554,12 @@ If the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\), and
 \end{equation}
 
 The powering of non-linear magnets and the presence of magnetic errors can have a significant impact on the beam dynamics.
-Geometric errors can contribute to the presence of non-linear components too.
+Geometric errors can also contribute to the presence of non-linear components.
+
 For instance, when a particle does not pass through the magnetic center of an element it will see not only the primary field component but also perturbations of all lower orders to that of the traversed element~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}.
-
 This effect is called \intro{feed-down} and can be introduced by misalignment of lattice elements, which would cause the closed orbit to deviate from the ideal one and the beam to pass off-axis in magnets.
-Should that happen with a sextupole, for instance, the beam would experience a sextupolar field but also encounter quadrupolar and dipolar components.
 
+Should that happen with a sextupole, for instance, the beam would experience a sextupolar field but also encounter quadrupolar and dipolar components.
 The rotational misalignment of elements is also a concern, as rotation a purely normal or skew multipole results in the beam experiencing a combination of both normal and skew fields.
 
 %----------------------------------------------------------------------------------------
