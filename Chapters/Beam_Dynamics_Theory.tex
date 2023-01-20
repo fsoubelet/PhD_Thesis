@@ -426,10 +426,10 @@ In the new representation, the elliptical phase space is transformed into a simp
 
 Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
 Naturally, in practice particles withing the beam have a distribution in energy and momentum.
-For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \intro{relative momentum deviation} \(\delta\):
+For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \intro{relative momentum deviation} \(\delta_p\):
 
 \begin{equation}
-    \delta = \frac{p - p_{0}}{p_{0}} = \frac{\Delta p}{p} \text{ .}
+    \delta_p = \frac{p - p_0}{p_0} = \frac{\Delta p}{p_0} \text{ .}
     \label{equation:momentum_deviation}
 \end{equation}
 
@@ -437,11 +437,11 @@ Such momenta offsets introduce \intro{chromatic errors} in the beam dynamics.
 Effects and parameters depending on \(\delta_p\) are called \intro{chromatic effects}.
 
 From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
-The deviation of an off momentum particle orbit from that of the synchronous particle is defined by the \intro{dispersion function} \(D(s)\).
+The deviation of an off-momentum particle orbit from that of the synchronous particle is defined by the \intro{dispersion function} \(D(s)\).
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
-    \Delta u_{\mathrm{dispersion}} = D_{u}(s) \delta \text{ .}
+    \Delta u_{\mathrm{dispersion}} = D_{u}(s) \delta_p \text{ .}
     \label{equation:dispersion_contribution_to_orbit}
 \end{equation}
 \bigbreak
@@ -453,14 +453,14 @@ Off-momentum particle positions scale linearly with dispersion, and in its prese
     \label{equation:hill_solution_with_dispersion}
 \end{equation}
 
-Another chromatic parameter is the \intro{chromaticity} \(Q_u^{\prime}\), which describes the tune shift \(\Delta Q_u\) with particle momentum by
+Another chromatic parameter is the \intro{chromaticity} \(Q_u^{\prime}\), which describes the tune shift \(\Delta Q_u\) with particle momentum by:
 
 \begin{eqnarray}
     Q^{\prime}_u = \frac{\Delta Q_u}{\delta_p} \text{ .}
     \label{equation:chromaticity_definition}
 \end{eqnarray}
 
-The effective focusing strength of quadrupoles, which is inversely proportional to the momentum, differs for off momentum particles.
+The effective focusing strength of quadrupoles, which is inversely proportional to the momentum, differs for off-momentum particles.
 The change of focusing strength due to energy deviation is:
 
 \begin{equation}
@@ -471,7 +471,7 @@ The change of focusing strength due to energy deviation is:
 This quadrupole error results in a tune shift proportional to the energy offset:
 
 \begin{equation}
-	\Delta Q = \dfrac{1}{4 \pi} \int \beta(s) \Delta k_{1}(s) ds = \left[ - \frac{1}{4 \pi} \int \beta(s) k_{1}(s) ds \right] \delta \text{ .}
+	\Delta Q = \dfrac{1}{4 \pi} \int \beta(s) \Delta k_{1}(s) ds = \left[ - \frac{1}{4 \pi} \int \beta(s) k_{1}(s) ds \right] \delta_p \text{ .}
     \label{equation:tune_shift_from_dispersion}
 \end{equation}
 
