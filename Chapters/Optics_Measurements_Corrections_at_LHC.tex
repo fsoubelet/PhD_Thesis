@@ -34,13 +34,13 @@ An illustration and a detailed description on naming conventions can be found in
 
 Beam~1 rotates clockwise in its ring when viewing the LHC from above, and Beam~2 rotates counter-clockwise as viewed from above.
 The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
-The layout of the LHC can be seen in \cref{figure:lhc_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
+The layout of the LHC can be seen in \cref{figure:lhc_schematic_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics*[width=0.8\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/temp_lhc_schematic_layout.png}
-  \caption{Schematic of the LHC layout, adapted from~\cite{JOI:Aaboud:Comparison_Simulated_Observed_Beam_Background_ATLAS}. \todo{Or get and adapt Axel code.}}
-  \label{figure:lhc_layout}
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_schematic.pdf}
+  \caption{Schematic of the LHC layout, adapted from~\cite{PHD:Poyet}.}
+  \label{figure:lhc_schematic_layout}
 \end{figure}
 
 \subsection{The LHC Arcs}
@@ -118,14 +118,14 @@ The fill ends when dumping the beams, after which the cycle ends by a ramp down 
 \begin{figure}[h]
     \centering
     \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
-    \caption{Illustration of the LHC operational cycle.}
+    \caption{Simplified illustration of the LHC operational cycle.}
     \label{figure:lhc_cycle}
 \end{figure}
 
 Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
-In \num{2022} a \betastar-leveling was introduced, were collisions start at a higher \(\beta^{\ast}\) than \qty{30}{\centi\meter}, and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} in order to limit pile-up for the experiments.
+In \num{2022} a \betastar-leveling was introduced, were collisions start at a \(\beta^{\ast}\) of \qty{60}{\centi\meter}, and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams in order to limit pile-up for the experiments.
 \todo{REF.}
-In \num{2023}
+\todo{In \num{2023} an anti-telesqueeze in the ramp is performed, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat top, in order to limit radiation of the nearby magnets.}
 \todo{REF.}
 
 %----------------------------------------------------------------------------------------
