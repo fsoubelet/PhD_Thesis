@@ -68,7 +68,7 @@ The standard deviation of the applied tilt errors was aligned with expected valu
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.9\columnwidth]{Figures/ML_for_IR_Coupling/rdts_stdev_batch.pdf}
+    \includegraphics*[width=0.99\columnwidth]{Figures/ML_for_IR_Coupling/rdts_stdev_batch.pdf}
     \caption{Standard deviation of the coupling RDTs at BPMs for Beam 1, from a batch of measurements taken on April 3, 2018. These data points were later divided into IR BPMs and arc BPMs to determine applied noise levels.}
     \label{fig:rdts_stdev_batch}
 \end{figure}
@@ -85,7 +85,7 @@ Both train and test sets were submitted to the addition of Gaussian noise on the
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.9\columnwidth]{Figures/ML_for_IR_Coupling/ridge_performance.pdf}
+    \includegraphics*[width=0.99\columnwidth]{Figures/ML_for_IR_Coupling/ridge_performance.pdf}
     \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data. Each curve represents a noise level applied to arc BPMs data, while each point on these curves corresponds to a noise level applied to the inner BPMs.}
     \label{fig:ridge_performance}
 \end{figure}
@@ -132,7 +132,7 @@ Performance significantly degrades with the addition of noise.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics*[width=0.9\columnwidth]{Figures/ML_for_IR_Coupling/ridge_predictions.pdf}
+  \includegraphics*[width=0.99\columnwidth]{Figures/ML_for_IR_Coupling/ridge_predictions.pdf}
   \caption{Assigned and predicted values \DPSI with a Ridge model. Here the magnet names have been switched for numbers in order to improve the plot's clarity.}
   \label{fig:ridge_predictions}
 \end{figure}
@@ -141,7 +141,7 @@ Performance significantly degrades with the addition of noise.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics*[width=0.9\columnwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
+  \includegraphics*[width=0.99\columnwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
   \caption{Histograms of the true applied \DPSI values, the values predicted by the Ridge model, and the deviations from the predictions to the true values.}
   \label{fig:ridge_histograms}
 \end{figure}
