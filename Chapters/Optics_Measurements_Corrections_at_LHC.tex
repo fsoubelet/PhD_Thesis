@@ -32,32 +32,76 @@ Each octant is named according to the \IR at its center: the octant with \(\math
 An illustration and a detailed description on naming conventions can be found in \cref{appendix:naming_conventions}.
 % The \IRs host either an \intro{Interaction Point} (IP) where beams are made to collide (ATLAS at IP1, ALICE at IP2, CMS at IP5 and LHCb at IP8) or important instrumentation (momentum cleaning at IR3, Radio-Frequency cavities at IR4, beam dump system at IR6 and betatron cleaning at IR7).
 
-Beam~1 rotates clockwise in its ring when viewing the LHC from above, and Beam~2 rotates counter-clockwise as viewed from above.
-The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
-The layout of the LHC can be seen in \cref{figure:lhc_schematic_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
-
-\begin{figure}[!htb]
+\begin{figure}[!h]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_schematic.pdf}
+  \includegraphics*[width=0.65\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_schematic.pdf}
   \caption{Schematic of the LHC layout, adapted from~\cite{PHD:Poyet}.}
   \label{figure:lhc_schematic_layout}
 \end{figure}
 
+Beam~\num{1} rotates clockwise in its ring when viewing the LHC from above, and Beam~\num{2} rotates counter-clockwise as viewed from above.
+The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
+The layout of the LHC can be seen in simplified schematic form in~\cref{figure:lhc_schematic_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
+
 \subsection{The LHC Arcs}
 \label{subsection:lhc_arcs}
 
+Each arc in the LHC is made up of 23 cells of approximately \qty{106.9}{\meter}.
+The layout of an LHC arc cell is given in~\cref{figure:lhc_schematic_arc_cell}, and a clearer schematic representation can be found in~\cite{MASTERS:Keintzel:Arc_Cell_Options_HELHC}.
+The cell is based on a FBDB (FODO with Bends) layout alternating focusing and defocusing quadrupoles interspaced with dipoles.
+These elements are all superconducting and are commonly labeled \intro{MQF}, \intro{MQD} and \intro{MB}, respectively.
+% Details on equipment codes can be found at~\cite{CERN:Equipment_Codes}.
+
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_fodo_cell.pdf}
-  \caption{\todo{Caption lhc fodo cell.}}
-  \label{figure:lhc_fodo_cell}
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_schematic_arc_cell.png}
+  \caption{Schematic of an LHC arc cell~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.}
+  \label{figure:lhc_schematic_arc_cell}
+\end{figure}
+
+Each cell contains two \intro{MQ} (one MQF, one MQD) with three MB in between, for a total of 6 MBs per cell.
+The MBs are all powered in series and, for size constraint reasons~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}, are of a dual bore design.
+The MQs are themselves also powered in series but split in two families: one power circuit is dedicated to MQF magnets and another circuit for the MQD magnets, where each arc holds a circuit for each family.
+A cross-section of the main LHC dipole assembly is given in~\cref{figure:lhc_main_dipole_cross_section}
+
+\begin{figure}
+  \centering
+  \includegraphics[width=0.85\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_main_dipole_cross_section.jpeg}
+  \caption{Cross-section of the LHC main dipole assembly~\cite{CERN:AC_Team:LHC_Dipole}.}
+  \label{figure:lhc_main_dipole_cross_section}
+\end{figure}
+
+As a part of the main assemblies are superconducting \intro{spool piece magnets}, correctors used for the local compensation of magnetic errors in the main arc magnets~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.
+These include sextupolar correctors, sextupolar spool pieces named \intro{MCS} and mounted on the ends of every main dipole, used to correct \(b_3\) errors of the MBs.
+Similarly, octupole and decapole spool pieces are included and used for the compensation of \(b_4\) and \(b_5\) errors in the main arc magnets.
+The octupole correctors are named \intro{MCO} while the decapole correctors are named \intro{MCD}, and both are nested together in an assembly named \intro{MCDO} which is mounted on the end of every second MB.
+The spool piece magnets in the LHC are single aperture and powered in series similarly to the MQs, with one circuit assigned for each magnet family.
+
+In addition to spool piece magnets, linear and nonlinear \intro{lattice correctors} are mounted on the main arc quadrupoles MQs.
+These lattice correctors are powered in series per family, and independently for each beam.
+Horizontal and vertical orbit correctors, respectively \intro{MCBH} and \intro{MCBV}, are installed at each focusing and defocusing MQ.
+Normal trim quadrupoles, named \intro{MQT}, are primarily used for tune correction.
+In each arc four MQTs are rotated by \qty{45}{\degree} to form skew quadrupoles, named \intro{MQS}, used for linear coupling correction.
+Normal and skew sextupoles \intro{MS} and \intro{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
+Landau octupoles \intro{MO} provide damping of coherent oscillations, and are split into two families (focusing and defocusing) powered in series, such that there are two families per arc and per beam.
+
+\Cref{figure:lhc_arc_cell_latwiss} shows a simplified layout of an LHC arc cell's elements as well as \(\beta\) and dispersion functions for \num{2022} round optics at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
+In the layout part of the plot element powerings are indicated, with MBs in \textcolor{latwiss_blue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) as grey patches.
+Note that not all elements are indicated there.
+\Cref{figure:lhc_arc23_latwiss} shows a similar plot but across LHC arc\num{23} for the same optics.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc_cell.pdf}
+  \caption{Simplified layout and optics functions in an LHC arc cell for \(\beta^{\ast} =\) \qty{30}{\centi\meter} round optics.}
+  \label{figure:lhc_arc_cell_latwiss}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc23.pdf}
-  \caption{\todo{Caption lhc arc23.}}
-  \label{figure:lhc_arc23}
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc23.pdf}
+  \caption{Simplified layout and optics functions in LHC arc\num{23} for \(\beta^{\ast} =\) \qty{30}{\centi\meter} round optics.}
+  \label{figure:lhc_arc23_latwiss}
 \end{figure}
 
 \subsection{The LHC Experimental Interaction Regions (EIR)}
@@ -71,7 +115,7 @@ An insertion region in which beams are made to collide is called an \intro{Inter
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/ir5_surroundings_optics_2.pdf}
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/ir5_surroundings_optics_2.pdf}
   \caption{The horizontal and vertical \betafunctions in the LHC around IP5 at injection optics (top) and collision optics (bottom). Notice the drastically different scales on the vertical axes.}
   \label{figure:ir5_and_around}
 \end{figure}
@@ -93,7 +137,7 @@ An insertion region in which beams are made to collide is called an \intro{Inter
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_dispersion_suppressor.pdf}
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_dispersion_suppressor.pdf}
   \caption{\todo{Caption lhc dispersion suppressor.}}
   \label{figure:lhc_dispersion_suppressor}
 \end{figure}
