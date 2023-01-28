@@ -90,10 +90,18 @@ In the linear regime, magnetic dipoles define the ideal orbit for a particle of 
 This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called the \intro{closed orbit}.
 In practice the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors.
 Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
-\break
+This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit is shown in blue and an actual particle orbit in red.
+
+\begin{figure}[!htb]
+    \begin{center}
+    \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/design_vs_particle_orbit.pdf}
+    \caption{Illustration of a design closed orbit (blue) and a particle orbit oscillating around it (red).}
+    \label{figure:design_vs_particle_orbit}
+    \end{center}
+\end{figure}
 
 Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
-As a convention, a quadrupole focusing in the horizontal transverse plane and defocusing in the vertical one is referred to as a \intro{focusing quadrupole}. 
+As a convention, a quadrupole focusing in the horizontal plane and defocusing in the vertical one is referred to as a \intro{focusing quadrupole}. 
 Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical one is referred to as a \intro{defocusing quadrupole}.
 
 A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \intro{FODO cell}.
@@ -106,6 +114,13 @@ A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \c
     \label{figure:fodo_cell_schematic}
     \end{center}
 \end{figure}
+
+For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
+
+\begin{equation}
+    B \rho = \frac{p}{q} \text{ .}
+    \label{equation:magnetic_rigidity}
+\end{equation}
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -128,13 +143,6 @@ A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \c
     \label{figure:dipole_quadrupole_fields}
     \end{center}
 \end{figure}
-
-For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
-
-\begin{equation}
-    B \rho = \frac{p}{q} \text{ .}
-    \label{equation:magnetic_rigidity}
-\end{equation}
 
 \subsection{Equations of Motion and Twiss Parameters}
 \label{subsection:equations_of_motion_and_twiss_parameters}
