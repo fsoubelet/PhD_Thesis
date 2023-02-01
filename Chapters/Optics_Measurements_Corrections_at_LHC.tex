@@ -105,14 +105,42 @@ Note that not all elements are indicated there.
   \label{figure:lhc_arc23_latwiss}
 \end{figure}
 
+The purpose of the arcs is that of beam transport to the more specific parts of the machine.
+
 \subsection{The LHC Experimental Interaction Regions (EIR)}
 \label{subsection:lhc_eirs}
 
-To achieve a very small value of \betastar at the IPs, as is shown to be desirable in \cref{section:luminosity}, the periodic lattice of the accelerator is interrupted and insertion regions are introduced.
+In the middle of each octant, in between arcs, the LHC hosts \intro{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
+Each of these is centered around an Insertion Region where a dedicated layout is in place to fulfill the section's purpose.
+The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
 
-An insertion region in which beams are made to collide is called an \intro{Interaction Region}, or sometimes experimental interaction region.
+\begin{table}[!hbt]
+  \centering
+  \begin{tblr}{colspec={cc}}
+      \hline
+      \text{Straight Section Around} & \text{Description}                                 \\
+      \hline
+      IR\num{1}                        & ATLAS and LHCf Experiments                           \\
+      IR\num{2}                        & ALICE Experiment and B\num{1} Injection              \\
+      IR\num{3}                        & Momentum Cleaning (Collimation)                      \\
+      IR\num{4}                        & RF Systems and LHC Instrumentation                   \\
+      IR\num{5}                        & CMS and TOTEM Experiments                            \\
+      IR\num{6}                        & Beam Dump System                                     \\
+      IR\num{7}                        & Betatron Cleaning (Collimation)                      \\
+      IR\num{8}                        & LHCb and MoEDAL Experiments, and B\num{2} Injection  \\
+      \hline
+  \end{tblr}
+  \caption{Description and purpose of the straight sections in the LHC}.
+  \label{table:lhc_straight_sections}
+\end{table}
 
-\todo{Mention for figure that the matching section marked in the plot includes the dispersion suppressor.}
+Of interest to this thesis are the \intro{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
+An insertion region in which beams are made to collide is called an \intro{Interaction Region}, or sometimes Experimental Interaction Region.
+In this document, when using the short form IR, it is meant to refer to an Interaction Region.
+
+At the center of the IR, beams are made to collide at the \intro{Interaction Point} (IP).
+In order to achieve high luminosity during collisions, and as shown in \cref{section:luminosity}, the \(\beta\)-functions at the IPs are squeezed to very small values.
+\Cref{figure:ir5_and_around} shows the \(\beta\)-functions in the LHC around IP5 at both injection and collision optics, where the squeeze is apparent.
 
 \begin{figure}[!hbt]
   \centering
@@ -121,8 +149,50 @@ An insertion region in which beams are made to collide is called an \intro{Inter
   \label{figure:ir5_and_around}
 \end{figure}
 
+During normal operation the \(\beta^{\ast}\) at ATLAS and CMS is very squeezed: \(\beta^{\ast} =\) \qty{30}{\centi\metre} during collisions as of \num{2023}.
+For the configuration, at ALICE and LHCb the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
+During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduced at ALICE and LHCb.
+\Cref{table:lhc_betastars_configurations} summarizes the \(\beta^{\ast}\) values for the different experiments and configurations.
 
-\todo{Talk about Interaction Point (IP).}
+\begin{table}[!htb]
+  \centering
+  $\begin{tblr}{colspec={cccc}}
+      \hline
+      \SetCell[r=2,c=1]{m,c} \text{IP} & \SetCell[c=3]{c} \mathbf{\beta^{\ast}}                                                    \\
+      \cline{2-4}
+                                       &  \text{Injection Optics}  &  \text{Proton Collisions} &  \text{Ion Collisions}   \\
+      \hline
+      \text{IP\num{1}}                 &  \qty{11}{\meter}         &  \qty{30}{\centi\meter}   &  \qty{50}{\centi\meter}  \\
+      \text{IP\num{2}}                 &  \qty{11}{\meter}         &  \qty{10}{\meter}         &  \qty{50}{\centi\meter}  \\
+      \text{IP\num{5}}                 &  \qty{11}{\meter}         &  \qty{30}{\centi\meter}   &  \qty{50}{\centi\meter}  \\
+      \text{IP\num{8}}                 &  \qty{11}{\meter}         &  \qty{2}{\meter}          &  \qty{50}{\centi\meter}  \\
+      \hline
+  \end{tblr}$
+  \caption{Value of the \(\beta^{\ast}_{x,y}\) at different IPs for different optics configurations as of Run~\num{3}.}
+  \label{table:lhc_betastars_configurations}
+\end{table}
+
+wfrgethrytnhjymthyrgefwadfsbenyjtum
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_ir5_zoomed.pdf}
+  \caption{The simplified elements layout and \(\beta\)-functions around IP\num{5} at collision optics, without crossing angles.}
+  \label{figure:lhc_ir5_zoomed}
+\end{figure}
+
+The optics in IR\num{1} and IR\num{5} are identical except for the crossing schemes: the crossing angle is in the vertical plane at IR\num{1} and in the horizontal plane at IR\num{5}.
+Respectively, the separation bumps are in the horizontal plane at IR\num{1} and in the vertical plane at IR\num{5}.
+\Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} at collision optics.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_crossing_schemes_ip15.pdf}
+  \caption{Crossing schemes for IR\num{1} and IR\num{5} at collision optics.}
+  \label{figure:lhc_crossing_schemes_ip15}
+\end{figure}
+
+\todo{Mention for figure that the matching section marked in the plot includes the dispersion suppressor.}
 \todo{Talk about LHC Triplet.}
 \todo{Talk about separation dipole.}
 
@@ -167,9 +237,9 @@ The fill ends when dumping the beams, after which the cycle ends by a ramp down 
 \end{figure}
 
 Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
-In \num{2022} a \betastar-leveling was introduced, were collisions start at a \(\beta^{\ast}\) of \qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
+In \num{2022} a \(\beta^{\ast}\)-leveling was introduced, were collisions start at a \(\beta^{\ast}\) of \qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
 This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing) and the impact on the triplets cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
-This \betastar-leveling is moved to start at \(\beta^{\ast} =\) \qty{1.2}{\meter} in \num{2023} and \num{2024}.
+This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\) \qty{1.2}{\meter} in \num{2023} and \num{2024}.
 Starting in \num{2023} an anti-telesqueeze is performed in the ramp to help the forward physics experiments, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
 
 %----------------------------------------------------------------------------------------
