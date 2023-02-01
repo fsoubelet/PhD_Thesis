@@ -172,7 +172,10 @@ During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduce
   \label{table:lhc_betastars_configurations}
 \end{table}
 
-wfrgethrytnhjymthyrgefwadfsbenyjtum
+In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a \intro{triplet} of quadrupoles just before the IP.
+This arrangement of three quadrupoles allows for a stong focusing of the \(\beta\)-functions in both transverse planes.
+However, such an arrangement leads to high \(\beta\)-functions in the triplet quadrupoles themselves and neighbouring elements.
+An illustration of the area close to IP\num{5} for collision optics with \(\beta^{\ast} =\) \qty{30}{\centi\metre} is given in \cref{figure:lhc_ir5_zoomed}.
 
 \begin{figure}[!hbt]
   \centering
@@ -181,9 +184,29 @@ wfrgethrytnhjymthyrgefwadfsbenyjtum
   \label{figure:lhc_ir5_zoomed}
 \end{figure}
 
+On the layout plot the three \textcolor{latwiss_red}{red patches} closest to the IP location correspond to Q\num{1}, Q\num{2} and Q\num{3} respectively, the triplet quadrupoles.
+The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \intro{separation / recombination dipoles} responsible from bringing the beams together / apart in the common region from / to their separate apertures in the arcs.
+Further quadrupoles are matching quadrupoles and will be discussed later.
+The grey lines correspond to the location of Beam Position Monitors (BPMs).
+
+Due to the large \(\beta\)-functions in the triplet quadrupoles, as can be seen in \cref{figure:lhc_ir5_zoomed}, any magnetic error in the elements of the IR would have a strong impact on the beam dynamics.
+To enable correction of these errors, linear and non-linear corrector magnets are installed along the IR, distributed symmetrically around the IP: every corrector magnet on one side of the IP has a counterpart on the other side.
+Of interest to this thesis are the a\num{2} skew quadrupole correctors installed just before Q\num{3} on each side of the IP.
+Their locations are highlighted in \cref{figure:lhc_ir5_zoomed} by green vertical lines.
+A schematic of the corrector layout is shown in \cref{figure:lhc_ir_corrector_layout}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/corrector_package.png}
+  \caption{Layout of the triplet magnets and the linear and nonlinear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The skew quadrupole correctors correspond to order a\num{2} and are located in the C\num{2} package.}
+  \label{figure:lhc_ir_corrector_layout}
+\end{figure}
+
+In order to prevent parasitic crossings between the two beams' bunches around the IP during collisions, \intro{separation bumps} are implemented in a single transverse plane for each IP, in the form of closed orbit bumps.
+Due to the presence of these bumps, in order to reach collisions a \intro{crossing angle} is introduced.
 The optics in IR\num{1} and IR\num{5} are identical except for the crossing schemes: the crossing angle is in the vertical plane at IR\num{1} and in the horizontal plane at IR\num{5}.
 Respectively, the separation bumps are in the horizontal plane at IR\num{1} and in the vertical plane at IR\num{5}.
-\Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} at collision optics.
+\Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} at collision optics, with the location of the triplets highlighted in grey and the that of the separation dipoles in yellow.
 
 \begin{figure}[!hbt]
   \centering
@@ -193,8 +216,6 @@ Respectively, the separation bumps are in the horizontal plane at IR\num{1} and 
 \end{figure}
 
 \todo{Mention for figure that the matching section marked in the plot includes the dispersion suppressor.}
-\todo{Talk about LHC Triplet.}
-\todo{Talk about separation dipole.}
 
 Ba bla blah.
 
