@@ -10,7 +10,7 @@ A detailed listing of all LHC element and equipment names can be found at~\cite{
 \begin{figure}[h]
     \centering
     \includegraphics*[width=0.9\linewidth]{Figures/Appendices/LHC_naming_scheme.pdf}
-    \caption{Naming scheme in a segment of the LHC.}
+    \caption{Naming scheme in a segment of the LHC~\cite{CERN:Element_Naming}.}
     \label{figure:lhc_segment_naming_scheme}
 \end{figure}
 
@@ -22,29 +22,30 @@ The general structure adheres to the following rules:
 \end{enumerate}
 
 From the standpoint of lattice definitions there are eight IPs, although this is merely for notational convenience. 
-An \kl{Interaction Point} in the strict sense is a location where the two beams are made to collide, which only happens in octants 1, 2, 5 and 8 where experiments are run.
+An \kl{Interaction Point} in the strict sense is a location where the two beams are made to collide, which only happens in octants \numlist{1;2;5;8} where experiments are run.
 It is assumed through this document that when an IP or IR is referred, it refers to one of these octants.
-What all octants nevertheless have in common is that they all have a long straight section in the middle as part of the insertion.
-The arc can be perceived to be roughly uniform across LHC whereas the long sections differ from octant to octant.
 
+Regardless of hosting an IP, all octants have in common that they host a long straight section in the middle as part of the insertion.
+While the arcs can be considered generally uniform across LHC, the various long sections differ from octant to octant.
 
-As the base pattern is a FODO lattice, the machine can be broken up into half-cells containing one quadrupole each.
-In doing so, each half-cell is given a number, where the \(i^{th}\) quadrupole away from the center of its octant is associated with the \(i^{th}\) half-cell.
-With this in mind, the general naming convention can be summarized as follows:
+As the base pattern of the LHC arcs is a FODO lattice, the machine can be broken up into half-cells containing one quadrupole each.
+As a result each half-cell is assigned a number such that the \(\mathrm{i^{th}}\) quadrupole away from the center of its octant is associated with the \(\mathrm{i^{th}}\) half-cell.
+With this in mind, the general naming convention can be summarized as:
 
-\todo{Fix an equation here.}
-% \begin{align*}
-%     \mathrm{$<TYPE><SPECIAL>.<EXTRA><HALF_CELL><LR><OCTANT>.B<12>$}
-%     \label{equation:lhc_naming_nomenclature}
-% \end{align*}
+\begin{equation*}
+        \langle \mathrm{TYPE} \rangle \langle \mathrm{SPECIAL} \rangle . \langle \mathrm{EXTRA} \rangle \langle \mathrm{HALF\_CELL} \rangle \langle \mathrm {LR} \rangle \langle \mathrm{OCTANT} \rangle . \mathrm{B} \langle \mathrm{12} \rangle
+        % \mathrm{<TYPE><SPECIAL>.<EXTRA><HALF_CELL><LR><OCTANT>.B<12>}
+    \label{equation:lhc_naming_nomenclature}
+\end{equation*}
 
+The entries in the definition above are defined as follows:
 \begin{itemize}
-    \item \(\mathrm{TYPE}\): Entry specifying the type of element. See \cref{table:element_prefix_examples} for examples.
-    \item \(\mathrm{SPECIAL}\): Optional entry which can be used to subtype an element, e.g. \(\mathrm{H}\) or \(\mathrm{V}\) to signify if a corrector is acting on the horizontal or vertical plane.
-    \item \(\mathrm{EXTRA}\): Optional entry used to separate between otherwise identically named elements. E.g. \(\mathrm{A}\), \(\mathrm{B}\), \(\mathrm{C}\) to separate between three bending magnets in the same half-cell
-    \item \(\mathrm{LR}\): Entry specifying which side of the closest \(\mathrm{IP}\) the element is on. Assumes either \(\mathrm{L}\) (\textit{left}) or \(\mathrm{R}\) (\textit{right}).
-    \item \(\mathrm{OCTANT}\): Entry specifying the octant the element is a part of. Valid entries are integers from \(1\) to \(8\).
-    \item \(\mathrm{12}\): Entry specifying which beam the element is part of. Either \(1\) or \(2\), unless the element is shared between the two beams in which case the element name ends with the \(\mathrm{OCTANT}\) entry.
+    \item \(\mathrm{TYPE}\): Entry specifying the type of element. Examples are given in \cref{table:element_prefix_examples}.
+    \item \(\mathrm{SPECIAL}\): \textit{Optional} entry which can be used to subtype an element, e.g. \(\mathrm{H}\) or \(\mathrm{V}\) to signify that the element is acting on the horizontal or vertical plane.
+    \item \(\mathrm{EXTRA}\): \textit{Optional} entry used to separate between otherwise identically named elements in regard to their type and number. E.g. \(\mathrm{A}\), \(\mathrm{B}\), \(\mathrm{C}\) to separate between three bending magnets in the same half-cell.
+    \item \(\mathrm{LR}\): Entry specifying which side of the closest IP the element is on. The values for this entry are either \(\mathrm{L}\) (\textit{left}) or \(\mathrm{R}\) (\textit{right}).
+    \item \(\mathrm{OCTANT}\): Entry specifying the octant the element is a part of. Valid entries are integers from \numrange{1}{8}.
+    \item \(\mathrm{12}\): \textit{Optional} entry specifying which beam the element is part of. Either \num{1} or \num{2}, unless the element is shared between the two beams in which case the element name ends with the \(\mathrm{OCTANT}\) entry.
 \end{itemize}
 
 \begin{table}[!hbt]
@@ -55,16 +56,15 @@ With this in mind, the general naming convention can be summarized as follows:
         \hline
         Bending Magnet    & \(\mathrm{MB}\)       \\
         Quadrupole        & \(\mathrm{MQ}\)       \\
-        Orbit  Corrector  & \(\mathrm{MCB}\)      \\
+        Orbit Corrector   & \(\mathrm{MCB}\)      \\
         BPM               & \(\mathrm{BPM}\)      \\
         Crab Cavity       & \(\mathrm{ACFCA}\)    \\
         Drift             & \(\mathrm{DRIFT}\)    \\
         \hline
     \end{tblr}
-    \caption{Example prefixes for different LHC element types.}
+    \caption{Example prefixes for different LHC element types. An extensive list of all elements can be found at~\cite{CERN:Equipment_Codes}}.
     \label{table:element_prefix_examples}
  \end{table}
-
 
 For instance, the element \(\mathrm{MQ.25L5.B1}\) is a quadrupole on the left side of \(\mathrm{IP5}\), in the \(25^{th}\) half-cell and for beam \(1\).
 The special identifier can be used in multiple ways, for example \(\mathrm{MQML.10R1.B1}\) is a different type of quadrupole in half-cell \(10\), on the right side of \(\mathrm{IP1}\) for beam \(1\).
