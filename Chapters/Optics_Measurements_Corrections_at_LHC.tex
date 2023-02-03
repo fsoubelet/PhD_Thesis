@@ -222,7 +222,7 @@ Other IRs, not of interest to this thesis, have significantly different layout w
 
 Assuring the transition between the arcs and the specific optics conditions of the IRs are \intro{matching sections}, as can be seen on \cref{figure:ir5_and_around}.
 On the figure, the area designated as matching section also includes the \intro{dispersion suppressor}.
-Together, the two segments are responsible for matching the TWISS functions of the arcs to the desired values at the triplet entrance, and to reduce the dispersion to near-zero value, respectively.
+Together, the two segments are responsible for matching the TWISS functions between the arcs and the IRs, and to reduce the dispersion to near-zero value, respectively.
 One of the dispersion suppressor leading to IP\num{5} can be seen on \cref{figure:lhc_dispersion_suppressor}, where the beam travels from left to right.
 
 \begin{figure}[!hbt]
@@ -232,7 +232,47 @@ One of the dispersion suppressor leading to IP\num{5} can be seen on \cref{figur
   \label{figure:lhc_dispersion_suppressor}
 \end{figure}
 
-\todo{Talk about the matching quadrupoles. Plots?}
+The full matching section, from the start of the dispersion suppressor to just before separation dipole D\num{2}, is shown in \cref{figure:lhc_matching_section}.
+The quadrupoles Q\num{4} to Q\num{7} are matching quadrupoles and transition the TWISS functions from their values in the arcs to that at the entrance of the triplets.
+Quadrupoles Q\num{4} to Q\num{10} are individually powered magnets.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_matching_section.pdf}
+  \caption{Simplified layout and optics functions in the matching section leading beam \num{1} to IP\num{5}, for \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics.}
+  \label{figure:lhc_matching_section}
+\end{figure}
+
+\subsection{The ATS Optics Scheme}
+
+When pushing the \(\beta^{\ast}\) to smaller values, and therefore the \(\beta\)-functions in the triplets to higher ones, the chromatic effects produced by the triplet quadrupoles~\cref{equation:natural_chromaticity_approximation} increase drastically and need to be corrected.
+As the beam energy reaches its maximum, the beam size gets smaller and an aperture margin that allows to increase the \(\beta\)-functions appears in the arcs.
+
+The \intro{Achromatic Telescopic Squeeze} (ATS) optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \(\beta^{\ast}\) (the squeeze) in two stages.
+In the first one, the \intro{pre-squeeze}, the \(\beta^{\ast}\) is reduced using the matching quadrupoles around the affected IP.
+As using these matching quadrupoles has several limits (magnet strength, chromaticity correction, orbit control), a second stage is necessary.
+In this second stage, the \intro{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the nearby IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
+Sectors \numlist{81;12;45;56} are therefore called ATS sectors.
+This modulation in the second stage sends \(\beta\)-beating waves down the arcs, which make the \(\beta\)-functions peak at the location of sextupoles and octupoles in the those arcs, enhancing their efficiency.
+
+The ratio between the \(\beta^{\ast}\) at the end of the pre-squeeze (\(\beta^{\ast}_{Pre}\)) and the \(\beta^{\ast}\) at the end of the tele-squeeze (\(\beta^{\ast}_{Tele}\)) is called \intro{tele-index} and is denoted \(r_{Tele}\).
+It is defined as:
+
+\begin{equation}
+  r_{Tele} = \frac{\beta^{\ast}_{Pre}}{\beta^{\ast}_{Tele}}
+  \label{equation:tele_index}
+\end{equation}
+
+\Cref{figure:lhc_ats_scheme} shows the \(\beta\)-functions at \qty{6.5}{\tera\electronvolt} around IP\num{5}, where one can see the \(\beta\)-beating wave in the neighbouring ATS sectors \num{45} and \num{56}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_ats_wave.pdf}
+  \caption{The \(\beta\)-functions in sectors \num{45} and \num{56} at different points in the squeeze for the \num{2022} optics: at the end of the pre-squeeze (top) and at the end of the tele-squeeze (bottom).}
+  \label{figure:lhc_ats_scheme}
+\end{figure}
+
+This ATS optics scheme has been used in the LHC starting Run~\num{2} and is the operational baseline of Run~\num{3}.
 
 %----------------------------------------------------------------------------------------
 
