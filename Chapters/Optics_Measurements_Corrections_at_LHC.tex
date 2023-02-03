@@ -252,6 +252,7 @@ The full segment, from the start of the dispersion suppressor to just before sep
 \end{figure}
 
 \subsection{The ATS Optics Scheme}
+\label{subsection:lhc_ats_optics_scheme}
 
 When pushing the \(\beta^{\ast}\) to smaller values, and therefore the \(\beta\)-functions in the triplets to higher ones, the chromatic effects produced by the triplet quadrupoles~\cref{equation:natural_chromaticity_approximation} increase drastically and need to be corrected.
 As the beam energy reaches its maximum, the beam size gets smaller and an aperture margin that allows to increase the \(\beta\)-functions appears in the arcs.
@@ -288,19 +289,30 @@ It is the operational baseline of Run~\num{3}.
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
 
-The LHC operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, starts with a pre-cycle of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
-During pre-cycle no beams are present in the rings and the respective element currents are increased up to several \qty{}{\tera\electronvolt}, to ensure the reproducibility of the magnetic fields over successive fills.
-After the pre-cycle, beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
-At injection optics the \(\beta^{\ast}_{x,y}\) is \qty{11}{\metre}.
-The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
-For optics measurements a single low intensity bunch of about \num{e10} particles is used for each beam.
-After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the \(\beta^{\ast}\) is squeezed.
-This process, called combined ramp and squeeze has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
-Before then the squeezing process only started once the energy had reached collision value.
-At top energy with squeezed optics, also called as flat-top, the optics is confirmed and eventually adjusted before collisions start with stable beams.
-The fill ends when dumping the beams, after which the cycle ends by a ramp down of the magnets' currents.
+The LHC operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \intro{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+During pre-cycle no beams are present in the rings and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
+The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
 
-\begin{figure}[!h]
+After the pre-cycle comes the \intro{injection} stage: beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
+At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding IPs (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
+The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
+For optics measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
+For luminosity production a larger number of high intensity bunches is injected: in the order of \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
+
+After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
+This process, called \intro{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
+Before then the squeezing process only started once the energy had reached collision value.
+
+After reaching top energy, a configuration known as \intro{flat-top}, another \intro{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
+This is when the ATS scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
+
+In a final step before luminosity production, called \intro{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
+This configuration called \intro{stable beams} is kept throughout the luminosity production for the fill.
+The fill ends when the beams are extracted from the machine, a.k.a \intro{beam dump}, after which the cycle ends by a \intro{ramp down} of the magnets' currents.
+
+\todo{Mention tunes in the cycle.}
+
+\begin{figure}[!hbt]
     \centering
     \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
     \caption{Simplified illustration of the LHC nominal cycle.}
