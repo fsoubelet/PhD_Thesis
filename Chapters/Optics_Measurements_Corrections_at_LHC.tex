@@ -344,13 +344,22 @@ Starting in \num{2023} an anti-telesqueeze is performed in the ramp to help the 
 \section{Optics Measurements and Corrections}
 \label{section:optics_measurements_and_corrections}
 
-The LHC requires good control of the optics functions, and for instance a good control of the \betafunctions is essential for safe beam operations due to the destructive power of the LHC beams.
-Moreover, a good control of the \(\beta^{\ast}\) is necessary to guarantee good luminosity production.
-To validate the machine optics and to identify possible errors beam measurements are performed, from which corrections bringing the machine as close to the nominal scenario as possible are calculated and applied. 
-This chapter gives an overview of the LHC machine and its operational cycle, as well as the essential beam instrumentation used for optics measurements.
-Additionally, concepts of corrections methods are given.
+The quality of the LHC optics has a significant impact on the machine's performance.
+For instance, the luminosity achieved by the machine is directly determined by the \(\beta\)-functions at the IPs, as seen in \cref{section:luminosity}.
+Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
+
+Therefore, beam measurements are necessary in order to verify the machine's beam optics and find any potential faults, or deviations from the model values.
+From these, corrections can be calculated and later on applied to bring back the machine as close to the nominal scenario as possible.
+Correction of the linear optics functions towards their nominal values also leads to an enhanced rms closed orbit around the ring since the orbit feedback algorithms in the LHC assume the nominal LHC model~\cite{PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC, PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
+
+% After any modification to the LHC lattice, the linear optics must be commissioned in order to verify that the machine complies with these safety requirements.
+% The linear optics must be rectified if the machine is discovered to operate outside of the safe tolerances. 
 
 \subsection{Beam Instrumentation for Optics Measurements}
+
+Circular machines such as the LHC include a variety of beam instrumentation devices which serve various purposes, from injection kickers and feedback systems used in regular operations to dedicated devices for optics measurements.
+
+\intro{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics, 
 
 See Glenn, Ewen, Felix and Jaime theses.
 MEASUREMENT: Talk BPMs, tune measurement.
@@ -366,20 +375,6 @@ A non-destructive method for beam excitation in hadron machines is achieved usin
   \label{figure:kick_vs_acdipole_tbt}
 \end{figure}
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
-  \caption{AC Dipole induced \(\beta\)-beating in a general case, for various phase advances between an element and the kicker.}
-  \label{figure:ac_dipole_induced_beta_beating}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betas_nominal_vs_driven.pdf}
-  \caption{Resulting \(\beta\)-functions in a FODO lattice in the case of free and driven oscillations.}
-  \label{figure:}
-\end{figure}
-
 \subsection{Optics Measurements}
 \label{subsection:optics_measurements}
 
@@ -388,9 +383,26 @@ A non-destructive method for beam excitation in hadron machines is achieved usin
 - optics analysis
 Talk about (and formula) reconstruction of the phase and the beta-functions for instance (see Tobias' PhD).
 
-\subsubsection{Turn-by-turn Measurements}
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betas_nominal_vs_driven.pdf}
+  \caption{Resulting \(\beta\)-functions in a FODO lattice in the case of free and driven oscillations.}
+  \label{figure:acdipole_beta_functions_vs_nominal}
+\end{figure}
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
+  \caption{AC Dipole induced \(\beta\)-beating in a general case, for various phase advances between an element where the observation is made and the kicker.}
+  \label{figure:ac_dipole_induced_beta_beating}
+\end{figure}
+
+\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}
+\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole}
 
 \subsection{Measurement of Linear Coupling}
+
+\cite{PRAB:Tomas:CERN_LHC_OMC}
 
 \subsection{Correction Principles}
 
