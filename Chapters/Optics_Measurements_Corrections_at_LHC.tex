@@ -351,24 +351,40 @@ One can then define the \intro{beta-beating}, a good indicator of the quality of
 It is defined as:
 
 \begin{equation}
-  \frac{\Delta \beta_z(s)}{\beta_z(s)} = \frac{\beta_z(s)_{\mathrm{measured}} - \beta_z(s)_{\mathrm{nominal}}}{\beta_z(s)_{\mathrm{nominal}}} \quad \text { where } z = x, y \text{ .}
+  \frac{\Delta \beta_z(s)}{\beta_z(s)} = \frac{\beta_z(s)_{\mathrm{measured}} - \beta_z(s)_{\mathrm{model}}}{\beta_z(s)_{\mathrm{model}}} \quad \text { where } z = x, y \text{ .}
   \label{equation:beta_beating_definition}
 \end{equation}
 
 In order to verify the machine's beam optics and find any potential faults, or deviations from the model values, beam measurements are necessary.
-From these, comparisons to model values are made which allows for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring back the machine as close to the nominal scenario as possible.
+From these, comparisons to model values are made which allow for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring back the optics as close to the nominal scenario as possible.
+As the linear optics functions impact the non-linear phenomenology of an accelerator, a well understood and corrected linear optics a pre-requisite to study of the non-linear dynamics.
 Correction of the linear optics functions towards their nominal values also leads to an enhanced rms closed orbit around the ring since the orbit feedback algorithms in the LHC assume the nominal LHC model~\cite{PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC, PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
-As the linear optics functions impact the non-linear phenomenology of an accelerator, a well understood and corrected linear optics a pre-requisite to study of the non-linear dynamics.
+\todo{Maybe include a plot showing beta-beating in 2022 commissioning before and aftrer corrections.}
 
 \subsection{Beam Instrumentation for Optics Measurements}
+\label{subsection:beam_instrumentation_for_optics_measurements}
 
 Circular machines such as the LHC include a variety of beam instrumentation devices which serve various purposes, from injection kickers and feedback systems used in regular operations to dedicated devices for optics measurements.
 
-\intro{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics, 
+\subsubsection*{Beam Position Monitors and Tune Measurement}
 
-See Glenn, Ewen, Felix and Jaime theses.
-MEASUREMENT: Talk BPMs, tune measurement.
+\intro{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics.
+They measure the transverse center of charge of circulating bunches, either in a given plane for single plane BPMs, or in both planes simultaneously for dual plane BPMs.
+In the LHC, this centroid beam position can be measured on a turn-by-turn and bunch-by-bunch basis by around \num{500} dual plane BPMs across the machine.
+So-called stripline BPMs are employed in the common apertures as they can discriminate between counter-rotating bunches, while button BPMs are used in the remaining portions of the machine~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}. 
+The location of BPMs in the lattice can be seen as vertical grey lines, in an insertion region such as IR\num{5} in \cref{figure:lhc_ir5_zoomed,figure:lhc_matching_section} and in the arcs in \cref{figure:lhc_arc_cell_latwiss}.
+
+% Measurement of the tune can be done in different ways.
+% One way consists at measuring transverse oscillations and looking at the spectrum of these oscillations.
+In the LHC, the \intro{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the orbit data at a specific location in IR\num{4}.
+The BBQ is also capable of measuring an estimation of the linear coupling at the measurement location, which can be used as a rough first estimate for the coupling in the machine.
+While it is possible to assess tune and coupling with the BBQ without external excitation of the beam, the LHC chirp can generate small transverse oscillations to improve the quality of these measurements.
+
+\subsubsection*{Experimental Kickers}
+
+
+
 
 EXCITATION: Talk kicker, AC Dipole.
 Measurements of beam optics are done by generating large transverse beam oscillations, typically much larger than the natural beam size.
