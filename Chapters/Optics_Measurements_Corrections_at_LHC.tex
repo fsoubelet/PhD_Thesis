@@ -347,13 +347,19 @@ Starting in \num{2023} an anti-telesqueeze is performed in the ramp to help the 
 The quality of the LHC optics has a significant impact on the machine's performance.
 For instance, the luminosity achieved by the machine is directly determined by the \(\beta\)-functions at the IPs, as seen in \cref{section:luminosity}.
 Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
+One can then define the \intro{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
+It is defined as:
 
-Therefore, beam measurements are necessary in order to verify the machine's beam optics and find any potential faults, or deviations from the model values.
-From these, corrections can be calculated and later on applied to bring back the machine as close to the nominal scenario as possible.
+\begin{equation}
+  \frac{\Delta \beta_z(s)}{\beta_z(s)} = \frac{\beta_z(s)_{\mathrm{measured}} - \beta_z(s)_{\mathrm{nominal}}}{\beta_z(s)_{\mathrm{nominal}}} \quad \text { where } z = x, y \text{ .}
+  \label{equation:beta_beating_definition}
+\end{equation}
+
+In order to verify the machine's beam optics and find any potential faults, or deviations from the model values, beam measurements are necessary.
+From these, comparisons to model values are made which allows for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring back the machine as close to the nominal scenario as possible.
 Correction of the linear optics functions towards their nominal values also leads to an enhanced rms closed orbit around the ring since the orbit feedback algorithms in the LHC assume the nominal LHC model~\cite{PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC, PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
-% After any modification to the LHC lattice, the linear optics must be commissioned in order to verify that the machine complies with these safety requirements.
-% The linear optics must be rectified if the machine is discovered to operate outside of the safe tolerances. 
+As the linear optics functions impact the non-linear phenomenology of an accelerator, a well understood and corrected linear optics a pre-requisite to study of the non-linear dynamics.
 
 \subsection{Beam Instrumentation for Optics Measurements}
 
