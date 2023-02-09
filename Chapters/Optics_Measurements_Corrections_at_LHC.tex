@@ -309,33 +309,25 @@ This is when the ATS scheme mentioned in \cref{subsection:lhc_ats_optics_scheme}
 
 In a final step before luminosity production, called \intro{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
 This configuration called \intro{stable beams} is kept throughout the luminosity production for the fill.
-The fill ends when the beams are extracted from the machine, a.k.a \intro{beam dump}, after which the cycle ends by a \intro{ramp down} of the magnets' currents.
+The fill ends when the beams are extracted from the machine, a.k.a. \intro{beam dump}, after which the cycle ends by a \intro{ramp down} of the magnets' currents.
 
-\todo{SEE WITH TOBIAS FOR THE TUNES IN THE CYCLE.
-Note that the transverse tunes vary during the cycle.
-Inj: (62.275, 60.293)
-Ramp Squeeze: (62.275, 60.293) to (62.28, 60.31)
-Squeeze part1 (130to60cm): (62.28, 60.31) no change
-Squeeze part (60to30cm): (62.28, 60.31) no change
-QCHANGE?: (62.28, 60.31) to (62.311, 60.318)
-Physics: (62.311, 60.318) to (62.314, 60.319)
-Physics[END] to (62.31, 60.32)}
-
-\todo{Actually, from Delphine (\url{https://indico.cern.ch/event/1224987/contributions/5153318/attachments/2579893/4449512/TheLhcCycle-Chamonix2022_v2.pdf}).
-At injection we have (60.293, 62.275) which goes to (60.318, 62.311) during squeeze / adjust, and stays so for collisions.}
-
+The working point is changed several times along the cycle for stability reasons.
+As of \num{2022}, at injection the transverse tunes are (\(62.275, 60.293\)).
+The working point is brought to (\(62.28, 60.31\)) during the ramp and squeeze, at the end of which it is moved again to (\(62.311, 60.318\)).
+A final change is made in the adjust step, where the tunes are brought to (\(62.314, 60.319\)) before going into collisions.
+This last setting may be changed by machine operators during stable beams in order to optimize for beam lifetime.
 
 \begin{figure}[!hbt]
     \centering
-    \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
+    \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
     \caption{Simplified illustration of the LHC nominal cycle.}
     \label{figure:lhc_cycle}
 \end{figure}
 
 Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
 In \num{2022} a \(\beta^{\ast}\)-leveling was introduced, were collisions start at a \(\beta^{\ast}\) of \qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
-This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing) and the impact on the triplets cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
-This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\) \qty{1.2}{\meter} in \num{2023} and \num{2024}.
+This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main IPs) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
+This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\) \qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
 Starting in \num{2023} an anti-telesqueeze is performed in the ramp to help the forward physics experiments, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
 
 %----------------------------------------------------------------------------------------
@@ -409,6 +401,8 @@ A comparison of the turn-by-turn data obtained from beam excitation with a singl
   \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC Dipole excitation (bottom).}
   \label{figure:kick_vs_acdipole_tbt}
 \end{figure}
+
+\todo{Mention this driving of the motion affects it and we need to take it into consideration, will be talked about later?}
 
 \subsection{Optics Measurements}
 \label{subsection:optics_measurements}
