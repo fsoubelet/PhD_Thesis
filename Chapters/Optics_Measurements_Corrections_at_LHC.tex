@@ -313,8 +313,7 @@ The fill ends when the beams are extracted from the machine, a.k.a \intro{beam d
 
 \todo{SEE WITH TOBIAS FOR THE TUNES IN THE CYCLE.
 Note that the transverse tunes vary during the cycle.
-At injection, the tunes are \((62.27, 60.315)\)
-Inj: Don't know?
+Inj: (62.275, 60.293)
 Ramp Squeeze: (62.275, 60.293) to (62.28, 60.31)
 Squeeze part1 (130to60cm): (62.28, 60.31) no change
 Squeeze part (60to30cm): (62.28, 60.31) no change
@@ -387,26 +386,34 @@ For the study of beam dynamics, measurements are done by inducing large transver
 Large oscillation amplitudes are required to provide a good signal-to-noise ratio 
 The spectral analysis of measured turn-by-turn positions provides valuable insights in all the modes contained in the particle motion, at each BPM location.
 In the LHC kicker dipole magnets are available for both beams, located in IR\num{4}.
-These magnets can operate in three possible modes, referred to as the \intro{Tune Kicker} (MKQ), \intro{Aperture Kicker} (MKA), and the \intro{AC-Dipole}.
+These magnets can operate in three possible modes, referred to as the \intro{Tune Kicker} (MKQ), \intro{Aperture Kicker} (MKA), and the \intro{AC Dipole}.
 
 The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
-Unfortunately, at top energy the amplitude of oscillations achievable with the kickers is considerably reduced, and the beam will decohere after being kicked: the beam containing a spread of tunes the observed centroid of the beam will show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
+Unfortunately, at top energy the amplitude of oscillations achievable with the kickers is considerably reduced, and the beam will decohere after being kicked: the momentum distribution of particles in the bunch will cause the observed centroid of the beam to show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
 This decoherence will lead to emittance increase.
 As a consequence a beam can only be kicked a certain number of times before needing to be replaced, and it can take up to several hours to reach the same machine configuration again, as seen in \cref{section:lhc_operational_cycle}.
 
-Now AC-Dipole.
-% A non-destructive method for beam excitation in hadron machines is achieved using an AC-dipole
+For optics measurements lasting oscillations are preffered, as they increase the spectral resolution and reduce noise floor in the spectral analysis of turn-by-turn data.
+Furthermore, a non-destructive excitation method is preferred in order not to alter the beam state, which allow repeated measurements.
+
+Such a non-destructive, sustained excitation of the beams can be achieved with the AC Dipole.
+It is a fast oscillating dipole magnet which can generate forced driven oscillations with large amplitudes by exciting the beam at frequencies close to the natural tunes~\cite{PHD:Miyamoto,CERN:Serrano:LHC_ACDipole_Introduction}.
+Moreover, the AC Dipole strength can be ramped up and down adiabaticity~\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole} and kept constant at high amplitudes, allowing for a long lasting coherent oscillations of the beam.
+These properties, fullfilling the aforementioned requirements, make the AC Dipole the most important tool for optics measurements in the LHC.
+A comparison of the turn-by-turn data obtained from beam excitation with a single free kick and an AC Dipole is shown in \cref{figure:kick_vs_acdipole_tbt}.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/kick_vs_acdipole.pdf}
-  \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC-Dipole excitation (bottom).}
+  \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC Dipole excitation (bottom).}
   \label{figure:kick_vs_acdipole_tbt}
 \end{figure}
 
 \subsection{Optics Measurements}
 \label{subsection:optics_measurements}
+
+\cite{PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole, PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}
 
 - excite
 - harmonic analysis
@@ -428,7 +435,7 @@ Talk about (and formula) reconstruction of the phase and the beta-functions for 
 \end{figure}
 
 \cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}
-\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole}
+
 
 \subsection{Measurement of Linear Coupling}
 
