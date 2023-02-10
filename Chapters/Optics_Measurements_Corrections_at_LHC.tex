@@ -490,8 +490,11 @@ Automatic outlier detection is available based on the spectra of BPMs, both as a
 
 \subsubsection*{Optics Reconstruction}
 
+With knowledge of the phase information at each measuring BPM, and with knowledge of the model machine, the transverse optics functions can be determined.
+The model knowledge traditionally comes from the MAD-X (Methodical Accelerator Design) code~\cite{CODE:MADX_guide} for LHC measurements.
+The \(\beta\)-function at a given BPM is calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
-
+\cite{PRAB:Wegscheider:Analytical_N_BPM_Method}
 
 \subsection{Measurement of Linear Coupling}
 
