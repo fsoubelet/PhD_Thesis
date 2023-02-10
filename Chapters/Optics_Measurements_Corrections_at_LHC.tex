@@ -469,7 +469,7 @@ From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations
 \end{equation}
 with \(Q\) the natural tune of the machine, either horizontal or vertical depending on which plane the \(\beta\)-beating is computed for.
 \Cref{figure:ac_dipole_induced_beta_beating} shows this \(\beta\)-beating for various phase advances between the AC Dipole and an element where the observation would be made.
-The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a working point of \((Q_x, Q_y) = (.28, 0.31)\) which is common in LHC optics measurements.
+The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a common working point for LHC measurements: \((Q_x, Q_y) = (.28, 0.31)\).
 For these usual settings the \(\beta\)-beating is no more than \qty{9}{\percent}.
 
 \begin{figure}[!htb]
@@ -479,18 +479,18 @@ For these usual settings the \(\beta\)-beating is no more than \qty{9}{\percent}
   \label{figure:ac_dipole_induced_beta_beating}
 \end{figure}
 
+As a consequence, the measured oscillations and associated optics functions will not be that of the natural machine.
 This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps.
-
-\subsubsection*{Data Cleaning}
 
 \subsubsection*{Spectral Analysis}
 
+As a first step the recorded raw turn-by-turn data is cleaned using a \intro{Single Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
+A Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
+Automatic outlier detection is available based on the spectra of BPMs, both as a manual and an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs}.
+
 \subsubsection*{Optics Reconstruction}
 
-- excite
-- harmonic analysis
-- optics analysis
-Talk about (and formula) reconstruction of the phase and the beta-functions for instance (see Tobias' PhD).
+
 
 
 \subsection{Measurement of Linear Coupling}
