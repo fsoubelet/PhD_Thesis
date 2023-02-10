@@ -407,28 +407,87 @@ A comparison of the turn-by-turn data obtained from beam excitation with a singl
 \subsection{Optics Measurements}
 \label{subsection:optics_measurements}
 
-\cite{PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole, PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}
+\subsubsection*{Beam Excitation}
+
+The first step of optics measurements in the LHC is to excite the beams with the AC Dipole.
+As excitation of the beams to large amplitudes can represent a risk to the safety of the machine, such measurements are only performed with a single low intensity bunch of about \num{e10} protons.
+In the LHC, the AC Dipole has a ramp-up and ramp-down time of \num{2000} turns, and is able to drive excitations at maximum strength for \num{6600} turns before ramping down, as can be seen on \cref{figure:kick_vs_acdipole_tbt}.
+When exciting the beam, the turn-by-turn position of the bunch is measured by the BPMs across the machine and only the turns corresponding to the maximum AC Dipole strength are used for analysis.
+
+It is important to note now that the forced oscillations introduce a perturbation on the optics.
+In the case of free oscillations, it was shown in \cref{chapter:Theory} that the transverse motion goes according to \cref{equation:hill_solution}.
+Considering \(\phi_{x,0} = 0\) one gets in the horizontal plane:
+
+\begin{equation}
+  x(s) = \sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) \text{ ,}
+\end{equation}
+with \(\phi_x\) and \(J_x\) the action and angle variables respectively.
+
+In the case that the AC Dipole is driving the beam, an equivalent parametrization exists, and noting \(x_D(s)\) the horizontal driven coordinate one can expresse it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
+
+\begin{equation}
+  x_D(s)=\sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) + \sqrt{2 A \beta_x^{\prime}(s)} \cos \left( \phi_D \right) \text{ ,}
+  \label{equation:driven_transverse_motion}
+\end{equation}
+where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta^{\prime}(s)\) is the \(\beta\)-function modified by the AC Dipole.
+The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term only depends on \(\phi_D\).
+
+The \(\beta\)-function modified by the AC Dipole, \(\beta^{\prime}\), corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
+
+\begin{equation}
+  \beta^{\prime}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta(s) \text{ ,}
+  \label{equation:driven_beta_function}
+\end{equation}
+where \(\psi_D\) is the phase advance with respect to the AC Dipole location and the relation is valid for both horizontal and vertical \(\beta\)-functions.
+The \(\lambda_D\) term is dependent on the gap between the driven and natural tune, and is defined by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
+
+\begin{equation}
+  \lambda_D = \frac{\sin \left(\pi Q_{-}\right)}{\sin \left(2 \pi Q_x + \pi Q_{-}\right)} \text{ ,}
+  \label{equation:driven_oscillations_lambda_D}
+\end{equation}
+in which \(Q_{\pm} = Q_D \pm Q_x\) corresponds to the gap between the driven tune and the natural tune.
+
+In the LHC the AC Dipole is usually driven with a horizontal tune delta \(Q_{x,-}\) of \num{-0.01} and a vertical one \(Q_{y,-}\) of \num{0.012}.
+One can see in \cref{figure:ac_dipole_induced_beta_beating} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is clearly visible.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betas_nominal_vs_driven.pdf}
+  \caption{Resulting \(\beta\)-functions in a FODO lattice in the case of free (\textcolor{mplorange}{orange}) and driven (\textcolor{mplblue}{blue}) oscillations.}
+  \label{figure:acdipole_beta_functions_vs_nominal}
+\end{figure}
+
+One can then express the \(\beta\)-beating induced by the AC Dipole, as defined in \cref{equation:beta_beating_definition}.
+From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can see express this beating according to:
+
+\begin{equation}
+  \frac{\beta^{\prime} - \beta}{\beta} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q\right)}{1 - \lambda_D^2} - 1 \text{ ,}
+  \label{equation:ac_dipole_beta_beating}
+\end{equation}
+with \(Q\) the natural tune of the machine, either horizontal or vertical depending on which plane the \(\beta\)-beating is computed for.
+\Cref{figure:ac_dipole_induced_beta_beating} shows this \(\beta\)-beating for various phase advances between the AC Dipole and an element where the observation would be made.
+The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a working point of \((Q_x, Q_y) = (.28, 0.31)\) which is common in LHC optics measurements.
+For these usual settings the \(\beta\)-beating is no more than \qty{9}{\percent}.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
+  \caption{AC Dipole induced \(\beta\)-beating in a general case, for various phase advances between an element where the observation is made and the AC Dipole.}
+  \label{figure:ac_dipole_induced_beta_beating}
+\end{figure}
+
+This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps.
+
+\subsubsection*{Data Cleaning}
+
+\subsubsection*{Spectral Analysis}
+
+\subsubsection*{Optics Reconstruction}
 
 - excite
 - harmonic analysis
 - optics analysis
 Talk about (and formula) reconstruction of the phase and the beta-functions for instance (see Tobias' PhD).
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.9\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betas_nominal_vs_driven.pdf}
-  \caption{Resulting \(\beta\)-functions in a FODO lattice in the case of free and driven oscillations.}
-  \label{figure:acdipole_beta_functions_vs_nominal}
-\end{figure}
-
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
-  \caption{AC Dipole induced \(\beta\)-beating in a general case, for various phase advances between an element where the observation is made and the kicker.}
-  \label{figure:ac_dipole_induced_beta_beating}
-\end{figure}
-
-\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}
 
 
 \subsection{Measurement of Linear Coupling}
