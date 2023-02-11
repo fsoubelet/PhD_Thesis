@@ -494,6 +494,13 @@ With knowledge of the phase information at each measuring BPM, and with knowledg
 The model knowledge traditionally comes from the MAD-X (Methodical Accelerator Design) code~\cite{CODE:MADX_guide} for LHC measurements.
 The \(\beta\)-function at a given BPM is calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
+\begin{equation}
+  \beta^i_z = \frac{\cot \left(\phi_z(i \rightarrow j)\right) + \cot \left(\phi_z(i \rightarrow k)\right)}{\frac{M_{11}(i \rightarrow j)}{M_{12}(i \rightarrow j)} + \frac{M_{11}(i \rightarrow k)}{M_{12}(i \rightarrow k)}}  \text{ ,} \quad z = x, y \text{ ,}
+  \label{equation:beta_from_phase}
+\end{equation}
+where the \(M_(i \rightarrow j)\) are the transfer matrices between BPMs \(i\) and \(j\), assumed to be that of the model.
+
+\cite{PRAB:Langner:N_BPM_Method}
 \cite{PRAB:Wegscheider:Analytical_N_BPM_Method}
 
 \subsection{Measurement of Linear Coupling}
