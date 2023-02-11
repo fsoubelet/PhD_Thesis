@@ -429,16 +429,16 @@ with \(\phi_x\) and \(J_x\) the action and angle variables respectively.
 When the AC Dipole is driving the beam, an equivalent parametrization exists, and noting \(x_D(s)\) the horizontal driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
 
 \begin{equation}
-  x_D(s)=\sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) + \sqrt{2 A \beta_x^{\prime}(s)} \cos \left( \phi_D \right) \text{ ,}
+  x_D(s)=\sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) + \sqrt{2 A \beta_{D,x}(s)} \cos \left( \phi_D \right) \text{ ,}
   \label{equation:driven_transverse_motion}
 \end{equation}
-where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta^{\prime}(s)\) is the \(\beta\)-function modified by the AC Dipole.
+where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,x}(s)\) is the \(\beta\)-function modified by the AC Dipole.
 The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term only depends on \(\phi_D\).
 
-The \(\beta\)-function modified by the AC Dipole, \(\beta^{\prime}\), corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
+The \(\beta\)-function modified by the AC Dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
-  \beta^{\prime}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta(s) \text{ ,}
+  \beta_{D,x}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta_x(s) \text{ ,}
   \label{equation:driven_beta_function}
 \end{equation}
 where \(\psi_D\) is the phase advance with respect to the AC Dipole location and the relation is valid for both horizontal and vertical \(\beta\)-functions.
@@ -448,7 +448,7 @@ The \(\lambda_D\) term is dependent on the gap between the driven and natural tu
   \lambda_D = \frac{\sin \left(\pi Q_{-}\right)}{\sin \left(2 \pi Q_x + \pi Q_{-}\right)} \text{ ,}
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
-in which \(Q_{\pm} = Q_D \pm Q_x\) corresponds to the gap between the driven tune and the natural tune.
+in which \(Q_{\pm} = Q_D \pm Q_x\) corresponds to the tune gap.
 
 In the LHC the AC Dipole is usually driven with a horizontal tune delta \(Q_{x,-}\) of \num{-0.01} and a vertical one \(Q_{y,-}\) of \num{0.012}.
 One can see in \cref{figure:ac_dipole_induced_beta_beating} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is clearly visible.
@@ -464,7 +464,7 @@ One can then express the \(\beta\)-beating induced by the AC Dipole, as defined 
 From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can see express this beating according to:
 
 \begin{equation}
-  \frac{\beta^{\prime} - \beta}{\beta} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q\right)}{1 - \lambda_D^2} - 1 \text{ ,}
+  \frac{\beta_D - \beta}{\beta} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q\right)}{1 - \lambda_D^2} - 1 \text{ ,}
   \label{equation:ac_dipole_beta_beating}
 \end{equation}
 with \(Q\) the natural tune of the machine, either horizontal or vertical depending on which plane the \(\beta\)-beating is computed for.
