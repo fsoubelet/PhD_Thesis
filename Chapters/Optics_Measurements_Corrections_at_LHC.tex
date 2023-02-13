@@ -445,13 +445,13 @@ where \(\psi_D\) is the phase advance with respect to the AC Dipole location and
 The \(\lambda_D\) term is dependent on the gap between the driven and natural tune, and is defined by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
-  \lambda_D = \frac{\sin \left(\pi Q_{-}\right)}{\sin \left(2 \pi Q_x + \pi Q_{-}\right)} \text{ ,}
+  \lambda_D = \frac{\sin \left(\pi \delta_D \right)}{\sin \left(2 \pi Q_x + \pi \delta_D \right)} \text{ ,}
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
-in which \(Q_{\pm} = Q_D \pm Q_x\) corresponds to the tune gap.
+in which \(\delta_D = Q_D - Q\) corresponds to the aforementioned gap.
+In the LHC the AC Dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
 
-In the LHC the AC Dipole is usually driven with a horizontal tune delta \(Q_{x,-}\) of \num{-0.01} and a vertical one \(Q_{y,-}\) of \num{0.012}.
-One can see in \cref{figure:ac_dipole_induced_beta_beating} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is clearly visible.
+One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
 
 \begin{figure}[!htb]
   \centering
@@ -460,8 +460,8 @@ One can see in \cref{figure:ac_dipole_induced_beta_beating} the impact of an AC 
   \label{figure:acdipole_beta_functions_vs_nominal}
 \end{figure}
 
-One can then express the \(\beta\)-beating induced by the AC Dipole, as defined in \cref{equation:beta_beating_definition}.
-From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can see express this beating according to:
+One can then determine the \(\beta\)-beating induced by the AC Dipole, as defined in \cref{equation:beta_beating_definition}.
+From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can express this beating according to:
 
 \begin{equation}
   \frac{\beta_D - \beta}{\beta} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q\right)}{1 - \lambda_D^2} - 1 \text{ ,}
@@ -475,16 +475,16 @@ For these usual settings the \(\beta\)-beating is no more than \qty{9}{\percent}
 \begin{figure}[!htb]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
-  \caption{AC Dipole induced \(\beta\)-beating in a general case, for various phase advances between an element where the observation is made and the AC Dipole.}
+  \caption{AC Dipole induced \(\beta\)-beating as a function of \(\delta_D\), for various phase advances between the AC Dipole and a given location in the ring where the observation would be made. The results are shown for the horizontal (left) and vertical (right) planes with a common working point used for measurements.}
   \label{figure:ac_dipole_induced_beta_beating}
 \end{figure}
 
 As a consequence, the measured oscillations and associated optics functions will not be that of the natural machine.
-This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps.
+This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
 
 \subsubsection*{Spectral Analysis}
 
-As a first step the recorded raw turn-by-turn data is cleaned using a \intro{Single Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
+As a first step the recorded raw turn-by-turn data is cleaned using a \intro{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
 A Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
 Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc).
 
