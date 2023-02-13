@@ -538,8 +538,25 @@ Global correction are better suited to compensate for widely distributed sources
 
 \subsubsection*{Global Corrections}
 
-Talk about response matrix approach.
-\cite{EPAC:Tomas:Procedures_Accuracy_Estimates_Beta_Beat_Correction_LHC}
+Global corrections are based on a \intro{response matrix} approach~\cite{PHD:Vanbavinckhove,EPAC:Tomas:Procedures_Accuracy_Estimates_Beta_Beat_Correction_LHC}.
+This matrix, constructed from the machine model and simulation codes, holds the information on the response of the model optics functions to changes made in model settings, usually magnet powering changes.
+For instance, the response to a quadrupole \intro{knob} trim\footnote{A knob trim refers to powering adjustements of a given electrical circuit powering several magnets in series.} of optics functions such as the phase advances, \(\beta\)-functions, normalized dispersion and tunes can be expressed as:
+
+\begin{equation}
+  \mathbf{R} \Delta \vec{K} = \left(\Delta \overrightarrow{\phi_x}, \Delta \overrightarrow{\phi_y}, \frac{\Delta \beta_x}{\beta_x}, \frac{\Delta \beta_y}{\beta_y}, \Delta \frac{\overrightarrow{D_x}}{\sqrt{\beta_x}}, \Delta Q_x, \Delta Q_y \right) \text{ .}
+  \label{equation:response_matrix}
+\end{equation}
+
+Here \(\mathbf{R}\) is a \(M \times N\) matrix, where \(N\) is the number of adjusted quadrupole knobs and \(M\) is the number of observation points, usually the number of BPMs.
+To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, noted here \(\mathbf{R^{-1}}\), is calculated and multiplied with the measured deviations from the model.
+
+\begin{equation}
+  \Delta \vec{K} = \mathbf{R^{-1}} \left(w_1 \Delta \overrightarrow{\phi_x}, w_2 \Delta \overrightarrow{\phi_y}, w_3 \frac{\Delta \beta_x}{\beta_x}, w_4 \frac{\Delta \beta_y}{\beta_y}, w_5 \Delta \frac{\overrightarrow{D_x}}{\sqrt{\beta_x}}, w_6 \Delta Q_x, w_7 \Delta Q_y \right) \text{ .}
+  \label{equation:global_corrections_from_pseudo_inverse_response_matrix}
+\end{equation}
+
+The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on the correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
+By choosing weights and plugging measured optics deviations into \cref{equation:global_corrections_from_pseudo_inverse_response_matrix}, one can determine the knob trims that could correct said observed deviations.
 
 \subsubsection*{Local Corrections}
 
