@@ -533,7 +533,7 @@ One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is ind
 
 \subsection{Correction Principles}
 
-Optics corrections in the LHC are based on two different approaches.
+Corrections of the linear optics in the LHC are based on two different approaches.
 Global correction are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and is mostly used around the IPs
 
 \subsubsection*{Global Corrections}
@@ -560,7 +560,27 @@ By choosing weights and plugging measured optics deviations into \cref{equation:
 
 \subsubsection*{Local Corrections}
 
-Talk about SbS~\cite{PRAB:Tomas:CERN_LHC_OMC}.
-Get inspiration from PRAB paper for citations.
+In the LHC a local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
+The technique treats a section, or segment, of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
+The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
+Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
 
-\todo{Here mention the need for new stuff as things get hairy with the LHC upgrades.}
+This method is mostly used in the LHC IRs, where the the \(\beta\)-beating is corrected by correcting the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+One looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
+
+\begin{equation}
+  \Delta \phi = \phi_{\mathrm{model}} - \phi_{\mathrm{measurement}} \text{ .}
+  \label{equation:sbs_delta_phi}
+\end{equation}
+
+An example of a local correction of the phase advance around IP\num{5} from the LHC \num{2022} commissioning is shown in \cref{figure:example_sbs_correction}, where the phase deviation from the model values are shown across the segment together with the effect of the reconstructed errors.
+This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_phase_ip5_example.pdf}
+  \caption{Local phase correction in IR\num{5} from the LHC \num{2022} commissioning at flat-top. The vertical line indicates the position of IP\num{5} in the segment. The \textcolor{mplblue}{blue} line shows the phase deviation from the model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model.}
+  \label{figure:example_sbs_correction}
+\end{figure}
+
+\todo{Here mention the need for new stuff as things get hairy with the LHC upgrades?}
