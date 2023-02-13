@@ -498,10 +498,29 @@ The \(\beta\)-function at a given BPM is calculated from the measured phases of 
   \beta^i_z = \frac{\cot \left(\phi_z(i \rightarrow j)\right) + \cot \left(\phi_z(i \rightarrow k)\right)}{\frac{M_{11}(i \rightarrow j)}{M_{12}(i \rightarrow j)} + \frac{M_{11}(i \rightarrow k)}{M_{12}(i \rightarrow k)}}  \text{ ,} \quad z = x, y \text{ ,}
   \label{equation:beta_from_phase}
 \end{equation}
-where the \(M_(i \rightarrow j)\) are the transfer matrices between BPMs \(i\) and \(j\), assumed to be that of the model.
+where the \(M_{ab}(i \rightarrow j)\) are elements of the transfer matrix between BPMs \(i\) and \(j\), assumed to be that of the model.
+This method has been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it depends only on the measured phase advances and is independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
 
-\cite{PRAB:Langner:N_BPM_Method}
-\cite{PRAB:Wegscheider:Analytical_N_BPM_Method}
+From \cref{equation:single_particle_action}, one infers that the \(\beta\)-function can also be determined directly from the amplitude of the oscillations recorded at BPMs.
+Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can infer the calibration-dependent~\cite{PRAB:GarciaTabares:BPM_Calibration} \(\beta\)-function according to:
+
+\begin{equation}
+  \begin{aligned}
+    \beta_z^{\mathrm{amp}}(i) &= \frac{A_z^2(i)}{2 J_z} \text{ ,} \\
+    % 2 J_z                     = \frac{\sum_n \frac{(\mathrm{peak-to-peak} / 2)^2}{\beta_z^{\mathrm{model}}}}{n} \text{ .}
+    2 J_z                     &= \frac{\sum_n \left(\frac{\mathrm{peak-to-peak}}{2}\right)^2 / \beta_z^{\mathrm{model}}}{n} \text{ .}
+  \end{aligned}
+  \label{equation:beta_from_amplitude}
+\end{equation}
+
+\Cref{figure:betabeating_phase_vs_amp} shows the \(\beta\)-beating reconstructed from phase and from amplitude for a \num{2022} LHC measurement at \(\beta^{\ast} =\) \qty{30}{\centi\meter}, where the lower precision from reconstructing from amplitude can be seen.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betabeat_phase_vs_amp.pdf}
+  \caption{The \(\beta\)-beatings obtained when reconstructing the \(\beta\)-functions from phase (\textcolor{mplblue}{blue}) and from amplitude (\textcolor{mplorange}{orange}).}
+  \label{figure:betabeating_phase_vs_amp}
+\end{figure}
 
 \subsection{Measurement of Linear Coupling}
 
