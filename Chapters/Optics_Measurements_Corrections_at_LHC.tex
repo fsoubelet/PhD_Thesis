@@ -556,22 +556,46 @@ with \(\Delta \phi_z\) the phase advance between the \(n^{\mathrm{th}}\) and \((
 In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main and the coupling lines.
 
 With the information from two BPMs, one can compute the spectral lines according to \cref{equation:spectral_lines}.
-Starting from \cref{equation:rdt_contribution_to_spectrum_line}, it has been shown that the amplitudes of the coupling RDTs may be expressed as~\cite{CERN:Franchi:Computation_Coupling_Resonance_Driving_Term_Single_BPM,PRAB:Tomas:CERN_LHC_OMC}:
+Starting from \cref{equation:rdt_contribution_to_spectrum_line} one can subsitute \(j = 1\), \(k = 0\), \(l = 0\), \(m = 1\) and obtain \(H(0, 1) = \abs{f_{1001}} \left(2 I_y \right)^{\frac{1}{2}}\).
+With the proper values for \(j,k,l,m\) one can cancel out the dependence of the action and look to obtain \(\abs{f_{1001}}\).
+However, it is possible - and likely - that the BPM calibrations aren't perfect, in which cases the measured and real coordinates differ:
 
 \begin{equation}
   \begin{aligned}
-    \abs{f_{1001}} & =\frac{1}{2} \sqrt{\frac{H(0,1) V(1,0)}{V(0,1) H(1,0)}}      \text{ ,}  \\
-    \abs{f_{1010}} & =\frac{1}{2} \sqrt{\frac{H(0,-1) V(0,-1)}{V(0,1), H(1,0)}}   \text{ ,}
+    x^{\mathrm{meas}} &= C_x x^{\mathrm{real}}  \text{ ,}  \\
+    y^{\mathrm{meas}} &= C_y y^{\mathrm{real}}  \text{ .}
   \end{aligned}
+\end{equation}
+
+One can cancel out the \(C_{x,y}\) factors by dividing any line amplitude by that of the main line, to create normalized spectral lines.
+Of interest for the linear coupling RDTS are:
+
+\begin{equation}
+  \begin{aligned}
+    A_{0,1} &= \frac{H(0,1)}{\abs{H(1,0)}}    \text{ ,}  \\
+    B_{1,0} &= \frac{V(1,0)}{\abs{V(0,1)}}    \text{ ,}  \\
+    A_{0,-1} &= \frac{H(0,-1)}{\abs{H(1,0)}}  \text{ ,}  \\
+    B_{-1,0} &= \frac{V(-1,0)}{\abs{V(0,1)}}  \text{ ,}
+  \end{aligned}
+  \label{equation:normalized_spectral_lines}
+\end{equation}
+where \(A_{0,1}\) and \(B_{1,0}\) contain \(f_{1001}\) whereas \(A_{0,-1}\) and \(B_{-1,0}\) contain \(f_{1010}\).
+By combining these normalized spectral lines, it has been shown that the amplitudes of the coupling RDTs may be expressed as~\cite{CERN:Franchi:Computation_Coupling_Resonance_Driving_Term_Single_BPM,PRAB:Tomas:CERN_LHC_OMC}:
+
+\begin{equation}
+  \begin{gathered}
+    \abs{f_{1001}} = \frac{1}{2} \sqrt{\abs{A_{0,1} B_{1,0}}}   = \frac{1}{2} \sqrt{\frac{H(0,1) V(1,0)}{V(0,1) H(1,0)}}       \text{ ,}  \\
+    \abs{f_{1010}} = \frac{1}{2} \sqrt{\abs{A_{0,-1} B_{-1,0}}} = \frac{1}{2} \sqrt{\frac{H(0,-1) V(0,-1)}{V(0,1), H(1,0)}}  \text{ ,}
+  \end{gathered}
   \label{equation:coupling_rdts_amplitude_from_spectral_lines}
 \end{equation}
 and the phases as:
 
 \begin{equation}
-  \begin{aligned}
-    q_{1001} &= \phi_{V(1,0)} -\phi_{H(1,0)} +\frac{\pi}{2} &= \phi_{H(0,1)} - \phi_{V(0,1)} + \frac{\pi}{2}      \text{ ,}  \\
-    q_{1010} &= \phi_{H(0,-1)} -\phi_{V(0,1)} +\frac{\pi}{2} &= \phi_{V(-1,0)} - \phi_{H(1,0)} + \frac{\pi}{2}    \text{ .}
-  \end{aligned}
+  \begin{gathered}
+    q_{1001} = \phi_{V(1,0)} -\phi_{H(1,0)} +\frac{\pi}{2} = \phi_{H(0,1)} - \phi_{V(0,1)} + \frac{\pi}{2}      \text{ ,}  \\
+    q_{1010} = \phi_{H(0,-1)} -\phi_{V(0,1)} +\frac{\pi}{2} = \phi_{V(-1,0)} - \phi_{H(1,0)} + \frac{\pi}{2}    \text{ .}
+  \end{gathered}
   \label{equation:coupling_rdts_phase_from_spectral_lines}
 \end{equation}
 
@@ -590,12 +614,12 @@ From the phase and amplitude information of \cref{equation:coupling_rdts_phase_f
   \label{equation:complex_coupling_rdts_from_phase_and_amplitude}
 \end{equation}
 
+This method has successfully been used in the LHC since Run~\num{1}~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
 
-Method been used for a while~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}
+\subsubsection*{Caveats}
 
-% It is also possible to approximate the RDTs from the real coordinates but
-% on the expense that some of the lines are inseparable. For the linear coupling
-% it means that the f1001 and f1010 will contribute to the same resonance line
+% It is also possible to approximate the RDTs from the real coordinates but on the expense that some of the lines are inseparable. For the linear coupling it means that the f1001 and f1010 will contribute to the same resonance line
+% In case only the position data is used the spectral analysis will mix lines Z(a,b) with Z(−a, − b). This is the case for example for the f1001 and f1010 which are not separable from only the position data.
 
 % Mention that we need dual plane BPMs (to see V line in H spectrum etc). Cite Glenn mentioning we can circumvent this.
 
