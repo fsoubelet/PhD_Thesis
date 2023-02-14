@@ -532,9 +532,73 @@ One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is ind
 
 \subsection{Reconstruction of Linear Coupling RDTs}
 
-Look at your screenshots~\cite{PRAB:Tomas:CERN_LHC_OMC}.
-\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}
-\cite{REPORT:Miyamoto:Measurement_Coupling_Resonance_Driving_Terms}
+Of particular relevance to this thesis are the linear coupling RDTs \(f_{1001}\) and \(f_{1010}\), and it is worth spending some time detailing their reconstruction.
+As mentioned in \cref{subsec:spectral_contribution}, the \(f_{jklm}\) RDTs can be determined from the specific \intro{spectral lines} arising during the spectral analysis of turn-by-turn data.
+By the term spectral lines one refers here to the Fourier transform of the complex Courant-Snyder coordinate, which corresponds to:
+
+\begin{equation}
+  \begin{aligned}
+    H^\pm(n_x, n_y) &= \mathcal{F}\{h_x^\pm\}(n_x Q_x + n_y Q_y)  \text{ ,}  \\
+    V^\pm(n_x, n_y) &= \mathcal{F}\{h_y^\pm\}(n_x Q_x + n_y Q_y)  \text{ ,}
+  \end{aligned}
+  \label{equation:spectral_lines}
+\end{equation}
+in which \(H\) indicates a line in the spectrum of horizontal turn-by-turn data, and \(V\) a line in the spectrum of vertical turn-by-turn data.
+
+As seen in \cref{equation:spectral_lines} the Courant-Snyder variables defined in \cref{equation:resonance_basis_definition} are needed.
+Since the momentum present in the expression of \(h_z^\pm\) is not a quantity directly measurable from a single BPM, it is reconstructed using two successive BPMs:
+
+\begin{equation}
+  \hat{p}_{z_n} = \frac{\hat{z}_{n+1} - \hat{z}_n \cos \left(\Delta \phi_z\right)}{\sin \left(\Delta \phi_z\right)} \text{ ,}
+  \label{equation:momentum_from_two_bpms}
+\end{equation}
+with \(\Delta \phi_z\) the phase advance between the \(n^{\mathrm{th}}\) and \((n+1)^{\mathrm{th}}\) BPM in the transverse \(z\) plane.
+In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main and the coupling lines.
+
+With the information from two BPMs, one can compute the spectral lines according to \cref{equation:spectral_lines}.
+Starting from \cref{equation:rdt_contribution_to_spectrum_line}, it has been shown that the amplitudes of the coupling RDTs may be expressed as~\cite{CERN:Franchi:Computation_Coupling_Resonance_Driving_Term_Single_BPM,PRAB:Tomas:CERN_LHC_OMC}:
+
+\begin{equation}
+  \begin{aligned}
+    \abs{f_{1001}} & =\frac{1}{2} \sqrt{\frac{H(0,1) V(1,0)}{V(0,1) H(1,0)}}      \text{ ,}  \\
+    \abs{f_{1010}} & =\frac{1}{2} \sqrt{\frac{H(0,-1) V(0,-1)}{V(0,1), H(1,0)}}   \text{ ,}
+  \end{aligned}
+  \label{equation:coupling_rdts_amplitude_from_spectral_lines}
+\end{equation}
+and the phases as:
+
+\begin{equation}
+  \begin{aligned}
+    q_{1001} &= \phi_{V(1,0)} -\phi_{H(1,0)} +\frac{\pi}{2} &= \phi_{H(0,1)} - \phi_{V(0,1)} + \frac{\pi}{2}      \text{ ,}  \\
+    q_{1010} &= \phi_{H(0,-1)} -\phi_{V(0,1)} +\frac{\pi}{2} &= \phi_{V(-1,0)} - \phi_{H(1,0)} + \frac{\pi}{2}    \text{ .}
+  \end{aligned}
+  \label{equation:coupling_rdts_phase_from_spectral_lines}
+\end{equation}
+
+Here \(H(1,0)\) corresponds to the line in the horizontal spectrum at \(Q_x\) while \(H(0, 1)\) corresponds to the line at \(Q_y\) in the same spectrum.
+In \cite{PRAB:Franchi:First_Simultaneous} a table is given that relates various spectral lines to amplitudes and phases of the corresponding resonances and RDTs.
+\todo{figure of spectral lines.}
+
+
+From the phase and amplitude information of \cref{equation:coupling_rdts_phase_from_spectral_lines} and \cref{equation:coupling_rdts_amplitude_from_spectral_lines} the complex RDTs are reconstructed as:
+
+\begin{equation}
+  \begin{aligned}
+    f_{1001} &= \abs{f_{1001}} e^{i q_{1001}}  \text{ ,}  \\
+    f_{1010} &= \abs{f_{1010}} e^{i q_{1010}}  \text{ ,}  \\
+  \end{aligned}
+  \label{equation:complex_coupling_rdts_from_phase_and_amplitude}
+\end{equation}
+
+
+Method been used for a while~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}
+
+% It is also possible to approximate the RDTs from the real coordinates but
+% on the expense that some of the lines are inseparable. For the linear coupling
+% it means that the f1001 and f1010 will contribute to the same resonance line
+
+% Mention that we need dual plane BPMs (to see V line in H spectrum etc). Cite Glenn mentioning we can circumvent this.
+
 
 \subsection{Correction Principles}
 
@@ -570,7 +634,7 @@ The technique treats a section, or segment, of the accelerator as an independent
 The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
 Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
 
-This method is mostly used in the LHC IRs, where the the \(\beta\)-beating is corrected by correcting the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+This method is mostly used in the LHC IRs, where the the \(\beta\)-beating is corrected by correcting the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
 One looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
 
 \begin{equation}
