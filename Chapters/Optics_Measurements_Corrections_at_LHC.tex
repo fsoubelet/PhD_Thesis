@@ -633,7 +633,7 @@ To do so, the phases of the real spectral lines are shifted in accordance with t
 \subsection{Correction Principles}
 
 Corrections of the linear optics in the LHC are based on two different approaches.
-Global correction are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and is mostly used around the IPs
+Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the IPs
 
 \subsubsection*{Global Corrections}
 
@@ -659,13 +659,13 @@ By choosing weights and plugging measured optics deviations into \cref{equation:
 
 \subsubsection*{Local Corrections}
 
-In the LHC a local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
-The technique treats a section, or segment, of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
+In the LHC local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
+The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
 The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
 Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
 
-This method is mostly used in the LHC IRs, where the the \(\beta\)-beating is corrected by correcting the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
-One looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
+This method is mostly used in the LHC IRs, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+For this one looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
 
 \begin{equation}
   \Delta \phi = \phi_{\mathrm{model}} - \phi_{\mathrm{measurement}} \text{ .}
@@ -678,8 +678,10 @@ This method has successfully been applied in the LHC for many years~\cite{PRAB:A
 \begin{figure}[!hbt]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_phase_ip5_example.pdf}
-  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear local error can be seen propagating from the triplets.}
+  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear error can be seen propagating.}
   \label{figure:example_sbs_correction}
 \end{figure}
+
+\todo{Maybe I should include a few words about K-Modulation because I mention it in next chapter to say it is unaffected by local coupling.}
 
 \todo{Bit of a sentence here about the need for better methods as we get to Run~\num{3} and the HL-LHC upgrade?}
