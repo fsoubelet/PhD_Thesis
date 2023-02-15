@@ -547,15 +547,15 @@ As seen in \cref{equation:spectral_lines} the Courant-Snyder variables defined i
 Since the momentum present in the expression of \(h_z^\pm\) is not a quantity directly measurable from a single BPM, it is reconstructed using two successive BPMs:
 
 \begin{equation}
-  \hat{p}_{z_n} = \frac{\hat{z}_{n+1} - \hat{z}_n \cos \left(\Delta \phi_z\right)}{\sin \left(\Delta \phi_z\right)} \text{ ,}
+  \hat{p}_{z_n} = \frac{\hat{z}_{n+1} - \hat{z}_n \cos \left(\Delta \phi_z\right)}{\sin \left(\Delta \phi_z\right)}  \text{ ,} \quad z = x, y \text{ ,}
   \label{equation:momentum_from_two_bpms}
 \end{equation}
-with \(\Delta \phi_z\) the phase advance between the \(n^{\mathrm{th}}\) and \((n+1)^{\mathrm{th}}\) BPM in the transverse \(z\) plane.
-In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main and the coupling lines.
+with \(\Delta \phi_z\) the phase advance between the \(n^{\mathrm{th}}\) and \((n+1)^{\mathrm{th}}\) BPMs in the transverse \(z\) plane.
+In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main line and the coupling line.
 
 With the information from two BPMs, one can compute the spectral lines according to \cref{equation:spectral_lines}.
 Starting from \cref{equation:rdt_contribution_to_spectrum_line} one can subsitute \(j = 1\), \(k = 0\), \(l = 0\), \(m = 1\) and obtain \(H(0, 1) = \abs{f_{1001}} \left(2 I_y \right)^{\frac{1}{2}}\).
-With the proper values for \(j,k,l,m\) one can cancel out the dependence of the action and look to obtain \(\abs{f_{1001}}\).
+With the proper values for \(j,k,l,m\) and using lines from the vertical spectrum one can cancel out the dependence of the action and look to obtain \(\abs{f_{1001}}\).
 However, it is possible - and likely - that the BPM calibrations aren't perfect, in which cases the measured and real coordinates differ:
 
 \begin{equation}
@@ -566,7 +566,7 @@ However, it is possible - and likely - that the BPM calibrations aren't perfect,
 \end{equation}
 
 One can cancel out the \(C_{x,y}\) factors by dividing any line amplitude by that of the main line, to create normalized spectral lines.
-Of interest for the linear coupling RDTS are:
+Of interest for the linear coupling RDTS are the following:
 
 \begin{equation}
   \begin{aligned}
@@ -599,12 +599,12 @@ and the phases as:
 
 Here \(H(1,0)\) corresponds to the line in the horizontal spectrum at \(Q_x\) while \(H(0, 1)\) corresponds to the line at \(Q_y\) in the same spectrum.
 In \cite{PRAB:Franchi:First_Simultaneous} a table is given that relates various spectral lines to amplitudes and phases of the corresponding resonances and RDTs.
-From the phase and amplitude information of \cref{equation:coupling_rdts_phase_from_spectral_lines} and \cref{equation:coupling_rdts_amplitude_from_spectral_lines} the complex RDTs are reconstructed as:
+From the amplitude and phase information of \cref{equation:coupling_rdts_amplitude_from_spectral_lines,equation:coupling_rdts_phase_from_spectral_lines} the complex RDTs are reconstructed as:
 
 \begin{equation}
   \begin{aligned}
     f_{1001} &= \abs{f_{1001}} e^{i q_{1001}}  \text{ ,}  \\
-    f_{1010} &= \abs{f_{1010}} e^{i q_{1010}}  \text{ ,}  \\
+    f_{1010} &= \abs{f_{1010}} e^{i q_{1010}}  \text{ .}  \\
   \end{aligned}
   \label{equation:complex_coupling_rdts_from_phase_and_amplitude}
 \end{equation}
@@ -615,19 +615,19 @@ This method has successfully been used to measure linear coupling RDTs in the LH
 \begin{figure}[!h]
   \centering
   \includegraphics*[width=0.9\linewidth]{Figures/placeholder.png}
-  \caption{\todo{The horizontal/vertical? spectrum from a measurement in the LHC \num{2022} commissioning at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. Some of the identified lines are indicated, including the \(H(0, 1)\) and \(V(1, 0)\) lines used to measure the coupling RDTs.}}
+  \caption{\todo{The horizontal/vertical? spectrum from a measurement in the LHC \num{2022} commissioning at \(\beta^{\ast} =\) \qty{30}{\centi\meter} at BPM blah. Some of the identified lines are indicated, including the \(H(0, 1)\) and \(V(1, 0)\) lines used to measure the coupling RDTs.}}
   \label{figure:measurement_spectrum}
 \end{figure}
 
 \subsubsection*{Caveats}
 
-It is possible to approximate the coupling RDTs from the real coordinates using a single BPM, and doing without the momentum information.
-In such case where only the position data is used however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
+It is possible to approximate the coupling RDTs from the real coordinates using a single BPM, and doing the reconstruction without the momentum information.
+In such case where only the position data is used, however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
 For the linear coupling RDTs this means that the \(f_{1001}\) and \(f_{1010}\) will contribute to the same resonance lines and cannot be separated~\cite{PHD:Persson}.
 It may be, however, possible to neglect one of them depending on their relative strengths.
 
-Additionally, from the method described above it appears that dual plane BPMs are required for coupling measurements.
-In case such instrumentation is not available, one can numerically construct a pseudo dual plane BPM by shifting a vertical plane monitor towards the location of the nearest horizontal one, or inversely.
+Additionally, from the method described above it becomes clear that dual plane BPMs are required for coupling measurements.
+In case such instrumentation is not available, one can numerically construct a pseudo dual plane BPM by virtually shifting a vertical plane monitor towards the location of the nearest horizontal one, or inversely.
 To do so, the phases of the real spectral lines are shifted in accordance with the phase advance between the monitors, which assumes that the segment between these monitors is free of non-linear sources~\cite{PHD:Vanbavinckhove}.
 
 \subsection{Correction Principles}
