@@ -407,7 +407,7 @@ A comparison of the turn-by-turn data obtained from beam excitation with a singl
 \label{subsection:optics_measurements}
 
 Optics measurements are performed by exciting the beam and analyzing the resulting betatron oscillations.
-The various steps of the measurement process are described below.
+The various steps of the measurement and analysis process are described below.
 
 \subsubsection*{Beam Excitation}
 
@@ -418,36 +418,36 @@ When exciting the beam, the turn-by-turn position of the bunch is measured by th
 
 It is important to note now that the forced oscillations introduce a perturbation on the optics.
 In the case of free oscillations, it was shown in \cref{chapter:Theory} that the transverse motion goes according to \cref{equation:hill_solution}.
-Using the horizontal plane as example from now on, and considering \(\phi_{x,0} = 0\) at the start of machine:
+For the transverse plane \(z\), by considering \(\phi_{z,0} = 0\) at the start of machine one gets:
 
 \begin{equation}
-  x(s) = \sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) \text{ ,}
+  z(s) = \sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right) \quad z = x, y  \text{ ,}
 \end{equation}
-with \(\phi_x\) and \(J_x\) the action and angle variables respectively.
+with \(\phi_z\) and \(J_z\) the action and angle variables, respectively.
 
-When the AC Dipole is driving the beam, an equivalent parametrization exists, and noting \(x_D(s)\) the horizontal driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
+When the AC Dipole is driving the beam, an equivalent parametrization exists, and noting \(z_D(s)\) the transverse driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
 
 \begin{equation}
-  x_D(s)=\sqrt{2 J_x \beta_x(s)} \cos \left( \phi_x \right) + \sqrt{2 A \beta_{D,x}(s)} \cos \left( \phi_D \right) \text{ ,}
+  z_D(s)=\sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right) + \sqrt{2 A \beta_{D,z}(s)} \cos \left( \phi_D \right) \text{ ,}
   \label{equation:driven_transverse_motion}
 \end{equation}
-where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,x}(s)\) is the \(\beta\)-function modified by the AC Dipole.
+where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,z}(s)\) is the \(\beta\)-function modified by the AC Dipole.
 The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term only depends on \(\phi_D\).
 
 The \(\beta\)-function modified by the AC Dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
-  \beta_{D,x}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta_x(s) \text{ ,}
+  \beta_{D,z}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta_z(s) \text{ ,}
   \label{equation:driven_beta_function}
 \end{equation}
-where \(\psi_D\) is the phase advance with respect to the AC Dipole location and the relation is valid for both horizontal and vertical \(\beta\)-functions.
+where \(\psi_D\) is the phase advance with respect to the AC Dipole location.% and the relation is valid for both horizontal and vertical \(\beta\)-functions.
 The \(\lambda_D\) term is dependent on the gap between the driven and natural tune, and is defined by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
-  \lambda_D = \frac{\sin \left(\pi \delta_D \right)}{\sin \left(2 \pi Q_x + \pi \delta_D \right)} \text{ ,}
+  \lambda_D = \frac{\sin \left(\pi \delta_D \right)}{\sin \left(2 \pi Q_z + \pi \delta_D \right)} \text{ ,}
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
-in which \(\delta_D = Q_D - Q\) corresponds to the aforementioned gap.
+in which \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap.
 In the LHC the AC Dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
 
 One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
@@ -463,13 +463,13 @@ One can then determine the \(\beta\)-beating induced by the AC Dipole, as define
 From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can express this beating according to:
 
 \begin{equation}
-  \frac{\beta_D - \beta}{\beta} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q\right)}{1 - \lambda_D^2} - 1 \text{ ,}
+  \frac{\beta_{D,z} - \beta_z}{\beta_z} = \frac{1 + \lambda_D^2 - \lambda_D \cos \left(2 \psi_D - 2 \pi Q_z\right)}{1 - \lambda_D^2} - 1 \text{ ,}
   \label{equation:ac_dipole_beta_beating}
 \end{equation}
-with \(Q\) the natural tune of the machine, either horizontal or vertical depending on which plane the \(\beta\)-beating is computed for.
+with \(Q_z\) the natural transverse tune of the machine.
 \Cref{figure:ac_dipole_induced_beta_beating} shows this \(\beta\)-beating for various phase advances between the AC Dipole and an element where the observation would be made.
-The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a common working point for LHC measurements: \((Q_x, Q_y) = (.28, 0.31)\).
-For these usual settings the \(\beta\)-beating is no more than \qty{9}{\percent}.
+The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a common working point for LHC measurements: \((Q_x, Q_y) = (0.28, 0.31)\).
+For these usual settings the AC Dipole induced \(\beta\)-beating reaches no more than \qty{9}{\percent}.
 
 \begin{figure}[!htb]
   \centering
