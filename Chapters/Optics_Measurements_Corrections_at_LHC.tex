@@ -601,9 +601,6 @@ and the phases as:
 
 Here \(H(1,0)\) corresponds to the line in the horizontal spectrum at \(Q_x\) while \(H(0, 1)\) corresponds to the line at \(Q_y\) in the same spectrum.
 In \cite{PRAB:Franchi:First_Simultaneous} a table is given that relates various spectral lines to amplitudes and phases of the corresponding resonances and RDTs.
-\todo{figure of spectral lines.}
-
-
 From the phase and amplitude information of \cref{equation:coupling_rdts_phase_from_spectral_lines} and \cref{equation:coupling_rdts_amplitude_from_spectral_lines} the complex RDTs are reconstructed as:
 
 \begin{equation}
@@ -614,7 +611,15 @@ From the phase and amplitude information of \cref{equation:coupling_rdts_phase_f
   \label{equation:complex_coupling_rdts_from_phase_and_amplitude}
 \end{equation}
 
+\Cref{figure:measurement_spectrum} shows a spectrum from an LHC measurement during the \num{2022} commissioning, where the coupling lines are clearly visible.
 This method has successfully been used to measure linear coupling RDTs in the LHC since Run~\num{1}~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
+
+\begin{figure}[!h]
+  \centering
+  \includegraphics*[width=0.9\linewidth]{Figures/placeholder.png}
+  \caption{\todo{The horizontal/vertical? spectrum from a measurement in the LHC \num{2022} commissioning at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. Some of the identified lines are indicated, including the \(H(0, 1)\) and \(V(1, 0)\) lines used to measure the coupling RDTs.}}
+  \label{figure:measurement_spectrum}
+\end{figure}
 
 \subsubsection*{Caveats}
 
@@ -678,3 +683,5 @@ This method has successfully been applied in the LHC for many years~\cite{PRAB:A
   \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear local error can be seen propagating from the triplets.}
   \label{figure:example_sbs_correction}
 \end{figure}
+
+\todo{Bit of a sentence here about the need for better methods as we get to Run~\num{3} and the HL-LHC upgrade?}
