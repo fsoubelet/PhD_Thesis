@@ -421,7 +421,7 @@ In the case of free oscillations, it was shown in \cref{chapter:Theory} that the
 For the transverse plane \(z\), by considering \(\phi_{z,0} = 0\) at the start of machine one gets:
 
 \begin{equation}
-  z(s) = \sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right) \quad z = x, y  \text{ ,}
+  z(s) = \sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right)  \text{ ,} \quad z = x, y \text{ ,}
 \end{equation}
 with \(\phi_z\) and \(J_z\) the action and angle variables, respectively.
 
@@ -483,30 +483,31 @@ This impact of the AC Dipole on the optics is taken into account and compensated
 
 \subsubsection*{Spectral Analysis}
 
-As a first step the recorded raw turn-by-turn data is cleaned using a \intro{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
-A Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
+As a first step the recorded raw turn-by-turn data is cleaned of noise using a \intro{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
+An interpolated Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
 Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc).
+\todo{Show a figure with a BPM spectrum from a measurement?}
 
 \subsubsection*{Optics Reconstruction}
 
 With knowledge of the phase information at each measuring BPM, and with knowledge of the model machine, the transverse optics functions can be determined.
 The model knowledge traditionally comes from the MAD-X (Methodical Accelerator Design) code~\cite{CODE:MADX_guide} for LHC measurements.
-The \(\beta\)-function at a given BPM is calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
+The \(\beta\)-function at a given BPM can be calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
 \begin{equation}
-  \beta_z(s_i) = \frac{\cot \left(\phi_z(i \rightarrow j)\right) + \cot \left(\phi_z(i \rightarrow k)\right)}{\cot \left(\phi^m_z(i \rightarrow j)\right) + \cot \left(\phi^m_z(i \rightarrow k)\right)} \beta^m(s_i)  \text{ ,} \quad z = x, y \text{ ,}
+  \beta_z^{\mathrm{phase}}(s_i) = \frac{\cot \left(\phi_z(i \rightarrow j)\right) + \cot \left(\phi_z(i \rightarrow k)\right)}{\cot \left(\phi^m_z(i \rightarrow j)\right) + \cot \left(\phi^m_z(i \rightarrow k)\right)} \beta^m_z(s_i)  \text{ ,} \quad z = x, y \text{ ,}
   \label{equation:beta_from_phase}
 \end{equation}
 where the superscript \(^m\) denotes the model values and \(\phi_z(i \rightarrow j)\) is the phase advance between the \(i^{\mathrm{th}}\) and \(j^{\mathrm{th}}\) BPMs.
-This method has been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it depends only on the measured phase advances and is independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
+This method has been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it then only depends on the measured phase advances and is independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
 
-From \cref{equation:single_particle_action}, one infers that the \(\beta\)-function can also be determined directly from the amplitude \(A\) of the oscillations recorded at BPMs.
-Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can infer the calibration-dependent~\cite{PRAB:GarciaTabares:BPM_Calibration} \(\beta\)-function according to:
+From \cref{equation:single_particle_action} one infers that the \(\beta\)-function can also be determined directly from the amplitude \(A\) of the oscillations recorded at BPMs.
+Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can determine the calibration-dependent~\cite{PRAB:GarciaTabares:BPM_Calibration} \(\beta\)-function according to:
 
 \begin{equation}
   \begin{gathered}
     \beta_z^{\mathrm{amp}}(s_i) = \frac{A_z^2(s_i)}{2 J_z} \text{ ,} \\
-    2 J_z                       = \frac{\sum_n \left(\frac{\mathrm{peak-to-peak}}{2}\right)^2 / \beta_z^{\mathrm{model}}}{n} \text{ .}
+    2 J_z                       = \frac{\sum_n \left(\frac{\mathrm{peak-to-peak}}{2}\right)^2 / \beta^m_z}{n} \text{ .}
   \end{gathered}
   \label{equation:beta_from_amplitude}
 \end{equation}
@@ -523,6 +524,8 @@ Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can infer the 
 Other TWISS parameters can be reconstructed from the \(\beta\)-functions.
 Chromatic parameters are reconstructed by performing measurements at different momentum settings.
 By adjusting the frequency of the accelerating cavities, typically between \qty{-100}{\hertz} and \qty{+100}{\hertz}, the energy of the beam is changed and the dispersion is determined from the mean orbit recorded at different energies.
+Recent improvements have allowed doing so in a single measurement~\cite{PHD:Malina, IPAC:Malina:3D_Excitation}.
+
 One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is independent from model values and BPM calibration~\cite{PAC:Calaga:BPM_Calibration_Independent_LHC_Optics_Correction}.
 
 \subsection{Reconstruction of Linear Coupling RDTs}
