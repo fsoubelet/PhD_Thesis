@@ -105,6 +105,10 @@ In the middle of each octant, in between arcs, the LHC hosts \intro{long straigh
 Each of these is centered around an Insertion Region where a dedicated layout is in place to fulfill the section's purpose.
 The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
 
+Of interest to this thesis are the \intro{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
+An insertion region in which beams are made to collide is called an \intro{Interaction Region}, or sometimes Experimental Interaction Region.
+In this document, when using the short form IR, it is meant to refer to an Interaction Region.
+
 \begin{table}[!hbt]
   \centering
   \begin{tblr}{colspec={cc}}
@@ -125,10 +129,6 @@ The purpose of each straight section is briefly stated on \cref{figure:lhc_schem
   \label{table:lhc_straight_sections}
 \end{table}
 
-Of interest to this thesis are the \intro{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
-An insertion region in which beams are made to collide is called an \intro{Interaction Region}, or sometimes Experimental Interaction Region.
-In this document, when using the short form IR, it is meant to refer to an Interaction Region.
-
 At the center of the IR, beams are made to collide at the \intro{Interaction Point} (IP).
 In order to achieve high luminosity during collisions, and as shown in \cref{section:luminosity}, the \(\beta\)-functions at the IPs are squeezed to very small values.
 \Cref{figure:ir5_and_around} shows the \(\beta\)-functions in the LHC around IP5 at both injection and collision optics, where the squeeze is apparent.
@@ -141,7 +141,7 @@ In order to achieve high luminosity during collisions, and as shown in \cref{sec
 \end{figure}
 
 During normal operation the \(\beta^{\ast}\) at ATLAS and CMS is very squeezed: \(\beta^{\ast} =\) \qty{30}{\centi\metre} during collisions as of \num{2023}.
-For the configuration, at ALICE and LHCb the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
+In this configuration, at ALICE and LHCb the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
 During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduced at ALICE and LHCb.
 \Cref{table:lhc_betastars_configurations} summarizes the \(\beta^{\ast}\) values for the different experiments and configurations.
 
@@ -174,27 +174,27 @@ An illustration of the area close to IP\num{5} for collision optics with \(\beta
 \begin{figure}[!hbt]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_ir5_zoomed.pdf}
-  \caption{The simplified elements layout and \(\beta\)-functions around IP\num{5} at collision optics, without crossing angles.}
+  \caption{The simplified elements layout and \(\beta\)-functions around IP\num{5} at \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics, without crossing angles.}
   \label{figure:lhc_ir5_zoomed}
 \end{figure}
 
-On the layout plot the three \textcolor{latwiss_red}{red patches} closest to the IP location correspond to Q\num{1}, Q\num{2} and Q\num{3} respectively, the triplet quadrupoles.
-The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \intro{separation / recombination dipoles} responsible for bringing the beams together / apart in the common region from / to their separate apertures in the arcs.
+On the layout plot the four \textcolor{latwiss_red}{red patches} closest to the IP location correspond to Q\num{1}, Q\num{2}a, Q\num{2}b and Q\num{3} respectively, the triplet quadrupoles.
+The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \intro{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
 The separation dipole D\num{1} is made of six \qty{3.4}{\meter} long normal conducting magnets while D\num{2} is a superconducting twin aperture magnet \qty{9.45}{\meter} long.
-Further quadrupoles are matching quadrupoles and will be discussed later.
+Further quadrupoles after the triplet are matching quadrupoles and will be discussed later.
 The grey lines correspond to the location of Beam Position Monitors (BPMs), measurement instrumentation.
 
 Due to the large \(\beta\)-functions in the triplet quadrupoles, as can be seen in \cref{figure:lhc_ir5_zoomed}, any magnetic error in the elements of the IR would have a strong impact on the beam dynamics.
 To enable correction of these errors, linear and non-linear corrector magnets are installed along the IR, distributed symmetrically around the IP: every corrector magnet on one side of the IP has a counterpart on the other side.
-Of interest to this thesis are the a\num{2} skew quadrupole correctors installed just before Q\num{3} on each side of the IP, the locations of which are highlighted in \cref{figure:lhc_ir5_zoomed} by green vertical lines.
+Of interest to this thesis are the \(a_2\) skew quadrupole correctors installed just before Q\num{3} on each side of the IP, the locations of which are highlighted in \cref{figure:lhc_ir5_zoomed} by \textcolor{mqsx_green}{green vertical lines}.
 A schematic of the corrector layout is shown in \cref{figure:lhc_ir_corrector_layout}.
-All correctors are individually powered magnets.
+All IR correctors are individually powered magnets.
 \todo{ARE THEY?}
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics*[width=0.92\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/corrector_package.png}
-  \caption{Layout of the triplet magnets and the linear and nonlinear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The skew quadrupole correctors correspond to order a\num{2} and are located in the C\num{2} package.}
+  \caption{Layout of the triplet magnets and the linear and nonlinear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The skew quadrupole correctors correspond to order \(a_2\) and are located in the C\num{2} package.}
   \label{figure:lhc_ir_corrector_layout}
 \end{figure}
 
