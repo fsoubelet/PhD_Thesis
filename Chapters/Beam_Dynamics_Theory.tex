@@ -880,6 +880,8 @@ Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\):
 where \(\mathbf{P}\), \(\mathbf{p}\), \(\mathbf{q}\) and \(\mathbf{Q}\) are \(2 \times 2\) matrices.
 In the absence of betatron coupling, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
 
+\subsubsection*{Edwards-Teng Parametrization}
+
 In the Edwards-Teng parametrization presented in~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion}, the linear coupling is described by a symplectic rotation \(\mathbf{R}\) of \(\hat{\mathbf{M}}\) into its normal modes form \(\overline{\mathbf{M}}\), as shown in \cref{equation:edwards_teng_parametrization}.
 In this frame the motion is decoupled.
 
@@ -908,6 +910,8 @@ In the case that \(\theta = 0\), the matrix \(\mathbf{R}\) is the identity matri
 
 The Edwards-Teng parameterization is used in the MAD-X~\cite{CODE:MADX_guide} code when handling coupled motion.
 In MAD-X the relevant parameters are \(\alpha_{x, y}\), \(\beta_{x, y}\), \(\mu_{x, y}\), \(\gamma_{x, y}\) and \(r_{11}\), \(r_{12}\), \(r_{21}\), \(r_{22}\), where \(r_{11} \ldots r_{22}\) correspond to the elements of \(\mathbf{K}\) multiplied by \(\tan(\theta)\).
+
+\subsubsection*{Mais-Ripken Parametrization}
 
 The approach of Mais and Ripken was developed in~\cite{REPORT:Ripken:AllGerman} and is more accessible in~\cite{AIP:Willeke:Methods_Beam_Optics, REPORT:Borchardt:Calculation_Beam_Envelopes}.
 It defines so-called \intro{Ripken parameters} \(\alpha_{kj}\), \(\beta_{kj}\) and \(\gamma_{kj}\), where \(k = 1 \ldots 3\) refers to the plane (\(x, y, \ldots\)) and the index \(j\) refers to the eigenmodes, that are accurate in the presence of coupling.
