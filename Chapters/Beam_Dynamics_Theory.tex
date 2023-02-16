@@ -298,11 +298,11 @@ Similarly to the \(\beta\)-function, the \intro{gamma-function} \(\gamma_u(s)\) 
 Both quantities are related by the \(\alpha\)-function according to:
 
 \begin{equation}
-    \gamma_u(s) = \frac{1 + \alpha_u^2(s)}{\beta_u(s)} \text{ .}
+    \gamma_z(s) = \frac{1 + \alpha_z^2(s)}{\beta_z(s)} \text{ .}
     \label{equation:gamma_function}
 \end{equation}
 
-The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
+The \(\alpha_z(s)\), \(\beta_z(s)\), \(\gamma_z(s)\) and \(\phi_z(s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
 The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
@@ -315,8 +315,8 @@ The transfer matrix can be expressed with Twiss parameters according to~\cite{AO
     = 
     \left(
     \begin{array}{cc}
-        \cos(\phi_u) + \alpha_u \sin(\phi_u) & \beta_u \sin(\phi_u) \\
-        - \gamma_u \sin(\phi_u)              & \cos(\phi_u) - \alpha_u \sin(\phi_u)
+        \cos \left( \phi_z \right) + \alpha_z \sin \left( \phi_z \right) & \beta_z \sin \left( \phi_z \right) \\
+        - \gamma_z \sin \left( \phi_z \right)                            & \cos \left( \phi_z \right) - \alpha_z \sin \left( \phi_z \right)
     \end{array} 
     \right) \text{ ,}
     \label{equation:transfer_matrix_twiss_parameters}
