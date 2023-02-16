@@ -183,7 +183,7 @@ These equations describe a harmonic oscillation in the transverse planes.
 Here \(\varepsilon_z\) is the \intro{geometric emittance} of a particle and is a constant of the motion at a given energy. 
 \(\phi_z(s)\) is the \intro{phase advance} and \(\alpha_z(s)\) is the \intro{alpha-function}.
 \(\beta_z(s)\) is the \intro{beta-function} and represents the fluctuation of the oscillation envelope around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
-In particle colliders such as the LHC the \betafunctions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
+In particle colliders such as the LHC the \(\beta\)-functions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
 The solution of Hill's equation can also be written in matrix form as:
 
 \begin{equation}
@@ -278,7 +278,7 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
     \label{equation:phase_advance_definition}
 \end{equation}
 
-As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
+As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \(\beta\)-functions and the emittance.
 The number of these so-called \intro{betatron oscillations} per revolution is the \intro{tune} \(Q_u\).
 The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
 
@@ -287,7 +287,7 @@ The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, 
     \label{equation:tune_definition}
 \end{equation}
 
-The \alphafunction is defined via the derivative of the \betafunction by:
+The \(\alpha\)-function is defined via the derivative of the \(\beta\)-function by:
 
 \begin{equation}
     \alpha_u(s) = - \frac{1}{2} \beta^{\prime}_u(s) \text{ .}
@@ -295,7 +295,7 @@ The \alphafunction is defined via the derivative of the \betafunction by:
 \end{equation}
 
 Similarly to the \(\beta\)-function, the \intro{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
-Both quantities are related by the \alphafunction according to:
+Both quantities are related by the \(\alpha\)-function according to:
 
 \begin{equation}
     \gamma_u(s) = \frac{1 + \alpha_u^2(s)}{\beta_u(s)} \text{ .}
@@ -997,7 +997,7 @@ These RDTs can be expressed as a function of the uncoupled lattice parameters at
     \end{aligned}
     \label{equation:coupling_rdts_from_skew_quads}
 \end{equation}
-where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \betafunctions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
+where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \(\beta\)-functions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
 The summation is done over all contributing skew quadrupoles.
 
 These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) can be expressed in relation to the \(f_{1001}\) RDT.
@@ -1062,17 +1062,17 @@ For Gaussian bunches colliding with a \intro{crossing angle} \(\theta\), where \
     \label{equation:luminosity_reduction_factor}
 \end{equation}
 
-As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \betafunction at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
+As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \(\beta\)-function at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
 Indeed, the smaller the \(\beta^{\ast}\) the smaller the beam sizes, and the more collisions will be produced per bunch crossing. 
 The downside to small beam sizes, which is a direct consequence of the \kl{Louiville theorem}, is that they cause large beam divergence.
-This is illustrated by the evolution of the \betafunction in the drift space around the IP:
+This is illustrated by the evolution of the \(\beta\)-function in the drift space around the IP:
 
 \begin{equation}
     \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}}
     \label{equation:betafunction_drift_space}
 \end{equation}
 where here \(s\) is the distance from the IP.
-As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \betafunctions low, hence the presence of a substantial drift space.
+As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \(\beta\)-functions low, hence the presence of a substantial drift space.
 The experimental insertion regions will be discussed in more details in \cref{section:lhc_lattice}.
 
 The \intro{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
