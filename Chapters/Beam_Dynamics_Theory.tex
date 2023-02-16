@@ -151,10 +151,10 @@ The focusing from quadrupoles in a circular accelerator such as the LHC is perio
 Assuming the existence of a \kl{closed orbit}, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
 \begin{equation}
-    u^{\prime \prime}(s) + K_u(s) u(s) = 0; \quad u = x, y; \quad u^{\prime} = \dfrac{du}{ds} \text{ ,}
+    z^{\prime \prime}(s) + K_z(s) z(s) = 0; \quad z = x, y; \quad z^{\prime} = \dfrac{dz}{ds} \text{ ,}
     \label{equation:hill_equation}
 \end{equation}
-where \(K_u\) represents the focusing effect of dipoles and quadrupoles in the transverse planes, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
+where \(K_z\) represents the focusing effect of dipoles and quadrupoles in the transverse planes, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
 It can be expressed according to:
 
 \begin{equation}
@@ -168,33 +168,33 @@ where \(k_1(s)\) is the normalized quadrupole strength.
 A \kl{focusing quadrupole} has a \(K > 0\), a \kl{defocusing quadrupole} has \(K < 0\), and a drift space has \(K = 0\).
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
 
-In the material below, \(u\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
+In the material below, \(z\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
 According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation takes the form of \cref{equation:hill_solution}:
 
 \begin{equation}
     \begin{aligned}
-        u(s)          &= \sqrt{\beta_{u}(s) \varepsilon_{u}} \cos \left( \phi_{u}(s) + \phi_{u,0} \right) \text{ ,} \\
-        u^{\prime}(s) &= -\sqrt{\frac{\varepsilon_u}{\beta_u(s)}} \left( \sin \left(\phi_u(s) + \phi_{u, 0} \right) + \alpha(s) \cos \left( \phi_u(s)+\phi_{u, 0} \right) \right) \text{ .}
+        z(s)          &= \sqrt{\beta_{z}(s) \varepsilon_{z}} \cos \left( \phi_{z}(s) + \phi_{z,0} \right) \text{ ,} \\
+        z^{\prime}(s) &= -\sqrt{\frac{\varepsilon_z}{\beta_z(s)}} \left( \sin \left(\phi_z(s) + \phi_{z, 0} \right) + \alpha(s) \cos \left( \phi_z(s) + \phi_{z, 0} \right) \right) \text{ .}
     \end{aligned}
     \label{equation:hill_solution}
 \end{equation}
 
 These equations describe a harmonic oscillation in the transverse planes.
-Here \(\varepsilon_u\) is the \intro{geometric emittance} of a particle and is a constant of the motion at a given energy. 
-\(\phi_u(s)\) is the \intro{phase advance} and \(\alpha_u(s)\) is the \intro{alpha-function}.
-\(\beta_u(s)\) is the \intro{beta-function} and represents the fluctuation of the oscillation envelope around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
-In particle colliders such as the LHC the \betafunctions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_u^{\ast}\).
+Here \(\varepsilon_z\) is the \intro{geometric emittance} of a particle and is a constant of the motion at a given energy. 
+\(\phi_z(s)\) is the \intro{phase advance} and \(\alpha_z(s)\) is the \intro{alpha-function}.
+\(\beta_z(s)\) is the \intro{beta-function} and represents the fluctuation of the oscillation envelope around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
+In particle colliders such as the LHC the \(\beta\)-functions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
 The solution of Hill's equation can also be written in matrix form as:
 
 \begin{equation}
     \left(
         \begin{array}{c}
-            u(s) \\
-            u^{\prime}(s)
+            z(s) \\
+            z^{\prime}(s)
         \end{array} \right) = \mathrm{M} \left( 
         \begin{array}{c}
-            u(0) \\
-            u^{\prime}(0)
+            z(0) \\
+            z^{\prime}(0)
     \end{array} \right) \text{ .}
     \label{equation:hill_solution_matrix}
 \end{equation}
@@ -214,8 +214,8 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \begin{equation}
     \mathrm{M_{dip.}} = \left(
         \begin{array}{cc}
-            \cos \theta           & \rho \sin \theta \\
-            - \sin \theta / \rho  & \cos \theta
+            \cos \theta                          & \rho \sin \theta \\
+            - \sin \left( \theta / \rho \right)  & \cos \theta
     \end{array} \right) \text{ ,}
     \label{equation:dipole_transfer_matrix}
 \end{equation}
@@ -260,17 +260,17 @@ The transformation of coordinates over a revolution is then given by:
 \begin{equation}
     \left(
         \begin{array}{c}
-            u \\
-            u^{\prime}
+            z \\
+            z^{\prime}
         \end{array} \right)_{s_0 + C} = \mathrm{M_{OTM}} \cdot \left( 
         \begin{array}{c}
-            u \\
-            u^{\prime}
+            z \\
+            z^{\prime}
     \end{array} \right)_{s_0} \text{ .}
     \label{equation:one_turn_coordinates_transformation}
 \end{equation}
 
-The phase advance \(\phi_u(s)\) mentioned above corresponds to the difference of the betatron phase functions at two points, typically also taken with respect to an arbitrary initial point at \(s = 0\).
+The phase advance \(\phi_z(s)\) mentioned above corresponds to the difference of the betatron phase functions at two points, typically also taken with respect to an arbitrary initial point at \(s = 0\).
 The phase advance between two points at longitudinal positions \(s_1\) and \(s_2\) in the lattice is defined as:
 
 \begin{equation}
@@ -278,31 +278,31 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
     \label{equation:phase_advance_definition}
 \end{equation}
 
-As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \betafunctions and the emittance.
+As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \(\beta\)-functions and the emittance.
 The number of these so-called \intro{betatron oscillations} per revolution is the \intro{tune} \(Q_u\).
 The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
 
 \begin{equation}
-    Q_{u} = \frac{1}{2 \pi} \Delta \phi_{u} = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_{u} (s)} \text{ .}
+    Q_z = \frac{1}{2 \pi} \Delta \phi_z = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_z (s)} \text{ .}
     \label{equation:tune_definition}
 \end{equation}
 
-The \alphafunction is defined via the derivative of the \betafunction by:
+The \(\alpha\)-function is defined via the derivative of the \(\beta\)-function by:
 
 \begin{equation}
-    \alpha_u(s) = - \frac{1}{2} \beta^{\prime}_u(s) \text{ .}
+    \alpha_z(s) = - \frac{1}{2} \beta^{\prime}_z(s) \text{ .}
     \label{equation:alpha_function}
 \end{equation}
 
 Similarly to the \(\beta\)-function, the \intro{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
-Both quantities are related by the \alphafunction according to:
+Both quantities are related by the \(\alpha\)-function according to:
 
 \begin{equation}
-    \gamma_u(s) = \frac{1 + \alpha_u^2(s)}{\beta_u(s)} \text{ .}
+    \gamma_z(s) = \frac{1 + \alpha_z^2(s)}{\beta_z(s)} \text{ .}
     \label{equation:gamma_function}
 \end{equation}
 
-The \(\alpha_u (s)\), \(\beta_u (s)\), \(\gamma_u (s)\) and \(\phi_u (s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
+The \(\alpha_z(s)\), \(\beta_z(s)\), \(\gamma_z(s)\) and \(\phi_z(s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
 The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
@@ -315,8 +315,8 @@ The transfer matrix can be expressed with Twiss parameters according to~\cite{AO
     = 
     \left(
     \begin{array}{cc}
-        \cos(\phi_u) + \alpha_u \sin(\phi_u) & \beta_u \sin(\phi_u) \\
-        - \gamma_u \sin(\phi_u)              & \cos(\phi_u) - \alpha_u \sin(\phi_u)
+        \cos \left( \phi_z \right) + \alpha_z \sin \left( \phi_z \right) & \beta_z \sin \left( \phi_z \right) \\
+        - \gamma_z \sin \left( \phi_z \right)                            & \cos \left( \phi_z \right) - \alpha_z \sin \left( \phi_z \right)
     \end{array} 
     \right) \text{ ,}
     \label{equation:transfer_matrix_twiss_parameters}
@@ -326,25 +326,25 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 \subsection{Phase Space Ellipse}
 \label{subsection:phase_space_ellipse}
 
-In the linear regime all particle trajectories describe ellipses in \((u, u^{\prime})\), or \((u, p_u)\) phase space.
-The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \intro{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_u (s)\), \(\beta_u (s)\) and \(\gamma_u (s)\) the equation of the phase space ellispe:
+In the linear regime all particle trajectories describe ellipses in \((z, z^{\prime})\), or \((z, p_z)\) phase space.
+The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \intro{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellispe:
 
 \begin{equation}
-    \gamma_{u}(s) u(s)^{2} + 2 \alpha_{u}(s) u(s) u^{\prime}(s) + \beta_{u}(s) u^{\prime}(s)^{2} = \varepsilon_u \text{ .}
+    \gamma_z(s) z(s)^{2} + 2 \alpha_z(s) z(s) z^{\prime}(s) + \beta_z(s) z^{\prime}(s)^{2} = \varepsilon_z \text{ .}
     \label{equation:ellipse_equation}
 \end{equation}
 
 \Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area \(A\) of which is defined by the geometric emittance according to:
 
 \begin{equation}
-    A = \pi \varepsilon_u \text{ .}
+    A = \pi \varepsilon_z \text{ .}
     \label{equation:phase_space_ellipse_area}
 \end{equation}
 
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.75\linewidth]{Figures/Beam_Dynamics_Theory/phase_space.png}
-    \caption{Phase space ellipse in the transverse \((u, u^{\prime})\) plane, where \(u\) represents either transverse coordinate \(x\) or \(y\).}
+    \caption{Phase space ellipse in the transverse \((z, z^{\prime})\) plane, where \(z\) represents either transverse coordinate \(x\) or \(y\).}
     \label{figure:phase_space_ellipse}
     \end{center}
 \end{figure}
@@ -354,31 +354,31 @@ When accelerating the beam this theorem no longer holds true and the geometric e
 One can then construct the \intro{normalized emittance}, which is invariant with beam energy, based on the relativistic beta and gamma:
 
 \begin{equation}
-    \varepsilon_u^{\mathrm{norm}} = \beta_{\mathrm{rel}} \gamma_{\mathrm{rel}} \varepsilon_u \text{ .}
+    \varepsilon_z^{\mathrm{norm}} = \beta_{\mathrm{rel}} \gamma_{\mathrm{rel}} \varepsilon_z \text{ .}
     \label{equation:normalized_emittance}
 \end{equation}
 
 When referring to the emittance of a specific particle one uses the term \intro{single particle emittance}.
-The \intro{action} \(J_u\) is related to the single particle emittance by:
+The \intro{action} \(J_z\) is related to the single particle emittance by:
 
 \begin{equation}
-    2 J_u = \varepsilon_u \text{ .}
+    2 J_z = \varepsilon_z \text{ .}
     \label{equation:single_particle_action}
 \end{equation}
 
-The state of particles in phase space can be fully characterized by the action variable \(J_u\) and the corresponding phase variable \(\phi_u\) seen above. 
+The state of particles in phase space can be fully characterized by the action variable \(J_z\) and the corresponding phase variable \(\phi_z\) seen above. 
 Different particles in the beam will have different single particle emittances and will undergo betatron oscillations of varying amplitudes.
-For a Gaussian shaped beam the transverse beam size is:% defined as:
+For a Gaussian shaped beam the transverse beam size is:
 
 \begin{equation}
-    \sigma_u = \sqrt{\beta_u \varepsilon_u^{\mathrm{beam}}} \text{ ,}
+    \sigma_z = \sqrt{\beta_z \varepsilon_z^{\mathrm{beam}}} \text{ ,}
     \label{equation:gaussian_beam_transverse_beam_size}
 \end{equation}
-with \(\varepsilon_u^{\mathrm{beam}}\) the beam emittance, typically defined the emittance corresponding to a \(1 \sigma\) amplitude of the Gaussian charge distribution.
+with \(\varepsilon_z^{\mathrm{beam}}\) the beam emittance, typically defined the emittance corresponding to a \(1 \sigma\) amplitude of the Gaussian charge distribution.
 In the case of more general particle distributions an alternative definition of the beam emittance is often used~\cite{CERN:Muller:Beam_Matter_Covariance_Matrix_Emittance, CERN:Buon:CAS_Beam_Phase_Space_Emittance}:
 
 \begin{equation}
-    \varepsilon_u^{\mathrm{rms}} = \sqrt{\left\langle u \right\rangle^{2} \left\langle u^{\prime} \right\rangle^{2} - \left\langle uu^{\prime} \right\rangle^{2}} \text{ .}
+    \varepsilon_z^{\mathrm{rms}} = \sqrt{\left\langle z \right\rangle^{2} \left\langle z^{\prime} \right\rangle^{2} - \left\langle zz^{\prime} \right\rangle^{2}} \text{ .}
     \label{equation:beam_emittance_general}
 \end{equation}
 
@@ -387,25 +387,25 @@ One can remove this dependency by performing a coordinate transformation to the 
 
 \begin{equation}
     \begin{+pmatrix}[cells={r}]
-        \hat{u} \\
-        \hat{u}^{\prime}
+        \hat{z} \\
+        \hat{z}^{\prime}
     \end{+pmatrix}
     =
     \begin{+pmatrix}[cells={r}]
-        \frac{1}{\sqrt{\beta_u}} & \frac{\alpha_u}{\sqrt{\beta_u}} \\
-        0 & \sqrt{\beta_u}
+        \frac{1}{\sqrt{\beta_z}} & \frac{\alpha_z}{\sqrt{\beta_z}} \\
+        0 & \sqrt{\beta_z}
     \end{+pmatrix}
     \begin{+pmatrix}[cells={r}]
-        u \\
-        u^{\prime}
+        z \\
+        z^{\prime}
     \end{+pmatrix} \text{ ,}
     \label{equation:physical_to_courant_snyder_coordinates}
 \end{equation}
 where the Courant-Snyder coordinates are denoted by \^{}.
-% The same transformation is valid for \((u, p_u)\) to \((\hat{u}, \hat{p}_u)\) coordinates.
+The same transformation is valid for \((z, p_z)\) to \((\hat{z}, \hat{p}_z)\) coordinates.
 In this new system particles follow circular trajectories in phase space.
 \Cref{figure:phase_space_linear_physical_normalized_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
-In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_u, \phi_u)\).
+In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_z, \phi_z)\).
 
 \begin{figure}[!hbt]
     \begin{center}
@@ -424,7 +424,7 @@ In the new representation, the elliptical phase space is transformed into a simp
         \label{fig:phase_space_normalized}
         \end{center}
     \end{subfigure}
-    \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative representation of phase-space in physical coordinates (left) and normalized coordinates (right) for an accelerator with linear elements only. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
+    \caption{Illustrative representation of phase-space in physical coordinates (left) and normalized coordinates (right) for an accelerator with linear elements only. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_linear_physical_normalized_coordinates}
     \end{center}
 \end{figure}
@@ -449,7 +449,7 @@ The deviation of an off-momentum particle orbit from that of the synchronous par
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
-    \Delta u_{\mathrm{dispersion}} = D_{u}(s) \delta_p \text{ .}
+    \Delta z_{\mathrm{dispersion}} = D_z(s) \delta_p \text{ .}
     \label{equation:dispersion_contribution_to_orbit}
 \end{equation}
 \bigbreak
@@ -457,14 +457,14 @@ Its contribution to a particle's orbit in a region of non-zero dispersion is des
 Off-momentum particle positions scale linearly with dispersion, and in its presence \cref{equation:hill_solution} is extended to~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}:
 
 \begin{equation}
-    u(s) = \sqrt{\varepsilon_u \beta_u(s)} \cos \left( \phi_u(s) + \phi_{u, 0} \right) + D_u(s) \delta_p \text{ .}
+    z(s) = \sqrt{\varepsilon_z \beta_z(s)} \cos \left( \phi_z(s) + \phi_{z, 0} \right) + D_z(s) \delta_p \text{ .}
     \label{equation:hill_solution_with_dispersion}
 \end{equation}
 
-Another chromatic parameter is the \intro{chromaticity} \(Q_u^{\prime}\), which describes the tune shift \(\Delta Q_u\) with particle momentum by:
+Another chromatic parameter is the \intro{chromaticity} \(Q_z^{\prime}\), which describes the tune shift \(\Delta Q_z\) with particle momentum by:
 
 \begin{eqnarray}
-    Q^{\prime}_u = \frac{\Delta Q_u}{\delta_p} \text{ .}
+    Q^{\prime}_z = \frac{\Delta Q_z}{\delta_p} \text{ .}
     \label{equation:chromaticity_definition}
 \end{eqnarray}
 
@@ -486,7 +486,7 @@ This quadrupole error results in a tune shift proportional to the energy offset:
 The natural chromaticity of a linear lattice can then be approximated by~\cite{CAS:Guiducci:Chromaticity}:
 
 \begin{equation}
-    Q_u^{\prime} \approx -\frac{1}{4 \pi} \oint \beta_u(s) K_u \mathrm{d}s \text{ .}
+    Q_z^{\prime} \approx -\frac{1}{4 \pi} \oint \beta_z(s) K_z \mathrm{d}s \text{ .}
     \label{equation:natural_chromaticity_approximation}
 \end{equation}
 
@@ -576,7 +576,7 @@ The rotational misalignment of elements is also a concern, as rotation a purely 
 \label{section:non_linear_formalism_and_rdts}
 
 The material below is inspired from~\cite{PHD:Tomas, PHD:Franchi,PHD:Maclean, PHD:Persson} where some aspects of it may be found in more details.
-For the curious reader, a very thourough approach to normal forms can be found in~\cite{PRAB:Franchi:First_Simultaneous} and~\cite{PHD:Carlier}.
+For the curious reader, a very thourough approach to normal forms can be found in~\cite{PHD:Carlier} and~\cite{PRAB:Franchi:First_Simultaneous}.
 
 \subsection{Non-Linear Transfer Maps}
 \label{subsection:non_linear_transfer_maps}
@@ -623,7 +623,7 @@ Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in e
     \label{equation:h_thin_kick_expansion}
 \end{equation}
 with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
-The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.
+\todo{The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.}
 
 A multipole of order \(n = j + k + l + m\) gives rise to terms \(\propto x^{j+k} y^{l+m}\) in the Hamiltonian.
 In the case of a skew quadrupole (\(n=2\)) for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
@@ -631,7 +631,7 @@ In the case of a skew quadrupole (\(n=2\)) for example, one will see terms in th
 \subsection{Normal Form, Resonance Driving Terms and Resonances}
 \label{subsection:normal_form_and_rdt}
 
-Due to the presence of non-linear sources the linear invariant \(J_u\) introduced in \cref{subsection:phase_space_ellipse} is no longer a constant.
+Due to the presence of non-linear sources the linear invariant \(J_z\) introduced in \cref{subsection:phase_space_ellipse} is no longer a constant.
 This leads to the phase space trajectory in normalized, or Courant-Snyder, coordinates no longer describing a circle.
 An example of this situation is given in \cref{figure:phase_space_third_order_resonance}, where the phase space trajectories of \num{200} particles are shown in normalized coordinates when exciting a third order resonance.
 
@@ -679,19 +679,19 @@ The different coordinate systems are illustrated in \cref{figure:phase_space_non
         \label{fig:phase_space_normal_form_non-linear}
         \end{center}
     \end{subfigure}
-    \caption{\todo{MAKE A DESICION ON THE z OR u variable use.} Illustrative exagerated representations of phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
+    \caption{Illustrative exagerated representations of phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}
     \end{center}
 \end{figure}
 
-The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_u\) can be introduced. 
+The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_z\) can be introduced. 
 Similarly to \(h\) in \cref{equation:h_thin_kick_expansion}, the generating function \(F\) can be expanded in terms of the normal form coordinates according to~\cite{PHD:Franchi}:
 
 \begin{equation}
     F = \sum_{jklm} f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}} \left(2 I_y \right)^{\frac{l+m}{2}} e^{i \left[ (j-k) \left( \psi_x - \psi_{x_0} \right) + (l-m) \left( \psi_y - \psi_{y_0} \right) \right]} \text{ ,}
     \label{equation:generating_function_expansion}
 \end{equation}
-where \((I_u, \psi_u)\) are to normal form coordinates what \((J_u, \phi_u)\) are to normalized coordinates.
+where \((I_z, \psi_z)\) are to normal form coordinates what \((J_z, \phi_z)\) are to normalized coordinates.
 The \(f_{jklm}\) coefficients are related to the \(h_{jklm}\) terms by:
 
 \begin{equation}
@@ -733,12 +733,12 @@ Characteristically, the \(f_{jklm}\) terms show abrupt jumps at the location of 
 
 \subsection{Resonance Basis and Normal Form Coordinates}
 
-The normalized Courant-Snyder coordinates \(\left( \hat{u}, \hat{p}_u \right)\) are related to the action and angle variables \(\left( J_u, \phi_u \right)\) by:
+The normalized Courant-Snyder coordinates \(\left( \hat{z}, \hat{p}_z \right)\) are related to the action and angle variables \(\left( J_z, \phi_z \right)\) by:
 
 \begin{equation}
     \begin{aligned}
-        \hat{u}   &= \sqrt{2 J_u} \cos \left( \phi_u - \phi_{u_0} \right) \text{ ,} \\
-        \hat{p_u} &= - \sqrt{2 J_u} \sin \left( \phi_u - \phi_{u_0} \right) \text{ .}
+        \hat{z}   &= \sqrt{2 J_z} \cos \left( \phi_z - \phi_{z_0} \right) \text{ ,} \\
+        \hat{p}_z &= - \sqrt{2 J_z} \sin \left( \phi_z - \phi_{z_0} \right) \text{ .}
     \end{aligned}
     \label{equation:normalized_courant_snyder_coordinates_from_action_angle}
 \end{equation}
@@ -746,45 +746,44 @@ The normalized Courant-Snyder coordinates \(\left( \hat{u}, \hat{p}_u \right)\) 
 One can define the \intro{resonance basis} \(\left( h_x^{+}, h_x^{-}, h_y^{+}, h_y^{-} \right)\) by the relation:
 
 \begin{equation}
-    h_u^{\pm} = \hat{u} \pm i \hat{p}_z = \sqrt{2 J_u} e^{\mp i \left( \phi_u + \phi_{u_0} \right)} \text{ .}
+    h_z^{\pm} = \hat{z} \pm i \hat{p}_z = \sqrt{2 J_z} e^{\mp i \left( \phi_z + \phi_{z_0} \right)} \text{ .}
     \label{equation:resonance_basis_definition}
 \end{equation}
 
 The transformation to the \kl{normal form coordinates} \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\) is expressed as:
 
 \begin{equation}
-    \zeta_u^{\pm} = \sqrt{2 I_u} e^{\mp i \left( \psi_u + \psi_{u_0} \right)} = e^{-:F:} h_u^{\pm} \text{ .}
+    \zeta_z^{\pm} = \sqrt{2 I_z} e^{\mp i \left( \psi_z + \psi_{z_0} \right)} = e^{-:F:} h_z^{\pm} \text{ .}
     \label{equation:transformation_to_normal_form_coordinates_from_h_pm}
 \end{equation}
-where \((I_u, \psi_u)\) are the terms introduced in \cref{equation:generating_function_expansion}.
+where \((I_z, \psi_z)\) are the terms introduced in \cref{equation:generating_function_expansion}.
 
 By construction of the transformation, the one-turn map in normal form coordinates is an amplitude dependent rotation.
 It follows that the motion of these coordinates as a function of the turn number is then given by:
 
 \begin{equation}
-    \zeta_u^{\pm}(N) = \sqrt{2 I_u} e^{\mp i \left( 2 \pi \nu_u N + \psi_{u_0} \right)} \text{ ,}
+    \zeta_z^{\pm}(N) = \sqrt{2 I_z} e^{\mp i \left( 2 \pi Q_z N + \psi_{z_0} \right)} \text{ ,}
     \label{equation:normal_form_N_turn_expression}
 \end{equation}
-with \(\nu_u\) the transverse tunes.
+with \(Q_z\) the transverse tunes.
 The inverse transformation from the new action and angle variables to the Courant-Snyder variables is written, to first order, as:
 
 \begin{equation}
-    h_u^{-} = e^{:F:} \zeta_u^{-} \simeq \zeta_u^{-} + \left[ F, \zeta_u^{-} \right] \text{ .}
-    \label{equation:inverse_transformation_normal_form-to_courant_snyder_coordinates}
+    h_z^{-} = e^{:F:} \zeta_z^{-} \simeq \zeta_z^{-} + \left[ F, \zeta_z^{-} \right] \text{ .}
+    \label{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}
 \end{equation}
 
-Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_transformation_normal_form-to_courant_snyder_coordinates}, the linearly normalized coordinates can be expressed after \(N\) turns as~\cite{CERN:Bartolini:Normal_Form_Tracking_Beam_Data}:
+Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}, the linearly normalized coordinates can be expressed after \(N\) turns as~\cite{CERN:Bartolini:Normal_Form_Tracking_Beam_Data}:
 
 \begin{equation}
     \begin{aligned}
-        h_x^{-}(N) & = \sqrt{2 I_x} e^{i \left( 2 \pi \nu_x N - \psi_{x_0} \right)} \quad - \\
-        & \quad 2 i \sum_{jklm} j f_{jklm} \left( 2 I_x \right)^{\frac{j+k-1}{2}} \left( 2 I_y \right)^{\frac{l+m}{2}}   e^{i \left[ (1-j+k) \left( 2 \pi \nu_x N-\psi_{x_0} \right) + (m-l)   \left( 2 \pi \nu_y N - \psi_{y_0} \right) \right]} \\
-        h_y^{-}(N) & = \sqrt{2 I_y} e^{i \left( 2 \pi \nu_y N - \psi_{y_0} \right)} \quad - \\
-        & \quad 2 i \sum_{jklm} l f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}}   \left( 2 I_y \right)^{\frac{l+m-1}{2}} e^{i \left[ (k-j)   \left( 2 \pi \nu_x N-\psi_{x_0} \right) + (1-l+m) \left( 2 \pi \nu_y N - \psi_{y_0} \right) \right]} \text{ .}
+        h_x^{-}(N) & = \sqrt{2 I_x} e^{i \left( 2 \pi Q_x N - \psi_{x_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} j f_{jklm} \left( 2 I_x \right)^{\frac{j+k-1}{2}} \left( 2 I_y \right)^{\frac{l+m}{2}}   e^{i \left[ (1-j+k) \left( 2 \pi Q_x N - \psi_{x_0} \right) + (m-l)   \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \\
+        h_y^{-}(N) & = \sqrt{2 I_y} e^{i \left( 2 \pi Q_y N - \psi_{y_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} l f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}}   \left( 2 I_y \right)^{\frac{l+m-1}{2}} e^{i \left[ (k-j)   \left( 2 \pi Q_x N - \psi_{x_0} \right) + (1-l+m) \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \text{ .}
     \end{aligned}
     \label{equation:linearly_normalized_coordinates_after_N_turns}
 \end{equation}
-
 
 \Cref{figure:coordinate_transformations} shows a schematic of the different transformations and changes to the one-turn map.
 While one can calculate the evolution of the Courant-Snyder coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
@@ -795,8 +794,8 @@ These calculations are in practice simpler than the former method, and conserve 
     \begin{center}
     \begin{tikzpicture}
         \matrix (m) [matrix of math nodes,row sep=4em,column sep=4em,minimum width=2em]{
-            \left(\hat{u}, \hat{p}_u\right)_N    &    \left(\hat{u}, \hat{p}_u\right)_{N+1} \\
-            \zeta_{u_N}^{\pm}{}                  &    \zeta_{u_{N+1}}^{\pm}{}  \\
+            \left(\hat{z}, \hat{p}_z\right)_N    &    \left(\hat{z}, \hat{p}_z\right)_{N+1} \\
+            \zeta_{z_N}^{\pm}{}                  &    \zeta_{z_{N+1}}^{\pm}{}  \\
         };
         \path[-stealth]
         (m-1-1) edge node [above] {\( \mathcal{M} \)} (m-1-2)
@@ -830,7 +829,7 @@ For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the ho
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.3\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Include a plot of a spectrum from an LHC measurement? Something out of omc3, maybe the one in my sextupolar contribution to ampdet ATS note.}}
+    \caption{\todo{Include a plot of a spectrum from an LHC measurement, something out of omc3?}}
     \label{figure:example_spectrum}
     \end{center}
 \end{figure}
@@ -881,6 +880,8 @@ Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\):
 where \(\mathbf{P}\), \(\mathbf{p}\), \(\mathbf{q}\) and \(\mathbf{Q}\) are \(2 \times 2\) matrices.
 In the absence of betatron coupling, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
 
+\subsubsection*{Edwards-Teng Parametrization}
+
 In the Edwards-Teng parametrization presented in~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion}, the linear coupling is described by a symplectic rotation \(\mathbf{R}\) of \(\hat{\mathbf{M}}\) into its normal modes form \(\overline{\mathbf{M}}\), as shown in \cref{equation:edwards_teng_parametrization}.
 In this frame the motion is decoupled.
 
@@ -910,6 +911,8 @@ In the case that \(\theta = 0\), the matrix \(\mathbf{R}\) is the identity matri
 The Edwards-Teng parameterization is used in the MAD-X~\cite{CODE:MADX_guide} code when handling coupled motion.
 In MAD-X the relevant parameters are \(\alpha_{x, y}\), \(\beta_{x, y}\), \(\mu_{x, y}\), \(\gamma_{x, y}\) and \(r_{11}\), \(r_{12}\), \(r_{21}\), \(r_{22}\), where \(r_{11} \ldots r_{22}\) correspond to the elements of \(\mathbf{K}\) multiplied by \(\tan(\theta)\).
 
+\subsubsection*{Mais-Ripken Parametrization}
+
 The approach of Mais and Ripken was developed in~\cite{REPORT:Ripken:AllGerman} and is more accessible in~\cite{AIP:Willeke:Methods_Beam_Optics, REPORT:Borchardt:Calculation_Beam_Envelopes}.
 It defines so-called \intro{Ripken parameters} \(\alpha_{kj}\), \(\beta_{kj}\) and \(\gamma_{kj}\), where \(k = 1 \ldots 3\) refers to the plane (\(x, y, \ldots\)) and the index \(j\) refers to the eigenmodes, that are accurate in the presence of coupling.
 In the coupled case, all \(\beta_N\) are non-zero and \(\beta_{11}, \beta_{22}\) are distinctively different from \(\beta_x, \beta_y\), respectively.
@@ -933,7 +936,7 @@ In the first order, according to \cref{equation:resonance_condition}, linear cou
 These are respectively called the \intro{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
 To higher order betatron coupling may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
 
-The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics} and through the normal form / resonance driving term formalism~\cite{PHD:Franchi}.
+The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics} and through the normal form/resonance driving term formalism~\cite{PHD:Franchi}.
 
 As the transverse tunes approach the difference resonance, the emittance is described by:
 
@@ -977,13 +980,14 @@ On the other hand, when approaching the sum resonance the emittances follow:
 
 This resonance allows for unstable motion as only the difference in emittance is constrained.
 Therefore, it is common to choose a working point far from the sum resonance.
-In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually slightly more diverse and will be discussed in more details in the next chapter.}.
+In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually more diverse and will be discussed in more details in the next chapter.}.
 
 \subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
 
 Linear coupling in the LHC is dominated by the contribution of skew quadrupole fields, which lead to terms \(\propto xy\) in the Hamiltonian.
 According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the resonance driving terms \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
+
 The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but the former is for the horizontal plane while the latter is for the vertical plane.
 Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this thesis.
 
@@ -997,7 +1001,7 @@ These RDTs can be expressed as a function of the uncoupled lattice parameters at
     \end{aligned}
     \label{equation:coupling_rdts_from_skew_quads}
 \end{equation}
-where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \betafunctions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
+where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \(\beta\)-functions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
 The summation is done over all contributing skew quadrupoles.
 
 These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) can be expressed in relation to the \(f_{1001}\) RDT.
@@ -1062,17 +1066,17 @@ For Gaussian bunches colliding with a \intro{crossing angle} \(\theta\), where \
     \label{equation:luminosity_reduction_factor}
 \end{equation}
 
-As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \betafunction at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
+As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \(\beta\)-function at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
 Indeed, the smaller the \(\beta^{\ast}\) the smaller the beam sizes, and the more collisions will be produced per bunch crossing. 
 The downside to small beam sizes, which is a direct consequence of the \kl{Louiville theorem}, is that they cause large beam divergence.
-This is illustrated by the evolution of the \betafunction in the drift space around the IP:
+This is illustrated by the evolution of the \(\beta\)-function in the drift space around the IP:
 
 \begin{equation}
     \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}}
     \label{equation:betafunction_drift_space}
 \end{equation}
 where here \(s\) is the distance from the IP.
-As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \betafunctions low, hence the presence of a substantial drift space.
+As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \(\beta\)-functions low, hence the presence of a substantial drift space.
 The experimental insertion regions will be discussed in more details in \cref{section:lhc_lattice}.
 
 The \intro{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
