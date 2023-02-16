@@ -189,12 +189,12 @@ The solution of Hill's equation can also be written in matrix form as:
 \begin{equation}
     \left(
         \begin{array}{c}
-            u(s) \\
-            u^{\prime}(s)
+            z(s) \\
+            z^{\prime}(s)
         \end{array} \right) = \mathrm{M} \left( 
         \begin{array}{c}
-            u(0) \\
-            u^{\prime}(0)
+            z(0) \\
+            z^{\prime}(0)
     \end{array} \right) \text{ .}
     \label{equation:hill_solution_matrix}
 \end{equation}
@@ -214,8 +214,8 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
 \begin{equation}
     \mathrm{M_{dip.}} = \left(
         \begin{array}{cc}
-            \cos \theta           & \rho \sin \theta \\
-            - \sin \theta / \rho  & \cos \theta
+            \cos \theta                          & \rho \sin \theta \\
+            - \sin \left( \theta / \rho \right)  & \cos \theta
     \end{array} \right) \text{ ,}
     \label{equation:dipole_transfer_matrix}
 \end{equation}
