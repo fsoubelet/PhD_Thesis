@@ -528,6 +528,31 @@ Recent improvements have allowed doing so in a single measurement~\cite{PHD:Mali
 
 One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is independent from model values and BPM calibration~\cite{PAC:Calaga:BPM_Calibration_Independent_LHC_Optics_Correction}.
 
+\subsubsection*{K-Modulation}
+
+It is possible to directly measure the \(\beta^{\ast}\) at the IPs without beam excitation using the \intro{\(k\)-modulation} technique~\cite{IPAC:Calaga:LHC_K_Modulation}.
+By modifying the strength of individual quadrupoles and recording the resulting tune changes, one can determine the average \(\beta\)-functions at the modulated quadrupole according to~\cite{BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
+
+\begin{equation}
+  \begin{aligned}
+    \beta^{\mathrm{avg}}_{x,y} & =\pm \left[ \cot \left(2 \pi Q_{x,y} \right) \left( 1 - \cos \left(2 \pi \Delta Q_{x,y} \right) \right) + \sin \left( 2 \pi \Delta Q_{x,y} \right) \right] \frac{2}{\Delta k L} \text{ ,}  \\
+                               & \approx \pm 4 \pi \frac{\Delta Q_{x,y}}{\Delta k L} \text{ ,}
+  \end{aligned}
+  \label{equation:k_modulation_average_beta}
+\end{equation}
+where \(\Delta k\) is the quadrupole strength variation, \(L\) its length and \(\Delta Q_{x,y}\) the resulting tune variations in the machine.
+\Cref{figure:kmod_mqxa1l1} shows an example 
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/k_modulation.pdf}
+  \caption{Example data from the \(k\)-modulation of the first quadrupole left of IP\num{1}. The top plot shows the quadrupole strength variation and the bottom plot the resulting horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) tune variations.}
+  \label{figure:kmod_mqxa1l1}
+\end{figure}
+
+By modulating both innermost quadrupoles near the IP, one determines the average \(\beta\)-functions in these quadrupoles, which can then be propagated through the drift space in between to determine both the \(\beta^{\ast}\) value as well as any potential waist shift~\cite{PRAB:Carlier:K_Modulation_HL_LHC}.
+In the LHC the \(k\)-modulation technique is the main method to determine the \(\beta^{\ast}\) at the IPs.
+
 \subsection{Reconstruction of Linear Coupling RDTs}
 
 Of particular relevance to this thesis are the linear coupling RDTs \(f_{1001}\) and \(f_{1010}\), and it is worth spending some time detailing their reconstruction.
@@ -681,7 +706,5 @@ This method has successfully been applied in the LHC for many years~\cite{PRAB:A
   \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear error can be seen propagating.}
   \label{figure:example_sbs_correction}
 \end{figure}
-
-\todo{Maybe I should include a few words about K-Modulation because I mention it in next chapter to say it is unaffected by local coupling.}
 
 \todo{Bit of a sentence here about the need for better methods as we get to Run~\num{3} and the HL-LHC upgrade?}
