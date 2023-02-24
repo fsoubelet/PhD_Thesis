@@ -132,6 +132,10 @@ Say that looking at RDTs is just not straightforward, and give example with plot
 
 Blah.
 
+\subsubsection*{Rigid Waist Shift Procedure}
+
+Bleh.
+
 %----------------------------------------------------------------------------------------
 
 \section{Experimental Results from the LHC \num{2022} Commissioning}
@@ -156,92 +160,91 @@ Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
 \section{Operation with Limited Correctors Availability}
 
 Mitigation Options in Case of MQSX Failures
+\todo{Uncomment text when I get here, take mostly the structure of the IPAC23 article and project update V. Go deeper in details (see commented out subsections).}
 
-(A lot here should be taken from my project update V talk at the QUASAR group.)
+% \subsection{Lifetime Considerations of MQSX Elements}
 
-\subsection{Lifetime Considerations of MQSX Elements}
+% Explain that there is a real risk that some of our MQSX magnets die, especially the ones in IR1 (ATLAS).
+% In this case, we will need a containment plan, as not only are they used for the but the local corrections they are a part of are a baseline for us to compute higher order terms corrections.
 
-Explain that there is a real risk that some of our MQSX magnets die, especially the ones in IR1 (ATLAS).
-In this case, we will need a containment plan, as not only are they used for the but the local corrections they are a part of are a baseline for us to compute higher order terms corrections.
+% \Cref{table:correctors_peak_dose} reproduced from slide 23~\cite{Evian21:Cerutti:TripletLifetime}:
 
-\Cref{table:correctors_peak_dose} reproduced from slide 23~\cite{Evian21:Cerutti:TripletLifetime}:
+% \begin{table}[!htb]
+%     \centering
+%     \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
+%     \begin{tblr}{colspec={ccc}}
+%         \hline
+%         \SetCell[r=3,c=1]{m,c} \textbf{Magnets}             &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                     \\
+%         \cline{2,3}                                         &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                        \\
+%         \cline{2,3}                                         &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                             \\
+%         \hline
+%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{1})}}   &    \textcolor{red}{\num{8.5} (\num{8.5})}                 &     \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
+%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{5})}}   &    \num{6}                                                &     \textcolor{red}{\num{7.5}}                                                   \\
+%         \textbf{MCBX\num{2} (IR\num{1})}                    &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
+%         \textbf{MCBX\num{2} (IR\num{5})}                    &    \num{2}                                                &     \num{2.5}                                                                    \\
+%         \textcolor{red}{\textbf{MQSX (IR\num{1})}}          &    \textcolor{red}{\num{7.5} (\num{7.5})}                 &     \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
+%         \textcolor{red}{\textbf{MQSX (IR\num{5})}}          &    \textcolor{red}{\num{8} (\num{8})}                     &     \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
+%         \textbf{MCBX\num{3} (IR\num{1})}                    &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
+%         \textbf{MCBX\num{3} (IR\num{5})}                    &    \num{3}                                                &     \num{3.5}                                                                    \\
+%         \hline
+%     \end{tblr}
+%     \label{table:correctors_peak_dose}
+% \end{table}
 
-\begin{table}[!htb]
-    \centering
-    \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
-    \begin{tblr}{colspec={ccc}}
-        \hline
-        \SetCell[r=3,c=1]{m,c} \textbf{Magnets}             &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                     \\
-        \cline{2,3}                                         &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                        \\
-        \cline{2,3}                                         &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                             \\
-        \hline
-        \textcolor{red}{\textbf{MCBX\num{1} (IR\num{1})}}   &    \textcolor{red}{\num{8.5} (\num{8.5})}                 &     \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
-        \textcolor{red}{\textbf{MCBX\num{1} (IR\num{5})}}   &    \num{6}                                                &     \textcolor{red}{\num{7.5}}                                                   \\
-        \textbf{MCBX\num{2} (IR\num{1})}                    &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
-        \textbf{MCBX\num{2} (IR\num{5})}                    &    \num{2}                                                &     \num{2.5}                                                                    \\
-        \textcolor{red}{\textbf{MQSX (IR\num{1})}}          &    \textcolor{red}{\num{7.5} (\num{7.5})}                 &     \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
-        \textcolor{red}{\textbf{MQSX (IR\num{5})}}          &    \textcolor{red}{\num{8} (\num{8})}                     &     \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
-        \textbf{MCBX\num{3} (IR\num{1})}                    &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
-        \textbf{MCBX\num{3} (IR\num{5})}                    &    \num{3}                                                &     \num{3.5}                                                                    \\
-        \hline
-    \end{tblr}
-    \label{table:correctors_peak_dose}
-\end{table}
+% \todo{Important quote from the end of the presentation:}
+% "Assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four \(\mathrm{MCBX.1}\) and four \MQSX by the end of \num{2024}."
 
-\todo{Important quote from the end of the presentation:}
-"Assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four \(\mathrm{MCBX.1}\) and four \MQSX by the end of \num{2024}."
+% This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
 
-This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
+% \subsection{Tilt of Triplet Elements}
 
-\subsection{Tilt of Triplet Elements}
+% Talk about what we want to do (tilt Q3 or Q2) to induce a skew component + simulation results.
+% Found settings of the Q3 or Q2 that would negate the MQSX one determined in beam test / commissioning.
+% Show some plots, and come up with the tilt values that would be needed to do the compensation.
 
-Talk about what we want to do (tilt Q3 or Q2) to induce a skew component + simulation results.
-Found settings of the Q3 or Q2 that would negate the MQSX one determined in beam test / commissioning.
-Show some plots, and come up with the tilt values that would be needed to do the compensation.
+% Also show we have a very minimal beta-beating from this.
+% Show we have had a look at different optics (30cm and 1m betastar) and it works for both.
 
-Also show we have a very minimal beta-beating from this.
-Show we have had a look at different optics (30cm and 1m betastar) and it works for both.
+% \subsubsection*{Operational Constraints}
 
-\subsubsection{Operational Constraints}
+% The LHC systems are not meant for this, but for vertical alignment of these magnets!
+% System relies on bellows: 2 pieds IP side and 1 pied other side for Q2 for instance.
+% This means that inducing rotation is not only not the design purpose, but also imperfect (on move les 2 pieds pour essayer de mimer une rotation mais c'est pas parfait).
+% Would be very good to have a plot of the assemblies here to show what I mean. Ask MP people? See in the LHC design report?
 
-The LHC systems are not meant for this, but for vertical alignment of these magnets!
-System relies on bellows: 2 pieds IP side and 1 pied other side for Q2 for instance.
-This means that inducing rotation is not only not the design purpose, but also imperfect (on move les 2 pieds pour essayer de mimer une rotation mais c'est pas parfait).
-Would be very good to have a plot of the assemblies here to show what I mean. Ask MP people? See in the LHC design report?
+% It is considered by MP people to be quite dangerous to do this unless forced to (read an MQSX dies), especially in cold mass, as if we damage the belows then we're in for 1 year of shutdown to repair it.
+% Say that for these reasons we decided not to test this concept in the machine, unfortunately.
 
-It is considered by MP people to be quite dangerous to do this unless forced to (read an MQSX dies), especially in cold mass, as if we damage the belows then we're in for 1 year of shutdown to repair it.
-Say that for these reasons we decided not to test this concept in the machine, unfortunately.
+% Could show plots here (see "Living with Local Coupling" section of my project update V) about the effect on luminosity: what reduction are we looking at 
 
-Could show plots here (see "Living with Local Coupling" section of my project update V) about the effect on luminosity: what reduction are we looking at 
+% \subsection{Warm Skew Quadrupole Replacement}
 
-\subsection{Warm Skew Quadrupole Replacement}
+% Here talk about how there is space between D1 and TAN for a magnet, and we could put a warm skew quadrupole there.
+% Show some schematic.
+% Show some calculations of how the gradient should be, how long the element should be etc.
 
-Here talk about how there is space between D1 and TAN for a magnet, and we could put a warm skew quadrupole there.
-Show some schematic.
-Show some calculations of how the gradient should be, how long the element should be etc.
+% It has considerations such as being imbalanced (asymmetric) with the remaining MQSX, limiting the available aperture etc.
 
-It has considerations such as being imbalanced (asymmetric) with the remaining MQSX, limiting the available aperture etc.
+% \subsection{Feed-Down from High Order Correctors}
 
-\subsection{Feed-Down from High Order Correctors}
+% Mention here that we consider using sextupolar and octupolar (MCSSX and MCSX) magnets to generate feed-down to coupling.
+% However, these elements are not strong enough to generate the same effect that the MQSX do, so this is not really an option.
 
-Mention here that we consider using sextupolar and octupolar (MCSSX and MCSX) magnets to generate feed-down to coupling.
-However, these elements are not strong enough to generate the same effect that the MQSX do, so this is not really an option.
+% \subsection{Adapting the Optics Squeezing Scheme}
 
-\subsection{Adapting the Optics Squeezing Scheme}
+% We could change things in the squeeze to compensate for the absence of an MQSX.
+% Potentially squeeze harder on one IP (the one with a missing element).
+% Potentially squeeze similarly for both but when the unaffected IP stops the squeeze, the other one keeps going to lower \betastar, and the lost luminosity at beginning of fill is made up for starting this moment.
+% Not cool because LHCb prefers long fill + impact on BBLR?
 
-We could change things in the squeeze to compensate for the absence of an MQSX.
-Potentially squeeze harder on one IP (the one with a missing element).
-Potentially squeeze similarly for both but when the unaffected IP stops the squeeze, the other one keeps going to lower \betastar, and the lost luminosity at beginning of fill is made up for starting this moment.
-Not cool because LHCb prefers long fill + impact on BBLR?
+% Plot to show the ratio of luminosity as in PowerPoint?
 
-Plot to show the ratio of luminosity as in PowerPoint?
+% \subsection{Potential MDs / Exp. Results}
 
-\subsection{Potential MDs / Exp. Results}
+% Talk about how this could be tested.
+% If we do get MD blocks for this in September, include the data here.
 
-Talk about how this could be tested.
-If we do get MD blocks for this in September, include the data here.
-
-%----------------------------------------------------------------------------------------
+% %----------------------------------------------------------------------------------------
 
 \section{Conclusions}
 
