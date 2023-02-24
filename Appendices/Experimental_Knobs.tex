@@ -2,7 +2,7 @@
 \label{appendix:experimental_knobs}
 
 One can find in this Appendix the full information of the different experimental knobs that were designed for the LHC.
-The knobs are reported below as they have been implemented in the \intro{LHC Software Architecture} (LSA) framework.
+The knobs are reported below as they have been implemented in the \intro{LHC Software Architecture} (LSA) framework~\cite{ICALEPS:Jacquet:LHC_Software_Architecture}.
 In each case, the values correspond to a trim factor of the knob of \num{1}, and scale linearly with the trim factor.
 
 These knobs have been designed for all beam processes of the LHC Run~\num{3} optics as they were at the time of the \num{2022} commissioning, for a beam energy of \qty{6800}{\giga\electronvolt}.
@@ -11,8 +11,8 @@ These knobs have been designed for all beam processes of the LHC Run~\num{3} opt
 
 \section{Definitions of the Colinearity Knobs}
 
-% \Cref{table:lsa_ip1_colinearity_knob,table:lsa_ip5_colinearity_knob} show the settings used in LSA to define the colinearity knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
-\Cref{table:lsa_colinearity_knobs} shows the settings used in LSA to define the colinearity knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+% \Cref{table:lsa_ip1_colinearity_knob,table:lsa_ip5_colinearity_knob} show the settings used in LSA to define the colinearity knobs at IR\num{1} and IR\num{5}.
+\Cref{table:lsa_colinearity_knobs} shows the settings used in LSA to define the colinearity knobs at IR\num{1} and IR\num{5}.
 These knobs control the skew quadrupole correctors left and right of the \(\mathrm{IP}\), the \(\mathrm{MQSX}\) magnets.
 
 % \begin{table}[!hbt]
@@ -25,7 +25,7 @@ These knobs control the skew quadrupole correctors left and right of the \(\math
 %         \(\mathrm{RQSX3.R1/K1S}\)  &  \num{-1E-4}  \\
 %         \hline
 %     \end{tblr}
-%     \caption{Definition of the colinearity knob for IR1 as implemented in LSA.}
+%     \caption{Definition of the colinearity knob for IR\num{1} as implemented in LSA.}
 %     \label{table:lsa_ip1_colinearity_knob}
 % \end{table}
 
@@ -39,50 +39,48 @@ These knobs control the skew quadrupole correctors left and right of the \(\math
 %         \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
 %         \hline
 %     \end{tblr}
-%     \caption{Definition of the colinearity knob for IR5 as implemented in LSA.}
+%     \caption{Definition of the colinearity knob for IR\num{5} as implemented in LSA.}
 %     \label{table:lsa_ip5_colinearity_knob}
 % \end{table}
 
 \begin{table}[!hbt]
-    \begin{subtable}[h]{0.45\textwidth}
+    \begin{subtable}[h]{0.5\textwidth}
         \begin{center}
         \begin{tblr}{colspec={cc}}
             \hline
-            \textbf{Component} & \textbf{Value} \\
+            \textbf{Component}              & \textbf{Value} \\
             \hline
-            \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
-            \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
+            RQSX\num{3}.L\num{1}/K\num{1}S  &  \num{1E-4}  \\
+            RQSX\num{3}.R\num{1}/K\num{1}S  &  \num{-1E-4}  \\
             \hline
         \end{tblr}
         \end{center}
-        \caption{Colinearity knob for IR1.}
+        \caption{Colinearity knob for IR\num{1}.}
         \label{table:lsa_ip1_colinearity_knob}
     \end{subtable}
     \hfill
-    \begin{subtable}[h]{0.45\textwidth}
+    \begin{subtable}[h]{0.5\textwidth}
         \begin{center}
         \begin{tblr}{colspec={cc}}
             \hline
-            \textbf{Component} & \textbf{Value} \\
+            \textbf{Component}              & \textbf{Value} \\
             \hline
-            \(\mathrm{RQSX3.L5/K1S}\)  &  \num{1E-4}  \\
-            \(\mathrm{RQSX3.R5/K1S}\)  &  \num{-1E-4}  \\
+            RQSX\num{3}.L\num{5}/K\num{1}S  &  \num{1E-4}  \\
+            RQSX\num{3}.R\num{5}/K\num{1}S  &  \num{-1E-4}  \\
             \hline
         \end{tblr}
         \end{center}
-        \caption{Colinearity knob for IR5.}
+        \caption{Colinearity knob for IR\num{5}.}
         \label{table:lsa_ip5_colinearity_knob}
     \end{subtable}
-    \caption{Definition of the colinearity knobs defined for IR1 (left) and IR5 (right) as implemented in LSA.}
+    \caption{Definitions of the colinearity knobs for IR\num{1} (left) and IR\num{5} (right) as implemented in LSA.}
     \label{table:lsa_colinearity_knobs}
 \end{table}
 
-%----------------------------------------------------------------------------------------
-
 \section{Definitions of the Rigid Waist Shift Knobs}
 
-% \Cref{table:lsa_ip1_rigid_waist_shift,table:lsa_ip5_rigid_waist_shift} show the settings used in LSA to define the rigid waist shift knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
-\Cref{table:lsa_rigid_waist_shift_knobs} shows the settings used in LSA to define the rigid waist shift knobs at \(\mathrm{IR1}\) and \(\mathrm{IR5}\).
+% \Cref{table:lsa_ip1_rigid_waist_shift,table:lsa_ip5_rigid_waist_shift} show the settings used in LSA to define the rigid waist shift knobs at IR\num{1} and IR\num{5}.
+\Cref{table:lsa_rigid_waist_shift_knobs} shows the settings used in LSA to define the rigid waist shift knobs at IR\num{1} and IR\num{5}.
 These knobs control the triplet magnets left and right of the \IP in order to move all four betatron waists simultaneously.
 
 % \begin{table}[!hbt]
@@ -99,7 +97,7 @@ These knobs control the triplet magnets left and right of the \IP in order to mo
 %         \(\mathrm{MQXB2.R1/K1}\)  &  \num{4.38891E-5}  \\
 %         \hline
 %     \end{tblr}
-%     \caption{Definition of the rigid waist shift knob for IR1 as implemented in LSA.}
+%     \caption{Definition of the rigid waist shift knob for IR\num{1} as implemented in LSA.}
 %     \label{table:lsa_ip1_rigid_waist_shift}
 % \end{table}
 
@@ -117,7 +115,7 @@ These knobs control the triplet magnets left and right of the \IP in order to mo
 %         \(\mathrm{MQXB2.R5/K1}\)  &  \num{4.38891E-5}  \\
 %         \hline
 %     \end{tblr}
-%     \caption{Definition of the rigid waist shift knob for IR5 as implemented in LSA.}
+%     \caption{Definition of the rigid waist shift knob for IR\num{5} as implemented in LSA.}
 %     \label{table:lsa_ip5_rigid_waist_shift}
 % \end{table}
 
@@ -126,18 +124,18 @@ These knobs control the triplet magnets left and right of the \IP in order to mo
         \begin{center}
         \begin{tblr}{colspec={cc}}
             \hline
-            \textbf{Component} & \textbf{Value} \\
+            \textbf{Component}             & \textbf{Value} \\
             \hline
-            \(\mathrm{MQXA1.L1/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA1.R1/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA3.L1/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA3.R1/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXB2.L1/K1}\)  &  \num{4.38891E-5}  \\
-            \(\mathrm{MQXB2.R1/K1}\)  &  \num{4.38891E-5}  \\
+            MQXA\num{1}.L\num{1}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXA\num{1}.R\num{1}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXB\num{2}.L\num{1}/K\num{1}  &  \num{4.38891E-5}   \\
+            MQXB\num{2}.R\num{1}/K\num{1}  &  \num{4.38891E-5}   \\
+            MQXA\num{3}.L\num{1}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXA\num{3}.R\num{1}/K\num{1}  &  \num{-4.38891E-5}  \\
             \hline
         \end{tblr}
         \end{center}
-        \caption{Knobs for IR1.}
+        \caption{Knobs for IR\num{1}.}
         \label{table:lsa_ip1_rigid_waist_shift}
     \end{subtable}
     \hfill
@@ -147,19 +145,19 @@ These knobs control the triplet magnets left and right of the \IP in order to mo
             \hline
             \textbf{Component} & \textbf{Value} \\
             \hline
-            \(\mathrm{MQXA1.L5/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA1.R5/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA3.L5/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXA3.R5/K1}\)  &  \num{-4.38891E-5}  \\
-            \(\mathrm{MQXB2.L5/K1}\)  &  \num{4.38891E-5}  \\
-            \(\mathrm{MQXB2.R5/K1}\)  &  \num{4.38891E-5}  \\
+            MQXA\num{1}.L\num{5}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXA\num{1}.R\num{5}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXB\num{2}.L\num{5}/K\num{1}  &  \num{4.38891E-5}   \\
+            MQXB\num{2}.R\num{5}/K\num{1}  &  \num{4.38891E-5}   \\
+            MQXA\num{3}.L\num{5}/K\num{1}  &  \num{-4.38891E-5}  \\
+            MQXA\num{3}.R\num{5}/K\num{1}  &  \num{-4.38891E-5}  \\
             \hline
         \end{tblr}
         \end{center}
-        \caption{Knobs for IR5.}
+        \caption{Knobs for IR\num{5}.}
         \label{table:lsa_ip5_rigid_waist_shift}
     \end{subtable}
-    \caption{Definition of the rigid waist shift knobs defined for IR1 (left) and IR5 (right) as implemented in LSA.}
+    \caption{Definitions of the rigid waist shift knobs for IR\num{1} (left) and IR\num{5} (right) as implemented in LSA.}
     \label{table:lsa_rigid_waist_shift_knobs}
 \end{table}
 
@@ -167,8 +165,8 @@ These knobs control the triplet magnets left and right of the \IP in order to mo
 
 \section{Definitions of the Optics Rematching Knobs}
 
-\Cref{table:lsa_ip1_pos_rematching_knob,table:lsa_ip1_neg_rematching_knob} show the settings used in LSA to define the optics rematching knobs needed after applying the rigid waist shift knob, at \(\mathrm{IR1}\).
-\Cref{table:lsa_ip1_pos_rematching_knob} gives the settings that rematch the optics when the \(\mathrm{IR1}\) rigid waist shift knob is applied with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the \(\mathrm{IR1}\) rigid waist shift knob is applied with a factor of \num{-1}.
+\Cref{table:lsa_ip1_pos_rematching_knob,table:lsa_ip1_neg_rematching_knob} show the settings used in LSA to define the optics rematching knobs needed after applying the rigid waist shift knob, at IR\num{1}.
+\Cref{table:lsa_ip1_pos_rematching_knob} gives the settings that rematch the optics when the IR\num{1} rigid waist shift knob is applied with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the IR\num{1} rigid waist shift knob is applied with a factor of \num{-1}.
 These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) left and right of the \IP for both beams.
 
 \begin{table}[!hbt]
@@ -193,7 +191,7 @@ These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) 
         \(\mathrm{RQ10.R1B[12]/K1}\)  &  \num{-1.960854E-5}  &  \num{-1.257251E-4}  \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for \(\mathrm{IR1}\) as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{1}.}
+    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{1}.}
     \label{table:lsa_ip1_pos_rematching_knob}
 \end{table}
 
@@ -219,13 +217,13 @@ These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) 
         \(\mathrm{RQ10.R1B[12]/K1}\)  &  \num{-4.208946E-5}  &  \num{4.750863E-5}   \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for \(\mathrm{IR1}\) as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{-1}.}
+    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{-1}.}
     \label{table:lsa_ip1_neg_rematching_knob}
 \end{table}
 
 
-\Cref{table:lsa_ip5_pos_rematching_knob,table:lsa_ip5_neg_rematching_knob} show the settings used in LSA to define the optics rematching knobs needed after applying the rigid waist shift knob, at \(\mathrm{IR5}\).
-\Cref{table:lsa_ip5_pos_rematching_knob} gives the settings that rematch the optics when the \(\mathrm{IR5}\) rigid waist shift knob is applied with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the \(\mathrm{IR5}\) rigid waist shift knob is applied with a factor of \num{-1}.
+\Cref{table:lsa_ip5_pos_rematching_knob,table:lsa_ip5_neg_rematching_knob} show the settings used in LSA to define the optics rematching knobs needed after applying the rigid waist shift knob, at IR\num{5}.
+\Cref{table:lsa_ip5_pos_rematching_knob} gives the settings that rematch the optics when the IR\num{5} rigid waist shift knob is applied with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the IR\num{5} rigid waist shift knob is applied with a factor of \num{-1}.
 These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) left and right of the \IP for both beams.
 
 \begin{table}[!hbt]
@@ -250,7 +248,7 @@ These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) 
         \(\mathrm{RQ10.R5B[12]/K1}\)  &  \num{3.1220939E-5}  &  \num{-1.199213E-4}  \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for \(\mathrm{IR5}\) as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{1}.}
+    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{1}.}
     \label{table:lsa_ip5_pos_rematching_knob}
 \end{table}
 
@@ -276,14 +274,6 @@ These knobs control the independent magnets \(\mathrm{Q4}\) to \(\mathrm{Q10}\) 
         \(\mathrm{RQ10.R5B[12]/K1}\)  &  \num{-6.293434E-5}  &  \num{4.006792E-5}   \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for \(\mathrm{IR5}\) as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{-1}.}
+    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for an applied rigid waist shift knob trimmed with a factor \num{-1}.}
     \label{table:lsa_ip5_neg_rematching_knob}
 \end{table}
-
-
-
-
-
-Spend mostly time in WHY we do things the way we do
-talk we measure with AC dipole otherwise we would blow-up the beam
-Good to know for me 
