@@ -1,46 +1,67 @@
 \chapter{Interaction Region Local Coupling Correction in the LHC} % Main chapter title
 \label{chapter:IR_Local_Coupling} % For referencing the chapter elsewhere, use \cref{chapter:IR_Local_Coupling}
 
-Some paragraph before the first section.
+Some paragraph before the first section. Blah.
 
 %----------------------------------------------------------------------------------------
 
 \section{Local Betatron Coupling in the Interaction Regions}
 
-\todo{In here I need a small subsection talking about the 2018 ion run issue.}
-
-Mention that in the machine we have unavoidable tilt errors in the insertion region magnets.
-A tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component.
-This skew component will have an effect on the \foneohone resonance driving term given by~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches}:
+\textbf{List of things to include in this section:}
+\begin{itemize}
+    \item Equivalency of Ripken and Tracking when looking at beam size (or later?)
+    \item ALICE \num{2018} ion run lumi issue
+    \item Projection of the beam size growth and lumi in the LHC vs HL-LHC
+    \item Include the parts in the "relevant theory" section of my PRAB paper
+    \item refer to previous chapter plots of IR for the very large \(\beta\)-functions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \(f_{1001}\) term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine
+\end{itemize}
 
 \begin{equation}
-    f(s)_{1001} = \frac{-1}{4 \left(1 - e^{2 \pi i \left(Q_x - Q_y \right)}\right)} \sum_l k L_l \sqrt{\beta_x^l \beta_y^l} e^{i \left(\Delta \phi_x^{s l} - \Delta \phi_y^{s l}\right)}
-    \label{equation:skew_quad_contribution_to_f1001}
+    \langle z \rangle = \sqrt{\varepsilon_1 \beta_{1z} + \varepsilon_2 \beta_{2z}}, \quad z \in\{x, y\} ,
+    \label{equation:lebedev_beam_size}
 \end{equation}
-where \(k L_l\) is the \(l^{\mathrm{th}}\) skew quadrupole integrated strength, \(\beta^l_{x,y}\) are the \betafunctions at the position of the \(l^{\mathrm{th}}\) quadrupole, \(\Delta \phi^{sl}_{x,y}\) are the phase advances between the measurement point and the \(l^{\mathrm{th}}\) quadrupole, and \(Q_{x,y}\) are the horizontal and vertical tunes.
+where \(\varepsilon_1\) and \(\varepsilon_2\) are the horizontal and vertical emittances, respectively.
+\Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{5} under varying strength of a local coupling bump.
+While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a negligible tilt effect, the beam size in the most affected case is about \qty{250}{\percent} of the uncoupled case.
 
-As one can see in \cref{figure:ir5_and_around}, due to the very large \betafunctions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \foneohone term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.75\columnwidth]{Figures/IR_Coupling_Correction/ellipses_various_coupling_bumps.pdf}
+    \caption{Transverse beam sizes at IP\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} with normalized emittances \(\varepsilon_x = \varepsilon_y =\)~\qty{3.75}{\micro\meter} and for different strengths of a local coupling bump around the IP. The ellipses are reconstructed through the \(\sigma_{11}\), \(\sigma_{13}\) and \(\sigma_{33}\) terms of the sigma matrix, obtained from MAD-X.}
+    \label{figure:ip_ellipses_from_coupling}
+\end{figure}
+
+Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}, in the absence of crossing angles, are done so according to~\cite{CERN:Herr:Concept_Luminosity}:
+
+\begin{equation}
+    \mathcal{L} = \frac{N_1 N_2 f_{rev} N_b}{2 \pi \sqrt{\left( \sigma_{x, 1}^2 + \sigma_{x, 2}^2 \right)} \sqrt{\left( \sigma_{y, 1}^2 + \sigma_{y, 2}^2 \right)}} ,
+    \label{equation:luminosity_double_beams}
+\end{equation}
+where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) the revolution frequency of particles, \(N_b\) the number of bunches per beam and \(\sigma_{z, n}\) is the size at the IP of beam \(n\) in the transverse plane \(z\), calculated according to \cref{equation:lebedev_beam_size}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
+    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC V1.5 (dashed). Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the larger \(\beta\)-functions in the triplet.}
+    \label{fig:lhc_vs_hllhc_beam_size_and_lumi_growths}
+\end{figure}
+
+
+\section{Current Correction Methods and Their Limitations}
+
+Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)
+
 In the LHC, a skew quadrupole corrector is installed on each side of colliding IPs, just before the third triplet quadrupole \(\mathrm{Q3}\) on the side of the IP.
 Due to their location, these correctors are single aperture magnets meaning that both beams are passing through a single cavity, and feel the same magnetic field.
 As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
 
-Twiss with Coupling and Ripken parameters
-Equivalency of Ripken and Tracking when looking at beam size
-
-% \begin{equation}
-%     \langle z \rangle = \sqrt{\varepsilon_{1} \beta_{1z} + \varepsilon_{2} \beta_{2z}}
-%     \label{equation:lebedev_beam_size}
-% \end{equation}
-% where \(z\) can be one of \(x\), \(y\), \(\varepsilon_{1}\) and \(\varepsilon_{2}\) are respectively the horizontal and vertical emittances.
-% The Ripken parameters are output directly from MAD-X.
-% The evolution of both the \AbsCminus and the beam size at IP for a given value of the quadrupole tilt error can be seen in \cref{fig:colin_correction_dqmin_lebedev}.
-
-% \begin{figure}
-%     \centering
-%     \includegraphics*[width=0.9\linewidth]{Figures/IR_Coupling_Correction/guess_rdts.pdf}
-%     \caption{Similarly looking coupling RDTs in the machine for two drastically different scenarii in terms of luminosity.}
-%     \label{figure:guess_rdts}
-% \end{figure}
+Say that looking at RDTs is just not straightforward, and give example with plot below. Can you guess who's better? I forgot already.
+\begin{figure}
+    \centering
+    \includegraphics*[width=0.99\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
+    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) in the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} luminosity decrease at IP\num{1} compared to the other. Can you tell which is which?}
+    \label{figure:guess_rdts}
+\end{figure}
 
 \begin{table}[!hbt]
     \centering
@@ -56,20 +77,7 @@ Equivalency of Ripken and Tracking when looking at beam size
     \label{table:colin_knob}
 \end{table}
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
-    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC V1.5 (dashed). Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the larger \(\beta\)-functions in the triplet.}
-    \label{fig:lhc_vs_hllhc_beam_size_and_lumi_growths}
-\end{figure}
-
-%----------------------------------------------------------------------------------------
-
-\section{Current Correction Methods and Their Limitations}
-
-Overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)
-
-\todo{Here include also the stuff that didn't work (CRDTs, etc)}
+\todo{Here include also the stuff that didn't work (CRDTs, k-modulation, etc.)}
 
 \section{Rigid Waist Shift for Local Coupling Correction}
 
