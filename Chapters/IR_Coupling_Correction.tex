@@ -5,7 +5,8 @@
 
 %----------------------------------------------------------------------------------------
 
-\section{Local Betatron Coupling in the Interaction Regions}
+\section{Local Betatron Coupling in the LHC Interaction Regions}
+\label{section:local_ir_coupling}
 
 In the LHC, corrections of local IR linear coupling are of importance to keep a good control of beam sizes at the IPs and hence the luminosity performance, as well as to prevent a significant impact on the beam dynamics.
 
@@ -24,28 +25,49 @@ Nevertheless, this contribution amounted to a \(\abs{C^{-}}\) of \num{3.84e-2}, 
     \label{figure:triplet_tilts_to_rdts}
 \end{figure}
 
+As a consequence, the IR contribution - mainly the triplets - to global coupling needs to be compensated.
+For this, in the LHC the local coupling correction is done by measuring the RDTs in the vicinity of the IP and using the MQSX skew quadrupole correctors introduced in \cref{subsection:lhc_eirs} and showcased in \cref{figure:ir5_and_around,figure:lhc_ir_corrector_layout} for correction.
+The corrections are determined with the Segment-by-Segment technique described in \cref{subsection:correction_principles}, and try to cancel the triplets' contribution as well as possible.
+Though this compensation is rarely perfect, the residual contribution is usually small enough to be handled by the skew quadrupole correctors present in the LHC arcs (see \cref{subsection:lhc_arcs}).
+This correction is essential in order to reach low \(\beta^{\ast}\) with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter} the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \(\abs{C^{-}}\) by the amount of \num{0.33}, too high for the arc correctors to handle.
 
+During the late \num{2018} ion run in the LHC Run~\num{2}, it was observed that while global coupling was well corrected, a local coupling bump in the IR\num{2} had a significant impact on collisions and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
+Investigations revealed that a coupling bump around IP\num{2} led to a strong increase in beam size and a drop in collisions.
+Importantly, the incident highlighted that no method existed to correct for the coupling specifically at the IP location.
 
-% During the late \num{2018} ion run in the LHC Run~\num{2} it was observed that while global coupling was well corrected, a local coupling bump in the IR2 had a significant impact on beam size and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
-% \Cref{figure:beam_size_growth} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump, highlighting the necessity of its proper handling for the Run~\num{3} and High Luminosity LHC (HL-LHC).
+\Cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump at IP\num{1} or IP\num{5}, for the LHC at \(\beta^{*}=\) \qty{30}{\centi\meter} and for the HL-LHC at \(\beta^{*}=\) \qty{15}{\centi\meter}.
+These results highlight the necessity of a proper handling of local coupling for the Run~\num{3}, as well as for the HL-LHC where it should be about a factor \num{4} more accurate.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
+    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}% Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the much larger \(\beta\)-functions in the triplet.}
+    \label{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}
+\end{figure}
 
-\textbf{List of things to include in this section:}
-\begin{itemize}
-    \item ALICE \num{2018} ion run lumi issue
-    \item Projection of the beam size growth and lumi in the LHC vs HL-LHC
-    \item Equivalency of Ripken and Tracking when looking at beam size (or later?)
-\end{itemize}
+In the studies presented in this thesis, various calculations rely heavily on the Ripken parameters mentioned in \cref{subsection:parametrization_of_betatron_coupling}.
+For instance, beam sizes are calculated from the \(\beta_{kj}\) terms according to~\cite{IOP:Lebedev:Betatron_Motion_Coupling}:
 
 \begin{equation}
     \langle z \rangle = \sqrt{\varepsilon_1 \beta_{1z} + \varepsilon_2 \beta_{2z}}, \quad z \in\{x, y\} ,
     \label{equation:lebedev_beam_size}
 \end{equation}
 where \(\varepsilon_1\) and \(\varepsilon_2\) are the horizontal and vertical emittances, respectively.
-\Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{5} under varying strength of a local coupling bump.
+
+The validity of this calculation has been verified in simulations by comparing its results to those obtained from other means.
+\Cref{figure:lebedev_vs_tracking} shows the relative deviation between computed beam sizes at IP\num{5}, calculated either according to \cref{equation:lebedev_beam_size} or from tracking a particle distribution, under various strengths of local coupling.
+In all cases the relative deviation is below \qty{0.25}{\percent}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lebedev_vs_tracking.pdf}
+    \caption{Relative deviation between beam sizes calculated from Ripken parameters according to \cref{equation:lebedev_beam_size} and from tracking a particle distribution, at an IP affected by coupling for the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes.}
+    \label{figure:lebedev_vs_tracking}
+\end{figure}
+
+At the LHC IPs with round beams, as is the case in Run~\num{3}, the effect of the beam's tilt induced by linear coupling is negligible and its impact manifests as an increase in the beam size, as was the case at IP\num{2} in \num{2018}.
+\Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{1} (similar for IP\num{5}) under various strengths of a local coupling bump.
 While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a negligible tilt effect, the beam size in the most affected case is about \qty{250}{\percent} of the uncoupled case.
-
-
 
 \begin{figure}[!htb]
     \centering
@@ -62,12 +84,7 @@ Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_an
 \end{equation}
 where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) the revolution frequency of particles, \(N_b\) the number of bunches per beam and \(\sigma_{z, n}\) is the size at the IP of beam \(n\) in the transverse plane \(z\), calculated according to \cref{equation:lebedev_beam_size}.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
-    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC V1.5 (dashed). Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the larger \(\beta\)-functions in the triplet.}
-    \label{fig:lhc_vs_hllhc_beam_size_and_lumi_growths}
-\end{figure}
+\todo{What else to add here? I should say a bit that we want to look into getting coupling control at the IP, for the reasons. This transitions into the next section.}
 
 \section{Current Correction Methods and Their Limitations}
 
