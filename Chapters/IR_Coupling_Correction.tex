@@ -7,13 +7,34 @@
 
 \section{Local Betatron Coupling in the Interaction Regions}
 
+In the LHC, corrections of local IR linear coupling are of importance to keep a good control of beam sizes at the IPs and hence the luminosity performance, as well as to prevent a significant impact on the beam dynamics.
+
+In \cref{equation:coupling_rdts_from_skew_quads} the contribution of elements to the linear coupling RDTs is given, where contributing elements are typically skew quadrupoles and solenoids.
+The amplitude of the contribution is dominated by the integrated strength of the magnet \(k L\) as well as the \(\sqrt{\beta_x \beta_y}\) term at the location of the magnet.
+Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component, once can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a massive contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
+
+\Cref{figure:triplet_tilts_to_rdts} shows the coupling RDTs' amplitudes from tilts in triplet quadrupoles, with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} \num{2022} optics.
+In this MAD-X simulation triplets around IP\num{1} were assigned random tilts within \(\pm\)~\qty{1.5}{\milli\radian}, and these were the only contribution to coupling in the machine.
+Nevertheless, this contribution amounted to a \(\abs{C^{-}}\) of \num{3.84e-2}, too high for machine operation.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/triplet_tilts_to_rdts.pdf}
+    \caption{Amplitudes of the coupling RDTs (bottom) \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) from tilts in the triplet quadrupoles around IP\num{1}. The top plot shows the magnets' powering while the middle plot shows the assigned tilts in each element.}
+    \label{figure:triplet_tilts_to_rdts}
+\end{figure}
+
+
+
+% During the late \num{2018} ion run in the LHC Run~\num{2} it was observed that while global coupling was well corrected, a local coupling bump in the IR2 had a significant impact on beam size and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
+% \Cref{figure:beam_size_growth} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump, highlighting the necessity of its proper handling for the Run~\num{3} and High Luminosity LHC (HL-LHC).
+
+
 \textbf{List of things to include in this section:}
 \begin{itemize}
-    \item Refer to previous chapter plots of IR for the very large \(\beta\)-functions in the triplet quadrupoles, tilts in these magnets have the potential to drastically contribute to the magnitude of the \(f_{1001}\) term, and therefore to the coupling in the interaction region and, if not compensated properly, to the coupling in the whole machine
-    \item Equivalency of Ripken and Tracking when looking at beam size (or later?)
-    \item Projection of the beam size growth and lumi in the LHC vs HL-LHC
-    \item Include the parts in the "relevant theory" section of my PRAB paper
     \item ALICE \num{2018} ion run lumi issue
+    \item Projection of the beam size growth and lumi in the LHC vs HL-LHC
+    \item Equivalency of Ripken and Tracking when looking at beam size (or later?)
 \end{itemize}
 
 \begin{equation}
@@ -24,12 +45,7 @@ where \(\varepsilon_1\) and \(\varepsilon_2\) are the horizontal and vertical em
 \Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{5} under varying strength of a local coupling bump.
 While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a negligible tilt effect, the beam size in the most affected case is about \qty{250}{\percent} of the uncoupled case.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/triplet_tilts_to_rdts.pdf}
-    \caption{\todo{The Cminus here was \num{3.84e-2}.}}
-    \label{figure:triplet_tilts_to_rdts}
-\end{figure}
+
 
 \begin{figure}[!htb]
     \centering
