@@ -2,6 +2,7 @@
 \label{chapter:IR_Local_Coupling} % For referencing the chapter elsewhere, use \cref{chapter:IR_Local_Coupling}
 
 \todo{Some paragraph before the first section.}
+An overview of the various experimental measurements taken for this work can be found in \cref{appendix:measurement_fills}.
 
 %----------------------------------------------------------------------------------------
 
@@ -85,58 +86,122 @@ Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_an
 where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) the revolution frequency of particles, \(N_b\) the number of bunches per beam and \(\sigma_{z, n}\) is the size at the IP of beam \(n\) in the transverse plane \(z\), calculated according to \cref{equation:lebedev_beam_size}.
 
 \todo{What else to add here? I should say a bit that we want to look into getting coupling control at the IP, for the reasons. This transitions into the next section.}
+\todo{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat diam at elit consectetur, non auctor lorem fringilla. Nullam nec dolor nec leo maximus ultrices ut eu dui. Quisque egestas orci sed ante tempor, sed bibendum quam placerat. Pellentesque vel vulputate risus, nec laoreet nulla. Phasellus consectetur nulla nibh, at malesuada lectus consequat non. Praesent luctus, tellus a ornare vulputate, lorem mauris sollicitudin ante, et iaculis arcu risus ac mi. Fusce ac diam vel justo volutpat pretium in imperdiet diam. Vivamus efficitur ante eget arcu sollicitudin efficitur. Cras leo massa, tincidunt nec placerat in, lobortis et est. Praesent ultricies nunc eget ullamcorper sodales. Aenean lobortis tellus eu purus elementum euismod. Cras tempus mattis massa, in sollicitudin nulla. Cras eleifend maximus consequat. Morbi ut nibh eu ligula scelerisque consequat. Donec vel feugiat dolor.}
 
 \section{Current Correction Methods and Their Limitations}
 \label{section:current_correction_methods_and_their_limitations}
 
+While the coupling RDTs contain information on the coupling situation in the machine, looking at their patterns along the ring is not a good indicator of the situation in a specific location.
+For instance, \cref{figure:guess_rdts} shows the reconstructed coupling RDTs from two measurements taken during the LHC \num{2022} commissioning.
+One of these measurements corresponds to a \qty{20}{\percent} lower measured luminosity at IP\num{1} compared to the other, but it is not possible to tell which is which from looking at the RDTs alone.
+
+\begin{figure}
+    \centering
+    \includegraphics*[width=0.99\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
+    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other. Can you tell which is which?}
+    \label{figure:guess_rdts}
+\end{figure}
+
+The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
+Firstly, due to unfavorable phase advances in between BPMs in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
+As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
+Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
+
+As a consequence, the reconstruction of coupling RDTs close to the IPs is not accurate.
+\Cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1} shows the amplitude of the coupling RDTs propagated with the SbS technique in the IR\num{1} segment, from measurements taken during the LHC \num{2021} beam tests and \num{2022} commissioning.
+Not only can large error bars can be noticed, but no given case appears specifically better than the other while the orange line corresponds to a better correction.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
+    \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam \num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
+    \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
+\end{figure}
+
+A candidate for a better observable would be \intro{combined coupling RDTs}~\cite{PRAB:Franchi:First_Simultaneous}.
+These can be expressed from the coupling RDTs as:
+
+\begin{equation}
+    \begin{aligned}
+        \hat{F}_{xy} &= \frac{\sinh{2 \mathcal{P}}}{\mathcal{P}} \left( f^{\ast}_{1001} - f^{\ast}_{1010} \right)  \text{ ,} \\
+        \hat{F}_{yx} &= \frac{\sinh{2 \mathcal{P}}}{\mathcal{P}} \left( f_{1001} + f^{\ast}_{1010} \right)         \text{ ,}
+    \end{aligned}
+    \label{equation:combined_coupling_rdts}
+\end{equation}
+where \(2 \mathcal{P} = \sqrt{\abs{2 f_{1010}}^2 - \abs{2 f_{1001}}^2}\) and \(^{\ast}\) denotes the complex conjugate.
+These have the advantage that they can be reconstructed directly from the particle coordinates \(x,y\) without the need for momentum reconstruction~\cite{PRAB:Hofer:Coupling_Local_Observables}.
+\todo{UNFORTUNATELY ITS TRASH AND SHOW A PLOT}
+
+
+
+
+
+Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
+Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
+
+The usual technique to get a measurement of \(\beta\)-functions at the IP is k-modulation.
+Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated Machine Development (MD)~\cite{CERN:Persson:Local_Coupling_IP}.
+This prevents the possibility of directly measuring the beam size variation at an IP from local coupling to drive a correction. 
+
+\hfill
+
+
+
+
+
+
+
+
+
+
 \textbf{Things to include in here:}
 \begin{itemize}
-    \item Say that just from RDTs there isn't really a way to know, with \cref{figure:guess_rdts} as example
-    \item Go over (see PRAB paper) an overview of IR Difficulties (phase advances suck, DFFT of x -jpx, no instruments, SbS errors)
-    \item Emphasize that not only is SbS not great, it doesn't give us a way to optimize the coupling at the IP
     \item Mention that because correctors are single aperture, we need to find a correction compromise that works well for B1 and B2
-    \item Mention K-Modulation (cite M. Hofer's paper)
     \item Mention the CRDTs but not much is visible (remake plot from study)
     \item Introduce the colinearity knob
 \end{itemize}
 
-In the LHC, a skew quadrupole corrector is installed on each side of colliding IPs, just before the third triplet quadrupole \(\mathrm{Q3}\) on the side of the IP.
-Due to their location, these correctors are single aperture magnets meaning that both beams are passing through a single cavity, and feel the same magnetic field.
-As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
+\subsection{The Colinearity Knob}
 
-Say that looking at RDTs is just not straightforward, and give example with plot below. Can you guess who's better? I forgot already.
-\begin{figure}
-    \centering
-    \includegraphics*[width=0.99\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
-    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) in the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} luminosity decrease at IP\num{1} compared to the other. Can you tell which is which?}
-    \label{figure:guess_rdts}
-\end{figure}
+The \intro{colinearity knob} is a powering setting convention for the IR skew quadrupole correctors.
+Originally designed for a flat optics MD~\cite{CERN:Fartoukh:First_LHC_Flat_Optics_High_Intensity}, the knob acts anti-symmetrically on the left and right corrector magnets.
+Since for round optics in the LHC the \(\beta\)-functions are by design identical at the MQSX position left and right of the IP (see \cref{figure:lhc_ir5_zoomed}), and the phase advance between the two magnets is \(\pi\).
+Assuming a good \(\beta\)-beating correction, the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
+The definition of the knob is given in \cref{table:colinearity_knob}.
+A full definition of the knobs as implemented and used in the LHC can be found in \cref{section:colinearity_knobs_lsa}.
 
 \begin{table}[!hbt]
     \centering
     \begin{tblr}{colspec={ccccc}}
         \hline
-        \textbf{Magnet} & \textbf{K\(_{1S}\) [m\(^{-2}\)]}    \\
+        \textbf{Magnet}                     &  \textbf{K\(_{1S}\) [m\(^{-2}\)]}  \\
         \hline
-        MQSX.3R[IP] \(\rightarrow K_{1S}\)  &  \num{1E-4}   \\
-        MQSX.3L[IP] \(\rightarrow K_{1S}\)  &  \num{-1E-4}  \\
+        MQSX.3R[IP] \(\rightarrow K_{1S}\)  &  \num{1E-4}                        \\
+        MQSX.3L[IP] \(\rightarrow K_{1S}\)  &  \num{-1E-4}                       \\
         \hline
     \end{tblr}
     \caption{Definition of one unit of the colinearity knob, a powering setting of the IR skew quadrupole correctors.}
-    \label{table:colin_knob}
+    \label{table:colinearity_knob}
 \end{table}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=0.9\linewidth]{Figures/IR_Coupling_Correction/corrector_package.png}
-    \caption{Layout of the triplet magnets and the linear and nonlinear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The Q\num{1}, Q\num{2}a/b and Q\num{3} are triplet quadrupoles while the C\num{0}, C\num{1}, C\num{2} and C\num{3} are corrector packages with the field order indicated below. D\num{1} is the separation dipole, diverging Beam \num{1} and Beam \num{2} to their respective beam lines. The skew quadrupole correctors correspond to order a\num{2} and are located in the C\num{2} package.}
-    \label{figure:lhc_corrector_layout}
-\end{figure}
+
+In the LHC, a skew quadrupole corrector is installed on each side of colliding IPs, just before the third triplet quadrupole \(\mathrm{Q3}\) on the side of the IP.
+Due to their location, these correctors are single aperture magnets meaning that both beams are passing through a single cavity, and feel the same magnetic field.
+As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=0.9\linewidth]{Figures/IR_Coupling_Correction/corrector_package.png}
+%     \caption{Layout of the triplet magnets and the linear and nonlinear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The Q\num{1}, Q\num{2}a/b and Q\num{3} are triplet quadrupoles while the C\num{0}, C\num{1}, C\num{2} and C\num{3} are corrector packages with the field order indicated below. D\num{1} is the separation dipole, diverging Beam \num{1} and Beam \num{2} to their respective beam lines. The skew quadrupole correctors correspond to order a\num{2} and are located in the C\num{2} package.}
+%     \label{figure:lhc_corrector_layout}
+% \end{figure}
 
 \todo{Here include also the stuff that didn't work (CRDTs, k-modulation, etc.)}
 
 \section{Rigid Waist Shift for Local Coupling Correction}
 \label{section:rigid_waist_shift_for_local_coupling_correction}
+
+\subsection{Rigid Waist Shift}
 
 \subsection{Concept and Simulations}
 
