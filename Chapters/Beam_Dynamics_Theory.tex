@@ -638,7 +638,7 @@ An example of this situation is given in \cref{figure:phase_space_third_order_re
 \begin{figure}[!htb]
     \begin{center}
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/phase_space_third_order_resonance.pdf}
-    \caption{Phase space in normalized coordinates from tracking \num{200} particles in a simple FODO-based lattice, when exciting a third order resonance. Points of each color corresponds to the trajectory of a given particle.}
+    \caption{Phase space in normalized coordinates from tracking \num{200} particles in a simple FODO-based lattice, when exciting a third order resonance. Points of each color corresponds to the trajectory of a given particle. \todo{maybe do one where we've got the coupling resonance.}}
     \label{figure:phase_space_third_order_resonance}
     \end{center}
 \end{figure}
@@ -1037,6 +1037,7 @@ where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal 
 \section{Luminosity}
 \label{section:luminosity}
 
+\todo{I should mention how this is affected by the coupling, could talk about it here? What matters is overlap of integrals, if there is an increase from coupling then we would lose luminosity.}
 The LHC machine being a particle collider, it is operated to produce collisions between two counter-rotating beams and to produce data for High Energy Physics experiments.
 As the studied interactions coming from these collisions are rare, a substantial volume of statistics is required. 
 Naturally, the performance of the machine is then described by the number of collisions provided to experiments as well as the center-of-mass energy of these collisions.
@@ -1059,6 +1060,7 @@ For a collider with Gaussian beams, it can be expressed as~\cite{CERN:Herr:Conce
 where \(f_{\mathrm{rev}}\) is the revolution frequency of particle bunches, \(N_1\) and \(N_2\) are the number of particles in each beam, and \(\sigma_{x,y}\) are the transverse beam sizes at the interaction points.
 \(S\) is the luminosity reduction factor and depends on the crossing of the beams: crossing angles, orbit offset, non-zero dispersion or even the hourglass effect will impact its value.
 
+\todo{Irrelevant, should remove this. Say a bit of: here are some things that influence S (beam size, crossing angles, some tilt if you've got flat beams, etc)}
 For Gaussian bunches colliding with a \intro{crossing angle} \(\theta\), where \(\sigma_s \gg \sigma_{x,y}\) and neglecting other contributions, the luminosity reduction factor is approximated by~\cite{CERN:Herr:Concept_Luminosity}:
 
 \begin{equation}
