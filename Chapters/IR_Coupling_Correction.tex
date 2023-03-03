@@ -143,13 +143,13 @@ Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/crdt_fxy_nominal_vs_colin_md_2018.pdf}
+    \includegraphics*[width=0.95\columnwidth]{Figures/IR_Coupling_Correction/crdt_fxy_nominal_vs_colin_md_2018.pdf}
     \caption{Reconstructed CRDT \(|\hat{F}_{XY}|\) around IP\num{2} from measurements at \(\beta^{\ast} =\)~\qty{50}{\centi\meter} during a \num{2018} MD. The \textcolor{mplblue}{blue} lines correspond to \num{2} measurements with the nominal optics, and \textcolor{mplorange}{orange} lines correspond to \num{3} measurements with a local coupling bump implemented around IP\num{2}. The percentages indicate the strength of the AC dipole kicks.}
     \label{figure:crdt_fxy_nominal_vs_colin_md_2018}
 \end{figure}
 
-\todo{Comment on the results here, we don't have the error bars like in \cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}, but the reproducibility is not good, and quite different results from various measurements (different kick strengths).}
-
+While the error bars are barely visible compared to the large ones in \cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}, the main observed issue was a lack of reproducibility between different measurements: different measurements done with identical settings give different results.
+For this reason, the CRDTs were not considered further.
 
 Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
 Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
@@ -157,8 +157,6 @@ Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot p
 The usual technique to get a measurement of \(\beta\)-functions at the IP is k-modulation.
 Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated Machine Development (MD)~\cite{CERN:Persson:Local_Coupling_IP}.
 This prevents the possibility of directly measuring the beam size variation at an IP from local coupling to drive a correction. 
-
-\hfill
 
 To summarize, existing methods allow compensating for the IR's contribution to global coupling but do not provide a reliable way to drive a minimization of coupling at the IP.
 To achieve this goal, two new things are needed: a way to adjust for the coupling at the IP specifically, and a good observable to rely on to drive the correction.
