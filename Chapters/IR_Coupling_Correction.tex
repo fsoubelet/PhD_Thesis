@@ -31,6 +31,7 @@ For this, in the LHC the local coupling correction is done by measuring the RDTs
 The corrections are determined with the Segment-by-Segment technique described in \cref{subsection:correction_principles}, and try to cancel the triplets' contribution as well as possible.
 Though this compensation is rarely perfect, the residual contribution is usually small enough to be handled by the skew quadrupole correctors present in the LHC arcs (see \cref{subsection:lhc_arcs}).
 This correction is essential in order to reach low \(\beta^{\ast}\) with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter} the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \(\abs{C^{-}}\) by the amount of \num{0.33}, too high for the arc correctors to handle.
+While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable such as transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
 During the late \num{2018} ion run in the LHC Run~\num{2}, it was observed that while global coupling was well corrected, a local coupling bump in the IR\num{2} had a significant impact on collisions and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
 Investigations revealed that a coupling bump around IP\num{2} led to a strong increase in beam size and a drop in collisions.
@@ -72,7 +73,7 @@ While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a n
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.75\columnwidth]{Figures/IR_Coupling_Correction/ellipses_various_coupling_bumps.pdf}
+    \includegraphics*[width=0.85\columnwidth]{Figures/IR_Coupling_Correction/ellipses_various_coupling_bumps.pdf}
     \caption{Transverse beam sizes at IP\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} with normalized emittances \(\varepsilon_x = \varepsilon_y =\)~\qty{3.75}{\micro\meter} and for different strengths of a local coupling bump around the IP. The ellipses are reconstructed through the \(\sigma_{11}\), \(\sigma_{13}\) and \(\sigma_{33}\) terms of the sigma matrix, obtained from MAD-X.}
     \label{figure:ip_ellipses_from_coupling}
 \end{figure}
@@ -107,19 +108,20 @@ Firstly, due to unfavorable phase advances in between BPMs in the IRs, it is dif
 As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
 
-As a consequence, the reconstruction of coupling RDTs close to the IPs is not accurate.
+As a consequence, the reconstruction of coupling RDTs in close proximity to the IPs is inaccurate.
 \Cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1} shows the amplitude of the coupling RDTs propagated with the SbS technique in the IR\num{1} segment, from measurements taken during the LHC \num{2021} beam tests and \num{2022} commissioning.
-Not only can large error bars can be noticed, but no given case appears specifically better than the other while the orange line corresponds to a better correction.
+Not only can large error bars can be noticed on the reconstructed data points, but no given case appears to be specifically better than the other while the orange line (\num{2022} commissioning) corresponds to a better correction than the blue one (\num{2021} beam tests).
+Given the data patterns and the fact that the orange case corresponds to a better correction, it does not appear that the SbS technique gives a good indication of the local coupling at the IP.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
+    \includegraphics*[width=0.9\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
     \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam \num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
     \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
 \end{figure}
 
-A candidate for a better observable would be \intro{combined coupling RDTs}~\cite{PRAB:Franchi:First_Simultaneous}.
-These can be expressed from the coupling RDTs as:
+A candidate for a better observable that was considered are the \intro{combined coupling RDTs}~\cite{PRAB:Franchi:First_Simultaneous}, or simply Combined RDTs (CRDTs), \(|\hat{F}_{XY}|\) and \(|\hat{F}_{YX}|\).
+These can be expressed from the coupling RDTs, here with a scaling factor, as:
 
 \begin{equation}
     \begin{aligned}
@@ -129,10 +131,20 @@ These can be expressed from the coupling RDTs as:
     \label{equation:combined_coupling_rdts}
 \end{equation}
 where \(2 \mathcal{P} = \sqrt{\abs{2 f_{1010}}^2 - \abs{2 f_{1001}}^2}\) and \(^{\ast}\) denotes the complex conjugate.
-These have the advantage that they can be reconstructed directly from the particle coordinates \(x,y\) without the need for momentum reconstruction~\cite{PRAB:Hofer:Coupling_Local_Observables}.
-\todo{UNFORTUNATELY ITS TRASH AND SHOW A PLOT}
+These have the advantage that they can be reconstructed directly from the particle coordinates (\(x,y\)) without the need for momentum reconstruction~\cite{PRAB:Hofer:Coupling_Local_Observables}.
+Although the CRDTs seemed to work well in straightforward simulations, they were found to not be useful when it came to applying them to more realistic cases or real measurement data.
+\Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} MD.
+During the MD the first investigations were made on local coupling at the IP, and while little data was collected overall due to a dump of beam~\num{1} it provides a good test bed for a new observable candidate.
+Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/crdt_fxy_nominal_vs_colin_md_2018.pdf}
+    \caption{Reconstructed CRDT \(|\hat{F}_{XY}|\) around IP\num{2} from measurements at \(\beta^{\ast} =\)~\qty{50}{\centi\meter} during a \num{2018} MD. The \textcolor{mplblue}{blue} lines correspond to \num{2} measurements with the nominal optics, and \textcolor{mplorange}{orange} lines correspond to \num{3} different measurements with a local coupling bump implemented around IP\num{2}. The percentages indicate the strength of the AC dipole kicks.}
+    \label{figure:crdt_fxy_nominal_vs_colin_md_2018}
+\end{figure}
 
+\todo{Comment on the results here, we don't have the error bars like in \cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}, but the reproducibility is not good, and quite different results from various measurements (different kick strengths).}
 
 
 
@@ -157,11 +169,11 @@ This prevents the possibility of directly measuring the beam size variation at a
 \textbf{Things to include in here:}
 \begin{itemize}
     \item Mention that because correctors are single aperture, we need to find a correction compromise that works well for B1 and B2
-    \item Mention the CRDTs but not much is visible (remake plot from study)
+    \item Do a brief kind of conclusion so far saying we need 2 new things: a way to adjust for the coupling at the IP and a good observable to rely on to drive the correction
     \item Introduce the colinearity knob
 \end{itemize}
 
-\subsection{The Colinearity Knob}
+\subsubsection*{The Colinearity Knob}
 
 The \intro{colinearity knob} is a powering setting convention for the IR skew quadrupole correctors.
 Originally designed for a flat optics MD~\cite{CERN:Fartoukh:First_LHC_Flat_Optics_High_Intensity}, the knob acts anti-symmetrically on the left and right corrector magnets.
