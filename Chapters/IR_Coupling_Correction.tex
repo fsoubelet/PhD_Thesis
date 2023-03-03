@@ -184,16 +184,20 @@ A full definition of the knobs as implemented and used in the LHC can be found i
     \label{table:colinearity_knob}
 \end{table}
 
-\todo{\Cref{figure:colinearity_knob_effect} bla bla bla. A similar plot can be done for \(f_{1010}\).}
+\Cref{figure:colinearity_knob_effect} shows the effect of the colinearity knob at different strengths on the \(f_{1001}\).
+A similar plot can be obtained for the \(f_{1010}\).
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.95\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
+    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
     \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling in the machine. The location of the MQSX magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
     \label{figure:colinearity_knob_effect}
 \end{figure}
 
-\todo{Say thanks to it we can change the coupling in between the MQSXs without changing the compensation of IR coupling, which is a way to adjust for coupling specifically at the IP.}
+One can observe that in all cases without global coupling (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} lines) the \(\abs{f_{1001}}\) is exactly \num{0} outside the MQSX to MQSX zone.
+When global coupling is present the \(\abs{f_{1001}}\) goes back to its original value outside the limits of the bump.
+Thus, the colinearity knob is an effective tool to introduce a perfectly closed coupling bump in between the MQSXs.
+It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
 
 \section{Rigid Waist Shift for Local Coupling Correction}
 \label{section:rigid_waist_shift_for_local_coupling_correction}
