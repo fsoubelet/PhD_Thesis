@@ -150,6 +150,7 @@ Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
 \todo{Comment on the results here, we don't have the error bars like in \cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}, but the reproducibility is not good, and quite different results from various measurements (different kick strengths).}
 
+
 Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
 Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
 
@@ -159,15 +160,8 @@ This prevents the possibility of directly measuring the beam size variation at a
 
 \hfill
 
-
-
-
-\textbf{Things to include in here:}
-\begin{itemize}
-    \item Do a brief kind of conclusion so far saying we need 2 new things: a way to adjust for the coupling at the IP and a good observable to rely on to drive the correction
-    \item Introduce the colinearity knob
-\end{itemize}
-
+To summarize, existing methods allow compensating for the IR's contribution to global coupling but do not provide a reliable way to drive a minimization of coupling at the IP.
+To achieve this goal, two new things are needed: a way to adjust for the coupling at the IP specifically, and a good observable to rely on to drive the correction.
 The former can be achieved with a knob described below, while the latter was achieved with a new optics configuration presented in \cref{section:rigid_waist_shift_for_local_coupling_correction}.
 
 \subsubsection*{The Colinearity Knob}
@@ -191,6 +185,17 @@ A full definition of the knobs as implemented and used in the LHC can be found i
     \caption{Definition of one unit of the colinearity knob, a powering setting of the IR skew quadrupole correctors.}
     \label{table:colinearity_knob}
 \end{table}
+
+\Cref{figure:colinearity_knob_effect} bla bla bla
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.95\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
+    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}). The \textcolor{mplred}{red} line corresponds to a scenario where global coupling is present in the machine. The location of the MQSX magnets implementing the coupling bump are highlighted as vertical \textcolor{mqsx_green}{green} lines.}
+    \label{figure:colinearity_knob_effect}
+\end{figure}
+
+\todo{Say thanks to it we can change the coupling in between the MQSXs without changing the compensation of IR coupling, which is a way to adjust for coupling specifically at the IP.}
 
 \section{Rigid Waist Shift for Local Coupling Correction}
 \label{section:rigid_waist_shift_for_local_coupling_correction}
