@@ -202,34 +202,47 @@ It can be used to modify the coupling specifically at the IP without changing th
 \section{Rigid Waist Shift for Local Coupling Correction}
 \label{section:rigid_waist_shift_for_local_coupling_correction}
 
-Say what and why.
+In order to circumvent the issues related to measuring the local coupling at IP, it then became necessary to find a way to relate it to other measurable quantities.
+This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which changes the machine's optics configuration as presented below.
 
 \subsection{Rigid Waist Shift}
 
-Say how we do it. Refer to \cref{section:rigid_waist_shift_knobs_lsa}.
-Show how it moves the waist, and also affects the beta functions.
+Applying a Rigid Waist Shift (RWS) to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
+An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
+The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplets knob powering, which induces a waist shift of \(\approx\)\qty{43.5}{\centi\meter}.
+The individual triplet magnets trims are not used for this knob.
+A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.
+
+\Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and shows how the \(\beta\)-functions at the IP location are modified, using the \num{2022} \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics.
+One can note that the minima of the parabolas (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, because the design optics include a very small waist at IP\num{1} and IP\num{5}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
-    \caption{Simulated effect of the designed rigid waist shift knob on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location and is almost completely linear with the knob setting. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP point itself as the waist is displaced, respectively. The minima of the parabolas are not found at the zero knob setting as the design optics include a very small waist.}
+    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
+    \caption{Simulated effect of the designed RWS knob on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location and is almost completely linear with the knob setting. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP point itself as the waist is displaced, respectively.}
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
 
-\todo{Show how it affects the beta-functions and breaks the symmetry in the IR (take the script and plot from pyhdtoolkit documentation).}
+In \cref{figure:rigid_waist_shift_knob_effect_on_betas} is shown how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \num{2022} \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics.
+In this simulation the lattice was sliced to improve the resolution of the data points.
+One can observe how the symmetry of the optics in the IR is broken thanks to the knob (full vs dashed lines).
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.9\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
-    \caption{Simulated effect of the designed rigid waist shift knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
+    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
+    \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
     \label{figure:rigid_waist_shift_knob_effect_on_betas}
 \end{figure}
+
+\subsubsection*{Optics Impact and Rematching}
 
 Talk about the impact it has on the optics outside the machine, and why it should be rematched.
 Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.
 
 
 \subsection{Application Concept and Simulations}
+
+Making away with the symmetry allows to break the locality of a coupling bump, making the impact of the IR coupling errors measurable every- where.
 
 \begin{figure}[!htb]
     \centering
