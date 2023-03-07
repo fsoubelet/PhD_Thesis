@@ -209,9 +209,23 @@ This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which 
 
 Applying a Rigid Waist Shift (RWS) to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
 An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
-The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplets knob powering, which induces a waist shift of \(\approx\)\qty{43.5}{\centi\meter}.
-The individual triplet magnets trims are not used for this knob.
+The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which induces a waist shift of \(\approx\)\qty{43.5}{\centi\meter}.
+The definition of the knob is given in \cref{table:rigid_waist_shift_knob}.
 A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.
+
+\begin{table}[!hbt]
+    \centering
+    \begin{tblr}{colspec={ccccc}}
+        \hline
+        \textbf{Circuit}  &  \textbf{Powering \(\Delta\)}   \\
+        \hline
+        KQX.R[IP]         &  \qty{-0.5}{\percent}           \\
+        KQX.L[IP]         &  \qty{0.5}{\percent}            \\
+        \hline
+    \end{tblr}
+    \caption{Definition of one unit of the rigid waist shift knob.}
+    \label{table:rigid_waist_shift_knob}
+\end{table}
 
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and shows how the \(\beta\)-functions at the IP location are modified, using the \num{2022} \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics.
 One can note that the minima of the parabolas (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, because the design optics include a very small waist at IP\num{1} and IP\num{5}.
@@ -236,8 +250,23 @@ One can observe how the symmetry of the optics in the IR is broken thanks to the
 
 \subsubsection*{Optics Impact and Rematching}
 
-Talk about the impact it has on the optics outside the machine, and why it should be rematched.
-Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.
+Predictably, the application of an RWS as described above has a strong impact on the optics across the machine.
+The RWS is also expected to lead to a \numrange[range-phrase = --]{20}{30}~\unit{\percent} increase in \(\beta\)-beating in the machine, depending on the observed plane.
+This can be observed in \cref{figure:rigid_waist_shift_betabeating}.
+
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/}
+%     \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
+%     \label{figure:rigid_waist_shift_betabeating}
+% \end{figure}
+
+
+
+For instance, simulations show .
+
+\todo{Talk about the impact it has on the optics outside the machine, and why it should be rematched.
+Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.}
 
 
 \subsection{Application Concept and Simulations}
@@ -286,7 +315,7 @@ Bleh.
 
 %----------------------------------------------------------------------------------------
 
-\section{Experimental Results from the LHC \num{2022} Commissioning}
+\section{Local Coupling Correction in the LHC \num{2022} Commissioning}
 \label{section:rws_experimental_results}
 
 Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
