@@ -174,7 +174,7 @@ A full definition of the knobs as implemented and used in the LHC can be found i
     \centering
     \begin{tblr}{colspec={ccccc}}
         \hline
-        \textbf{Magnet}                     &  \textbf{K\(_{1S}\) [m\(^{-2}\)]}  \\
+        \textbf{Magnet}                     &  \textbf{\(\Delta\)K\(_{1S}\) [m\(^{-2}\)]}  \\
         \hline
         MQSX.3R[IP] \(\rightarrow K_{1S}\)  &  \num{1E-4}                        \\
         MQSX.3L[IP] \(\rightarrow K_{1S}\)  &  \num{-1E-4}                       \\
@@ -227,8 +227,10 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
     \label{table:rigid_waist_shift_knob}
 \end{table}
 
-\Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and shows how the \(\beta\)-functions at the IP location are modified, using the \num{2022} \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics.
+\Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and shows how the \(\beta\)-functions at the IP location are modified, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
+\todo{say how I did, can cite Carlier paper}
 One can note that the minima of the parabolas (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, because the design optics include a very small waist at IP\num{1} and IP\num{5}.
+
 
 \begin{figure}[!htb]
     \centering
@@ -237,7 +239,7 @@ One can note that the minima of the parabolas (\textcolor{mplblue}{blue} and \te
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
 
-In \cref{figure:rigid_waist_shift_knob_effect_on_betas} is shown how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \num{2022} \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics.
+In \cref{figure:rigid_waist_shift_knob_effect_on_betas} is shown how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
 In this simulation the lattice was sliced to improve the resolution of the data points.
 One can observe how the symmetry of the optics in the IR is broken thanks to the knob (full vs dashed lines).
 
@@ -251,7 +253,7 @@ One can observe how the symmetry of the optics in the IR is broken thanks to the
 \subsubsection*{Optics Impact and Rematching}
 
 Predictably, the application of an RWS as described above has a strong impact on the optics across the machine.
-The RWS is also expected to lead to a \numrange[range-phrase = --]{20}{30}~\unit{\percent} increase in \(\beta\)-beating in the machine, depending on the observed plane.
+The RWS is also expected to lead to a \numrange[range-phrase = --]{20}{30}\unit{\percent} increase in \(\beta\)-beating in the machine, depending on the observed plane.
 This can be observed in \cref{figure:rigid_waist_shift_betabeating}.
 
 % \begin{figure}[!htb]
