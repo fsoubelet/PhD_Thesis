@@ -107,6 +107,8 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
     \label{figure:guess_rdts}
 \end{figure}
 
+\subsubsection*{Segment-by-Segment}
+
 The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
 Firstly, due to unfavorable phase advances in between BPMs in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
 As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
@@ -114,7 +116,7 @@ Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\
 
 As a consequence, the reconstruction of coupling RDTs in close proximity to the IPs is inaccurate.
 \Cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1} shows the amplitude of the coupling RDTs propagated with the SbS technique in the IR\num{1} segment, from measurements taken during the LHC \num{2021} beam tests and \num{2022} commissioning.
-Not only can large error bars can be noticed on the reconstructed data points, but no given case appears to be specifically better than the other while the orange line (\num{2022} commissioning) corresponds to a better correction than the blue one (\num{2021} beam tests).
+Not only can large error bars can be noticed on the reconstructed data points, but no given case appears to be specifically better than the other while the \textcolor{mplorange}{orange} line (\num{2022} commissioning) corresponds to a better correction than the \textcolor{mplblue}{blue} one (\num{2021} beam tests).
 Given the data patterns and the fact that the orange case corresponds to a better correction, it does not appear that the SbS technique gives a good indication of the local coupling at the IP.
 
 \begin{figure}[!htb]
@@ -123,6 +125,11 @@ Given the data patterns and the fact that the orange case corresponds to a bette
     \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam \num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
     \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
 \end{figure}
+
+Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
+Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
+
+\subsubsection*{Combined Coupling Resonance Driving Terms}
 
 A candidate for a better observable that was considered are the \intro{combined coupling RDTs}~\cite{PRAB:Franchi:First_Simultaneous}, or simply Combined RDTs (CRDTs), \(|\hat{F}_{XY}|\) and \(|\hat{F}_{YX}|\).
 These can be expressed from the coupling RDTs, here with a scaling factor, as:
@@ -136,8 +143,9 @@ These can be expressed from the coupling RDTs, here with a scaling factor, as:
 \end{equation}
 where \(2 \mathcal{P} = \sqrt{\abs{2 f_{1010}}^2 - \abs{2 f_{1001}}^2}\) and \(^{\ast}\) denotes the complex conjugate.
 These have the advantage that they can be reconstructed directly from the particle coordinates (\(x,y\)) without the need for momentum reconstruction~\cite{PRAB:Hofer:Coupling_Local_Observables}.
+
 Although the CRDTs seemed to work well in straightforward simulations, they were found to not be useful when it came to applying them to more realistic cases or real measurement data.
-\Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} MD.
+\Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} MD, computed with the OMC team's analysis tools~\cite{CODE:OMC:omc3}.
 During the MD the first investigations were made on local coupling at the IP, and while little data was collected overall due to a dump of beam~\num{1} it provides a good test bed for a new observable candidate.
 Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
@@ -149,20 +157,28 @@ Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 \end{figure}
 
 While the error bars are barely visible compared to the large ones in \cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}, the main observed issue was a lack of reproducibility between different measurements: different measurements done with identical settings give different results.
+Indeed, two identical kicks with nominal optics (\textcolor{mplblue}{blue}) give different values of the CRDTs at inner BPMs, sometimes differing by a factor two; and other measurements conducted in the presence of a constant coupling bump (\textcolor{mplorange}{orange}) also demonstrate no consistency in the computed results.
 For this reason, the CRDTs were not considered further.
 
-Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
-Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
+\subsubsection*{K-Modulation}
 
 The usual technique to get a measurement of \(\beta\)-functions at the IP is k-modulation.
 Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated Machine Development (MD)~\cite{CERN:Persson:Local_Coupling_IP}.
 This prevents the possibility of directly measuring the beam size variation at an IP from local coupling to drive a correction. 
+\newline
 
-To summarize, existing methods allow compensating for the IR's contribution to global coupling but do not provide a reliable way to drive a minimization of coupling at the IP.
-To achieve this goal, two new things are needed: a way to adjust for the coupling at the IP specifically, and a good observable to rely on to drive the correction.
-The former can be achieved with a knob described below, while the latter was achieved with a new optics configuration presented in \cref{section:rigid_waist_shift_for_local_coupling_correction}.
+To summarize, control of local coupling in the LHC IRs is an important goal that should be tackled for Run~\num{3}.
+Coupling corrections determined with the segment-by-segment method allow compensating for the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
+However, existing methods do not provide a reliable way to drive a minimization of coupling at the IP.
+To achieve this goal, two new things are needed:
+\begin{enumerate}
+    \item A way to adjust for the coupling at the IP without affecting the rest of the machine, so as not to temper with the compensation of the IR's contribution to global coupling.
+    \item A reliable way to measure coupling at the IP in order to drive the correction.
+\end{enumerate}
+The former can be achieved with a knob described in \cref{section:colinearity_knob}, while the latter was achieved with a new optics configuration presented in \cref{section:rigid_waist_shift_for_local_coupling_correction}.
 
-\subsubsection*{The Colinearity Knob}
+\section{The Colinearity Knob}
+\label{section:colinearity_knob}
 
 The \intro{colinearity knob} is a powering setting convention for the IR skew quadrupole correctors.
 Originally designed for a flat optics MD~\cite{CERN:Fartoukh:First_LHC_Flat_Optics_High_Intensity}, the knob acts anti-symmetrically on the left and right corrector magnets.
@@ -301,7 +317,7 @@ Making away with the symmetry allows to break the locality of a coupling bump, m
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/waist_shift_leaks_rdts.pdf}
-    \caption{Linear coupling RDTs in the vicinity of IP\num{1} under a coupling bump, with (\textcolor{mplr}{red}) and without (\textcolor{mplb}{blue}) an RWS. The vertical \textcolor{mqsx_green}{green} lines represent the positions of the skew quadrupoles correctors (MQSX.\num{3}[RL]\num{1}) used to implement the coupling bump. A colinearity knob setting of \num{10} and a rigidity waist shift knob setting of \num{1} were used, which results in a \qty{0.5}{\percent} change in the triplet powering knob and a \qty{43.5}{\centi\meter} shift of the beam waists.}
+    \caption{Amplitudes of the linear coupling RDTs in the vicinity of IP\num{1} under a coupling bump, with (\textcolor{mplr}{red}) and without (\textcolor{mplb}{blue}) an RWS. The vertical \textcolor{mqsx_green}{green} lines represent the positions of the skew quadrupoles correctors (MQSX.\num{3}[RL]\num{1}) used to implement the coupling bump. A colinearity knob setting of \num{10} and a rigidity waist shift knob setting of \num{1} were used.}
     \label{figure:rdt_leak}
 \end{figure}
 
