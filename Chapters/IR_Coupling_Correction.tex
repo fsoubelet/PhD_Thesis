@@ -206,6 +206,7 @@ In order to circumvent the issues related to measuring the local coupling at IP,
 This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which changes the machine's optics configuration as presented below.
 
 \subsection{Rigid Waist Shift}
+\label{subsection:rigid_waist_shift}
 
 Applying a Rigid Waist Shift to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
 An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
@@ -241,14 +242,16 @@ One can note that the minima of the parabolas indicating the change of \(\beta\)
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
 
-In \cref{figure:rigid_waist_shift_knob_effect_on_betas} is shown how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
-In this simulation the lattice was sliced to improve the resolution of the data points.
-One can observe how the symmetry of the optics in the IR is broken thanks to the knob (full vs dashed lines).
+In \cref{figure:rigid_waist_shift_knob_effect_on_betas} one can observe how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
+In this simulation the lattice was sliced to improve the resolution of the data points, which explains the smoother lines compared to, for instance, \cref{figure:lhc_ir5_zoomed}.
+One can observe how the symmetry of the optics in the IR is broken when applying the knob (full vs dashed lines).
+Inset zooms are included around the location of the MQSX magnets (\textcolor{mqsx_green}{green} vertical lines), showing how the horizontal and vertical \(\beta\)-functions are modified in the vicinity of the MQSX magnets.
+The purpose of this setup is discussed in \cref{subsection:rws_application_and_simulations}.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
-    \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
+    \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
     \label{figure:rigid_waist_shift_knob_effect_on_betas}
 \end{figure}
 
@@ -283,8 +286,15 @@ This can be observed in \cref{figure:rigid_waist_shift_betabeating}.
 \todo{For instance, simulations show impact on coupling knob effectiveness.}
 \todo{Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.}
 
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
+%     \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
+%     \label{figure:rigid_waist_shift_knob_effect_on_betas}
+% \end{figure}
 
 \subsection{Application Concept and Simulations}
+\label{subsection:rws_application_and_simulations}
 
 Making away with the symmetry allows to break the locality of a coupling bump, making the impact of the IR coupling errors measurable every- where.
 
