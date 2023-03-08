@@ -226,7 +226,7 @@ This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which 
 
 Applying a Rigid Waist Shift to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
 An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
-The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which creates a waist shift of \(\approx\)\qty{43.5}{\centi\meter}.
+The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which creates a waist shift of \(\sim\)\qty{43.5}{\centi\meter} to the left or right of the IP depending on the unit setting of the knob.
 The definition of the knob is given in \cref{table:rigid_waist_shift_knob}.
 A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.
 
@@ -248,15 +248,15 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 These were determined in MAD-X simulations by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine mesh and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
 Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical.
 
-The waist displacement from the design location (\textcolor{mplblue}{blue} line) is almost completely linear with the knob setting.
-One can note that the minima of the parabolas indicating the change of \(\beta\)-functions at the IP (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, which is because the LHC design optics include a very small waist at IP\num{1} and IP\num{5}.
-
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
     \caption{Simulated effect of the designed RWS knob on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP as the waist is displaced, respectively.}
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
+
+The waist displacement from the design location (\textcolor{mplblue}{blue} line) is almost completely linear with the knob setting.
+One can note that the minima of the parabolas indicating the change of \(\beta\)-functions at the IP (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, which is because the LHC design optics include a very small waist at IP\num{1} and IP\num{5}.
 
 In \cref{figure:rigid_waist_shift_knob_effect_on_betas} one can observe how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
 In this simulation the lattice was sliced to improve the resolution of the data points, which explains the smoother lines compared to, for instance, \cref{figure:lhc_ir5_zoomed}.
