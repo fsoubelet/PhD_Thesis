@@ -207,7 +207,7 @@ This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which 
 
 \subsection{Rigid Waist Shift}
 
-Applying a Rigid Waist Shift (RWS) to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
+Applying a Rigid Waist Shift to the beam - meaning all four betatron waists moving simultaneously - allows to break the symmetry of the optics in the IR.
 An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
 The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which induces a waist shift of \(\approx\)\qty{43.5}{\centi\meter}.
 The definition of the knob is given in \cref{table:rigid_waist_shift_knob}.
@@ -230,7 +230,6 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and shows how the \(\beta\)-functions at the IP location are modified, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
 \todo{say how I did, can cite Carlier paper}
 One can note that the minima of the parabolas (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, because the design optics include a very small waist at IP\num{1} and IP\num{5}.
-
 
 \begin{figure}[!htb]
     \centering
@@ -256,19 +255,30 @@ Predictably, the application of an RWS as described above has a strong impact on
 The RWS is also expected to lead to a \numrange[range-phrase = --]{20}{30}\unit{\percent} increase in \(\beta\)-beating in the machine, depending on the observed plane.
 This can be observed in \cref{figure:rigid_waist_shift_betabeating}.
 
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/}
-%     \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios.}
-%     \label{figure:rigid_waist_shift_betabeating}
-% \end{figure}
+\begin{figure}[!hbt]
+    \begin{center}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \begin{center}
+        \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
+        \caption{Beam~\num{1} \(\beta\)-beating.}
+        \label{fig:rws_ir1_b1_bbeating}
+        \end{center}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \begin{center}
+        \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b2_bbeating.pdf}
+        \caption{Beam~\num{2} \(\beta\)-beating.}
+        \label{fig:rws_ir1_b2_bbeating}
+        \end{center}
+    \end{subfigure}
+    \caption{Simulated \(\beta\)-beating induced across the machine in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. \todo{Clean up this figure.}}
+    \label{figure:rigid_waist_shift_betabeating}
+    \end{center}
+\end{figure}
 
-
-
-For instance, simulations show .
-
-\todo{Talk about the impact it has on the optics outside the machine, and why it should be rematched.
-Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.}
+\todo{For instance, simulations show impact on coupling knob effectiveness.}
+\todo{Talk about the design of rematched knobs (refer to \cref{section:optics_rematching_knobs_lsa}) and show the beta-beating in both cases.}
 
 
 \subsection{Application Concept and Simulations}
