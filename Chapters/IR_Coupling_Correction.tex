@@ -122,7 +122,7 @@ Given the data patterns and the fact that the orange case corresponds to a bette
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.9\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
-    \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam \num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
+    \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam~\num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
     \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
 \end{figure}
 
@@ -279,26 +279,33 @@ This can be observed in \cref{figure:rigid_waist_shift_betabeating}, where in si
 The most affected beam and plane depends on the setting of the RWS: in \cref{figure:rigid_waist_shift_betabeating} beam~\num{1} horizontal and beam~\num{2} vertical are most affected, but these would be beam~\num{1} vertical and beam~\num{2} horizontal if the RWS was applied with a setting of \num{-1}.
 Naturally, some strong outliers can be observed in the vicinity of the IP, corresponding to the desired deviation at the IP and in the triplets.
 
-\begin{figure}[!hbt]
-    \begin{center}
-    \begin{subfigure}[b]{0.495\textwidth}
-        \begin{center}
-        \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
-        \caption{Beam~\num{1} \(\beta\)-beating.}
-        \label{fig:rws_ir1_b1_bbeating}
-        \end{center}
-    \end{subfigure}
-    \hfill
-    \begin{subfigure}[b]{0.495\textwidth}
-        \begin{center}
-        \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b2_bbeating.pdf}
-        \caption{Beam~\num{2} \(\beta\)-beating.}
-        \label{fig:rws_ir1_b2_bbeating}
-        \end{center}
-    \end{subfigure}
-    \caption{Simulated \(\beta\)-beating induced across the machine in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. \todo{Clean up this figure.}}
+% \begin{figure}[!hbt]
+%     \begin{center}
+%     \begin{subfigure}[b]{0.495\textwidth}
+%         \begin{center}
+%         \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
+%         \caption{Beam~\num{1} \(\beta\)-beating.}
+%         \label{fig:rws_ir1_b1_bbeating}
+%         \end{center}
+%     \end{subfigure}
+%     \hfill
+%     \begin{subfigure}[b]{0.495\textwidth}
+%         \begin{center}
+%         \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b2_bbeating.pdf}
+%         \caption{Beam~\num{2} \(\beta\)-beating.}
+%         \label{fig:rws_ir1_b2_bbeating}
+%         \end{center}
+%     \end{subfigure}
+%     \caption{Simulated \(\beta\)-beating induced across the machine in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. \todo{Clean up this figure.}}
+%     \label{figure:rigid_waist_shift_betabeating}
+%     \end{center}
+% \end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
+    \caption{Simulated \(\beta\)-beating induced across beam~\num{1} in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. A \numrange{20}{30}\unit{\percent} \(\beta\)-beating is observed through most of the machine, with outliers close to IP\num{1}.}
     \label{figure:rigid_waist_shift_betabeating}
-    \end{center}
 \end{figure}
 
 Such a deviation of the optics has an impact on correction knobs.
@@ -308,14 +315,14 @@ Additionally, the optics deviations will change the impact of any errors probed 
 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
-They were designed with the MAD-X code and a specifically made python package that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
-Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs.
-A full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
+They were designed with the MAD-X code and a specifically developed Python package that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
+Importantly, no involved magnet should see its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
+As the rematching knobs depend on the RWS setting and optics configuration, no definition table is available akin to \cref{table:colinearity_knob,table:rigid_waist_shift_knob}, but a full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
 
 \Cref{figure:rws_rematching_efficiency} shows a comparison of the simulated optics deviation in the beam~\num{1} horizontal plane, induced by the RWS before and after applying the rematching knob, here implemented at IP\num{1}.
-Across the machine the \(\beta\)-beating is brought down to around \qty{5}{\percent} compared to the nominal scenario, except for the vicinity of the IP where the deviation is wanted.
-A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is close to the level of control achieved during normal operation, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
-While only beam~\num{1} horizontal is shown in this figure, results are similar for all planes of beam\num{1} and beam~\num{2}.
+Across the machine the \(\beta\)-beating is brought down to around \(\sim\)\qty{5}{\percent} depending on the beam and plane compared to the nominal scenario, except for the vicinity of the IP where the deviation is wanted.
+A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is close to the level of control achieved during normal operation with all corrections trimmed in, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
+While only beam~\num{1} horizontal is shown in this figure, results are similar for all planes of beam~\num{1} and beam~\num{2}.
 
 \begin{figure}[!htb]
     \centering
