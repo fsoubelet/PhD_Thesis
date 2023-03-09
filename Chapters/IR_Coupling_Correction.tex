@@ -312,14 +312,27 @@ They were designed with the MAD-X code and a specifically made python package th
 Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs.
 A full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
 
-\Cref{figure:rws_rematching_efficiency} shows a comparison of the simulated optics deviation induced by the RWS before and after applying the rematching knob, here implemented at IP\num{1}.
-\todo{Talk more. Say we only show one, but it does good on other planes or beams too}
+\Cref{figure:rws_rematching_efficiency} shows a comparison of the simulated optics deviation in the beam~\num{1} horizontal plane, induced by the RWS before and after applying the rematching knob, here implemented at IP\num{1}.
+Across the machine the \(\beta\)-beating is brought down to around \qty{5}{\percent} compared to the nominal scenario, except for the vicinity of the IP where the deviation is wanted.
+A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is close to the level of control achieved during normal operation, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
+While only beam~\num{1} horizontal is shown in this figure, results are similar for all planes of beam\num{1} and beam~\num{2}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction//rws_ir1_b1_bbeating_rematched.pdf}
+    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating_rematched.pdf}
     \caption{Simulated \(\beta\)-beating induced across the machine in the beam~\num{1} horizontal plane from applying an RWS at IP\num{1}, before (\textcolor{mplblue}{blue}) and after (\textcolor{mplorange}{orange}) applying the optics rematching knob.}
     \label{figure:rws_rematching_efficiency}
+\end{figure}
+
+Near the IP the beating is also lowered by the rematching, but stays high enough to still break the symmetry of the IR.
+\Cref{figure:rws_ir1_rematching_betas} shows the \(\beta\)-functions around IP\num{1} before (full lines) and after (dashed lines) application of the rematching knobs.
+One can observe how the deviation between the two cases is negligible and, importantly, in both cases the symmetry of the IR is broken.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_rematching.pdf}
+    \caption{Simulated \(\beta\)-functions around IP\num{1} when applying an RWS, before (full lines) and after (dashed lines) application of the rematching knobs, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.}
+    \label{figure:rws_ir1_rematching_betas}
 \end{figure}
 
 \subsection{Application Concept and Simulations}
