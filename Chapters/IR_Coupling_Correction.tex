@@ -316,12 +316,15 @@ Additionally, the optics deviations will change the impact of any errors probed 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
 They were designed with the MAD-X code and a specifically developed Python package that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
-Importantly, no involved magnet should see its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
-As the rematching knobs depend on the RWS setting and optics configuration, no definition table is available akin to \cref{table:colinearity_knob,table:rigid_waist_shift_knob}, but a full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
+
+These knobs are obtained from simulations after applying an RWS in a given IR and iterating several matching routines for quantities of interest at different locations in the machine.
+Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
+% As the rematching knobs depend on the RWS setting and optics configuration, no definition table is available akin to \cref{table:colinearity_knob,table:rigid_waist_shift_knob}, but a full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
+A full definition of the rematching knobs for the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} optics of 2022 as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
 
 \Cref{figure:rws_rematching_efficiency} shows a comparison of the simulated optics deviation in the beam~\num{1} horizontal plane, induced by the RWS before and after applying the rematching knob, here implemented at IP\num{1}.
-Across the machine the \(\beta\)-beating is brought down to around \(\sim\)\qty{5}{\percent} depending on the beam and plane compared to the nominal scenario, except for the vicinity of the IP where the deviation is wanted.
-A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is close to the level of control achieved during normal operation with all corrections trimmed in, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
+Across the machine the \(\beta\)-beating is brought down by \(\sim\)\qty{20}{\percent} to around \(\sim\)\qty{5}{\percent} depending on the beam and plane compared to the nominal scenario, except for the vicinity of the IP where the wanted deviation is kept.
+A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is similar to the level of control achieved during normal operation with all corrections trimmed in, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
 While only beam~\num{1} horizontal is shown in this figure, results are similar for all planes of beam~\num{1} and beam~\num{2}.
 
 \begin{figure}[!htb]
@@ -331,9 +334,9 @@ While only beam~\num{1} horizontal is shown in this figure, results are similar 
     \label{figure:rws_rematching_efficiency}
 \end{figure}
 
-Near the IP the beating is also lowered by the rematching, but stays high enough to still break the symmetry of the IR.
+One can notice that near the IP the beating is also lowered by the rematching, but stays high enough to still break the symmetry of the IR.
 \Cref{figure:rws_ir1_rematching_betas} shows the \(\beta\)-functions around IP\num{1} before (full lines) and after (dashed lines) application of the rematching knobs.
-One can observe how the deviation between the two cases is negligible and, importantly, in both cases the symmetry of the IR is broken.
+One can observe how the deviation between the two cases is negligible and, importantly, in both cases the symmetry of the IR is broken compared to, for instance, \cref{figure:lhc_ir5_zoomed}.
 
 \begin{figure}[!htb]
     \centering
