@@ -189,8 +189,6 @@ The former can be achieved with a knob described in \cref{section:colinearity_kn
 
 The \intro{colinearity knob} is a powering setting convention for the IR skew quadrupole correctors, the MQSX magnets.
 Originally designed for a flat optics MD~\cite{CERN:Fartoukh:First_LHC_Flat_Optics_High_Intensity}, the knob acts anti-symmetrically on the left and right corrector magnets.
-
-Since for round optics in the LHC the \(\beta\)-functions are by design identical at the correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and given the \(\sim\)~\qty{180}{\degree} phase advance between the two magnets, assuming a good \(\beta\)-beating correction the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
 The definition of the knob is given in \cref{table:colinearity_knob}.
 A full definition of the knobs as implemented and used in the LHC can be found in \cref{section:colinearity_knobs_lsa}.
 
@@ -208,18 +206,44 @@ A full definition of the knobs as implemented and used in the LHC can be found i
     \label{table:colinearity_knob}
 \end{table}
 
+In the case of only skew quadrupolar coupling sources \cref{equation:deltaqmin_guignard} becomes a summation over the individual sources and the \(j(s)\) term becomes \(J_w\) - the integrated skew quadrupole strength of the source indexed by \(w\) - in that summation:
+\begin{equation}
+    \begin{aligned}
+        \left| C^{-} \right| &= \left| \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w e^{-i \left( \phi_x-\phi_y \right) + i \frac{s \Delta}{R}} \right| \\
+                             &= \left| \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w e^{i \left( \phi_x-\phi_y \right)} \right| + O(\Delta) .
+    \end{aligned}
+    \label{equation:deltaqmin_guignard_singular}
+\end{equation}
+
+In the case of the MQSX magnets, given the \(\sim\)~\qty{180}{\degree} phase advance between the two correctors, the contribution to the global coupling can be written as:
+\begin{equation}
+    \begin{aligned}
+        \Delta C^{-} &= \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w \\
+                     &= \frac{1}{2 \pi} \left( \sqrt{\beta_x^l \beta_y^l} k_S^l L + \sqrt{\beta_x^r \beta_y^r} k_S^r L \right) ,
+    \end{aligned}
+    \label{equation:deltaqmin_only_mqsxs}
+\end{equation}
+with \(k_S^w L = J_w\) the integrated strength of the skew quadrupole at position \(w\), and \(l\) and \(r\) superscripts denoting the corrector left or right of the IP, respectively.
+
+Since for round optics in the LHC the \(\beta\)-functions are by design identical at the two correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and those have identical lengths, with opposite powering settings as defined in \cref{table:colinearity_knob} and assuming a good \(\beta\)-beating correction this contribution reduces to \num{0}.
+Therefore, the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
 \Cref{figure:colinearity_knob_effect} shows the effect of the colinearity knob at different strengths on the \(f_{1001}\).
-A similar plot can be obtained for the \(f_{1010}\).
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
+    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
     \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling in the machine. The location of the MQSX magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
     \label{figure:colinearity_knob_effect}
 \end{figure}
 
-One can observe that in all cases without global coupling (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} lines) the \(\abs{f_{1001}}\) is exactly \num{0} outside the MQSX to MQSX zone.
+One can observe that in all cases without global coupling (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} lines) the \(\abs{f_{1001}}\) falls down to \num{0} outside the MQSX to MQSX zone.
 When global coupling is present the \(\abs{f_{1001}}\) goes back to its original value outside the limits of the bump.
+A similar plot can be obtained for the \(f_{1010}\).
+
+The trained eye might notice how the amplitude of the RDT does not fall down to exactly \num{0} in the \textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} cases.
+As mentioned above the phase advance between the two magnets if off of exactly \(\pi\) by \qty{1}{\percent}, and similarly the \(\sqrt{\beta_x \beta_y}\) term is not perfectly equal on each side but off by \qty{0.1}{\percent}.
+For all intents and purposes though, these deviations are small enough that the contribution can be considered \num{0}.
+
 Thus, the colinearity knob is an effective tool to introduce a perfectly closed coupling bump in between the MQSXs.
 It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
 
@@ -227,7 +251,7 @@ It can be used to modify the coupling specifically at the IP without changing th
 \label{section:rigid_waist_shift_for_local_coupling_correction}
 
 In order to circumvent the issues related to measuring the local coupling at IP, it then became necessary to find a way to relate it to other measurable quantities.
-This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which changes the machine's optics configuration as presented below.
+This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which changes the machine's optics configuration in the IRs, as presented below.
 
 \subsection{Rigid Waist Shift}
 \label{subsection:rigid_waist_shift}
@@ -254,7 +278,7 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
 These were determined in MAD-X simulations by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine mesh and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
-Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical.
+Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical for the two main experiments.
 
 \begin{figure}[!htb]
     \centering
@@ -355,7 +379,12 @@ One can observe how the deviation between the two cases is negligible and, impor
 \subsection{Application Concept and Simulations}
 \label{subsection:rws_application_and_simulations}
 
-Making away with the symmetry allows to break the locality of a coupling bump, making the impact of the IR coupling errors measurable every- where.
+Making away with the optics symmetry of the IR allows to break the locality of any coupling bump, even truly local.
+
+When applying an RWS, the \(\sqrt{\beta_x \beta_y}\) terms and the phase advances change enough that the contribution to global coupling becomes non-zero.
+\Cref{figure:rdt_leak} shows the coupling RDTs from a closed coupling bump around the IP created through the colinearity knob, both in the presence (\textcolor{mplr}{red}) and absence (\textcolor{mplb}{blue}) of an RWS.
+When applying an RWS and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
+% making the impact of the IR coupling errors measurable everywhere.
 
 \begin{figure}[!htb]
     \centering
@@ -363,6 +392,8 @@ Making away with the symmetry allows to break the locality of a coupling bump, m
     \caption{Amplitudes of the linear coupling RDTs in the vicinity of IP\num{1} under a coupling bump, with (\textcolor{mplr}{red}) and without (\textcolor{mplb}{blue}) an RWS. The vertical \textcolor{mqsx_green}{green} lines represent the positions of the skew quadrupoles correctors (MQSX.\num{3}[RL]\num{1}) used to implement the coupling bump. A colinearity knob setting of \num{10} and a rigidity waist shift knob setting of \num{1} were used.}
     \label{figure:rdt_leak}
 \end{figure}
+
+wergehtryjukyu,.iythrgefwds
 
 \begin{figure}[!htb]
     \centering
