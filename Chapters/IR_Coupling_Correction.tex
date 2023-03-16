@@ -52,7 +52,7 @@ These results highlight the necessity of a proper handling of local coupling for
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
+    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
     \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}% Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the much larger \(\beta\)-functions in the triplet.}
     \label{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}
 \end{figure}
@@ -127,12 +127,13 @@ Given the data patterns and the fact that the orange case corresponds to a bette
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.9\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
+    \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/sbs_coupling_b1_ir1_compare_2021_2022_colin_delta_minus4.pdf}
     \caption{Propagation of the measured \(|f_{1001}|\) and \(|f_{1010}|\) for beam~\num{1} around IP\num{1} (dashed vertical line), measured with two different correction settings. The \num{2022} measurement (\textcolor{mplorange}{orange}) leads to a beam size smaller by \qty{9.2}{\percent} than the \num{2021} one (\textcolor{mplblue}{blue}).}
     \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
 \end{figure}
 
 Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
+Indeed, as both correctors can compensate each other one might find a good compensation of the overall IR contribution to global coupling which also deteriorates the coupling situation at the IP.
 Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
 
 \subsubsection*{Combined Coupling Resonance Driving Terms}
