@@ -21,7 +21,7 @@ In \cref{equation:coupling_rdts_from_skew_quads} the contribution of elements to
 The amplitude of the contribution is dominated by the integrated strength of the magnet \(k L\) as well as the \(\sqrt{\beta_x \beta_y}\) term at the location of the magnet.
 Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component, once can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a massive contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
 
-\Cref{figure:triplet_tilts_to_rdts} shows the coupling RDTs' amplitudes from tilts in triplet quadrupoles, with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} \num{2022} optics.
+\Cref{figure:triplet_tilts_to_rdts} shows the coupling RDTs' amplitudes from tilts in triplet quadrupoles, with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} \num{2022} optics~\cite{CODE:acc-models-lhc}.
 In this MAD-X simulation triplets around IP\num{1} were assigned random tilts within \(\pm\)~\qty{1.5}{\milli\radian}, and these were the only contribution to coupling in the machine.
 Nevertheless, this contribution amounted to a \(\abs{C^{-}}\) of \num{3.84e-2}, too high for machine operation.
 
@@ -150,6 +150,7 @@ These can be expressed from the coupling RDTs, here with a scaling factor, as:
 \end{equation}
 where \(2 \mathcal{P} = \sqrt{\abs{2 f_{1010}}^2 - \abs{2 f_{1001}}^2}\) and \(^{\ast}\) denotes the complex conjugate.
 These have the advantage that they can be reconstructed directly from the particle coordinates (\(x,y\)) without the need for momentum reconstruction~\cite{PRAB:Hofer:Coupling_Local_Observables}.
+\newline
 
 Although the CRDTs seemed to work well in straightforward simulations, they were found to not be useful when it came to applying them to more realistic cases or real measurement data.
 \Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} MD, computed with the OMC team's analysis tools~\cite{CODE:OMC:omc3}.
@@ -224,6 +225,7 @@ In the case of the MQSX magnets, given the \(\sim\)~\qty{180}{\degree} phase adv
     \label{equation:deltaqmin_only_mqsxs}
 \end{equation}
 with \(k_S^w L = J_w\) the integrated strength of the skew quadrupole at position \(w\), and \(l\) and \(r\) superscripts denoting the corrector left or right of the IP, respectively.
+\newline
 
 Since for round optics in the LHC the \(\beta\)-functions are by design identical at the two correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and those have identical lengths, with opposite powering settings as defined in \cref{table:colinearity_knob} and assuming a good \(\beta\)-beating correction this contribution reduces to \num{0}.
 Therefore, the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
@@ -232,7 +234,7 @@ Therefore, the knob induces a closed coupling bump going from corrector to corre
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\columnwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
-    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling in the machine. The location of the MQSX magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
+    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob, in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling in the machine. The locations of the MQSX corrector magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
     \label{figure:colinearity_knob_effect}
 \end{figure}
 
@@ -243,6 +245,7 @@ A similar plot can be obtained for the \(f_{1010}\).
 The trained eye might notice how the amplitude of the RDT does not fall down to exactly \num{0} in the \textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} cases.
 As mentioned above the phase advance between the two magnets if off of exactly \(\pi\) by \qty{1}{\percent}, and similarly the \(\sqrt{\beta_x \beta_y}\) term is not perfectly equal on each side but off by \qty{0.1}{\percent}.
 For all intents and purposes though, these deviations are small enough that the contribution can be considered \num{0}.
+\newline
 
 Thus, the colinearity knob is an effective tool to introduce a perfectly closed coupling bump in between the MQSXs.
 It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
@@ -258,6 +261,7 @@ This is achieved by the application of a \intro{Rigid Waist Shift} (RWS), which 
 
 Applying a Rigid Waist Shift to the beam - meaning all four betatron waists moving simultaneously - allows to break the (anti-)symmetry of the optics in the IR.
 An RWS is achieved by unbalancing the powering strength of the triplet quadrupoles Q\num{1}-Q\num{3} on either side of the IP anti-symmetrically: over-powering one side and under-powering the other by the same powering delta.
+
 The knob is designed so that a setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which creates a waist shift of \(\sim\)\qty{43.5}{\centi\meter} to the left or right of the IP depending on the unit setting of the knob.
 The definition of the knob is given in \cref{table:rigid_waist_shift_knob}.
 A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.
@@ -276,25 +280,25 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
     \label{table:rigid_waist_shift_knob}
 \end{table}
 
-\Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
-These were determined in MAD-X simulations by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine mesh and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
+\Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified.
+These were determined in MAD-X simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
 Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical for the two main experiments.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
-    \caption{Simulated effect of the designed RWS knob on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP as the waist is displaced, respectively.}
+    \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
+    \caption{Simulated effect of the designed Rigid Waist Shift knob as defined in \cref{table:rigid_waist_shift_knob} on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP as the waist is displaced, respectively.}
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
 
 The waist displacement from the design location (\textcolor{mplblue}{blue} line) is almost completely linear with the knob setting.
-One can note that the minima of the parabolas indicating the change of \(\beta\)-functions at the IP (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found exactly at the zero knob setting, which is because the LHC design optics include a very small waist at IP\num{1} and IP\num{5}.
+One can note that the minima of the parabolas indicating the change of \(\beta\)-functions at the IP (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found at exactly the zero knob setting, which is because the LHC design optics include a very small waist at IP\num{1} and IP\num{5}.
 
 In \cref{figure:rigid_waist_shift_knob_effect_on_betas} one can observe how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
 In this simulation the lattice was sliced to improve the resolution of the data points, which explains the smoother lines compared to, for instance, \cref{figure:lhc_ir5_zoomed}.
-One can observe how the symmetry of the optics in the IR is broken when applying the knob (full vs dashed lines).
+One can observe how the (anti-)symmetry of the optics in the IR is broken when applying the knob (full vs dashed lines): the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) \(\beta\)-functions do not mirror each other anymore.
 Inset zooms are included around the location of the MQSX magnets (\textcolor{mqsx_green}{green} vertical lines), showing how the horizontal and vertical \(\beta\)-functions are modified in their vicinity.
-The purpose of this setup is discussed in \cref{subsection:rws_application_and_simulations}.
+The purpose of this setup is detailed in \cref{subsection:rws_application_and_simulations}.
 
 \begin{figure}[!htb]
     \centering
@@ -307,36 +311,15 @@ The purpose of this setup is discussed in \cref{subsection:rws_application_and_s
 
 Predictably, the application of an RWS as described above has a strong impact on the optics across the machine: the significant change of \(\beta\)-functions in the triplets sends a beating wave from the IR to the rest of the machine.
 Applying an RWS with a unit setting of \num{1}, as defined in \cref{table:rigid_waist_shift_knob}, leads to a \numrange[range-phrase = --]{20}{30}\unit{\percent} increase in \(\beta\)-beating in the machine, depending on the observed beam and plane.
+
 This can be observed in \cref{figure:rigid_waist_shift_betabeating}, where in simulations an RWS was implemented with a unit setting of \num{1} at IP\num{1} and the optics deviations from the nominal scenario were determined across the machine for both beams.
 The most affected beam and plane depends on the setting of the RWS: in \cref{figure:rigid_waist_shift_betabeating} beam~\num{1} horizontal and beam~\num{2} vertical are most affected, but these would be beam~\num{1} vertical and beam~\num{2} horizontal if the RWS was applied with a setting of \num{-1}.
 Naturally, some strong outliers can be observed in the vicinity of the IP, corresponding to the desired deviation at the IP and in the triplets.
 
-% \begin{figure}[!hbt]
-%     \begin{center}
-%     \begin{subfigure}[b]{0.495\textwidth}
-%         \begin{center}
-%         \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
-%         \caption{Beam~\num{1} \(\beta\)-beating.}
-%         \label{fig:rws_ir1_b1_bbeating}
-%         \end{center}
-%     \end{subfigure}
-%     \hfill
-%     \begin{subfigure}[b]{0.495\textwidth}
-%         \begin{center}
-%         \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b2_bbeating.pdf}
-%         \caption{Beam~\num{2} \(\beta\)-beating.}
-%         \label{fig:rws_ir1_b2_bbeating}
-%         \end{center}
-%     \end{subfigure}
-%     \caption{Simulated \(\beta\)-beating induced across the machine in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. \todo{Clean up this figure.}}
-%     \label{figure:rigid_waist_shift_betabeating}
-%     \end{center}
-% \end{figure}
-
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating.pdf}
-    \caption{Simulated \(\beta\)-beating induced across beam~\num{1} in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. A \numrange{20}{30}\unit{\percent} \(\beta\)-beating is observed through most of the machine, with outliers close to IP\num{1}.}
+    \caption{Simulated \(\beta\)-beating induced across beam~\num{1} in both the horizontal (\textcolor{mplblue}{blue}) and vertical (\textcolor{mplorange}{orange}) planes, from applying an RWS as defined in \cref{table:rigid_waist_shift_knob} at IP\num{1}. A \numrange{20}{30}\unit{\percent} \(\beta\)-beating is observed through most of the machine, with (wanted) outliers close to IP\num{1}.}
     \label{figure:rigid_waist_shift_betabeating}
 \end{figure}
 
@@ -348,19 +331,22 @@ Additionally, the optics deviations will change the impact of any errors probed 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
 They were designed with the MAD-X code and a specifically developed Python package that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
+
 These knobs are obtained from simulations after applying an RWS in a given IR and iterating several matching routines for quantities of interest at different locations in the machine.
 Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
-% As the rematching knobs depend on the RWS setting and optics configuration, no definition table is available akin to \cref{table:colinearity_knob,table:rigid_waist_shift_knob}, but a full definition of the rematching knobs as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
+As the rematching knobs depend on the RWS setting and optics configuration, many variations are possible and no general definition table is available akin to \cref{table:colinearity_knob,table:rigid_waist_shift_knob}.
 A full definition of the rematching knobs for the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} optics of 2022 as implemented and used in the LHC can be found in \cref{section:optics_rematching_knobs_lsa}.
 
 \Cref{figure:rws_rematching_efficiency} shows a comparison of the simulated optics deviation in the beam~\num{1} horizontal plane, induced by the RWS before (\textcolor{mplblue}{blue}) and after (\textcolor{mplorange}{orange}) applying the rematching knob, here implemented at IP\num{1}.
 Across the machine the \(\beta\)-beating is brought down by \(\sim\)\qty{20}{\percent} to around \(\sim\)\qty{5}{\percent} depending on the beam and plane compared to the nominal scenario, except for the vicinity of the IP where the wanted deviation is kept.
 A \qty{5}{\percent} \(\beta\)-beating across the machine is an acceptable level as it is similar to the level of control achieved during normal operation with all corrections trimmed in, as can be seen in \cref{figure:virgin_vs_corrected_lhcb2}.
+
 While only beam~\num{1} horizontal is shown in this figure, results are similar for all planes of beam~\num{1} and beam~\num{2}.
+As the rematching depends on the desired configuration (given optics and setting of the RWS) a knob has to be designed for each beam, at each IR and for each RWS setting.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating_rematched.pdf}
+    \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_b1_bbeating_rematched.pdf}
     \caption{Simulated \(\beta\)-beating induced across the machine in the beam~\num{1} horizontal plane from applying an RWS at IP\num{1}, before (\textcolor{mplblue}{blue}) and after (\textcolor{mplorange}{orange}) applying the optics rematching knob.}
     \label{figure:rws_rematching_efficiency}
 \end{figure}
@@ -371,7 +357,7 @@ One can observe how the deviation between the two cases is negligible and, impor
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_rematching.pdf}
+    \includegraphics[width=0.95\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_rematching.pdf}
     \caption{Simulated \(\beta\)-functions around IP\num{1} when applying an RWS, before (full lines) and after (dashed lines) application of the rematching knobs, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.}
     \label{figure:rws_ir1_rematching_betas}
 \end{figure}
