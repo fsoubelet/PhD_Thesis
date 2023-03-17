@@ -459,6 +459,7 @@ It can be observed that settings minimizing the measured \(\abs{C^{-}}\) under a
 In this case, these settings also compensate for the contribution of the other added sources to the global coupling, on top of the local ones.
 Similarly to previous studies a great correlation is observed, and across the parameter space one computes a \num{0.96} Pearson correlation coefficient between the two quantities shown in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 This confirms the link between the measured \(\abs{C^{-}}\) and the quantities of interest at the IP location.
+
 To summarize:
 \begin{itemize}
     \item Thanks to the RWS, local errors can be probed through their forced impact on global coupling.
@@ -467,11 +468,72 @@ To summarize:
 
 \subsection{Determining Corrections}
 
-Blah.
+The corrections which would compensate only the local sources are determined by comparing the measured \(\abs{C^{-}}\) to simulations, such as the orange line in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 
-\subsubsection*{Rigid Waist Shift Procedure}
+In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
+As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated: simulations need to include a model of the global coupling from the measured machine.
+Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
+The relevance of this property will be discussed below.
 
-The correction procedure for local linear coupling is then made of three steps.
+By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
+\Cref{figure:full_scenario_determine_correction} shows the resulting \(\abs{C^{-}}\) values under an RWS during a colinearity knob scan, for one of the simulation scenarios mentioned previously (\cref{figure:full_scenario_colin_correction_dqmin_lebedev}) (\textcolor{mplblue}{blue}), and a similar scenario in which no local coupling sources were implemented in IR\num{1} (\textcolor{mplorange}{orange}).
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
+    \caption{Resulting \(\abs{C^{-}}\) in simulations as done for \cref{figure:full_scenario_colin_correction_dqmin_lebedev}, with (\textcolor{mplblue}{blue}) and without (\textcolor{mplorange}{orange}) local coupling sources in IR\num{1}.}
+    \label{figure:full_scenario_determine_correction}
+\end{figure}
+
+The former represents what would be measured in the machine, including the contribution of local sources.
+The latter represents a simulation to compare such a measurement to, which includes all contributions to global coupling except for the IR local sources.
+The highlighted difference between the two curves is then fully explained by the local sources.
+
+Applying a trim of the colinearity knob setting linearly translates the curves of \cref{figure:full_scenario_determine_correction} horizontally.
+This behavior is valid and verifiable in both simulation and measurements.
+Therefore, one looks to determine a colinearity knob trim that, if applied in the machine, would bring the measurement's \(\abs{C^{-}}\) minimization point to that of the simulation.
+
+As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
+In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
+The value is different from that of the minimization in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} as there global sources are also compensated while this correction aims at compensating only the local sources.
+
+When only considering the local sources used for the results in \cref{figure:full_scenario_determine_correction} and inputting the correction trim suggested, one obtains a good compensation of the beam sizes at IP\num{1}.
+\Cref{figure:full_scenario_correction_efficiency} shows the impact of these local errors and the effect of applying the suggested correction trim.
+The exactitude and effectiveness of the determined correction can be improved by performing more granular scans of the colinearity knob, but the values used are representative of what can be done in measurements.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_correction_efficiency.pdf}
+    \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
+    \label{figure:full_scenario_correction_efficiency}
+\end{figure}
+
+\subsubsection*{Reproducing the Machine's Coupling}
+
+The reproduction of the machine's global coupling in simulations becomes necessary as soon as strong non-IR sources are present.
+This reproduction can be done in different ways.
+In studies, various implementations were tested: random tilts in all quadrupoles, LHC specific knobs~\cite{CERN:Tomas:Optimizing_Global_Coupling_Knobs_LHC}, longitudinal misalignment of sextupoles, field errors in specific magnets or random combinations of the above.
+
+It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under and RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
+This can be seen in \cref{figure:global_coupling_modeling_impact} where the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
+As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
+
+\begin{figure}
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/placeholder.png}
+    \caption{\todo{Resulting simulated \(\left| C^{-} \right|\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point. In all scenarios the achieved \(\left| C^{-} \right|\) before applying the RWS is the same value before (\(10^{-2}\)) and after (\(2 \ 10^{-3}\)) applying a correction routine.}}
+    \label{figure:global_coupling_modeling_impact}
+\end{figure}
+
+\subsection{Rigid Waist Shift Procedure}
+
+To summarize so far, two tools are now available to tackle local coupling correction:
+\begin{itemize}
+    \item The colinearity knob (\cref{table:colinearity_knob}) allows adjusting the coupling at the IP without affecting the rest of the machine, namely previously established corrections.
+    \item The rigid waist shift knob (\cref{table:rigid_waist_shift_knob}) allows probing local errors through the \(\abs{C^{-}}\) (\cref{figure:rdt_leak,figure:knob_to_cminus_with_waist}) and to find a correction setting of the colinearity knob that will minimize the coupling at the IP (\cref{figure:full_scenario_determine_correction,figure:full_scenario_correction_efficiency}).
+\end{itemize}
+
+Using those, the complete correction procedure for local linear coupling is then made of three steps:
 \begin{enumerate}
     \item Firstly, calculating and applying a correction of the IR contribution to global coupling based on RDTs from turn-by-turn measurements, using the SbS technique.
     \item Secondly, breaking the optics symmetry between the right and left-hand side of the IP by applying an RWS, and performing a scan of the colinearity knob.
@@ -482,7 +544,7 @@ These measurements can be performed for each IR and for each beam, and the subse
 
 %----------------------------------------------------------------------------------------
 
-\section{Local Coupling Correction in the LHC \num{2022} Commissioning}
+\section{Local Coupling Correction in the LHC 2022 Commissioning}
 \label{section:rws_experimental_results}
 
 Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
