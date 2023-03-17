@@ -366,12 +366,27 @@ One can observe how the deviation between the two cases is negligible and, impor
 \subsection{Application Concept and Simulations}
 \label{subsection:rws_application_and_simulations}
 
-Making away with the optics symmetry of the IR allows to break the locality of any coupling bump, even truly local.
+Making away with the optics symmetry of the IR allows to break the locality of any coupling bump, even a truly local one.
+As can be seen on the inset zooms of \cref{figure:rigid_waist_shift_knob_effect_on_betas}, with the application of an RWS the \(\beta\)-functions at the MQSX magnets change enough that the \(\sqrt{\beta_x \beta_y}\) term in \cref{equation:deltaqmin_only_mqsxs} are different at the two magnets.
+\Cref{table:sqrt_betas_from_rws} shows the values of these terms with and without an RWS applied.
+Phase advances are also changed, but by a very small amount.
 
-When applying an RWS, the \(\sqrt{\beta_x \beta_y}\) terms and the phase advances change enough that the contribution to global coupling becomes non-zero.
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=2,c=1]{m,c} \textbf{Magnet} & \SetCell[c=2]{c} \textbf{\(\sqrt{\beta_x \beta_y}\) [\unit{\square\meter}]}   \\
+        \cline{2,3}                            &  Without an RWS            &    With an RWS                                   \\
+        \hline
+        MQSX.3L[IP]                            &    \num{5193.084265}       &     \num{5186.603944}                            \\
+        MQSX.3R[IP]                            &    \num{5199.142377}       &     \num{5396.527580}                            \\
+        \hline
+    \end{tblr}
+    \caption{Values of the \(\sqrt{\beta_x \beta_y}\) term in \cref{equation:deltaqmin_only_mqsxs} at the MQSX magnets around IP\num{1} or IP\num{5} without (left) and with (right) the application of an RWS, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.}
+    \label{table:sqrt_betas_from_rws}
+\end{table}
+
 \Cref{figure:rdt_leak} shows the coupling RDTs from a closed coupling bump around the IP created through the colinearity knob, both in the presence (\textcolor{mplr}{red}) and absence (\textcolor{mplb}{blue}) of an RWS.
-When applying an RWS and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
-% making the impact of the IR coupling errors measurable everywhere.
 
 \begin{figure}[!htb]
     \centering
@@ -380,7 +395,9 @@ When applying an RWS and breaking the optics symmetry of the IR, on can observe 
     \label{figure:rdt_leak}
 \end{figure}
 
-wergehtryjukyu,.iythrgefwds
+% As a consequence, from the RWS application the of magnets creating a closed coupling bump contribution to global coupling becomes non-zero.
+When applying an RWS and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
+% making the impact of the IR coupling errors measurable everywhere.
 
 \begin{figure}[!htb]
     \centering
@@ -424,7 +441,6 @@ Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
 
 \begin{table}[!htb]
     \centering
-    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
     \begin{tblr}{colspec={ccc}}
         \hline
         \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
@@ -434,6 +450,7 @@ Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
         \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
         \hline
     \end{tblr}
+    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
     \label{table:rws_lumi_gains}
 \end{table}
 
