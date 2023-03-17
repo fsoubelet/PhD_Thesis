@@ -395,17 +395,26 @@ Phase advances are also changed, but by a very small amount.
     \label{figure:rdt_leak}
 \end{figure}
 
-% As a consequence, from the RWS application the of magnets creating a closed coupling bump contribution to global coupling becomes non-zero.
-When applying an RWS and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
-% making the impact of the IR coupling errors measurable everywhere.
+When applying a Rigid Waist Shift and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
+These RDTs will then have a residual presence in the machine, which can be measured and reconstructed from turn-by-turn data from BPMs with more suitable phase advances.
+As a consequence, under an RWS even a local coupling bump that would normally be invisible to the rest of the machine will have a direct impact on the global coupling, measured as the \(\abs{C^{-}}\).
+
+This can be seen in \cref{figure:knob_to_cminus_with_waist}, where changes in the setting of the colinearity knob now have a strong effect on the \(\abs{C^{-}}\) when an RWS is applied in the machine.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/colin_knob_vs_waist_shift.pdf}
-    \caption{Impact of the colinearity knob on the global \(\abs{C^{-}}\), calculated according to \cref{equation:deltaqmin_from_f1001}, with and without applying an RWS.}
+    \caption{Impact of the colinearity knob on the global \(\abs{C^{-}}\), calculated according to \cref{equation:deltaqmin_from_f1001}, with (\textcolor{mplorange}{orange}) and without (\textcolor{mplblue}{blue}) applying an RWS.}
     \label{figure:knob_to_cminus_with_waist}
 \end{figure}
 
+As previously mentioned, since the bump is not actually perfectly closed the (\textcolor{mplorange}{orange}) line in \cref{figure:knob_to_cminus_with_waist} is not completely flat and reaches up to \(\sim\)~\num{1e-5}, which is well below the measurement accuracy for the \(\abs{C^{-}}\).
+The behavior seen in \cref{figure:knob_to_cminus_with_waist}, though theoretical, has been experimentally tested and confirmed in the machine~\cite{CERN:Persson:Local_Coupling_IP}.
+Importantly, this behavior opens the possibility of using an RWS to probe IR local coupling through the measured global coupling.
+
+
+
+\todo{WRITE FROM HERE.}
 \Cref{figure:cminus_colin_vs_tilt_with_waist} shows the values of the resulting \(\abs{C^{-}}\) across the parameter space when an RWS is applied.
 
 \begin{figure}[!htb]
