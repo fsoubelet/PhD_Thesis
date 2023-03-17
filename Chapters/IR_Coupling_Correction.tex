@@ -470,6 +470,13 @@ To summarize:
 
 The corrections which would compensate only the local sources are determined by comparing the measured \(\abs{C^{-}}\) to simulations, such as the orange line in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
+    \caption{Resulting \(\abs{C^{-}}\) in simulations as done for \cref{figure:full_scenario_colin_correction_dqmin_lebedev}, with (\textcolor{mplblue}{blue}) and without (\textcolor{mplorange}{orange}) local coupling sources in IR\num{1}.}
+    \label{figure:full_scenario_determine_correction}
+\end{figure}
+
 In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
 As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated: simulations need to include a model of the global coupling from the measured machine.
 Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
@@ -477,13 +484,6 @@ The relevance of this property will be discussed below.
 
 By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
 \Cref{figure:full_scenario_determine_correction} shows the resulting \(\abs{C^{-}}\) values under an RWS during a colinearity knob scan, for one of the simulation scenarios mentioned previously (\cref{figure:full_scenario_colin_correction_dqmin_lebedev}) (\textcolor{mplblue}{blue}), and a similar scenario in which no local coupling sources were implemented in IR\num{1} (\textcolor{mplorange}{orange}).
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
-    \caption{Resulting \(\abs{C^{-}}\) in simulations as done for \cref{figure:full_scenario_colin_correction_dqmin_lebedev}, with (\textcolor{mplblue}{blue}) and without (\textcolor{mplorange}{orange}) local coupling sources in IR\num{1}.}
-    \label{figure:full_scenario_determine_correction}
-\end{figure}
 
 The former represents what would be measured in the machine, including the contribution of local sources.
 The latter represents a simulation to compare such a measurement to, which includes all contributions to global coupling except for the IR local sources.
