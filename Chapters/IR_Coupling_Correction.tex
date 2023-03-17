@@ -411,27 +411,30 @@ This can be seen in \cref{figure:knob_to_cminus_with_waist}, where changes in th
 As previously mentioned, since the bump is not actually perfectly closed the (\textcolor{mplorange}{orange}) line in \cref{figure:knob_to_cminus_with_waist} is not completely flat and reaches up to \(\sim\)~\num{1e-5}, which is well below the measurement accuracy for the \(\abs{C^{-}}\).
 The behavior seen in \cref{figure:knob_to_cminus_with_waist}, though theoretical, has been experimentally tested and confirmed in the machine~\cite{CERN:Persson:Local_Coupling_IP}.
 Importantly, this behavior opens the possibility of using an RWS to probe IR local coupling through the measured global coupling.
+\newline
 
-
-
-\todo{WRITE FROM HERE.}
+Simulations have been done to investigate the feasibility of finding local coupling correction settings using an RWS, using the \(\beta^{\ast} = \) \qty{30}{cm} optics of \num{2022}.
+At both IR\num{1} and IR\num{5} a local coupling bump was created by introducing identical tilt errors in triplet quadrupoles Q\num{3} - thus giving a skew quadrupolar component - and the colinearity knob was powered for compensation.
+A full parameter space was explored, both with and without an RWS applied.
 \Cref{figure:cminus_colin_vs_tilt_with_waist} shows the values of the resulting \(\abs{C^{-}}\) across the parameter space when an RWS is applied.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/cminus_colin_tilt_compensation_with_waist.pdf}
+    \includegraphics*[width=0.9\columnwidth]{Figures/IR_Coupling_Correction/cminus_colin_tilt_compensation_with_waist.pdf}
     \caption{Resulting \(\abs{C^{-}}\) (\cref{equation:deltaqmin_from_f1001}) for various combinations of tilt error and colinearity knob settings, when applying an RWS.}
     \label{figure:cminus_colin_vs_tilt_with_waist}
 \end{figure}
 
-\Cref{figure:beam_size_colin_vs_tilt_no_waist} shows the resulting beam size increase as a ratio to the nominal beam size across the same parameter space, highlighting that minimization of the growth is possible though a wrong setting would enhance the phenomenon.
+\Cref{figure:beam_size_colin_vs_tilt_no_waist} shows the resulting beam size increase as a ratio to the nominal beam size across the same parameter space.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\columnwidth]{Figures/IR_Coupling_Correction/ip_beam_size_growth_colin_tilt_compensation_no_waist.pdf}
+    \includegraphics*[width=0.9\columnwidth]{Figures/IR_Coupling_Correction/ip_beam_size_growth_colin_tilt_compensation_no_waist.pdf}
     \caption{Resulting beam size (\cref{equation:lebedev_beam_size}) increase for identical settings of tilt error and colinearity knob settings as \cref{figure:cminus_colin_vs_tilt_with_waist}, but without an RWS.}
     \label{figure:beam_size_colin_vs_tilt_no_waist}
 \end{figure}
+
+highlighting that minimization of the growth is possible though a wrong setting would enhance the phenomenon.
 
 \subsection{Determining Corrections}
 
