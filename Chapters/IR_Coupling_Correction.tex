@@ -511,17 +511,19 @@ The exactitude and effectiveness of the determined correction can be improved by
 The reproduction of the machine's global coupling in simulations becomes necessary as soon as strong non-IR sources are present.
 This reproduction can be done in different ways.
 In studies, various implementations were tested: random tilts in all quadrupoles, LHC specific knobs~\cite{CERN:Tomas:Optimizing_Global_Coupling_Knobs_LHC}, longitudinal misalignment of sextupoles, field errors in specific magnets or random combinations of the above.
+These can be seen in \cref{figure:global_coupling_modeling_impact} where for each scenario the minimization point is highlighted by a vertical dashed line.
 
-It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under and RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
-This can be seen in \cref{figure:global_coupling_modeling_impact} where the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
-As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
-
-\begin{figure}
+\begin{figure}[!hbt]
     \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/placeholder.png}
-    \caption{\todo{Resulting simulated \(\left| C^{-} \right|\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point.}}% In all scenarios the achieved \(\left| C^{-} \right|\) before applying the RWS is the same value before (\(10^{-2}\)) and after (\(2 \ 10^{-3}\)) applying a correction routine.}}
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/global_sources_influence.pdf}
+    \caption{Resulting simulated \(\abs{C^{-}}\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point.}
     \label{figure:global_coupling_modeling_impact}
 \end{figure}
+
+In all investigated scenarios the achieved \(\abs{C^{-}}\) before applying the RWS is the same value before (\(\sim 10^{-2}\)) and after (\(\sim 2 \cdot 10^{-3}\)) applying a correction routine.
+It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under and RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
+One can see in \cref{figure:global_coupling_modeling_impact} how the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
+As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
 
 \subsection{Rigid Waist Shift Procedure}
 
