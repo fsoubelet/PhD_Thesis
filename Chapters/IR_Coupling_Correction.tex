@@ -459,32 +459,30 @@ It can be observed that settings minimizing the measured \(\abs{C^{-}}\) under a
 In this case, these settings also compensate for the contribution of the other added sources to the global coupling, on top of the local ones.
 Similarly to previous studies a great correlation is observed, and across the parameter space one computes a \num{0.96} Pearson correlation coefficient between the two quantities shown in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 This confirms the link between the measured \(\abs{C^{-}}\) and the quantities of interest at the IP location.
-
 To summarize:
 \begin{itemize}
-    \item Thanks to the RWS, local errors can be probed through their forced impact on global coupling.
-    \item Using the correlation properties demonstrated above, one can find settings to minimize the coupling at the IP.
+    \item Thanks to the RWS, truly local errors can be probed through their forced impact on global coupling.
+    \item Using the correlation properties demonstrated above, one can find settings to minimize the coupling and its effects at the IP.
 \end{itemize}
 
 \subsection{Determining Corrections}
 
 The corrections which would compensate only the local sources are determined by comparing the measured \(\abs{C^{-}}\) to simulations, such as the orange line in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 
+In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
+As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated in simulations.
+Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
+The relevance of this property will be discussed below.
+By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
+
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
     \caption{Resulting \(\abs{C^{-}}\) in simulations as done for \cref{figure:full_scenario_colin_correction_dqmin_lebedev}, with (\textcolor{mplblue}{blue}) and without (\textcolor{mplorange}{orange}) local coupling sources in IR\num{1}.}
     \label{figure:full_scenario_determine_correction}
 \end{figure}
 
-In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
-As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated: simulations need to include a model of the global coupling from the measured machine.
-Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
-The relevance of this property will be discussed below.
-
-By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
 \Cref{figure:full_scenario_determine_correction} shows the resulting \(\abs{C^{-}}\) values under an RWS during a colinearity knob scan, for one of the simulation scenarios mentioned previously (\cref{figure:full_scenario_colin_correction_dqmin_lebedev}) (\textcolor{mplblue}{blue}), and a similar scenario in which no local coupling sources were implemented in IR\num{1} (\textcolor{mplorange}{orange}).
-
 The former represents what would be measured in the machine, including the contribution of local sources.
 The latter represents a simulation to compare such a measurement to, which includes all contributions to global coupling except for the IR local sources.
 The highlighted difference between the two curves is then fully explained by the local sources.
@@ -493,6 +491,13 @@ Applying a trim of the colinearity knob setting linearly translates the curves o
 This behavior is valid and verifiable in both simulation and measurements.
 Therefore, one looks to determine a colinearity knob trim that, if applied in the machine, would bring the measurement's \(\abs{C^{-}}\) minimization point to that of the simulation.
 
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/full_scenario_correction_efficiency.pdf}
+    \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
+    \label{figure:full_scenario_correction_efficiency}
+\end{figure}
+
 As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
 In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
 The value is different from that of the minimization in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} as there global sources are also compensated while this correction aims at compensating only the local sources.
@@ -500,13 +505,6 @@ The value is different from that of the minimization in \cref{figure:full_scenar
 When only considering the local sources used for the results in \cref{figure:full_scenario_determine_correction} and inputting the correction trim suggested, one obtains a good compensation of the beam sizes at IP\num{1}.
 \Cref{figure:full_scenario_correction_efficiency} shows the impact of these local errors and the effect of applying the suggested correction trim.
 The exactitude and effectiveness of the determined correction can be improved by performing more granular scans of the colinearity knob, but the values used are representative of what can be done in measurements.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_correction_efficiency.pdf}
-    \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
-    \label{figure:full_scenario_correction_efficiency}
-\end{figure}
 
 \subsubsection*{Reproducing the Machine's Coupling}
 
@@ -520,8 +518,8 @@ As a consequence, in simulations this reproduction was done by including the cou
 
 \begin{figure}
     \centering
-    \includegraphics*[width=\textwidth]{Figures/placeholder.png}
-    \caption{\todo{Resulting simulated \(\left| C^{-} \right|\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point. In all scenarios the achieved \(\left| C^{-} \right|\) before applying the RWS is the same value before (\(10^{-2}\)) and after (\(2 \ 10^{-3}\)) applying a correction routine.}}
+    \includegraphics*[width=0.9\textwidth]{Figures/placeholder.png}
+    \caption{\todo{Resulting simulated \(\left| C^{-} \right|\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point.}}% In all scenarios the achieved \(\left| C^{-} \right|\) before applying the RWS is the same value before (\(10^{-2}\)) and after (\(2 \ 10^{-3}\)) applying a correction routine.}}
     \label{figure:global_coupling_modeling_impact}
 \end{figure}
 
