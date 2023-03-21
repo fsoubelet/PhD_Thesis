@@ -547,7 +547,76 @@ These measurements can be performed for each IR and for each beam, and the subse
 \section{Local Coupling Correction in the LHC 2022 Commissioning}
 \label{section:rws_experimental_results}
 
-Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
+Below are presented experimental results of local coupling correction in the LHC's first year of Run~\num{3}, using the RWS procedure of this chapter.
+One can refer to \Cref{appendix:experimental_knobs} for information on the fills used for experimental measurements.
+
+\subsection{Segment-by-Segment Corrections}
+
+In October \num{2021} a week of beam tests was done in the LHC at injection energy.
+From the measurements at \qty{450}{\giga\electronvolt} a first set of local coupling corrections were calculated for each of the four main IRs using the segment-by-segment technique.
+\Cref{figure:beam_test_sbs_abs_f1001_ip5} shows the segment-by-segment results for the absolute value of the \(f_{1001}\) RDT in IR\num{5}, from the \num{12}\({}^\mathrm{th}\) BPM left to right of IP\num{5}.
+The vertical gray line indicates the location of the IP in the segment.
+Due to the skew quadrupole correctors in the IRs being single aperture magnets, one needs to find a single powering setting that works for both beams and both are shown on the figure.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/beamtest_sbs_abs_f1001_ip5.pdf}
+    \caption{Propagation of the measured \(\abs{f_{1001}}\) around IP\num{5} (dashed gray line) and of the reconstructed values from the determined correction, measured at \qty{450}{\giga\electronvolt} and \(\beta^{*}=\) \qty{11}{\meter}.}
+    \label{figure:beam_test_sbs_abs_f1001_ip5}
+\end{figure}
+
+One can see that the determined correction in IR\num{5} matches the propagated measurement within the tolerance of the error bars at the edges of the segment.
+This guarantees a good compensation of the IR's contribution to global coupling.
+
+During the LHC Run~\num{3} commissioning, local coupling corrections determined during the previous year's beam test were trimmed in the machine from the start.
+After reaching the \(\beta^{*}=\) \qty{30}{\centi\meter} optics, where the machine is more sensitive to local errors, a noticeable deviation around IP\num{1} was observed and a refinement of the correction was determined, still with the segment-by-segment technique.
+\Cref{figure:commissioning_sbs_real_f1001_ip1,,figure:commissioning_sbs_imag_f1001_ip1} show the effect of the new correction on the real and imaginary parts of the \(f_{1001}\) RDT in the segment, respectively.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/commissioning_sbs_real_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Re f_{1001}\) around IP\num{1} (dashed gray line) and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{figure:commissioning_sbs_real_f1001_ip1}
+\end{figure}
+  
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/commissioning_sbs_imag_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Im f_{1001}\) around IP\num{1} (dashed gray line) and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{figure:commissioning_sbs_imag_f1001_ip1}
+\end{figure}
+
+The beating observed from the old correction was re-matched thanks to a new corrector setting where the IR\num{1} right-hand side corrector's powering was changed by \qty{1e-4}{\per\square\meter}.
+The correction settings determined with the segment-by-segment technique and trimmed in the machine at the four main IRs can be found in \cref{table:sbs_corrections}, as well as their counterpart values from Run~\num{2}.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\( \Delta k \)~[\qty{1e-4}{\per\square\meter}]}              \\
+        \cline{2,3}
+                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022}  \\
+        \hline
+            \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}       \\
+            \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}       \\
+            \hline[dashed]
+            \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}     \\
+            \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}     \\
+            \hline[dashed]
+            \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}       \\
+            \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}       \\
+            \hline[dashed]
+            \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}      \\
+            \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}      \\
+        \hline
+    \end{tblr}
+    \caption{Skew quadrupole correctors' powering at the four main LHC IRs as determined with the segment-by-segment technique, in \num{2022} (right) compared to their values used during Run~\num{2} (left).}
+    \label{table:sbs_corrections}
+\end{table}
+
+\subsection{Rigid Waist Shift }
+
+\subsection{Luminosity Confirmation}
 
 \begin{table}[!htb]
     \centering
@@ -563,6 +632,11 @@ Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
     \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
     \label{table:rws_lumi_gains}
 \end{table}
+
+
+\subsection{Inconclusive Measurements}
+
+\todo{Talk about the negative RWS measurements that turned out trash because they gave non-trustworthy corrections suggestions.}
 
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
