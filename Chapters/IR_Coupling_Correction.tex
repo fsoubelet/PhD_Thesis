@@ -593,21 +593,21 @@ The correction settings determined with the segment-by-segment technique and tri
     \centering
     \begin{tblr}{colspec={ccc}}
         \hline
-        \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\( \Delta k \)~[\qty{1e-4}{\per\square\meter}]}              \\
+        \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}              \\
         \cline{2,3}
-                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022}  \\
+                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
         \hline
-            \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}       \\
-            \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}       \\
+            \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}           \\
+            \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}           \\
             \hline[dashed]
-            \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}     \\
-            \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}     \\
+            \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}         \\
+            \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}         \\
             \hline[dashed]
-            \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}       \\
-            \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}       \\
+            \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}           \\
+            \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}           \\
             \hline[dashed]
-            \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}      \\
-            \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}      \\
+            \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}          \\
+            \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}          \\
         \hline
     \end{tblr}
     \caption{Skew quadrupole correctors' powering at the four main LHC IRs as determined with the segment-by-segment technique, in \num{2022} (right) compared to their values used during Run~\num{2} (left).}
@@ -615,6 +615,13 @@ The correction settings determined with the segment-by-segment technique and tri
 \end{table}
 
 \subsection{Rigid Waist Shift Corrections}
+
+The RWS method was implemented in both IR\num{1} and IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} to determine final correction settings in the form of adjustments from the SbS corrections.
+Relevant fills can be found in \cref{table:run3_fills}.
+
+As a first step, the validity of the experimental setup was verified by trimming the RWS in the machine and then checking the effect of the optics rematching knobs.
+\Cref{figure:ir5_rws_rematching_relative} shows the additional \(\beta\)-beating induced across the machine for beam~\num{1} from applying the RWS in IR\num{5}, before (\textcolor{skyblue}{blue}) and after (\textcolor{scarletred}{red}) the application of the optics re-matching knob.
+The \(\beta\)-functions in these measurements are reconstructed with the OMC codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
 
 \begin{figure}[!thb]
     \centering
