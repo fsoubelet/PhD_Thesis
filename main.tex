@@ -34,79 +34,13 @@ headsepline, % Uncomment to get a line under the header
 % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\usepackage[utf8]{inputenc}  % required for inputting international characters
-\usepackage[T1]{fontenc}  % output font encoding for international characters
-\usepackage{amsmath, amsfonts, amssymb}  % all the good math stuff
-\usepackage{bm}  % bold symbols in math mode
-\usepackage{tikz}  % create and include Tikz figures
-\usepackage[autostyle=true]{csquotes}  % required to generate language-dependent quotes in the bibliography
-\usepackage{caption}     % this and below are used for the
-\usepackage{subcaption}  % subfigures throughout the document
-\usepackage{siunitx}  % good macros for SI units
-% \usepackage{annotate-equations}  % not sure I use this
-\usepackage{tabularray}  % holy grail of tables
-% \usepackage{thumbs}  % add thumbs to the sides of pages
-\usepackage{titlesec}  % to style chapter titles
-\usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % the only good way to do citations and bibliography
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}  % hyperlinks through the document
-\usepackage[xcolor,notion]{knowledge}  % define notions to be linked to inside the document | load after hyperref
-\usepackage[capitalise, nameinlink]{cleveref}  % get smart references across the document | load last!
-% \usepackage{microtype}  % improves the spacing between words and letters, only include in last stages of compilation, takes time!
+\include{Toolkit/packages.tex}
+\include{Toolkit/siunits.tex}  % siunitx settings
+\include{Toolkit/geometry.tex}  % geometry settings
+\include{Toolkit/thesis_info.tex}  % thesis information for this document class
 
-% \usepackage{utopia}  % Use the Palatino font
-% \usepackage{newtxtext,newtxmath}  % Use the TeX Gyre Termes font
-\usepackage{tgheros}  % Use the TeX Gyre Heros font
-\usetikzlibrary{matrix}
-\UseTblrLibrary{amsmath}  % Makes tabularray load amsmath and register better environments
 \setcounter{secnumdepth}{3}
 \addbibresource{Bibliography.bib}
-
-
-%----------------------------------------------------------------------------------------
-%	SIUNITX SETTINGS
-%----------------------------------------------------------------------------------------
-
-\sisetup{
-    exponent-product=\times,      % operator between number and 10^n
-    print-unity-mantissa=false,  % no 1 x 10^3, only 10^3
-    % inter-unit-product=\cdot,
-    % separate-uncertainty,
-    % table-align-uncertainty,
-}
-\DeclareSIUnit\barn{b}  % As barn was remove we need to define it
-
-%----------------------------------------------------------------------------------------
-%	MARGIN SETTINGS
-%----------------------------------------------------------------------------------------
-
-\geometry{
-	paper=a4paper, % Change to letterpaper for US letter
-	inner=2.5cm, % Inner margin
-	outer=2.5cm, % Outer margin
-	bindingoffset=.5cm, % Binding offset
-	top=1.5cm, % Top margin
-	bottom=1.5cm, % Bottom margin
-	% showframe, % Uncomment to show how the type block is set on the page
-}
-
-
-%----------------------------------------------------------------------------------------
-%	THESIS INFORMATION
-%----------------------------------------------------------------------------------------
-
-\thesistitle{Local Interaction Region Coupling Correction for the LHC} % Print with \ttitle
-\supervisor{Prof. Carsten \textsc{Welsch}} % Print with \supname
-\examiner{} % Print with \examname
-\degree{Doctor of Philosophy} % Print with \degreename
-\author{Felix \textsc{Soubelet}} % Print with \authorname
-\addresses{} % Print with \addressname
-\subject{Accelerator Physics} % Print with \subjectname
-\keywords{} % Print with \keywordnames
-\university{\href{https://www.liverpool.ac.uk/}{University of Liverpool}} % Print with \univname
-\department{\href{https://www.liverpool.ac.uk/physical-sciences/}{School of Physical Sciences}} % Print with \deptname
-\group{\href{https://www.liverpool.ac.uk/quasar/}{QUASAR Group}} % Print with \groupname
-\faculty{\href{http://home.cern}{CERN}} % Print with \facname
-
 
 %----------------------------------------------------------------------------------------
 %	START OF DOCUMENT - FRONTMATTER
