@@ -641,7 +641,35 @@ The correction settings determined with the segment-by-segment technique and tri
 
 \section{Relevance to Other Colliders}
 
-\todo{Blah.}
+For any collider the requirement of small \(\beta\)-functions for collisions is a key design parameter, and leads to using a doublet or triplet of quadrupoles to achieve the necessary intense focusing of the beams at the IP.
+On either side of the collision point, in the drift space leading to the first quadrupole the \(\beta\)-functions evolve as:
+
+\begin{equation}
+    \beta(s)=\beta^* + \frac{s^2}{\beta^*}
+    \label{equation:collider_drift_space_beta_function}
+\end{equation}
+where \(\beta^{*}\) is the \(\beta\)-function at the IP and \(s\) denotes the distance from the IP.
+Using \(L^*\) as the length of this drift space, the phase advance from IP point to said quadrupole is:
+
+\begin{equation}
+    \begin{aligned}
+        \mu &= \int_0^{L^*} \frac{1}{\beta(s)} ds \\
+            &= \int_0^{L^*} \frac{\beta^*}{\beta^*{}^2 + s^2} ds \\
+            &= \beta^* \left[\frac{1}{\beta^*} \tan^{-1} \left(\frac{s}{\beta^*} \right) \right]_0^{L^*} \\
+            &= \tan^{-1} \left(\frac{L^*}{\beta^*} \right)
+    \end{aligned}
+    \label{equation:collider_drift_space_phase_advance_derivation}
+\end{equation}
+
+Then, for traditionally \(L^* \gg \beta^*\) one gets:
+
+\begin{equation}
+    \mu \simeq \tan^{-1} \left( \infty \right) \simeq \frac{\pi}{2}
+    \label{equation:collider_drift_space_phase_advance_approximation}
+\end{equation}
+
+As a consequence, for a typical collider layout the phase advance from left to right doublet / triplet quadrupoles is \(\sim \pi\).
+This can be seen in \cref{figure:fccee_phases_to_ip5} for the FCC-ee~\cite{EPJST:Abada:FCCee_Lepton_Collider} V\num{22} lattice for the Z operation mode, which uses an asymmetric doublet of quadrupoles.
 
 \begin{figure}[!htb]
     \centering
@@ -649,6 +677,23 @@ The correction settings determined with the segment-by-segment technique and tri
     \caption{Phase advances relative to IP\num{5} at in the FCC-ee V22 lattice, in the Z operation mode at \qty{45.6}{\giga\electronvolt} and \(\beta^{\ast}=\)~\qty{10}{\centi\meter}.}
     \label{figure:fccee_phases_to_ip5}
 \end{figure}
+
+As a further direct consequence, tilts in said quadrupoles are susceptible to create a coupling bump around the IP.
+This can be seen, again for the FCC-ee V\num{22} lattice, in \cref{figure:fccee_ip5_coupling_bump}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/fccee_ip5_coupling_bump.pdf}
+    \caption{Simulated coupling RDTs from a \qty{1}{\milli\radian} tilt in the first Q\num{1} quadrupoles around IP\num{5}.}
+    \label{figure:fccee_ip5_coupling_bump}
+\end{figure}
+
+Furthermore, SbS limitations encountered in the LHC would also be present: no observation point at the IP, and due to the large \(\beta\)-functions in these quadrupoles the phase advance from element to element close to the IP is very close to \num{0}, making the accurate reconstruction of coupling RDTs difficult (see \cref{subsection:reconstruction_linear_coupling_rdts}).
+These conditions were confirmed in existing and future machines: the High Luminosity LHC and FCC-hh lattices being based on the LHC's, they share the same issues.
+The FCC-ee V\num{22} lattice, as shown above, also exhibits these conditions and can suffer from a close coupling bump from doublet tilts.
+Another existing collider, SuperKEKB, has also encountered non-trivial issues with local coupling in their High Energy Ring~\cite{ICFA:Morita:Optics_Corrections_including_IP_Local_Coupling_at_SuperKEKB}.
+
+For the aforementioned accelerators but also more generally for most circular collider layouts, the presented use of an RWS could provide a useful method to tackle local linear coupling.
 
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
