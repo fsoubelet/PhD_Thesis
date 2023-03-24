@@ -589,50 +589,75 @@ After reaching the \(\beta^{*}=\) \qty{30}{\centi\meter} optics, where the machi
 The beating observed from the old correction was re-matched thanks to a new corrector setting where the IR\num{1} right-hand side corrector's powering was changed by \qty{1e-4}{\per\square\meter}.
 The correction settings determined with the segment-by-segment technique and trimmed in the machine at the four main IRs can be found in \cref{table:sbs_corrections}, as well as their counterpart values from Run~\num{2}.
 
+% \begin{table}[!htb]
+%     \centering
+%     \begin{tblr}{colspec={ccc}}
+%         \hline
+%         \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}              \\
+%         \cline{2,3}
+%                                  &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
+%         \hline
+%             \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}           \\
+%             \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}           \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}         \\
+%             \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}         \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}           \\
+%             \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}           \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}          \\
+%             \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}          \\
+%         \hline
+%     \end{tblr}
+%     \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning (right) and their values as used during the LHC Run~\num{2} (left).}
+%     \label{table:sbs_corrections}
+% \end{table}
+
 \begin{table}[!htb]
     \centering
-    \begin{tblr}{colspec={ccc}}
+    \begin{tblr}{colspec={cccc}}
         \hline
-        \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}              \\
-        \cline{2,3}
-                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}                    \\
+        \cline{3,4}
+                                          &                                        &  \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
         \hline
-            \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}           \\
-            \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}           \\
-            \hline[dashed]
-            \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}         \\
-            \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}         \\
-            \hline[dashed]
-            \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}           \\
-            \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}           \\
-            \hline[dashed]
-            \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}          \\
-            \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}          \\
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{RQXS.3L1}                     &  \num{11}                                                                &     \num{8}           \\
+                                          &  \textbf{RQXS.3R1}                     &  \num{7}                                                                 &     \num{7}           \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR2} &  \textbf{RQXS.3L2}                     &  \num{-14}                                                               &     \num{-14}         \\
+                                          &  \textbf{RQXS.3R2}                     &  \num{-14}                                                               &     \num{-14}         \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{RQXS.3L5}                     &  \num{7}                                                                 &     \num{6}           \\
+                                          &  \textbf{RQXS.3R5}                     &  \num{7}                                                                 &     \num{6}           \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR8} &  \textbf{RQXS.3L8}                     &  \num{-5}                                                                &     \num{-5}          \\
+                                          &  \textbf{RQXS.3R8}                     &  \num{-5}                                                                &     \num{-5}          \\
         \hline
     \end{tblr}
-    \caption{Skew quadrupole correctors' powering at the four main LHC IRs as determined with the segment-by-segment technique, in \num{2022} (right) compared to their values used during Run~\num{2} (left).}
+    \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning (right) and their values as used during the LHC Run~\num{2} (left).}
     \label{table:sbs_corrections}
 \end{table}
 
 \subsection{Rigid Waist Shift Corrections}
 
 The RWS method was implemented in both IR\num{1} and IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} to determine final correction settings in the form of adjustments from the SbS corrections.
-Relevant fills can be found in \cref{table:run3_fills}.
+Relevant fills used for these measurements can be found in \cref{table:run3_fills}.
 
-As a first step, the validity of the experimental setup was verified by trimming the RWS in the machine and then checking the effect of the optics rematching knobs.
-\Cref{figure:ir5_rws_rematching_relative} shows the additional \(\beta\)-beating induced across the machine for beam~\num{1} from applying the RWS in IR\num{5}, before (\textcolor{skyblue}{blue}) and after (\textcolor{scarletred}{red}) the application of the optics re-matching knob.
+As a first step, the validity of the experimental setup was verified by trimming the RWS in the machine and then checking the efficiency of the optics rematching knobs.
+\Cref{figure:ir5_rws_rematching} shows the \(\beta\)-beating across the machine for beam~\num{1} before any knob application (\textcolor{butter}{yellow}), from applying the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after the application of the optics re-matching knob (\textcolor{scarletred}{red}).
+Similar checks were done for both beams and both IRs.
 The \(\beta\)-functions in these measurements are reconstructed with the OMC codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
 
-\begin{figure}[!thb]
+\begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rematching_knob_efficiency_relative.pdf}
-    \caption{The beam~\num{1} additional \(\beta\)-beating observed in the machine from the implementation of the RWS in IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}, using only triplet quadrupoles (\textcolor{skyblue}{blue}) and with the optics re-matching using all quadrupoles in the IR (\textcolor{scarletred}{red}). The highlighted area (\textcolor{mplorange}{orange}) shows where magnetic elements are affected by the knobs.}
-    \label{figure:ir5_rws_rematching_relative}
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rematching_knob_efficiency.pdf}
+    \caption{The beam~\num{1} \(\beta\)-beating observed at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} for the corrected machine (\textcolor{butter}{yellow}), from the implementation of the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after applying the optics re-matching knob (\textcolor{scarletred}{red}). The highlighted area (\textcolor{highlightorange}{orange}) shows where magnetic elements are affected by the knobs.}
+    \label{figure:ir5_rws_rematching}
 \end{figure}
 
-The measured impact is in agreement with what was expected from earlier simulations, leading to a \num{15}-\qty{25}{\percent} additional \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
-% This showcases the great efficiency of the optics re-matching knob.
-Considering the state of the machine at the time of these measurements, where the \(\beta\)-beating was kept at \qty{5}{\percent} thanks to existing corrections, the optics re-matching after the application of the RWS shows good efficiency.
+The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} \textit{additional} \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
+Considering the state of the machine at the time of these measurements, it can be considered that the optics re-matching shows great efficiency.
 Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-functions reconstruction close the IPs is of relatively low quality.
 
 After confirming the validity of the optics knobs, with the waist shift in the machine scans of the colinearity knob (\cref{table:colinearity_knob}) were performed.
@@ -644,10 +669,13 @@ For each measurement the RDTs across the machine are normalized to the base case
 Only then the \(\abs{C^{-}}\) is computed according to \cref{equation:deltaqmin_from_f1001}.
 This way, only the variations due to the changes of the colinearity knob are visualized and compared to simulations.
 In said simulations, the global coupling of the machine is reproduced by introducing the coupling correction knobs implemented in the machine.
+\newline
 
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement} comparisons are shown between scan measurements and simulations for IR\num{1} for beam~\num{1} and beam~\num{2}, then IR\num{5} for beam~\num{1} and beam~\num{2}, respectively.
 The delta between minimization settings, corresponding to the suggested correction adjustment, is highlighted on each plot.
-The relatively low range of values is due to the aforementioned RDTs normalization, and the different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little natural coupling while beam~\num{1} required significantly stronger global coupling corrections, as well as an arc-by-arc correction knob.
+The relatively low range of achieved \(\abs{C^{-}}\) values is due to the aforementioned RDTs normalization.
+The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little global coupling to be corrected while beam~\num{1} required significantly stronger global coupling corrections, as well as an arc-by-arc correction knob.
+As these are reproduced in simulations, this difference of behavior is unsurprising.
 
 \begin{figure}[!htb]
     \centering
@@ -677,7 +705,7 @@ The relatively low range of values is due to the aforementioned RDTs normalizati
     \label{figure:ir5_b2_pos_measurement}
 \end{figure}
 
-In these figures, simulations for beam~\num{2} suggest that the reproduced global coupling has little effect on the procedure, and the colinearity knob scan could almost be used alone to determine the corrections.
+In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement}, simulations for beam~\num{2} suggest that the (small) reproduced global coupling has little effect on the procedure, and the colinearity knob scan could almost be used alone to determine the corrections.
 For beam~\num{1} simulations however the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and these highlight the need to compare the scan measurements to simulations.
 Overall, this comparison is needed in the case that there are significant coupling errors in the arcs.
 It is worth noting that both beams' measurements converge to similar correction suggestions.
