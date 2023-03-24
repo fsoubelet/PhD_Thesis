@@ -706,14 +706,15 @@ As these are reproduced in simulations, this difference of behavior is unsurpris
 \end{figure}
 
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement}, simulations for beam~\num{2} suggest that the (small) reproduced global coupling has little effect on the procedure, and the colinearity knob scan could almost be used alone to determine the corrections.
-For beam~\num{1} simulations however the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and these highlight the need to compare the scan measurements to simulations.
+For beam~\num{1} simulations however the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and this highlights the need to compare the scan measurements to simulations.
 Overall, this comparison is needed in the case that there are significant coupling errors in the arcs.
 It is worth noting that both beams' measurements converge to similar correction suggestions.
 
 \Cref{table:rws_corrections_summary} shows a summary of the suggested correction settings for each beam and IR.
-While slightly different corrections are suggested from independent measurements of beam~\num{1} and beam~\num{2}, it is possible that both values are simultaneously true.
-While most of the error contribution is expected to come from the dual-beam triplet quadrupoles and be common to both beams, errors in double aperture magnets Q\num{4} to Q\num{10} would affect each beam individually.
-Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams.
+While slightly different corrections are suggested from independent scans of beam~\num{1} and beam~\num{2}, it is possible that both values are simultaneously true.
+Indeed, while most of the error contribution is expected to come from the dual-beam triplet quadrupoles and be common to both beams, errors in double aperture magnets Q\num{4} to Q\num{10} would affect each beam individually and force a divergence of the suggested correction adjustments for each beam.
+Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams, which could explain part of the difference.
+As the main contributors the to error are the triplets, it is not unsurprising to obtain similar correction suggestions for both beams.
 
 \begin{table}[!htb]
     \centering
@@ -721,17 +722,16 @@ Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between 
         \hline
         \SetCell[r=2,c=1]{m,c} \textbf{Scan} & \SetCell[c=2]{c} \textbf{Suggested \( \Delta k \)~[\(10^{-4}\)\unit{\meter^{-2}}]} \\
         \cline{2,3}
-                                             &  \textbf{Beam\num{1}}  &  \textbf{Beam\num{2}}  \\
+                                             &  \textbf{Beam~\num{1}}  &  \textbf{Beam~\num{2}}     \\
         \hline
-        \textbf{IR\num{1}}                   &  \num{-3.5}            &  \num{-3}                   \\
+        \textbf{IR1}                         &  \num{-3.5}             &  \num{-3}                   \\
         \hline[dashed]
-        \textbf{IR\num{5}}                   &  \num{-2}              &  \num{-1.5}                 \\
+        \textbf{IR5}                         &  \num{-2}               &  \num{-1.5}                 \\
         \hline
     \end{tblr}$
-    \caption{Correction adjustments suggested by Rigid Waist Shift scans, on top of the existing Segment-by-Segment corrections that were in the machine.}
+    \caption{Correction adjustments suggested from the Rigid Waist Shift scans analysis, on top of the existing segment-by-segment corrections that were in the machine (see \cref{table:sbs_corrections}).}
     \label{table:rws_corrections_summary}
 \end{table}
-
 
 \subsection{Luminosity Confirmation}
 
