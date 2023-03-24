@@ -760,7 +760,7 @@ A great improvement in luminosity can be observed from the trim, with an almost 
 \Cref{figure:corrections_trims_ir5} shows the trim performed at IR\num{5} during the same fill.
 Once again the trim of the colinearity knob is shown in \textcolor{mplblue}{blue} and the recorded luminosity change at the CMS experiment in \textcolor{mplorange}{orange}.
 Similarly to \cref{figure:corrections_trims_ir1}, the light blue area highlights the trim values suggested by the RWS method.
-The outliers observed in the plot are luminosity measurement artifacts and can be safely dismissed.
+The luminosity data outliers observed in the plot are either luminosity measurement artifacts or changes from adjustment to the head-on scheme and can be safely dismissed, as they are located outside the time periods of the trims.
 
 Unfortunately, due to higher priority tasks for the operators at the time, the trim was not completed in a single go to the target value and as a result the luminosity decreased in the time between the different parts of the trim.
 \Cref{figure:corrections_trims_ir5_zoomed} shows a cut view of the data, where the downtime in between the various parts of the trim has been left out (notice the cut in the horizontal axis).
@@ -780,27 +780,28 @@ The overall improvement from the complete trim is estimated from the individual 
     \label{figure:corrections_trims_ir5_zoomed}
 \end{figure}
 
-\Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim.
-It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard} is substantially lower in the triplets for the less squeezed optics.
-It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1}, and the subsequent smaller applied correction recovers less luminosity.
+\Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim, at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
+Overall great improvements are obtained throughout, with the largest gains recorded for IP\num{1}.
+It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard_singular} is substantially lower in the triplets for the less squeezed optics, resulting in a smaller effect of any tilt error.
+It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1} after segment-by-segment corrections, and the subsequent smaller applied correction recovers less luminosity.\\
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                    \\
+        \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}   \\
+        \hline
+        \textbf{ATLAS (IP1)}                       &    \num{9.7}                           &    \num{5.2}                          \\
+        \textbf{CMS (IP1)}                         &    \num{3.5}                           &    \num{1.5}                          \\
+        \hline
+    \end{tblr}
+    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
+    \label{table:rws_lumi_gains}
+\end{table}
+
 The adjustments determined with the RWS have been incorporated into the nominal corrector settings and the LHC now uses the resulting skew quadrupole powerings in normal operation.
-
-% \Cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} gives a summary of the final settings and a comparison to their values in previous years.
-
-% \begin{table}[!htb]
-%     \centering
-%     \begin{tblr}{colspec={ccc}}
-%         \hline
-%         \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
-%         \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
-%         \hline
-%         \textbf{ATLAS (IP\num{1})}                 &    \num{9.7}                           &     \num{5.2}                          \\
-%         \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
-%         \hline
-%     \end{tblr}
-%     \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
-%     \label{table:rws_lumi_gains}
-% \end{table}
+\Cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} gives a summary of the final settings at the two main LHC IRs as well as and a comparison to their values in previous years, as an update of \cref{table:sbs_corrections}.\\
 
 % \begin{table}[!htb]
 %     \centering
@@ -820,6 +821,25 @@ The adjustments determined with the RWS have been incorporated into the nominal 
 %     \caption{Final values of corrections determined with segment-by-segment, compared to the values used in Run~\num{2} and the values after RWS adjustments for both IR\num{1} and IR\num{5}.}
 %     \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
 % \end{table}
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccccc}}
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=3]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}                                              \\
+        \cline{3,4,5}
+                                          &                                        &  \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}    &    \textbf{2022 RWS}  \\
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{RQXS.3L1}                     &  \num{11}                                                                &     \num{8}             &     \num{11.5}        \\
+                                          &  \textbf{RQXS.3R1}                     &  \num{7}                                                                 &     \num{7}             &     \num{3.5}         \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{RQXS.3L5}                     &  \num{7}                                                                 &     \num{6}             &     \num{8}           \\
+                                          &  \textbf{RQXS.3R5}                     &  \num{7}                                                                 &     \num{6}             &     \num{4}           \\
+        \hline[dashed]
+    \end{tblr}
+    \caption{Final values of local IR skew quadrupole correctors powering at the two main LHC experiments, as determined with segment-by-segment (middle), compared to the values used in the LHC Run~\num{2} (left) and the values after RWS adjustments (right).}
+    \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
+\end{table}
 
 \subsection{Comparison to Expectations}
 
