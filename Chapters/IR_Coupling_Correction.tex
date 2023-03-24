@@ -712,9 +712,7 @@ It is worth noting that both beams' measurements converge to similar correction 
 
 \Cref{table:rws_corrections_summary} shows a summary of the suggested correction settings for each beam and IR.
 While slightly different corrections are suggested from independent scans of beam~\num{1} and beam~\num{2}, it is possible that both values are simultaneously true.
-Indeed, while most of the error contribution is expected to come from the dual-beam triplet quadrupoles and be common to both beams, errors in double aperture magnets Q\num{4} to Q\num{10} would affect each beam individually and force a divergence of the suggested correction adjustments for each beam.
-Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams, which could explain part of the difference.
-As the main contributors the to error are the triplets, it is not unsurprising to obtain similar correction suggestions for both beams.
+Indeed, while most of the error contribution is expected to come from the dual-beam triplet quadrupoles and be common to both beams, errors in double aperture magnets Q\num{4} to Q\num{10} would affect each beam individually and force a divergence of the suggested correction adjustments for each beam.\\
 
 \begin{table}[!htb]
     \centering
@@ -733,12 +731,24 @@ As the main contributors the to error are the triplets, it is not unsurprising t
     \label{table:rws_corrections_summary}
 \end{table}
 
+Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams, which could explain part of the difference.
+As the main contributors the to error are the triplets, it is not unsurprising to obtain similar correction suggestions for both beams.
+
 \subsection{Luminosity Confirmation}
 
-The suggested adjustments were applied, and their impact was assessed based on instantaneous luminosity measurements.
-\Cref{figure:corrections_trims} shows the trim performed at IR\num{1} and subsequent measured luminosity changes.
+Later on during the \num{2022} physics run, beam time was allocated to trim in the suggested adjustments from \cref{table:rws_corrections_summary}.
+The impact of the corrections was assessed based on instantaneous luminosity measurements at the time of the trims.
+Time was found to perform measurements of the corrections' efficiencies in each IR at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
+Information on the fills used can be found in \cref{table:md_fills}.
+
+For each measurement, trims around the suggested correction adjustments were also performed in order to look for the best local setting, which might not necessarily have been found by the method.
+Below are shown data from the trims at \(\beta^{\ast} =\)~\qty{30}{\centi\meter} only, while \(\beta^{\ast} =\)~\qty{42}{\centi\meter} results are compiled in a later table.
+\newline
+
+\Cref{figure:corrections_trims_ir1} shows the trim performed at IR\num{1} (\textcolor{mplblue}{blue}) and subsequent measured luminosity changes at the ATLAS experiment (\textcolor{mplorange}{orange}).
+The light blue area highlights the trim values suggested by the RWS method, which vary for beam~\num{1} and beam~\num{2}.
 The instantaneous luminosity signal slightly trails up after the end of the correction adjustment trim as the ATLAS experiment publishes a time-averaged value.
-\todo{Similar trims were done in both IR\num{1} and IR\num{5} at \(\beta^{\ast} = \) \qty{30}{cm} and \(\beta^{\ast} = \) \qty{42}{cm}.}
+A great improvement in luminosity can be observed from the trim, with an almost \qty{10}{\percent} improvement from the adjustment.
 
 \begin{figure}[!htb]
     \centering
@@ -747,12 +757,20 @@ The instantaneous luminosity signal slightly trails up after the end of the corr
     \label{figure:corrections_trims_ir1}
 \end{figure}
 
+\Cref{figure:corrections_trims_ir5} shows the trim performed at IR\num{5} during the same fill, with again the trim in \textcolor{mplblue}{blue} and recorded luminosity change in \textcolor{mplorange}{orange}.
+Similarly to \cref{figure:corrections_trims_ir1}, the light blue area highlights the trim values suggested by the RWS method.
+A good improvement, though not as significant as at IR\num{1}, can be observed from the trim, with an almost overall \qty{4}{\percent} improvement from the adjustment.
+
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5.pdf}
     \caption{Trim of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{5} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
     \label{figure:corrections_trims_ir5}
 \end{figure}
+
+\todo{Mention the weird spikes, they're artifacts.}
+Unfortunately, due to higher priority tasks for the operators the trim was not performed in a single go to the desired value, and as a results the luminosity decrease in the time between the different parts of the trim.
+\Cref{figure:corrections_trims_ir5_zoomed} shows a cut view of the data, where the time in between the various parts of the trim has been hidden (notice the cut in the horizontal axis). 
 
 \begin{figure}[!htb]
     \centering
@@ -761,24 +779,7 @@ The instantaneous luminosity signal slightly trails up after the end of the corr
     \label{figure:corrections_trims_ir5_zoomed}
 \end{figure}
 
-For each measurement, values around the suggested adjustment were also tested in order to look for the best local setting.
 \Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim.
-
-\begin{table}[!htb]
-    \centering
-    \begin{tblr}{colspec={ccc}}
-        \hline
-        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
-        \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
-        \hline
-        \textbf{ATLAS (IP\num{1})}                 &    \num{9.7}                           &     \num{5.2}                          \\
-        \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
-        \hline
-    \end{tblr}
-    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
-    \label{table:rws_lumi_gains}
-\end{table}
-
 \todo{It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard} is substantially lower in the triplets for the less squeezed optics.
 It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1}, and the subsequent smaller applied correction recovers less luminosity.}
 
@@ -786,39 +787,42 @@ It is also expected to notice a lower improvement at the CMS detector based on t
 
 % \Cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} gives a summary of the final settings and a comparison to their values in previous years.
 
-\begin{table}[!htb]
-    \centering
-    \begin{tblr}{colspec={cccc}}
-        \hline
-        \SetCell[r=2,c=1]{m,c} \textbf{Circuit} & \SetCell[c=3]{c} \textbf{\( K_{1\mathrm{S}} \)~[\(10^{-4}\)\unit{\meter^{-2}}]} \\
-        \cline{2,3,4}
-                                                &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}    &    \textbf{2022 RWS}  \\
-        \hline
-        \textbf{RQXS.3L1}                       &    \num{11}                                                                &     \num{8}             &     \num{11.5}        \\
-        \textbf{RQXS.3R1}                       &    \num{7}                                                                 &     \num{7}             &     \num{3.5}         \\
-        \hline[dashed]
-        \textbf{RQXS.3L5}                       &    \num{7}                                                                 &     \num{6}             &     \num{8}           \\
-        \textbf{RQXS.3R5}                       &    \num{7}                                                                 &     \num{6}             &     \num{4}           \\
-        \hline
-    \end{tblr}
-    \caption{Final values of corrections determined with segment-by-segment, compared to the values used in Run~\num{2} and the values after RWS adjustments for both IR\num{1} and IR\num{5}.}
-    \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
-\end{table}
+% \begin{table}[!htb]
+%     \centering
+%     \begin{tblr}{colspec={ccc}}
+%         \hline
+%         \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
+%         \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
+%         \hline
+%         \textbf{ATLAS (IP\num{1})}                 &    \num{9.7}                           &     \num{5.2}                          \\
+%         \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
+%         \hline
+%     \end{tblr}
+%     \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
+%     \label{table:rws_lumi_gains}
+% \end{table}
 
-\begin{table}[!htb]
-    \centering
-    \begin{tblr}{colspec={ccc}}
-        \hline
-        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
-        \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
-        \hline
-        \textbf{ATLAS (IP\num{1})}                 &    \num{9.7}                           &     \num{5.2}                          \\
-        \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
-        \hline
-    \end{tblr}
-    \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
-    \label{table:rws_lumi_gains}
-\end{table}
+% \begin{table}[!htb]
+%     \centering
+%     \begin{tblr}{colspec={cccc}}
+%         \hline
+%         \SetCell[r=2,c=1]{m,c} \textbf{Circuit} & \SetCell[c=3]{c} \textbf{\( K_{1\mathrm{S}} \)~[\(10^{-4}\)\unit{\meter^{-2}}]} \\
+%         \cline{2,3,4}
+%                                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}    &    \textbf{2022 RWS}  \\
+%         \hline
+%         \textbf{RQXS.3L1}                       &    \num{11}                                                                &     \num{8}             &     \num{11.5}        \\
+%         \textbf{RQXS.3R1}                       &    \num{7}                                                                 &     \num{7}             &     \num{3.5}         \\
+%         \hline[dashed]
+%         \textbf{RQXS.3L5}                       &    \num{7}                                                                 &     \num{6}             &     \num{8}           \\
+%         \textbf{RQXS.3R5}                       &    \num{7}                                                                 &     \num{6}             &     \num{4}           \\
+%         \hline
+%     \end{tblr}
+%     \caption{Final values of corrections determined with segment-by-segment, compared to the values used in Run~\num{2} and the values after RWS adjustments for both IR\num{1} and IR\num{5}.}
+%     \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
+% \end{table}
+
+\subsection{Comparison to Expectations}
+
 
 \subsection{Inconclusive Measurements}
 
