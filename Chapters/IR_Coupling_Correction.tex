@@ -757,33 +757,33 @@ A great improvement in luminosity can be observed from the trim, with an almost 
     \label{figure:corrections_trims_ir1}
 \end{figure}
 
-\Cref{figure:corrections_trims_ir5} shows the trim performed at IR\num{5} during the same fill, with again the trim in \textcolor{mplblue}{blue} and recorded luminosity change in \textcolor{mplorange}{orange}.
+\Cref{figure:corrections_trims_ir5} shows the trim performed at IR\num{5} during the same fill.
+Once again the trim of the colinearity knob is shown in \textcolor{mplblue}{blue} and the recorded luminosity change at the CMS experiment in \textcolor{mplorange}{orange}.
 Similarly to \cref{figure:corrections_trims_ir1}, the light blue area highlights the trim values suggested by the RWS method.
-A good improvement, though not as significant as at IR\num{1}, can be observed from the trim, with an almost overall \qty{4}{\percent} improvement from the adjustment.
+The outliers observed in the plot are luminosity measurement artifacts and can be safely dismissed.
+
+Unfortunately, due to higher priority tasks for the operators at the time, the trim was not completed in a single go to the target value and as a result the luminosity decreased in the time between the different parts of the trim.
+\Cref{figure:corrections_trims_ir5_zoomed} shows a cut view of the data, where the downtime in between the various parts of the trim has been left out (notice the cut in the horizontal axis).
+The overall improvement from the complete trim is estimated from the individual observed luminosity improvements of the different parts of the trim, and amount to an almost \qty{4}{\percent} increase from the adjustment.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5.pdf}
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5.pdf}
     \caption{Trim of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{5} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
     \label{figure:corrections_trims_ir5}
 \end{figure}
 
-\todo{Mention the weird spikes, they're artifacts.}
-Unfortunately, due to higher priority tasks for the operators the trim was not performed in a single go to the desired value, and as a results the luminosity decrease in the time between the different parts of the trim.
-\Cref{figure:corrections_trims_ir5_zoomed} shows a cut view of the data, where the time in between the various parts of the trim has been hidden (notice the cut in the horizontal axis). 
-
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5_split.pdf}
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5_split.pdf}
     \caption{Zoomed view of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{5} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
     \label{figure:corrections_trims_ir5_zoomed}
 \end{figure}
 
 \Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim.
-\todo{It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard} is substantially lower in the triplets for the less squeezed optics.
-It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1}, and the subsequent smaller applied correction recovers less luminosity.}
-
-\todo{The adjustments determined with the RWS have been incorporated into the nominal corrector settings and the LHC now uses the resulting skew quadrupole powerings in normal operation.}
+It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard} is substantially lower in the triplets for the less squeezed optics.
+It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1}, and the subsequent smaller applied correction recovers less luminosity.
+The adjustments determined with the RWS have been incorporated into the nominal corrector settings and the LHC now uses the resulting skew quadrupole powerings in normal operation.
 
 % \Cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} gives a summary of the final settings and a comparison to their values in previous years.
 
