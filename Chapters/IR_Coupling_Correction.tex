@@ -841,12 +841,51 @@ The adjustments determined with the RWS have been incorporated into the nominal 
     \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
 \end{table}
 
+\todo{Do we talk about the lumi imbalance between ATLAS and CMS? It was improved to about 3\% after the adjustment according to Tobias pres. in LNO on Aug 17.}
+
 \subsection{Comparison to Expectations}
 
+Simple simulations were performed to compare the observed luminosity improvements to what one would expect from the suspected local errors.
+As the adjustments were determined in terms of unit setting of the colinearity knob, one can consider these an accurate representation of the error that was left - and corrected - in the machine.
+For instance, a correction of \(\Delta_{\mathrm{colin}} = 5\) suggests that the local error in the machine could be reproduced by introducing a \num{-5} trim of the colinearity knob in simulations.
+
+In these simulations, done at \qty{6.8}{\tera\electronvolt} using the \num{2022} optics, the nominal machine setup was reproduced and the suspected errors at either IR\num{1} or IR\num{5} were introduced in the form of a powering of the colinearity knob with the opposite values as those from \cref{table:rws_corrections_summary}.
+Beam sizes were determined (\cref{equation:lebedev_beam_size}) for both beams in each case: with the trim of the colinearity knob, corresponding to the errored case; and without any trim, corresponding to the corrected case.
+From these, instantaneous luminosities were determined according to \cref{equation:luminosity_double_beams}.
+\Cref{figure:expected_vs_observed_lumigains} shows the expected values from simulations as well as the measured values as reported in \cref{table:rws_lumi_gains}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/expected_vs_observed_lumigains.pdf}
+    \caption{The expected (lines) and observed (triangular markers) instantaneous luminosity changes at \qty{6.8}{\tera\electronvolt} for the various optics in the LHC cycle, for IP\num{1} (\textcolor{mplblue}{blue}) and IP\num{5} (\textcolor{mplorange}{orange}). Vertical dashed lines indicate the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter} data points.}
+    \label{figure:expected_vs_observed_lumigains}
+\end{figure}
+
+While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, strong discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.5} between the measurement and prediction is present.
+This discrepancy suggests that - at least around IP\num{1} - the colinearity knob adjustment doesn't tell the full story and some other effects are at play.
+Several reasons - and most likely an interplay of them all - could explain the discrepancy:
+\begin{itemize}
+    \item The luminosity calculation of \cref{equation:luminosity_double_beams} is a simplified model which does not take in consideration effects present in the machine, such as crossing angles.
+    \item Some waist shift may be left in the machine at IP\num{1} from non-perfect corrections, leading to a lower luminosity than may be expected from simulations not including the effect.
+    \item One of the beams may be subject to a strong coupling error in an individually powered magnet in the area such as Q\num{8} which would not be felt by the other beam, meaning the colinearity knob trim is an overall good correction that however degrades one of the beams.
+    \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
+\end{itemize}
+
+\todo{See with Tobias if he has any more clues to justify the IP1 discrepancies.}
 
 \subsection{Inconclusive Measurements}
 
 \todo{Talk about the negative RWS measurements that turned out trash because they gave non-trustworthy corrections suggestions.}
+So far positive settings of RWS, aka as defined in \cref{table:rigid_waist_shift_knob}.
+As explained in \cref{appendix:experimental_knobs} it can be trimmed with a factor 1 but also -1, which requires a different rematching knob etc.
+Measurements were done in both configurations, and the results show above are with a factor 1.
+It so happens that all results from measurements with a factor -1, aka negative rws, led to retarded and un-physical corrections and were ignored.
+Include figures for each measurement.
+
+Cite the issues that we had with the Q6 and not the full trims when doing these measurements.
+Mention that the data from each measurement was looked into and no particular issue was found, we don't know why it was shit.
+
+
 
 \section{Relevance to Other Colliders}
 
