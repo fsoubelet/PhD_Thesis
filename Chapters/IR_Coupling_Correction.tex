@@ -982,7 +982,7 @@ This can be seen, again for the FCC-ee V\num{22} lattice, in \cref{figure:fccee_
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/fccee_ip5_coupling_bump.pdf}
-    \caption{Simulated coupling RDTs from a \qty{1}{\milli\radian} tilt in the first Q\num{1} quadrupoles around IP\num{5}.}
+    \caption{Simulated coupling RDTs from a \qty{1}{\milli\radian} tilt in the first Q\num{1} quadrupoles around the FCC-ee's IP\num{5}.}
     \label{figure:fccee_ip5_coupling_bump}
 \end{figure}
 
@@ -993,45 +993,43 @@ Another existing collider, SuperKEKB, has also encountered non-trivial issues wi
 
 For the aforementioned accelerators but also more generally for most circular collider layouts, the presented use of an RWS could provide a useful method to tackle local linear coupling.
 
+\newpage
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
 
-Mitigation Options in Case of MQSX Failures
-\todo{Uncomment text when I get here, take mostly the structure of the IPAC23 article and project update V. Go deeper in details (see commented out subsections).}
+\todo{Introduce this section + say we did mitigation Options in Case of MQSX Failures.}
 
-% \subsection{Lifetime Considerations of MQSX Elements}
+Magnets lifetime studies done during LS\num{2} have projected that some magnets in the main IRs will reach their radiation dose limit during Run~\num{3}~\cite{Evian21:Cerutti:TripletLifetime}, including the MQSX magnets used for local coupling correction.
+\Cref{table:correctors_peak_dose}, reproduced from~\cite{Evian21:Cerutti:TripletLifetime}, shows the expected total received dose for different magnets in the main IRs, for various scenarios.
+In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
 
-% Explain that there is a real risk that some of our MQSX magnets die, especially the ones in IR1 (ATLAS).
-% In this case, we will need a containment plan, as not only are they used for the but the local corrections they are a part of are a baseline for us to compute higher order terms corrections.
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=3,c=1]{m,c} \textbf{Magnets}    &    \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                    \\
+        \cline{2,3}                                &    With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                       \\
+        \cline{2,3}                                &    After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                            \\
+        \hline
+        \textcolor{red}{\textbf{MCBX1 (IR1)}}      &    \textcolor{red}{\num{8.5} (\num{8.5})}                   &    \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
+        \textcolor{red}{\textbf{MCBX1 (IR5)}}      &    \num{6}                                                  &    \textcolor{red}{\num{7.5}}                                                   \\
+        \textbf{MCBX2 (IR1)}                       &    \num{3.5} (\num{3.5})                                    &    \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
+        \textbf{MCBX2 (IR5)}                       &    \num{2}                                                  &    \num{2.5}                                                                    \\
+        \textcolor{red}{\textbf{MQSX (IR1)}}       &    \textcolor{red}{\num{7.5} (\num{7.5})}                   &    \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
+        \textcolor{red}{\textbf{MQSX (IR5)}}       &    \textcolor{red}{\num{8} (\num{8})}                       &    \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
+        \textbf{MCBX3 (IR1)}                       &    \num{5} (\num{5})                                        &    \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
+        \textbf{MCBX3 (IR5)}                       &    \num{3}                                                  &    \num{3.5}                                                                    \\
+        \hline
+    \end{tblr}
+    \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
+    \label{table:correctors_peak_dose}
+\end{table}
 
-% \Cref{table:correctors_peak_dose} reproduced from slide 23~\cite{Evian21:Cerutti:TripletLifetime}:
+One can notice that the MQSXs at both IR\num{1} and IR\num{5} are expected to surpass their dose limit during Run~\num{3}.
+The study itself highlights that \textit{"assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024."}
 
-% \begin{table}[!htb]
-%     \centering
-%     \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
-%     \begin{tblr}{colspec={ccc}}
-%         \hline
-%         \SetCell[r=3,c=1]{m,c} \textbf{Magnets}             &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                     \\
-%         \cline{2,3}                                         &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                        \\
-%         \cline{2,3}                                         &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                             \\
-%         \hline
-%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{1})}}   &    \textcolor{red}{\num{8.5} (\num{8.5})}                 &     \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
-%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{5})}}   &    \num{6}                                                &     \textcolor{red}{\num{7.5}}                                                   \\
-%         \textbf{MCBX\num{2} (IR\num{1})}                    &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
-%         \textbf{MCBX\num{2} (IR\num{5})}                    &    \num{2}                                                &     \num{2.5}                                                                    \\
-%         \textcolor{red}{\textbf{MQSX (IR\num{1})}}          &    \textcolor{red}{\num{7.5} (\num{7.5})}                 &     \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
-%         \textcolor{red}{\textbf{MQSX (IR\num{5})}}          &    \textcolor{red}{\num{8} (\num{8})}                     &     \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
-%         \textbf{MCBX\num{3} (IR\num{1})}                    &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
-%         \textbf{MCBX\num{3} (IR\num{5})}                    &    \num{3}                                                &     \num{3.5}                                                                    \\
-%         \hline
-%     \end{tblr}
-%     \label{table:correctors_peak_dose}
-% \end{table}
-
-% \todo{Important quote from the end of the presentation:}
-% "Assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four \(\mathrm{MCBX.1}\) and four \MQSX by the end of \num{2024}."
-
-% This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
+It is realistic then to expect failures during Run~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
+It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 
 % \subsection{Tilt of Triplet Elements}
 
