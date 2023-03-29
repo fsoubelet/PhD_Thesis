@@ -936,6 +936,7 @@ For this measurement scan, no mistake was made in the experimental setup and the
 
 Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
 \todo{There is probably a bit more to say here, discuss with Tobias.}
+\newpage
 
 \section{Relevance to Other Colliders}
 
@@ -997,8 +998,6 @@ For the aforementioned accelerators but also more generally for most circular co
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
 
-\todo{Introduce this section + say we did mitigation Options in Case of MQSX Failures.}
-
 Magnets lifetime studies done during LS\num{2} have projected that some magnets in the main IRs will reach their radiation dose limit during Run~\num{3}~\cite{Evian21:Cerutti:TripletLifetime}, including the MQSX magnets used for local coupling correction.
 \Cref{table:correctors_peak_dose}, reproduced from~\cite{Evian21:Cerutti:TripletLifetime}, shows the expected total received dose for different magnets in the main IRs, for various scenarios.
 In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
@@ -1028,29 +1027,81 @@ In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
 One can notice that the MQSXs at both IR\num{1} and IR\num{5} are expected to surpass their dose limit during Run~\num{3}.
 The study itself highlights that \textit{"assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024."}
 
-It is realistic then to expect failures during Run~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
+It is then realistic to expect failures during Run~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
+For this, several containment scenarios were investigated that would try and compensate for a corrector's failure.
+These are presented below.
 
-% \subsection{Tilt of Triplet Elements}
+\subsection{Tilt of Triplet Elements}
 
-% Talk about what we want to do (tilt Q3 or Q2) to induce a skew component + simulation results.
-% Found settings of the Q3 or Q2 that would negate the MQSX one determined in beam test / commissioning.
-% Show some plots, and come up with the tilt values that would be needed to do the compensation.
+A potential solution to mitigate the impact of a corrector failure is to tilt a close triplet quadrupole,introducing a skew component in the element's field and relying on this contribution to perform the correction in place of the skew quadrupole corrector.
 
-% Also show we have a very minimal beta-beating from this.
-% Show we have had a look at different optics (30cm and 1m betastar) and it works for both.
+Studies were made to determine which Q\num{2} or Q\num{3} tilt would be needed to take on the coupling contribution of its closest MQSX, assuming it stops working.
+In each study an error was introduced in the form of the corrector's opposite powering, and a simple parametric scan was made of the introduced tilt angle.
+\Cref{figure:ir1_compensate_left_with_q3} shows the coupling RDT's amplitude at IP\num{1} for various tilts of Q\num{3} on the left of the IP, assuming a failure of the skew quadrupole left of the IP, MQSX.\num{3}L\num{1}.
 
-% \subsubsection*{Operational Constraints}
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/ir1_compensate_left_with_q3.pdf}
+    \caption{The amplitude of the coupling RDTs at IP\num{1} for various tilts of the triplet quadrupole Q\num{3} left of the IP, assuming a failure of the skew quadrupole corrector MQSX.\num{3}L\num{1}.}
+    \label{figure:ir1_compensate_left_with_q3}
+\end{figure}
 
-% The LHC systems are not meant for this, but for vertical alignment of these magnets!
-% System relies on bellows: 2 pieds IP side and 1 pied other side for Q2 for instance.
-% This means that inducing rotation is not only not the design purpose, but also imperfect (on move les 2 pieds pour essayer de mimer une rotation mais c'est pas parfait).
-% Would be very good to have a plot of the assemblies here to show what I mean. Ask MP people? See in the LHC design report?
+Notice the log scale of the vertical axis.
+\Cref{figure:ir5_compensate_right_with_q2} shows the coupling RDT's amplitude at IP\num{5} for various tilts of Q\num{2} on the right of the IP, assuming a failure of the skew quadrupole right of the IP, MQSX.\num{3}L\num{5}.
+On each figure, the location of the tilt setting that would minimize coupling at the IP is highlighted with a vertical line.
 
-% It is considered by MP people to be quite dangerous to do this unless forced to (read an MQSX dies), especially in cold mass, as if we damage the belows then we're in for 1 year of shutdown to repair it.
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/ir5_compensate_right_with_q2.pdf}
+    \caption{The amplitude of the coupling RDTs at IP\num{5} for various tilts of the triplet quadrupole Q\num{2} right of the IP, assuming a failure of the skew quadrupole corrector MQSX.\num{3}R\num{5}.}
+    \label{figure:ir5_compensate_right_with_q2}
+\end{figure}
+
+\Cref{table:compensation_triplet_tilts} shows the determined tilt angles necessary for compensation for each scenario.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={cccc}}
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Failing Magnet} & \SetCell[c=2]{c} Necessary Tilt for Compensation               \\
+        \cline{3,4}
+                                          &                                               &  Q2 Tilt [\unit{\milli\radian}]    &    Q3 Tilt [\unit{\milli\radian}]  \\
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{MQSX.3L1}                            &  \num{-1.65}                       &     \num{2.325}                    \\
+                                          &  \textbf{MQSX.3R1}                            &  \num{0.5}                         &     \num{-0.7}                     \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR2} &  \textbf{MQSX.3L2}                            &  \num{-1.97}                       &     \num{2.85}                     \\
+                                          &  \textbf{MQSX.3R2}                            &  \num{1.97}                        &     \num{-2.85}                    \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{MQSX.3L5}                            &  \num{-1.15}                       &     \num{1.6}                      \\
+                                          &  \textbf{MQSX.3R5}                            &  \num{0.575}                       &     \num{-0.8}                     \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR8} &  \textbf{MQSX.3L8}                            &  \num{-0.725}                       &     \num{1}                       \\
+                                          &  \textbf{MQSX.3R8}                            &  \num{0.725}                        &     \num{-1}                      \\
+        \hline[dashed]
+    \end{tblr}
+    \caption{Necessary tilt angles of either Q\num{2} or Q\num{3} triplet elements to compensate for the loss of the closest skew quadrupole corrector, in IR\num{1} and IR\num{5}.}
+    \label{table:compensation_triplet_tilts}
+\end{table}
+
+The necessary tilts using Q\num{2} or Q\num{3} range between \num{-2} and \qty{2.85}{\milli\radian}, with the most impactful ones at IR\num{1} and IR\num{5} - due to higher \(\beta\)-functions in the triplets - between \num{-1.65} and \qty{2.325}{\milli\radian}.
+It would also be possible to use lower values by tilting both elements simultaneously.
+
+It is worth noting that tilting a triplet quadrupole has a strong impact on the optics due to the high \(\beta\)-functions at the elements.
+For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated by a tilt of the Q\num{3} close to it, an additional \qty{15}{\percent} \(\beta\)-beating would be added through the machine and a whole new set of corrections would need to be determined.
+
+\subsubsection*{Operational Considerations}
+
+Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
+
+Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
+Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
+For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the overall magnet.
+
+Finally, due to the possibility of damaging what is arguably the most important magnet assembly in the machine during the procedure, this solution would only be used as a last resort.
 % Say that for these reasons we decided not to test this concept in the machine, unfortunately.
 
-% Could show plots here (see "Living with Local Coupling" section of my project update V) about the effect on luminosity: what reduction are we looking at 
 
 % \subsection{Warm Skew Quadrupole Replacement}
 
@@ -1059,11 +1110,6 @@ It was therefore necessary to investigate the operational impact of losing one o
 % Show some calculations of how the gradient should be, how long the element should be etc.
 
 % It has considerations such as being imbalanced (asymmetric) with the remaining MQSX, limiting the available aperture etc.
-
-% \subsection{Feed-Down from High Order Correctors}
-
-% Mention here that we consider using sextupolar and octupolar (MCSSX and MCSX) magnets to generate feed-down to coupling.
-% However, these elements are not strong enough to generate the same effect that the MQSX do, so this is not really an option.
 
 % \subsection{Adapting the Optics Squeezing Scheme}
 
