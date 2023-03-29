@@ -459,32 +459,30 @@ It can be observed that settings minimizing the measured \(\abs{C^{-}}\) under a
 In this case, these settings also compensate for the contribution of the other added sources to the global coupling, on top of the local ones.
 Similarly to previous studies a great correlation is observed, and across the parameter space one computes a \num{0.96} Pearson correlation coefficient between the two quantities shown in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 This confirms the link between the measured \(\abs{C^{-}}\) and the quantities of interest at the IP location.
-
 To summarize:
 \begin{itemize}
-    \item Thanks to the RWS, local errors can be probed through their forced impact on global coupling.
-    \item Using the correlation properties demonstrated above, one can find settings to minimize the coupling at the IP.
+    \item Thanks to the RWS, truly local errors can be probed through their forced impact on global coupling.
+    \item Using the correlation properties demonstrated above, one can find settings to minimize the coupling and its effects at the IP.
 \end{itemize}
 
 \subsection{Determining Corrections}
 
 The corrections which would compensate only the local sources are determined by comparing the measured \(\abs{C^{-}}\) to simulations, such as the orange line in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 
+In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
+As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated in simulations.
+Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
+The relevance of this property will be discussed below.
+By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
+
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/full_scenario_determine_correction.pdf}
     \caption{Resulting \(\abs{C^{-}}\) in simulations as done for \cref{figure:full_scenario_colin_correction_dqmin_lebedev}, with (\textcolor{mplblue}{blue}) and without (\textcolor{mplorange}{orange}) local coupling sources in IR\num{1}.}
     \label{figure:full_scenario_determine_correction}
 \end{figure}
 
-In the real machine, some coupling will remain in the arcs due to a non-perfect global correction and non-local SbS corrections.
-As the method probes local errors' impact through the \(\abs{C^{-}}\), it will naturally be sensitive to the global coupling in the machine, which should be replicated: simulations need to include a model of the global coupling from the measured machine.
-Although the overall behavior of simulations remains similar when including this component, an important change from the line seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} is the location of the setting that minimizes the \(\abs{C^{-}}\).
-The relevance of this property will be discussed below.
-
-By comparing measurements from a colinearity knob scan to simulations - where the former includes the impact of local errors, but the latter does not - one can single out the contribution of the local sources to global coupling.
 \Cref{figure:full_scenario_determine_correction} shows the resulting \(\abs{C^{-}}\) values under an RWS during a colinearity knob scan, for one of the simulation scenarios mentioned previously (\cref{figure:full_scenario_colin_correction_dqmin_lebedev}) (\textcolor{mplblue}{blue}), and a similar scenario in which no local coupling sources were implemented in IR\num{1} (\textcolor{mplorange}{orange}).
-
 The former represents what would be measured in the machine, including the contribution of local sources.
 The latter represents a simulation to compare such a measurement to, which includes all contributions to global coupling except for the IR local sources.
 The highlighted difference between the two curves is then fully explained by the local sources.
@@ -492,6 +490,13 @@ The highlighted difference between the two curves is then fully explained by the
 Applying a trim of the colinearity knob setting linearly translates the curves of \cref{figure:full_scenario_determine_correction} horizontally.
 This behavior is valid and verifiable in both simulation and measurements.
 Therefore, one looks to determine a colinearity knob trim that, if applied in the machine, would bring the measurement's \(\abs{C^{-}}\) minimization point to that of the simulation.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/full_scenario_correction_efficiency.pdf}
+    \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
+    \label{figure:full_scenario_correction_efficiency}
+\end{figure}
 
 As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
 In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
@@ -501,29 +506,24 @@ When only considering the local sources used for the results in \cref{figure:ful
 \Cref{figure:full_scenario_correction_efficiency} shows the impact of these local errors and the effect of applying the suggested correction trim.
 The exactitude and effectiveness of the determined correction can be improved by performing more granular scans of the colinearity knob, but the values used are representative of what can be done in measurements.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/full_scenario_correction_efficiency.pdf}
-    \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
-    \label{figure:full_scenario_correction_efficiency}
-\end{figure}
-
 \subsubsection*{Reproducing the Machine's Coupling}
 
 The reproduction of the machine's global coupling in simulations becomes necessary as soon as strong non-IR sources are present.
 This reproduction can be done in different ways.
 In studies, various implementations were tested: random tilts in all quadrupoles, LHC specific knobs~\cite{CERN:Tomas:Optimizing_Global_Coupling_Knobs_LHC}, longitudinal misalignment of sextupoles, field errors in specific magnets or random combinations of the above.
+These can be seen in \cref{figure:global_coupling_modeling_impact} where for each scenario the minimization point is highlighted by a vertical dashed line.
 
-It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under and RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
-This can be seen in \cref{figure:global_coupling_modeling_impact} where the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
-As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
-
-\begin{figure}
+\begin{figure}[!hbt]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/placeholder.png}
-    \caption{\todo{Resulting simulated \(\left| C^{-} \right|\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point. In all scenarios the achieved \(\left| C^{-} \right|\) before applying the RWS is the same value before (\(10^{-2}\)) and after (\(2 \ 10^{-3}\)) applying a correction routine.}}
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/global_sources_influence.pdf}
+    \caption{Resulting simulated \(\abs{C^{-}}\) under an RWS during a scan of the colinearity knob, for various implementations of global coupling in the machine. For each case a vertical dashed line highlights the location of the minimization point.}
     \label{figure:global_coupling_modeling_impact}
 \end{figure}
+
+In all investigated scenarios the achieved \(\abs{C^{-}}\) before applying the RWS is the same value before (\(\sim 10^{-2}\)) and after (\(\sim 2 \cdot 10^{-3}\)) applying a correction routine.
+It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under and RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
+One can see in \cref{figure:global_coupling_modeling_impact} how the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
+As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
 
 \subsection{Rigid Waist Shift Procedure}
 
@@ -547,62 +547,489 @@ These measurements can be performed for each IR and for each beam, and the subse
 \section{Local Coupling Correction in the LHC 2022 Commissioning}
 \label{section:rws_experimental_results}
 
-Can refer to appendix \Cref{appendix:experimental_knobs} for the fills used.
+Below are presented experimental results of local coupling correction in the LHC's first year of Run~\num{3}, using the RWS procedure of this chapter.
+One can refer to \Cref{appendix:experimental_knobs} for information on the fills used for experimental measurements.
+
+\subsection{Segment-by-Segment Corrections}
+\label{subsection:sbs_corrections}
+
+In October \num{2021} a week of beam tests was done in the LHC at injection energy.
+From the measurements at \qty{450}{\giga\electronvolt} a first set of local coupling corrections were calculated for each of the four main IRs using the segment-by-segment technique.
+\Cref{figure:beam_test_sbs_abs_f1001_ip5} shows the segment-by-segment results for the absolute value of the \(f_{1001}\) RDT in IR\num{5}, from the \num{12}\({}^\mathrm{th}\) BPM left to right of IP\num{5}.
+The vertical gray line indicates the location of the IP in the segment.
+Due to the skew quadrupole correctors in the IRs being single aperture magnets, one needs to find a single powering setting that works for both beams and both are shown on the figure.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/beamtest_sbs_abs_f1001_ip5.pdf}
+    \caption{Propagation of the measured \(\abs{f_{1001}}\) around IP\num{5} (dashed gray line) and of the reconstructed values from the determined correction, measured at \qty{450}{\giga\electronvolt} and \(\beta^{*}=\) \qty{11}{\meter}.}
+    \label{figure:beam_test_sbs_abs_f1001_ip5}
+\end{figure}
+
+One can see that the determined correction in IR\num{5} matches the propagated measurement within the tolerance of the error bars at the edges of the segment.
+This guarantees a good compensation of the IR's contribution to global coupling.
+
+During the LHC Run~\num{3} commissioning, local coupling corrections determined during the previous year's beam test were trimmed in the machine from the start.
+After reaching the \(\beta^{*}=\) \qty{30}{\centi\meter} optics, where the machine is more sensitive to local errors, a noticeable deviation around IP\num{1} was observed and a refinement of the correction was determined, still with the segment-by-segment technique.
+\Cref{figure:commissioning_sbs_real_f1001_ip1,,figure:commissioning_sbs_imag_f1001_ip1} show the effect of the new correction on the real and imaginary parts of the \(f_{1001}\) RDT in the segment, respectively.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/commissioning_sbs_real_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Re f_{1001}\) around IP\num{1} (dashed gray line) and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{figure:commissioning_sbs_real_f1001_ip1}
+\end{figure}
+  
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/commissioning_sbs_imag_f1001_ip1.pdf}
+    \caption{Propagation of the measured \(\Im f_{1001}\) around IP\num{1} (dashed gray line) and the reconstructed values from the determined correction, measured at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter}.}
+    \label{figure:commissioning_sbs_imag_f1001_ip1}
+\end{figure}
+
+The beating observed from the old correction was re-matched thanks to a new corrector setting where the IR\num{1} right-hand side corrector's powering was changed by \qty{1e-4}{\per\square\meter}.
+The correction settings determined with the segment-by-segment technique and trimmed in the machine at the four main IRs can be found in \cref{table:sbs_corrections}, as well as their counterpart values from Run~\num{2}.
+
+% \begin{table}[!htb]
+%     \centering
+%     \begin{tblr}{colspec={ccc}}
+%         \hline
+%         \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}              \\
+%         \cline{2,3}
+%                                  &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
+%         \hline
+%             \textbf{RQXS.3L1}    &    \num{11}                                                                &     \num{8}           \\
+%             \textbf{RQXS.3R1}    &    \num{7}                                                                 &     \num{7}           \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L2}    &    \num{-14}                                                               &     \num{-14}         \\
+%             \textbf{RQXS.3R2}    &    \num{-14}                                                               &     \num{-14}         \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L5}    &    \num{7}                                                                 &     \num{6}           \\
+%             \textbf{RQXS.3R5}    &    \num{7}                                                                 &     \num{6}           \\
+%             \hline[dashed]
+%             \textbf{RQXS.3L8}    &    \num{-5}                                                                &     \num{-5}          \\
+%             \textbf{RQXS.3R8}    &    \num{-5}                                                                &     \num{-5}          \\
+%         \hline
+%     \end{tblr}
+%     \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning (right) and their values as used during the LHC Run~\num{2} (left).}
+%     \label{table:sbs_corrections}
+% \end{table}
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={cccc}}
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=2]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}                    \\
+        \cline{3,4}
+                                          &                                        &  \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}  \\
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{RQXS.3L1}                     &  \num{11}                                                                &     \num{8}           \\
+                                          &  \textbf{RQXS.3R1}                     &  \num{7}                                                                 &     \num{7}           \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR2} &  \textbf{RQXS.3L2}                     &  \num{-14}                                                               &     \num{-14}         \\
+                                          &  \textbf{RQXS.3R2}                     &  \num{-14}                                                               &     \num{-14}         \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{RQXS.3L5}                     &  \num{7}                                                                 &     \num{6}           \\
+                                          &  \textbf{RQXS.3R5}                     &  \num{7}                                                                 &     \num{6}           \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR8} &  \textbf{RQXS.3L8}                     &  \num{-5}                                                                &     \num{-5}          \\
+                                          &  \textbf{RQXS.3R8}                     &  \num{-5}                                                                &     \num{-5}          \\
+        \hline
+    \end{tblr}
+    \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning (right) and their values as used during the LHC Run~\num{2} (left).}
+    \label{table:sbs_corrections}
+\end{table}
+
+\subsection{Rigid Waist Shift Corrections}
+\label{subsection:rws_pos_measurements_corrections}
+
+The RWS method was implemented in both IR\num{1} and IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} to determine final correction settings in the form of adjustments from the SbS corrections.
+Relevant fills used for these measurements can be found in \cref{table:run3_fills}.
+
+As a first step, the validity of the experimental setup was verified by trimming the RWS in the machine and then checking the efficiency of the optics rematching knobs.
+\Cref{figure:ir5_rws_rematching} shows the \(\beta\)-beating across the machine for beam~\num{1} before any knob application (\textcolor{butter}{yellow}), from applying the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after the application of the optics re-matching knob (\textcolor{scarletred}{red}).
+Similar checks were done for both beams and both IRs.
+The \(\beta\)-functions in these measurements are reconstructed with the OMC codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rematching_knob_efficiency.pdf}
+    \caption{The beam~\num{1} \(\beta\)-beating observed at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} for the corrected machine (\textcolor{butter}{yellow}), from the implementation of the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after applying the optics re-matching knob (\textcolor{scarletred}{red}). The highlighted area (\textcolor{highlightorange}{orange}) shows where magnetic elements are affected by the knobs.}
+    \label{figure:ir5_rws_rematching}
+\end{figure}
+
+The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} \textit{additional} \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
+Considering the state of the machine at the time of these measurements, it can be considered that the optics re-matching shows great efficiency.
+Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-functions reconstruction close the IPs is of relatively low quality.
+
+After confirming the validity of the optics knobs, with the waist shift in the machine scans of the colinearity knob (\cref{table:colinearity_knob}) were performed.
+At each setting, a few measurements were taken by method of beam excitation, from which the coupling RDTs were computed.
+As the optics are affected - and re-matched - differently for beam~\num{1} and beam~\num{2}, a scan of the colinearity knob is performed for each beam and for each IR.
+Different scans were done with different granularity due to time constraints.
+
+For each measurement the RDTs across the machine are normalized to the base case with the RWS applied, global coupling corrected and no colinearity knob trim.
+Only then the \(\abs{C^{-}}\) is computed according to \cref{equation:deltaqmin_from_f1001}.
+This way, only the variations due to the changes of the colinearity knob are visualized and compared to simulations.
+In said simulations, the global coupling of the machine is reproduced by introducing the coupling correction knobs implemented in the machine.
+\newline
+
+In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement} comparisons are shown between scan measurements and simulations for IR\num{1} for beam~\num{1} and beam~\num{2}, then IR\num{5} for beam~\num{1} and beam~\num{2}, respectively.
+The delta between minimization settings, corresponding to the suggested correction adjustment, is highlighted on each plot.
+The relatively low range of achieved \(\abs{C^{-}}\) values is due to the aforementioned RDTs normalization.
+The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little global coupling to be corrected while beam~\num{1} required significantly stronger global coupling corrections, as well as an arc-by-arc correction knob.
+As these are reproduced in simulations, this difference of behavior is unsurprising.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b1_pos.pdf}
+    \caption{Measurement scan done at IR\num{1} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir1_b1_pos_measurement}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b2_pos.pdf}
+    \caption{Measurement scan done at IR\num{1} for beam \num{2} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir1_b2_pos_measurement}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b1_pos.pdf}
+    \caption{Measurement scan done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir5_b1_pos_measurement}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b2_pos.pdf}
+    \caption{Measurement scan done at IR\num{5} for beam \num{2} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir5_b2_pos_measurement}
+\end{figure}
+
+In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement}, simulations for beam~\num{2} suggest that the (small) reproduced global coupling has little effect on the procedure, and the colinearity knob scan could almost be used alone to determine the corrections.
+For beam~\num{1} simulations however the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and this highlights the need to compare the scan measurements to simulations.
+Overall, this comparison is needed in the case that there are significant coupling errors in the arcs.
+It is worth noting that both beams' measurements converge to similar correction suggestions.
+
+\Cref{table:rws_corrections_summary} shows a summary of the suggested correction settings for each beam and IR.
+While slightly different corrections are suggested from independent scans of beam~\num{1} and beam~\num{2}, it is possible that both values are simultaneously true.
+Indeed, while most of the error contribution is expected to come from the dual-beam triplet quadrupoles and be common to both beams, errors in double aperture magnets Q\num{4} to Q\num{10} would affect each beam individually and force a divergence of the suggested correction adjustments for each beam.\\
+
+\begin{table}[!htb]
+    \centering
+    $\begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=2,c=1]{m,c} \textbf{Scan} & \SetCell[c=2]{c} \textbf{Suggested \( \Delta k \)~[\(10^{-4}\)\unit{\meter^{-2}}]} \\
+        \cline{2,3}
+                                             &  \textbf{Beam~\num{1}}  &  \textbf{Beam~\num{2}}     \\
+        \hline
+        \textbf{IR1}                         &  \num{-3.5}             &  \num{-3}                   \\
+        \hline[dashed]
+        \textbf{IR5}                         &  \num{-2}               &  \num{-1.5}                 \\
+        \hline
+    \end{tblr}$
+    \caption{Correction adjustments suggested from the Rigid Waist Shift scans analysis, on top of the existing segment-by-segment corrections that were in the machine (see \cref{table:sbs_corrections}).}
+    \label{table:rws_corrections_summary}
+\end{table}
+
+Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams, which could explain part of the difference.
+As the main contributors the to error are the triplets, it is not unsurprising to obtain similar correction suggestions for both beams.
+
+\subsection{Luminosity Confirmation}
+\label{subsection:lumi_correction_trims}
+
+Later on during the \num{2022} physics run, beam time was allocated to trim in the suggested adjustments from \cref{table:rws_corrections_summary}.
+The impact of the corrections was assessed based on instantaneous luminosity measurements at the time of the trims.
+Time was found to perform measurements of the corrections' efficiencies in each IR at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
+Information on the fills used can be found in \cref{table:md_fills}.
+
+For each measurement, trims around the suggested correction adjustments were also performed in order to look for the best local setting, which might not necessarily have been found by the method.
+Below are shown data from the trims at \(\beta^{\ast} =\)~\qty{30}{\centi\meter} only, while \(\beta^{\ast} =\)~\qty{42}{\centi\meter} results are compiled in a later table.
+\newline
+
+\Cref{figure:corrections_trims_ir1} shows the trim performed at IR\num{1} (\textcolor{mplblue}{blue}) and subsequent measured luminosity changes at the ATLAS experiment (\textcolor{mplorange}{orange}).
+The light blue area highlights the trim values suggested by the RWS method, which vary for beam~\num{1} and beam~\num{2}.
+The instantaneous luminosity signal slightly trails up after the end of the correction adjustment trim as the ATLAS experiment publishes a time-averaged value.
+A great improvement in luminosity can be observed from the trim, with an almost \qty{10}{\percent} improvement from the adjustment.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir1.pdf}
+    \caption{Trim of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{1} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
+    \label{figure:corrections_trims_ir1}
+\end{figure}
+
+\Cref{figure:corrections_trims_ir5} shows the trim performed at IR\num{5} during the same fill.
+Once again the trim of the colinearity knob is shown in \textcolor{mplblue}{blue} and the recorded luminosity change at the CMS experiment in \textcolor{mplorange}{orange}.
+Similarly to \cref{figure:corrections_trims_ir1}, the light blue area highlights the trim values suggested by the RWS method.
+The luminosity data outliers observed in the plot are either luminosity measurement artifacts or changes from adjustment to the head-on scheme and can be safely dismissed, as they are located outside the time periods of the trims.
+
+Unfortunately, due to higher priority tasks for the operators at the time, the trim was not completed in a single go to the target value and as a result the luminosity decreased in the time between the different parts of the trim.
+\Cref{figure:corrections_trims_ir5_zoomed} shows a cut view of the data, where the downtime in between the various parts of the trim has been left out (notice the cut in the horizontal axis).
+The overall improvement from the complete trim is estimated from the individual observed luminosity improvements of the different parts of the trim, and amount to an almost \qty{4}{\percent} increase from the adjustment.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5.pdf}
+    \caption{Trim of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{5} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
+    \label{figure:corrections_trims_ir5}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.94\textwidth]{Figures/IR_Coupling_Correction/corrections_trim_ir5_split.pdf}
+    \caption{Zoomed view of the colinearity knob setting (\textcolor{mplblue}{blue}) and observed IP\num{5} instantaneous luminosity change (\textcolor{mplorange}{orange}) at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} = \) \qty{30}{cm}. The blue area highlights the trim values suggested by the RWS method, which varies for beam~\num{1} and beam~\num{2}.}
+    \label{figure:corrections_trims_ir5_zoomed}
+\end{figure}
+
+\Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim, at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
+Overall great improvements are obtained throughout, with the largest gains recorded for IP\num{1}.
+It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard_singular} is substantially lower in the triplets for the less squeezed optics, resulting in a smaller effect of any tilt error.
+It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1} after segment-by-segment corrections, and the subsequent smaller applied correction recovers less luminosity.\\
 
 \begin{table}[!htb]
     \centering
     \begin{tblr}{colspec={ccc}}
         \hline
-        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                     \\
-        \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}    \\
+        \SetCell[r=2,c=1]{m,c} \textbf{Experiment} & \SetCell[c=2]{c} \textbf{Luminosity Gain [\unit{\percent}]}                    \\
+        \cline{2,3}                                &    \(\beta^{\ast} = \) \qty{30}{cm}    &    \(\beta^{\ast} = \) \qty{42}{cm}   \\
         \hline
-        \textbf{ATLAS (IP\num{1})}                 &    \num{9.7}                           &     \num{5.2}                          \\
-        \textbf{CMS (IP\num{5})}                   &    \num{3.5}                           &     \num{1.5}                          \\
+        \textbf{ATLAS (IP1)}                       &    \num{9.7}                           &    \num{5.2}                          \\
+        \textbf{CMS (IP1)}                         &    \num{3.5}                           &    \num{1.5}                          \\
         \hline
     \end{tblr}
     \caption{Luminosity gains observed at the main experiments ATLAS and CMS from the method's suggested corrections.}
     \label{table:rws_lumi_gains}
 \end{table}
 
-\section{Operation with Limited Correctors Availability}
-\label{section:limited_correctors_availability}
-
-Mitigation Options in Case of MQSX Failures
-\todo{Uncomment text when I get here, take mostly the structure of the IPAC23 article and project update V. Go deeper in details (see commented out subsections).}
-
-% \subsection{Lifetime Considerations of MQSX Elements}
-
-% Explain that there is a real risk that some of our MQSX magnets die, especially the ones in IR1 (ATLAS).
-% In this case, we will need a containment plan, as not only are they used for the but the local corrections they are a part of are a baseline for us to compute higher order terms corrections.
-
-% \Cref{table:correctors_peak_dose} reproduced from slide 23~\cite{Evian21:Cerutti:TripletLifetime}:
+The adjustments determined with the RWS have been incorporated into the nominal corrector settings and the LHC now uses the resulting skew quadrupole powerings in normal operation.
+\Cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} gives a summary of the final settings at the two main LHC IRs as well as and a comparison to their values in previous years, as an update of \cref{table:sbs_corrections}.\\
 
 % \begin{table}[!htb]
 %     \centering
-%     \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
-%     \begin{tblr}{colspec={ccc}}
+%     \begin{tblr}{colspec={cccc}}
 %         \hline
-%         \SetCell[r=3,c=1]{m,c} \textbf{Magnets}             &  \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                     \\
-%         \cline{2,3}                                         &  With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                        \\
-%         \cline{2,3}                                         &  After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                             \\
+%         \SetCell[r=2,c=1]{m,c} \textbf{Circuit} & \SetCell[c=3]{c} \textbf{\( K_{1\mathrm{S}} \)~[\(10^{-4}\)\unit{\meter^{-2}}]} \\
+%         \cline{2,3,4}
+%                                                 &    \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}    &    \textbf{2022 RWS}  \\
 %         \hline
-%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{1})}}   &    \textcolor{red}{\num{8.5} (\num{8.5})}                 &     \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
-%         \textcolor{red}{\textbf{MCBX\num{1} (IR\num{5})}}   &    \num{6}                                                &     \textcolor{red}{\num{7.5}}                                                   \\
-%         \textbf{MCBX\num{2} (IR\num{1})}                    &    \num{3.5} (\num{3.5})                                  &     \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
-%         \textbf{MCBX\num{2} (IR\num{5})}                    &    \num{2}                                                &     \num{2.5}                                                                    \\
-%         \textcolor{red}{\textbf{MQSX (IR\num{1})}}          &    \textcolor{red}{\num{7.5} (\num{7.5})}                 &     \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
-%         \textcolor{red}{\textbf{MQSX (IR\num{5})}}          &    \textcolor{red}{\num{8} (\num{8})}                     &     \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
-%         \textbf{MCBX\num{3} (IR\num{1})}                    &    \num{5} (\num{5})                                      &     \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
-%         \textbf{MCBX\num{3} (IR\num{5})}                    &    \num{3}                                                &     \num{3.5}                                                                    \\
+%         \textbf{RQXS.3L1}                       &    \num{11}                                                                &     \num{8}             &     \num{11.5}        \\
+%         \textbf{RQXS.3R1}                       &    \num{7}                                                                 &     \num{7}             &     \num{3.5}         \\
+%         \hline[dashed]
+%         \textbf{RQXS.3L5}                       &    \num{7}                                                                 &     \num{6}             &     \num{8}           \\
+%         \textbf{RQXS.3R5}                       &    \num{7}                                                                 &     \num{6}             &     \num{4}           \\
 %         \hline
 %     \end{tblr}
-%     \label{table:correctors_peak_dose}
+%     \caption{Final values of corrections determined with segment-by-segment, compared to the values used in Run~\num{2} and the values after RWS adjustments for both IR\num{1} and IR\num{5}.}
+%     \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
 % \end{table}
 
-% \todo{Important quote from the end of the presentation:}
-% "Assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four \(\mathrm{MCBX.1}\) and four \MQSX by the end of \num{2024}."
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccccc}}
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Circuit} & \SetCell[c=3]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}                                              \\
+        \cline{3,4,5}
+                                          &                                        &  \textbf{2016-2018}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019}    &    \textbf{2022 SbS}    &    \textbf{2022 RWS}  \\
+        \hline
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{RQXS.3L1}                     &  \num{11}                                                                &     \num{8}             &     \num{11.5}        \\
+                                          &  \textbf{RQXS.3R1}                     &  \num{7}                                                                 &     \num{7}             &     \num{3.5}         \\
+        \hline[dashed]
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{RQXS.3L5}                     &  \num{7}                                                                 &     \num{6}             &     \num{8}           \\
+                                          &  \textbf{RQXS.3R5}                     &  \num{7}                                                                 &     \num{6}             &     \num{4}           \\
+        \hline[dashed]
+    \end{tblr}
+    \caption{Final values of local IR skew quadrupole correctors powering at the two main LHC experiments, as determined with segment-by-segment (middle), compared to the values used in the LHC Run~\num{2} (left) and the values after RWS adjustments (right).}
+    \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
+\end{table}
 
-% This means in simple terms that MQSX dying will drastically impact the LHC's operations, and potentially shut the machine down.
+\todo{Do we talk about the lumi imbalance between ATLAS and CMS? It was improved to about 3\% after the adjustment according to Tobias pres. in LNO on Aug 17.}
+
+\subsection{Comparison to Expectations}
+\label{subsection:lumi_vs_expectations}
+
+Simple simulations were performed to compare the observed luminosity improvements to what one would expect from the suspected local errors.
+As the adjustments were determined in terms of unit setting of the colinearity knob, one can consider these an accurate representation of the error that was left - and corrected - in the machine.
+For instance, a correction of \(\Delta_{\mathrm{colin}} = 5\) suggests that the local error in the machine could be reproduced by introducing a \num{-5} trim of the colinearity knob in simulations.
+
+In these simulations, done at \qty{6.8}{\tera\electronvolt} using the \num{2022} optics, the nominal machine setup was reproduced and the suspected errors at either IR\num{1} or IR\num{5} were introduced in the form of a powering of the colinearity knob with the opposite values as those from \cref{table:rws_corrections_summary}.
+Beam sizes were determined (\cref{equation:lebedev_beam_size}) for both beams in each case: with the trim of the colinearity knob, corresponding to the errored case; and without any trim, corresponding to the corrected case.
+From these, instantaneous luminosities were determined according to \cref{equation:luminosity_double_beams}.
+\Cref{figure:expected_vs_observed_lumigains} shows the expected values from simulations as well as the measured values as reported in \cref{table:rws_lumi_gains}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/expected_vs_observed_lumigains.pdf}
+    \caption{The expected (lines) and observed (triangular markers) instantaneous luminosity changes at \qty{6.8}{\tera\electronvolt} for the various optics in the LHC cycle, for IP\num{1} (\textcolor{mplblue}{blue}) and IP\num{5} (\textcolor{mplorange}{orange}). Vertical dashed lines indicate the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter} data points.}
+    \label{figure:expected_vs_observed_lumigains}
+\end{figure}
+
+While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, strong discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.5} between the measurement and prediction is present.
+This discrepancy suggests that - at least around IP\num{1} - the colinearity knob adjustment doesn't tell the full story and some other effects are at play.
+Several reasons - and most likely an interplay of them all - could explain the discrepancy:
+\begin{itemize}
+    \item The luminosity calculation of \cref{equation:luminosity_double_beams} is a simplified model which does not take in consideration effects present in the machine, such as crossing angles.
+    \item Some waist shift may be left in the machine at IP\num{1} from non-perfect corrections, leading to a lower luminosity than may be expected from simulations not including the effect.
+    \item One of the beams may be subject to a strong coupling error in an individually powered magnet in the area such as Q\num{8} which would not be felt by the other beam, meaning the colinearity knob trim is an overall good correction that however degrades one of the beams.
+    \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
+\end{itemize}
+
+\todo{See with Tobias if he has any more clues to justify the IP1 discrepancies.}
+
+\subsection{Inconclusive Measurements}
+\label{subsection:rws_neg_measurements_garbage}
+
+So far, results have been shown from measurements in which the RWS knob was trimmed in as defined in \cref{table:rigid_waist_shift_knob}.
+As mentioned in \cref{appendix:experimental_knobs} and as can be seen in \cref{figure:rigid_waist_shift_knob_effect_on_waist} the knob can be trimmed with an arbitrary factor, shifting the waist of the beams left or right of the IP. 
+Measurements have also been conducted in both IRs with the RWS knobs trimmed in with a factor of \num{-1}, which we will call a \textit{negative RWS}.
+For these, done under time constraints at the end of experimental shifts, some mistakes were made in the experimental setups and the data was deemed inconclusive after analysis.
+Nonetheless, these results are included below.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b1_neg.pdf}
+    \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir1_b1_neg_measurement}
+\end{figure}
+
+\Cref{figure:ir1_b1_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{1} with a negative RWS.
+When preparing for this scan an issue was encountered when trimming in the optics rematching knob.
+As the knob was wrongly designed beforehand, it exceeded the powering limit of the Q\num{6} magnets and thus could only be trimmed in the machine with a factor \num{0.7} as the LHC protection system would not allow higher currents.
+As a consequence a strong \(\beta\)-beating remained in the machine and cast doubts on the measurement data. 
+Additionally, when reproducing this setup in simulations the obtained \(\abs{C^{-}}\) curve exhibits a suspicious behavior far from what would be expected (see \cref{figure:knob_to_cminus_with_waist}) and comparison with measurement data suggests a \textit{very} large error to be corrected: \num{15} units of the colinearity knob.
+This data was discarded when determining corrections.
+
+\Cref{figure:ir1_b2_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{2} with a negative RWS.
+Similarly to the above the optics rematching knobs was wrongly designed and exceeded the powering limit of the Q\num{6} magnets.
+It could only be trimmed in the machine with a factor \num{0.5}, resulting once again in a strong \(\beta\)-beating in the machine during measurements.
+The comparison with simulations also suggested a \textit{very} large error to be corrected: \num{16} units of the colinearity knob.
+This data was discarded when determining corrections.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b2_neg.pdf}
+    \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{2} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir1_b2_neg_measurement}
+\end{figure}
+
+\Cref{figure:ir5_b1_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
+During this scan, an issue was made when trimming the optics rematching knob: the rematching knob from the previous scan was not trimmed out of the machine, and as a result a mix of the both was present during the scan of the colinearity knob.
+As a consequence, again, strong errors were left in the machine and while the measurement data does not suggest an unbelievable correction as in \cref{figure:ir1_b2_neg_measurement}, the failed experimental setup and suspicious shape of the measurements' \(\abs{C^{-}}\) curve led to this data being discarded when determining corrections.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b1_neg.pdf}
+    \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir5_b1_neg_measurement}
+\end{figure}
+
+\Cref{figure:ir5_b2_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
+For this measurement scan, no mistake was made in the experimental setup and the data suggests a correction similar to what was found with the scans presented in \cref{subsection:rws_pos_measurements_corrections} (see \cref{table:rws_corrections_summary}).
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b2_neg.pdf}
+    \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). The minima of both curves are highlighted by vertical dashed lines and the delta between the two, suggesting the remaining error to correct, is displayed on the graph.}
+    \label{figure:ir5_b2_neg_measurement}
+\end{figure}
+
+Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
+\todo{There is probably a bit more to say here, discuss with Tobias.}
+
+\section{Relevance to Other Colliders}
+
+For any collider the requirement of small \(\beta\)-functions for collisions is a key design parameter, and leads to using a doublet or triplet of quadrupoles to achieve the necessary intense focusing of the beams at the IP.
+On either side of the collision point, in the drift space leading to the first quadrupole the \(\beta\)-functions evolve as:
+
+\begin{equation}
+    \beta(s)=\beta^* + \frac{s^2}{\beta^*}
+    \label{equation:collider_drift_space_beta_function}
+\end{equation}
+where \(\beta^{*}\) is the \(\beta\)-function at the IP and \(s\) denotes the distance from the IP.
+Using \(L^*\) as the length of this drift space, the phase advance from IP point to said quadrupole is:
+
+\begin{equation}
+    \begin{aligned}
+        \mu &= \int_0^{L^*} \frac{1}{\beta(s)} ds \\
+            &= \int_0^{L^*} \frac{\beta^*}{\beta^*{}^2 + s^2} ds \\
+            &= \beta^* \left[\frac{1}{\beta^*} \tan^{-1} \left(\frac{s}{\beta^*} \right) \right]_0^{L^*} \\
+            &= \tan^{-1} \left(\frac{L^*}{\beta^*} \right)
+    \end{aligned}
+    \label{equation:collider_drift_space_phase_advance_derivation}
+\end{equation}
+
+Then, for traditionally \(L^* \gg \beta^*\) one gets:
+
+\begin{equation}
+    \mu \simeq \tan^{-1} \left( \infty \right) \simeq \frac{\pi}{2}
+    \label{equation:collider_drift_space_phase_advance_approximation}
+\end{equation}
+
+As a consequence, for a typical collider layout the phase advance from left to right doublet / triplet quadrupoles is \(\sim \pi\).
+This can be seen in \cref{figure:fccee_phases_to_ip5} for the FCC-ee~\cite{EPJST:Abada:FCCee_Lepton_Collider} V\num{22} lattice for the Z operation mode, which uses an asymmetric doublet of quadrupoles.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/fccee_phases_to_ip5.pdf}
+    \caption{Phase advances relative to IP\num{5} at in the FCC-ee V22 lattice, in the Z operation mode at \qty{45.6}{\giga\electronvolt} and \(\beta^{\ast}=\)~\qty{10}{\centi\meter}.}
+    \label{figure:fccee_phases_to_ip5}
+\end{figure}
+
+As a further direct consequence, tilts in said quadrupoles are susceptible to create a coupling bump around the IP.
+This can be seen, again for the FCC-ee V\num{22} lattice, in \cref{figure:fccee_ip5_coupling_bump}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/fccee_ip5_coupling_bump.pdf}
+    \caption{Simulated coupling RDTs from a \qty{1}{\milli\radian} tilt in the first Q\num{1} quadrupoles around the FCC-ee's IP\num{5}.}
+    \label{figure:fccee_ip5_coupling_bump}
+\end{figure}
+
+Furthermore, SbS limitations encountered in the LHC would also be present: no observation point at the IP, and due to the large \(\beta\)-functions in these quadrupoles the phase advance from element to element close to the IP is very close to \num{0}, making the accurate reconstruction of coupling RDTs difficult (see \cref{subsection:reconstruction_linear_coupling_rdts}).
+These conditions were confirmed in existing and future machines: the High Luminosity LHC and FCC-hh lattices being based on the LHC's, they share the same issues.
+The FCC-ee V\num{22} lattice, as shown above, also exhibits these conditions and can suffer from a close coupling bump from doublet tilts.
+Another existing collider, SuperKEKB, has also encountered non-trivial issues with local coupling in their High Energy Ring~\cite{ICFA:Morita:Optics_Corrections_including_IP_Local_Coupling_at_SuperKEKB}.
+
+For the aforementioned accelerators but also more generally for most circular collider layouts, the presented use of an RWS could provide a useful method to tackle local linear coupling.
+
+\newpage
+\section{Operation with Limited Correctors Availability}
+\label{section:limited_correctors_availability}
+
+\todo{Introduce this section + say we did mitigation Options in Case of MQSX Failures.}
+
+Magnets lifetime studies done during LS\num{2} have projected that some magnets in the main IRs will reach their radiation dose limit during Run~\num{3}~\cite{Evian21:Cerutti:TripletLifetime}, including the MQSX magnets used for local coupling correction.
+\Cref{table:correctors_peak_dose}, reproduced from~\cite{Evian21:Cerutti:TripletLifetime}, shows the expected total received dose for different magnets in the main IRs, for various scenarios.
+In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=3,c=1]{m,c} \textbf{Magnets}    &    \SetCell[c=2]{c} \textbf{Peak Dose [\unit{\mega\gray}]}                                                                                    \\
+        \cline{2,3}                                &    With ATLAS Variable (Fixed) Angle                        &    +\num{2025} (as \num{2023}/\num{2024})                                       \\
+        \cline{2,3}                                &    After \qty{395}{\femto\barn^{-1}}                        &    After \qty{480}{\femto\barn^{-1}}                                            \\
+        \hline
+        \textcolor{red}{\textbf{MCBX1 (IR1)}}      &    \textcolor{red}{\num{8.5} (\num{8.5})}                   &    \textcolor{red}{\num{11} (\num{11}) $/$ \asterisk \num{10.5} (\num{10.5})}   \\
+        \textcolor{red}{\textbf{MCBX1 (IR5)}}      &    \num{6}                                                  &    \textcolor{red}{\num{7.5}}                                                   \\
+        \textbf{MCBX2 (IR1)}                       &    \num{3.5} (\num{3.5})                                    &    \num{4} (\num{4}) $/$ \asterisk \num{4} (\num{4})                            \\
+        \textbf{MCBX2 (IR5)}                       &    \num{2}                                                  &    \num{2.5}                                                                    \\
+        \textcolor{red}{\textbf{MQSX (IR1)}}       &    \textcolor{red}{\num{7.5} (\num{7.5})}                   &    \textcolor{red}{\num{9} (\num{9}) $/$ \asterisk \num{9} (\num{9})}           \\
+        \textcolor{red}{\textbf{MQSX (IR5)}}       &    \textcolor{red}{\num{8} (\num{8})}                       &    \textcolor{red}{\num{9.5} (\num{9.5})}                                       \\
+        \textbf{MCBX3 (IR1)}                       &    \num{5} (\num{5})                                        &    \num{6} (\num{6.5}) $/$ \asterisk \num{6} (\num{6})                          \\
+        \textbf{MCBX3 (IR5)}                       &    \num{3}                                                  &    \num{3.5}                                                                    \\
+        \hline
+    \end{tblr}
+    \caption{Expected total received dose of the corrector magnets located in the triplets for the main IRs. Table reproduced from~\cite{Evian21:Cerutti:TripletLifetime}. The entries marked with \asterisk assume an IR\num{1} polarity inversion in the middle of \num{2025}.}
+    \label{table:correctors_peak_dose}
+\end{table}
+
+One can notice that the MQSXs at both IR\num{1} and IR\num{5} are expected to surpass their dose limit during Run~\num{3}.
+The study itself highlights that \textit{"assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024."}
+
+It is realistic then to expect failures during Run~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
+It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 
 % \subsection{Tilt of Triplet Elements}
 
