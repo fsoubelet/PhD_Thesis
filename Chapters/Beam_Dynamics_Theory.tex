@@ -72,11 +72,10 @@ Higher orders belong to the non-linear dynamics and will be discussed later on.
 \Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.8\linewidth]{Figures/Beam_Dynamics_Theory/Frenet_Serret_Coordinate_System.png}
     \caption{The Frenet-Serret coordinate system used in accelerator physics. Here \(\hat{x}\), \(\hat{y}\), and \(\hat{s}\) form the right-handed orthogonal basis, while \(\rho\) is the local bending radius.}
     \label{figure:frenet_serret_system}
-    \end{center}
 \end{figure}
 
 The coordinate system travels longitudinally with the particle, along a reference trajectory defined by an ideal, or \intro{synchronous}, particle.
@@ -93,11 +92,10 @@ Particles within the beam are distributed in amplitude and oscillate around the 
 This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit is shown in blue and an actual particle orbit in red.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/design_vs_particle_orbit.pdf}
     \caption{Illustration of a design closed orbit (blue) and a particle orbit oscillating around it (red).}
     \label{figure:design_vs_particle_orbit}
-    \end{center}
 \end{figure}
 
 Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
@@ -108,11 +106,10 @@ A net focusing effect in both planes can be obtained with a setup of quadrupoles
 A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.8\linewidth]{Figures/Beam_Dynamics_Theory/fodo_cell_schematic.png}
     \caption{Schematic of a FODO cell. A focusing quadrupole is denoted with an F while a defocusing one is denoted with a D.}
     \label{figure:fodo_cell_schematic}
-    \end{center}
 \end{figure}
 
 For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
@@ -123,25 +120,22 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
 \end{equation}
 
 \begin{figure}[!hbt]
-    \begin{center}
+    \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
         \caption{Ideal dipole.}
         \label{fig:ideal_dipole}
-        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
         \caption{Ideal quadrupole.}
         \label{fig:ideal_quadrupole}
-        \end{center}
     \end{subfigure}
     \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
-    \end{center}
 \end{figure}
 
 \subsection{Equations of Motion and Twiss Parameters}
@@ -342,11 +336,10 @@ The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solu
 \end{equation}
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.75\linewidth]{Figures/Beam_Dynamics_Theory/phase_space.png}
     \caption{Phase space ellipse in the transverse \((z, z^{\prime})\) plane, where \(z\) represents either transverse coordinate \(x\) or \(y\).}
     \label{figure:phase_space_ellipse}
-    \end{center}
 \end{figure}
 
 According to the Liouville theorem the phase space volume, the ellipse area \(A\), is a constant in a closed system.
@@ -408,25 +401,22 @@ In this new system particles follow circular trajectories in phase space.
 In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_z, \phi_z)\).
 
 \begin{figure}[!hbt]
-    \begin{center}
+    \centering
     \begin{subfigure}[b]{0.45\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_physical.pdf}
         \caption{Physical coordinates.}
         \label{fig:phase_space_physical}
-        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.45\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_linear_normalized.pdf}
         \caption{Normalized coordinates.}
         \label{fig:phase_space_normalized}
-        \end{center}
     \end{subfigure}
     \caption{Illustrative representation of phase-space in physical coordinates (left) and normalized coordinates (right) for an accelerator with linear elements only. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_linear_physical_normalized_coordinates}
-    \end{center}
 \end{figure}
 
 \subsection{Chromatic Effects}
@@ -636,11 +626,10 @@ This leads to the phase space trajectory in normalized, or Courant-Snyder, coord
 An example of this situation is given in \cref{figure:phase_space_third_order_resonance}, where the phase space trajectories of \num{200} particles are shown in normalized coordinates when exciting a third order resonance.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/phase_space_third_order_resonance.pdf}
     \caption{Phase space in normalized coordinates from tracking \num{200} particles in a simple FODO-based lattice, when exciting a third order resonance. Points of each color corresponds to the trajectory of a given particle. \todo{maybe do one where we've got the coupling resonance.}}
     \label{figure:phase_space_third_order_resonance}
-    \end{center}
 \end{figure}
 
 One may wish to create a new transformation, akin to that to normalized coordinates, that would allow describing betatron motion in phase space by a pure rotation in the presence of non-linear sources.
@@ -655,33 +644,29 @@ The coordinates resulting from the transformation are called \intro{normal form 
 The different coordinate systems are illustrated in \cref{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}.
 
 \begin{figure}[!hbt]
-    \begin{center}
+    \centering
     \begin{subfigure}[b]{0.30\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_physical.pdf}
         \caption{Physical coordinates.}
         \label{fig:phase_space_physical_non-linear}
-        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.30\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normalized.pdf}
         \caption{Normalized coordinates.}
         \label{fig:phase_space_normalized_non-linear}
-        \end{center}
     \end{subfigure}
     \hfill
     \begin{subfigure}[b]{0.3805\textwidth}
-        \begin{center}
+        \centering
         \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/phase_space_nonlinear_normal_form.pdf}
         \caption{Normal form coordinates.}
         \label{fig:phase_space_normal_form_non-linear}
-        \end{center}
     \end{subfigure}
     \caption{Illustrative exagerated representations of phase space in the three different coordinate systems: physical (left), normalized (middle) and normal form (right) coordinates. Courtesy of F. Carlier~\cite{PHD:Carlier}.}
     \label{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}
-    \end{center}
 \end{figure}
 
 The generating function of the transformation \(F\) contains a large portion of the information describing the non-linear dynamics, and a new non-linear invariant \(I_z\) can be introduced. 
@@ -716,11 +701,10 @@ The chosen operational transverse tunes of a synchrotron are known as its \intro
 Resonances up to order \(n = 5\) are shown in \cref{figure:tune_diagram_fifth_order}, with lines of different orders differentiated from one another.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/tune_diagram_fifth_order_with_working_points.pdf}
     \caption{Tunes diagram showing resonance lines up to order \(n = 5\). The LHC working points are indicated by the two dots: in \textcolor{wpblue}{blue} for injection tunes and \textcolor{wpred}{red} for collision tunes.}
     \label{figure:tune_diagram_fifth_order}
-    \end{center}
 \end{figure}
 
 Commonly, the label of a given resonance is \(\left( n_1, n_2 \right)\), where \(n_1 = \left( j - k \right)\) and \(n_2 = \left( l - m \right)\).
@@ -791,7 +775,7 @@ Solving the one-turn map for the next turn is best done by performing a transfor
 These calculations are in practice simpler than the former method, and conserve non-linearities.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \begin{tikzpicture}
         \matrix (m) [matrix of math nodes,row sep=4em,column sep=4em,minimum width=2em]{
             \left(\hat{z}, \hat{p}_z\right)_N    &    \left(\hat{z}, \hat{p}_z\right)_{N+1} \\
@@ -805,7 +789,6 @@ These calculations are in practice simpler than the former method, and conserve 
     \end{tikzpicture}
     \caption{Illustration of the coordinate transformations and change of the one-turn map. This diagram reads from Courant-Snyder coordinates at turn \(N\) in the top left, and shows both paths to reach the Courant-Snyder coordinates at turn \(N+1\) in the top right.}
     \label{figure:coordinate_transformations}
-    \end{center}
 \end{figure}
 
 \subsection{Spectral Contribution}
@@ -827,11 +810,10 @@ For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the ho
 \Cref{figure:example_spectrum} shows an example of a spectrum from a measurement at the LHC, where the main lines are highlighted.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.3\linewidth]{Figures/placeholder.png}
     \caption{\todo{Include a plot of a spectrum from an LHC measurement, something out of omc3?}}
     \label{figure:example_spectrum}
-    \end{center}
 \end{figure}
 
 In principle the \(\abs{f_{jklm}}\) may be determined by a comparison of the amplitude of various spectral lines.
@@ -853,11 +835,10 @@ These mostly arise from normal quadrupoles mounted with a rotation error with re
 An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
 
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.5\linewidth]{Figures/placeholder.png}
     \caption{\todo{Illustration of a skew quadrupole and its magnetic field lines.}}
     \label{figure:skew_quadrupole}
-    \end{center}
 \end{figure}
 
 Betatron coupling needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, or simply lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics}.
@@ -964,11 +945,10 @@ The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the 
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
 % TODO: adapt this plot to have Q_{1,2} instead of Q_{x,y}
 \begin{figure}[!htb]
-    \begin{center}
+    \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/closest_tune_approach_schematic.png}
     \caption{Illustration of coupled and uncoupled fractional tunes versus the uncoupled tune split. Courtesy of J. Keintzel~\cite{PHD:Keintzel}.}
     \label{figure:closest_tune_approach}
-    \end{center}
 \end{figure}
 
 On the other hand, when approaching the sum resonance the emittances follow:
