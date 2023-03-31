@@ -1054,6 +1054,7 @@ It is then realistic to expect failures at some point during Run~\num{3}, which 
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing corrector.
 These are presented below.
+The MQSX magnets in IR\num{2} and IR\num{8} are not considered at risk and were left out of these studies.
 
 \subsection{Operating with a Missing Corrector}
 
@@ -1124,7 +1125,7 @@ The resulting integrated luminosity loss over a day is shown in \cref{figure:int
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/carry_over_integrated_lumi.pdf}
-    \caption{Integrated luminosity loss over a day for each missing MQSX and for two different baselines of instantaneous luminosity.}
+    \caption{Integrated luminosity loss over a day for each missing MQSX and for two different baselines of instantaneous luminosity. Courtesy of S. Kostoglou.}
     \label{figure:integrated_lumi_losses}
 \end{figure}
 
@@ -1166,6 +1167,8 @@ On each figure, the location of the tilt setting that would minimize coupling at
 \end{figure}
 
 \Cref{table:compensation_triplet_tilts} shows the determined tilt angles necessary for compensation for each scenario.
+The necessary tilts using Q\num{2} or Q\num{3} range between \num{-2} and \qty{2.85}{\milli\radian}, with the most impactful ones at IR\num{1} and IR\num{5} - due to higher \(\beta\)-functions in the triplets - between \num{-1.65} and \qty{2.325}{\milli\radian}.
+It would also be possible to use lower values by tilting both elements simultaneously.
 
 \begin{table}[!htb]
     \centering
@@ -1192,17 +1195,12 @@ On each figure, the location of the tilt setting that would minimize coupling at
     \label{table:compensation_triplet_tilts}
 \end{table}
 
-The necessary tilts using Q\num{2} or Q\num{3} range between \num{-2} and \qty{2.85}{\milli\radian}, with the most impactful ones at IR\num{1} and IR\num{5} - due to higher \(\beta\)-functions in the triplets - between \num{-1.65} and \qty{2.325}{\milli\radian}.
-It would also be possible to use lower values by tilting both elements simultaneously.
-
 It is worth noting that tilting a triplet quadrupole has a strong impact on the optics due to the high \(\beta\)-functions at the elements.
 For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated by a tilt of the Q\num{3} close to it, an additional \qty{15}{\percent} \(\beta\)-beating would be added through the machine and a whole new set of corrections would need to be determined.
 
-\textbf{Operational Considerations}
-
 Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
-
 Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
+
 Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
 For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the overall magnet.
 
