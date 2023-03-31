@@ -936,7 +936,6 @@ For this measurement scan, no mistake was made in the experimental setup and the
 
 Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
 \todo{There is probably a bit more to say here, discuss with Tobias.}
-\newpage
 
 \section{Relevance to Other Colliders}
 
@@ -948,22 +947,23 @@ On either side of the collision point, in the drift space leading to the first q
     \label{equation:collider_drift_space_beta_function}
 \end{equation}
 where \(\beta^{*}\) is the \(\beta\)-function at the IP and \(s\) denotes the distance from the IP.
-Using \(L^*\) as the length of this drift space, the phase advance from IP point to said quadrupole is:
+Using \(L^*\) as the length of this drift space, the phase advance from IP point to said quadrupole is expressed as:
 
 \begin{equation}
-    \begin{aligned}
-        \mu &= \int_0^{L^*} \frac{1}{\beta(s)} ds \\
-            &= \int_0^{L^*} \frac{\beta^*}{\beta^*{}^2 + s^2} ds \\
-            &= \beta^* \left[\frac{1}{\beta^*} \tan^{-1} \left(\frac{s}{\beta^*} \right) \right]_0^{L^*} \\
-            &= \tan^{-1} \left(\frac{L^*}{\beta^*} \right)
-    \end{aligned}
-    \label{equation:collider_drift_space_phase_advance_derivation}
+    \mu = \int_0^{L^*} \frac{1}{\beta(s)} ds = \int_0^{L^*} \frac{\beta^*}{\beta^*{}^2 + s^2} ds \text{ ,}
+    \label{equation:collider_drift_space_phase_advance_integral}
+\end{equation}
+which one can integrate to obtain:
+
+\begin{equation}
+    \mu = \beta^* \left[\frac{1}{\beta^*} \tan^{-1} \left(\frac{s}{\beta^*} \right) \right]_0^{L^*} = \tan^{-1} \left(\frac{L^*}{\beta^*} \right) \text{ .}
+    \label{equation:collider_drift_space_phase_advance_integrated}
 \end{equation}
 
 Then, for traditionally \(L^* \gg \beta^*\) one gets:
 
 \begin{equation}
-    \mu \simeq \tan^{-1} \left( \infty \right) \simeq \frac{\pi}{2}
+    \mu \simeq \tan^{-1} \left( \infty \right) \simeq \frac{\pi}{2} \text{ .}
     \label{equation:collider_drift_space_phase_advance_approximation}
 \end{equation}
 
@@ -993,7 +993,6 @@ The FCC-ee V\num{22} lattice, as shown above, also exhibits these conditions and
 Another existing collider, SuperKEKB, has also encountered non-trivial issues with local coupling in their High Energy Ring~\cite{ICFA:Morita:Optics_Corrections_including_IP_Local_Coupling_at_SuperKEKB}.
 
 For the aforementioned accelerators but also more generally for most circular collider layouts, the presented use of an RWS could provide a useful method to tackle local linear coupling.
-\newpage
 
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
