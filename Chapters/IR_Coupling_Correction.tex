@@ -1087,6 +1087,21 @@ From these, the changes in instantaneous luminosity were calculated according to
 Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\) \qty{30}{\centi\meter}: by up to \(\approx\) \qty{60}{\percent}.
 Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
 
+The possible impact of this change on the aperture was also considered.
+\Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
+The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics, where the high \(\beta\)-functions make the triplet the aperture bottleneck of the machine.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/carry_over_to_ir1_right_beam_size_impact.pdf}
+    \caption{Relative change in beam size from carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.}
+    \label{figure:carry_over_impact_on_beam_size}
+\end{figure}
+
+One can notice that the beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation, being significantly affected only in the space between Q\num{1} to Q\num{1}.
+This behavior was also observed in~\cref{PRAB:Hofer:Coupling_Local_Observables} where the coupling RDTs themselves are only significantly affected in the same space for a similar trim.
+As the drift space right around the IP is irrelevant for aperture limitations, one can conclude that the aperture would not suffer from such a compensation scheme.
+
 \subsubsection*{Experimental Measurements of Carry-Over}
 
 Measurements were conducted in late \num{2022} to assess the accuracy of these predictions.
