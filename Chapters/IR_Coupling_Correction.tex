@@ -1054,7 +1054,7 @@ It is then realistic to expect failures at some point during Run~\num{3}, which 
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing corrector.
 These are presented below.
-The MQSX magnets in IR\num{2} and IR\num{8} are not considered at risk and were left out of these studies.
+The MQSX magnets in IR\num{2} and IR\num{8} are not considered at risk but were still included in some of these studies.
 
 \subsection{Operating with a Missing Corrector}
 
@@ -1137,16 +1137,17 @@ An experimental MD is planned in \num{2023} to assess both the feasibility of th
 \subsection{Operating with Two Missing MQSX}
 
 There is a possibility that \textit{both} MQSXs in a given IR fail.
-In this case, the compensation of a corrector's contribution by its counterpart is no longer possible, and the uncompensated global coupling coming from the IR would be too large at small \(\beta^{\ast}\) for safe machine operation.
-Simulation results suggest that it would not be feasible to squeeze to the optics below \(\beta^{\ast} =\) \qty{90}{\centi\meter}.
+In this case the compensation of a corrector's contribution by its counterpart - as described above - would no longer be possible, and the uncompensated global coupling coming from the IR would be too large at small \(\beta^{\ast}\) for safe machine operation.
+Simulation results suggest that it would not be feasible to squeeze to the optics below \(\beta^{\ast} =\) \qty{90}{\centi\meter}, and new solutions would be needed in order to be able to provide collisions to the experiments.
 
 \subsubsection*{Tilt of Triplet Elements}
 
-A potential solution to mitigate the impact of a corrector failure is to tilt a close triplet quadrupole,introducing a skew component in the element's field and relying on this contribution to perform the correction in place of the skew quadrupole corrector.
+A potential solution to mitigate the impact of corrector failures is to tilt a close triplet quadrupole, introducing a skew component in the element's field and relying on this contribution to perform the correction in place of the skew quadrupole corrector.
 
 Studies were made to determine which Q\num{2} or Q\num{3} tilt would be needed to take on the coupling contribution of its closest MQSX, assuming it stops working.
 In each study an error was introduced in the form of the corrector's opposite powering, and a simple parametric scan was made of the introduced tilt angle.
-\Cref{figure:ir1_compensate_left_with_q3} shows the coupling RDT's amplitude at IP\num{1} for various tilts of Q\num{3} on the left of the IP, assuming a failure of the skew quadrupole left of the IP, MQSX.\num{3}L\num{1}.
+\Cref{figure:ir1_compensate_left_with_q3} shows the coupling RDTs' amplitude at IP\num{1} for various tilts of Q\num{3} on the left of the IP, assuming a failure of the skew quadrupole left of the IP, MQSX.\num{3}L\num{1}.
+Notice the log scale of the vertical axis.
 
 \begin{figure}[!htb]
     \centering
@@ -1155,9 +1156,9 @@ In each study an error was introduced in the form of the corrector's opposite po
     \label{figure:ir1_compensate_left_with_q3}
 \end{figure}
 
-Notice the log scale of the vertical axis.
-\Cref{figure:ir5_compensate_right_with_q2} shows the coupling RDT's amplitude at IP\num{5} for various tilts of Q\num{2} on the right of the IP, assuming a failure of the skew quadrupole right of the IP, MQSX.\num{3}L\num{5}.
+\Cref{figure:ir5_compensate_right_with_q2} shows the coupling RDTs' amplitude at IP\num{5} for various tilts of Q\num{2} on the right of the IP, assuming a failure of the skew quadrupole right of the IP, MQSX.\num{3}L\num{5}.
 On each figure, the location of the tilt setting that would minimize coupling at the IP is highlighted with a vertical line.
+In all cases a good compensation can be achieved.
 
 \begin{figure}[!htb]
     \centering
@@ -1200,22 +1201,18 @@ For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated
 
 Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
 Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
-
 Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
 For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the overall magnet.
 
 Finally, due to the possibility of damaging what is arguably the most important magnet assembly in the machine during the procedure, this solution would only be used as a last resort.
 % Say that for these reasons we decided not to test this concept in the machine, unfortunately.
 
-% \subsubsection*{Warm Skew Quadrupole Replacement}
+\subsubsection*{Warm Skew Quadrupole Replacement}
 
-% Here talk about how there is space between D1 and TAN for a magnet, and we could put a warm skew quadrupole there.
-% Show some schematic.
-% Show some calculations of how the gradient should be, how long the element should be etc.
+Another solution would be to install a new warm skew quadrupole magnet as replacement either close triplet Q\num{3}, to the separation dipole D\num{1} or to quadrupole Q\num{4}, on the non-IP side~\cite{PRES:Persson:Integrated_Lumi_MQSX_Carryovers}.
+\todo{Ask Tobias where he installed the warm skew quad when we calculated the ratios of \(\sqrt{\beta_x \beta_y}\)} term and made a quick calculation of the field necessary in this magnet.
 
-% It has considerations such as being imbalanced (asymmetric) with the remaining MQSX, limiting the available aperture etc.
-
-% \subsubsection*{Adapting the Optics Squeezing Scheme}
+% \subsubsection*{Bad options}
 
 % We could change things in the squeeze to compensate for the absence of an MQSX.
 % Potentially squeeze harder on one IP (the one with a missing element).
