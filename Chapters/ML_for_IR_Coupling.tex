@@ -1,11 +1,27 @@
 \chapter{Machine Learning for Interaction Region Local Coupling} % Main chapter title
 \label{chapter:ml_local_coupling} % For referencing the chapter elsewhere, use \cref{Chapter:ML_Local_Coupling}
 
-\todo{Some paragraph before the first section.}
+Machine learning methods have found their application in a variety of fields ranging including technology development, scientific research, medical diagnosis and business insights.
+The now widespread application of machine learning techniques demonstrates their applicability to various challenges and tasks.
+
+In recent years machine learning has been successfully applied to various areas of accelerator physics~\cite{}, including at the LHC~\cite{}.
+The primary purpose of the work presented hereafter is to explore the possibility of applying machine learning techniques to the subject of local IR coupling in the LHC.
+
+\todo{Sources to cite~\cite{PHD:Fol:Application_ML_Beam_Optics}. Write more here.}
 
 \section{Relevant Concepts of Machine Learning}
 
+Machine learning can be seen as the intersection of statistics and computer science.
+T. Mitchell illustrates the key characteristics of machine learning as \textit{"machine learning techniques aim to build computer programs and algorithms that automatically improve with experience by learning from examples with respect to some class of task and performance measure, without being explicitly programmed"}~\cite{BOOK:Mitchell:Machine_Learning}.
+A key characteristic distinguishing machine learning from conventional programming is the program's ability to automatically achieve performance improvements based on provided data.
+
+This section provides a quick introduction to relevant paradigms and concepts of machine learning, primarily derived from~\cite{BOOK:Mitchell:Machine_Learning,BOOK:Hastie:Elements_Statistical_Learning} where one can find detailed discussions on the subject.
+The focus hereafter is kept only on particular algorithms used in the applications presented in this chapter.
+
 \subsection{Defining a Machine Learning Task}
+
+In the context of machine learning, the \textit{learning} refers to the process of performance improvement.
+Generally a given model can improve its performance by adjusting its parameters, with respect to provided data. 
 
 \subsection{Supervised and Unsupervised Learning}
 
@@ -18,134 +34,134 @@
 % \subsection{Decision Trees and Ensemble Methods}
 
 
-\section{Identification of Local Coupling Sources}
+% \section{Identification of Local Coupling Sources}
 
-Local interaction region (IR) linear coupling in the LHC has been shown to have a negative impact on beam size and luminosity, making its accurate correction for Run 3 and beyond a necessity.
-In view of determining corrections, supervised machine learning has been applied to the detection of linear coupling sources, showing promising results in simulations.
-An evaluation of different applied models is given, followed by the presentation of further possible application concepts for linear coupling corrections using machine learning.
+% Local interaction region (IR) linear coupling in the LHC has been shown to have a negative impact on beam size and luminosity, making its accurate correction for Run 3 and beyond a necessity.
+% In view of determining corrections, supervised machine learning has been applied to the detection of linear coupling sources, showing promising results in simulations.
+% An evaluation of different applied models is given, followed by the presentation of further possible application concepts for linear coupling corrections using machine learning.
 
-Machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{elena_fol_ipac2018, edelen_neural_networks_for_control, bozoki_epac1994, meier_nn_correction_ipac2012, kijima_epac92, fol_faulty_bpms, folSupervisedLearningbasedReconstruction2021}.
-The precise knowledge of a coupling source's location and relative strength is valuable for further correction.
-While one can look at sudden jumps in the coupling Resonance Driving Terms (RDTs) \foneohone and \foneohoneoh to deduce the presence of sources in between BPMs, such a method does not accurately pinpoint the location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
-In the LHC, this approach is applicable for any source located in the arcs, but due to unfavorable phase advances between Beam Position Monitors (BPMs) in the Insertion Regions (IRs) and the necessity to have no strong sources between measuring BPMs, it is inappropriate for the detection of sources located within these regions.
-In this work, we explore the possibility of using supervised machine learning to detect betatron coupling sources in the LHC IRs.
+% Machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{elena_fol_ipac2018, edelen_neural_networks_for_control, bozoki_epac1994, meier_nn_correction_ipac2012, kijima_epac92, fol_faulty_bpms, folSupervisedLearningbasedReconstruction2021}.
+% The precise knowledge of a coupling source's location and relative strength is valuable for further correction.
+% While one can look at sudden jumps in the coupling Resonance Driving Terms (RDTs) \foneohone and \foneohoneoh to deduce the presence of sources in between BPMs, such a method does not accurately pinpoint the location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
+% In the LHC, this approach is applicable for any source located in the arcs, but due to unfavorable phase advances between Beam Position Monitors (BPMs) in the Insertion Regions (IRs) and the necessity to have no strong sources between measuring BPMs, it is inappropriate for the detection of sources located within these regions.
+% In this work, we explore the possibility of using supervised machine learning to detect betatron coupling sources in the LHC IRs.
 
-In order to perform a prediction of betatron coupling sources' locations, one first needs to compute the \foneohone and \foneohoneoh RDTs.
-The strength and variations of the coupling RDTs throughout the machine is then used to estimate the location of coupling sources.
+% In order to perform a prediction of betatron coupling sources' locations, one first needs to compute the \foneohone and \foneohoneoh RDTs.
+% The strength and variations of the coupling RDTs throughout the machine is then used to estimate the location of coupling sources.
 
-In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
-Such a regression model requires a large data set in order to be able to generalize and produce reliable results.
-As from the real machine the location of sources is unknown, no real-world data is available for the training of machine learning models.
+% In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
+% Such a regression model requires a large data set in order to be able to generalize and produce reliable results.
+% As from the real machine the location of sources is unknown, no real-world data is available for the training of machine learning models.
 
-In order to create a training set, simulations are performed where random rotations around the s-axis are introduced into the MAD-X~\cite{MADX_guide} quadrupoles, generating a skew quadrupolar component at the affected element and thus a source of coupling.
-It has to be noted though, that in the simulation of the training set we use tilt components to quadrupoles, given by the \DPSI variable in MAD-X, which ignores the other potential sources such as feed-down from higher order magnets.
-While simulating the data, the introduced tilt components (\DPSI values) are the input of the simulations and the produced coupling RDTs generated from the perturbed optics functions are the output.
-The data was generated for Beam 1 and 2 of the LHC, for the 2018 optics settings with \(\beta^{*} =\)~\qty{30}{\centi\metre} and using collision tunes (\(Q_x = 0.31, Q_y = 0.32\)).
-\Cref{fig:example_coupling_rdts} shows the reconstructed coupling RDTs for a given sample, calculated through the \textbf{C} matrix~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches}.
+% In order to create a training set, simulations are performed where random rotations around the s-axis are introduced into the MAD-X~\cite{MADX_guide} quadrupoles, generating a skew quadrupolar component at the affected element and thus a source of coupling.
+% It has to be noted though, that in the simulation of the training set we use tilt components to quadrupoles, given by the \DPSI variable in MAD-X, which ignores the other potential sources such as feed-down from higher order magnets.
+% While simulating the data, the introduced tilt components (\DPSI values) are the input of the simulations and the produced coupling RDTs generated from the perturbed optics functions are the output.
+% The data was generated for Beam 1 and 2 of the LHC, for the 2018 optics settings with \(\beta^{*} =\)~\qty{30}{\centi\metre} and using collision tunes (\(Q_x = 0.31, Q_y = 0.32\)).
+% \Cref{fig:example_coupling_rdts} shows the reconstructed coupling RDTs for a given sample, calculated through the \textbf{C} matrix~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches}.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/example_coupling_rdts.pdf}
-    \caption{Coupling RDTs reconstructed for the LHC Beam 1 (top) and 2 (bottom) from the optics perturbed by the introduction of tilt errors to IR quadrupoles. Here a truncated Gaussian distribution with a standard deviation of \qty{1}{\milli\radian} was applied.}
-    \label{fig:example_coupling_rdts}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/example_coupling_rdts.pdf}
+%     \caption{Coupling RDTs reconstructed for the LHC Beam 1 (top) and 2 (bottom) from the optics perturbed by the introduction of tilt errors to IR quadrupoles. Here a truncated Gaussian distribution with a standard deviation of \qty{1}{\milli\radian} was applied.}
+%     \label{fig:example_coupling_rdts}
+% \end{figure}
 
-The measurements are simulated with the MAD-X code, and each simulated sample is done by applying the following steps:
+% The measurements are simulated with the MAD-X code, and each simulated sample is done by applying the following steps:
 
-\begin{enumerate}
-    \item A truncated Gaussian distribution of tilt errors \DPSI is applied to IR[1258] quadrupoles on Beam 1.
-    \item Quadrupoles located outside the IRs are excluded as these sources can be well corrected by other means.
-    \item The coupling RDTs \foneohone and \foneohoneoh are calculated at each BPM from TWISS functions for Beam 1.
-    \item The \DPSI values for triplets are exported and applied to Beam 2 as these are common magnets.
-    \item A truncated Gaussian distribution is applied to the remaining IR[1258] quadrupoles in Beam 2.
-    \item Coupling RDTs for Beam 2 are calculated as done for Beam 1 and those two results are concatenated.
-\end{enumerate}
+% \begin{enumerate}
+%     \item A truncated Gaussian distribution of tilt errors \DPSI is applied to IR[1258] quadrupoles on Beam 1.
+%     \item Quadrupoles located outside the IRs are excluded as these sources can be well corrected by other means.
+%     \item The coupling RDTs \foneohone and \foneohoneoh are calculated at each BPM from TWISS functions for Beam 1.
+%     \item The \DPSI values for triplets are exported and applied to Beam 2 as these are common magnets.
+%     \item A truncated Gaussian distribution is applied to the remaining IR[1258] quadrupoles in Beam 2.
+%     \item Coupling RDTs for Beam 2 are calculated as done for Beam 1 and those two results are concatenated.
+% \end{enumerate}
 
-The standard deviation of the applied tilt errors was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group. 
+% The standard deviation of the applied tilt errors was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group. 
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/rdts_stdev_batch.pdf}
-    \caption{Standard deviation of the coupling RDTs at BPMs for Beam 1, from a batch of measurements taken on April 3, 2018. These data points were later divided into IR BPMs and arc BPMs to determine applied noise levels.}
-    \label{fig:rdts_stdev_batch}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/rdts_stdev_batch.pdf}
+%     \caption{Standard deviation of the coupling RDTs at BPMs for Beam 1, from a batch of measurements taken on April 3, 2018. These data points were later divided into IR BPMs and arc BPMs to determine applied noise levels.}
+%     \label{fig:rdts_stdev_batch}
+% \end{figure}
 
-To train the model we flip this relation such that the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
-Therefore, the coupling RDTs reconstructed at each BPM are considered as model input (features).
-A vector containing the estimated \DPSI value attributed to each affected quadrupole is the desired output of the trained model.
-A simulation data set of \num{50000} samples was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
-Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (\DPSI value at each affected IR quadrupole).
+% To train the model we flip this relation such that the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
+% Therefore, the coupling RDTs reconstructed at each BPM are considered as model input (features).
+% A vector containing the estimated \DPSI value attributed to each affected quadrupole is the desired output of the trained model.
+% A simulation data set of \num{50000} samples was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
+% Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (\DPSI value at each affected IR quadrupole).
 
-Various scoring techniques exist in the domain of model evaluation.
-In this study, models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true values and the model outputs.
-Both train and test sets were submitted to the addition of Gaussian noise on the reconstructed RDTs to simulate the uncertainty of the reconstructed RDTs.
+% Various scoring techniques exist in the domain of model evaluation.
+% In this study, models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true values and the model outputs.
+% Both train and test sets were submitted to the addition of Gaussian noise on the reconstructed RDTs to simulate the uncertainty of the reconstructed RDTs.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_performance.pdf}
-    \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data. Each curve represents a noise level applied to arc BPMs data, while each point on these curves corresponds to a noise level applied to the inner BPMs.}
-    \label{fig:ridge_performance}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_performance.pdf}
+%     \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data. Each curve represents a noise level applied to arc BPMs data, while each point on these curves corresponds to a noise level applied to the inner BPMs.}
+%     \label{fig:ridge_performance}
+% \end{figure}
 
-The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run 2.
-\Cref{fig:rdts_stdev_batch} shows the standard deviation of coupling RDTs across Beam 1 BPMs for a batch of measurements taken on April 3, 2018.
-After analyzing several such batches, the following noise levels were determined:
+% The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run 2.
+% \Cref{fig:rdts_stdev_batch} shows the standard deviation of coupling RDTs across Beam 1 BPMs for a batch of measurements taken on April 3, 2018.
+% After analyzing several such batches, the following noise levels were determined:
 
-\begin{itemize}
-    \item Coupling RDTs at arc BPMs were noised with standard deviation ranging from \num{0} to \num{1E-5} absolute error.
-    \item Inner BPMs (number \num{1} to \num{6} from IP) were noised with standard deviation ranging from \num{0} to \num{1E-2}.
-\end{itemize}
+% \begin{itemize}
+%     \item Coupling RDTs at arc BPMs were noised with standard deviation ranging from \num{0} to \num{1E-5} absolute error.
+%     \item Inner BPMs (number \num{1} to \num{6} from IP) were noised with standard deviation ranging from \num{0} to \num{1E-2}.
+% \end{itemize}
 
-A new data set was created for each combination of the noise levels mentioned above.
-\Cref{fig:ridge_performance} shows the test performance of a Ridge Regression model~\cite{rifkinNotesRegularizedLeastSquares2007} on noised data sets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is noticeable.
-Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} = 10^{-4}\)~\unit{\radian}.
+% A new data set was created for each combination of the noise levels mentioned above.
+% \Cref{fig:ridge_performance} shows the test performance of a Ridge Regression model~\cite{rifkinNotesRegularizedLeastSquares2007} on noised data sets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is noticeable.
+% Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} = 10^{-4}\)~\unit{\radian}.
 
-Several models suited for regression tasks were tested, and a minimal amount of hyper-parameter tuning was performed.
-A simple least squares linear regression~\cite{Lai1977LeastSquaresReg} showed very good results on clean data, however the introduction of noise in the data sets made its performance drop drastically, down to unusable accuracy.
-A decision tree regressor~\cite{Breiman2017DecisionTrees} and a random forest regressor~\cite{Breiman2001RandomForest}showed poor performance on all data sets.
-A Ridge regressor model, a linear regressor with \(\mathit{l}^2\) regularization, showcased good performance on both clean and relatively low-noised data sets.
+% Several models suited for regression tasks were tested, and a minimal amount of hyper-parameter tuning was performed.
+% A simple least squares linear regression~\cite{Lai1977LeastSquaresReg} showed very good results on clean data, however the introduction of noise in the data sets made its performance drop drastically, down to unusable accuracy.
+% A decision tree regressor~\cite{Breiman2017DecisionTrees} and a random forest regressor~\cite{Breiman2001RandomForest}showed poor performance on all data sets.
+% A Ridge regressor model, a linear regressor with \(\mathit{l}^2\) regularization, showcased good performance on both clean and relatively low-noised data sets.
 
-Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised test data sets, averaged over \num{1000} simulations, are presented in \cref{tab:models_comparison} where the Ridge regressor clearly outperforms its counterparts.
-In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-5}\) for arc BPMs.
+% Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised test data sets, averaged over \num{1000} simulations, are presented in \cref{tab:models_comparison} where the Ridge regressor clearly outperforms its counterparts.
+% In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-5}\) for arc BPMs.
 
-\begin{table}[!hbt]
-   \centering
-   \caption{\(R^2\) Scores of Different Tested Models}
-   \begin{tblr}{colspec={ccc}}
-        \hline
-        \textbf{Model} & Clean Data & Noised Data   \\
-        \hline
-        Ridge Regressor            &   \num{0.9911}   &   \num{0.8934}   \\
-        Linear Regression          &   \num{0.9913}   &   \num{0.5638}   \\
-        Decision Tree Regressor    &   \num{0.1385}   &   \num{-0.0018}  \\
-        Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}  \\
-        \hline
-    \end{tblr}
-   \label{tab:models_comparison}
-\end{table}
+% \begin{table}[!hbt]
+%    \centering
+%    \caption{\(R^2\) Scores of Different Tested Models}
+%    \begin{tblr}{colspec={ccc}}
+%         \hline
+%         \textbf{Model} & Clean Data & Noised Data   \\
+%         \hline
+%         Ridge Regressor            &   \num{0.9911}   &   \num{0.8934}   \\
+%         Linear Regression          &   \num{0.9913}   &   \num{0.5638}   \\
+%         Decision Tree Regressor    &   \num{0.1385}   &   \num{-0.0018}  \\
+%         Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}  \\
+%         \hline
+%     \end{tblr}
+%    \label{tab:models_comparison}
+% \end{table}
 
-\Cref{fig:ridge_predictions} shows the Ridge model's predictions on a sample from the same noised data set, where a good agreement between predicted, and assigned values can be observed.
-Performance significantly degrades with the addition of noise.
+% \Cref{fig:ridge_predictions} shows the Ridge model's predictions on a sample from the same noised data set, where a good agreement between predicted, and assigned values can be observed.
+% Performance significantly degrades with the addition of noise.
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_predictions.pdf}
-  \caption{Assigned and predicted values \DPSI with a Ridge model. Here the magnet names have been switched for numbers in order to improve the plot's clarity.}
-  \label{fig:ridge_predictions}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_predictions.pdf}
+%   \caption{Assigned and predicted values \DPSI with a Ridge model. Here the magnet names have been switched for numbers in order to improve the plot's clarity.}
+%   \label{fig:ridge_predictions}
+% \end{figure}
 
-\Cref{fig:ridge_histograms} shows the predictions and deviations of the Ridge model on a noised data set (\(\sigma_{\mathrm{DPSI, IRs}} = \sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\), where one can notice the deviations significantly lower that the attributed errors.
+% \Cref{fig:ridge_histograms} shows the predictions and deviations of the Ridge model on a noised data set (\(\sigma_{\mathrm{DPSI, IRs}} = \sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\), where one can notice the deviations significantly lower that the attributed errors.
 
-\begin{figure}[!htb]
-  \centering
-  \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
-  \caption{Histograms of the true applied \DPSI values, the values predicted by the Ridge model, and the deviations from the predictions to the true values.}
-  \label{fig:ridge_histograms}
-\end{figure}
+% \begin{figure}[!htb]
+%   \centering
+%   \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
+%   \caption{Histograms of the true applied \DPSI values, the values predicted by the Ridge model, and the deviations from the predictions to the true values.}
+%   \label{fig:ridge_histograms}
+% \end{figure}
 
-We have shown that specific machine learning models are capable of predicting the IR quadrupole tilts in the LHC by assigning a representative value to specific magnets, some even when faced with noised data sets.
-A Ridge regressor shows the best performance among the tested models, including data sets with small amounts of noise.
-While usability in operation would require better accuracy on data sets with higher noise, this is an important first step towards the application of ML techniques to local coupling corrections in particle accelerators.
-Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
+% We have shown that specific machine learning models are capable of predicting the IR quadrupole tilts in the LHC by assigning a representative value to specific magnets, some even when faced with noised data sets.
+% A Ridge regressor shows the best performance among the tested models, including data sets with small amounts of noise.
+% While usability in operation would require better accuracy on data sets with higher noise, this is an important first step towards the application of ML techniques to local coupling corrections in particle accelerators.
+% Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
 
 \section{Conclusions}
