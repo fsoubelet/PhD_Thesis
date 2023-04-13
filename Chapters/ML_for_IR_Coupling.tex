@@ -59,7 +59,60 @@ Classification tasks aim to accurately assign test data into specific categories
 
 In the previous chapter, the negative impact of local IR linear coupling in the LHC has been extensively discussed, as well as the necessity of its identification and mitigation.
 The precise knowledge of a coupling source's location and relative strength would be a valuable asset for further correction, however it was illustrated in \cref{section:current_correction_methods_and_their_limitations} how simply looking at patterns and jumps in the coupling RDTs was not always sufficient to accurately pinpoint the  location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
-As machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{IPAC:Fol:Machine_Learning_Methods_for_Optics_Measurements_and_Corrections_at_LHC, IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators, EPAC:Bozoki:Neural_Networks_Orbit_Control_Accelerators, IPAC:Meier:Orbit_Correction_Studies_using_Neural_Networks, EPAC:Kijima:Beam_Diagnostic_System_for_Accelerator_using_Neural_Networks, PRAB:Fol:Detection_Faulty_BPMs, EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors}, 
+As machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{IPAC:Fol:Machine_Learning_Methods_for_Optics_Measurements_and_Corrections_at_LHC, IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators, EPAC:Bozoki:Neural_Networks_Orbit_Control_Accelerators, IPAC:Meier:Orbit_Correction_Studies_using_Neural_Networks, EPAC:Kijima:Beam_Diagnostic_System_for_Accelerator_using_Neural_Networks, PRAB:Fol:Detection_Faulty_BPMs, EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors}, a study was made to explore the possibility of applying machine learning techniques to the detection of local IR coupling sources in the LHC.
+
+In order to perform a prediction of betatron coupling sources' locations, one first needs to compute the \(f_{1001}\) and \(f_{1010}\) coupling RDTs which will serve as input data for the model.
+The strength and variations of the coupling RDTs throughout the machine is then used to estimate the location of coupling sources and their relative strengths.
+
+In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
+Such a regression model requires a large data set in order to be able to generalize and produce reliable results.
+As from the real machine the location of sources is unknown, no real-world data is available for the training of machine learning models.
+
+\subsection{Dataset Generation}
+
+In order to create a training dataset, simulations were performed with the MAD-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles in each IR.
+The tilt generates a skew quadrupolar component at the affected element and thus turns it into a source of coupling.
+It has to be noted though, that in simulations only quadrupole tilts - given by the \(\mathrm{DPSI}\) variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in these studies.
+
+While simulating the data, the introduced tilt components are the training inputs in the dataset and the produced coupling RDTs generated from the perturbed optics functions are the outputs.
+The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.
+\Cref{figure:qqqqqb1,figure:qqqqqb2} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
+The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b1_rdts.pdf}
+    \caption{Beam~\num{1} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
+    \label{figure:qqqqqb1}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b2_rdts.pdf}
+    \caption{Beam~\num{2} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
+    \label{figure:qqqqqb2}
+\end{figure}
+
+Each simulated sample of the dataset is obtained by applying the following steps in simulations:
+\begin{enumerate}
+    \item A truncated Gaussian distribution of tilt errors (\(\mathrm{DPSI}\)) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
+    \item Quadrupoles located outside the IRs are excluded as these sources can be well corrected by other means.
+    \item The coupling RDTs \(f_{1001}\) and \(f_{1010}\) are calculated at each BPM from Twiss functions for Beam~\num{1}.
+    \item The \(\mathrm{DPSI}\) values for triplets are exported and applied to Beam 2, as these are common magnets and should share the error.
+    \item A truncated Gaussian distribution is applied to the remaining quadrupoles Q\num{4} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{2}.
+    \item Coupling RDTs for Beam~\num{2} are calculated as done for Beam~\num{1}.
+    \item The real and imaginary parts of the coupling RDTs at each BPM and for each beam are concatenated in order to obtain a single vector of values for a given sample.
+\end{enumerate}
+
+To train the model the relation is flipped such that the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
+Therefore, the coupling RDTs reconstructed at each BPM are considered as model input, or features.
+A vector containing the estimated \(\mathrm{DPSI}\) value attributed to each affected quadrupole is the desired output of the trained model.
+A simulation data set of \num{50000} samples was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
+Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (\(\mathrm{DPSI}\) value at each affected IR quadrupole).
+
+\subsection{Model Training and Evaluation}
+
+
 
 \section{Conclusions and Outlooks}
 
