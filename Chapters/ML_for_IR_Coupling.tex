@@ -50,11 +50,6 @@ Classification tasks aim to accurately assign test data into specific categories
 
 \subsection{Regression and Classification}
 
-% \subsection{Neural Networks}
-
-% \subsection{Decision Trees and Ensemble Methods}
-
-
 \section{Identification of Local Coupling Sources}
 
 In the previous chapter, the negative impact of local IR linear coupling in the LHC has been extensively discussed, as well as the necessity of its identification and mitigation.
@@ -76,22 +71,30 @@ It has to be noted though, that in simulations only quadrupole tilts - given by 
 
 While simulating the data, the introduced tilt components are the training inputs in the dataset and the produced coupling RDTs generated from the perturbed optics functions are the outputs.
 The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.
-\Cref{figure:qqqqqb1,figure:qqqqqb2} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
+% \Cref{figure:ml_b1_local_sources_rdts,figure:ml_b2_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
+\Cref{figure:ml_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
 The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b1_rdts.pdf}
-    \caption{Beam~\num{1} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
-    \label{figure:qqqqqb1}
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_rdts_combined.pdf}
+    \caption{Beam~\num{1} (top) and Beam~\num{2} (bottom) coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
+    \label{figure:ml_local_sources_rdts}
 \end{figure}
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b2_rdts.pdf}
-    \caption{Beam~\num{2} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
-    \label{figure:qqqqqb2}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b1_rdts.pdf}
+%     \caption{Beam~\num{1} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
+%     \label{figure:ml_b1_local_sources_rdts}
+% \end{figure}
+
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b2_rdts.pdf}
+%     \caption{Beam~\num{2} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
+%     \label{figure:ml_b2_local_sources_rdts}
+% \end{figure}
 
 Each simulated sample of the dataset is obtained by applying the following steps in simulations:
 \begin{enumerate}
@@ -113,7 +116,7 @@ Each sample pair consists in \num{4424} inputs (real and imaginary parts of each
 \subsection{Model Training and Evaluation}
 
 In this study, models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true output values and the model predictions.
-In addition, in order to simulate the measurement uncertainty of the reconstructed RDTs both train and test sets were augmented by adding Gaussian noise to RDTs.
+In addition, in order to simulate the measurement uncertainty of the reconstructed RDTs both train and test sets were augmented by adding Gaussian noise to the RDTs.
 
 The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run~\num{2}.
 \Cref{figure:rdts_stdev_batch} shows the standard deviation of measured coupling RDTs across Beam~\num{1} BPMs for a batch of measurements taken on April~\num{3}, \num{2018}.
@@ -133,30 +136,81 @@ After analyzing several such batches, the following noise levels were determined
 
 A new dataset was created for \textit{each combination} of the noise levels mentioned above.
 For instance, a given set had IR BPMs noised with a standard deviation of \num{1E-3} and arc BPMs with \num{1E-6}.
-Various regression models were trained and evaluated on each of these datasets.
 
-\Cref{figure:ridge_mae_scores} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised data sets depending on the level of noise added to different BPMs.
+% \Cref{figure:ridge_mae_scores} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs.
+\Cref{figure:ridge_performance} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is noticeable.
 Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_mae_scores.pdf}
-    \caption{Normalized mean absolute error of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
-    \label{figure:ridge_mae_scores}
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_performance.pdf}
+    \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+    \label{figure:ridge_performance}
 \end{figure}
 
-\Cref{figure:ridge_r2_scores} shows again the test performance of the same Ridge model through its \(R^2\) scores.
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_mae_scores.pdf}
+%     \caption{Normalized mean absolute error of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+%     \label{figure:ridge_mae_scores}
+% \end{figure}
+
+% \Cref{figure:ridge_r2_scores} shows again the test performance of the same Ridge model through its \(R^2\) scores.
+
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_r2_scores.pdf}
+%     \caption{\(R^2\) scores of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+%     \label{figure:ridge_r2_scores}
+% \end{figure}
+
+In \cref{figure:ridge_performance}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
+% In \cref{figure:ridge_mae_scores,figure:ridge_r2_scores}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
+% In both figures the impact of noising the reconstructed coupling RDTs is noticeable, and leads to a significant decrease of the model's performance.
+
+\subsection{Results}
+
+Several models suited for regression tasks were tested, and a minimal amount of hyperparameter tuning was performed.
+A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however the introduction of noise in the data sets made its performance drop drastically, down to unusable accuracy.
+A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all data sets.
+A ridge regressor model, a linear regressor with \(\mathit{l}^2\) regularization, showcased good performance on both clean and relatively low-noised data sets.
+Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised data sets are presented in \cref{table:ml_models_comparison}, where the ridge regressor clearly outperforms its counterparts.
+
+\begin{table}[!hbt]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \textbf{Model}             &   Clean Data     &   Noised Data     \\
+        \hline
+        Ridge Regressor            &   \num{0.9911}   &   \num{0.8934}    \\
+        Linear Regression          &   \num{0.9913}   &   \num{0.5638}    \\
+        Decision Tree Regressor    &   \num{0.1385}   &   \num{-0.0018}   \\
+        Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}   \\
+        \hline
+    \end{tblr}
+    \caption{Comparison of the \(R^2\) score averaged over \num{1000} simulations taken from the test data sets for different models. In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-5}\) for arc BPMs.}
+    \label{table:ml_models_comparison}
+\end{table}
+
+\Cref{figure:ridge_histograms} shows the predictions and deviations of the ridge model on a noised data set (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where one can notice the deviations are significantly lower that the attributed errors.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_r2_scores.pdf}
-    \caption{\(R^2\) scores of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
-    \label{figure:ridge_r2_scores}
+    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
+    \caption{Histograms of the true applied \(\mathrm{DPSI}\) values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
+    \label{figure:ridge_histograms}
 \end{figure}
 
-In \cref{figure:ridge_mae_scores,figure:ridge_r2_scores}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
-In both figures the impact of noising the reconstructed coupling RDTs is noticeable, and leads to a significant decrease of the model's performance.
-\todo{Talk more about results, it's good when not a lot of noise.}
+\Cref{fig:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where a good agreement between the predicted and the assigned true values can be observed.
+Performance significantly degrades with the addition of noise.
+\todo{EXPAND THE TEXT ALL AROUND.}
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_regression_sample_predictions.pdf}
+    \caption{True assigned (\textcolor{mplblue}{blue}) and predicted (\textcolor{mplorange}{orange}) \(\mathrm{DPSI}\) values with a ridge model for a given test dataset sample. Here the magnet names have been switched for numbers in order to improve clarity.}
+    \label{figure:ridge_predictions}
+\end{figure}
 
 \section{Conclusions and Outlooks}
 
