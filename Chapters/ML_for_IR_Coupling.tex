@@ -214,3 +214,14 @@ Performance significantly degrades with the addition of noise.
 
 \section{Conclusions and Outlooks}
 
+Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards improving model performance, but will not circumvent certain models' shortcomings.
+Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using an auto-encoder neural network~\cite{folDenoisingOpticsMeasurements2021} before feeding the results to the above prediction models.
+Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in high energy physics~\cite{Aurisano_2016} and recently in optics measurements studies~\cite{folOpticsCorrectionsUsing2019} - and would be a promising tool that could yield better prediction accuracy.
+These could give the potential to also include measurements with different machine configurations breaking the degeneracy of the IRs, providing additional insights on the local errors.
+
+% Conclusion
+
+We have shown that specific machine learning models are capable of predicting the IR quadrupole tilts in the LHC by assigning a representative value to specific magnets, some even when faced with noised data sets.
+A Ridge regressor shows the best performance among the tested models, including data sets with small amounts of noise.
+While usability in operation would require better accuracy on data sets with higher noise, this is an important first step towards the application of ML techniques to local coupling corrections in particle accelerators.
+Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
