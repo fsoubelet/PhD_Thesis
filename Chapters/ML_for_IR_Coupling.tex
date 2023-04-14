@@ -112,7 +112,51 @@ Each sample pair consists in \num{4424} inputs (real and imaginary parts of each
 
 \subsection{Model Training and Evaluation}
 
+In this study, models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true output values and the model predictions.
+In addition, in order to simulate the measurement uncertainty of the reconstructed RDTs both train and test sets were augmented by adding Gaussian noise to RDTs.
 
+The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run~\num{2}.
+\Cref{figure:rdts_stdev_batch} shows the standard deviation of measured coupling RDTs across Beam~\num{1} BPMs for a batch of measurements taken on April~\num{3}, \num{2018}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_rdts_batch_stdev.pdf}
+    \caption{Standard deviation of the coupling RDTs at BPMs for Beam~\num{1}, from a batch of measurements taken on April~\num{3}, \num{2018}. These data points were later divided into IR BPMs and arc BPMs to determine applied noise levels.}
+    \label{figure:rdts_stdev_batch}
+\end{figure}
+
+After analyzing several such batches, the following noise levels were determined:
+\begin{itemize}
+  \item Coupling RDTs at arc BPMs were noised with standard deviation ranging from \num{0} to \num{1E-5} absolute error.
+  \item Inner BPMs located in the IRs (number \num{1} to \num{6} from the IP) were noised with standard deviation ranging from \num{0} to \num{1E-2} absolute error.
+\end{itemize}
+
+A new dataset was created for \textit{each combination} of the noise levels mentioned above.
+For instance, a given set had IR BPMs noised with a standard deviation of \num{1E-3} and arc BPMs with \num{1E-6}.
+Various regression models were trained and evaluated on each of these datasets.
+
+\Cref{figure:ridge_mae_scores} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised data sets depending on the level of noise added to different BPMs.
+Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_mae_scores.pdf}
+    \caption{Normalized mean absolute error of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+    \label{figure:ridge_mae_scores}
+\end{figure}
+
+\Cref{figure:ridge_r2_scores} shows again the test performance of the same Ridge model through its \(R^2\) scores.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_r2_scores.pdf}
+    \caption{\(R^2\) scores of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+    \label{figure:ridge_r2_scores}
+\end{figure}
+
+In \cref{figure:ridge_mae_scores,figure:ridge_r2_scores}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
+In both figures the impact of noising the reconstructed coupling RDTs is noticeable, and leads to a significant decrease of the model's performance.
+\todo{Talk more about results, it's good when not a lot of noise.}
 
 \section{Conclusions and Outlooks}
 
