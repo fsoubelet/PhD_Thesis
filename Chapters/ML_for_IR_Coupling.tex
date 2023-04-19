@@ -46,9 +46,29 @@ By adjusting the parameters of the model - or approximation function - the quant
 Supervised learning is typically used for \intro{classification} and \intro{regression} tasks.
 Classification tasks aim to accurately assign test data into specific categories, and regression tasks understand aim to understand and approximate the relationship between dependent and independent variables in order to predict the outcome of a given input.
 
-\subsection{Generalization and Overfitting}
-
 \subsection{Regression and Classification}
+
+\subsection{Generalization, Underfitting and Overfitting}
+
+In supervised learning, one tries to train a model capable of making correct predictions on \textit{new}, unseen data based on the experience and tuning acquired on the training data's known outputs.
+This ability to predict on new data is called \intro{generalization}, and is the most important aspect of the built model~\cite{PR:Rosenblatt:Perceptron,BOOK:Bishop:Neural_Networks_Pattern_Recognition}.
+A separate and unrelated test dataset is usually used in order to evaluate the predictive power of the model.
+Most of the time, training and test datasets share enough similarities - properties and relations in the underlying data - such that the model can accurately predict on the test set.
+
+However, in the case of highly complex models high accuracy can be achieved on the training data with poor prediction performance on the test data.
+When too complex, models can tend to fit very closely to individual data points in the training data and extrapolate unexisting relations that will later on perform badly on new data.
+Building such a model is called \intro{overfitting}.
+Similarly, when too simple for the data at hand, the model will not be able to capture the underlying relations and will perform poorly on both training and test data.
+This is referred to as \intro{underfitting}.
+\Cref{figure:ml_underfitting_overfitting} illustrates these concepts by showing an underfitting model, an well chosen and trained model, and an overfitting model.
+Though simple, this example highlights the importance of building a model that generalizes well.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_underfitting_overfitting.pdf}
+    \caption{Three examples showcasing models approximating (\textcolor{mplblue}{blue}) a true function (\textcolor{mplorange}{orange}) after training on provided samples (\textcolor{mplb}{dark blue}). Of the three models one is too simple and underfits (left), one generalizes properly (middle), and one is too complex and overfits (right). This plot was reproduced from the \textit{scikit-learn}~\cite{CODE:scikit-learn} documentation~\cite{Website:ScikitLearn:Overfitting_Example}.}
+    \label{figure:ml_underfitting_overfitting}
+\end{figure}
 
 \section{Identification of Local Coupling Sources}
 
