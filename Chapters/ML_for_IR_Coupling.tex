@@ -123,6 +123,27 @@ If the performance on the training set is substantially higher, the model has be
 
 \subsubsection*{Regularized Regression}
 
+A potential approach to avoid overfitting is to apply regularization during the model training, by imposing a penalty on the update of the model's parameters.
+As the model parameters are updated during training to attempt to fit every incoming input-output pair, the penalty constrains the change of these parameters such that the model becomes more robust against variations in the data.
+This technique is known as \textit{L2 regularization}, and in the context of supervised regression \intro{ridge regression}~\cite{MIT:Rifkin:Regularized_Least_Squares}.
+
+A ridge regressor minimizes the residual sum of squares introduced above by introducing a tuning parameter \(\alpha\) which mitigates the potential linear dependencies between different input variables in the dataset.
+In the presence of such dependencies, parameters might be updated inappropriately during training in response to small changes in the model or the data.
+The regression task is formulated as:
+\begin{equation}
+    \min _w \left|\left| w \vec{x} - \vec{y} \right|\right|_2^2 + \alpha \left|\left| w \right|\right|_2^2 \text{ ,}
+    \label{equation:ridge_regression_regularization}
+\end{equation}
+where \(w\) is the matrix containing the parameters of the model, \(\vec{x}\) is the input data vector and \(\vec{y}\) the vector of targets to be predicted by the model.
+With higher values of \(\alpha\) the changes in model parameters are reduced at each update step, helping overreacting to correlated changes in the data.
+
+It is also possible to mitigate overfitting by decreasing the number of input features while retaining only uncorrelated features for function approximation by the model.
+\intro{Lasso regression}~\cite{} uses an \(L1\) norm to drive some regression coefficients to \(0\), which improves the model in terms of variance and allows for automatic feature selection.
+
+To tune additional model parameters such as the ridge penalty \(\alpha\) or the number of input features to be retained in Lasso regression one can use \intro{cross-validation}, a resampling method which consists in randomly dividing the dataset into equally sized parts.
+For instance, the dataset is divided in ten subsets and the model is fitted on nine of those while the loss is computed on the remaining subset.
+This procedure is repeated for each of the ten subsets to be used for loss computation, and all ten estimates of the prediction error are averaged.
+As the practice is part of the training process cross-validation is only applied to the training dataset, and the test dataset is still used only to evaluate a trained model's performance on unobserved data.
 
 \section{Identification of Local Coupling Sources}
 
