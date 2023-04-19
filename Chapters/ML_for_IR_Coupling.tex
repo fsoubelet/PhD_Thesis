@@ -14,7 +14,7 @@ T. Mitchell illustrates the key characteristics of machine learning as \textit{"
 A key characteristic distinguishing machine learning from conventional programming is the program's ability to automatically achieve performance improvements based on provided data.
 
 This section provides a quick introduction to relevant paradigms and concepts of machine learning, primarily derived from~\cite{BOOK:Mitchell:Machine_Learning,BOOK:Hastie:Elements_Statistical_Learning} where one can find detailed discussions on the subject.
-The focus hereafter is kept only on particular algorithms used in the applications presented in this chapter.
+The focus hereafter is kept only on particular concepts used in the work presented in this chapter.
 
 \subsection{Defining a Machine Learning Task}
 
@@ -76,7 +76,21 @@ After training, the resulting coefficients should be sufficiently general to gen
 
 \subsubsection*{Polynomial Regression}
 
+Some learning tasks, due to the complex properties of the data, require nonlinear predictors.
+For instance, this is the case when fitting a one dimensional polynomial function of degree \(n\):
 
+\begin{equation}
+    p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \text{ ,}
+    \label{equation:polynomial_function}
+\end{equation}
+where \((a_0, \ldots, a_n)\) is a vector of coefficients of size \(n+1\).
+One way to train a model to approximate such a function is to reduce the problem to linear regression~\cite{BOOK:ShalevShwartz:Understanding_Machine_Learning}.
+To do so one can introduce a mapping such that \(\psi(x)=\left(1, x, x^2, \ldots, x^n\right)\), which reduces the problem to:
+\begin{equation}
+    p(\psi(x)) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n = \langle \vec{a}, \psi(x) \rangle \text{ ,}
+    \label{equation:polynomial_function_linear_mapping}
+\end{equation}
+and the optimal vector \(\vec{a}\) can be found by minimizing the residual sum of squares (RSS) as in \cref{equation:least_squares_rss}.
 
 \subsection{Generalization, Underfitting and Overfitting}
 
