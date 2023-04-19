@@ -46,7 +46,37 @@ By adjusting the parameters of the model - or approximation function - the quant
 Supervised learning is typically used for \intro{classification} and \intro{regression} tasks.
 Classification tasks aim to accurately assign test data into specific categories, and regression tasks understand aim to understand and approximate the relationship between dependent and independent variables in order to predict the outcome of a given input.
 
-\subsection{Regression and Classification}
+\subsection{Regression Models}
+
+In the case of regression problems, the regression function is what is being approximated by the model.
+\todo{Bit more here.}
+
+\subsubsection*{Linear Models}
+
+Linear models compute the estimates of the output values using a linear function of the input variables~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models}.
+For regression tasks, the estimation for the predicted output \(\hat{y}\) of a linear model is expressed as:
+
+\begin{equation}
+    \hat{y} = w_0 + \sum_{i=1}^{N} w_i x_i \text{ ,}
+    \label{equation:linear_regression_prediction}
+\end{equation}
+where \(\vec{x}\) is the input vector containing \(N\) features, and \(\vec{w}\) is the vector containing the learned coefficients of the model, with \(w_0\) being the bias.
+In a simple case (see \cref{figure:ml_underfitting_overfitting} below) \(\hat{y}\) is a scalar, but it is usually a vector of dimension \(K\).
+In this case the model parameters \(w\) are then represented as an \(N \times K\) matrix.
+
+Typically, linear regression models are trained using the \intro{least squares} method, which minimizes the residual sum of squared errors between the predicted and actual output values.
+Given a set \(N\) samples from the training dataset, and \(y\) being the true output for a given sample, the linear model's parameters are updated during training with each incoming sample, minimizing:
+
+\begin{equation}
+    RSS(\hat{w}) = \sum_{m=1}^{N} (y_m - \hat{y}_m)^2 \text{ .}
+    \label{equation:least_squares_rss}
+\end{equation}
+
+After training, the resulting coefficients should be sufficiently general to generate accurate predictions for all provided data samples.
+
+\subsubsection*{Polynomial Regression}
+
+
 
 \subsection{Generalization, Underfitting and Overfitting}
 
@@ -76,6 +106,9 @@ One of the common ways to avoid underfitting or overfitting is to provide valida
 The training set is then used to drive the learning procedure, and after training the error is evaluated on the validation set.
 When done properly, the model's performance of both training and validation sets should be nearly equal.
 If the performance on the training set is substantially higher, the model has been overfitted and further adjustments on the model complexity are then required.
+
+\subsubsection*{Regularized Regression}
+
 
 \section{Identification of Local Coupling Sources}
 
