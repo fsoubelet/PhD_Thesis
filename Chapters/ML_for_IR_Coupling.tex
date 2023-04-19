@@ -112,7 +112,7 @@ Though simple, this example highlights the importance of building a model that g
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_underfitting_overfitting.pdf}
-    \caption{Three examples showcasing models approximating (\textcolor{mplblue}{blue}) a true function (\textcolor{mplorange}{orange}) after training on provided samples (\textcolor{mplb}{dark blue}). Of the three models one is too simple and underfits (left), one generalizes properly (middle), and one is too complex and overfits (right). This plot was reproduced from the \textit{scikit-learn}~\cite{CODE:scikit-learn} documentation~\cite{Website:ScikitLearn:Overfitting_Example}.}
+    \caption{Three examples showcasing models approximating (\textcolor{mplblue}{blue}) a true function (\textcolor{mplorange}{orange}) after training on provided samples (\textcolor{mplb}{dark blue}). Of the three models one is too simple and underfits (left), one generalizes properly (middle), and one is too complex and overfits (right). This plot was reproduced from the \textit{scikit-learn} documentation~\cite{CODE:scikit-learn, Website:ScikitLearn:Overfitting_Example}.}
     \label{figure:ml_underfitting_overfitting}
 \end{figure}
 
@@ -135,10 +135,10 @@ The regression task is formulated as:
     \label{equation:ridge_regression_regularization}
 \end{equation}
 where \(w\) is the matrix containing the parameters of the model, \(\vec{x}\) is the input data vector and \(\vec{y}\) the vector of targets to be predicted by the model.
-With higher values of \(\alpha\) the changes in model parameters are reduced at each update step, helping overreacting to correlated changes in the data.
+With higher values of \(\alpha\) the changes in model parameters are reduced at each update step, helping not overreact to correlated changes in the data.
 
 It is also possible to mitigate overfitting by decreasing the number of input features while retaining only uncorrelated features for function approximation by the model.
-\intro{Lasso regression}~\cite{} uses an \(L1\) norm to drive some regression coefficients to \(0\), which improves the model in terms of variance and allows for automatic feature selection.
+\intro{Lasso regression}~\cite{JRSS:Tibshirani:Regression_Shrinkage_Selection_Via_Lasso} uses an \(L1\) norm to drive some regression coefficients to \(0\), which improves the model in terms of variance and allows for automatic feature selection.
 
 To tune additional model parameters such as the ridge penalty \(\alpha\) or the number of input features to be retained in Lasso regression one can use \intro{cross-validation}, a resampling method which consists in randomly dividing the dataset into equally sized parts.
 For instance, the dataset is divided in ten subsets and the model is fitted on nine of those while the loss is computed on the remaining subset.
@@ -188,11 +188,10 @@ Each simulated sample of the dataset is obtained by applying the following steps
     \item The real and imaginary parts of the coupling RDTs at each BPM and for each beam are concatenated in order to obtain a single vector of values for a given sample.
 \end{enumerate}
 
-To train the model the relation is flipped such that the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
-Therefore, the coupling RDTs reconstructed at each BPM are considered as model input, or features.
-A vector containing the estimated \(\mathrm{DPSI}\) value attributed to each affected quadrupole is the desired output of the trained model.
+To train the model the relation is flipped, and the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
+Therefore, the coupling RDTs reconstructed at each BPM are considered as model input and a vector containing the predicted \(\mathrm{DPSI}\) value attributed to each affected quadrupole is the desired output.
 \Cref{figure:ml_supervised_training_schematic} shows a conceptual schematic of the dataset generation and supervised model training process for this given application.
-More specifically,each block is repeated many times: the former during dataset generation and the latter for supervised training.
+% More specifically,each block is repeated many times: the former during dataset generation and the latter for supervised training.
 
 \begin{figure}[!htb]
     \centering
@@ -202,7 +201,7 @@ More specifically,each block is repeated many times: the former during dataset g
 \end{figure}
 
 A simulation data set of \num{50000} samples was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
-Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (one \(\mathrm{DPSI}\) value at each affected IR quadrupole).
+Each sample pair consists in \num{4424} inputs - real and imaginary parts of each coupling RDT for each BPM for each beam - and \num{160} outputs: one \(\mathrm{DPSI}\) value at each affected IR quadrupole.
 
 \subsection{Model Training and Evaluation}
 
@@ -214,8 +213,8 @@ The standard deviation of the added noise was determined by a statistical analys
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_rdts_batch_stdev.pdf}
-    \caption{Standard deviation of the coupling RDTs at BPMs for Beam~\num{1}, from a batch of measurements taken on April~\num{3}, \num{2018}. These data points were later divided into IR BPMs and arc BPMs to determine applied noise levels.}
+    \includegraphics*[width=\textwidth]{Figures/ML_for_IR_Coupling/ml_rdts_batch_stdev.pdf}
+    \caption{Standard deviation of the coupling RDTs at BPMs for Beam~\num{1}, from a batch of measurements taken on April~\num{3}, \num{2018}. These data points were later divided into IR and arc BPMs to determine applied noise levels.}
     \label{figure:rdts_stdev_batch}
 \end{figure}
 
@@ -228,7 +227,6 @@ After analyzing several such batches, the following noise levels were determined
 A new dataset was created for \textit{each combination} of the noise levels mentioned above.
 For instance, a given set had IR BPMs noised with a standard deviation of \num{1E-3} and arc BPMs with \num{1E-6}.
 
-% \Cref{figure:ridge_mae_scores} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs.
 \Cref{figure:ridge_performance} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is noticeable.
 Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
 
@@ -238,22 +236,6 @@ Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the s
     \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
     \label{figure:ridge_performance}
 \end{figure}
-
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_mae_scores.pdf}
-%     \caption{Normalized mean absolute error of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
-%     \label{figure:ridge_mae_scores}
-% \end{figure}
-
-% \Cref{figure:ridge_r2_scores} shows again the test performance of the same Ridge model through its \(R^2\) scores.
-
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_r2_scores.pdf}
-%     \caption{\(R^2\) scores of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
-%     \label{figure:ridge_r2_scores}
-% \end{figure}
 
 In \cref{figure:ridge_performance}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
 % In \cref{figure:ridge_mae_scores,figure:ridge_r2_scores}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
