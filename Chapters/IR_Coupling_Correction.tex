@@ -96,9 +96,6 @@ Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_an
 \end{equation}
 where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) the revolution frequency of particles, \(N_b\) the number of bunches per beam and \(\sigma_{z, n}\) is the size at the IP of beam \(n\) in the transverse plane \(z\), calculated according to \cref{equation:lebedev_beam_size}.
 
-% \todo{What else to add here? I should say a bit that we want to look into getting coupling control at the IP, for the reasons. This transitions into the next section.}
-% \todo{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla feugiat diam at elit consectetur, non auctor lorem fringilla. Nullam nec dolor nec leo maximus ultrices ut eu dui. Quisque egestas orci sed ante tempor, sed bibendum quam placerat. Pellentesque vel vulputate risus, nec laoreet nulla. Phasellus consectetur nulla nibh, at malesuada lectus consequat non. Praesent luctus, tellus a ornare vulputate, lorem mauris sollicitudin ante, et iaculis arcu risus ac mi. Fusce ac diam vel justo volutpat pretium in imperdiet diam. Vivamus efficitur ante eget arcu sollicitudin efficitur. Cras leo massa, tincidunt nec placerat in, lobortis et est. Praesent ultricies nunc eget ullamcorper sodales. Aenean lobortis tellus eu purus elementum euismod. Cras tempus mattis massa, in sollicitudin nulla. Cras eleifend maximus consequat. Morbi ut nibh eu ligula scelerisque consequat. Donec vel feugiat dolor.}
-
 \section{Current Correction Methods and Their Limitations}
 \label{section:current_correction_methods_and_their_limitations}
 
@@ -1097,9 +1094,10 @@ The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} opti
     \label{figure:carry_over_impact_on_beam_size}
 \end{figure}
 
-One can notice that the beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation, being significantly affected only in the space between Q\num{1} to Q\num{1}.
-This behavior was also observed in~\cref{PRAB:Hofer:Coupling_Local_Observables} where the coupling RDTs themselves are only significantly affected in the same space for a similar trim.
-As the drift space right around the IP is irrelevant for aperture limitations, one can conclude that the aperture would not suffer from such a compensation scheme.
+The beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation through the machine, being significantly affected only in the space between Q\num{1} to Q\num{1}.
+This behavior was also observed in~\cite{PRAB:Hofer:Coupling_Local_Observables} where the coupling RDTs themselves are only significantly affected in the same space for a similar trim.
+As the drift space right around the IP is not a constraint for aperture limitations, one can conclude that the aperture would not suffer from such a compensation scheme.
+Similarly, the impact on Beam-Beam Long Range (BBLR)~\cite{PHD:Poyet} interaction should be minimal as the increase is only significant within a few meters of the IP location itself.
 
 \subsubsection*{Experimental Measurements of Carry-Over}
 
@@ -1124,8 +1122,8 @@ Due to time constraints again, however, the trim could not be fully done when ca
     \label{figure:ir5_carry_over_vs_simulations}
 \end{figure}
 
-\todo{Simulations and measurements show a reasonable agreement in both cases.
-Simulations systematically over-estimate the loss of luminosity but some discrepancy is to be expected as \cref{equation:luminosity_double_beams} is a simplified calculation.}
+Simulations and measurements show a reasonable agreement in both cases.
+Simulations systematically over-estimate the loss of luminosity but some discrepancy is to be expected as \cref{equation:luminosity_double_beams} is a simplified calculation which does not take into account \textit{e.g.} the crossing angles.
 
 \subsubsection*{Impact Through the Operational Cycle}
 
