@@ -110,8 +110,18 @@ Each simulated sample of the dataset is obtained by applying the following steps
 To train the model the relation is flipped such that the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
 Therefore, the coupling RDTs reconstructed at each BPM are considered as model input, or features.
 A vector containing the estimated \(\mathrm{DPSI}\) value attributed to each affected quadrupole is the desired output of the trained model.
+\Cref{figure:ml_supervised_training_schematic} shows a conceptual schematic of the dataset generation and supervised model training process for this given application.
+More specifically,each block is repeated many times: the former during dataset generation and the latter for supervised training.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/supervised_training_schematic.pdf}
+    \caption{Conceptual representation of the dataset generation and supervised model training. This diagram is heavily inspired from~\cite{PHD:Fol:Application_ML_Beam_Optics}.}
+    \label{figure:ml_supervised_training_schematic}
+\end{figure}
+
 A simulation data set of \num{50000} samples was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
-Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (\(\mathrm{DPSI}\) value at each affected IR quadrupole).
+Each sample pair consists in \num{4424} inputs (real and imaginary parts of each coupling RDT for each BPM for each beam) and \num{160} outputs (one \(\mathrm{DPSI}\) value at each affected IR quadrupole).
 
 \subsection{Model Training and Evaluation}
 
