@@ -168,7 +168,6 @@ While simulating the data, the introduced tilt components are the training input
 The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.
 % \Cref{figure:ml_b1_local_sources_rdts,figure:ml_b2_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
 \Cref{figure:ml_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
-The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
 
 \begin{figure}[!htb]
     \centering
@@ -177,20 +176,7 @@ The standard deviation of the applied tilt errors Gaussian distribution was alig
     \label{figure:ml_local_sources_rdts}
 \end{figure}
 
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b1_rdts.pdf}
-%     \caption{Beam~\num{1} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
-%     \label{figure:ml_b1_local_sources_rdts}
-% \end{figure}
-
-% \begin{figure}[!htb]
-%     \centering
-%     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_b2_rdts.pdf}
-%     \caption{Beam~\num{2} coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
-%     \label{figure:ml_b2_local_sources_rdts}
-% \end{figure}
-
+The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
 Each simulated sample of the dataset is obtained by applying the following steps in simulations:
 \begin{enumerate}
     \item A truncated Gaussian distribution of tilt errors (\(\mathrm{DPSI}\)) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
