@@ -9,6 +9,7 @@ The primary purpose of the work presented hereafter is to explore the possibilit
 \todo{Don't forget to get citations here.}
 
 \section{Relevant Concepts of Machine Learning}
+\label{section:concepts_of_machine_learning}
 
 Machine learning can be seen as the intersection of statistics and computer science.
 The key characteristics of machine learning are described by T. Mitchell as: \textit{"machine learning techniques aim to build computer programs and algorithms that automatically improve with experience by learning from examples with respect to some class of task and performance measure, without being explicitly programmed"}~\cite{BOOK:Mitchell:Machine_Learning}.
@@ -94,6 +95,7 @@ To do so one can introduce a mapping such that \(\psi(x)=\left(1, x, x^2, \ldots
 and the optimal vector \(\vec{a}\) can be found by minimizing the residual sum of squares (RSS) as in \cref{equation:least_squares_rss}.
 
 \subsection{Generalization, Underfitting and Overfitting}
+\label{subsection:generalization_underfitting_overfitting}
 
 In supervised learning, one tries to train a model capable of making correct predictions on \textit{new}, unseen data based on the experience and tuning acquired on the training data's known outputs.
 This ability to predict on new data is called \intro{generalization}, and is the most important aspect of the built model~\cite{PR:Rosenblatt:Perceptron,BOOK:Bishop:Neural_Networks_Pattern_Recognition}.
@@ -228,22 +230,47 @@ Similarly, several such datasets were created for different standard deviation o
 \subsection{Model Training and Evaluation}
 
 In this study models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true output values and the model predictions.
-\Cref{figure:ridge_performance} shows the test performance of a Ridge Regression model~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is noticeable.
-Here the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
+Several models suited for regression tasks were tested, and a minimal amount of hyperparameter tuning was performed.
+
+Each model was trained and evaluated on the various datasets generated, in order to assess their performance and usability in various realistic contexts of noise in the data. 
+A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however its performance dropped drastically when applied to the noised datasets, down to unusable accuracy.
+A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all data sets.
+A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise data sets.
+
+\Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is apparent.
+In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
+
+In this figure each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
+While dense, this representation allows to see the performance of the model on a wide range of noised datasets, for a single given distribution of the tilt errors.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_performance.pdf}
-    \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a Ridge model on various noised data sets. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
+    \caption{Normalized mean absolute error (top) and \(R^2\) scores (bottom) of a ridge regressor on various datasets corresponding to different noise levels added to the coupling RDTs. The \(\sigma\) values indicated correspond to the standard deviation of the Gaussian noise distributions added to the coupling RDTs data.}
     \label{figure:ridge_performance}
 \end{figure}
 
-In \cref{figure:ridge_performance}, each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
+\todo{Comment the results here, give some numbers?}
 
-Several models suited for regression tasks were tested, and a minimal amount of hyperparameter tuning was performed.
-A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however the introduction of noise in the data sets made its performance drop drastically, down to unusable accuracy.
-A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all data sets.
-A ridge regressor model, a linear regressor with \(\mathit{l}^2\) regularization, showcased good performance on both clean and relatively low-noised data sets.
+\Cref{figure:ridge_histograms} shows the predictions and deviations of the ridge regressor on a noised data set (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where one can notice the deviations are significantly lower that the attributed errors.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
+    \caption{Histograms of the true applied \(\mathrm{DPSI}\) values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
+    \label{figure:ridge_histograms}
+\end{figure}
+
+\Cref{figure:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where a good agreement between the predicted and the assigned true values can be observed.
+Performance significantly degrades with the addition of noise.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_regression_sample_predictions.pdf}
+    \caption{True assigned (\textcolor{mplblue}{blue}) and predicted (\textcolor{mplorange}{orange}) \(\mathrm{DPSI}\) values with a ridge model for a given test dataset sample. Here the magnet names have been switched for numbers in order to improve clarity.}
+    \label{figure:ridge_predictions}
+\end{figure}
+
 Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised data sets are presented in \cref{table:ml_models_comparison}, where the ridge regressor clearly outperforms its counterparts.
 
 \begin{table}[!hbt]
@@ -261,26 +288,6 @@ Results showing the best \(R^{2}\) scores obtained by each model on both clean a
     \caption{Comparison of the \(R^2\) score averaged over \num{1000} simulations taken from the test data sets for different models. In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-5}\) for arc BPMs.}
     \label{table:ml_models_comparison}
 \end{table}
-
-\Cref{figure:ridge_histograms} shows the predictions and deviations of the ridge model on a noised data set (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where one can notice the deviations are significantly lower that the attributed errors.
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
-    \caption{Histograms of the true applied \(\mathrm{DPSI}\) values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
-    \label{figure:ridge_histograms}
-\end{figure}
-
-\Cref{fig:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where a good agreement between the predicted and the assigned true values can be observed.
-Performance significantly degrades with the addition of noise.
-\todo{EXPAND THE TEXT ALL AROUND.}
-
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_regression_sample_predictions.pdf}
-    \caption{True assigned (\textcolor{mplblue}{blue}) and predicted (\textcolor{mplorange}{orange}) \(\mathrm{DPSI}\) values with a ridge model for a given test dataset sample. Here the magnet names have been switched for numbers in order to improve clarity.}
-    \label{figure:ridge_predictions}
-\end{figure}
 
 \section{Conclusions and Outlooks}
 
