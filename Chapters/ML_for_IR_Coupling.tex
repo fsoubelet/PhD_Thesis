@@ -215,14 +215,15 @@ The standard deviation of the added noise was determined by a statistical analys
     \label{figure:rdts_stdev_batch}
 \end{figure}
 
-After analyzing several such batches, the following noise levels were determined:
+After analyzing several such batches, the following noise levels to be added were determined:
 \begin{itemize}
-  \item Coupling RDTs at arc BPMs were noised with standard deviation ranging from \num{0} to \num{1E-5} absolute error.
-  \item Inner BPMs located in the IRs (number \num{1} to \num{6} from the IP) were noised with standard deviation ranging from \num{0} to \num{1E-2} absolute error.
+  \item Coupling RDTs at arc BPMs were noised with a truncated Gaussian distribution of standard deviation ranging from \num{0} to \num{1E-5} absolute error.
+  \item Inner BPMs located in the IRs (number \num{1} to \num{6} from the IP) were noised with a truncated Gaussian distribution of standard deviation ranging from \num{0} to \num{1E-2} absolute error.
 \end{itemize}
 
-A new dataset was created for \textit{each combination} of the noise levels mentioned above.
+A new dataset was created for each combination of the noise levels mentioned above.
 For instance, a given set had IR BPMs noised with a standard deviation of \num{1E-3} and arc BPMs with \num{1E-6}.
+Similarly, several such datasets were created for different standard deviation of the introduced tilt errors.
 
 \subsection{Model Training and Evaluation}
 
