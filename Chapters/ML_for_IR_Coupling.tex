@@ -162,14 +162,13 @@ As from the real machine the true location of sources is unknown, no real-world 
 
 \subsection{Dataset Generation}
 
-In order to create a training dataset, simulations were performed with the MAD-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles in each IR.
+In order to create a training dataset simulations were performed with the MAD-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles, in each IR.
 The tilt generates a skew quadrupolar component at the affected element and thus turns it into a source of coupling.
-It has to be noted though, that in simulations only quadrupole tilts - given by the \(\mathrm{DPSI}\) variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in these studies.
+It has to be noted though, that in simulations only quadrupole tilts - given by the \(\mathrm{DPSI}\) variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in this study.
 
-While simulating the data, the introduced tilt components are the training inputs in the dataset and the produced coupling RDTs generated from the perturbed optics functions are the outputs.
+When generating the data from simulations, the introduced tilt components form the training output and the produced coupling RDTs generated from the perturbed optics functions are the input in the training dataset.
 The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.
-% \Cref{figure:ml_b1_local_sources_rdts,figure:ml_b2_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
-\Cref{figure:ml_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IPs \numlist{1;2;5;8}.
+\Cref{figure:ml_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}.
 
 \begin{figure}[!htb]
     \centering
@@ -179,14 +178,14 @@ The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30
 \end{figure}
 
 The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
-Each simulated sample of the dataset is obtained by applying the following steps in simulations:
+Each sample of the dataset is obtained by applying the following steps in simulations:
 \begin{enumerate}
     \item A truncated Gaussian distribution of tilt errors (\(\mathrm{DPSI}\)) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
-    \item Quadrupoles located outside the IRs are excluded as these sources can be well corrected by other means.
+    \item Quadrupoles located outside the IRs are excluded as these sources can be identified and compensated by other means.
     \item The coupling RDTs \(f_{1001}\) and \(f_{1010}\) are calculated at each BPM from Twiss functions for Beam~\num{1}.
     \item The \(\mathrm{DPSI}\) values for triplets are exported and applied to Beam 2, as these are common magnets and should share the error.
-    \item A truncated Gaussian distribution is applied to the remaining quadrupoles Q\num{4} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{2}.
-    \item Coupling RDTs for Beam~\num{2} are calculated as done for Beam~\num{1}.
+    \item A truncated Gaussian distribution similar to the one of step \num{1} is applied to the remaining quadrupoles Q\num{4} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{2}.
+    \item Coupling RDTs for Beam~\num{2} are calculated at each BPM as done for Beam~\num{1}.
     \item The real and imaginary parts of the coupling RDTs at each BPM and for each beam are concatenated in order to obtain a single vector of values for a given sample.
 \end{enumerate}
 
