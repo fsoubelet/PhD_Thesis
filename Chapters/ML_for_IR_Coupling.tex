@@ -66,7 +66,7 @@ In a simple case (see \cref{figure:ml_underfitting_overfitting} below) \(\hat{y}
 In this case the model parameters \(w\) are then represented as an \(N \times K\) matrix.
 
 Typically, linear regression models are trained using the \intro{least squares} method, which minimizes the residual sum of squared errors between the predicted and actual output values.
-Given a set \(N\) samples from the training dataset, and \(y\) being the true output for a given sample, the linear model's parameters are updated during training with each incoming sample, minimizing:
+Given a set of \(N\) samples from the training dataset, and \(y\) being the true output for a given sample, the linear model's parameters are updated during training with each incoming sample, minimizing:
 
 \begin{equation}
     RSS(\hat{w}) = \sum_{m=1}^{N} (y_m - \hat{y}_m)^2 \text{ .}
