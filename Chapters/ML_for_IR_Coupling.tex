@@ -27,11 +27,11 @@ The requirements on the model's performance in terms of accuracy, precision and 
 The chosen performance criteria, the type of experience to be obtained via learning and the specific approach and algorithm are specific to the task that should be learned.
 These three parameters - task, measure of performance and source of experience - are the fundamentals of a well-defined machine learning problem.
 In practice, it is reflected in the selection of appropriate learning method and function approximation algorithm, definition of the loss function and its acceptable values, as well as the preparation of data.
-The latter usually appears to be non-trivial and can require dedicated techniques and algorithms e.g. for feature extraction or correlation analysis.
+The latter usually appears to be non-trivial and can require dedicated techniques and algorithms. % e.g. for feature extraction or correlation analysis.
 
 \subsection{Supervised and Unsupervised Learning}
 
-Two main approaches are available in machine learning depending on the problem definition and the availability and structure of learning example.
+Two main approaches are available in machine learning depending on the problem definition and the availability and structure of the learning examples.
 
 \intro{Unsupervised learning} is characterized by the use of unlabeled datasets.
 Unsupervised learning algorithms solve tasks where only input data is available, and are used to analyze and cluster inputs by discovering patterns in data without the need for human intervention, hence them being \textit{unsupervised}.
@@ -42,15 +42,15 @@ They are suitable for tasks such as anomaly detection, signal denoising, dimensi
 \intro{Supervised learning} is characterized by the use of labeled datasets.
 These datasets are used to train - or \textit{supervise} - the model to learn how to accurately classify data or predict outcomes.
 During the training, predictions are computed from the inputs and compared to the known corresponding outputs.
-By adjusting the parameters of the model - or approximation function - the quantified difference between computed predictions and correct outputs - the so-called \textit{loss function} - is minimized.
+By adjusting the parameters of the model - or approximation function - the quantified difference between computed predictions and correct outputs, the so-called \textit{loss function}, is minimized.
 % By providing known labeled inputs and outputs, the model can measure its accuracy and adjust its parameters to improve during the learning.
 Supervised learning is typically used for \intro{classification} and \intro{regression} tasks.
-Classification tasks aim to accurately assign test data into specific categories, and regression tasks understand aim to understand and approximate the relationship between dependent and independent variables in order to predict the outcome of a given input.
+Classification tasks aim to accurately assign test data into specific categories, and regression tasks aim to understand and approximate the relationship between dependent and independent variables in order to predict the outcome of a given input.
 
 \subsection{Regression Models}
 
 In the case of regression problems, the regression function is what is being approximated by the model.
-\todo{Bit more here.}
+Several regression models can be used.
 
 \subsubsection*{Linear Models}
 
