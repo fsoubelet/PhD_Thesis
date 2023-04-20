@@ -102,12 +102,12 @@ Most of the time, training and test datasets share enough similarities - propert
 
 However, in the case of highly complex models high accuracy can be achieved on the training data with poor prediction performance on the test data.
 When too complex, models can tend to fit very closely to individual data points in the training data and extrapolate unexisting relations that will later on perform badly on new data.
-Building such a model is called \intro{overfitting}.
+This phenomenon is called \intro{overfitting}.
 
-Similarly, when too simple for the data at hand, the model will not be able to capture the underlying relations and will not be able to perform accurate predictions even on training data.
+Similarly, when too simple for the data at hand the model will not be able to capture the underlying relations and will not be able to perform accurate predictions even on training data.
 This is referred to as \intro{underfitting}.
 
-\Cref{figure:ml_underfitting_overfitting} illustrates these concepts by showing an underfitting model, a well-chosen and trained model, and an overfitting model.
+\Cref{figure:ml_underfitting_overfitting} illustrates these concepts by showing an underfitting model, a model that generalizes well, and an overfitting model.
 Though simple, this example highlights the importance of building a model that generalizes well.
 
 \begin{figure}[!htb]
@@ -117,7 +117,7 @@ Though simple, this example highlights the importance of building a model that g
     \label{figure:ml_underfitting_overfitting}
 \end{figure}
 
-One of the common ways to avoid underfitting or overfitting is to provide validation data to the model in addition to the training data.
+One of the common ways to identify underfitting or overfitting is to provide validation data to the model in addition to the training data.
 The training set is then used to drive the learning procedure, and after training the error is evaluated on the validation set.
 When done properly, the model's performance of both training and validation sets should be nearly equal.
 If the performance on the training set is substantially higher, the model has been overfitted and further adjustments on the model complexity are then required.
