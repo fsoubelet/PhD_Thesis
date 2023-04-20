@@ -239,7 +239,6 @@ A ridge regressor model (see \cref{subsection:generalization_underfitting_overfi
 
 \Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is apparent.
 In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
-
 In this figure each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
 While dense, this representation allows to see the performance of the model on a wide range of noised datasets, for a single given distribution of the tilt errors.
 
@@ -250,19 +249,23 @@ While dense, this representation allows to see the performance of the model on a
     \label{figure:ridge_performance}
 \end{figure}
 
-\todo{Comment the results here, give some numbers?}
+To the left of the plot at data points corresponding to low noise levels in IR BPMs, where for two of the curves (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange}) the model's performance is excellent.
+Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green}) is a significant hit of performance.
+Point to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
 
-\Cref{figure:ridge_histograms} shows the predictions and deviations of the ridge regressor on a noised data set (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where one can notice the deviations are significantly lower that the attributed errors.
+\Cref{figure:ridge_histograms} shows histograms of the distributions of true attributed errors, of the ridge regressor's predictions and of deviations to the true values.
+These were obtained by evaluating the model on a noised data set with \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\) (corresponding to the third leftmost point on the \textcolor{mplorange}{orange} curve in \cref{figure:ridge_performance}).
+One can notice the histogram of deviations much more narrowly centered on \num{0} than that of the attributed errors, which is the sign of good performance.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.9\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
+    \includegraphics*[width=0.7\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
     \caption{Histograms of the true applied \(\mathrm{DPSI}\) values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
     \label{figure:ridge_histograms}
 \end{figure}
 
-\Cref{figure:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)), where a good agreement between the predicted and the assigned true values can be observed.
-Performance significantly degrades with the addition of noise.
+\Cref{figure:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\)), where a good agreement between the predicted and the assigned true values can be observed.
+Prediction performance significantly degrades with the addition of noise, with sometimes predictions wrong by an order of magnitude or more in the worst cases.
 
 \begin{figure}[!htb]
     \centering
@@ -285,11 +288,16 @@ Results showing the best \(R^{2}\) scores obtained by each model on both clean a
         Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}   \\
         \hline
     \end{tblr}
-    \caption{Comparison of the \(R^2\) score averaged over \num{1000} simulations taken from the test data sets for different models. In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-5}\) for arc BPMs.}
+    \caption{Comparison of the \(R^2\) score averaged over \num{1000} simulations taken from the test data sets for different models. In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-6}\) for arc BPMs. The distribution of attributed tilt errors has a standard deviation of \(\sigma =\)~\qty{1E-4}{\radian}.}
     \label{table:ml_models_comparison}
 \end{table}
 
+\todo{Bit of bla bla here on what this means: cool with no noise, would need a denoising pipeline or something to be fully useful. Still a good indication to have an idea of where the sources are regardless of the exact values if we want to pinpoint an element for the alignment group (and assuming only tilted quadrupoles are coupling sources).}
+
 \section{Conclusions and Outlooks}
+\label{section:ml_conclusions_outlooks}
+
+\todo{Go over this and rewrite.}
 
 Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards improving model performance, but will not circumvent certain models' shortcomings.
 Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using an auto-encoder neural network~\cite{folDenoisingOpticsMeasurements2021} before feeding the results to the above prediction models.
