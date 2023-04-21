@@ -159,7 +159,7 @@ In order to perform a prediction of betatron coupling sources' locations, one fi
 The strength and variations of the coupling RDTs throughout the machine is then used to estimate the location of coupling sources and their relative strengths.
 
 In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
-Such a regression model requires a large data set in order to be able to generalize and produce reliable results.
+Such a regression model requires a large dataset in order to be able to generalize and produce reliable results.
 As from the real machine the true location of sources is unknown, no real-world data is available for the training of machine learning models.
 
 \subsection{Dataset Generation}
@@ -234,8 +234,8 @@ Several models suited for regression tasks were tested, and a minimal amount of 
 
 Each model was trained and evaluated on the various datasets generated, in order to assess their performance and usability in various realistic contexts of noise in the data. 
 A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however its performance dropped drastically when applied to the noised datasets, down to unusable accuracy.
-A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all data sets.
-A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise data sets.
+A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all datasets.
+A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise datasets.
 
 \Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is apparent.
 In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
@@ -254,7 +254,7 @@ Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgree
 Point to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
 
 \Cref{figure:ridge_histograms} shows histograms of the distributions of true attributed errors, of the ridge regressor's predictions and of deviations to the true values.
-These were obtained by evaluating the model on a noised data set with \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\) (corresponding to the third leftmost point on the \textcolor{mplorange}{orange} curve in \cref{figure:ridge_performance}).
+These were obtained by evaluating the model on a noised dataset with \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\) (corresponding to the third leftmost point on the \textcolor{mplorange}{orange} curve in \cref{figure:ridge_performance}).
 One can notice the histogram of deviations much more narrowly centered on \num{0} than that of the attributed errors, which is the sign of good performance.
 
 \begin{figure}[!htb]
@@ -274,7 +274,7 @@ Prediction performance significantly degrades with the addition of noise, with s
     \label{figure:ridge_predictions}
 \end{figure}
 
-Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised data sets are presented in \cref{table:ml_models_comparison}, where the ridge regressor clearly outperforms its counterparts.
+Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised datasets are presented in \cref{table:ml_models_comparison}, where the ridge regressor clearly outperforms its counterparts.
 
 \begin{table}[!hbt]
     \centering
@@ -309,9 +309,11 @@ Circumventing this would need much more complex and inclusive simulations.
 \section{Summary}
 \label{section:ml_conclusions_outlooks}
 
-\todo{Broad stuff about ML and its rise also in physics. We thought maybe we could apply it to our problems with this task?}
+Following the successful application of machine learning methods to various tasks in particle accelerators in recent years, we explored the possibility of training machine learning models to predict linear coupling sources in the LHC IRs in the form of quadrupole tilts.
+Several datasets were generated for training, corresponding to realistic tilt error distributions and noise levels aiming to reproduce measurements uncertainty.
 
-We have shown that specific machine learning models are capable of predicting the IR quadrupole tilts in the LHC by assigning a representative value to specific magnets, some even when faced with noised data sets.
-A Ridge regressor shows the best performance among the tested models, including data sets with small amounts of noise.
-While usability in operation would require better accuracy on data sets with higher noise, this is an important first step towards the application of ML techniques to local coupling corrections in particle accelerators.
+We have shown that specific machine learning models among those tested are capable of predicting the IR quadrupole tilts by assigning a representative value to specific magnets with good accuracy on datasets generated from simulations.
+A ridge regressor shows the best performance among the tested models, including on datasets with reasonably small amounts of noise.
+
+While usability in operation would require better accuracy on datasets with higher noise, this is a successful proof of concept for the application of machine learning techniques to the subject of local coupling corrections in particle accelerators.
 Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
