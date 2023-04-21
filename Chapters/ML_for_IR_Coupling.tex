@@ -1,5 +1,5 @@
-\chapter{Machine Learning for Interaction Region Local Coupling} % Main chapter title
-\label{chapter:ml_local_coupling} % For referencing the chapter elsewhere, use \cref{Chapter:ML_Local_Coupling}
+\chapter{Machine Learning for Interaction Region Local Coupling}
+\label{chapter:ml_local_coupling}
 
 Machine learning methods have found their application in a variety of fields including technology development, scientific research, medical diagnosis and business insights.
 The now widespread application of machine learning techniques demonstrates their applicability to various challenges and tasks.
@@ -288,23 +288,28 @@ Results showing the best \(R^{2}\) scores obtained by each model on both clean a
         Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}   \\
         \hline
     \end{tblr}
-    \caption{Comparison of the \(R^2\) score averaged over \num{1000} simulations taken from the test data sets for different models. In this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-6}\) for arc BPMs. The distribution of attributed tilt errors has a standard deviation of \(\sigma =\)~\qty{1E-4}{\radian}.}
+    \caption{Comparison of the \(R^2\) score averaged over \num{1000} samples taken from the test dataset for different models. For the results in this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-6}\) for arc BPMs. The distribution of tilt errors had a standard deviation of \(\sigma =\)~\qty{1E-4}{\radian}.}
     \label{table:ml_models_comparison}
 \end{table}
 
-\todo{Bit of bla bla here on what this means: cool with no noise, would need a denoising pipeline or something to be fully useful. Still a good indication to have an idea of where the sources are regardless of the exact values if we want to pinpoint an element for the alignment group (and assuming only tilted quadrupoles are coupling sources).}
+From the results on clean data or low noise levels in \cref{figure:ridge_performance,table:ml_models_comparison}, one can view this study as a good proof of principle for the application of machine learning to coupling sources detection.
+However, with realistic noise levels even the best performing model is not yet good enough to be used in operation or incorporated in correction techniques.
+Nonetheless, while predictions might not yield accurate numbers they still provide a good indication of suspected locations of coupling sources, which may be valuable for the alignment group.
 
-\section{Conclusions and Outlooks}
+There is also potential for performance improvements.
+Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards better performance, but will not circumvent certain models' shortcomings.
+More complex models such as Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in high energy physics~\cite{JOI:Aurisano:Convolutional_Neural_Network_Neutrino_Event_Classifier} and recently in optics measurements studies~\cite{IPAC:Fol:Optics_Corrections_Using_Machine_Learning_in_the_LHC} - and would be a promising tool that could yield better prediction accuracy especially on noised datasets.
+Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using another model trained for the task - this has been successfully done with auto-encoder neural networks~\cite{IPAC:Fol:Denoising_Optics_Measurements_Autoencoder_Neural_Networks} - before feeding the results to the above prediction models.
+With good enough noise cleaning, the prediction models should reach the level of performance displayed in this study on clean or low noise datasets.
+
+The main limitation of these trained models comes from the fact that only skew quadrupole components were considered in the study for the introduction of coupling.
+In the real machine, other effects such as field errors in higher order magnets or orbit offsets in sextupoles would also lead to a coupling contribution, and the models would try to interpret this and blame it on a quadrupole.
+Circumventing this would need much more complex and inclusive simulations.
+
+\section{Conclusions}
 \label{section:ml_conclusions_outlooks}
 
-\todo{Go over this and rewrite.}
-
-Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards improving model performance, but will not circumvent certain models' shortcomings.
-Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using an auto-encoder neural network~\cite{folDenoisingOpticsMeasurements2021} before feeding the results to the above prediction models.
-Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in high energy physics~\cite{JOI:Aurisano:Convolutional_Neural_Network_Neutrino_Event_Classifier} and recently in optics measurements studies~\cite{IPAC:Fol:Optics_Corrections_Using_Machine_Learning_in_the_LHC} - and would be a promising tool that could yield better prediction accuracy.
-These could give the potential to also include measurements with different machine configurations breaking the degeneracy of the IRs, providing additional insights on the local errors.
-
-% Conclusion
+\todo{Broad stuff about ML and its rise also in physics. We thought maybe we could apply it to our problems with this task?}
 
 We have shown that specific machine learning models are capable of predicting the IR quadrupole tilts in the LHC by assigning a representative value to specific magnets, some even when faced with noised data sets.
 A Ridge regressor shows the best performance among the tested models, including data sets with small amounts of noise.
