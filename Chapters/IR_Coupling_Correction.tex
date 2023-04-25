@@ -1240,13 +1240,20 @@ Another solution would be to install a new warm skew quadrupole magnet as replac
 
 \section{Summary}
 
-\todo{Write.}
+In the Large Hadron Collider, corrections of local Interaction Region linear coupling are of importance to keep a good control of beam sizes at Interaction Points, to guarantee luminosity performance of the machine and to prevent any significant impact on the beam dynamics.
+So far the correction of local linear coupling has been performed by finding a powering setting of the dedicated skew quadrupole correctors with the Segment-by-Segment technique, which aims to compensate for the Interaction Region's contribution to global coupling in the machine.
+However, the technique suffers from inherent weaknesses that do not allow for a correction of linear coupling at the IP, and other existing methods or observables have not sovled the issue.
+\newline
 
-Want to include the following points here:
-\begin{enumerate}
-    \item Some bla bla on the observed need for correction of local coupling at the IP
-    \item Some mention that we have tools to take care but it's a two-fold problem and there was nothing for coupling at IP
-    \item We presented in this chapter a new tool to correct for local coupling at the IP and experimental results, say them
-    \item Also had a look at backup solutions in case of MQSX failures, as we rely heavily on these correctors for machine safety. We found potential schemes to be able to safely operate at the cost of luminosity, which was quantified and is planned to be measured in \num{2023}.
-    \item Implications to other colliders? Cool story bro.
-\end{enumerate}
+We have presented a new method - the Rigid Waist Shift - which was developed specifically to correct for local linear coupling at the IP, and is based on the controlled perturbation of the optics in the Interaction Regions.
+The method allows one to determine a powering adjustment of the correctors from the values determined with Segment-by-Segment that optimizes the coupling at the IP location.
+The method's validity has been demonstrated in simulations and with experimental data taken in the LHC \num{2022} commissioning, where the determined corrections led to a measured instantaneous luminosity gain of \qty{9.7}{\percent} and \qty{5.2}{\percent} at the ATLAS and CMS experiments, respectively.
+These corrections are now the baseline values used in the machine for physics production.
+Some care was given to look into the relevance of this method for other existing and future colliders, and we have shown that for most circular collider layouts the Rigid Waist Shift could be a viable solution to tackle local linear coupling.
+\newline
+
+Magnet lifetime studies conducted during the Long Shutdown~\num{2} have shown that the dedicated correctors are expected to reach their radiation dose limit during Run~\num{3}, and it is realistic to expect one or more failures.
+Studies have been performed to determine the impact of such failures on the machine's performance and assess the viability of potential solutions.
+It was shown that one could compensate for the loss of a single corrector and guarantee both safe machine operation and squeezing of the beams down to collision configuration, but at the cost of luminosity.
+Estimates of expected instantaneous luminosity losses were determined and confirmed through experimental measurements; and the impact over a complete physics fill with the \num{2023} configuration was extrapolated.
+Potential solutions were investigated to compensate for the simultaneous loss of both correctors in a given Interaction Region, but these are still at the stage of early studies.
