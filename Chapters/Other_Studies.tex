@@ -78,6 +78,111 @@ Similarly, the positive real square roots of values from this chi-square distrib
 
 \subsection{Computing the Standard Deviation on Phase Advance Measurements}
 
+A chi-square distribution with \(k\) degrees of freedom  is the distribution of sum of the squares of \(k\) independent standard normal random variables.
+Let \(X_{i}\) represent the \(N\) normal random variables, then the associated standard deviation square is given by:
+
+\begin{equation}
+    \sigma^{2} = \frac{1}{N} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ ,}
+    \label{equation:chi2_dist_build_from_normals}
+\end{equation}
+where \(\bar{X}\) is the sample mean of the normal distribution given by:
+
+\begin{equation}
+    \bar{X} = \frac{1}{N} \sum_{i=1}^{N} X_{i} \text{ .}
+    \label{equation:normal_mean}
+\end{equation}
+
+The standard error used in analysis codes is defined as:
+
+\begin{equation}
+    (SE)^{2} = \frac{1}{N-1} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ .}
+    \label{equation:omc3_standard_error}
+\end{equation}
+
+The ensemble of \(\sigma^{2}\) values from different sets of measurements form a chi-square distribution. 
+The associated probability density function (PDF) for \(k\) degrees of freedom, which is non-zero for positive values only, is given by:
+
+\begin{equation}
+    P(x \geq 0, k) = \frac{x^{k/2-1} e^{-x/2}} {2^{k/2} \Gamma(\frac{k}{2})} \text{ .}
+    \label{equation:chi2_pdf_equation}
+\end{equation}
+
+The \intro{mode} is the value \(x^{*}\) that maximizes the PDF.
+In this case, one can notice that for positive values where the PDF is defined, \(x^{*}\) will be the same for \(P(x)\) and \(\log P(x)\).
+When adopting the following convention:
+
+\begin{equation}
+    \centering
+    A(x) = \log P(x) \mbox{,   and  } C =
+    \tikz[baseline]{
+        \node[draw=red,rounded corners,anchor=base] (m5)
+        {\(\displaystyle - \frac{k}{2} \log(2) - \log \Gamma(k/2)\)};
+        \node[below of=m5] (12) {constant};
+        \draw[-,red] (12) -- (m5)
+    } \text{ ,}
+    \label{equation:chi2_pdf_derivation_convention}
+\end{equation}
+one can deduce the value \(x^{*}\) through a simple derivation:
+
+\begin{equation}
+	\begin{aligned}
+    A(x)              &= C + \left( \frac{k}{2} - 1 \right) \log(x) - \frac{x}{2} \text{ ,} \\
+    \frac{d A(x)}{dx} &= \left( \frac{k}{2} - 1 \right) \frac{1}{x} - \frac{1}{2} = \frac{k - 2 - x}{2x} \text{ .}
+	\end{aligned}	
+    \label{equation:chi2_pdf_mode_proof}
+\end{equation}
+
+Thus, we get that the mode is \(x^{*} = k - 2\).
+If \(k \leq 2\) then the mode is 0, since the PDF in that case is strictly decreasing with \(x\).
+\Cref{fig:chisquare_demo_fit} illustrates this property with a generated chi-square distribution and its PDF, highlighting the location of the mode.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/Other_Studies/chisquare_demo_fit.pdf}
+    \caption{A chi-square distribution with \(k = 4\) degrees of freedom, and a numerically fit probability density function. One can notice the mode is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of sigmas square.}
+    \label{figure:chisquare_demo_fit}
+\end{figure}
+
+The standard deviation of the phase measurements \(\sigma_{\mu}\) is then given from the mode by:
+
+\begin{equation}
+    \sigma_{\mu} = \sqrt{\frac{(\epsilon^2)^*}{k - 2}} = \sqrt{\frac{(\epsilon^2)^*}{N - 3}} \text{ .}
+    \label{equation:stdev_from_chi2_mode}
+\end{equation}
+
+For the chi distribution mentioned above and derived through \(x = y^2\), the associated probability density function of \cref{equation:chi2_pdf_equation} becomes:
+
+\begin{equation}
+    \begin{aligned}
+        P_{\sigma}(y , k) &= P (y^2 , k) 2y \text{ ,} \\
+        P_{\sigma}(y , k) &= \frac{y^{k-1} e^{-y^2/2}} {2^{k/2-1} \Gamma(\frac{k}{2})} \text{ .}
+    \end{aligned}
+    \label{equation:chi_pdf}  
+\end{equation}
+
+For this chi distribution, the mode of \(P_{\sigma}(y , k)\) is at \(y^*=\sqrt{k-1}\) and \cref{equation:stdev_from_chi2_mode} above becomes:
+
+\begin{equation}
+    \sigma_{\mu} = \frac{y^*}{\sqrt{k - 1}} = \frac{y^*}{\sqrt{N - 2}} \text{ .}
+    \label{equation:stdev_from_mode}
+\end{equation}
+
+However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but suffer from the quality of the fit, or try to detect the highest bins from the distribution's histogram but suffer from bin resolution and outlier data points heavily skewing the result.
+
+It is possible to use other properties than the mode.
+For instance, similarly shown as previously for the mode, one can compute back the desired standard deviation using the mean of the chi distribution through:
+
+\begin{equation}
+	\begin{aligned}
+        \sigma_{\mu} &= \frac{\mu}{T} \text{ ,} \\
+        T            &= \sqrt{2} \frac{\Gamma((k + 1) / 2)}{\Gamma(k / 2)} \text{ ,}
+	\end{aligned}	
+    \label{equation:stdev_from_chi_mean}
+\end{equation}
+where \(\sigma_{\mu}\) is the phase measurement's standard deviation, \(\mu\) is the chi distribution's mean, \(k\) is the chi distribution's degrees of freedom and \(\Gamma\) is the Gamma function.
+
+\subsection{Application to Measurements}
+
 \section{Simulations of Sextupolar Contribution to Amplitude Detuning in the LHC}
 
 \todo{Write / include a small section on amplitude detuning in the theory chapter.}
