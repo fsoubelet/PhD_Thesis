@@ -87,14 +87,14 @@ Let \(X_{i}\) represent the \(N\) normal random variables, then the associated s
     \sigma^{2} = \frac{1}{N} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ ,}
     \label{equation:chi2_dist_build_from_normals}
 \end{equation}
-where \(\bar{X}\) is the sample mean of the normal distribution given by:
+where \(\bar{X}\) is the sample mean of the normal distribution given by
 
 \begin{equation}
     \bar{X} = \frac{1}{N} \sum_{i=1}^{N} X_{i} \text{ .}
     \label{equation:normal_mean}
 \end{equation}
 
-The standard error used in analysis codes is defined as:
+The standard error used in analysis codes is defined as
 
 \begin{equation}
     (SE)^{2} = \frac{1}{N-1} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ .}
@@ -102,7 +102,7 @@ The standard error used in analysis codes is defined as:
 \end{equation}
 
 The ensemble of \(\sigma^{2}\) values from different sets of measurements form a chi-square distribution. 
-The associated probability density function (PDF) for \(k\) degrees of freedom, which is non-zero for positive values only, is given by:
+The associated Probability Density Function (PDF) for \(k\) degrees of freedom, which is non-zero for positive values only, is given by:
 
 \begin{equation}
     P(x \geq 0, k) = \frac{x^{k/2-1} e^{-x/2}} {2^{k/2} \Gamma(\frac{k}{2})} \text{ .}
@@ -141,7 +141,7 @@ If \(k \leq 2\) then the mode is 0, since the PDF in that case is strictly decre
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_chisquare_demo_fit.pdf}
-    \caption{A chi-square distribution with \(k = 4\) degrees of freedom, and a numerically fit probability density function. One can notice the mode is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of sigmas square.}
+    \caption{A randomly generated chi-square distribution with \(k = 4\) degrees of freedom, and a numerically fit probability density function. The determined mode is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of sigmas square.}
     \label{figure:chisquare_demo_fit}
 \end{figure}
 
@@ -169,7 +169,7 @@ For this chi distribution, the mode of \(P_{\sigma}(y , k)\) is at \(y^*=\sqrt{k
     \label{equation:stdev_from_mode}
 \end{equation}
 
-However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but suffer from the quality of the fit, or try to detect the highest bins from the distribution's histogram but suffer from bin resolution and outlier data points heavily skewing the result.
+However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but suffer from the quality of the fit, or try to detect the highest bins from the distribution's histogram but suffer from bin resolution and outlier data points skewing the result.
 
 It is possible to use other properties than the mode.
 For instance, similarly shown as previously for the mode, one can compute back the desired standard deviation using the mean of the chi distribution through:
