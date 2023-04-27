@@ -31,7 +31,7 @@ It is therefore of interest to have the ability to determine the standard deviat
 \end{figure}
 
 The sum of two IIDs - which our measurements are assumed to be - is also normal.
-Using the characteristic function of a normal distribution:
+Using the characteristic function of a normal distribution
 
 \begin{equation}
     \varphi(t) = \exp \left( it \mu - \frac{\sigma^2 t^2}{2} \right) \text{ ,}
@@ -49,7 +49,7 @@ which corresponds to a normal distribution with its mean being the sum of the tw
 Respectively, one can deduce the same for the subtraction of two IIDs by changing the signs.
 
 In particle accelerators, phase advances are measured from BPM to BPM and are, in the simplest form, the result of a subtraction.
-The repeated phase advance measurements obtained from a given BPM pair form a normal distribution with average phase advance \(\bar{\varphi}\) and standard deviation \(\sigma_{\mu}\).
+As a consequence the repeated phase advance measurements obtained from a given BPM pair form a normal distribution with average phase advance \(\bar{\varphi}\) and standard deviation \(\sigma_{\mu}\).
 Traditionally, the error on phase advance is computed via the standard deviation of \(N\) measurements:
 
 \begin{equation}
@@ -57,14 +57,14 @@ Traditionally, the error on phase advance is computed via the standard deviation
     \label{equation:phase_error_calculation}
 \end{equation}
 
-This means the squares of phase advance (and phase advance error) values (\(\varepsilon^2\)) form a chi-square distribution, with a number of degrees of freedom  \(k = N - 1\) since the sample mean is subtracted.
-Therefore, grouping sufficient BPM pairs of the same type and with similar \(\beta\)-function and computing the distribution of their \(\varepsilon^2\) one obtains a Chi-square distribution.
+This means the squares of phase advance (and phase advance error) values \(\varepsilon^2\) form a chi-square distribution, with a number of degrees of freedom  \(k = N - 1\) since the sample mean is subtracted.
+Therefore, grouping sufficient BPM pairs of the same type and with similar \(\beta\)-function, and computing the distribution of their \(\varepsilon^2\) one obtains a chi-square distribution.
 \Cref{figure:square_errors_histograms} shows those chi-square distributions for different ranges of \(\beta\)-functions combinations between measuring BPMs.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_errors_squared_distributions.pdf}
-    \caption{Distribution of the squares of phase measurement errors for different BPM combinations, differentiated by the \(\beta\)-functions at which the BPMs are located. The different distributions form chi-square distributions. For this plot a few simple categories were established, and a BPM is considered "low" below \(\beta =\)~\qty{100}{\meter}, "high" above \(\beta =\)~\qty{200}{\meter} and "medium" in between.}
+    \caption{Distribution of the squares of phase measurement errors for different BPM combinations, differentiated by the \(\beta\)-functions at the locations of the measuring BPMs. The different distributions form chi-square distributions. For this plot a few simple categories were established, and a BPM is considered "low" below \(\beta =\)~\qty{100}{\meter}, "high" above \(\beta =\)~\qty{200}{\meter} and "medium" in between.}
     \label{figure:square_errors_histograms}
 \end{figure}
 
@@ -74,7 +74,7 @@ Similarly, the positive real square roots of values from this chi-square distrib
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_errors_distributions.pdf}
-    \caption{Distribution of the phase measurement errors for different BPM combinations, differentiated by the \(\beta\)-functions at which the BPMs are located. For this plot a few simple categories were established, and a BPM is considered "low" below \(\beta =\)~\qty{100}{\meter}, "high" above \(\beta =\)~\qty{200}{\meter} and "medium" in between.}
+    \caption{Distribution of the phase measurement errors for different BPM combinations, differentiated by the \(\beta\)-functions at the locations of the measuring BPMs. For this plot a few simple categories were established, and a BPM is considered "low" below \(\beta =\)~\qty{100}{\meter}, "high" above \(\beta =\)~\qty{200}{\meter} and "medium" in between.}
     \label{figure:phase_errors_histograms}
 \end{figure}
 
