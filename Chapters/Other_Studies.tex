@@ -12,7 +12,7 @@ This study was performed to investigate the influence of these properties on the
 In practice the presence of systematic errors can influence different sets of measurements to not be totally independent, but in the following study these are assumed to be independent and identically distributed normal random variables (IID), meaning repeating the same BPM measurement in identical conditions will spawn a range of values forming a Gaussian distribution.
 Using the underlying properties of the measurements-derived distributions, one can numerically infer the standard deviation on the phase measurement. \todo{Also mention that this differentiates based on the conditions mentioned above.}
 
-\subsection{Measurement Data and Underlying Distributions}
+\subsection*{Measurement Data and Underlying Distributions}
 
 The methods and considerations below can be applied on BPM turn-by-turn measurement data from synchrotron machines.
 The following analysis was done on data taken during the LHC Run~\num{2}, in \num{2018} and at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
@@ -78,7 +78,7 @@ Similarly, the positive real square roots of values from this chi-square distrib
     \label{figure:phase_errors_histograms}
 \end{figure}
 
-\subsection{Computing the Standard Deviation on Phase Advance Measurements}
+\subsection*{Computing the Standard Deviation on Phase Advance Measurements}
 
 A chi-square distribution with \(k\) degrees of freedom  is the distribution of sum of the squares of \(k\) independent standard normal random variables.
 Let \(X_{i}\) represent the \(N\) normal random variables, then the associated standard deviation square is given by:
@@ -183,7 +183,7 @@ For instance, similarly shown as previously for the mode, one can compute back t
 \end{equation}
 where \(\sigma_{\mu}\) is the phase measurement's standard deviation, \(\mu\) is the chi distribution's mean, \(k\) is the chi distribution's degrees of freedom and \(\Gamma\) is the Gamma function.
 
-\subsection{Application to Measurements}
+\subsection*{Application to Measurements}
 
 Due to the presence of many outliers (see \cref{figure:bpms_betas_histogram}) and the lack of a sufficient number of data points in some BPM type categories, the calculation from the mean of the chi distribution seen in \cref{equation:stdev_from_chi_mean} was used in the results presented below.
 
@@ -214,11 +214,11 @@ Similarly, BPMs placed at higher \(\beta\)-functions offer better results.
     \label{figure:phase_error_heatmap_standard_bpms}
 \end{figure}
 
-\subsection{Conclusions}
+\subsection*{Conclusions}
 
-\todo{Using the normal nature of Beam Position Monitor measurements, one can make use of the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase measurement.
-The suspected dependency of the measurement's standard deviation on both measuring BPMs' types and their \(\beta\)-functions are confirmed.
-The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on BPM type opens up potential applications in analysis algorithms, for instance helping the refining of phase accuracy from the new Harpy harmonic analysis code, or optimizing BPM selection in the N-BPM measurement method or in corrections.}
+Using the normal nature of BPM measurements, one can make use of the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase measurement while also differentiating between categories of BPMs.
+The suspected dependency of said standard deviation on both measuring BPMs' types and their \(\beta\)-functions has been confirmed.
+The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in  harmonic analysis or optimizing BPM selection in the N-BPM method.
 
 \section{Simulations of Sextupolar Contribution to Amplitude Detuning in the LHC}
 
