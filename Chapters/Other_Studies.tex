@@ -233,6 +233,85 @@ It has previously been suspected that the forced amplitude detuning induced by s
 This study aims to first demonstrate the possibility of measuring this amplitude detuning with AC dipole excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}.
 Simulations were performed to investigate the sextupolar amplitude detuning in the LHC lattice, both through forced oscillations with AC dipole and free oscillations up to similarly high amplitudes.
 
+\subsection*{Amplitude Detuning with an AC Dipole}
+
+The feasibility of direct amplitude detuning measurement with an AC dipole was demonstrated in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, as well as its benefits compared to the previously traditional technique of exciting the beam to large amplitudes with a single kick.
+In the same paper, the authors go over the linear motion of particles and differentiate two cases.
+The parametrization of the transverse coordinate \(z\) in the case of free and forced oscillations with an AC dipole is given by \cref{equation:free_transverse_motion} and \cref{equation:driven_transverse_motion}, respectively.
+
+Analysis of the \(\beta\)-function of the driven particle, \(\beta_D\), can be found in~\cite{PHD:Miyamoto,PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation,PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
+It is derived, still in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, that for multipoles of even order \(m = 2n\) the amplitude detuning in the case of horizontally driven oscillations is given by:
+
+\begin{equation}
+    \begin{aligned}
+        \Delta Q_x &= \frac{q B_{2n}}{2np} \frac{2^{-n}}{2 \pi} \frac{(2n)!}{(n-1)! (n-1)!} \beta_x \beta_{D,x}^{n-1} A^{n-1} \text{ ,} \\
+        \Delta Q_y &= -\frac{q B_{2n}}{2np} \frac{2^{-n}}{2 \pi} \frac{(2n)!}{(n-1)! (n-1)!} \beta_y \beta_{D,x}^{n-1} A^{n-1} \text{ ,}
+    \end{aligned}
+    \label{eqn:transverse_amp_det}
+\end{equation}
+where \(q\) is the charge of the particle, \(p\) its momentum and \(B_{2n}\) the gradient of the multipole of order \(2n\) providing the detuning.
+Importantly, it is analytically shown that, neglecting the typically small difference between \(\beta_z\) and \(\beta_{D,z}\), \textit{"for multipoles of order \(2n\), the direct term of the amplitude detuning measured with an AC dipole will be a factor \(n\) larger than for free oscillations while the cross terms in both cases are equal"}.
+
+This means in the case of octupolar amplitude detuning that the direct term detuning \(Q_{x}(J_{x})\) under AC dipole oscillations is a factor \(n = 2\) stronger than under free oscillations, while the cross term detuning \(Q_{y}(J_{x})\) will be the same in both cases.
+It was suspected that in the LHC sextupolar detuning can be measured with ac dipoles and that it behaves similarly with this factor \num{2} observed in the case of even order multipole, while being a multipole of order \num{3} itself.
+Tracking simulations were performed to investigate this effect.
+
+\subsection*{Amplitude Detuning via Particle Tracking}
+
+On-momentum particles were tracked with the MAD-X code through the LHC lattice of \num{2018}, with \qty{30}{\centi\meter} optics.
+Nonlinearities were stripped down to the only contribution of sextupoles: no magnet errors, crossing angles or orbit bumps were included; and neither octupoles nor higher order magnets were powered.
+This way the only non-negligible contribution to amplitude detuning is the sextupolar one.
+
+Tracking was performed under in the case of both free and forced oscillations (in the horizontal plane) with similar amplitudes.
+Several scenarios corresponding to different tune separations for the driven motion were explored.
+Turn-by-turn data was gathered at all BPMs during the tracking, and the resulting file was analyzed as done for LHC measurements.
+
+\Cref{figure:horizontal_detuning_comparison,figure:vertical_detuning_comparison} show the horizontal and vertical amplitude detuning results, respectively, for both free and driven motion.
+For each result a linear regression is performed against the data to determine the detuning coefficient.
+
+\begin{figure}[!htb]
+    \centering
+    % \includegraphics*[width=\textwidth]{Figures/Other_Studies/direct_detuning_driven_vs_free.pdf}
+    \includegraphics*[width=\textwidth]{Figures/placeholder.png}
+    \caption{Natural horizontal tune \(Q_x\) shift with horizontal free or forced action (\(J_{x}\) or \(A_x\)), in the case of free oscillations (\textcolor{mplorange}{orange}) and driven motion with \(\Delta Q_x = -0.01\) (\textcolor{mplblue}{blue}) and \(\Delta Q_x = -0.005\) (\textcolor{mplred}{red}).}
+    \label{figure:horizontal_detuning_comparison}
+\end{figure}
+
+\begin{figure}[!htb]
+    \centering
+    % \includegraphics*[width=\textwidth]{Figures/Other_Studies/cross_detuning_driven_vs_free.pdf}
+    \includegraphics*[width=\textwidth]{Figures/placeholder.png}
+    \caption{Natural vertical tune \(Q_y\) shift with horizontal free or forced action (\(J_{x}\) or \(A_x\)), in the case of free oscillations (\textcolor{mplorange}{orange}) and driven motion with \(\Delta Q_x = -0.01\) (\textcolor{mplblue}{blue}) and \(\Delta Q_x = -0.005\) (\textcolor{mplred}{red}).}
+    \label{figure:vertical_detuning_comparison}
+\end{figure}
+
+Results are compiled in \cref{table:detuning_coefficients_results}.
+
+\begin{table}[!htb]
+    \centering
+    \begin{tblr}{colspec={ccc}}
+        \hline
+        \SetCell[r=2,c=1]{m,c} \textbf{Scenario}   &  \SetCell[c=2]{c} Detuning Coefficient [\unit{\per\micro\meter}]   \\
+        \cline{2,3}                                &  Direct Term    &  Cross Term                                      \\
+        \hline
+        Free Oscillations                           &  \num{13.14}   &  \num{-14.94}                                    \\
+        Driven (\(\Delta Q_x = -0.01\))             &  \num{24.04}   &  \num{-15.99}                                    \\
+        Driven (\(\Delta Q_x = -0.005\))            &  \num{25.01}   &  \num{-15.50}                                    \\
+        \hline
+    \end{tblr}
+    \caption{Direct and cross term detuning coefficients for free and forced motion, determined by performing a linear regression on data.}
+    \label{table:detuning_coefficients_results}
+\end{table}
+
+\todo{Sentence about the results in the table.}
+
+\subsection*{Conclusions}
+
+While machine imperfection impede the measurement of strictly the sextupolar amplitude detuning in the LHC, particle tracking simulations confirm the presence of a suspected sextupolar contribution.
+\todo{Rephrase this.
+Firstly, this study demonstrates our ability to measure sextupolar amplitude detuning with an AC dipole.
+Additionally, not only does this detuning appear present, it seems to behave reasonably close to expectations, behaving in a similar way to octupolar amplitude detuning when comparing the case of forced motion and free oscillations.}
+
 \section{OMC Software Developments}
 
 Blah blah.
