@@ -34,10 +34,11 @@ headsepline, % Uncomment to get a line under the header
 % consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
 ]{MastersDoctoralThesis} % The class file specifying the document structure
 
-\include{Toolkit/packages.tex}
-\include{Toolkit/siunits.tex}  % siunitx settings
-\include{Toolkit/geometry.tex}  % geometry settings
-\include{Toolkit/thesis_info.tex}  % thesis information for this document class
+\input{Toolkit/colors.tex}       % define specific colors
+\input{Toolkit/packages.tex}     % load all necessary packages
+\input{Toolkit/siunits.tex}      % siunitx settings
+\input{Toolkit/geometry.tex}     % document geometry settings
+\input{Toolkit/thesis_info.tex}  % thesis information for this document class
 
 \setcounter{secnumdepth}{3}
 \addbibresource{Bibliography.bib}
@@ -55,7 +56,6 @@ headsepline, % Uncomment to get a line under the header
 \include{Frontmatter/Titlepage.tex}
 \include{Toolkit/mathcommands.tex}
 \include{Toolkit/usercommands.tex}
-\include{Toolkit/colors.tex}
 
 % \include{Frontmatter/Dedicatory.tex}
 % \include{Frontmatter/Abstract.tex}
