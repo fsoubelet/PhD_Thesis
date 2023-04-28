@@ -2,18 +2,51 @@
 %	VARIOUS USED PACKAGES
 %----------------------------------------------------------------------------------------
 
+% ----- Classic Things ----- %
 \usepackage[utf8]{inputenc}  % required for inputting international characters
 \usepackage[T1]{fontenc}  % output font encoding for international characters
+\usepackage[autostyle=true]{csquotes}  % required to generate language-dependent quotes in the bibliography
+
+
+% ----- Maths Related ----- %
 \usepackage{amsmath, amsfonts, amssymb}  % all the good math stuff
 \usepackage{bm}  % bold symbols in math mode
+\usepackage{siunitx}  % good macros for SI units
+
+
+% ----- Figures Related ----- %
 \usepackage{tikz}  % create and include Tikz figures
-\usepackage[autostyle=true]{csquotes}  % required to generate language-dependent quotes in the bibliography
+\usetikzlibrary{matrix}
 \usepackage{caption}     % this and below are used for the
 \usepackage{subcaption}  % subfigures throughout the document
-\usepackage{siunitx}  % good macros for SI units
-\usepackage{appendix}  % to make appendix appear properly in the table of content
-\usepackage{tabularray}  % holy grail of tables
 
+
+% ----- Tables Related ----- %
+\usepackage{tabularray}  % holy grail of tables
+\UseTblrLibrary{amsmath}  % Makes tabularray load amsmath and register better environments
+
+
+% ----- Document Formating Related ----- %
+\usepackage{titlesec}       % to style chapter titles
+\usepackage{appendix}       % to make appendix appear properly in the table of content
+\usepackage{xurl}           % urls can break anywhere
+\usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % citations and bibliography
+\usepackage{orcidlink}      % include hyperlink patch to people's ORCID page | load after hyperref
+% \usepackage{microtype}    % improves kerning, only include in last stages of compilation, takes time!
+
+
+% ----- References, Cross-Linking and Links Related ----- %
+\usepackage[capitalise, nameinlink]{cleveref}  % get smart references across the document | load last!
+\usepackage[xcolor,notion]{knowledge}  % define notions to be linked to inside the document | load after hyperref
+% \usepackage{hyperref}  % hyperlinks through the document | loaded by cleveref
+\hypersetup{
+  linkcolor=cern,
+  citecolor=cern,
+  urlcolor=cern,
+  colorlinks=true,
+  linktoc=all,          % includes page-numbers in links
+  hypertexnames=false,  % fixes wrong linking with subequations, but might have side-effects (check index links!)
+}
 % Acronyms ------------------
 % \usepackage[
 %     acronym,% add acronym type
@@ -26,19 +59,7 @@
 % \input{Toolkit/glossary_entries}
 % \makenoidxglossaries
 
-
-\usepackage{titlesec}  % to style chapter titles
-\usepackage{xurl}           % urls can break anywhere
-\usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % the only good way to do citations and bibliography
-\usepackage[colorlinks=true, allcolors=blue]{hyperref}  % hyperlinks through the document
-\usepackage{orcidlink}  % include hyperlink patch to people's ORCID page | load after hyperref
-\usepackage[xcolor,notion]{knowledge}  % define notions to be linked to inside the document | load after hyperref
-\usepackage[capitalise, nameinlink]{cleveref}  % get smart references across the document | load last!
-
-% \usepackage{microtype}  % improves the spacing between words and letters, only include in last stages of compilation, takes time!
-
+% ----- Fonts Related ----- %
 % \usepackage{utopia}  % Use the Palatino font
 % \usepackage{newtxtext,newtxmath}  % Use the TeX Gyre Termes font
 \usepackage{tgheros}  % Use the TeX Gyre Heros font
-\usetikzlibrary{matrix}
-\UseTblrLibrary{amsmath}  % Makes tabularray load amsmath and register better environments
