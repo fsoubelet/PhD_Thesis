@@ -11,11 +11,24 @@
 \usepackage{caption}     % this and below are used for the
 \usepackage{subcaption}  % subfigures throughout the document
 \usepackage{siunitx}  % good macros for SI units
-\usepackage{appendix}
-% \usepackage{annotate-equations}  % not sure I use this
+\usepackage{appendix}  % to make appendix appear properly in the table of content
 \usepackage{tabularray}  % holy grail of tables
-% \usepackage{thumbs}  % add thumbs to the sides of pages
+
+% Acronyms ------------------
+% \usepackage[
+%     acronym,% add acronym type
+%     toc,% add to toc
+%     section=section,% sections (glossary, acronyms) are actually sections
+%     nonumberlist,% remove backref numbers
+% ]{glossaries}
+% \newcommand{\symboltype}{symbolslist}
+% \newglossary[slg]{symbolslist}{syi}{syg}{Symbols}% create symbolslist
+% \input{Toolkit/glossary_entries}
+% \makenoidxglossaries
+
+
 \usepackage{titlesec}  % to style chapter titles
+\usepackage{xurl}           % urls can break anywhere
 \usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % the only good way to do citations and bibliography
 \usepackage[colorlinks=true, allcolors=blue]{hyperref}  % hyperlinks through the document
 \usepackage{orcidlink}  % include hyperlink patch to people's ORCID page | load after hyperref

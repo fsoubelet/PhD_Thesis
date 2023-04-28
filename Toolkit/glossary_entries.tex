@@ -1,0 +1,467 @@
+% Combined Entries ----------------------------------------------------------------------------------------------------
+% Argument order: id, acronym, acronym written out, description
+
+% Create both, acronym and glossary entry with linking:
+\newcommand{\newglossaryacronym}[4]{%
+%  \newglossaryentry{#1}{
+%     type=\acronymtype, 
+%     name={#2}, 
+%     description={#3}, 
+%     first={#3~(#2)\glsadd{#1gls}}, 
+%     firstplural={#3\glspluralsuffix~(#2\glspluralsuffix)},
+%     see=[See:]\gls{#1gls}
+%     }
+ \newacronym{#1acr}{#2}{\acrlong{#1}}
+ \newglossaryentry{#1}{
+        name={#2 (#3)},
+        text={#2},
+        % symbol={#2},
+        short={#2},
+        long={#3},
+        first={#3 (#2)},
+        firstplural={#3\glspluralsuffix~(#2\glspluralsuffix)},
+        description={#4\glsadd{#1acr}}
+ }
+}
+
+
+% Alternative: All-in-one Glossary entry (https://tex.stackexchange.com/a/410534/213738)
+% \newcommand{\newglossaryacronym}[4]{
+%     \newglossaryentry{#1}{
+%         text={#2},
+%         % short={#2},
+%         long={#3},
+%         name={\glsentrylong{#1} (\glsentrytext{#1})},
+%         first={\glsentryname{#1}},
+%         firstplural={\glsentrylong{#1}\glspluralsuffix (\glsentryname{#1}\glspluralsuffix )},
+%         description={#4}
+%     }
+% }
+
+
+% ------------------------------
+
+\newglossaryacronym{ip}{IP}{Interaction Point}{
+    Point at which the two counter-rotating \glspl{beam} interact, i.e. their particles collide. 
+    In the \acrfull{lhc} these are located in the center of 
+    \glsfirstplural{ir} 1, 2, 5 and 8 inside the detectors (``\Glspl{experiment}'')%
+}
+
+\newglossaryacronym{ir}{IR}{Insertion Region}{
+    Straight section between the arcs of a synchrotron, housing larger facilities, 
+    such as detectors (``\Glspl{experiment}''), acceleration (``\acrshort{rf}''), etc%
+}
+
+\newglossaryacronym{rf}{RF}{Radio Frequency}{
+    Short for the acceleartion part of a synchrotron, as 
+    the frequency of the accelerating electric field
+    is usually in the radio-frequency range (at the \acrshort{lhc} $\approx \qty{400}{\mega\hertz}$)%
+}
+
+\newglossaryacronym{atlas}{ATLAS}{A Toroidal LHC Apparatus}{
+    is the larger of two general-purpose detectors at the \acrfull{lhc}. 
+    It investigates a wide range of physics, 
+    from the search for the Higgs boson to extra dimensions and particles that could make up dark matter. 
+    Although it has the same scientific goals as the \acrshort{cms} \glstext{experiment}, 
+    it uses different technical solutions and a different magnet-system design.
+    See: \href{https://atlas.cern/}{atlas.cern}%
+}
+
+\newglossaryacronym{cms}{CMS}{Compact Muon Solenoid}{
+    a general-purpose detector at the \acrfull{lhc}. 
+    It has a broad physics programme ranging from studying the Standard Model (including the Higgs boson) 
+    to searching for extra dimensions and particles that could make up dark matter. 
+    Although it has the same scientific goals as the \acrshort{atlas} \glstext{experiment}, 
+    it uses different technical solutions and a different magnet-system design.
+    See: \href{https://cms.cern}{cms.cern}%
+}
+
+\newglossaryacronym{alice}{ALICE}{A Large Ion Collider Experiment}{
+    An \glstext{experiment} optimized to study heavy-ion collisions. 
+    See: \href{https://lhcb.cern}{lhcb.cern}%
+}
+
+\newglossaryacronym{lhcb}{LHCb}{LHC-beauty}{
+    A specialized b-physics \glstext{experiment}, 
+    designed primarily to measure the parameters of CP violation in the interactions of 
+    b-\glspl{hadron} (heavy particles containing a bottom quark).
+    See: \href{https://lhcb.cern}{lhcb.cern}%
+}
+
+\newglossaryacronym{md}{MD}{Machine Development}{
+    Studies dedicated to improving the machine, 
+    e.g. by trying to reveal error-sources or attempting their correction,
+    or testing possible future procedures and machine configurations.
+    As they usually involve \gls{beam}-time, i.e. measurements in the \glsfirst{ccc},
+    a proposal needs to be written and they need to be approved by the \acrfull{lmc}.
+}
+
+% \newglossaryacronym{}{}{}{
+    
+% }
+
+
+
+% Acronym Entries ----------------------------------------------------------------------------------------------------
+\newacronym{bbq}{BBQ}{Base Band \Gls{tune}}
+\newacronym{bpm}{BPM}{\Gls{beam} Position Monitor}
+\newacronym{blm}{BLM}{\Gls{beam} Loss Monitor}
+\newacronym{bctfr}{BCTFR}{Fast \Gls{beam} Current Transformer}
+\newacronym{linac}{LINAC}{Linear Accelerator}
+\newacronym{ps}{PS}{Proton Synchrotron}
+\newacronym{psb}{PSB}{\acrlong{ps} Booster}
+\newacronym{sps}{SPS}{Super \acrlong{ps}}
+\newacronym{lhc}{LHC}{Large \Gls{hadron} Collider}
+\newacronym{fcc}{FCC}{Future Circular Collider}
+\newacronym{hllhc}{HL-LHC}{High-\Gls{luminosity} Large \Gls{hadron} Collider}
+\newacronym{rhic}{RHIC}{Relativistic Heavy Ion Collider}
+\newacronym{da}{DA}{Dynamic Aperture}
+\newacronym{omc}{OMC}{\Gls{optics} Measurements and Corrections}
+% \newacronym[see=\cref{sec:BackgroundNFandRDTs}]{rdt}{RDT}{Resonance Driving Term}
+\newacronym{svd}{SVD}{Singluar Value Decomposition}
+\newacronym{yets}{YETS}{Year-End Technical Stop}
+\newacronym{wise}{WISE}{Windows Interface to Simulation Errors}
+\newacronym{fidel}{FiDeL}{Field Model of the \acrshort{lhc}}
+\newacronym{mad}{MAD}{Methodical Accelerator Design}
+\newacronym[see=\cite{ForestIntroductionPolymorphicTracking2002}]{ptc}{PTC}{Polymorphic Tracking Code}
+\newacronym{be}{BE}{\Glspl{beam} Department}
+\newacronym{abp}{ABP}{Accelearator \Gls{beam} Physics Group}
+\newacronym{lno}{LNO}{Linear and Nonlinear \Gls{optics} Section}
+\newacronym{cern}{CERN}{Conseil Europ\'een pour la Recherche Nucl\'eaire \\ European Organization for Nuclear Research}
+\newacronym{ccc}{CCC}{\acrshort{cern} Control Center}
+\newacronym{lmc}{LMC}{\acrshort{lhc} Machine Committee}
+\newacronym{prab}{PRAB}{Physical Review Accelerators and Beams}
+\newacronym[first={the \acrfull{ipac}}]{ipac}{IPAC}{International Particle Accelerator Conference}
+\newacronym[first=h.o.t]{hot}{h.o.t}{High(er) Order Terms}
+% \newacronym{}{}{}
+
+
+% Glossary Entries ----------------------------------------------------------------------------------------------------
+\newglossaryentry{ampdet}
+{
+        name=amplitude detuning,
+        description={
+            Tune change with the transversal amplitude of a particle.
+            See~\cref{sec:BackgroundAmplitudeDetuning}%
+        }
+}
+
+\newglossaryentry{acdipole}
+{
+        name={AC-Dipole},
+        description={Dipole magnet attached to an AC power source with variable frequency and strength,
+        thus allowing to impose forced oscillations on the \gls{beam}. See~\cite{SerranoLHCACDipole2010}}
+}
+
+
+\newglossaryentry{betafunction}
+{
+        name={beta-function},
+        text=\ensuremath{\beta\text{-function}},
+        description={Value of the \gls{twiss} $\beta$ as a function of longitudinal location.
+        This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations
+        and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} 
+        by $\mathcal{A} = \sqrt{2J\beta}$%
+        }
+}
+
+\newglossaryentry{betabeat}
+{
+        name={beta-beating},
+        text=\ensuremath{\beta\text{-beating}},
+        description={Relative difference of the \gls{betafunction}
+        between measurement and model: $\sfrac{\left(\beta_\text{Measured} - \beta_\text{Model}\right)}{\beta_\text{Model}}$
+        }
+}
+
+
+\newglossaryentry{twiss}
+{
+        name={twiss parameters},
+        text={twiss parameter},
+        description={See \gls{courantsnyderparameter}}
+}
+
+\newglossaryentry{courantsnyderparameter}
+{
+        name={Courant-Snyder parameters},
+        text={Courant-Snyder parameter},
+        user1={Courant-Snyder},
+        description={
+            Set of quantities describing the distribution of 
+            positions and momenta of the particles in a \gls{beam}.
+            Also known as \glspl{twiss}. See also \gls{betafunction}
+        }
+}
+
+\newglossaryentry{beam}
+{
+        name=beam,
+        description={Short for ``Particle Beam''. 
+        The name for the collection of all particles in an accelerator traveling in the same direction.
+        In the \acrfull{lhc} there are two beams (Beam~1 and Beam~2) traversing in opposite directions
+        and colliding at the \glsfirstplural{ip}}
+}
+
+\newglossaryentry{bunch}
+{
+        name=bunch,
+        description={Short for ``Particle Bunch''.
+        Due to the \acrshort{rf} acceleration scheme, a continuous \gls{beam} is not possible in a
+        synchrotron and particles become bunched during acceleration}
+}
+
+
+\newglossaryentry{experiment}
+{
+        name=experiment,
+        description={
+            In the context of the \acrfull{lhc}, an ``experiment'' denotes 
+            one of the eight particle physics detector experiments   
+            and its accompanying data-collecting research structure.
+            The four largest detectors, \acrshort{atlas}, \acrshort{cms}, \acrshort{alice}, \acrshort{lhcb} 
+            are located at the four \glsfirstplural{ip} of the \acrshort{lhc}%
+        }
+}
+
+\newglossaryentry{flatoptics}
+{
+        name=flat-optics,
+        description={\Gls{optics} in which \glstext{betastar} is different for both planes. 
+        Usually much smaller in one than in the other. 
+        See also: \glstext{roundoptics}}
+}
+
+\newglossaryentry{roundoptics}
+{
+        name=round-optics,
+        description={\Gls{optics} in which \glstext{betastar} is identical for both planes.
+        See also: \glstext{flatoptics}} 
+}
+
+\newglossaryentry{flatorbit}
+{
+        name=flat-orbit,
+        description={Machine setup without any crossing bumps in the \glsfirstplural{ir}}
+}
+
+\newglossaryentry{feeddown}
+{
+        name=feed-down,
+        description={Particles passing off-center through a multipole field experience effects 
+        akin to the influence of lower-order multipoles due to the orbit offset.
+        See~\cref{sec:FeedDown}%
+        }
+}
+
+\newglossaryentry{hadron}
+{
+        name=hadron,
+        description={Composite subatomic particles consisting of two or more quarks,
+        held together by strong interactions}
+}
+
+\newglossaryentry{luminosity}
+{
+        name=luminosity,
+        description={Is the ratio of the number of events, i.e. collisions, detected per cross section,
+        either per time interval (``instantaneous luminosity'') or in total 
+        (``integrated luminosity'', e.g. since the beginning of a year, a \gls{run} or of operation).
+        Colloquially it is shortened to ``lumi''}
+}
+
+\newglossaryentry{svdclean}
+{
+        name={SVD cleaning},
+        description={Noise cleaning method used in the \glstext{omc3} python package. 
+        Based on an \acrfull{svd}, using the strongest modes to reconstruct the signal}
+}
+
+\newglossaryentry{run}
+{
+        name={run},
+        description={Consecutive years of \acrshort{lhc}-operation, separated by 
+        long shutdowns. Run~1 has been from 2008-2013, run~2 from 2015-2018 and run~3 started in 2022}
+}
+
+\newglossaryentry{online}
+{
+        name={online analysis},
+        text=online,
+        user1={online analysis},
+        description={Any analysis that is being done in the \glsfirst{ccc}, 
+        i.e. at the same time as the measurements are performed during machine commissioning or \glsfirst{md}.
+        In contrast, see: \glsuseri{offline}}
+}
+
+\newglossaryentry{offline}
+{
+        name={offline analysis},
+        text=offline,
+        user1={offline analysis},
+        description={Any analysis that is being done after the measurements are completed.
+        In contrast, see: \glsuseri{online}}
+}
+
+\newglossaryentry{normal}
+{
+        name={normal magnets},
+        text=normal,
+        description={Magnet with a ``normal'' oriented multipole field with pole-tips off the horizontal axis. 
+        Opposed to a ``\gls{skew}'' magnet of the same order $n$, for which the field is rotated by $\sfrac{\pi}{(2n)}$\,\si{\radian}}
+}
+
+\newglossaryentry{skew}
+{
+        name={skew magnets},
+        text=skew,
+        description={Magnet with a ``skew'' oriented multipole field, with pole-tips on the horizontal axis. 
+        Opposed to a ``\gls{normal}'' magnet of the same order $n$, for which the field is rotated by $\sfrac{-\pi}{(2n)}$\,\si{\radian}}
+}
+
+\newglossaryentry{omc3}
+{
+        name={omc3},
+        text={\texttt{omc3}},
+        user1={\glstext{\glslabel}~\cite{OMC-TeamOMC3}},
+        user2={\glstext{\glslabel}-package~\cite{OMC-TeamOMC3}},
+        description={Python package maintained and applied by the \glsfirst{omc}-Team to analyse 
+        measurements from different accelerators and calculate corrections. See~\cite{OMC-TeamOMC3}}
+}
+
+\newglossaryentry{optics}
+{
+        name={optics},
+        description={Here ``optics'' refers to ``accelerator \gls{beam} optics'',
+        describing the particle motion through an accelerator as defined by the elements
+        (i.e. magnets) of the machine. As the behaviour of a particle \gls{beam} in magnetic fields shows 
+        similarities to a light beam propagating through lenses and can be described with similar equations,
+         a lot of theory and nomenclature has been borrowed from ray optics%
+        }
+}
+
+\newglossaryentry{triplet}
+{
+        name=triplet,
+        description={Name for the final focusing quadrupoles in the 
+        \glsfirst{ir} left and right of an \glsfirst{ip}.
+        In principle these consist of three magnets Q1--3 (starting with Q1 closest to the 
+        \acrshort{ip}), where Q1 and Q3 have the same orientation (e.g. focusing) and are opposite
+        to Q2 (e.g. defocusing), depending on \gls{beam}, plane and side.
+        In the \acrfull{lhc} Q2 is split into two magnets, 
+        while in the \acrfull{hllhc} also Q1 and Q3 will each be split in two%
+        }
+}
+
+\newglossaryentry{tune}
+{
+        name=tune,
+        description={Number of betatron oscillations per turn in a circular accelerator.
+        See also: \gls{betafunction}%
+        }
+}
+
+\newglossaryentry{d1d2}
+{
+        name={D1\&D2},
+        text={D1/D2},
+        description={D1 and D2 are the shorthands for the separation/recombination dipoles in the 
+        \glsfirstplural{ir} of the \glsfirst{lhc} and \glsfirst{hllhc}, diverting the \glspl{beam} from their respective
+        beam-lines into the common aperture region around the \glsfirstplural{ip} and 
+        vice-versa%
+        }
+}
+
+\newglossaryentry{longshutdown}
+{
+        name={long shutdown},
+        description={Planned shutdown periods of the \acrfull{lhc} between \glspl{run} spanning multiple years,
+        as opposed to the \acrfull{yets}, which only lasts a few months.
+        This time is used for repairs and upgrades of the machine, as well as general maintenance.
+        }
+}
+
+\newglossaryentry{madx}
+{
+        name={MAD-X},
+        text={\texttt{MAD-X}},
+        description={Current version of the \acrfull{mad} framework developed in \acrshort{be}-\acrshort{abp}
+        at \acrshort{cern}%
+        }
+}
+
+
+% Symbols ----------------------------------------------------------------------------------------------------
+
+\newglossaryentry{betastar}
+{
+    type=\symboltype,
+    sort={beta},
+    name={$\bm \beta^*$},
+    text={\ensuremath{\beta^*}},
+    symbol={\ensuremath{\beta^*}},
+    description={\gls{betafunction} at the \acrshort{ip}. 
+    Usually subscripted with $x$ or $y$ giving the transversal plane.
+    \textit{Unit: $m$}%
+    },
+    first={$\beta^*$ (the \gls{betafunction} at the \acrshort{ip})}
+}
+
+\newglossaryentry{action}
+{
+    type=\symboltype,
+    sort={action},
+    name={$\bm J$},
+    text={action},
+    symbol={\ensuremath{J}},
+    description={\Glstext*{action}.
+    One of the phase-space coordinates in the Courant-Snyder normalization
+    and closely related to the invariant of (linear) motion $\epsilon = 2J$. 
+    Usually subscripted with $x$ or $y$ giving the transversal plane.
+    \textit{Unit: $m$}%
+    }
+}
+
+\newglossaryentry{beam-rigidity}
+{
+    type=\symboltype,
+    sort={beam-rigidity},
+    name={B$\bm \rho$},
+    text={beam rigidity},
+    symbol={\ensuremath{\mathrm{B}\rho}},
+    description={\Glstext*{beam-rigidity}.
+    Used as a normalization factor for \glstext{K} and \glstext{J}. 
+    See \cref{sec:FieldNormalization}.
+    \textit{Unit: $Tm$}%
+    }
+}
+
+\newglossaryentry{J}
+{
+    type=\symboltype,
+    sort={strengthJ},
+    name={$\bm J_n$},
+    text={skew magnetic field strength},
+    symbol={\ensuremath{J}},
+    description={\Glstext*{J}.
+    Skew field component normalized to the \glstext{beam-rigidity}.
+    Usually subscripted with an integer $n$ giving the field order.
+    \textit{Unit: $m^{-n}$}.\\
+    See \cref{sec:FieldNormalization}%
+    }
+}
+
+\newglossaryentry{K}
+{
+    type=\symboltype,
+    sort={strengthK},
+    name={$\bm K_n$},
+    text={normal magnetic field strength},
+    symbol={\ensuremath{K}},
+    description={\Glstext*{K}.
+    Normal field component normalized to the \glstext{beam-rigidity}.
+    Usually subscripted with an integer $n$ giving the field order.
+    \textit{Unit: $m^{-n}$}.\\
+    See \cref{sec:FieldNormalization}%
+    }
+}

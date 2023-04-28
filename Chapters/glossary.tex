@@ -1,0 +1,15 @@
+% Output ----------------------------------------------------------------------------------------------------
+% for different styles see: https://www.dickimaw-books.com/gallery/glossaries-styles/
+
+\addchap{Glossary}
+\glsaddall% for testing
+
+\let\Oldglsnamefont\glsnamefont
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}% capitalize first letter in each entry
+\printnoidxglossary[title=Nomenclature]
+
+\let\glsnamefont\Oldglsnamefont% undo first letter capitalization
+\printnoidxglossary[type=\acronymtype]
+\printnoidxglossary[type=\symboltype]
+
+\glsresetall
