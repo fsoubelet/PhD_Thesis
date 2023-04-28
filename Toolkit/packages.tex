@@ -28,25 +28,13 @@
 
 % ----- Document Formating Related ----- %
 \usepackage{titlesec}       % to style chapter titles
+% \usepackage{awesomebox}     % awesome boxes, includes fontawesome
 \usepackage{appendix}       % to make appendix appear properly in the table of content
 \usepackage{xurl}           % urls can break anywhere
 \usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % citations and bibliography
 \usepackage{orcidlink}      % include hyperlink patch to people's ORCID page | load after hyperref
 % \usepackage{microtype}    % improves kerning, only include in last stages of compilation, takes time!
 
-
-% ----- References, Cross-Linking and Links Related ----- %
-\usepackage[capitalise, nameinlink]{cleveref}  % get smart references across the document | load last!
-\usepackage[xcolor,notion]{knowledge}  % define notions to be linked to inside the document | load after hyperref
-% \usepackage{hyperref}  % hyperlinks through the document | loaded by cleveref
-\hypersetup{
-  linkcolor=cern,
-  citecolor=cern,
-  urlcolor=cern,
-  colorlinks=true,
-  linktoc=all,          % includes page-numbers in links
-  hypertexnames=false,  % fixes wrong linking with subequations, but might have side-effects (check index links!)
-}
 % Acronyms ------------------
 % \usepackage[
 %     acronym,% add acronym type
@@ -59,7 +47,21 @@
 % \input{Toolkit/glossary_entries}
 % \makenoidxglossaries
 
+% ----- References, Cross-Linking and Links Related ----- %
+\usepackage{hyperref}  % hyperlinks through the document | load before cleveref
+\usepackage[xcolor,notion]{knowledge}  % define notions to be linked to inside the document | load after hyperref
+\usepackage[capitalise, nameinlink]{cleveref}  % get smart references across the document | load last
+\hypersetup{
+  linkcolor=cern,
+  citecolor=cern,
+  urlcolor=cern,
+  colorlinks=true,
+  linktoc=all,          % includes page-numbers in links
+  hypertexnames=false,  % fixes wrong linking with subequations, but might have side-effects (check index links!)
+}
+
 % ----- Fonts Related ----- %
 % \usepackage{utopia}  % Use the Palatino font
 % \usepackage{newtxtext,newtxmath}  % Use the TeX Gyre Termes font
 \usepackage{tgheros}  % Use the TeX Gyre Heros font
+
