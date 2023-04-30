@@ -1,26 +1,7 @@
-% Masters/Doctoral Thesis 
-% LaTeX Template
-% Version 2.5 (27/8/17)
-%
-% This template was downloaded from:
-% http://www.LaTeXTemplates.com
-%
-% Version 2.x major modifications by:
-% Vel (vel@latextemplates.com)
-%
-% This template is based on a template by:
-% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
-% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
-%
-% Template license:
-% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
-%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Masters/Doctoral Thesis Version 2.5 (27/8/17)
+% Version 2.x major modifications by: Vel (vel@latextemplates.com)
 
- 
-%----------------------------------------------------------------------------------------
-%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
-%----------------------------------------------------------------------------------------
+% ----- PACKAGES & CONFIGURATIONS ----- %
 
 \documentclass[
 12pt, % The default document font size, options: 10pt, 11pt, 12pt
@@ -46,9 +27,7 @@ headsepline, % Uncomment to get a line under the header
 \addbibresource{Bibliography.bib}
 \makenoidxglossaries
 
-%----------------------------------------------------------------------------------------
-%	START OF DOCUMENT - FRONTMATTER
-%----------------------------------------------------------------------------------------
+% ----- FRONTMATTER ----- %
 
 \begin{document}
 
@@ -66,20 +45,17 @@ headsepline, % Uncomment to get a line under the header
 % \include{Frontmatter/Acknowledgements.tex}
 % \include{Frontmatter/Quotation.tex}
 
-\setcounter{tocdepth}{1}  % Determines how detailed the table of content should be
-\tableofcontents % Prints the main table of contents
-\include{Chapters/glossary.tex}
-\listoffigures % Prints the list of figures
-\listoftables % Prints the list of tables
+\setcounter{tocdepth}{1}              % How detailed table of content should be
+\tableofcontents                      % Prints the main table of contents
+\include{Frontmatter/glossary.tex}  % Will make the glossary
+\listoffigures                        % Prints the list of figures
+\listoftables                         % Prints the list of tables
 
 % \include{Frontmatter/Abbreviations.tex}
 % \include{Frontmatter/Constants.tex}
 % \include{Frontmatter/Symbols.tex}
 
-
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - CHAPTERS
-%----------------------------------------------------------------------------------------
+% ----- CHAPTERS ----- %
 
 \mainmatter % Begin numeric (1,2,3...) page numbering
 
@@ -88,7 +64,6 @@ headsepline, % Uncomment to get a line under the header
 \include{Toolkit/chapterstyle.tex}
 
 % \include{Toolkit/equations_settings.tex}
-% \include{Chapters/testchapter.tex}
 % \include{Chapters/Introduction}
 % \include{Chapters/Beam_Dynamics_Theory}
 % \include{Chapters/Optics_Measurements_Corrections_at_LHC}
@@ -97,27 +72,20 @@ headsepline, % Uncomment to get a line under the header
 \include{Chapters/Other_Studies}
 % \include{Chapters/Conclusion}
 
-
-%----------------------------------------------------------------------------------------
-%	BIBLIOGRAPHY
-%----------------------------------------------------------------------------------------
+% ----- BIBLIOGRAPHY ----- %
 
 \printbibliography
 \addcontentsline{toc}{chapter}{Bibliography}
 
-%----------------------------------------------------------------------------------------
-%	THESIS CONTENT - APPENDICES
-%----------------------------------------------------------------------------------------
+% ----- APPENDICES ----- %
 
-\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
-\noappendicestocpagenum
-\addappheadtotoc
+\appendix                % Declare following "chapters" are Appendices
+\noappendicestocpagenum  % Suppress page number for "Appendix" in table of contents
+\addappheadtotoc         % Add a line with "Appendices" to table of contents
 
 % \include{Appendices/Hamiltonian_Derivation}
-% \include{Appendices/Naming_Conventions}
+\include{Appendices/Naming_Conventions}
 % \include{Appendices/Experimental_Knobs}
 % \include{Appendices/Measurement_Fills}
-
-%----------------------------------------------------------------------------------------
 
 \end{document}
