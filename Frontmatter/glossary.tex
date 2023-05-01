@@ -3,13 +3,13 @@
 
 \addchap{Glossary}
 \glsnogroupskiptrue
-\glsaddall% for testing
+\glsaddall            % for testing only, remove at some point
 
 \let\Oldglsnamefont\glsnamefont
-\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}% capitalize first letter in each entry
+\renewcommand{\glsnamefont}[1]{\makefirstuc{#1}}  % capitalize first letter in each entry
 \printnoidxglossary[title=Nomenclature]
 
-\let\glsnamefont\Oldglsnamefont% undo first letter capitalization
+\let\glsnamefont\Oldglsnamefont  % undo first letter capitalization rule
 \printnoidxglossary[type=\acronymtype]
 \printnoidxglossary[type=\symboltype]
 
