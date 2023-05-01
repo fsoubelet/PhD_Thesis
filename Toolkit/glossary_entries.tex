@@ -75,7 +75,7 @@
 }
 \newglossaryentry{experiment}{
         name=experiment,
-        description={In the context of the \acrfull{LHC}, an ``experiment'' denotes  one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{lhcb} are located at the four \glsfirstplural{IP} of the \acrshort{LHC}}
+        description={In the context of the \acrfull{LHC}, an ``experiment'' denotes  one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glsfirstplural{IP} of the \acrshort{LHC}}
 }
 \newglossaryentry{flatoptics}{
         name=flat-optics,
@@ -220,81 +220,62 @@
 \newglossaryacronym{ALICE}{ALICE}{A Large Ion Collider Experiment}{
     An \glstext{experiment} optimized to study heavy-ion collisions.
 }
-\newglossaryacronym{lhcb}{LHCb}{LHC-beauty}{
-    A specialized b-physics \glstext{experiment}, designed primarily to measure the parameters of CP violation in the interactions of b-\glspl{hadron} (heavy particles containing a bottom quark). See: \href{https://lhcb.CERN}{lhcb.CERN}
+\newglossaryacronym{LHCb}{LHCb}{LHC-beauty}{
+    A specialized b-physics \glstext{experiment}, designed primarily to measure the parameters of CP violation in the interactions of b-\glspl{hadron} (heavy particles containing a bottom quark). See: \href{https://LHCb.CERN}{LHCb.CERN}
 }
 \newglossaryacronym{MD}{MD}{Machine Development}{
-    Studies dedicated to improving the machine, e.g. by trying to reveal error-sources or attempting their correction, or testing possible future procedures and machine configurations. As they usually involve \gls{beam}-time, i.e. measurements in the \glsfirst{CCC}, a proposal needs to BE written and they need to BE approved by the \acrfull{LMC}.
+    Studies dedicated to improving the machine, e.g. by trying to reveal error-sources or attempting their correction, or testing possible future procedures and machine configurations. As they usually involve \gls{beam}-time, i.e. measurements in the \glsfirst{CCC}, a proposal needs to BE written, and they need to BE approved by the \acrfull{LMC}.
 }
 
 
 % ----- Symbols ----- %
 
-\newglossaryentry{betastar}
-{
-    type=\symboltype,
-    sort={beta},
-    name={\(\beta^{\ast}\)},
-    text={\(\beta^{\ast}\)},
-    symbol={\(\beta^{\ast}\)},
-    description={The \gls{beta-function} at the \acrshort{IP}. Usually subscripted with $x$ or $y$ giving the transversal plane.\textit{Unit: $m$}},
-}
-
-\newglossaryentry{action}
-{
+\newglossaryentry{action}{
     type=\symboltype,
     sort={action},
-    name={$\bm J$},
+    name={\(\mathbf{ J }\)},
     text={action},
-    symbol={\ensuremath{J}},
-    description={\Glstext*{action}.
-    One of the phase-space coordinates in the Courant-Snyder normalization
-    and closely related to the invariant of (linear) motion $\epsilon = 2J$. 
-    Usually subscripted with $x$ or $y$ giving the transversal plane.
-    \textit{Unit: $m$}%
-    }
+    symbol={\(J\)},
+    description={\Glstext*{action}. One of the phase-space coordinates in the Courant-Snyder normalization and closely related to the invariant of (linear) motion \(\varepsilon = 2J\). Usually subscripted with \(x\) or \(y\) giving the transversal plane. Unit: \unit{\meter}}
 }
-
-\newglossaryentry{beam-rigidity}
-{
+\newglossaryentry{beam-rigidity}{
     type=\symboltype,
     sort={beam-rigidity},
-    name={B$\bm \rho$},
+    name={\(\mathbf{ B \rho }\)},
     text={beam rigidity},
     symbol={\ensuremath{\mathrm{B}\rho}},
     description={\Glstext*{beam-rigidity}.
-    Used as a normalization factor for \glstext{K} and \glstext{J}. 
-%     See \cref{sec:FieldNormalization}.
-    \textit{Unit: $Tm$}%
-    }
+    Used as a normalization factor for \glstext{K} and \glstext{J}. Unit: \unit{\tesla}}
 }
-
-\newglossaryentry{J}
-{
+\newglossaryentry{betastar}{
+    type=\symboltype,
+    sort={beta},
+    name={\(\mathbf{ \beta^{\ast} }\)},
+    text={\(\beta^{\ast}\)},
+    symbol={\(\beta^{\ast}\)},
+    description={The \gls{beta-function} at the \acrshort{IP}. Usually subscripted with $x$ or $y$ giving the transversal plane. Unit: \unit{\meter}},
+}
+\newglossaryentry{Cminus}{
+    type=\symboltype,
+    sort={cminus},
+    name={\(\mathbf{ \left| C^{-} \right|}\)},
+    text={\(\left| C^{-} \right|\)},
+    symbol={\(\left| C^{-} \right|\)},
+    description={The minimum tune separation. It is a quantification of the amount of global linear coupling in the machine}
+}
+\newglossaryentry{J}{
     type=\symboltype,
     sort={strengthJ},
-    name={$\bm J_n$},
+    name={\(\mathbf{ J_n }\)},
     text={skew magnetic field strength},
     symbol={\ensuremath{J}},
-    description={\Glstext*{J}.
-    Skew field component normalized to the \glstext{beam-rigidity}.
-    Usually subscripted with an integer $n$ giving the field order.
-    \textit{Unit: $m^{-n}$}.\\
-%     See \cref{sec:FieldNormalization}%
-    }
+    description={\Glstext*{J}. Skew field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer $n$ giving the field order. Unit: \unit{\pernth\meter}}
 }
-
-\newglossaryentry{K}
-{
+\newglossaryentry{K}{
     type=\symboltype,
     sort={strengthK},
-    name={$\bm K_n$},
+    name={\(\mathbf{ K_n }\)},
     text={normal magnetic field strength},
     symbol={\ensuremath{K}},
-    description={\Glstext*{K}.
-    Normal field component normalized to the \glstext{beam-rigidity}.
-    Usually subscripted with an integer $n$ giving the field order.
-    \textit{Unit: $m^{-n}$}.\\
-%     See \cref{sec:FieldNormalization}%
-    }
+    description={\Glstext*{K}. Normal field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer $n$ giving the field order. Unit: \unit{\pernth\meter}}
 }
