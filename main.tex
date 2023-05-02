@@ -31,40 +31,40 @@ headsepline, % Uncomment to get a line under the header
 
 \begin{document}
 
-\frontmatter % Use roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+\frontmatter                                     % Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 
-\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+\pagestyle{plain}                                % Default to the plain heading style
 
 \include{Frontmatter/Titlepage.tex}
 \include{Toolkit/mathcommands.tex}
 \include{Toolkit/usercommands.tex}
 
-% \include{Frontmatter/Dedicatory.tex}
-% \include{Frontmatter/Declaration.tex}
-% \include{Frontmatter/Abstract.tex}
-% \include{Frontmatter/Acknowledgements.tex}
-% \include{Frontmatter/Quotation.tex}
+\include{Frontmatter/Dedicatory.tex}
+\include{Frontmatter/Declaration.tex}
+\include{Frontmatter/Abstract.tex}
+\include{Frontmatter/Acknowledgements.tex}
+\include{Frontmatter/Quotation.tex}
 
-\setcounter{tocdepth}{1}              % How detailed table of content should be
-\tableofcontents                      % Prints the main table of contents
-\include{Frontmatter/glossary.tex}    % Will make the glossary
-\listoffigures                        % Prints the list of figures
-\listoftables                         % Prints the list of tables
+\setcounter{tocdepth}{1}                         % How detailed table of content should be
+\tableofcontents                                 % Prints the main table of contents
+\include{Frontmatter/glossary.tex}               % Will make the glossary
+\listoffigures                                   % Prints the list of figures
+\listoftables                                    % Prints the list of tables
 
 % ----- CHAPTERS ----- %
 
-\mainmatter % Begin numeric (1,2,3...) page numbering
+\mainmatter                                      % Numeric (1,2,3...) page numbering
 
-\pagestyle{thesis} % Return the page headers back to the "thesis" style
+\pagestyle{thesis}                               % Return the page headers back to the "thesis" style
 
 \include{Toolkit/chapterstyle.tex}
-% \include{Chapters/Introduction}
-% \include{Chapters/Beam_Dynamics_Theory}
-% \include{Chapters/Optics_Measurements_Corrections_at_LHC}
-% \include{Chapters/IR_Coupling_Correction}
-% \include{Chapters/ML_for_IR_Coupling}
+\include{Chapters/Introduction}
+\include{Chapters/Beam_Dynamics_Theory}
+\include{Chapters/Optics_Measurements_Corrections_at_LHC}
+\include{Chapters/IR_Coupling_Correction}
+\include{Chapters/ML_for_IR_Coupling}
 \include{Chapters/Other_Studies}
-% \include{Chapters/Conclusion}
+\include{Chapters/Conclusion}
 
 % ----- BIBLIOGRAPHY ----- %
 
@@ -73,13 +73,13 @@ headsepline, % Uncomment to get a line under the header
 
 % ----- APPENDICES ----- %
 
-\appendix                % Declare following "chapters" are Appendices
-\noappendicestocpagenum  % Suppress page number for "Appendix" in table of contents
-\addappheadtotoc         % Add a line with "Appendices" to table of contents
+\appendix                                        % Declare following "chapters" are Appendices
+\noappendicestocpagenum                          % Suppress page number for "Appendix" in table of contents
+\addappheadtotoc                                 % Add a line with "Appendices" to table of contents
 
-% \include{Appendices/Hamiltonian_Derivation}
-% \include{Appendices/Naming_Conventions}
-% \include{Appendices/Experimental_Knobs}
+\include{Appendices/Hamiltonian_Derivation}
+\include{Appendices/Naming_Conventions}
+\include{Appendices/Experimental_Knobs}
 \include{Appendices/Measurement_Fills}
 
 \end{document}
