@@ -1,27 +1,30 @@
 % Masters/Doctoral Thesis Version 2.5 (27/8/17)
 % Version 2.x major modifications by: Vel (vel@latextemplates.com)
 
-% ----- PACKAGES & CONFIGURATIONS ----- %
+% ----- DOCUMENT CLASS LOADING ----- %
 
 \documentclass[
-12pt, % The default document font size, options: 10pt, 11pt, 12pt
-% oneside, % Two side (alternating margins) for binding by default, uncomment to switch to one side
-english, % ngerman for German
-singlespacing, % Single line spacing, alternatives: onehalfspacing or doublespacing
-liststotoc, % Uncomment to add the list of figures/tables/etc to the table of contents
-% toctotoc, % Uncomment to add the main table of contents to the table of contents
-% parskip, % Uncomment to add space between paragraphs
-headsepline, % Uncomment to get a line under the header
-% consistentlayout, % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
-]{MastersDoctoralThesis} % The class file specifying the document structure
+12pt,                                            % The default document font size, options: 10pt, 11pt, 12pt
+% oneside,                                       % Two side (alternating margins) for binding by default, uncomment to switch to one side
+english,                                         % Thesis language, input ngerman for German for instance
+singlespacing,                                   % Single line spacing, alternatives: onehalfspacing or doublespacing
+liststotoc,                                      % Uncomment to add the list of figures/tables/etc to the table of contents
+% toctotoc,                                      % Uncomment to add the main table of contents to the table of contents
+% parskip,                                       % Uncomment to add space between paragraphs
+headsepline,                                     % Uncomment to get a line under the header
+% consistentlayout,                              % Uncomment to change the layout of the declaration, abstract and acknowledgements pages to match the default layout
+]{MastersDoctoralThesis}                         % The class file specifying the document structure
 
-% LaTeX does not like \include before \begin{document} so we use \input here
-\input{Toolkit/colors.tex}                       % define specific colors
-\input{Toolkit/packages.tex}                     % load all necessary packages
-\input{Toolkit/glossary_entries.tex}             % definitions for the glossary
-\input{Toolkit/siunits.tex}                      % siunitx settings
-\input{Toolkit/geometry.tex}                     % document geometry settings
-\input{Toolkit/thesis_info.tex}                  % thesis information for document class
+% ----- DOCUMENT CONFIGURATIONS ----- %
+
+% LaTeX doesnt like \include before parsing
+% \begin{document} so we use \input here
+\input{Toolkit/colors.tex}                       % Define specific colors
+\input{Toolkit/packages.tex}                     % Load all necessary packages
+\input{Toolkit/glossary_entries.tex}             % Definitions for the glossary
+\input{Toolkit/siunits.tex}                      % Custom siunitx settings
+\input{Toolkit/geometry.tex}                     % Document geometry settings
+\input{Toolkit/thesis_info.tex}                  % Thesis information for document class
 \input{Toolkit/titlepage_hypersetup.tex}         % Update hyperref setup for titlepage
 
 \setcounter{secnumdepth}{3}
@@ -35,9 +38,9 @@ headsepline, % Uncomment to get a line under the header
 \frontmatter                                     % Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
 \pagestyle{plain}                                % Default to the plain heading style
 
-\include{Frontmatter/Titlepage.tex}
-\include{Toolkit/mathcommands.tex}
-\include{Toolkit/usercommands.tex}
+\include{Frontmatter/Titlepage.tex}              % Generate the title page
+\include{Toolkit/mathcommands.tex}               % Custom commands for math elements
+\include{Toolkit/usercommands.tex}               % Miscellanea custom commands
 \include{Toolkit/frontmatter_hypersetup.tex}     % Update hyperref setup for fronmatter
 
 % \include{Frontmatter/Dedicatory.tex}
@@ -56,10 +59,9 @@ headsepline, % Uncomment to get a line under the header
 
 \mainmatter                                      % Numeric (1,2,3...) page numbering
 \include{Toolkit/mainmatter_hypersetup.tex}      % Update hyperref setup for mainmatter
-
 \pagestyle{thesis}                               % Return the page headers back to the "thesis" style
 
-\include{Toolkit/chapterstyle.tex}
+\include{Toolkit/chapterstyle.tex}               % Custom chapter style for the mainmatter
 \include{Chapters/Introduction}
 % \include{Chapters/Beam_Dynamics_Theory}
 % \include{Chapters/Optics_Measurements_Corrections_at_LHC}
