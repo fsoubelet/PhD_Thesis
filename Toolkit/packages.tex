@@ -31,7 +31,11 @@
 % \usepackage{awesomebox}                          % awesome boxes, includes fontawesome
 \usepackage{appendix}                            % to make appendix appear properly in the table of content
 \usepackage{xurl}                                % urls can break anywhere
-\usepackage[bibstyle=numeric, citestyle=numeric-comp, sorting=none]{biblatex}  % citations and bibliography
+\usepackage[
+    bibstyle=numeric,
+    citestyle=numeric-comp,
+    sorting=none
+]{biblatex}                                      % citations and bibliography
 \usepackage{orcidlink}                           % include hyperlink patch to people's ORCID page | load after hyperref
 % \usepackage{microtype}                         % improves kerning, only include in last stages of compilation, takes time!
 
@@ -49,14 +53,14 @@
 \usepackage{hyperref}                            % hyperlinks through the document | load before cleveref
 \usepackage[xcolor,notion]{knowledge}            % define notions to be linked to inside the document | load after hyperref
 \usepackage[capitalise, nameinlink]{cleveref}    % get smart references across the document | load last
-\hypersetup{
-  linkcolor=cern,
-  citecolor=cern,
-  urlcolor=cern,
-  colorlinks=true,
-  linktoc=all,                                   % includes page-numbers in links
-  hypertexnames=false,                           % fixes wrong linking with subequations, but might have side-effects (check index links!)
-}
+% \hypersetup{
+%   linkcolor=cern,
+%   citecolor=cern,
+%   urlcolor=cern,
+%   colorlinks=true,
+%   linktoc=all,                                   % includes page-numbers in links
+%   hypertexnames=false,                           % fixes wrong linking with subequations, but might have side-effects (check index links!)
+% }
 
 % ----- Fonts Related ----- %
 % \usepackage{utopia}                              % Use the Palatino font

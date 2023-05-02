@@ -22,6 +22,7 @@ headsepline, % Uncomment to get a line under the header
 \input{Toolkit/siunits.tex}                      % siunitx settings
 \input{Toolkit/geometry.tex}                     % document geometry settings
 \input{Toolkit/thesis_info.tex}                  % thesis information for document class
+\input{Toolkit/titlepage_hypersetup.tex}         % Update hyperref setup for titlepage
 
 \setcounter{secnumdepth}{3}
 \addbibresource{Bibliography.bib}
@@ -32,18 +33,19 @@ headsepline, % Uncomment to get a line under the header
 \begin{document}
 
 \frontmatter                                     % Roman page numbering style (i, ii, iii, iv...) for the pre-content pages
-
 \pagestyle{plain}                                % Default to the plain heading style
 
 \include{Frontmatter/Titlepage.tex}
 \include{Toolkit/mathcommands.tex}
 \include{Toolkit/usercommands.tex}
+\include{Toolkit/frontmatter_hypersetup.tex}     % Update hyperref setup for fronmatter
 
-% \include{Frontmatter/Dedicatory.tex}
-% \include{Frontmatter/Declaration.tex}
-% \include{Frontmatter/Abstract.tex}
-% \include{Frontmatter/Acknowledgements.tex}
-% \include{Frontmatter/Quotation.tex}
+
+\include{Frontmatter/Dedicatory.tex}
+\include{Frontmatter/Declaration.tex}
+\include{Frontmatter/Abstract.tex}
+\include{Frontmatter/Acknowledgements.tex}
+\include{Frontmatter/Quotation.tex}
 
 \setcounter{tocdepth}{1}                         % How detailed table of content should be
 \tableofcontents                                 % Prints the main table of contents
@@ -54,6 +56,7 @@ headsepline, % Uncomment to get a line under the header
 % ----- CHAPTERS ----- %
 
 \mainmatter                                      % Numeric (1,2,3...) page numbering
+\include{Toolkit/mainmatter_hypersetup.tex}      % Update hyperref setup for mainmatter
 
 \pagestyle{thesis}                               % Return the page headers back to the "thesis" style
 
