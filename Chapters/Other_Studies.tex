@@ -234,15 +234,16 @@ The ability to accurately compute key statistical values on phase advance measur
 
 \section{Simulations of Sextupolar Contribution to Amplitude Detuning in the LHC}
 
-\todo{Write / include a small section on amplitude detuning in the theory chapter.}
+\todo{Write small section on amplitude detuning in the theory chapter.}
 
 As mentioned in \cref{chapter:Theory}, a measurement of the machine nonlinearities can be obtained by characterizing the amplitude detuning: the dependency of the tune as a function of the amplitude of particle oscillations.
-Amplitude detuning traditionally comes from octupolar fields and is used for beam stabilization against collective effects.
-More generally, it comes from multipolar fields of even order \(m = 2n\), where \(n\) is a natural number strictly higher than one, since quadrupolar fields provide a linear behavior.
+Amplitude detuning traditionally comes from octupolar fields and is used for beam stabilization against collective effects~\cite{BOOK:Chao:Collective_instabilities,PRAB:Karpov:Thresholds_Loss_Landau_Damping}.
+More generally, it comes from multipolar fields of even order \(m = 2n\), where \(n\) is a natural number strictly higher than one since quadrupolar fields provide a linear behavior.
 
 Analytical formulae from \cite{REPORT:Bengtsson:Smear_Tune_Shift, BOOK:Lee:Accelerator_physics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering} show that second order terms of sextupole strengths contribute to free amplitude detuning.
 It has previously been suspected that the forced amplitude detuning induced by sextupolar fields would behave similarly than that already studied for octupolar fields in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
-This study aims to first demonstrate the possibility of measuring this amplitude detuning with AC dipole excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}.
+
+This study aims to first demonstrate the possibility of observing this amplitude detuning with AC dipole excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}, and of confirming the similarity of its behavior to that of the octupolar one.
 Simulations were performed to investigate the sextupolar amplitude detuning in the LHC lattice, both through forced oscillations with AC dipole and free oscillations up to similarly high amplitudes.
 
 \subsection*{Amplitude Detuning with an AC Dipole}
@@ -252,7 +253,7 @@ In the same paper, the authors go over the linear motion of particles and differ
 The parametrization of the transverse coordinate \(z\) in the case of free and forced oscillations with an AC dipole is given by \cref{equation:free_transverse_motion} and \cref{equation:driven_transverse_motion}, respectively.
 
 Analysis of the \(\beta\)-function of the driven particle, \(\beta_D\), can be found in~\cite{PHD:Miyamoto,PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation,PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
-It is derived, still in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, that for multipoles of even order \(m = 2n\) the amplitude detuning in the case of horizontally driven oscillations is given by:
+It is derived, still in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, that for multipoles of even order \(m = 2n\) the amplitude detuning in the case of horizontally driven oscillations is given by
 
 \begin{equation}
     \begin{aligned}
@@ -265,7 +266,7 @@ where \(q\) is the charge of the particle, \(p\) its momentum and \(B_{2n}\) the
 Importantly, it is analytically shown that, neglecting the typically small difference between \(\beta_z\) and \(\beta_{D,z}\), \textit{"for multipoles of order \(2n\), the direct term of the amplitude detuning measured with an AC dipole will be a factor \(n\) larger than for free oscillations while the cross terms in both cases are equal"}.
 
 This means in the case of octupolar amplitude detuning that the direct term detuning \(Q_{x}(J_{x})\) under AC dipole oscillations is a factor \(n = 2\) stronger than under free oscillations, while the cross term detuning \(Q_{y}(J_{x})\) will be the same in both cases.
-It was suspected that in the LHC sextupolar detuning can be measured with ac dipoles and that it behaves similarly with this factor \num{2} observed in the case of even order multipole, while being a multipole of order \num{3} itself.
+It was suspected that in the LHC sextupolar detuning can be measured with AC dipoles and that it behaves similarly with this factor \num{2} observed in the case of even order multipole, while being a multipole of order \num{3} itself.
 Tracking simulations were performed to investigate this effect.
 
 \subsection*{Amplitude Detuning via Particle Tracking}
@@ -326,7 +327,7 @@ Additionally, not only does this detuning appear present, it seems to behave rea
 
 \newcommand{\ilparagraph}[1]{\paragraph{\bfseries #1\textcolor{cern}{.}}}
 
-Blah blah.
+\todo{Blah blah.}
 
 \ilparagraph{JobSubmitter}
 Developed with J.~Dilly\orcidlink{0000-0001-7864-5448} and M.~Hofer\orcidlink{0000-0001-6173-0232}, JobSubmitter~\cite{CODE:OMC:pylhc_submitter} is a Python package for easily submitting parametrized studies to the HPC queuing system HTCondor~\cite{CODE:Douglas:condor-practice}.
