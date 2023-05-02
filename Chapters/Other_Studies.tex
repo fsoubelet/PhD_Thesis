@@ -1,6 +1,6 @@
 \chapter{Optics Studies and Software Developments}
 \label{chapter:Others_and_Software}
-\gls{Twiss}
+
 \todo{Write a short intro here. Do not format the body before having this written.}
 
 \section{Phase Error Dependency on BPM Type and Location in the LHC}
@@ -218,7 +218,7 @@ Similarly, BPMs placed at higher \(\beta\)-functions offer better results.
 
 Using the normal nature of BPM measurements, one can make use of the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase measurement while also differentiating between categories of BPMs.
 The suspected dependency of said standard deviation on both measuring BPMs' types and their \(\beta\)-functions has been confirmed.
-The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in  harmonic analysis or optimizing BPM selection in the N-BPM method.
+The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in harmonic analysis or optimizing BPM selection in the N-BPM method.
 
 \section{Simulations of Sextupolar Contribution to Amplitude Detuning in the LHC}
 
@@ -308,7 +308,7 @@ Results are compiled in \cref{table:detuning_coefficients_results}.
 While machine imperfection impede the measurement of strictly the sextupolar amplitude detuning in the LHC, particle tracking simulations confirm the presence of a suspected sextupolar contribution.
 \todo{Rephrase this.
 Firstly, this study demonstrates our ability to measure sextupolar amplitude detuning with an AC dipole.
-Additionally, not only does this detuning appear present, it seems to behave reasonably close to expectations, behaving in a similar way to octupolar amplitude detuning when comparing the case of forced motion and free oscillations.}
+Additionally, not only does this detuning appear present, it seems to behave reasonably close to expectations, behaving similarly to octupolar amplitude detuning when comparing the case of forced motion and free oscillations.}
 
 \section{Software Developments}
 
@@ -352,4 +352,12 @@ Contribution was made in the form of extraction of this functionality from old c
 
 \section{Summary}
 
-\todo{Blah blah.}
+A statistical analysis of the phase reconstruction precision in the LHC was performed, while differentiating between BPM categories.
+The results confirmed the influence of both BPM type and the \(\beta\)-functions at the measuring device on the precision of the phase reconstruction, with up to a factor \num{3} between the best and worst performing BPMs.
+This knowledge could be applied in optics measurements algorithms to, for instance, select a subset of BPMs to use for a given measurement based its requirements.
+
+A second simulation-based study was performed to investigate the sextupolar contribution to the amplitude detuning in the LHC, which cannot not be directly observed in the machine due to being entangled with other contributions.
+A clear contribution, though relatively small compared to that of other sources, was observed.
+The suspected behavior of this contribution, similar to that of the octupolar amplitude detuning, was confirmed.
+
+Substantial effort put into the maintenance and development of the software suite used by the OMC team, both for analysis and simulation codes, was presented.
