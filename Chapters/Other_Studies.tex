@@ -8,6 +8,8 @@ The second one is an investigation on the sextupolar contribution to amplitude d
 In parallel to other works presented in this document, a substantial effort was put into software developments to improve both analysis and simulation tools.
 The relevant contributions and achievements over the course of this work are succinctly presented in the last section of this chapter.
 
+%----------------------------------------------------------------------------------------
+
 \section{Phase Error Dependency on BPM Type and Location}
 
 In the LHC and many other circular colliders BPM measurement data constitutes the primary source for optics properties computation.
@@ -81,7 +83,7 @@ Similarly, the positive real square roots of values from this chi-square distrib
     \label{figure:phase_errors_histograms}
 \end{figure}
 
-\subsection*{Computing the Standard Deviation on Phase Advance Error}
+\subsection*{Computing the Standard Deviation on Phase Advance}
 
 A chi-square distribution with \(k\) degrees of freedom  is the distribution of a sum of the squares of \(k\) independent standard normal random variables.
 Let \(X_{i}\) represent the \(N\) normal random variables, then the associated standard deviation square is given by
@@ -111,34 +113,31 @@ In this case, one can notice that for positive values where the PDF is defined, 
 When adopting the following convention:
 
 \begin{equation}
-    \centering
-    A(x) = \log P(x) \mbox{,   and  } C =
-    \tikz[baseline]{
-        \node[draw=red,rounded corners,anchor=base] (m5)
-        {\(\displaystyle - \frac{k}{2} \log(2) - \log \Gamma(k/2)\)};
-        \node[below of=m5] (12) {constant};
-        \draw[-,red] (12) -- (m5)
-    } \text{ ,}
+    \begin{aligned}
+        A(x) &= \log P(x)  \text{ ,} \\
+        C    &= - \frac{k}{2} \log(2) - \log \Gamma(k/2)  \text{ ,}
+    \end{aligned}
     \label{equation:chi2_pdf_derivation_convention}
 \end{equation}
-one can deduce the value \(x^{*}\) through a simple derivation:
+where \(C\) is a constant of the given distribution, one can deduce the value of the mode \(x^{*}\) through a derivation:
 
 \begin{equation}
 	\begin{aligned}
-    A(x)              &= C + \left( \frac{k}{2} - 1 \right) \log(x) - \frac{x}{2} \text{ ,} \\
-    \frac{d A(x)}{dx} &= \left( \frac{k}{2} - 1 \right) \frac{1}{x} - \frac{1}{2} = \frac{k - 2 - x}{2x} \text{ .}
+        A(x)              &= C + \left( \frac{k}{2} - 1 \right) \log(x) - \frac{x}{2} \text{ ,} \\
+        \frac{d A(x)}{dx} &= \left( \frac{k}{2} - 1 \right) \frac{1}{x} - \frac{1}{2} = \frac{k - 2 - x}{2x} \text{ .}
 	\end{aligned}	
     \label{equation:chi2_pdf_mode_proof}
 \end{equation}
 
-Thus, we get that the mode is \(x^{*} = k - 2\).
-If \(k \leq 2\) then the mode is 0, since the PDF in that case is strictly decreasing with \(x\).
+Thus we find that the mode is \(x^{*} = k - 2\).
+For \(k \leq 2\) the mode is 0 since the PDF in that case is strictly decreasing with \(x\).
 \Cref{figure:chisquare_demo_fit} illustrates this property with a generated chi-square distribution and its PDF, highlighting the determined location of the mode from a distribution fit.
+\newline
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_chisquare_demo_fit.pdf}
-    \caption{A randomly generated chi-square distribution (\textcolor{mplblue}{blue}) with \(k = 4\) degrees of freedom, and a numerically fit probability density function (\textcolor{mplorange}{orange}). The determined mode (\textcolor{mplred}{red}) is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of sigmas square.}
+    \caption{A randomly generated chi-square distribution (\textcolor{mplblue}{blue}) with \(k = 4\) degrees of freedom, and a numerically fit probability density function (\textcolor{mplorange}{orange}). The determined mode (\textcolor{mplred}{red}) is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of \(\sigma^2\).}
     \label{figure:chisquare_demo_fit}
 \end{figure}
 
@@ -179,6 +178,15 @@ For instance, similarly shown as previously for the mode, one can compute back t
     \label{equation:stdev_from_chi_mean}
 \end{equation}
 where \(\sigma_{\mu}\) is the phase measurement's standard deviation, \(\mu\) is the chi distribution's mean, \(k\) is the chi distribution's degrees of freedom and \(\Gamma\) is the Gamma function.
+
+% To summarize, control of local coupling in the LHC IRs is an important goal that should be tackled for Run~\num{3}.
+% Coupling corrections determined with the segment-by-segment method allow compensating for the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
+% However, existing methods do not provide a reliable way to drive a minimization of coupling at the IP.
+% To achieve this goal, two new things are needed:
+% \begin{enumerate}
+%     \item A way to adjust for the coupling at the IP without affecting the rest of the machine, so as not to temper with the compensation of the IR's contribution to global coupling.
+%     \item A reliable way to measure coupling at the IP in order to drive the correction.
+% \end{enumerate}
 
 \subsection*{Application to Measurements}
 
