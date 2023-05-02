@@ -178,13 +178,16 @@ For instance, similarly shown as previously for the mode, one can compute back t
     \label{equation:stdev_from_chi_mean}
 \end{equation}
 where \(\sigma_{\mu}\) is the phase measurement's standard deviation, \(\mu\) is the chi distribution's mean, \(k\) is the chi distribution's degrees of freedom and \(\Gamma\) is the Gamma function.
+\newline
 
-% To summarize so far, the desired standard deviation of the phase advance measurements is not available for specific subgroups of measuring BPMs.
-% To achieve this goal, two new things are needed:
-% \begin{enumerate}
-%     \item A way to adjust for the coupling at the IP without affecting the rest of the machine, so as not to temper with the compensation of the IR's contribution to global coupling.
-%     \item A reliable way to measure coupling at the IP in order to drive the correction.
-% \end{enumerate}
+To summarize so far, the desired standard deviation of the phase advance measurements is not available for specific subgroups of measuring BPMs.
+It is however possible to compute it back from either the mode of the chi-square distribution of the phase advance errors squared, or from the mode or mean of the chi distribution of the phase advance errors, through the following steps:
+\begin{enumerate}
+    \item Perform optics analysis on a set of measurements and select part of the data corresponding to the BPMs of interest.
+    \item Form either the chi-square or chi distribution of, respectively, their phase advance errors squared or their phase advance errors.
+    \item Compute the relevant property from said distribution - mode or mean, depending on the distribution - and determine the standard deviation of the phase advance measurements from that quantity.
+\end{enumerate}
+This way, one can determine the standard deviation on the phase advance reconstruction for a given arbitrary subgroup of BPMs from the optics analysis of a set of measurements.
 
 \subsection*{Application to Measurements}
 
