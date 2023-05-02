@@ -141,7 +141,7 @@ For \(k \leq 2\) the mode is 0 since the PDF in that case is strictly decreasing
     \label{figure:chisquare_demo_fit}
 \end{figure}
 
-The standard deviation of the phase measurements \(\sigma_{\mu}\) is then given from the mode by:
+The standard deviation of the phase measurements, \(\sigma_{\mu}\), is then given from the mode by:
 
 \begin{equation}
     \sigma_{\mu} = \sqrt{\frac{(\epsilon^2)^*}{k - 2}} = \sqrt{\frac{(\epsilon^2)^*}{N - 3}} \text{ .}
@@ -153,16 +153,16 @@ For the chi distribution mentioned above and derived through \(x = y^2\), the as
 \begin{equation}
     \begin{aligned}
         P_{\sigma}(y , k) &= P (y^2 , k) 2y \text{ ,} \\
-        P_{\sigma}(y , k) &= \frac{y^{k-1} e^{-y^2/2}} {2^{k/2-1} \Gamma(\frac{k}{2})} \text{ .}
+        P_{\sigma}(y , k) &= \frac{y^{k-1} e^{-y^2/2}} {2^{k/2-1} \Gamma(\frac{k}{2})} \text{ ,}
     \end{aligned}
     \label{equation:chi_pdf}  
 \end{equation}
-
-For this chi distribution, the mode of \(P_{\sigma}(y , k)\) is at \(y^*=\sqrt{k-1}\) and \cref{equation:stdev_from_chi2_mode} above becomes:
+and the mode of \(P_{\sigma}(y , k)\) is located at \(y^*=\sqrt{k-1}\).
+The determination of the standard deviation of \cref{equation:stdev_from_chi2_mode} above becomes:
 
 \begin{equation}
     \sigma_{\mu} = \frac{y^*}{\sqrt{k - 1}} = \frac{y^*}{\sqrt{N - 2}} \text{ .}
-    \label{equation:stdev_from_mode}
+    \label{equation:stdev_from_chi_mode}
 \end{equation}
 
 However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but suffer from the quality of the fit, or try to detect the highest bins from the distribution's histogram but suffer from bin resolution and outlier data points skewing the result.
@@ -179,9 +179,7 @@ For instance, similarly shown as previously for the mode, one can compute back t
 \end{equation}
 where \(\sigma_{\mu}\) is the phase measurement's standard deviation, \(\mu\) is the chi distribution's mean, \(k\) is the chi distribution's degrees of freedom and \(\Gamma\) is the Gamma function.
 
-% To summarize, control of local coupling in the LHC IRs is an important goal that should be tackled for Run~\num{3}.
-% Coupling corrections determined with the segment-by-segment method allow compensating for the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
-% However, existing methods do not provide a reliable way to drive a minimization of coupling at the IP.
+% To summarize so far, the desired standard deviation of the phase advance measurements is not available for specific subgroups of measuring BPMs.
 % To achieve this goal, two new things are needed:
 % \begin{enumerate}
 %     \item A way to adjust for the coupling at the IP without affecting the rest of the machine, so as not to temper with the compensation of the IR's contribution to global coupling.
