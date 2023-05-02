@@ -83,28 +83,22 @@ Similarly, the positive real square roots of values from this chi-square distrib
 
 \subsection*{Computing the Standard Deviation on Phase Advance Error}
 
-A chi-square distribution with \(k\) degrees of freedom  is the distribution of sum of the squares of \(k\) independent standard normal random variables.
-Let \(X_{i}\) represent the \(N\) normal random variables, then the associated standard deviation square is given by:
+A chi-square distribution with \(k\) degrees of freedom  is the distribution of a sum of the squares of \(k\) independent standard normal random variables.
+Let \(X_{i}\) represent the \(N\) normal random variables, then the associated standard deviation square is given by
 
 \begin{equation}
     \sigma^{2} = \frac{1}{N} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ ,}
     \label{equation:chi2_dist_build_from_normals}
 \end{equation}
-where \(\bar{X}\) is the sample mean of the normal distribution given by
-
-\begin{equation}
-    \bar{X} = \frac{1}{N} \sum_{i=1}^{N} X_{i} \text{ .}
-    \label{equation:normal_mean}
-\end{equation}
-
-The standard error used in analysis codes is defined as
+where \(\bar{X}\) is the sample mean of the normal distribution.
+In our analysis codes the standard error differs slightly from \cref{equation:chi2_dist_build_from_normals} and is defined as:
 
 \begin{equation}
     (SE)^{2} = \frac{1}{N-1} \sum_{i=1}^{N} \left( X_{i} - \bar{X} \right)^{2} \text{ .}
     \label{equation:omc3_standard_error}
 \end{equation}
 
-The ensemble of \(\sigma^{2}\) values from different sets of measurements form a chi-square distribution. 
+The ensemble of \(\sigma^{2}\) values from different sets of measurements form a chi-square distribution, such as those that can be seen in \cref{figure:square_errors_histograms}. 
 The associated Probability Density Function (PDF) for \(k\) degrees of freedom, which is non-zero for positive values only, is given by:
 
 \begin{equation}
