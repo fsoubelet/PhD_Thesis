@@ -1,15 +1,17 @@
 \chapter{Optics Studies and Software Developments}
 \label{chapter:Others_and_Software}
 
-Two further studies were performed during the course of this thesis, that are presented in this chapter.
+Two further studies performed during the course of this thesis are presented in this chapter.
 The first one is a statistical analysis of the phase measurement error in the LHC, that aimed to determine the influence of the measuring BPMs on the phase error.
 The second one is an investigation on the sextupolar contribution to amplitude detuning in the LHC.
-In parallel to other works presented in this document, a substantial effort was put into software developments to improve both analysis and simulation tools, which is succinctly presented in the last section of this chapter.
+
+In parallel to other works presented in this document, a substantial effort was put into software developments to improve both analysis and simulation tools.
+The relevant contributions and achievements over the course of this work are succinctly presented in the last section of this chapter.
 
 \section{Phase Error Dependency on BPM Type and Location}
 
 In the LHC and many other circular colliders BPM measurement data constitutes the primary source for optics properties computation.
-These measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
+As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \(\beta\)-functions lead to better signal-to-noise ratios on measurements \todo{Ref?}, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
 This study was performed to investigate the influence of these properties on the precision of the reconstructed phase values from turn-by-turn data.
 
 In practice the presence of systematic errors can influence different sets of measurements to not be totally independent.
@@ -22,11 +24,7 @@ Using the underlying properties of the measurements-derived distributions, one c
 The methods and considerations below can be applied on BPM turn-by-turn measurement data from synchrotron machines.
 The following analysis was done on data taken during the LHC Run~\num{2}, in \num{2018} and at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 Information about the measurement data used for this analysis can be found in \cref{appendix:measurement_fills}.
-
-The suspicions mentioned above come from the fact that different BPM types have different resolution, and higher \(\beta\)-functions lead to better signal-to-noise ratios on measurements.
-\todo{Have a ref on this?}
-As can be seen in \cref{figure:bpms_betas_histogram}, measuring BPMs are spread across a wide range of \(\beta\)-functions.
-It is therefore of interest to have the ability to determine the standard deviation on the phase measurement while differentiating on BPM types and \(\beta\)-functions.
+\Cref{figure:bpms_betas_histogram} shows BPMs in the LHC are spread across a wide range of \(\beta\)-functions.
 
 \begin{figure}[!htb]
     \centering
