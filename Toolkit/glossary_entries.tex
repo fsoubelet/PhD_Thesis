@@ -38,103 +38,79 @@
 
 % ----- Nomenclature ----- %
 
-\newglossaryentry{ampdet}{
-        name={amplitude detuning},
-        description={Tune change with the transversal amplitude of a particle.\todo{See: cref to proper place.}}
-}
 \newglossaryentry{acdipole}{
         name={AC-Dipole},
         text={AC-dipole},
         description={Dipole magnet attached to an AC power source with variable frequency and strength, thus allowing to impose forced oscillations on the \gls{beam}. \todo{See: cref to proper place.}}
 }
-\newglossaryentry{beta-function}{
-        name={beta-function},
-        text=\(\beta\)-function,
-        description={Value of the \gls{Twiss} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
+\newglossaryentry{ampdet}{
+        name={amplitude detuning},
+        description={Tune change with the transversal amplitude of a particle.\todo{See: cref to proper place.}}
+}
+\newglossaryentry{beam}{
+        name={beam},
+        description={Short for "Particle Beam".  The name for the collection of all particles in an accelerator traveling in the same direction. In the \acrfull{LHC} there are two beams (Beam~1 and Beam~2) traversing in opposite directions and colliding at the \glsfirstplural{IP}}
 }
 \newglossaryentry{beta-beating}{
         name={beta-beating},
         text=\(\beta\)-beating,
         description={Relative difference of the \gls{beta-function} between measurement and model: \((\beta_{\mathrm{measured}} - \beta_{\mathrm{model}}) / \beta_{\mathrm{model}}\)}
 }
-\newglossaryentry{Twiss}{
-        name={Twiss Parameters},
-        description={See \gls{courantsnyderparameter}}
-}
-\newglossaryentry{courantsnyderparameter}{
-        name={Courant-Snyder Parameters},
-        user1={Courant-Snyder},
-        description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \glspl{Twiss} parameters. See also \gls{beta-function}}
-}
-\newglossaryentry{beam}{
-        name={beam},
-        description={Short for "Particle Beam".  The name for the collection of all particles in an accelerator traveling in the same direction. In the \acrfull{LHC} there are two beams (Beam~1 and Beam~2) traversing in opposite directions and colliding at the \glsfirstplural{IP}}
+\newglossaryentry{beta-function}{
+        name={beta-function},
+        text=\(\beta\)-function,
+        description={Value of the \gls{Twiss} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
 }
 \newglossaryentry{betatron_coupling}{
-        name={betatron coupling},
+        name={Betatron Coupling},
         description={Coupling between the horizontal and vertical betatron motion of a particle.}
 }
 \newglossaryentry{bunch}{
         name={bunch},
         description={Short for "Particle Bunch". Due to the \acrshort{RF} acceleration scheme, a continuous \gls{beam} is not possible in a synchrotron and particles become bunched during acceleration}
 }
+\newglossaryentry{courantsnyderparameter}{
+        name={Courant-Snyder Parameters},
+        user1={Courant-Snyder},
+        description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \glspl{Twiss} parameters. See also \gls{beta-function}}
+}
 \newglossaryentry{experiment}{
         name={experiment},
         description={In the context of the \acrfull{LHC}, an ``experiment'' denotes  one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glsfirstplural{IP} of the \acrshort{LHC}}
 }
-\newglossaryentry{flatoptics}{
-        name={flat optics},
-        description={\Gls{optics} in which \glstext{betastar} is different for both planes. Usually much smaller in one than in the other. See also: \glstext{roundoptics}}
-}
-\newglossaryentry{roundoptics}{
-        name={round optics},
-        description={\Gls{optics} in which \glstext{betastar} is identical for both planes. See also: \glstext{flatoptics}} 
+\newglossaryentry{feed-down}{
+        name={feed-down},
+        description={Particles passing off-center through a multipole field experience effects akin to the influence of lower-order multipoles due to the orbit offset.}
 }
 \newglossaryentry{flatorbit}{
         name={flat orbit},
         description={Machine setup without any crossing bumps in the \glsfirstplural{IR}}
 }
-\newglossaryentry{feeddown}{
-        name={feed-down},
-        description={Particles passing off-center through a multipole field experience effects akin to the influence of lower-order multipoles due to the orbit offset.}
+\newglossaryentry{flatoptics}{
+        name={flat optics},
+        description={\Gls{optics} in which \glstext{betastar} is different for both planes. Usually much smaller in one than in the other. See also: \glstext{roundoptics}}
 }
 \newglossaryentry{hadron}{
         name={hadron},
         description={Composite subatomic particles consisting of two or more quarks, held together by strong interactions}
 }
+\newglossaryentry{longshutdown}{
+        name={long shutdown},
+        description={Planned shutdown periods of the \acrfull{LHC} between \glspl{run} spanning multiple years, as opposed to the \acrfull{YETS}, which only lasts a few months. This time is used for repairs and upgrades of the machine, as well as general maintenance}
+}
 \newglossaryentry{luminosity}{
         name={luminosity},
         description={Is the ratio of the number of events, i.e. collisions, detected per cross section, either per time interval ("instantaneous luminosity") or in total ("integrated luminosity", e.g. since the beginning of a year, a \gls{run} or of operation)}
 }
-\newglossaryentry{svdclean}{
-        name={SVD cleaning},
-        description={Noise cleaning method used in the \glstext{omc3} python package. Based on an \acrfull{SVD}, using the strongest modes to reconstruct the signal}
-}
-\newglossaryentry{run}{
-        name={run},
-        description={Consecutive years of \acrshort{LHC}-operation, separated by long shutdowns. Run~1 has been from 2008-2013, run~2 from 2015-2018 and run~3 started in 2022}
-}
-\newglossaryentry{online}{
-        name={online analysis},
-        text=online,
-        user1={online analysis},
-        description={Any analysis that is being done in the \glsfirst{CCC}, i.e. at the same time as the measurements are performed during machine commissioning or \glsfirst{MD}. In contrast, see: \glsuseri{offline}}
-}
-\newglossaryentry{offline}{
-        name={offline analysis},
-        text=offline,
-        user1={offline analysis},
-        description={Any analysis that is being done after the measurements are completed. In contrast, see: \glsuseri{online}}
+\newglossaryentry{madx}{
+        name={MAD-X},
+        text={\texttt{MAD-X}},
+        description={Current version of the \acrfull{MAD} framework developed in \acrshort{BE}-\acrshort{ABP} at \acrshort{CERN}}
 }
 \newglossaryentry{normal}{
         name={normal magnets},
         text=normal,
         description={Magnet with a ``normal'' oriented multipole field with pole-tips off the horizontal axis. Opposed to a ``\gls{skew}'' magnet of the same order $n$, for which the field is rotated by }%$\sfrac{\pi}{(2n)}$\,\si{\radian}}
-}
-\newglossaryentry{skew}{
-        name={skew magnets},
-        text=skew,
-        description={Magnet with a ``skew'' oriented multipole field, with pole-tips on the horizontal axis. Opposed to a ``\gls{normal}'' magnet of the same order $n$, for which the field is rotated by }%$\sfrac{-\pi}{(2n)}$\,\si{\radian}}
 }
 \newglossaryentry{omc3}{
         name={omc3},
@@ -147,6 +123,19 @@
         name={optics},
         description={Here ``optics'' refers to ``accelerator \gls{beam} optics'', describing the particle motion through an accelerator as defined by the elements (i.e. magnets) of the machine. As the behaviour of a particle \gls{beam} in magnetic fields shows  similarities to a light beam propagating through lenses and can BE described with similar equations, a lot of theory and nomenclature has been borrowed from ray optics}
 }
+\newglossaryentry{roundoptics}{
+        name={round optics},
+        description={\Gls{optics} in which \glstext{betastar} is identical for both planes. See also: \glstext{flatoptics}} 
+}
+\newglossaryentry{run}{
+        name={run},
+        description={Consecutive years of \acrshort{LHC}-operation, separated by long shutdowns. Run~1 has been from 2008-2013, run~2 from 2015-2018 and run~3 started in 2022}
+}
+\newglossaryentry{skew}{
+        name={skew magnets},
+        text=skew,
+        description={Magnet with a ``skew'' oriented multipole field, with pole-tips on the horizontal axis. Opposed to a ``\gls{normal}'' magnet of the same order $n$, for which the field is rotated by }%$\sfrac{-\pi}{(2n)}$\,\si{\radian}}
+}
 \newglossaryentry{triplet}{
         name={triplet},
         description={Name for the final focusing quadrupoles in the \glsfirst{IR} left and right of an \glsfirst{IP}. In principle these consist of three magnets Q1--3 (starting with Q1 closest to the \acrshort{IP}), where Q1 and Q3 have the same orientation (e.g. focusing) and are opposite to Q2 (e.g. defocusing), depending on \gls{beam}, plane and side. In the \acrfull{LHC} Q2 is split into two magnets, while in the \acrfull{HL-LHC} also Q1 and Q3 will each BE split in two}
@@ -155,19 +144,9 @@
         name={tune},
         description={Number of betatron oscillations per turn in a circular accelerator. See also: \gls{beta-function}}
 }
-\newglossaryentry{d1d2}{
-        name={D1\&D2},
-        text={D1/D2},
-        description={D1 and D2 are the shorthands for the separation/recombination dipoles in the \glsfirstplural{IR} of the \glsfirst{LHC} and \glsfirst{HL-LHC}, diverting the \glspl{beam} from their respective beam-lines into the common aperture region around the \glsfirstplural{IP} and vice-versa}
-}
-\newglossaryentry{longshutdown}{
-        name={long shutdown},
-        description={Planned shutdown periods of the \acrfull{LHC} between \glspl{run} spanning multiple years, as opposed to the \acrfull{YETS}, which only lasts a few months. This time is used for repairs and upgrades of the machine, as well as general maintenance}
-}
-\newglossaryentry{madx}{
-        name={MAD-X},
-        text={\texttt{MAD-X}},
-        description={Current version of the \acrfull{MAD} framework developed in \acrshort{BE}-\acrshort{ABP} at \acrshort{CERN}}
+\newglossaryentry{Twiss}{
+        name={Twiss Parameters},
+        description={See \gls{courantsnyderparameter}}
 }
 
 
