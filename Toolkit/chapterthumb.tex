@@ -1,0 +1,141 @@
+% ----- Page thumbs to the side ----- %
+\usepackage{scrlayer-scrpage}                    % allows setting layers on pages (e.g. chapterthumbs/headers/footers)
+
+% \KOMAoptions{numbers=noenddot}
+
+% Chapterthumbs
+% Adapted by jdilly to use tikz according to 
+% https://tex.stackexchange.com/questions/526904/scrreprt-thumb-indices-with-scrlayer-scrpage-use-any-shape-as-chapterthumb
+% needs, tikz, scrlayer-scrpage, koma, 
+% original example in https://komascript.de/komascriptbuch7examples 
+\newlength{\chapterthumbwidth}
+\newlength{\chapterthumbheight}
+
+\newcommand*{\firstchapterthumbskip}{.1\paperheight}
+\newcommand*{\lastchapterthumbskip}{\firstchapterthumbskip}
+\setlength{\chapterthumbheight}{4.5em}
+\setlength{\chapterthumbwidth}{.06\paperwidth}
+\newcommand*{\chapterthumbskip}{.1\paperheight}
+\colorlet{chapterthumbboxcolor}{cern!30}
+\newcommand*{\chapterthumbcolor}{white}
+% \newcommand*{\chapterthumbformat}{\@chapapp~\thechapter}
+\newcommand*{\chapterthumbformat}{\thechapter}
+\newkomafont{chapterthumb}{\normalfont\Large\color{\chapterthumbcolor}}
+
+\usetikzlibrary{shapes.misc, positioning}
+
+\makeatletter
+% TIKZ Style
+\newcommand*\chapterthumb@box{%
+  \usekomafont{chapterthumb}%
+    \parbox[c][\chapterthumbheight][c]{\chapterthumbwidth}{%
+      \centering
+      \begin{tikzpicture} 
+        % second rectangle to hide rounded corner on page border
+        \ifodd\value{page}
+            \node[rectangle, 
+                fill=chapterthumbboxcolor,
+                minimum width=0.9\chapterthumbwidth, 
+                minimum height=\chapterthumbheight,
+                ] at (0.1,0){};
+        \else
+            \node[rectangle, 
+                fill=chapterthumbboxcolor,
+                minimum width=0.9\chapterthumbwidth, 
+                minimum height=\chapterthumbheight,
+                ] at (-0.1,0){};
+        \fi
+        % rectangle with content
+        \node[rectangle, 
+              fill=chapterthumbboxcolor,
+              minimum width=\chapterthumbwidth, 
+              minimum height=\chapterthumbheight,
+              rounded corners=2pt,
+              ] at (0,0){\chapterthumbformat};
+      \end{tikzpicture}%
+    }%
+}
+
+% Original style
+% \newcommand*\chapterthumb@box{%
+%             \rotatebox[origin=tl]{90}{%
+%               \setlength{\fboxsep}{0pt}%
+%               \colorbox{chapterthumbboxcolor}{%
+%                 \parbox[c][\chapterthumbheight][c]%
+%                 {\chapterthumbwidth}{%
+%                   \centering
+%                   \color{\chapterthumbcolor}%
+%                   \usekomafont{chapterthumb}{%
+%                     \chapterthumbformat
+%                   }}}}%
+% }
+
+\newcommand*{\chapterthumbbox}{%
+    \if@mainmatter
+    \ifnum\value{chapter}>\z@
+    \ifnum \value{chapterthumb}<\z@
+    \else
+    \begingroup
+    \protected@edef\reserved@a{\chapterthumbformat}%
+    \ifx\reserved@a\lastchapterthumbformat\else
+    \stepcounter{chapterthumb}%
+    \global\let\lastchapterthumbformat\reserved@a
+    \fi
+    \@tempcnta=\numexpr
+    \dimexpr
+    \paperheight
+    -\firstchapterthumbskip
+    -\chapterthumbwidth
+    -\lastchapterthumbskip
+    \relax / \dimexpr
+    \chapterthumbskip
+    \relax
+    +1
+    \relax
+    \ifnum \value{chapterthumb}<\@tempcnta
+    \else
+    \setcounter{chapterthumb}{0}%
+    \fi
+    \vspace*{%
+        \dimexpr
+        \firstchapterthumbskip
+        + ( \chapterthumbskip )
+        * \value{chapterthumb}%
+        - \baselineskip
+        \relax
+    }\par
+    \setlength{\fboxsep}{0pt}%
+    \ifodd\value{page}
+    \hfill
+    \makebox[0pt][r]{\chapterthumb@box}%
+    \else
+    \makebox[0pt][l]{\chapterthumb@box}%
+    \fi
+    \endgroup
+    \fi
+    \fi
+    \fi
+}
+\makeatother
+
+\newcounter{chapterthumb}
+\setcounter{chapterthumb}{10000}
+\newcommand*{\lastchapterthumbformat}{\relax}
+
+\DeclareNewLayer[%
+background,%
+outermargin,%
+% oddpage,%
+% rightmargin,%
+contents=\chapterthumbbox
+]{chapterthumb}
+
+\newcommand*\EnableChapterthumb{%
+    \IfLayerAtPageStyle{scrheadings}{chapterthumb}{}
+    {\AddLayersToPageStyle{@everystyle@}{chapterthumb}}%
+}
+\newcommand*\DisableChapterthumb{%
+    \RemoveLayersFromPageStyle{@everystyle@}{chapterthumb}%
+}
+
+\EnableChapterthumb
