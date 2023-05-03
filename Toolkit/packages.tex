@@ -50,17 +50,9 @@
 \newglossary[slg]{symbolslist}{syi}{syg}{Symbols}% create symbolslist
 
 % ----- References, Cross-Linking and Links Related ----- %
-\usepackage{hyperref}                            % hyperlinks through the document | load before cleveref
-\usepackage[xcolor,notion]{knowledge}            % define notions to be linked to inside the document | load after hyperref
-\usepackage[capitalise, nameinlink]{cleveref}    % get smart references across the document | load last
-% \hypersetup{
-%   linkcolor=cern,
-%   citecolor=cern,
-%   urlcolor=cern,
-%   colorlinks=true,
-%   linktoc=all,                                   % includes page-numbers in links
-%   hypertexnames=false,                           % fixes wrong linking with subequations, but might have side-effects (check index links!)
-% }
+\usepackage{hyperref}                              % hyperlinks through the document | load before cleveref
+% \usepackage[xcolor,notion]{knowledge}            % define notions to be linked to inside the document | load after hyperref
+\usepackage[capitalise, nameinlink]{cleveref}      % get smart references across the document | load last
 
 % ----- Fonts Related ----- %
 % \usepackage{utopia}                              % Use the Palatino font
