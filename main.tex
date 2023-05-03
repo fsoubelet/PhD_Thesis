@@ -27,9 +27,9 @@ headsepline,                                     % Uncomment to get a line under
 \input{Toolkit/thesis_info.tex}                  % Thesis information for document class
 \input{Toolkit/titlepage_hypersetup.tex}         % Update hyperref setup for titlepage
 
-\setcounter{secnumdepth}{3}
-\addbibresource{Bibliography.bib}
-\makenoidxglossaries
+\setcounter{secnumdepth}{3}                      % Detailing level of section numbering in table of content
+\addbibresource{Bibliography.bib}                % Load the bibliography definitions file
+\makenoidxglossaries                             % Prepare the glossary entries (does not display yet)
 
 % ----- FRONTMATTER ----- %
 
@@ -51,7 +51,7 @@ headsepline,                                     % Uncomment to get a line under
 
 \setcounter{tocdepth}{1}                         % How detailed table of content should be
 \tableofcontents                                 % Prints the main table of contents
-\include{Frontmatter/glossary.tex}               % Will make the glossary
+\include{Frontmatter/glossary.tex}               % Will now display the glossary
 \listoffigures                                   % Prints the list of figures
 \listoftables                                    % Prints the list of tables
 
