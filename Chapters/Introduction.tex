@@ -4,65 +4,59 @@
 
 \todo{Few sentences here.}
 
-% Some paragraph of text here.
-% To be dispatched in relevant places:
-
-% As mentioned, each Insertion Region is separated from the previous one by an arc and has its own purpose:
-% \begin{enumerate}
-%     \item IR1 houses the ATLAS experiment
-%     \item IR2 houses the ALICE experiment and the injection of Beam1
-%     \item IR3 houses the off-momentum collimation cleaning (ref https://accelconf.web.cern.ch/ipac2016/doi/JACoW-IPAC2016-WEPMW007.html)
-%     \item IR4 houses the RF cavities to accelerate the beams
-%     \item IR5 houses the CMS experiment
-%     \item IR6 houses the beams' extraction to the dumps (ref https://cds.cern.ch/record/1392619)
-%     \item IR7 houses the betatronic collimation cleaning (ref https://cds.cern.ch/record/1056681)
-%     \item IR8 houses the LHCb experiment and the injection of Beam2
-% \end{enumerate}
-
-% \begin{figure}[h]
-%   \centering
-%   \includegraphics[width=0.5\linewidth]{Figures/placeholder.png}
-%   \caption{Integrated luminosity in the four experiments of the LHC during the 2017-2018 LHC Run 2.}
-%   \label{figure:run_II_luminosities}
-% \end{figure}
-
-% \begin{tabular}{lcc}
-% \hline Parameters & Nominal LHC (design) & HL-LHC (standard) \\
-% \hline Energy [TeV] & 7 & 7 \\
-% Bunch spacing (ns) & 25 & 25 \\
-% Nb. of bunches & 2808 & 2760 \\
-% Nb. of collisions (IP1/IP5) & 2808 & 2748 \\
-% Bunch charge [$10^{11}$] & 1.15 & 2.2 \\
-% Total current [A] & 0.58 & 1.11 \\
-% \hline
-% \betastar~[cm] & 55 & 15 \\
-% Crossing angle [$\mu$ rad] & 285 & 500 \\
-% Beam separation [$\sigma$] & 9.4 & 10.5 \\
-% Norm. transverse emittance $[\mu m.rad]$ & $3.75$ & $2.5$ \\
-% \hline Peak luminosity (w/o crab cavities) [$10^{34}$ ~Hz / $cm^{-2}$] & 1.0 & 8.1 \\
-% Leveled luminosity $\left[10^{34} \mathrm{~Hz} / \mathrm{cm}^{-2}\right]$ & $\mathrm{NA}$ & 5.0 \\
-% Leveling time [h] & $\mathrm{NA}$ & $7.2$ \\
-% \hline
-% \caption{Comparison of the LHC and HL-LHC baseline parameters.}
-% \label{lhc_vs_hllhc_parameters}
-% \end{tabular}
-
 \section{Motivations}
 
 At a particle collider, such as the \acrfull{LHC}, a strong focusing of the \glspl{beam} is needed in order to achieve a high collision rate at the \glspl{IP}.
 In the LHC these are located in \glspl{IR} \numlist{1;2;5;8} which host the \acrshort{ATLAS}, \acrshort{ALICE}, \acrshort{CMS} and \acrshort{LHCb} \glspl{experiment}, respectively.
 This focusing is achieved with a highly powered \gls{triplet} of quadrupoles located left and right of the IP.
 As a consequence of the small beam sizes at the collision points the \glspl{beta-function} are extremely large in the vicinity of the IPs, and particularly in the triplet quadrupoles.
-As such, any imperfection in said triplets, but also nearby magnets, is 
+As such any imperfection in said triplets, but also nearby magnets, has a high impact on the beam dynamics of the machine, particularly the local ones.
+
+\todo{Small paragraph to talk about linear coupling. We've got correctors. We need a correction that works for both beams at the same time.}
+
+\todo{Small paragraph to say we've done a bit before.}
+
+\todo{Talk about the HLLHC.}
+
+\todo{Small about the aim of this thesis.}
 
 \section{Thesis Outline}
 
-% \section{The CERN Accelerator Complex and its Upgrade}
+This document exposes work done on the matter of local linear coupling correction in the LHC, and of this thesis at large.
+Across studies a focus is kept on the main \glspl{IR}, \numlist{1;5}, which are more error-sensitive due to their optics configurations.
 
-% \subsection{An Overview of CERN History}
+As a first step and to allow the reader to follow the details of this work, \cref{chapter:Theory} gives a detailed introduction to the world of accelerator physics and beam dynamics.
+The chapter starts with the linear beam dynamics as the core foundation to any particle accelerator, then carries on with nonlinear phenomenology present in more complex machines in order to introduce necessary concepts and quantities of interest to the work presented in this document, such as \glspl{RDT}.
+A section is dedicated to \gls{betatron_coupling} and its parametrization, and another to \gls{luminosity} as a key performance indicator of a collider.
 
-% \subsection{The Large Hadron Collider and its Injectors}
+Also in view of helping the reader follows \cref{chapter:lhc_omc} which opens on a comprehensive overview of the \acrshort{LHC} machine and its operation in \Gls{run}~\num{3}, with particular attention given to the main \glspl{IR}.
+The second half of the chapter offers a dive into the practice of \Gls{optics} Measurements and Corrections as done at the LHC by the \acrshort{OMC} team.
+Insight is given on each step, going from data acquisition methods and devices to the reconstruction of quantities of interest and the determination of adjustments that would bring the machine closer to its nominal state.
 
-% \subsection{The Concept of Luminosity}
+The main body of work for this thesis, which offers a new experimental setup and correction method for local linear coupling in the \acrshort{LHC} \glspl{IR}, is detailed in \cref{chapter:IR_Local_Coupling}.
+The chapter opens by providing the reader with a justification of the need for local linear coupling correction both for the \acrshort{LHC} and the future \acrshort{HL-LHC} machine.
+An overview of the local coupling situation in the \acrshort{LHC} is given, including current correction methods and their limitations which stem from the specific conditions of the \acrshort{LHC} \glspl{IR}.
+The theoretical basis for the new correction method is laid out, which relies on the leakage of \glspl{RDT} from the \glspl{IR} to the rest of the machine, and the various experimental setup tools that were developed are thoroughly presented.
+Experimental measurements and data analysis from the method's application in the \acrshort{LHC} \num{2022} commissioning are presented as well as the resulting \gls{luminosity} improvements observed from the application of the determined corrections.
+A short section is dedicated to the relevance of this method for other existing or future colliders.
+Finally, the chapter offers an assessment of the realistic eventuality of one or more failure of the dedicated magnets used for coupling correction and the explored solutions.
 
-% \subsection{The LHC Performance and the HL-LHC Upgrade}
+In line with the themes of the \gls{LIV.DAT}~\cite{Website:LIVDAT} a machine learning based approach to the subject of local linear coupling has been explored, that is presented in \cref{chapter:ml_local_coupling}, which starts with a minimal overview of the relevant machine learning concepts.
+The new approach to local linear coupling is presented with a focus on the data preparation, model training and achieved results.
+A discussion on the potential of this machine learning approach is held, as well as the challenges to overcome to make it fully viable in LHC operations.
+
+Some additional work performed during this thesis, including a substantial amount of software development, is presented in \cref{chapter:additional_work}.
+While not relating directly to the main subject of this thesis, the work presented in this chapter is nonetheless relevant to either the \acrshort{LHC} and its operation or to the \acrshort{OMC} team at large.
+
+Finally, \cref{chapter:conclusion} restates the main results and conclusions from the work done in this thesis.
+A discussion is held on the findings and any missing element to this work, as well as the potential avenues for future developments.
+The chapter closes with look at the future of LHC operations and potential implication of this work to other colliders.
+
+Some additional material is provided in the appendices of this document.
+\Cref{appendix:hamiltonian_derivation} offers a detailed derivation for the Hamiltonian thin kick expansion which would have been too cumbersome to include in \cref{chapter:Theory}.
+\Cref{appendix:naming_conventions} provides complementary, illustrated supporting material regarding the naming conventions in use for the \acrshort{LHC}, which the reader might find useful considering the inevitable amount of machine specific jargon used in this document.
+In the spirit of completeness, \cref{appendix:experimental_knobs,appendix:measurement_fills} provide details on the experimental campaign relating to the studies in this thesis.
+The former lists the different experimental knobs used for measurements in the LHC for the results shown in \cref{chapter:IR_Local_Coupling}, and the latter provides a comprehensive list of the LHC fills used for measurements.
+
+
+\todo{CHECK AGAIN THAT ALL THIS IS CORRECT AT THE END IN CASE I MOVED THINGS AROUND.}
