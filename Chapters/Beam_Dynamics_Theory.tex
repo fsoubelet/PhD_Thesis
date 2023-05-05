@@ -1,7 +1,7 @@
 \chapter{Relevant Theory of Beam Dynamics}
 \label{chapter:theory}
 
-The design, operation, performance, and safety of a particle accelerator depend on the study of beam dynamics.
+The design, operation, performance, and safety of a particle accelerator depend on the beam dynamics.
 This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
 For a more complete treatment of relevant accelerator physics the reader is best referred to textbooks by Wilson~\cite{BOOK:Wilson:Introcution_Particle_Accelerators}, Lee~\cite{BOOK:Lee:Accelerator_physics}, Wiedemann~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}, Minty and Zimmermann~\cite{BOOK:Minty:Measurements_Control_Charged_Particle_Beams}, Wolski~\cite{BOOK:Wolski:Beam_dynamics} or Chao~\cite{BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
 Most of the material in this section can be found in the aforementioned literature, and when not in these works explicit references to the relevant content are given.
@@ -65,7 +65,7 @@ The guiding magnetic field can be expanded into a series of multipolar fields, f
 \end{align}
 
 Bending forces are supplied by dipole magnets with a magnetic field perpendicular to the beam trajectory, while focusing is typically performed with the use of quadrupole magnets.
-Higher orders belong to the non-linear dynamics and will be discussed later on.
+Higher orders belong to the non-linear dynamics and will be discussed later on in this chapter.
 \Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
 
 \begin{figure}[!htb]
@@ -91,7 +91,7 @@ This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptual
 \begin{figure}[!htb]
     \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/design_vs_particle_orbit.pdf}
-    \caption{Illustration of a design closed orbit (blue) and a particle orbit oscillating around it (red).}
+    \caption{Illustration of a design closed orbit (blue) and a particle orbit oscillating around it (red). \todo{Not exactly!}}
     \label{figure:design_vs_particle_orbit}
 \end{figure}
 
@@ -173,7 +173,7 @@ According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the sol
 These equations describe a harmonic oscillation in the transverse planes.
 Here \(\varepsilon_z\) is the \intro{geometric emittance} of a particle and is a constant of the motion at a given energy. 
 \(\phi_z(s)\) is the \intro{phase advance} and \(\alpha_z(s)\) is the \intro{alpha-function}.
-\(\beta_z(s)\) is the \intro{beta-function} and represents the fluctuation of the oscillation envelope around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
+\(\beta_z(s)\) is the \intro{beta-function} and represents beam envelope, or size, around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
 In particle colliders such as the LHC the \(\beta\)-functions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
 The solution of Hill's equation can also be written in matrix form as:
 
@@ -269,7 +269,7 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
     \label{equation:phase_advance_definition}
 \end{equation}
 
-As particles go around the ring, they oscillate around the closed orbit within an enveloppe defined by the \(\beta\)-functions and the emittance.
+As particles go around the ring, they oscillate around the closed orbit within an envelope defined by the \(\beta\)-functions and the emittance.
 The number of these so-called \intro{betatron oscillations} per revolution is the \intro{tune} \(Q_u\).
 The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
 
@@ -691,7 +691,7 @@ Specifically, divergence happens when the following relation is satisfied:
 
 A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a \intro{resonance} in the beam motion.
 The condition in \cref{equation:resonance_condition} corresponds to situations where particles lie on resonant frequencies, typically causing their amplitudes to grow unbounded by the dynamics.
-Therefore the \(f_{jklm}\) terms are called \intro{resonance driving terms} (RDTs).
+Therefore the \(f_{jklm}\) terms are called \acrfullpl{RDT}.
 
 For this reason, the tune is one of the single most important design parameters in synchrotrons.
 The chosen operational transverse tunes of a synchrotron are known as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
@@ -709,8 +709,6 @@ Every generating function term \(f_{jklm}\), and equivalently every Hamiltonian 
 
 The resonance driving terms vary in amplitude through the machine as they depend on local multipole strength of contributing sources.
 Characteristically, the \(f_{jklm}\) terms show abrupt jumps at the location of relevant sources.
-
-\todo{Maybe a figure of RDTs accross a known machine to illustrate?}
 
 \subsection{Resonance Basis and Normal Form Coordinates}
 
@@ -829,16 +827,16 @@ The transverse motions of particles in an accelerator may couple due to a variet
 
 In the LHC the main contribution to coupling comes from unwanted skew quadrupolar fields.
 These mostly arise from normal quadrupoles mounted with a rotation error with respect to the longitudinal axis, but also from field imperfection from other magnets and feed-down from higher order magnets.
-An example of a skew quadrupole is given in \cref{figure:skew_quadrupole}.
+An example of a normal and skew quadrupole is given in \cref{figure:normal_vs_skew_quadrupole}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width = 0.5\linewidth]{Figures/placeholder.png}
-    \caption{\todo{Illustration of a skew quadrupole and its magnetic field lines.}}
-    \label{figure:skew_quadrupole}
+    \includegraphics[width=\linewidth]{Figures/Beam_Dynamics_Theory/bfield_multipole_order_2.pdf}
+    \caption{Illustration of a normal (left) and skew (right) magnetic quadrupole and their magnetic field lines.}
+    \label{figure:normal_vs_skew_quadrupole}
 \end{figure}
 
-Betatron coupling needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, or simply lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics}.
+Betatron coupling needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics} or loss of beam stability~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
 \subsection{Parametrization of Betatron Coupling}
 \label{subsection:parametrization_of_betatron_coupling}
