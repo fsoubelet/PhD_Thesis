@@ -229,7 +229,7 @@ Similarly, several such datasets were created for different standard deviation o
 \subsection{Model Training and Evaluation}
 
 In this study models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true output values and the model predictions.
-Several models suited for regression tasks were tested, and a minimal amount of hyperparameter tuning was performed.
+Several models suited for regression tasks were tested, that are listed below, and a minimal amount of hyperparameter tuning was performed.
 
 Each model was trained and evaluated on the various datasets generated, in order to assess their performance and usability in various realistic contexts of noise in the data. 
 A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however its performance dropped drastically when applied to the noised datasets, down to unusable accuracy.
@@ -249,7 +249,7 @@ While dense, this representation allows to see the performance of the model on a
 \end{figure}
 
 To the left of the plot at data points corresponding to low noise levels in IR BPMs, where for two of the curves (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange}) the model's performance is excellent.
-Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green}) is a significant hit of performance.
+Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green}) leads to a significant performance drop.
 Point to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
 
 \Cref{figure:ridge_histograms} shows histograms of the distributions of true attributed errors, of the ridge regressor's predictions and of deviations to the true values.
@@ -297,13 +297,14 @@ Nonetheless, while predictions might not yield accurate numbers they still provi
 
 There is also potential for performance improvements.
 Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards better performance, but will not circumvent certain models' shortcomings.
-More complex models such as Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in high energy physics~\cite{JOI:Aurisano:Convolutional_Neural_Network_Neutrino_Event_Classifier} and recently in optics measurements studies~\cite{IPAC:Fol:Optics_Corrections_Using_Machine_Learning_in_the_LHC} - and would be a promising tool that could yield better prediction accuracy especially on noised datasets.
+More complex models such as Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in \acrshort{HEP}~\cite{JOI:Aurisano:Convolutional_Neural_Network_Neutrino_Event_Classifier} and recently in optics measurements studies~\cite{IPAC:Fol:Optics_Corrections_Using_Machine_Learning_in_the_LHC} - and would be a promising tool that could yield better prediction accuracy especially on noised datasets.
 Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using another model trained for the task - this has been successfully done with auto-encoder neural networks~\cite{IPAC:Fol:Denoising_Optics_Measurements_Autoencoder_Neural_Networks} - before feeding the results to the above prediction models.
 With good enough noise cleaning, the prediction models should reach the level of performance displayed in this study on clean or low noise datasets.
 
-The main limitation of these trained models comes from the fact that only skew quadrupole components were considered in the study for the introduction of coupling.
-In the real machine, other effects such as field errors in higher order magnets or orbit offsets in sextupoles would also lead to a coupling contribution, and the models would try to interpret this and blame it on a quadrupole.
-Circumventing this would need much more complex and inclusive simulations.
+Currently, the main limitation of these trained models comes from the fact that only skew quadrupole components were considered in the study for the introduction of coupling.
+In the real machine, other effects such as field errors in higher order magnets or orbit offsets in sextupoles would also lead to a coupling contribution, which the models would try to and blame on a quadrupole.
+However, the effect of higher orders to coupling is small and assuming most contributions are in the form of tilted quadrupoles is reasonable.
+Circumventing the limitation would be feasible but need much more complex and inclusive simulations.
 
 \section{Summary}
 \label{section:ml_conclusions_outlooks}
@@ -316,3 +317,4 @@ A ridge regressor shows the best performance among the tested models, including 
 
 While usability in operation would require better accuracy on datasets with higher noise, this is a successful proof of concept for the application of machine learning techniques to the subject of local coupling corrections in particle accelerators.
 Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
+On the other hand, upgrading to better beam instrumentation that would yield more precise reconstructed coupling \acrshortpl{RDT} would also allow using the currently developed models with confidence.
