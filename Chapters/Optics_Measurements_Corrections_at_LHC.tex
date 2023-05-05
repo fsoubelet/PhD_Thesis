@@ -18,7 +18,7 @@ The next stages are the Proton Synchrotron, in which they will reach \qty{25}{\g
 
 The LHC circulates two counter-rotating hadron beams, each in their ring, which are made to collide at four Interaction Points (IPs) to provide data for High Energy Physics (HEP) experiments.
 The main data-taking experiments on the LHC are ATLAS~\cite{ATLAS_Paper,Website:ATLAS,Website:ATLAS_CDS}, LHCf~\cite{LHCf_Paper,Website:LHCf,Website:LHCf_CDS}, ALICE~\cite{ALICE_Paper,Website:ALICE,Website:ALICE_CDS}, CMS~\cite{CMS_Paper,Website:CMS,Website:CMS_CDS}, TOTEM~\cite{TOTEM_Paper,Website:TOTEM,Website:TOTEM_CDS}, LHCb~\cite{LHCb_Paper,Website:LHCb,Website:LHCb_CDS} and MoEDAL~\cite{MoEDAL_Paper,Website:MOEDAL,Website:MOEDAL_CDS}.
-The LHC is currently the world's highest energy hadron colliding machine, colliding beams at \qty{13.6}{\tera\electronvolt} center-of-mass energy as of Run~\num{3}, \num{2023}.
+The LHC is currently the world's highest energy particle accelerator, colliding beams at \qty{13.6}{\tera\electronvolt} center-of-mass energy as of Run~\num{3}, \num{2023}.
 
 %----------------------------------------------------------------------------------------
 
@@ -39,7 +39,7 @@ An illustration and a detailed description on naming conventions can be found in
 \end{figure}
 
 Beam~\num{1} rotates clockwise in its ring when viewing the LHC from above, and Beam~\num{2} rotates counter-clockwise as viewed from above.
-The beams occupy separate apertures, or beam pipes, except in the \IRs where they are eventually made to collide.
+The beams occupy separate apertures, or beam pipes, except in the \IRs where they are made to collide.
 The layout of the LHC can be seen in simplified schematic form in~\cref{figure:lhc_schematic_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
 
 \subsection{The LHC Arcs}
@@ -129,7 +129,7 @@ In this document, when using the short form IR, it is meant to refer to an Inter
   \label{table:lhc_straight_sections}
 \end{table}
 
-At the center of the IR, beams are made to collide at the \intro{Interaction Point} (IP).
+At the center of the IR, beams are made to collide at the \acrfull{IP}.
 In order to achieve high luminosity during collisions, and as shown in \cref{section:luminosity}, the \(\beta\)-functions at the IPs are squeezed to very small values.
 \Cref{figure:ir5_and_around} shows the \(\beta\)-functions in the LHC around IP5 at both injection and collision optics, where the squeeze is apparent.
 
@@ -140,7 +140,7 @@ In order to achieve high luminosity during collisions, and as shown in \cref{sec
   \label{figure:ir5_and_around}
 \end{figure}
 
-During normal operation the \(\beta^{\ast}\) at ATLAS and CMS is very squeezed: \(\beta^{\ast} =\) \qty{30}{\centi\metre} during collisions as of \num{2023}.
+During normal operation for collisions the \(\beta^{\ast}\) at ATLAS and CMS is squeezed down to \(\beta^{\ast} =\) \qty{30}{\centi\metre}.
 In this configuration, at ALICE and LHCb the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
 During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduced at ALICE and LHCb.
 \Cref{table:lhc_betastars_configurations} summarizes the \(\beta^{\ast}\) values for the different experiments and configurations.
@@ -149,7 +149,7 @@ During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduce
   \centering
   $\begin{tblr}{colspec={cccc}}
       \hline
-      \SetCell[r=2,c=1]{m,c} \text{IP} & \SetCell[c=3]{c} \mathbf{\beta^{\ast}}                                                    \\
+      \SetCell[r=2,c=1]{m,c} \text{IP} & \SetCell[c=3]{c} \text{Lowest } \beta^{\ast}                                     \\
       \cline{2-4}
                                        &  \text{Injection Optics}  &  \text{Proton Collisions} &  \text{Ion Collisions}   \\
       \hline
@@ -286,7 +286,7 @@ During pre-cycle no beams are present in the machine and the respective element 
 The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
 
 After the pre-cycle comes the \intro{injection} stage: beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
-First a probe beam consisting of just a few bunches is injected to check the validity of several systems (injection interlock, orbit, tune, chromaticity and coupling control), then a physics beam meant for collisions is injected.
+First a probe beam consisting of just a single bunch is injected to check the validity of several systems (injection interlock, orbit, tune, chromaticity and coupling control), then a \num{12}-bunches beam, and finally a physics beam meant for collisions is injected.
 At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding IPs (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
 The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
 For optics measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
@@ -309,6 +309,7 @@ This is when the ATS scheme mentioned in \cref{subsection:lhc_ats_optics_scheme}
 In a final step before luminosity production, called \intro{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
 The resulting configuration, called \intro{stable beams}, is kept throughout the luminosity production for the fill.
 The fill ends when the beams are extracted from the machine, a.k.a. \intro{beam dump}, after which the cycle ends by a \intro{ramp down} of the magnets' currents.
+Some magnets pre-cycle during the ramp down.
 
 The working point is changed several times along the cycle for stability reasons.
 As of \num{2022}, at injection the transverse tunes are (\(62.275, 60.293\)).
@@ -317,10 +318,10 @@ A final change is made in the adjust step, where the tunes are brought to (\(62.
 This last setting may be changed by machine operators during stable beams in order to optimize for beam lifetime.
 
 Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
-In \num{2022} a \intro{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast}\) of \qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
+In \num{2022} a \intro{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
 This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main IPs in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
-This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\) \qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
-Starting in \num{2023} an anti-telesqueeze is performed in the ramp to help the forward physics experiments, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
+This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
+Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
 
 %----------------------------------------------------------------------------------------
 
@@ -366,9 +367,7 @@ In the LHC, this centroid beam position can be measured on a turn-by-turn and bu
 So-called stripline BPMs are employed in the common apertures as they can discriminate between counter-rotating bunches, while button BPMs are used in the remaining portions of the machine~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}. 
 The location of BPMs in the lattice can be seen as vertical gray lines, in an insertion region such as IR\num{5} in \cref{figure:lhc_ir5_zoomed,figure:lhc_matching_section} and in the arcs in \cref{figure:lhc_arc_cell_latwiss}.
 
-% Measurement of the tune can be done in different ways.
-% One way consists at measuring transverse oscillations and looking at the spectrum of these oscillations.
-In the LHC, the \intro{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the orbit data at a specific location in IR\num{4}.
+In the LHC, the \intro{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the turn-by-turn data at a specific location in IR\num{4}.
 The BBQ is also capable of measuring an estimation of the linear coupling at the measurement location, which can be used as a rough first estimate for the coupling in the machine.
 While it is possible to assess tune and coupling with the BBQ without external excitation of the beam, the LHC chirp can generate small transverse oscillations to improve the quality of these measurements.
 
@@ -383,7 +382,7 @@ These magnets can operate in three possible modes, referred to as the \intro{Tun
 The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
 Unfortunately, at top energy the amplitude of oscillations achievable with the kickers is considerably reduced, and the beam will decohere after being kicked: the momentum distribution of particles in the bunch will cause the observed centroid of the beam to show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
-This decoherence will lead to emittance increase.
+% This decoherence will lead to emittance increase.
 As a consequence a beam can only be kicked a certain number of times before needing to be replaced, and it can take up to several hours to reach the same machine configuration again, as seen in \cref{section:lhc_operational_cycle}.
 
 For optics measurements lasting oscillations are preffered, as they increase the spectral resolution and reduce noise floor in the spectral analysis of turn-by-turn data.
@@ -478,8 +477,8 @@ For these usual settings the AC Dipole induced \(\beta\)-beating reaches no more
   \label{figure:ac_dipole_induced_beta_beating}
 \end{figure}
 
-As a consequence, the measured oscillations and associated optics functions will not be that of the natural machine.
-This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps~\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
+As a consequence, the measured oscillations, associated optics functions and \acrshortpl{RDT} will not be that of the natural machine.
+This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps~\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}, and this compensation is expanded on later on in this chapter.
 
 \subsubsection*{Spectral Analysis}
 
@@ -551,7 +550,7 @@ where \(\Delta k\) is the quadrupole strength variation, \(L\) its length and \(
 \end{figure}
 
 By modulating both innermost quadrupoles near the IP, one determines the average \(\beta\)-functions in these quadrupoles, which can then be propagated through the drift space in between to determine both the \(\beta^{\ast}\) value as well as any potential waist shift~\cite{PRAB:Carlier:K_Modulation_HL_LHC}.
-In the LHC the \(k\)-modulation technique is the main method to determine the \(\beta^{\ast}\) at the IPs.
+In the LHC the \(k\)-modulation technique is the main method to determine the \(\beta^{\ast}\) at the \acrshortpl{IP}.
 
 \subsection{Reconstruction of Linear Coupling RDTs}
 \label{subsection:reconstruction_linear_coupling_rdts}
@@ -645,7 +644,29 @@ This method has successfully been used to measure linear coupling RDTs in the LH
   \label{figure:measurement_spectrum}
 \end{figure}
 
-\subsubsection*{Caveats}
+\subsubsection*{AC Dipole Compensation}
+
+Mentioned in \cref{subsection:optics_measurements} is the effect of AC dipole excitation on the observables, which differ from that of the natural machine.
+This effect is also present in the reconstructed coupling RDTs, and must be compensated for in order to obtain the natural machine values.
+Several compensation methods exist, with the most straightforward being the application of a rescaling factor to the reconstructed \acrshortpl{RDT}.
+
+Using this rescaling one can express the driven \acrshortpl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
+
+\begin{equation}
+  \begin{aligned}
+    f_{\pm, x}^{\mathrm{driven}} &= \frac{\sin \left( Q_x \pm Q_y \right)}{\sin \left( Q_{D,x} \pm Q_y \right)} f_{\pm} \text{ ,} \\
+    f_{\pm, y}^{\mathrm{driven}} &= \frac{\sin \left( Q_x \pm Q_y \right)}{\sin \left( Q_x \pm Q_{D,y} \right)} f_{\pm} \text{ ,}
+  \end{aligned}
+  \label{equation:rescaling_coupling_rdts}
+\end{equation}
+where \(f_{+} = f_{1010}\) corresponds to the sum resonance, \(f_{-} = f_{1001}\) corresponds to the difference resonance, \(f_{\pm, x}^{\mathrm{driven}}\) denotes the driven \acrshort{RDT} as measured from horizontal turn-by-turn data, \(Q_{D, z}\) is the driven tune in the transverse plane \(z\) and \(Q_z\) the natural tune in the same plane.
+Here the \(f_{\pm}\) notation is used for concisiveness.
+
+A fully analytical compensation of the AC dipole effect can be found in~\cite{REPORT:Miyamoto:Measurement_Coupling_Resonance_Driving_Terms,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole} but will not be detailed in this document.
+A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider:NBPM_Momentum_Reconstruction_for_Linear_Coupling_RDTs}.
+\todo{Mention about the MODEL method???}
+
+\subsubsection*{Single BPM}
 
 It is possible to approximate the coupling RDTs from the real coordinates using a single BPM, and doing the reconstruction without the momentum information.
 In such case where only the position data is used, however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
@@ -661,6 +682,32 @@ To do so, the phases of the real spectral lines are shifted in accordance with t
 
 Corrections of the linear optics in the LHC are based on two different approaches.
 Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the IPs
+
+\subsubsection*{Local Corrections}
+
+In the LHC local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
+The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
+The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
+Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
+
+This method is mostly used in the LHC IRs, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+For this one looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
+
+\begin{equation}
+  \Delta \phi = \phi_{\mathrm{model}} - \phi_{\mathrm{measurement}} \text{ .}
+  \label{equation:sbs_delta_phi}
+\end{equation}
+
+An example of a local correction of the phase advance around IP\num{5} from the LHC \num{2022} commissioning is shown in \cref{figure:example_sbs_correction}, where the phase deviation from the model values are shown across the segment together with the effect of the reconstructed errors.
+The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
+This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_phase_ip5_example.pdf}
+  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear error can be seen propagating.}
+  \label{figure:example_sbs_correction}
+\end{figure}
 
 \subsubsection*{Global Corrections}
 
@@ -683,28 +730,3 @@ To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, noted 
 
 The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on the correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
 By choosing weights and plugging measured optics deviations into \cref{equation:global_corrections_from_pseudo_inverse_response_matrix}, one can determine the knob trims that could correct said observed deviations.
-
-\subsubsection*{Local Corrections}
-
-In the LHC local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
-The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
-The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
-Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
-
-This method is mostly used in the LHC IRs, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
-For this one looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
-
-\begin{equation}
-  \Delta \phi = \phi_{\mathrm{model}} - \phi_{\mathrm{measurement}} \text{ .}
-  \label{equation:sbs_delta_phi}
-\end{equation}
-
-An example of a local correction of the phase advance around IP\num{5} from the LHC \num{2022} commissioning is shown in \cref{figure:example_sbs_correction}, where the phase deviation from the model values are shown across the segment together with the effect of the reconstructed errors.
-This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
-
-\begin{figure}[!hbt]
-  \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_phase_ip5_example.pdf}
-  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear error can be seen propagating.}
-  \label{figure:example_sbs_correction}
-\end{figure}
