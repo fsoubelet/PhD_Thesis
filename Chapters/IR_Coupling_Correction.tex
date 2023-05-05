@@ -18,7 +18,7 @@ In the LHC, corrections of local IR linear coupling are of importance to keep a 
 
 In \cref{equation:coupling_rdts_from_skew_quads} the contribution of elements to the linear coupling RDTs is given, where contributing elements are typically skew quadrupoles and solenoids.
 The amplitude of the contribution is dominated by the integrated strength of the magnet \(k L\) as well as the \(\sqrt{\beta_x \beta_y}\) term at the location of the magnet.
-Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component, once can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a massive contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
+Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional skew quadrupolar component, once can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a significant contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
 
 \Cref{figure:triplet_tilts_to_rdts} shows the coupling RDTs' amplitudes from tilts in triplet quadrupoles, with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} \num{2022} optics~\cite{CODE:acc-models-lhc}.
 In this MAD-X simulation triplets around IP\num{1} were assigned random tilts within \(\pm\)~\qty{1.5}{\milli\radian}, and these were the only contribution to coupling in the machine.
@@ -36,7 +36,7 @@ For this, in the LHC the local coupling correction is done by measuring the RDTs
 The corrections are determined with the Segment-by-Segment technique described in \cref{subsection:correction_principles}, and try to cancel the triplets' contribution as well as possible.
 Though this compensation is rarely perfect, the residual contribution is usually small enough to be handled by the skew quadrupole correctors present in the LHC arcs (see \cref{subsection:lhc_arcs}).
 This correction is essential in order to reach low \(\beta^{\ast}\) with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter} the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \(\abs{C^{-}}\) by the amount of \num{0.33}, too high for the arc correctors to handle.
-While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable such as transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
+While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable such as a tune change, transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
 Due to their location the MQSX correctors are single aperture magnets, meaning that both beams pass through a single cavity in the element and feel the same magnetic field.
 This means finding a correction has the additional constraint that it is applied to both beam~\num{1} and beam~\num{2} simultaneously, and should be a compromise that works for both beams.
@@ -105,7 +105,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 \begin{figure}
     \centering
     \includegraphics*[width=0.99\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
-    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other. Can you tell which is which?}
+    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other.}
     \label{figure:guess_rdts}
 \end{figure}
 
@@ -169,9 +169,10 @@ For this reason, the CRDTs were not considered further.
 The usual technique to get a measurement of \(\beta\)-functions at the IP is k-modulation.
 Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated Machine Development (MD)~\cite{CERN:Persson:Local_Coupling_IP}.
 This prevents the possibility of directly measuring the beam size variation at an IP from local coupling to drive a correction. 
-\newline
 
-To summarize, control of local coupling in the LHC IRs is an important goal that should be tackled for Run~\num{3}.
+\subsubsection*{A Short Recap}
+
+To summarize so far, control of local coupling in the LHC IRs is an important goal that should be tackled for Run~\num{3}.
 Coupling corrections determined with the segment-by-segment method allow compensating for the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
 However, existing methods do not provide a reliable way to drive a minimization of coupling at the IP.
 To achieve this goal, two new things are needed:
@@ -243,7 +244,7 @@ As mentioned above the phase advance between the two magnets if off of exactly \
 For all intents and purposes though, these deviations are small enough that the contribution can be considered \num{0}.
 \newline
 
-Thus, the colinearity knob is an effective tool to introduce a perfectly closed coupling bump in between the MQSXs.
+Thus, the colinearity knob is an effective tool to introduce a closed coupling bump in between the MQSXs.
 It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
 
 \section{Rigid Waist Shift for Local Coupling Correction}
@@ -326,7 +327,7 @@ Additionally, the optics deviations will change the impact of any errors probed 
 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
-They were designed with the MAD-X code and a specifically developed Python package that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
+They were designed with the MAD-X code and a software developed for the occasion that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
 
 These knobs are obtained from simulations after applying an RWS in a given IR and iterating several matching routines for quantities of interest at different locations in the machine.
 Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
@@ -505,7 +506,7 @@ The exactitude and effectiveness of the determined correction can be improved by
 \subsubsection*{Reproducing the Machine's Coupling}
 
 The reproduction of the machine's global coupling in simulations becomes necessary as soon as strong non-IR sources are present.
-This reproduction can be done in different ways.
+Unfortunately the true distribution of sources in the machine is not known, and this reproduction can then be done in different ways.
 In studies, various implementations were tested: random tilts in all quadrupoles, LHC specific knobs~\cite{CERN:Tomas:Optimizing_Global_Coupling_Knobs_LHC}, longitudinal misalignment of sextupoles, field errors in specific magnets or random combinations of the above.
 These can be seen in \cref{figure:global_coupling_modeling_impact} where for each scenario the minimization point is highlighted by a vertical dashed line.
 
@@ -537,8 +538,6 @@ Using those, the complete correction procedure for local linear coupling is then
 \end{enumerate}
 
 These measurements can be performed for each IR and for each beam, and the subsequent determined corrections can then be directly applied in the machine.
-
-%----------------------------------------------------------------------------------------
 
 \section{Local Coupling Correction in the LHC 2022 Commissioning}
 \label{section:rws_experimental_results}
@@ -663,7 +662,7 @@ At each setting, a few measurements were taken by method of beam excitation, fro
 As the optics are affected - and re-matched - differently for beam~\num{1} and beam~\num{2}, a scan of the colinearity knob is performed for each beam and for each IR.
 Different scans were done with different granularity due to time constraints.
 
-For each measurement the RDTs across the machine are normalized to the base case with the RWS applied, global coupling corrected and no colinearity knob trim.
+For each measurement the RDTs across the machine are normalized to the base case with no RWS, global coupling corrected and no colinearity knob trim.
 Only then the \(\abs{C^{-}}\) is computed according to \cref{equation:deltaqmin_from_f1001}.
 This way, only the variations due to the changes of the colinearity knob are visualized and compared to simulations.
 In said simulations, the global coupling of the machine is reproduced by introducing the coupling correction knobs implemented in the machine.
@@ -672,7 +671,7 @@ In said simulations, the global coupling of the machine is reproduced by introdu
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement} comparisons are shown between scan measurements and simulations for IR\num{1} for beam~\num{1} and beam~\num{2}, then IR\num{5} for beam~\num{1} and beam~\num{2}, respectively.
 The delta between minimization settings, corresponding to the suggested correction adjustment, is highlighted on each plot.
 The relatively low range of achieved \(\abs{C^{-}}\) values is due to the aforementioned RDTs normalization.
-The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little global coupling to be corrected while beam~\num{1} required significantly stronger global coupling corrections, as well as an arc-by-arc correction knob.
+The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little global coupling to be corrected while beam~\num{1} required significantly stronger global coupling corrections, as well as local adjustments for different arcs.
 As these are reproduced in simulations, this difference of behavior is unsurprising.
 
 \begin{figure}[!htb]
@@ -731,6 +730,8 @@ Indeed, while most of the error contribution is expected to come from the dual-b
 
 Furthermore, the orbit and hence feed-down but also the \(\beta\) ratio between sources and correctors are different for both beams, which could explain part of the difference.
 As the main contributors the to error are the triplets, it is not unsurprising to obtain similar correction suggestions for both beams.
+
+\todo{Mention bad measurements and point to the appendix I will transfer them to.}
 
 \subsection{Luminosity Confirmation}
 \label{subsection:lumi_correction_trims}
@@ -840,8 +841,6 @@ The adjustments determined with the RWS have been incorporated into the nominal 
     \label{table:run2_vs_sbs_run3_vs_rws_run3_corrections}
 \end{table}
 
-\todo{Do we talk about the lumi imbalance between ATLAS and CMS? It was improved to about 3\% after the adjustment according to Tobias pres. in LNO on Aug 17.}
-
 \subsection{Comparison to Expectations}
 \label{subsection:lumi_vs_expectations}
 
@@ -871,67 +870,66 @@ Several reasons - and most likely an interplay of them all - could explain the d
     \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
 \end{itemize}
 
-\todo{See with Tobias if he has any more clues to justify the IP1 discrepancies.}
+\todo{Above listing is "a bit hand wavy" according to Tobias, go over again.}
 
-\subsection{Inconclusive Measurements}
-\label{subsection:rws_neg_measurements_garbage}
+% \subsection{Inconclusive Measurements}
+% \label{subsection:rws_neg_measurements_garbage}
 
-So far, results have been shown from measurements in which the RWS knob was trimmed in as defined in \cref{table:rigid_waist_shift_knob}.
-As mentioned in \cref{appendix:experimental_knobs} and as can be seen in \cref{figure:rigid_waist_shift_knob_effect_on_waist} the knob can be trimmed with an arbitrary factor, shifting the waist of the beams left or right of the IP. 
-Measurements have also been conducted in both IRs with the RWS knobs trimmed in with a factor of \num{-1}, which we will call a \textit{negative RWS}.
-For these, done under time constraints at the end of experimental shifts, some mistakes were made in the experimental setups and the data was deemed inconclusive after analysis.
-Nonetheless, these results are included below.
+% So far, results have been shown from measurements in which the RWS knob was trimmed in as defined in \cref{table:rigid_waist_shift_knob}.
+% As mentioned in \cref{appendix:experimental_knobs} and as can be seen in \cref{figure:rigid_waist_shift_knob_effect_on_waist} the knob can be trimmed with an arbitrary factor, shifting the waist of the beams left or right of the IP. 
+% Measurements have also been conducted in both IRs with the RWS knobs trimmed in with a factor of \num{-1}, which we will call a \textit{negative RWS}.
+% For these, done under time constraints at the end of experimental shifts, some mistakes were made in the experimental setups and the data was deemed inconclusive after analysis.
+% Nonetheless, these results are included below.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b1_neg.pdf}
-    \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
-    \label{figure:ir1_b1_neg_measurement}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b1_neg.pdf}
+%     \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}). \todo{figure out what went wrong in the simulation here}}
+%     \label{figure:ir1_b1_neg_measurement}
+% \end{figure}
 
-\Cref{figure:ir1_b1_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{1} with a negative RWS.
-When preparing for this scan an issue was encountered when trimming in the optics rematching knob.
-As the knob was wrongly designed beforehand, it exceeded the powering limit of the Q\num{6} magnets and thus could only be trimmed in the machine with a factor \num{0.7} as the LHC protection system would not allow higher currents.
-As a consequence a strong \(\beta\)-beating remained in the machine and cast doubts on the measurement data. 
-Additionally, when reproducing this setup in simulations the obtained \(\abs{C^{-}}\) curve exhibits a suspicious behavior far from what would be expected (see \cref{figure:knob_to_cminus_with_waist}) and comparison with measurement data suggests a \textit{very} large error to be corrected: \num{15} units of the colinearity knob.
-This data was discarded when determining corrections.
+% \Cref{figure:ir1_b1_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{1} with a negative RWS.
+% When preparing for this scan an issue was encountered when trimming in the optics rematching knob.
+% As the knob was wrongly designed beforehand, it bypassed the powering limit of the Q\num{6} magnets and thus could only be trimmed in the machine with a factor \num{0.7} as the LHC protection system would not allow lower currents.
+% As a consequence a strong \(\beta\)-beating remained in the machine and cast doubts on the measurement data. 
+% Additionally, when reproducing this setup in simulations the obtained \(\abs{C^{-}}\) curve exhibits a suspicious behavior far from what would be expected (see \cref{figure:knob_to_cminus_with_waist}) and comparison with measurement data suggests a \textit{very} large error to be corrected: \num{15} units of the colinearity knob.
+% This data was discarded when determining corrections.
 
-\Cref{figure:ir1_b2_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{2} with a negative RWS.
-Similarly to the above the optics rematching knobs was wrongly designed and exceeded the powering limit of the Q\num{6} magnets.
-It could only be trimmed in the machine with a factor \num{0.5}, resulting once again in a strong \(\beta\)-beating in the machine during measurements.
-The comparison with simulations also suggested a \textit{very} large error to be corrected: \num{16} units of the colinearity knob.
-This data was discarded when determining corrections.
+% \Cref{figure:ir1_b2_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{2} with a negative RWS.
+% Similarly to the above the optics rematching knobs was wrongly designed and exceeded the powering limit of the Q\num{6} magnets.
+% It could only be trimmed in the machine with a factor \num{0.5}, resulting once again in a strong \(\beta\)-beating in the machine during measurements.
+% The comparison with simulations also suggested a \textit{very} large error to be corrected: \num{16} units of the colinearity knob.
+% This data was discarded when determining corrections.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b2_neg.pdf}
-    \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{2} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
-    \label{figure:ir1_b2_neg_measurement}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir1_b2_neg.pdf}
+%     \caption{Measurement scan with a negative RWS done at IR\num{1} for beam \num{2} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
+%     \label{figure:ir1_b2_neg_measurement}
+% \end{figure}
 
-\Cref{figure:ir5_b1_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
-During this scan, an issue was made when trimming the optics rematching knob: the rematching knob from the previous scan was not trimmed out of the machine, and as a result a mix of the both was present during the scan of the colinearity knob.
-As a consequence, again, strong errors were left in the machine and while the measurement data does not suggest an unbelievable correction as in \cref{figure:ir1_b2_neg_measurement}, the failed experimental setup and suspicious shape of the measurements' \(\abs{C^{-}}\) curve led to this data being discarded when determining corrections.
+% \Cref{figure:ir5_b1_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
+% During this scan, an issue was made when trimming the optics rematching knob: the rematching knob from the previous scan was not trimmed out of the machine, and as a result a mix of the both was present during the scan of the colinearity knob.
+% As a consequence, again, strong errors were left in the machine and while the measurement data does not suggest an unbelievable correction as in \cref{figure:ir1_b2_neg_measurement}, the failed experimental setup and suspicious shape of the measurements' \(\abs{C^{-}}\) curve led to this data being discarded when determining corrections.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b1_neg.pdf}
-    \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
-    \label{figure:ir5_b1_neg_measurement}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b1_neg.pdf}
+%     \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
+%     \label{figure:ir5_b1_neg_measurement}
+% \end{figure}
 
-\Cref{figure:ir5_b2_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
-For this measurement scan, no mistake was made in the experimental setup and the data suggests a correction similar to what was found with the scans presented in \cref{subsection:rws_pos_measurements_corrections} (see \cref{table:rws_corrections_summary}).
+% \Cref{figure:ir5_b2_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
+% For this measurement scan, no mistake was made in the experimental setup and the data suggests a correction similar to what was found with the scans presented in \cref{subsection:rws_pos_measurements_corrections} (see \cref{table:rws_corrections_summary}).
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b2_neg.pdf}
-    \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
-    \label{figure:ir5_b2_neg_measurement}
-\end{figure}
+% \begin{figure}[!htb]
+%     \centering
+%     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rws_measurement_ir5_b2_neg.pdf}
+%     \caption{Measurement scan with a negative RWS done at IR\num{5} for beam \num{1} (\textcolor{mplblue}{blue}) and simulations for the same setup (\textcolor{mplr}{red}).}
+%     \label{figure:ir5_b2_neg_measurement}
+% \end{figure}
 
-Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
-\todo{There is probably a bit more to say here, discuss with Tobias.}
+% Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
 
 \section{Relevance to Other Colliders}
 
@@ -1045,10 +1043,9 @@ Magnets lifetime studies done during LS\num{2} have projected that some magnets 
 One can notice that all MQSXs at both IR\num{1} and IR\num{5} are expected to surpass their dose limit of \qty{7}{\mega\gray} during Run~\num{3}.
 The study itself highlights that \textit{"assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024."}
 
-It is then realistic to expect failures at some point during Run~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
+It is then warranted to prepare for one or more failures at some point during \Gls{run}~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing corrector.
-These are presented below.
 The MQSX magnets in IR\num{2} and IR\num{8} are not considered at risk but were still included in some of these studies.
 
 \subsection{Operating with a Missing Corrector}
@@ -1058,10 +1055,10 @@ In the first place the impact of a \textit{single} corrector failure around one 
 
 \subsubsection*{Correction Load Carry Over}
 
-Since the skew quadrupole correctors left and right of an IP have a relative phase advance of \qty{180}{\degree} and identical \(\beta\)-functions, the contribution of one magnet can be replicated by its counterpart with an opposite powering setting.
-For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of a \(\mathrm{K_{1S}}\) of \qty{-4E-4}{\per\square\meter} from an MQSX magnet at this location, which could be compensated by increasing the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}.
-This corresponds to a trim of \num{4} units of the colinearity knob around IP\num{5}.
-As such, should one MQSX fail its counterpart could still compensate for the IR's contribution to global coupling.
+As seen in \cref{section:colinearity_knob}, the contribution of one magnet can be replicated by its counterpart with a similar powering setting.
+For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of a \(\mathrm{K_{1S}}\) of \qty{-4E-4}{\per\square\meter} from an MQSX magnet at this location, which could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}.
+This corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
+As such, should one MQSX fail its counterpart could still compensate for the \acrshort{IR}'s contribution to global coupling.
 
 It would therefore be possible to fulfill the first correction stage mentioned in \cref{section:current_correction_methods_and_their_limitations} and to squeeze the beams down to \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 Minimizing coupling at the IP, however, would not be possible anymore as it requires trimming both magnets simultaneously.
@@ -1079,12 +1076,13 @@ From these, the changes in instantaneous luminosity were calculated according to
     \label{figure:lumi_vs_trims_vs_betastars}
 \end{figure}
 
-Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\) \qty{30}{\centi\meter}: by up to \(\approx\) \qty{60}{\percent}.
+Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\) \qty{30}{\centi\meter}: by up to \qty{60}{\percent}.
 Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
 
 The possible impact of this change on the aperture was also considered.
 \Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
 The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics, where the high \(\beta\)-functions make the triplet the aperture bottleneck of the machine.
+\todo{CITE APERTURE PAPER HERE}
 
 \begin{figure}[!htb]
     \centering
@@ -1103,11 +1101,12 @@ Similarly, the impact on Beam-Beam Long Range (BBLR)~\cite{PHD:Poyet} interactio
 Measurements were conducted in late \num{2022} to assess the accuracy of these predictions.
 A comparison of instantaneous luminosity loss from carrying over the left corrector's powering to the right one at IR\num{1} is shown in \cref{figure:ir1_carry_over_vs_simulation}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 Carrying over the correction to the left magnet was not done due to time constraints.
+\todo{Here I can mention back to the expectation vs measured from earlier, or maybe I keep that for later?}
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/ir1_scan_vs_simu.pdf}
-    \caption{Luminosity drop from correction carry-over to the right MQSX at IR\num{1} at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.}
+    \caption{Luminosity drop from correction carry-over to the right MQSX at IR\num{1} at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. \todo{Maybe change the scale and start at optimal? Or specify what is operational point on figure?}}
     \label{figure:ir1_carry_over_vs_simulation}
 \end{figure}
 
@@ -1122,7 +1121,7 @@ Due to time constraints again, however, the trim could not be fully done when ca
 \end{figure}
 
 Simulations and measurements show a reasonable agreement in both cases.
-Simulations systematically over-estimate the loss of luminosity but some discrepancy is to be expected as \cref{equation:luminosity_double_beams} is a simplified calculation which does not take into account \textit{e.g.} the crossing angles.
+Simulations systematically over-estimate the loss of luminosity but some discrepancy is to be expected as \cref{equation:luminosity_double_beams} is a simplified calculation.  % which does not take into account \textit{e.g.} the crossing angles.
 
 \subsubsection*{Impact Through the Operational Cycle}
 
@@ -1180,7 +1179,7 @@ In all cases a good compensation can be achieved.
 
 \Cref{table:compensation_triplet_tilts} shows the determined tilt angles necessary for compensation for each scenario.
 The necessary tilts using Q\num{2} or Q\num{3} range between \num{-2} and \qty{2.85}{\milli\radian}, with the most impactful ones at IR\num{1} and IR\num{5} - due to higher \(\beta\)-functions in the triplets - between \num{-1.65} and \qty{2.325}{\milli\radian}.
-It would also be possible to use lower values by tilting both elements simultaneously.
+It would also be possible to use lower values by tilting both elements simultaneously, in opposite directions.
 
 \begin{table}[!htb]
     \centering
@@ -1203,12 +1202,13 @@ It would also be possible to use lower values by tilting both elements simultane
                                           &  \textbf{MQSX.3R8}                            &  \num{0.725}                        &     \num{-1}                      \\
         \hline[dashed]
     \end{tblr}
-    \caption{Necessary tilt angles of either Q\num{2} or Q\num{3} triplet elements to compensate for the loss of the closest skew quadrupole corrector, in IR\num{1} and IR\num{5}.}
+    \caption{Necessary tilt angles of either Q\num{2} or Q\num{3} triplet elements to compensate for the loss of the closest skew quadrupole corrector/ \todo{Mention I show results for IR\num{2} and IR\num{8} but it only really matters for IR\num{1} and IR\num{5}}.}
     \label{table:compensation_triplet_tilts}
 \end{table}
 
 It is worth noting that tilting a triplet quadrupole has a strong impact on the optics due to the high \(\beta\)-functions at the elements.
 For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated by a tilt of the Q\num{3} close to it, an additional \qty{15}{\percent} \(\beta\)-beating would be added through the machine and a whole new set of corrections would need to be determined.
+\todo{Have the plot here to show the beta beating. Mention that we could for instance change the powering of the tilted triplet a bit to negate this impact on beta-beating. Do in simulation!}
 
 Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
 Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
@@ -1216,18 +1216,11 @@ Additionally, the alignment system relies on supporting jacks positioned at each
 For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the overall magnet.
 
 Finally, due to the possibility of damaging what is arguably the most important magnet assembly in the machine during the procedure, this solution would only be used as a last resort.
-% Say that for these reasons we decided not to test this concept in the machine, unfortunately.
 
 \subsubsection*{Warm Skew Quadrupole Replacement}
 
 Another solution would be to install a new warm skew quadrupole magnet as replacement either close triplet Q\num{3}, to the separation dipole D\num{1} or to quadrupole Q\num{4}, on the non-IP side~\cite{PRES:Persson:Integrated_Lumi_MQSX_Carryovers}.
-\todo{Ask Tobias where he installed the warm skew quad when we calculated the ratios of \(\sqrt{\beta_x \beta_y}\)} term and made a quick calculation of the field necessary in this magnet.
-
-\todo{How much more to include here?}
-
-\todo{Add some content for the options that were quickly discarded (unbalanced squeeze, orbit offset in sextupoles)?}
-
-% \subsubsection*{Bad options}
+\todo{This is still under investigation so we don't need details, just a mention would be enough. At the moment the idea is to move D1 a bit of get the warm skewquad in IP side.}
 
 % We could change things in the squeeze to compensate for the absence of an MQSX.
 % Potentially squeeze harder on one IP (the one with a missing element).
