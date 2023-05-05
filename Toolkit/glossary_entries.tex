@@ -76,7 +76,7 @@
 }
 \newglossaryentry{experiment}{
         name={experiment},
-        description={In the context of the \acrfull{LHC}, an ``experiment'' denotes  one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glsfirstplural{IP} of the \acrshort{LHC}}
+        description={In the context of the \acrfull{LHC}, an "experiment" denotes one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glsfirstplural{IP} of the \acrshort{LHC}}
 }
 \newglossaryentry{feed-down}{
         name={feed-down},
@@ -192,7 +192,8 @@
 
 
 % ----- Detailed Acronyms ----- %
-
+% TODO: Convert these to either acronyms or glossary entries because they don't support
+% to be called as a plural form and just show up as a whitespace (ofr instance \acrshortpl{IR})
 \newglossaryacronym{ALICE}{ALICE}{A Large Ion Collider Experiment}{
     An \glstext{experiment} optimized to study heavy-ion collisions.
 }
@@ -203,13 +204,13 @@
     One of two general purpose detectors at the \acrfull{LHC}. It has a broad physics programme ranging from studying the Standard Model (including the Higgs boson) to searching for extra dimensions and particles that could make up dark matter. Although it has the same scientific goals as the \acrshort{ATLAS} \glstext{experiment}, it uses different technical solutions and a different magnet-system design.
 }
 \newglossaryacronym{IP}{IP}{Interaction Point}{
-    The specific point at which the two counter-rotating \glspl{beam} interact, i.e. their particles collide. In the \acrfull{LHC} these are located in the center of \glsfirstplural{IR} 1, 2, 5 and 8 inside the detectors ("\glspl{experiment}")
+    The specific point at which the two counter-rotating \glspl{beam} interact, i.e. their particles collide. In the \acrfull{LHC} these are located in the center of \glsfirstplural{IR} \numlist{1;2;5;8} inside the detectors ("\glspl{experiment}")
 }
 \newglossaryacronym{IR}{IR}{Insertion Region}{
     Straight section between the arcs of a synchrotron, housing larger facilities, such as detectors ("\glspl{experiment}"), acceleration ("\acrshort{RF}"), etc
 }
 \newglossaryacronym{LHCb}{LHCb}{LHC-beauty}{
-    A specialized b-physics \glstext{experiment}, designed primarily to measure the parameters of CP violation in the interactions of b-\glspl{hadron} (heavy particles containing a bottom quark). See: \href{https://LHCb.CERN}{LHCb.CERN}
+    A specialized b-physics \glstext{experiment}, designed primarily to measure the parameters of CP violation in the interactions of b-\glspl{hadron} (heavy particles containing a bottom quark).
 }
 \newglossaryacronym{MD}{MD}{Machine Development}{
     Studies dedicated to improving the machine, e.g. by trying to reveal error-sources or attempting their correction, or testing possible future procedures and machine configurations. As they usually involve \gls{beam}-time, i.e. measurements in the \glsfirst{CCC}, a proposal needs to BE written, and they need to BE approved by the \acrfull{LMC}.
@@ -217,7 +218,9 @@
 \newglossaryacronym{RF}{RF}{Radio Frequency}{
     Short for the acceleration part of a synchrotron, as the frequency of the accelerating electric field is usually in the radio-frequency range (at the \acrshort{LHC} \(\approx\) \qty{400}{\mega\hertz})
 }
-
+\newglossaryacronym{RWS}{RWS}{Rigid Waist Shift}{
+    A specific perturbation of the optics in an \acrfull{IR} that moves all four betatron waists of the beam simultaneously. See \cref{section:rigid_waist_shift_for_local_coupling_correction}
+}
 
 % ----- Symbols ----- %
 
@@ -270,3 +273,6 @@
     symbol={\ensuremath{K}},
     description={\Glstext*{K}. Normal field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer $n$ giving the field order. Unit: \unit{\pernth\meter}}
 }
+
+
+\glsenableentrycount                             % Enable ref counting when displaying, adds some compile time to the document
