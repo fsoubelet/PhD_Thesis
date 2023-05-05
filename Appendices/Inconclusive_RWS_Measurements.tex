@@ -1,13 +1,12 @@
-\chapter{Inconclusive Rigid Waist Shift Measurements}
+\chapter{Negative Rigid Waist Shift Measurements}
 \label{appendix:inconclusive_measurements}
 
-\todo{Change the location of figures here.}
+Results shown in \cref{section:rws_experimental_results} are from measurements in which the \acrshort{RWS} knob was trimmed in as defined in \cref{table:rigid_waist_shift_knob}.
+As mentioned in \cref{appendix:experimental_knobs} and as can be seen in \cref{figure:rigid_waist_shift_knob_effect_on_waist} the knob can be trimmed with an arbitrary factor, shifting the waist of the beams left or right of the \acrshort{IP}. 
 
-Results shown in \cref{section:rws_experimental_results} are from measurements in which the RWS knob was trimmed in as defined in \cref{table:rigid_waist_shift_knob}.
-As mentioned in \cref{appendix:experimental_knobs} and as can be seen in \cref{figure:rigid_waist_shift_knob_effect_on_waist} the knob can be trimmed with an arbitrary factor, shifting the waist of the beams left or right of the IP. 
-Measurements have also been conducted in both IRs with the RWS knobs trimmed in with a factor of \num{-1}, which we will call a \textit{negative RWS}.
+Measurements have also been conducted in each \acrshort{IR} with \acrshortpl{IP} the \acrshort{RWS} knobs trimmed in with a factor of \num{-1}, which we will call a \textit{negative} \acrshort{RWS}.
 For these, done under time constraints at the end of experimental shifts, some mistakes were made in the experimental setups and the data was deemed inconclusive after analysis.
-Nonetheless, these results are included below.
+Nonetheless, for completeness these results are included below.
 
 \begin{figure}[!htb]
     \centering
@@ -18,15 +17,16 @@ Nonetheless, these results are included below.
 
 \Cref{figure:ir1_b1_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{1} with a negative RWS.
 When preparing for this scan an issue was encountered when trimming in the optics rematching knob.
-As the knob was wrongly designed beforehand, it bypassed the powering limit of the Q\num{6} magnets and thus could only be trimmed in the machine with a factor \num{0.7} as the LHC protection system would not allow lower currents.
+As the knob was wrongly designed beforehand, it bypassed the powering limits of the Q\num{6} magnets and thus could only be trimmed in the machine with a factor \num{0.7} as the LHC protection system would not allow lower currents.
 As a consequence a strong \(\beta\)-beating remained in the machine and cast doubts on the measurement data. 
 Additionally, when reproducing this setup in simulations the obtained \(\abs{C^{-}}\) curve exhibits a suspicious behavior far from what would be expected (see \cref{figure:knob_to_cminus_with_waist}) and comparison with measurement data suggests a \textit{very} large error to be corrected: \num{15} units of the colinearity knob.
 This data was discarded when determining corrections.
+\todo{HAVE A NEW LOOK AT SIMULATIONS}
 
 \Cref{figure:ir1_b2_neg_measurement} shows the results of a measurement scan done at IR\num{1} for beam \num{2} with a negative RWS.
-Similarly to the above the optics rematching knobs was wrongly designed and exceeded the powering limit of the Q\num{6} magnets.
+Similarly to the above the optics rematching knobs was wrongly designed and went beyond the powering limits of the Q\num{6} magnets.
 It could only be trimmed in the machine with a factor \num{0.5}, resulting once again in a strong \(\beta\)-beating in the machine during measurements.
-The comparison with simulations also suggested a \textit{very} large error to be corrected: \num{16} units of the colinearity knob.
+The comparison with simulations also suggested a \textit{very} large error to be corrected: \num{16} units of the colinearity knob, potentially more if the measurement scan was carried on for longer.
 This data was discarded when determining corrections.
 
 \begin{figure}[!htb]
@@ -37,8 +37,8 @@ This data was discarded when determining corrections.
 \end{figure}
 
 \Cref{figure:ir5_b1_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
-During this scan, an issue was made when trimming the optics rematching knob: the rematching knob from the previous scan was not trimmed out of the machine, and as a result a mix of the both was present during the scan of the colinearity knob.
-As a consequence, again, strong errors were left in the machine and while the measurement data does not suggest an unbelievable correction as in \cref{figure:ir1_b2_neg_measurement}, the failed experimental setup and suspicious shape of the measurements' \(\abs{C^{-}}\) curve led to this data being discarded when determining corrections.
+During this scan, an issue was made when trimming the optics rematching knob: the rematching knob from the previous scan was not trimmed out of the machine, and as a result a mix of both knobs was present during the scan of the colinearity knob.
+This led to the experimental setup of the RWS not being properly implemented, and while the measurement data does not suggest an unbelievable correction as in \cref{figure:ir1_b2_neg_measurement}, the failed experimental setup and suspicious shape of the measurements' \(\abs{C^{-}}\) curve led to this data being discarded when determining corrections.
 
 \begin{figure}[!htb]
     \centering
@@ -49,6 +49,7 @@ As a consequence, again, strong errors were left in the machine and while the me
 
 \Cref{figure:ir5_b2_neg_measurement} shows the results of a measurement scan done at IR\num{5} for beam \num{1} with a negative RWS.
 For this measurement scan, no mistake was made in the experimental setup and the data suggests a correction similar to what was found with the scans presented in \cref{subsection:rws_pos_measurements_corrections} (see \cref{table:rws_corrections_summary}).
+The success of this measurement clears some doubts on the validity of the negative \acrshort{RWS}.
 
 \begin{figure}[!htb]
     \centering
@@ -57,4 +58,4 @@ For this measurement scan, no mistake was made in the experimental setup and the
     \label{figure:ir5_b2_neg_measurement}
 \end{figure}
 
-Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to a large amount of data being discarded.
+Overall, a combination of human mistakes both during the preparation of the experimental setup and during the measurement scans themselves led to the inconclusive measurements of \cref{figure:ir1_b1_neg_measurement,figure:ir1_b2_neg_measurement,figure:ir5_b1_neg_measurement}.
