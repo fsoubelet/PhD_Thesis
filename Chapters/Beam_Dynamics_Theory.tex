@@ -1,13 +1,13 @@
 \chapter{Relevant Theory of Beam Dynamics}
 \label{chapter:theory}
 
-The design, operation, performance, and safety of a particle accelerator depend on the beam dynamics.
-This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam optics.
+The design, operation, performance, and safety of a particle accelerator depend on the \gls{beam} dynamics.
+This section provides an overview of the beam dynamics theories relevant to the material in this thesis, and more specifically beam \gls{optics}.
 For a more complete treatment of relevant accelerator physics the reader is best referred to textbooks by Wilson~\cite{BOOK:Wilson:Introcution_Particle_Accelerators}, Lee~\cite{BOOK:Lee:Accelerator_physics}, Wiedemann~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}, Minty and Zimmermann~\cite{BOOK:Minty:Measurements_Control_Charged_Particle_Beams}, Wolski~\cite{BOOK:Wolski:Beam_dynamics} or Chao~\cite{BOOK:Chao:Handbook_Accelerator_Physics_Engineering, BOOK:Chao:Collective_instabilities}.
 Most of the material in this section can be found in the aforementioned literature, and when not in these works explicit references to the relevant content are given.
 
 The chapter starts out with a description of linear dynamics and a parametrization of turn-by-turn motion in a circular accelerator.
-It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion, then follows with an introduction to betatron coupling and ends with a discussion of luminosity.
+It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion, then follows with an introduction to \gls{betatron_coupling} and ends with a discussion of luminosity.
 
 %----------------------------------------------------------------------------------------
 
@@ -27,7 +27,7 @@ The force exerted onto the beam is the Lorentz force \(F_{L}\) given by the equa
     \label{equation:lorentz_force}
 \end{equation}
 where \(\vec{p}\) is the particle momentum, \(q\) the particle charge, \(\vec{E}\) the electric field, \(\vec{v}\) the particle velocity and \(\vec{B}\) the magnetic field.
-In most accelerators, including the LHC, the particles' speed is close to the celerity of light \(c\) and the force from the magnetic field is significantly stronger than that produced by the electric field for realistic values of \(\vec{E}\) and \(\vec{B}\).
+In most accelerators, including the \gls{LHC}, the particles' speed is close to the celerity of light \(c\) and the force from the magnetic field is significantly stronger than that produced by the electric field for realistic values of \(\vec{E}\) and \(\vec{B}\).
 As a result, while electric fields are used for acceleration, in high energy particle accelerators magnetic fields are typically used to guide particles.
 The guiding magnetic field can be expanded into a series of multipolar fields, for instance here in the horizontal plane:
 
@@ -82,8 +82,8 @@ The transverse phase space is defined by \((x, x^{\prime}, y, y^{\prime})\), whe
 The \(x^{\prime}\) and \(y^{\prime}\) coordinates are divergent angles, with the prime indicating differentiation with respect to \(s\).
 \break
 
-In the linear regime, magnetic dipoles define the ideal orbit for a particle of \intro{reference momentum} \(p_0\).
-This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called the \intro{closed orbit}.
+In the linear regime, magnetic dipoles define the ideal orbit for a particle of \concept{reference momentum} \(p_0\).
+This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called the \gls{closed_orbit}.
 In practice the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors.
 Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
 This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit is shown in blue and an actual particle orbit in red.
@@ -91,15 +91,15 @@ This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptual
 \begin{figure}[!htb]
     \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/design_vs_particle_orbit.pdf}
-    \caption{Illustration of a design closed orbit (blue) and a particle orbit oscillating around it (red). \todo{Not exactly!}}
+    \caption{Illustration of a design closed orbit (\textcolor{mplblue}{blue}) and a particle orbit oscillating around it (\textcolor{red}{red}). \todo{Not exactly!}}
     \label{figure:design_vs_particle_orbit}
 \end{figure}
 
 Focusing forces are typically provided by magnetic quadrupoles: a quadrupolar field acting on a charged particle displaced from the closed orbit will provide a restoring (focusing) force proportional to the displacement in one transverse plane, while simultaneously providing a diverging (defocusing) force in the other. 
-As a convention, a quadrupole focusing in the horizontal plane and defocusing in the vertical one is referred to as a \intro{focusing quadrupole}. 
-Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical one is referred to as a \intro{defocusing quadrupole}.
+As a convention, a quadrupole focusing in the horizontal plane and defocusing in the vertical one is referred to as a \concept{focusing quadrupole}. 
+Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical one is referred to as a \concept{defocusing quadrupole}.
 
-A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \intro{FODO cell}.
+A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \concept{FODO cell}.
 A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
 
 \begin{figure}[!htb]
@@ -109,7 +109,7 @@ A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \c
     \label{figure:fodo_cell_schematic}
 \end{figure}
 
-For each magnet applying a field \(B\) one can define the \intro{magnetic rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
+For each magnet applying a field \(B\) one can define the \gls{beam-rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
 
 \begin{equation}
     B \rho = \frac{p}{q} \text{ .}
@@ -138,8 +138,8 @@ For each magnet applying a field \(B\) one can define the \intro{magnetic rigidi
 \subsection{Equations of Motion and Twiss Parameters}
 \label{subsection:equations_of_motion_and_twiss_parameters}
 
-The focusing from quadrupoles in a circular accelerator such as the LHC is periodic in \(s\), with a period of at most the circumference of the machine.
-Assuming the existence of a \kl{closed orbit}, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
+The focusing from quadrupoles in a circular accelerator such as the \gls{LHC} is periodic in \(s\), with a period of at most the circumference of the machine.
+Assuming the existence of a \gls{closed_orbit}, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
 
 \begin{equation}
     z^{\prime \prime}(s) + K_z(s) z(s) = 0; \quad z = x, y; \quad z^{\prime} = \dfrac{dz}{ds} \text{ ,}
@@ -156,7 +156,7 @@ It can be expressed according to:
     \label{equation:transverse_focusing_strengths}
 \end{equation}
 where \(k_1(s)\) is the normalized quadrupole strength.
-A \kl{focusing quadrupole} has a \(K > 0\), a \kl{defocusing quadrupole} has \(K < 0\), and a drift space has \(K = 0\).
+A \concept{focusing quadrupole} has a \(K > 0\), a \concept{defocusing quadrupole} has \(K < 0\), and a drift space has \(K = 0\).
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
 
 In the material below, \(z\) will be used to denote either \(x\) or \(y\), the rules applying to both similarly.
@@ -171,10 +171,10 @@ According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the sol
 \end{equation}
 
 These equations describe a harmonic oscillation in the transverse planes.
-Here \(\varepsilon_z\) is the \intro{geometric emittance} of a particle and is a constant of the motion at a given energy. 
-\(\phi_z(s)\) is the \intro{phase advance} and \(\alpha_z(s)\) is the \intro{alpha-function}.
-\(\beta_z(s)\) is the \intro{beta-function} and represents beam envelope, or size, around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
-In particle colliders such as the LHC the \(\beta\)-functions at the Interaction Points (IP), where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
+Here \(\varepsilon_z\) is the \concept{geometric emittance} of a particle and is a constant of the motion at a given energy. 
+\(\phi_z(s)\) is the \concept{phase advance} and \(\alpha_z(s)\) is the \concept{alpha-function}.
+\(\beta_z(s)\) is the \concept{beta-function} and represents beam envelope, or size, around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
+In particle colliders such as the \gls{LHC} the \(\beta\)-functions at the \glspl{IP}, where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
 The solution of Hill's equation can also be written in matrix form as:
 
 \begin{equation}
@@ -190,7 +190,7 @@ The solution of Hill's equation can also be written in matrix form as:
     \label{equation:hill_solution_matrix}
 \end{equation}
 
-In this form, which makes the assumption that the magnetic field of an element is constant along the longitudinal direction, M is called a \intro{transfer matrix}. 
+In this form, which makes the assumption that the magnetic field of an element is constant along the longitudinal direction, M is called a \concept{transfer matrix}. 
 Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively:
 
 \begin{equation}
@@ -238,7 +238,7 @@ For example, the transfer matrix corresponding to the FODO cell of \cref{figure:
 \end{equation}
 
 For a complete machine with hundreds to thousands of elements, the maps of linear elements can still be combined to obtain the coordinates of a particle after a full revolution.
-This specific transfer map is called the \intro{one-turn map} and fully describes the linear evolution of a particle's coordinates over one revolution of the accelerator.
+This specific transfer map is called the \concept{one-turn map} and fully describes the linear evolution of a particle's coordinates over one revolution of the accelerator.
 It can be expressed as:
 
 \begin{equation}
@@ -270,7 +270,7 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
 \end{equation}
 
 As particles go around the ring, they oscillate around the closed orbit within an envelope defined by the \(\beta\)-functions and the emittance.
-The number of these so-called \intro{betatron oscillations} per revolution is the \intro{tune} \(Q_u\).
+The number of these so-called \concept{betatron oscillations} per revolution is the \gls{tune} \(Q_z\).
 The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
 
 \begin{equation}
@@ -285,7 +285,7 @@ The \(\alpha\)-function is defined via the derivative of the \(\beta\)-function 
     \label{equation:alpha_function}
 \end{equation}
 
-Similarly to the \(\beta\)-function, the \intro{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
+Similarly to the \(\beta\)-function, the \concept{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
 Both quantities are related by the \(\alpha\)-function according to:
 
 \begin{equation}
@@ -293,7 +293,7 @@ Both quantities are related by the \(\alpha\)-function according to:
     \label{equation:gamma_function}
 \end{equation}
 
-The \(\alpha_z(s)\), \(\beta_z(s)\), \(\gamma_z(s)\) and \(\phi_z(s)\) are also called the \intro{Twiss parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
+The \(\alpha_z(s)\), \(\beta_z(s)\), \(\gamma_z(s)\) and \(\phi_z(s)\) are also called the \gls{Twiss_parameters}~\cite{RSI:Twiss:Orbital_Stability_Proton_Synchrotron}.
 The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
@@ -318,7 +318,7 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 \label{subsection:phase_space_ellipse}
 
 In the linear regime all particle trajectories describe ellipses in \((z, z^{\prime})\), or \((z, p_z)\) phase space.
-The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \intro{Courant-Snyder invariant}, defines together with the Twiss parameters \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellispe:
+The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \concept{Courant-Snyder invariant}, defines together with the \gls{Twiss_parameters} \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellipse:
 
 \begin{equation}
     \gamma_z(s) z(s)^{2} + 2 \alpha_z(s) z(s) z^{\prime}(s) + \beta_z(s) z^{\prime}(s)^{2} = \varepsilon_z \text{ .}
@@ -341,15 +341,15 @@ The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solu
 
 According to the Liouville theorem the phase space volume, the ellipse area \(A\), is a constant in a closed system.
 When accelerating the beam this theorem no longer holds true and the geometric emittance \(\varepsilon\) will decrease as the beam energy increases.
-One can then construct the \intro{normalized emittance}, which is invariant with beam energy, based on the relativistic beta and gamma:
+One can then construct the \concept{normalized emittance}, which is invariant with beam energy, based on the relativistic beta and gamma:
 
 \begin{equation}
     \varepsilon_z^{\mathrm{norm}} = \beta_{\mathrm{rel}} \gamma_{\mathrm{rel}} \varepsilon_z \text{ .}
     \label{equation:normalized_emittance}
 \end{equation}
 
-When referring to the emittance of a specific particle one uses the term \intro{single particle emittance}.
-The \intro{action} \(J_z\) is related to the single particle emittance by:
+When referring to the emittance of a specific particle one uses the term \concept{single particle emittance}.
+The \gls{action} \(J_z\) is related to the single particle emittance by:
 
 \begin{equation}
     2 J_z = \varepsilon_z \text{ .}
@@ -372,8 +372,8 @@ In the case of more general particle distributions an alternative definition of 
     \label{equation:beam_emittance_general}
 \end{equation}
 
-The phase space trajectory of a particle depends on the Twiss parameters \(\alpha(s)\), \(\beta(s)\), and \(\gamma(s)\).
-One can remove this dependency by performing a coordinate transformation to the \intro{Courant-Snyder coordinates}~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion}, defined as:
+The phase space trajectory of a particle depends on the \gls{Twiss_parameters} \(\alpha(s)\), \(\beta(s)\), and \(\gamma(s)\).
+One can remove this dependency by performing a coordinate transformation to the \concept{Courant-Snyder coordinates}~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion}, defined as:
 
 \begin{equation}
     \begin{+pmatrix}[cells={r}]
@@ -391,11 +391,11 @@ One can remove this dependency by performing a coordinate transformation to the 
     \end{+pmatrix} \text{ ,}
     \label{equation:physical_to_courant_snyder_coordinates}
 \end{equation}
-where the Courant-Snyder coordinates are denoted by \^{}.
+where the Courant-Snyder coordinates are denoted by \(\hat{ }\).
 The same transformation is valid for \((z, p_z)\) to \((\hat{z}, \hat{p}_z)\) coordinates.
 In this new system particles follow circular trajectories in phase space.
 \Cref{figure:phase_space_linear_physical_normalized_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
-In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the action and angle variables \((J_z, \phi_z)\).
+In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion is described by simple rotations, fully described by and depending only on the \gls{action} and angle variables \((J_z, \phi_z)\).
 
 \begin{figure}[!hbt]
     \centering
@@ -421,18 +421,18 @@ In the new representation, the elliptical phase space is transformed into a simp
 
 Until now, it was assumed that all particles had the intended design momentum \(p_{0}\).
 Naturally, in practice particles withing the beam have a distribution in energy and momentum.
-For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \intro{relative momentum deviation} \(\delta_p\):
+For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \concept{relative momentum deviation} \(\delta_p\):
 
 \begin{equation}
     \delta_p = \frac{p - p_0}{p_0} = \frac{\Delta p}{p_0} \text{ .}
     \label{equation:momentum_deviation}
 \end{equation}
 
-Such momenta offsets introduce \intro{chromatic errors} in the beam dynamics.
-Effects and parameters depending on \(\delta_p\) are called \intro{chromatic effects}.
+Such momenta offsets introduce \concept{chromatic errors} in the beam dynamics.
+Effects and parameters depending on \(\delta_p\) are called \concept{chromatic effects}.
 
 From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
-The deviation of an off-momentum particle orbit from that of the synchronous particle is defined by the \intro{dispersion function} \(D(s)\).
+The deviation of an off-momentum particle orbit from that of the synchronous particle is defined by the \concept{dispersion function} \(D(s)\).
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
@@ -448,7 +448,7 @@ Off-momentum particle positions scale linearly with dispersion, and in its prese
     \label{equation:hill_solution_with_dispersion}
 \end{equation}
 
-Another chromatic parameter is the \intro{chromaticity} \(Q_z^{\prime}\), which describes the tune shift \(\Delta Q_z\) with particle momentum by:
+Another chromatic parameter is the \concept{chromaticity} \(Q_z^{\prime}\), which describes the tune shift \(\Delta Q_z\) with particle momentum by:
 
 \begin{eqnarray}
     Q^{\prime}_z = \frac{\Delta Q_z}{\delta_p} \text{ .}
@@ -476,8 +476,6 @@ The natural chromaticity of a linear lattice can then be approximated by~\cite{C
     Q_z^{\prime} \approx -\frac{1}{4 \pi} \oint \beta_z(s) K_z \mathrm{d}s \text{ .}
     \label{equation:natural_chromaticity_approximation}
 \end{equation}
-
-%----------------------------------------------------------------------------------------
 
 \section{Non-Linear Magnetic Multipoles}
 \label{section:non_linear_magnetic_multipoles}
@@ -556,8 +554,6 @@ This effect is called \intro{feed-down} and can be introduced by misalignment of
 
 Should that happen with a sextupole, for instance, the beam would experience a sextupolar field but also encounter quadrupolar and dipolar components.
 The rotational misalignment of elements is also a concern, as rotation a purely normal or skew multipole results in the beam experiencing a combination of both normal and skew fields.
-
-%----------------------------------------------------------------------------------------
 
 \section{Non-Linear Formalism and Resonance Driving Terms}
 \label{section:non_linear_formalism_and_rdts}
@@ -815,8 +811,6 @@ In principle the \(\abs{f_{jklm}}\) may be determined by a comparison of the amp
 In practice, some additional considerations need to be taken, as decoherence of a kicked beam can lead to a reduction in the amplitude of the spectral lines observed, or the fact that the contributions of different RDTs might not be distinct.
 More details are given in \cref{chapter:lhc_omc}.
 
-%----------------------------------------------------------------------------------------
-
 \section{Betatron Coupling}
 \label{section:betatron_coupling}
 
@@ -1006,8 +1000,6 @@ where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal 
 
 \todo{I think I would like to mention something about~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches} before ending this section.}
 % \todo{Can refer to~\cite{PRAB:Franchi:First_Simultaneous} for table with many RDTs.}
-
-%----------------------------------------------------------------------------------------
 
 \section{Luminosity}
 \label{section:luminosity}

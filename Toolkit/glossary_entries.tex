@@ -59,7 +59,7 @@
 \newglossaryentry{beta-function}{
         name={beta-function},
         text=\(\beta\)-function,
-        description={Value of the \gls{Twiss} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
+        description={Value of the \gls{Twiss_parameters} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
 }
 \newglossaryentry{betatron_coupling}{
         name={betatron coupling},
@@ -69,10 +69,15 @@
         name={bunch},
         description={Short for "Particle Bunch". Due to the \acrshort{RF} acceleration scheme, a continuous \gls{beam} is not possible in a synchrotron and particles become bunched during acceleration}
 }
+\newglossaryentry{closed_orbit}{
+        name={Closed Orbit},
+        text={closed orbit},
+        description={The orbit of a particle with reference momentum, sometimes also called "reference orbit" or "ideal orbit"}
+}
 \newglossaryentry{courantsnyderparameter}{
         name={Courant-Snyder Parameters},
         user1={Courant-Snyder},
-        description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \glspl{Twiss} parameters. See also \gls{beta-function}}
+        description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \gls{Twiss_parameters}. See also \gls{beta-function}}
 }
 \newglossaryentry{experiment}{
         name={experiment},
@@ -149,8 +154,9 @@
         name={tune},
         description={Number of betatron oscillations per turn in a circular accelerator. See also: \gls{beta-function}}
 }
-\newglossaryentry{Twiss}{
+\newglossaryentry{Twiss_parameters}{
         name={Twiss Parameters},
+        text={Twiss parameters},
         description={See \gls{courantsnyderparameter}}
 }
 
@@ -236,7 +242,7 @@
     type=\symboltype,
     sort={beam-rigidity},
     name={\(\mathbf{ B \rho }\)},
-    text={beam rigidity},
+    text={magnetic rigidity},
     symbol={\ensuremath{\mathrm{B}\rho}},
     description={\Glstext*{beam-rigidity}.
     Used as a normalization factor for \glstext{K} and \glstext{J}. Unit: \unit{\tesla}}
@@ -263,7 +269,7 @@
     name={\(\mathbf{ J_n }\)},
     text={skew magnetic field strength},
     symbol={\ensuremath{J}},
-    description={\Glstext*{J}. Skew field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer $n$ giving the field order. Unit: \unit{\pernth\meter}}
+    description={\Glstext*{J}. Skew field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer \(n\) giving the field order. Unit: \unit{\pernth\meter}}
 }
 \newglossaryentry{K}{
     type=\symboltype,
@@ -271,7 +277,7 @@
     name={\(\mathbf{ K_n }\)},
     text={normal magnetic field strength},
     symbol={\ensuremath{K}},
-    description={\Glstext*{K}. Normal field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer $n$ giving the field order. Unit: \unit{\pernth\meter}}
+    description={\Glstext*{K}. Normal field component normalized to the \glstext{beam-rigidity}. Usually subscripted with an integer \(n\) giving the field order. Unit: \unit{\pernth\meter}}
 }
 
 
