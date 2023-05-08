@@ -814,23 +814,23 @@ More details are given in \cref{chapter:lhc_omc}.
 \section{Betatron Coupling}
 \label{section:betatron_coupling}
 
-When the betatronic motion of particles in transverse planes are independent of each other, they are said to be \intro{uncoupled}.
+When the betatronic motion of particles in transverse planes are independent of each other, they are said to be \concept{uncoupled}.
 In particle colliders such as the LHC this is the desired behaviour.
-When these motions share a dependency, they are said to be \intro{coupled}, and one refers to this phenomenon as \intro{betatron coupling}.
-The transverse motions of particles in an accelerator may couple due to a variety of factors, with solenoid and skew quadrupole fields being the primary sources of linear coupling.
+When these motions share a dependency, they are said to be \concept{coupled}, and one refers to this phenomenon as \gls{betatron_coupling}.
+The transverse motions of particles in an accelerator may couple due to a variety of factors, with solenoid and \gls{skew} quadrupole fields being the primary sources of linear coupling.
 
-In the LHC the main contribution to coupling comes from unwanted skew quadrupolar fields.
+In the \gls{LHC} the main contribution to coupling comes from unwanted skew quadrupolar fields.
 These mostly arise from normal quadrupoles mounted with a rotation error with respect to the longitudinal axis, but also from field imperfection from other magnets and feed-down from higher order magnets.
 An example of a normal and skew quadrupole is given in \cref{figure:normal_vs_skew_quadrupole}.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\linewidth]{Figures/Beam_Dynamics_Theory/bfield_multipole_order_2.pdf}
-    \caption{Illustration of a normal (left) and skew (right) magnetic quadrupole and their magnetic field lines.}
+    \caption{Illustration of a \gls{normal} (left) and \gls{skew} (right) magnetic quadrupole and their magnetic field lines.}
     \label{figure:normal_vs_skew_quadrupole}
 \end{figure}
 
-Betatron coupling needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics} or loss of beam stability~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
+\Gls{betatron_coupling} needs to be kept under control as it can perturb the tune feedback systems and push tunes into resonances, lead to a reduction in the dynamic aperture~\cite{PA:Ripken:Impact_Linear_Coupling_Nonlinear_Dynamics} or loss of beam stability~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
 \subsection{Parametrization of Betatron Coupling}
 \label{subsection:parametrization_of_betatron_coupling}
@@ -848,7 +848,7 @@ Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\):
     \label{equation:coupled_motion_matrix}
 \end{equation}
 where \(\mathbf{P}\), \(\mathbf{p}\), \(\mathbf{q}\) and \(\mathbf{Q}\) are \(2 \times 2\) matrices.
-In the absence of betatron coupling, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
+In the absence of \gls{betatron_coupling}, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
 
 \subsubsection*{Edwards-Teng Parametrization}
 
@@ -875,18 +875,18 @@ Edwards and Teng characterized the transformation \(\mathbf{R}\) by the symplect
     \label{equation:edwards_teng_rotation_matrix}
 \end{equation}
 where \(\mathbf{I}\) is the \(2 \times 2\) unit matrix and \(\mathbf{K}\) is a \(2 \times 2\) symplectic matrix, such that \(det(\mathbf{K}) = 1\).
-The coupled motion may then be described by the uncoupled Twiss parameters seen in \cref{subsection:equations_of_motion_and_twiss_parameters}, together with the elements of matrix \(\mathbf{K}\) and Teng's angle of rotation \(\theta\).
+The coupled motion may then be described by the uncoupled \gls{Twiss_parameters} seen in \cref{subsection:equations_of_motion_and_twiss_parameters}, together with the elements of matrix \(\mathbf{K}\) and Teng's angle of rotation \(\theta\).
 In the case that \(\theta = 0\), the matrix \(\mathbf{R}\) is the identity matrix and as a result it will not rotate any of the modes: this corresponds to uncoupled motion.
 
-The Edwards-Teng parameterization is used in the MAD-X~\cite{CODE:MADX_guide} code when handling coupled motion.
-In MAD-X the relevant parameters are \(\alpha_{x, y}\), \(\beta_{x, y}\), \(\mu_{x, y}\), \(\gamma_{x, y}\) and \(r_{11}\), \(r_{12}\), \(r_{21}\), \(r_{22}\), where \(r_{11} \ldots r_{22}\) correspond to the elements of \(\mathbf{K}\) multiplied by \(\tan(\theta)\).
+The Edwards-Teng parameterization is used in the \gls{MAD} code MAD-X~\cite{CODE:MADX_guide} when handling coupled motion.
+In \gls{MAD}-X the relevant parameters are \(\alpha_{x, y}\), \(\beta_{x, y}\), \(\mu_{x, y}\), \(\gamma_{x, y}\) and \(r_{11}\), \(r_{12}\), \(r_{21}\), \(r_{22}\), where \(r_{11} \ldots r_{22}\) correspond to the elements of \(\mathbf{K}\) multiplied by \(\tan(\theta)\).
 
 \subsubsection*{Mais-Ripken Parametrization}
 
 The approach of Mais and Ripken was developed in~\cite{REPORT:Ripken:AllGerman} and is more accessible in~\cite{AIP:Willeke:Methods_Beam_Optics, REPORT:Borchardt:Calculation_Beam_Envelopes}.
-It defines so-called \intro{Ripken parameters} \(\alpha_{kj}\), \(\beta_{kj}\) and \(\gamma_{kj}\), where \(k = 1 \ldots 3\) refers to the plane (\(x, y, \ldots\)) and the index \(j\) refers to the eigenmodes, that are accurate in the presence of coupling.
+It defines so-called \concept{Ripken parameters} \(\alpha_{kj}\), \(\beta_{kj}\) and \(\gamma_{kj}\), where \(k = 1 \ldots 3\) refers to the plane (\(x, y, \ldots\)) and the index \(j\) refers to the eigenmodes, that are accurate in the presence of coupling.
 In the coupled case, all \(\beta_N\) are non-zero and \(\beta_{11}, \beta_{22}\) are distinctively different from \(\beta_x, \beta_y\), respectively.
-The relations linking these new parameters to the Twiss parameters can be found in~\cite{IOP:Lebedev:Betatron_Motion_Coupling}.
+The relations linking these new parameters to the \gls{Twiss_parameters} can be found in~\cite{IOP:Lebedev:Betatron_Motion_Coupling}.
 % The relations linking these new parameters to the Twiss parameters is~\cite{IOP:Lebedev:Betatron_Motion_Coupling}:
 
 % \begin{equation}
@@ -897,14 +897,14 @@ The relations linking these new parameters to the Twiss parameters can be found 
 %     \label{equation:ripken_to_twiss_parameters}
 % \end{equation}
 % where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
-The Mais-Ripken parameterization is the basis of the Polymorphic Tracking Code's (PTC~\cite{CODE:Schmidt_Forest:PTC}) handling of coupled dynamics. 
+The Mais-Ripken parameterization is the basis of the \gls{PTC}~\cite{CODE:Schmidt_Forest:PTC}'s handling of coupled dynamics. 
 
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
 In the first order, according to \cref{equation:resonance_condition}, linear coupling drives the two resonances \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
-These are respectively called the \intro{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
-To higher order betatron coupling may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
+These are respectively called the \concept{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
+To higher order \gls{betatron_coupling} may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
 
 The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics} and through the normal form/resonance driving term formalism~\cite{PHD:Franchi}.
 
@@ -917,7 +917,7 @@ As the transverse tunes approach the difference resonance, the emittance is desc
 and as the resonance is approached the beam motion may not become unstable.
 Instead, there is a periodic exchange of emittance between the transverse planes, which leads to a beating in the betatron oscillation amplitudes.
 
-The relation between the \intro{unperturbed tunes} \(Q_{x,y}\) and the \intro{coupled tunes} \(Q_{1,2}\) is given by~\cite{CAS:Bryant:Theory_Weak_Betatron_Coupling}:
+The relation between the \concept{unperturbed tunes} \(Q_{x,y}\) and the \concept{coupled tunes} \(Q_{1,2}\) is given by~\cite{CAS:Bryant:Theory_Weak_Betatron_Coupling}:
 
 \begin{equation}
     \begin{aligned}
@@ -926,13 +926,13 @@ The relation between the \intro{unperturbed tunes} \(Q_{x,y}\) and the \intro{co
     \end{aligned}
     \label{equation:unperturbed_tunes_to_coupled_tunes}
 \end{equation}
-with \(\Delta\) being the unperturbed fractional tune split and \AbsCminus the linear coupling coefficient, a parameter describing the strength of the coupling.
+with \(\Delta\) being the unperturbed fractional tune split and \glssymbol{Cminus} the linear coupling coefficient, a parameter describing the strength of the coupling.
 
 When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillations modes \(Q_{1,2}\) are almost identical to the uncoupled horizontal and vertical tunes \(Q_{x,y}\).
 When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
-The \AbsCminus of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \intro{closest tune approach}, corresponds this separation.
+The \glssymbol{Cminus} of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \gls{Cminus}, corresponds this separation.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
-% TODO: adapt this plot to have Q_{1,2} instead of Q_{x,y}
+
 \begin{figure}[!htb]
     \centering
     \includegraphics[width = 0.9\linewidth]{Figures/Beam_Dynamics_Theory/closest_tune_approach_schematic.png}
@@ -949,19 +949,19 @@ On the other hand, when approaching the sum resonance the emittances follow:
 
 This resonance allows for unstable motion as only the difference in emittance is constrained.
 Therefore, it is common to choose a working point far from the sum resonance.
-In the LHC, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually more diverse and will be discussed in more details in the next chapter.}.
+In the \gls{LHC}, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually more diverse and will be discussed in more details in the next chapter.}.
 
 \subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
 
-Linear coupling in the LHC is dominated by the contribution of skew quadrupole fields, which lead to terms \(\propto xy\) in the Hamiltonian.
-According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the resonance driving terms \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
+Linear coupling in the \gls{LHC} is dominated by the contribution of \gls{skew} quadrupole fields, which lead to terms \(\propto xy\) in the Hamiltonian.
+According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the \glspl{RDT} \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
 
 The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but the former is for the horizontal plane while the latter is for the vertical plane.
-Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this thesis.
+Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this document.
 
-It was mentioned in \cref{subsection:coupled_motion} that the LHC working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1010}}\).
-These RDTs can be expressed as a function of the uncoupled lattice parameters at the location of both the coupling-contributing elements and the observation point \(s\) as~\cite{PHREV:Guignard:Betatron_Coupling_Radiation}:
+It was mentioned in \cref{subsection:coupled_motion} that the \gls{LHC} working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1010}}\).
+These \glspl{RDT} can be expressed as a function of the uncoupled lattice parameters at the location of both the coupling-contributing elements and the observation point \(s\) as~\cite{PHREV:Guignard:Betatron_Coupling_Radiation}:
 
 \begin{equation}
     \begin{aligned}
@@ -970,10 +970,10 @@ These RDTs can be expressed as a function of the uncoupled lattice parameters at
     \end{aligned}
     \label{equation:coupling_rdts_from_skew_quads}
 \end{equation}
-where \(k_l\) is the \(l\)th integrated skew quadrupole strength, \(\beta_{x,y}^{l}\) are the \(\beta\)-functions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
-The summation is done over all contributing skew quadrupoles.
+where \(k_l\) is the \(l\)th integrated \gls{skew} quadrupole strength, \(\beta_{x,y}^{l}\) are the \(\beta\)-functions at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
+The summation is done over all contributing \gls{skew} quadrupoles.
 
-These resonance driving terms can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \(\abs{C^{-}}\) can be expressed in relation to the \(f_{1001}\) RDT.
+These \glspl{RDT} can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \glssymbol{Cminus} can be expressed in relation to the \(f_{1001}\) \gls{RDT}.
 In~\cite{PHD:Franchi} this relation was established as:
 
 \begin{equation}
@@ -989,7 +989,7 @@ A more accurate relation was established in~\cite{PRAB:Persson:Improved_Control_
 \end{equation}
 where the dependence of variables on the position \(s\) was omitted for clarity.
 
-In~\cite{PHREV:Guignard:Betatron_Coupling_Radiation} the equations of motion are solved perturbatively under the influence of a weak skew quadrupole strength \(j(s)\).
+In~\cite{PHREV:Guignard:Betatron_Coupling_Radiation} the equations of motion are solved perturbatively under the influence of a weak \gls{skew} quadrupole strength \(j(s)\).
 Assuming that the machine is close to the difference coupling resonance \(\Delta = Q_x - Q_y \rightarrow 0\), the \(\abs{C^{-}}\) can be approximated as:
 
 \begin{equation}
@@ -998,7 +998,7 @@ Assuming that the machine is close to the difference coupling resonance \(\Delta
 \end{equation}
 where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal and vertical \(\beta\)-functions, \(\phi_{x,y}\) are the phase advances and \(R\) is the radius of the machine.
 
-\todo{I think I would like to mention something about~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches} before ending this section.}
+% \todo{I think I would like to mention something about~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches} before ending this section.}
 % \todo{Can refer to~\cite{PRAB:Franchi:First_Simultaneous} for table with many RDTs.}
 
 \section{Luminosity}
