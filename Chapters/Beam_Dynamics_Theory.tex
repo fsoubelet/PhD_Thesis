@@ -1005,12 +1005,13 @@ where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal 
 \label{section:luminosity}
 
 \todo{I should mention how this is affected by the coupling, could talk about it here? What matters is overlap of integrals, if there is an increase from coupling then we would lose luminosity.}
-The LHC machine being a particle collider, it is operated to produce collisions between two counter-rotating beams and to produce data for High Energy Physics experiments.
+
+The \gls{LHC} machine being a particle collider, it is operated to produce collisions between two counter-rotating beams and to produce data for \gls{HEP} \glspl{experiment}.
 As the studied interactions coming from these collisions are rare, a substantial volume of statistics is required. 
 Naturally, the performance of the machine is then described by the number of collisions provided to experiments as well as the center-of-mass energy of these collisions.
 
-As a figure of merit for the number of collisions the \intro{luminosity} is used.
-The \intro{instantaneous luminosity} \(\mathcal{L}\) is the proportional factor between the number of events per unit of time \(dR / dt\) and the process cross-section \(\sigma_{\mathrm{cross}}\):
+As a figure of merit for the number of collisions the \gls{luminosity} is used.
+The \concept{instantaneous luminosity} \(\mathcal{L}\) is the proportional factor between the number of events per unit of time \(dR / dt\) and the process cross-section \(\sigma_{\mathrm{cross}}\):
 
 \begin{equation}
     \dfrac{dR}{dt} = \mathcal{L} \sigma_{\mathrm{cross}} \text{ .}
@@ -1025,19 +1026,19 @@ For a collider with Gaussian beams, it can be expressed as~\cite{CERN:Herr:Conce
     \label{equation:luminosity_gaussian_beams}
 \end{equation}
 where \(f_{\mathrm{rev}}\) is the revolution frequency of particle bunches, \(N_1\) and \(N_2\) are the number of particles in each beam, and \(\sigma_{x,y}\) are the transverse beam sizes at the interaction points.
-\(S\) is the luminosity reduction factor and depends on the crossing of the beams: crossing angles, orbit offset, non-zero dispersion or even the hourglass effect will impact its value.
+\(S\) is the \gls{luminosity} reduction factor and depends on the crossing of the beams: crossing angles, orbit offset, non-zero dispersion or even the hourglass effect will impact its value.
 
 \todo{Irrelevant, should remove this. Say a bit of: here are some things that influence S (beam size, crossing angles, some tilt if you've got flat beams, etc)}
-For Gaussian bunches colliding with a \intro{crossing angle} \(\theta\), where \(\sigma_s \gg \sigma_{x,y}\) and neglecting other contributions, the luminosity reduction factor is approximated by~\cite{CERN:Herr:Concept_Luminosity}:
+For Gaussian bunches colliding with a \concept{crossing angle} \(\theta\), where \(\sigma_s \gg \sigma_{x,y}\) and neglecting other contributions, the luminosity reduction factor is approximated by~\cite{CERN:Herr:Concept_Luminosity}:
 
 \begin{equation}
     S \approx \frac{1}{\sqrt{1 + \left( \frac{\theta}{2} \frac{\sigma_s}{\sigma_x} \right)^2}} \text{ ,}
     \label{equation:luminosity_reduction_factor}
 \end{equation}
 
-As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \(\beta\)-function at the IP, \betastar, which then defines the collider's performance from the point of view of the optics.
+As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \(\beta\)-function at the \gls{IP}, \(\beta^{\ast}\), which then defines the collider's performance from the point of view of the optics.
 Indeed, the smaller the \(\beta^{\ast}\) the smaller the beam sizes, and the more collisions will be produced per bunch crossing. 
-The downside to small beam sizes, which is a direct consequence of the \kl{Louiville theorem}, is that they cause large beam divergence.
+The downside to small beam sizes, which is a direct consequence of the \concept{Louiville theorem}, is that they cause large beam divergence.
 This is illustrated by the evolution of the \(\beta\)-function in the drift space around the IP:
 
 \begin{equation}
@@ -1046,9 +1047,9 @@ This is illustrated by the evolution of the \(\beta\)-function in the drift spac
 \end{equation}
 where here \(s\) is the distance from the IP.
 As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \(\beta\)-functions low, hence the presence of a substantial drift space.
-The experimental insertion regions will be discussed in more details in \cref{section:lhc_lattice}.
+The experimental \glspl{IR} will be discussed in more details in \cref{section:lhc_lattice}.
 
-The \intro{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
+The \concept{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
 
 \begin{equation}
     \mathcal{L}_{\mathrm{int}} = \int_{t_1}^{t_2} \mathcal{L} \mathrm{d}t \text{ ,}
@@ -1066,7 +1067,9 @@ The total number of collisions, or events, over said time period is then:
 Throughout luminosity production, the instantaneous luminosity naturally decreases as more and more particles are lost to collisions~\cite{PRES:Hostettler:LHC_Lumi_Lifetime}.
 Any particle losses happening before colliding the beams will lead to a reduction of the initial \(N_{1,2}\) and of the resulting integrated luminosity of the given fill.\\
 
-Luminosity production requires a good control of the linear optics, both for the quality of the optics themselves but also for a smooth and safe operation.
+\Gls{luminosity} production requires a good control of the linear optics, both for the quality of the optics themselves but also for a smooth and safe operation.
 Many non-linear contributions may also influence the dynamics away from the linear regime, leading to a deterioration of the dynamics and, down the line, the luminosity.
-Therefore for a particle collider like the LHC a good control of all effects influencing the beam dynamics is required, and methods to both measure and correct any deviations from the ideal machine are a necessity.
+Therefore for a particle collider like the \gls{LHC} a good control of all effects influencing the beam dynamics is required, and methods to both measure and correct any deviations from the ideal machine are a necessity.
 An overview of these will be given in \cref{chapter:lhc_omc}.
+
+\glsresetall                                     % reset glossary entries counts for the next chapter
