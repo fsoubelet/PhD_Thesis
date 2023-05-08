@@ -564,9 +564,9 @@ For the curious reader, a very thorough approach to normal forms can be found in
 \subsection{Non-Linear Transfer Maps}
 \label{subsection:non_linear_transfer_maps}
 
-As introduced in \cref{equation:one_turn_map}, the dynamics of a circular accelerator can be parametrized in terms of \intro{transfer maps} relating final to initial phase space coordinates.
+As introduced in \cref{equation:one_turn_map}, the dynamics of a circular accelerator can be parametrized in terms of \concept{transfer maps} relating final to initial phase space coordinates.
 This approach is described in~\cite{BOOK:Bazzani:Normal_Form_Approach_Betatron_Motion, JMP:Forest:Hamiltonian_Free_Description_Single_Particle_Dynamics}.
-While the transfer map of a linear element is described by a matrix, that of a non-linear element is itself described by the exponential \intro{Lie operator} \(e^{-:f:}\) defined as~\cite{BOOK:Wolski:Beam_dynamics}:
+While the transfer map of a linear element is described by a matrix, that of a non-linear element is itself described by the exponential \concept{Lie operator} \(e^{-:f:}\) defined as~\cite{BOOK:Wolski:Beam_dynamics}:
 
 \begin{equation}
     \begin{aligned}
@@ -576,7 +576,7 @@ While the transfer map of a linear element is described by a matrix, that of a n
     \label{equation:lie_operator}
 \end{equation}
 where \(q_i\) and \(p_i\) are the canonical coordinates and momenta, respectively.
-Here \(\left[ f, g \right]\) is the \intro{Poisson bracket} of \(f\) and \(g\).
+Here \(\left[ f, g \right]\) is the \concept{Poisson bracket} of \(f\) and \(g\).
 When including non-linear sources, the one-turn map introduced in \cref{equation:one_turn_map} becomes:
 
 \begin{equation}
@@ -586,7 +586,7 @@ When including non-linear sources, the one-turn map introduced in \cref{equation
 where \(R\) is a matrix describing the linear dynamics of the machine, and the \(h_i\) terms represent the thin kick Hamiltonians of the non-linear elements in the accelerator.
 \break
 
-Relevant properties of the exponential Lie operator can be found in~\cite{PHD:Tomas, PHD:Franchi}, one of which being that the product of exponential Lie operators can be expressed as another exponential Lie operator following the \emph{Baker–Campbell–Hausdorff} theorem~\cite{BOOK:Hall:Lie_Group_Algebra_Representations}.
+Relevant properties of the exponential Lie operator can be found in~\cite{PHD:Tomas, PHD:Franchi}, one of which being that the product of exponential Lie operators can be expressed as another exponential Lie operator following the \emph{Baker-Campbell-Hausdorff} theorem~\cite{BOOK:Hall:Lie_Group_Algebra_Representations}.
 The one-turn map becomes:
 
 \begin{equation}
@@ -605,11 +605,11 @@ Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in e
     h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x - \phi_{x,0} \right) + \left(l-m\right) \left(\phi_y - \phi_{y,0} \right) \right]} \text{ ,}
     \label{equation:h_thin_kick_expansion}
 \end{equation}
-with \(h_{jklm}\) being the \intro{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
-\todo{The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.}
+with \(h_{jklm}\) being the \concept{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
+The derivation for the result of \cref{equation:h_thin_kick_expansion} can be found in \cref{appendix:hamiltonian_derivation}.
 
 A multipole of order \(n = j + k + l + m\) gives rise to terms \(\propto x^{j+k} y^{l+m}\) in the Hamiltonian.
-In the case of a skew quadrupole (\(n=2\)) for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
+In the case of a \gls{skew} quadrupole (\(n=2\)) for example, one will see terms in the Hamiltonian \(\propto xy\), meaning a contribution to \(h_{1010}\), \(h_{1001}\), \(h_{0110}\) and \(h_{0101}\).
 
 \subsection{Normal Form, Resonance Driving Terms and Resonances}
 \label{subsection:normal_form_and_rdt}
@@ -632,8 +632,8 @@ The change of coordinates is represented by a similarity transformation of the o
     e^{-:F:} e^{:h:} R e^{:F:} \text{ ,}
     \label{equation:normal_form_transformation}
 \end{equation}
-where \(F\) is the \intro{generating function} of the transformation.
-The coordinates resulting from the transformation are called \intro{normal form coordinates}.
+where \(F\) is the \concept{generating function} of the transformation.
+The coordinates resulting from the transformation are called \concept{normal form coordinates}.
 The different coordinate systems are illustrated in \cref{figure:phase_space_non-linear_physical_normalized_normal_form_coordinates}.
 
 \begin{figure}[!hbt]
@@ -685,12 +685,12 @@ Specifically, divergence happens when the following relation is satisfied:
     \label{equation:resonance_condition}
 \end{equation}
 
-A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a \intro{resonance} in the beam motion.
+A divergence of the \(f_{jklm}\) terms leads to a divergence of the transformation to normal form coordinates, which generally indicates an unclosed phase space trajectory due to a \concept{resonance} in the beam motion.
 The condition in \cref{equation:resonance_condition} corresponds to situations where particles lie on resonant frequencies, typically causing their amplitudes to grow unbounded by the dynamics.
-Therefore the \(f_{jklm}\) terms are called \acrfullpl{RDT}.
+Therefore the \(f_{jklm}\) terms are called \glspl{RDT}.
 
 For this reason, the tune is one of the single most important design parameters in synchrotrons.
-The chosen operational transverse tunes of a synchrotron are known as its \intro{working point}, and should be chosen carefully in order to avoid resonances.
+The chosen operational transverse tunes of a synchrotron are known as its \concept{working point}, and should be chosen carefully in order to avoid resonances.
 Resonances up to order \(n = 5\) are shown in \cref{figure:tune_diagram_fifth_order}, with lines of different orders differentiated from one another.
 
 \begin{figure}[!htb]
@@ -718,14 +718,14 @@ The normalized Courant-Snyder coordinates \(\left( \hat{z}, \hat{p}_z \right)\) 
     \label{equation:normalized_courant_snyder_coordinates_from_action_angle}
 \end{equation}
 
-One can define the \intro{resonance basis} \(\left( h_x^{+}, h_x^{-}, h_y^{+}, h_y^{-} \right)\) by the relation:
+One can define the \concept{resonance basis} \(\left( h_x^{+}, h_x^{-}, h_y^{+}, h_y^{-} \right)\) by the relation:
 
 \begin{equation}
     h_z^{\pm} = \hat{z} \pm i \hat{p}_z = \sqrt{2 J_z} e^{\mp i \left( \phi_z + \phi_{z_0} \right)} \text{ .}
     \label{equation:resonance_basis_definition}
 \end{equation}
 
-The transformation to the \kl{normal form coordinates} \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\) is expressed as:
+The transformation to the \concept{normal form coordinates} \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\) is expressed as:
 
 \begin{equation}
     \zeta_z^{\pm} = \sqrt{2 I_z} e^{\mp i \left( \psi_z + \psi_{z_0} \right)} = e^{-:F:} h_z^{\pm} \text{ .}
@@ -761,7 +761,7 @@ Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_t
 \end{equation}
 
 \Cref{figure:coordinate_transformations} shows a schematic of the different transformations and changes to the one-turn map.
-While one can calculate the evolution of the Courant-Snyder coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
+While one can calculate the evolution of the \glsuseri{courantsnyderparameter} coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
 Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates \(\zeta_{u}^{\pm}\) using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
 These calculations are in practice simpler than the former method, and conserve non-linearities.
 
@@ -787,7 +787,7 @@ These calculations are in practice simpler than the former method, and conserve 
 
 Each term in the summations of \cref{equation:linearly_normalized_coordinates_after_N_turns} corresponds to a certain mode in the beam motion and contributes to a specific frequency in the spectrum of the motion~\cite{PHD:Bengtsson}.
 Said spectrum may be determined by a frequency analysis of the turn-by-turn beam position monitor data, through means of a Fourier transform.
-In this spectrum, an RDT \(f_{jklm}\) at a specific location in the machine contributes to lines in the horizontal and vertical spectra according to~\cite{PHD:Bengtsson,PRAB:Franchi:Emittance_Sharing_Coupling}:
+In this spectrum, an \gls{RDT} \(f_{jklm}\) at a specific location in the machine contributes to lines in the horizontal and vertical spectra according to~\cite{PHD:Bengtsson,PRAB:Franchi:Emittance_Sharing_Coupling}:
 
 \begin{equation}
     \begin{aligned}
@@ -798,7 +798,7 @@ In this spectrum, an RDT \(f_{jklm}\) at a specific location in the machine cont
 \end{equation}
 where in the parentheses multiples of the fractional tunes are given.
 For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the horizontal spectrum.
-\Cref{figure:example_spectrum} shows an example of a spectrum from a measurement at the LHC, where the main lines are highlighted.
+\Cref{figure:example_spectrum} shows an example of a spectrum from a measurement at the \gls{LHC}, where the main lines are highlighted.
 
 \begin{figure}[!htb]
     \centering
@@ -808,7 +808,7 @@ For example, \(H(0,1)\) indicates an observed line at \(1 \times Q_y\) in the ho
 \end{figure}
 
 In principle the \(\abs{f_{jklm}}\) may be determined by a comparison of the amplitude of various spectral lines.
-In practice, some additional considerations need to be taken, as decoherence of a kicked beam can lead to a reduction in the amplitude of the spectral lines observed, or the fact that the contributions of different RDTs might not be distinct.
+In practice, some additional considerations need to be taken, as decoherence of a kicked beam can lead to a reduction in the amplitude of the spectral lines observed, or the fact that the contributions of different \glspl{RDT} might not be distinct.
 More details are given in \cref{chapter:lhc_omc}.
 
 \section{Betatron Coupling}
