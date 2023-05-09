@@ -98,7 +98,7 @@ where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) th
 \section{Current Correction Methods and Their Limitations}
 \label{section:current_correction_methods_and_their_limitations}
 
-While the coupling RDTs contain information on the coupling situation in the machine, looking at their patterns along the ring is not a good indicator of the situation in a specific location.
+While the coupling \glspl{RDT} contain information on the coupling situation in the machine, looking at their patterns along the ring is not a good indicator of the situation in a specific location.
 For instance, \cref{figure:guess_rdts} shows the reconstructed coupling RDTs from two measurements taken during the LHC \num{2022} commissioning.
 One of these measurements corresponds to a \qty{20}{\percent} lower measured luminosity at IP\num{1} compared to the other, but it is not possible to tell which is which from looking at the RDTs alone.
 
@@ -112,7 +112,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 \subsubsection*{Segment-by-Segment}
 
 The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
-Firstly, due to unfavorable phase advances in between BPMs in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
+Firstly, due to unfavorable phase advances in between \acrshortpl{BPM} in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
 As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
 
@@ -149,7 +149,7 @@ These have the advantage that they can be reconstructed directly from the partic
 \newline
 
 Although the CRDTs seemed to work well in straightforward simulations, they were found to not be useful when it came to applying them to more realistic cases or real measurement data.
-\Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} MD, computed with the OMC team's analysis tools~\cite{CODE:OMC:omc3}.
+\Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} \gls{MD}, computed with the \acrshort{OMC} team's analysis tools~\cite{CODE:OMC:omc3}.
 During the MD the first investigations were made on local coupling at the IP, and while little data was collected overall due to a dump of beam~\num{1} it provides a good test bed for a new observable candidate.
 Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
@@ -167,7 +167,7 @@ For this reason, the CRDTs were not considered further.
 \subsubsection*{K-Modulation}
 
 The usual technique to get a measurement of \(\beta\)-functions at the IP is k-modulation.
-Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated Machine Development (MD)~\cite{CERN:Persson:Local_Coupling_IP}.
+Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated \gls{MD}~\cite{CERN:Persson:Local_Coupling_IP}.
 This prevents the possibility of directly measuring the beam size variation at an IP from local coupling to drive a correction. 
 
 \subsubsection*{A Short Recap}
