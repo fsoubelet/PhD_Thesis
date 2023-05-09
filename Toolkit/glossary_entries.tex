@@ -22,19 +22,6 @@
                 description={#4\glsadd{#1acr}}
         }
 }
-% Alternative: All-in-one Glossary entry (https://tex.stackexchange.com/a/410534/213738)
-% \newcommand{\newglossaryacronym}[4]{
-%     \newglossaryentry{#1}{
-%         text={#2},
-%         % short={#2},
-%         long={#3},
-%         name={\glsentrylong{#1} (\glsentrytext{#1})},
-%         first={\glsentryname{#1}},
-%         firstplural={\glsentrylong{#1}\glspluralsuffix (\glsentryname{#1}\glspluralsuffix )},
-%         description={#4}
-%     }
-% }
-
 
 % ----- Nomenclature ----- %
 
@@ -91,7 +78,7 @@
         name={flat orbit},
         description={Machine setup without any crossing bumps in the \glsfirstplural{IR}}
 }
-\newglossaryentry{flatoptics}{
+\newglossaryentry{flat_optics}{
         name={flat optics},
         description={\Gls{optics} in which \glstext{betastar} is different for both planes. Usually much smaller in one than in the other. See also: \glstext{round_optics}}
 }
@@ -123,9 +110,7 @@
 }
 \newglossaryentry{omc3}{
         name={omc3},
-        text={\texttt{omc3}},
-        user1={\glstext{\glslabel}~\cite{CODE:OMC:omc3}},
-        user2={\glstext{\glslabel}-package~\cite{CODE:OMC:omc3}},
+        text={omc3},
         description={Python package maintained and applied by the \glsfirst{OMC}-Team to analyse measurements from different accelerators and calculate corrections. See~\cite{CODE:OMC:omc3}}
 }
 \newglossaryentry{optics}{
@@ -134,7 +119,7 @@
 }
 \newglossaryentry{round_optics}{
         name={round optics},
-        description={\Gls{optics} in which \glstext{betastar} is identical for both planes. See also: \glstext{flatoptics}} 
+        description={\Gls{optics} in which \glstext{betastar} is identical for both planes. See also: \glstext{flat_optics}} 
 }
 \newglossaryentry{run}{
         name={run},
