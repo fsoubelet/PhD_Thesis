@@ -1,9 +1,7 @@
 \chapter{Element Naming Conventions in the LHC}
 \label{appendix:naming_conventions}
 
-%----------------------------------------------------------------------------------------
-
-This appendix details the element naming convention in the LHC and HL-LHC.
+This appendix details the element naming convention in the \acrshort{LHC} and \acrshort{HL-LHC}.
 \Cref{figure:lhc_segment_naming_scheme} below illustrates the established scheme using an example segment of the LHC.
 A detailed listing of all LHC element and equipment names can be found at~\cite{CERN:Equipment_Codes}.
 
@@ -16,13 +14,13 @@ A detailed listing of all LHC element and equipment names can be found at~\cite{
 
 The general structure adheres to the following rules:
 \begin{enumerate}
-    \item Each octant is divided into two \intro{half-arcs} surrounding an \intro{insertion}.
+    \item Each octant is divided into two \concept{half-arcs} surrounding an \concept{insertion}.
     \item Each octant is also divided into a left side and a right side to said insertion.
-    \item The center point of some octants is the \kl{Interaction Point} (IP), with their surrounding region sometimes also referred to as \kl{Interaction Region} (IR).
+    \item The center point of some octants is the \gls{IP}, with their surrounding region sometimes also referred to as Interaction Region (\acrshort{IR}).
 \end{enumerate}
 
 From the standpoint of lattice definitions there are eight IPs, although this is merely for notational convenience. 
-An \kl{Interaction Point} in the strict sense is a location where the two beams are made to collide, which only happens in octants \numlist{1;2;5;8} where experiments are run.
+An \acrlong{IP} in the strict sense is a location where the two beams are made to collide, which only happens in octants \numlist{1;2;5;8} where \glspl{experiment} are run.
 It is assumed through this document that when an IP or IR is referred, it refers to one of these octants.
 
 Regardless of hosting an IP, all octants have in common that they host a long straight section in the middle as part of the insertion.
@@ -79,3 +77,5 @@ For this specific case these two magnets share a main power supply, but each has
 
 Note that these elements skip the appendage of \(\mathrm{.B} \langle 12 \rangle\) as they correspond to elements common to both beams, which can only happen in the IRs.
 This is due to the fact that when the two beams are brought to collision they are bound to travel through the same equipment pieces as they get close to the IP.
+
+\glsresetall                                     % reset glossary entries counts for the next chapter
