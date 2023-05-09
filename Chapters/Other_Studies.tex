@@ -2,7 +2,7 @@
 \label{chapter:others_and_software}
 
 Two further studies performed during the course of this thesis are presented in this chapter.
-The first one is a statistical analysis of the phase measurement error in the LHC, that aimed to determine the influence of the measuring BPMs on the phase error.
+The first one is a statistical analysis of the phase measurement error in the \gls{LHC}, that aimed to determine the influence of the measuring \glspl{BPM} on the phase error.
 The second one is an investigation on the sextupolar contribution to amplitude detuning in the LHC.
 
 In parallel to other works presented in this document, a substantial effort was put into software developments to improve both analysis and simulation tools.
@@ -13,19 +13,19 @@ The relevant contributions and achievements over the course of this work are suc
 \section{Phase Error Dependency on BPM Type and Location}
 \label{section:phase_error_dependency_on_bpm_type_and_location}
 
-In the LHC and many other circular colliders BPM measurement data constitutes the primary source for optics properties computation.
-As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \(\beta\)-functions lead to better signal-to-noise ratios on measurements \todo{Ref?}, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
+In the \gls{LHC} and many other circular colliders \gls{BPM} measurement data constitutes the primary source for \gls{optics} properties computation.
+As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \glspl{beta-function} lead to better signal-to-noise ratios on measurements~\todo{Ref?}, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
 This study was performed to investigate the influence of these properties on the precision of the reconstructed phase values from turn-by-turn data.
 
 In practice the presence of systematic errors can influence different sets of measurements to not be totally independent.
-In the following study measurements are assumed to be independent and identically distributed normal random variables (IIDs), meaning repeating the same BPM measurement in identical conditions will spawn a range of values forming a Gaussian distribution.
+In the following study measurements are assumed to be independent and \concept{identically distributed normal random variables} (IIDs), meaning repeating the same BPM measurement in identical conditions will spawn a range of values forming a Gaussian distribution.
 As no sets of measurements were available that made use of specific groups of BPMs, a statistical analysis on the phase errors from previous measurements was needed to differentiate between BPMs of interest. 
 Using the underlying properties of the measurements-derived distributions, one can numerically infer the impact on the phase measurement error of specific subgroups of measuring devices.
 
 \subsection*{Measurement Data and Underlying Distributions}
 
 The methods and considerations below can be applied on BPM turn-by-turn measurement data from synchrotron machines.
-The following analysis was done on data taken during the LHC Run~\num{2}, in \num{2018} and at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
+The following analysis was done on data taken during the LHC \Gls{run}~\num{2}, in \num{2018} and at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 Information about the measurement data used for this analysis can be found in \cref{appendix:measurement_fills}.
 \Cref{figure:bpms_betas_histogram} shows BPMs in the LHC are spread across a wide range of \(\beta\)-functions.
 
@@ -109,7 +109,7 @@ The associated Probability Density Function (PDF) for \(k\) degrees of freedom, 
     \label{equation:chi2_pdf_equation}
 \end{equation}
 
-The \intro{mode} is the value \(x^{*}\) that maximizes the PDF.
+The \concept{mode} is the value \(x^{*}\) that maximizes the PDF.
 In this case, one can notice that for positive values where the PDF is defined, \(x^{*}\) will be the same for \(P(x)\) and \(\log P(x)\).
 When adopting the following convention:
 
@@ -137,7 +137,7 @@ For \(k \leq 2\) the mode is 0 since the PDF in that case is strictly decreasing
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_chisquare_demo_fit.pdf}
+    \includegraphics*[width=0.95\textwidth]{Figures/Other_Studies/phase_chisquare_demo_fit.pdf}
     \caption{A randomly generated chi-square distribution (\textcolor{mplblue}{blue}) with \(k = 4\) degrees of freedom, and a numerically fit probability density function (\textcolor{mplorange}{orange}). The determined mode (\textcolor{mplred}{red}) is indeed located at \(k - 2 = 2\). Here 'df' (degrees of freedom), 'loc' (horizontal offset) and 'scale' (a scaling factor) are parameters determined during the fit. The horizontal axis is in units of \(\sigma^2\).}
     \label{figure:chisquare_demo_fit}
 \end{figure}
