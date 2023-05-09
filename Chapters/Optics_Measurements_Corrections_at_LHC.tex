@@ -71,13 +71,13 @@ The spool piece magnets in the LHC are single aperture and powered in series sim
 In addition to spool piece magnets, linear and nonlinear \concept{lattice correctors} are mounted on the main arc quadrupoles MQs.
 These lattice correctors are powered in series per family, and independently for each beam.
 Horizontal and vertical orbit correctors, respectively \concept{MCBH} and \concept{MCBV}, are installed at each focusing and defocusing MQ.
-Normal trim quadrupoles, named \concept{MQT}, are primarily used for tune correction.
-In each arc four MQTs are rotated by \qty{45}{\degree} to form skew quadrupoles, named \concept{MQS}, used for linear coupling correction.
-Normal and skew sextupoles \concept{MS} and \concept{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
+Normal \gls{trim} quadrupoles, named \concept{MQT}, are primarily used for tune correction.
+In each arc four MQTs are rotated by \qty{45}{\degree} to form \gls{skew} quadrupoles, named \concept{MQS}, used for \gls{betatron_coupling} correction.
+\Gls{normal} and \gls{skew} sextupoles \concept{MS} and \concept{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
 Landau octupoles \concept{MO} provide damping of coherent oscillations, and are split into two families (focusing and defocusing) powered in series, such that there are two families per arc and per beam.
 
 \Cref{figure:lhc_arc_cell_latwiss} shows a simplified layout of an LHC arc cell's elements as well as \(\beta\) and dispersion functions for \num{2022} optics at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
-In the layout (top) part of the plot element powerings are indicated, with MBs in \textcolor{latwiss_blue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) are indicated as gray patches.
+In the layout (top) part of the plot element powerings are indicated, with MBs in \textcolor{mplblue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) are indicated as gray patches.
 Note that not all elements are indicated there.
 \Cref{figure:lhc_arc23_latwiss} shows a similar plot but across LHC arc\num{23} for the same optics.
 
@@ -100,8 +100,8 @@ The purpose of the arcs is that of beam transport to the more specific parts of 
 \subsection{The LHC Experimental Interaction Regions}
 \label{subsection:lhc_eirs}
 
-In the middle of each octant, in between arcs, the LHC hosts \concept{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
-Each of these is centered around an Insertion Region where a dedicated layout is in place to fulfill the section's purpose.
+In the middle of each octant, in between arcs, the \gls{LHC} hosts \concept{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
+Each of these is centered around an \acrfull{IR} where a dedicated layout is in place to fulfill the section's purpose.
 The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
 
 Of interest to this thesis are the \concept{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
@@ -139,9 +139,9 @@ In order to achieve high luminosity during collisions, and as shown in \cref{sec
   \label{figure:ir5_and_around}
 \end{figure}
 
-During normal operation for collisions the \(\beta^{\ast}\) at ATLAS and CMS is squeezed down to \(\beta^{\ast} =\) \qty{30}{\centi\metre}.
-In this configuration, at ALICE and LHCb the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
-During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduced at ALICE and LHCb.
+During normal operation for collisions the \(\beta^{\ast}\) at \acrshort{ATLAS} and \acrshort{CMS} is squeezed down to \(\beta^{\ast} =\) \qty{30}{\centi\metre}.
+In this configuration, at \acrshort{ALICE} and \acrshort{LHCb} the \(\beta^{\ast}\) are only squeezed to higher values, \qty{10}{\meter} and \qty{2}{\meter} respectively in \num{2023}.
+During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduced at \acrshort{ALICE} and \acrshort{LHCb}.
 \Cref{table:lhc_betastars_configurations} summarizes the \(\beta^{\ast}\) values for the different experiments and configurations.
 
 \begin{table}[!htb]
@@ -164,10 +164,10 @@ During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduce
 
 In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a superconducting \concept{triplet} of quadrupoles just before the IP, on either side~\cite{CERN:Ostojic:Improved_Optical_System_LHC_Triplet}.
 The triplet is optimized to be symmetric~\cite{CERN:DAmico:Analysis_Generic_Insertions}, with Q\num{1} and Q\num{3} being the same length at \qty{6.3}{\meter} and Q\num{2} split into two sub-magnets Q\num{2}a and Q\num{2}b of \qty{5.5}{\meter} each.
-All three magnets are powered in series but can be adjusted individually using dedicated trim converters~\cite{PAC:Bordry:LHC_Inner_Triplet_Powering}.
+All three magnets are powered in series but can be adjusted individually using dedicated \gls{trim} converters~\cite{PAC:Bordry:LHC_Inner_Triplet_Powering}.
 
-This arrangement of three quadrupoles allows for a stong focusing of the \(\beta\)-functions in both transverse planes.
-However, such an arrangement leads to high \(\beta\)-functions in the triplet quadrupoles themselves and neighbouring elements.
+This arrangement of three quadrupoles allows for a strong focusing of the \(\beta\)-functions in both transverse planes.
+However, such an arrangement leads to high \(\beta\)-functions in the triplet quadrupoles themselves and neighboring elements.
 An illustration of the area close to IP\num{5} for collision optics with \(\beta^{\ast} =\) \qty{30}{\centi\metre} is given in \cref{figure:lhc_ir5_zoomed}.
 
 \begin{figure}[!hbt]
@@ -177,18 +177,17 @@ An illustration of the area close to IP\num{5} for collision optics with \(\beta
   \label{figure:lhc_ir5_zoomed}
 \end{figure}
 
-On the layout plot the four \textcolor{latwiss_red}{red patches} closest to the IP location correspond to Q\num{1}, Q\num{2}a, Q\num{2}b and Q\num{3} respectively, the triplet quadrupoles.
+On the layout plot the four \textcolor{latwiss_red}{red patches} closest to the \gls{IP} location correspond to Q\num{1}, Q\num{2}a, Q\num{2}b and Q\num{3} respectively, the triplet quadrupoles.
 The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \concept{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
 The separation dipole D\num{1} is made of six \qty{3.4}{\meter} long normal conducting magnets while D\num{2} is a superconducting twin aperture magnet \qty{9.45}{\meter} long.
 Further quadrupoles after the triplet are matching quadrupoles and will be discussed later.
-The gray lines correspond to the location of Beam Position Monitors (BPMs), measurement instrumentation.
+The gray lines correspond to the location of \glspl{BPM}, measurement instrumentation.
 
 Due to the large \(\beta\)-functions in the triplet quadrupoles, as can be seen in \cref{figure:lhc_ir5_zoomed}, any magnetic error in the elements of the IR would have a strong impact on the beam dynamics.
 To enable correction of these errors, linear and non-linear corrector magnets are installed along the IR, distributed symmetrically around the IP: every corrector magnet on one side of the IP has a counterpart on the other side.
-Of interest to this thesis are the \(a_2\) skew quadrupole correctors installed just before Q\num{3} on each side of the IP, the locations of which are highlighted in \cref{figure:lhc_ir5_zoomed} by \textcolor{mqsx_green}{green vertical lines}.
+Of interest to this thesis are the \(a_2\) \gls{skew} quadrupole correctors installed just before Q\num{3} on each side of the \gls{IP}, the locations of which are highlighted in \cref{figure:lhc_ir5_zoomed} by \textcolor{mqsx_green}{green vertical lines}.
 A schematic of the corrector layout is shown in \cref{figure:lhc_ir_corrector_layout}.
 All IR correctors are individually powered magnets.
-\todo{ARE THEY?}
 
 \begin{figure}[!hbt]
   \centering
@@ -215,9 +214,9 @@ Other IRs, not of interest to this thesis, have significantly different layouts 
 \subsection{Matching Sections and Dispersion Suppressors}
 \label{subsection:matching_sections_dispersion_suppressors}
 
-Assuring the transition between the arcs and the specific optics conditions of the IRs are \concept{matching sections} and \concept{dispersion suppressors}, as can be seen on \cref{figure:ir5_and_around}.
+Assuring the transition between the arcs and the specific \gls{optics} conditions of the IRs are \concept{matching sections} and \concept{dispersion suppressors}, as can be seen on \cref{figure:ir5_and_around}.
 Note that the area designated as matching section on this figure also includes the dispersion suppressor.
-Together, the two segments are responsible for matching the TWISS functions between the arcs and the IRs, and for reducing the dispersion to near-zero value, respectively.
+Together, the two segments are responsible for matching the \gls{Twiss_parameters} between the arcs and the IRs, and for reducing the dispersion to near-zero value, respectively.
 
 The dispersion suppressor is made of two arc cells containing two instead of the regular three dipoles.
 The quadrupoles in these cells, Q\num{7} to Q\num{10}, are powered individually.
@@ -231,7 +230,7 @@ The dispersion suppressor leading to IP\num{5} can be seen on \cref{figure:lhc_d
 \end{figure}
 
 The matching section is made of individually powered superconducting quadrupoles Q\num{4} to Q\num{6}.
-These are used to match the TWISS functions from their values out of the arcs to that at the entrance of the triplets.
+These are used to match the Twiss parameters from their values out of the arcs to that at the entrance of the triplets.
 In order to help the matching to the arcs the trim quadrupoles QT\num{11} to QT\num{13}, adjacent to the FODO quadrupoles Q\num{11} to Q\num{13}, are also individually powered and used for the matching.
 The full segment, from the start of the dispersion suppressor to just before separation dipole D\num{2}, is shown in \cref{figure:lhc_matching_section}.
 
@@ -248,7 +247,7 @@ The full segment, from the start of the dispersion suppressor to just before sep
 When pushing the \(\beta^{\ast}\) to smaller values, and therefore the \(\beta\)-functions in the triplets to higher ones, the chromatic effects produced by the triplet quadrupoles~\cref{equation:natural_chromaticity_approximation} increase drastically and need to be corrected.
 As the beam energy reaches its maximum, the beam size gets smaller and an aperture margin that allows to increase the \(\beta\)-functions appears in the arcs.
 
-The \concept{Achromatic Telescopic Squeeze} (ATS) optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \(\beta^{\ast}\) (the squeeze) in two stages.
+The \concept{Achromatic Telescopic Squeeze} (\acrshort{ATS}) optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \(\beta^{\ast}\) (the squeeze) in two stages.
 In the first one, the \concept{pre-squeeze}, the \(\beta^{\ast}\) is reduced using the matching quadrupoles around the affected IP.
 As the use of these matching quadrupoles has several limits (magnet strength, chromaticity correction, orbit control), a second stage is necessary.
 In this second stage, the \concept{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the nearby IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
@@ -263,7 +262,7 @@ It is defined as:
   \label{equation:tele_index}
 \end{equation}
 
-\Cref{figure:lhc_ats_scheme} shows the \(\beta\)-functions at \qty{6.8}{\tera\electronvolt} around IP\num{5}, where one can see the \(\beta\)-beating wave in the neighbouring ATS sectors \num{45} and \num{56}.
+\Cref{figure:lhc_ats_scheme} shows the \(\beta\)-functions at \qty{6.8}{\tera\electronvolt} around IP\num{5}, where one can see the \(\beta\)-beating wave in the neighboring ATS sectors \num{45} and \num{56}.
 
 \begin{figure}[!hbt]
   \centering
@@ -273,9 +272,7 @@ It is defined as:
 \end{figure}
 
 This ATS optics scheme has been used in the LHC starting Run~\num{2} and allowed reducing the collision optics \(\beta^{\ast}\) from its design value of \qty{55}{\centi\meter} to \qty{30}{\centi\meter}.
-It is the operational baseline of Run~\num{3}.
-
-%----------------------------------------------------------------------------------------
+It is the operational baseline of \Gls{run}~\num{3}.
 
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
