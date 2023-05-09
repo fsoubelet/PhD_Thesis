@@ -277,15 +277,15 @@ It is the operational baseline of \Gls{run}~\num{3}.
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
 
-The LHC operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \concept{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+The \gls{LHC} operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \concept{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
 During pre-cycle no beams are present in the machine and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
 The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
 
-After the pre-cycle comes the \concept{injection} stage: beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
+After the pre-cycle comes the \concept{injection} stage: beams are injected from the \gls{SPS} at an energy of \qty{450}{\giga\electronvolt}.
 First a probe beam consisting of just a single bunch is injected to check the validity of several systems (injection interlock, orbit, tune, chromaticity and coupling control), then a \num{12}-bunches beam, and finally a physics beam meant for collisions is injected.
-At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding IPs (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
+At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding \glspl{IP} (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
 The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
-For optics measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
+For \gls{optics} measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
 For luminosity production a larger number of high intensity bunches is injected: in the order of a few \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
 
 After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
@@ -300,7 +300,7 @@ Before then the squeezing process only started once the energy had reached colli
 \end{figure}
 
 After reaching top energy, a configuration known as \concept{flat-top}, another \concept{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
-This is when the ATS scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
+This is when the \acrshort{ATS} scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
 
 In a final step before luminosity production, called \concept{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
 The resulting configuration, called \concept{stable beams}, is kept throughout the luminosity production for the fill.
@@ -313,13 +313,11 @@ The working point is brought to (\(62.28, 60.31\)) during the ramp and squeeze, 
 A final change is made in the adjust step, where the tunes are brought to (\(62.314, 60.319\)) before going into collisions.
 This last setting may be changed by machine operators during stable beams in order to optimize for beam lifetime.
 
-Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
+Starting in \Gls{run}~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
 In \num{2022} a \concept{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
 This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main IPs in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
 This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
 Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
-
-%----------------------------------------------------------------------------------------
 
 \section{Optics Measurements and Corrections}
 \label{section:optics_measurements_and_corrections}
