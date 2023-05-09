@@ -25,10 +25,10 @@ The \gls{LHC} is currently the world's highest energy particle accelerator, coll
 \section{The LHC Lattice}
 \label{section:lhc_lattice}
 
-The LHC lattice consists of eight \intro{octants} each intersected by an \intro{Insertion Region} (IR).
-Conventionally, the segment between two \IRs is called an \intro{arc} and the arc between IR1 and IR2 is named Arc12, and similarly for other arcs.
-An octant is defined as going from mid-arc to mid-arc around a given \IR which is located at its center.
-Each octant is named according to the \IR at its center: the octant with IR\num{1} at its center is named Octant1, and similarly for other octants.
+The \gls{LHC} lattice consists of eight \concept{octants} each intersected by an \gls{IR}.
+Conventionally, the segment between two \glspl{IR} is called an \concept{arc} and the arc between IR1 and IR2 is named Arc12, and similarly for other arcs.
+An octant is defined as going from mid-arc to mid-arc around a given \gls{IR} which is located at its center.
+Each octant is named according to the \gls{IR} at its center: the octant with IR\num{1} at its center is named Octant1, and similarly for other octants.
 An illustration and a detailed description on naming conventions can be found in \cref{appendix:naming_conventions}.
 
 \begin{figure}[!h]
@@ -38,18 +38,17 @@ An illustration and a detailed description on naming conventions can be found in
   \label{figure:lhc_schematic_layout}
 \end{figure}
 
-Beam~\num{1} rotates clockwise in its ring when viewing the LHC from above, and Beam~\num{2} rotates counter-clockwise as viewed from above.
-The beams occupy separate apertures, or beam pipes, except in the \IRs where they are made to collide.
-The layout of the LHC can be seen in simplified schematic form in~\cref{figure:lhc_schematic_layout}, and full details can be found in the LHC Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
+Beam~\num{1} rotates clockwise in its ring when viewing the \gls{LHC} from above, and Beam~\num{2} rotates counter-clockwise as viewed from above.
+The beams occupy separate apertures, or beam pipes, except in the \glspl{IR} where they are made to collide.
+The layout of the \gls{LHC} can be seen in simplified schematic form in~\cref{figure:lhc_schematic_layout}, and full details can be found in the \gls{LHC} Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
 
 \subsection{The LHC Arcs}
 \label{subsection:lhc_arcs}
 
-Each arc in the LHC is made up of 23 cells and is approximately \qty{2.45}{\kilo\meter} long.
-The layout of an LHC arc cell is given in~\cref{figure:lhc_schematic_arc_cell}, and a clearer schematic representation can be found in~\cite{MASTERS:Keintzel:Arc_Cell_Options_HELHC}.
+Each arc in the \gls{LHC} is made up of 23 cells and is approximately \qty{2.45}{\kilo\meter} long.
+The layout of an \gls{LHC} arc cell is given in~\cref{figure:lhc_schematic_arc_cell}, and a clearer schematic representation can be found in~\cite{MASTERS:Keintzel:Arc_Cell_Options_HELHC}.
 The cell is based on a FBDB (FODO with Bends) layout alternating focusing and defocusing quadrupoles interspaced with dipoles.
-These elements are all superconducting and are commonly labeled \intro{MQF}, \intro{MQD} and \intro{MB}, respectively.
-% Details on equipment codes can be found at~\cite{CERN:Equipment_Codes}.
+These elements are all superconducting and are commonly labeled \concept{MQF}, \concept{MQD} and \concept{MB}, respectively.
 
 \begin{figure}[!hbt]
   \centering
@@ -58,24 +57,24 @@ These elements are all superconducting and are commonly labeled \intro{MQF}, \in
   \label{figure:lhc_schematic_arc_cell}
 \end{figure}
 
-Each cell contains two \intro{MQ} (one MQF, one MQD) with three MB in between, for a total of 6 MBs per cell.
+Each cell contains two \concept{MQ} (one MQF, one MQD) with three MB in between, for a total of 6 MBs per cell.
 The MBs are all powered in series and, for size constraint reasons~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}, are of a dual bore design.
 The MQs are themselves also powered in series but split in two families: one power circuit is dedicated to MQF magnets and another circuit for the MQD magnets, where each arc holds a circuit for each family.
 As a consequence, these elements can only be trimmed in groups.
 
-As a part of the main assemblies are superconducting \intro{spool piece magnets}, correctors used for the local compensation of magnetic errors in the main arc magnets~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.
-These include sextupolar correctors, sextupolar spool pieces named \intro{MCS} and mounted on the ends of every main dipole, used to correct \(b_3\) errors of the MBs.
+As a part of the main assemblies are superconducting \concept{spool piece magnets}, correctors used for the local compensation of magnetic errors in the main arc magnets~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.
+These include sextupolar correctors, sextupolar spool pieces named \concept{MCS} and mounted on the ends of every main dipole, used to correct \(b_3\) errors of the MBs.
 Similarly, octupole and decapole spool pieces are included and used for the compensation of \(b_4\) and \(b_5\) errors in the main arc magnets, respectively.
-The octupole correctors are named \intro{MCO} while the decapole correctors are named \intro{MCD}, and both are nested together in an assembly named \intro{MCDO} which is mounted on the end of every second MB.
+The octupole correctors are named \concept{MCO} while the decapole correctors are named \concept{MCD}, and both are nested together in an assembly named \concept{MCDO} which is mounted on the end of every second MB.
 The spool piece magnets in the LHC are single aperture and powered in series similarly to the MQs, with one circuit assigned for each magnet family.
 
-In addition to spool piece magnets, linear and nonlinear \intro{lattice correctors} are mounted on the main arc quadrupoles MQs.
+In addition to spool piece magnets, linear and nonlinear \concept{lattice correctors} are mounted on the main arc quadrupoles MQs.
 These lattice correctors are powered in series per family, and independently for each beam.
-Horizontal and vertical orbit correctors, respectively \intro{MCBH} and \intro{MCBV}, are installed at each focusing and defocusing MQ.
-Normal trim quadrupoles, named \intro{MQT}, are primarily used for tune correction.
-In each arc four MQTs are rotated by \qty{45}{\degree} to form skew quadrupoles, named \intro{MQS}, used for linear coupling correction.
-Normal and skew sextupoles \intro{MS} and \intro{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
-Landau octupoles \intro{MO} provide damping of coherent oscillations, and are split into two families (focusing and defocusing) powered in series, such that there are two families per arc and per beam.
+Horizontal and vertical orbit correctors, respectively \concept{MCBH} and \concept{MCBV}, are installed at each focusing and defocusing MQ.
+Normal trim quadrupoles, named \concept{MQT}, are primarily used for tune correction.
+In each arc four MQTs are rotated by \qty{45}{\degree} to form skew quadrupoles, named \concept{MQS}, used for linear coupling correction.
+Normal and skew sextupoles \concept{MS} and \concept{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
+Landau octupoles \concept{MO} provide damping of coherent oscillations, and are split into two families (focusing and defocusing) powered in series, such that there are two families per arc and per beam.
 
 \Cref{figure:lhc_arc_cell_latwiss} shows a simplified layout of an LHC arc cell's elements as well as \(\beta\) and dispersion functions for \num{2022} optics at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 In the layout (top) part of the plot element powerings are indicated, with MBs in \textcolor{latwiss_blue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) are indicated as gray patches.
@@ -101,12 +100,12 @@ The purpose of the arcs is that of beam transport to the more specific parts of 
 \subsection{The LHC Experimental Interaction Regions}
 \label{subsection:lhc_eirs}
 
-In the middle of each octant, in between arcs, the LHC hosts \intro{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
+In the middle of each octant, in between arcs, the LHC hosts \concept{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
 Each of these is centered around an Insertion Region where a dedicated layout is in place to fulfill the section's purpose.
 The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
 
-Of interest to this thesis are the \intro{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
-An insertion region in which beams are made to collide is called an \intro{Interaction Region}, or sometimes Experimental Interaction Region.
+Of interest to this thesis are the \concept{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
+An insertion region in which beams are made to collide is called an \concept{Interaction Region}, or sometimes Experimental Interaction Region.
 In this document, when using the short form IR, it is meant to refer to an Interaction Region.
 
 \begin{table}[!hbt]
@@ -163,7 +162,7 @@ During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduce
   \label{table:lhc_betastars_configurations}
 \end{table}
 
-In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a superconducting \intro{triplet} of quadrupoles just before the IP, on either side~\cite{CERN:Ostojic:Improved_Optical_System_LHC_Triplet}.
+In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a superconducting \concept{triplet} of quadrupoles just before the IP, on either side~\cite{CERN:Ostojic:Improved_Optical_System_LHC_Triplet}.
 The triplet is optimized to be symmetric~\cite{CERN:DAmico:Analysis_Generic_Insertions}, with Q\num{1} and Q\num{3} being the same length at \qty{6.3}{\meter} and Q\num{2} split into two sub-magnets Q\num{2}a and Q\num{2}b of \qty{5.5}{\meter} each.
 All three magnets are powered in series but can be adjusted individually using dedicated trim converters~\cite{PAC:Bordry:LHC_Inner_Triplet_Powering}.
 
@@ -179,7 +178,7 @@ An illustration of the area close to IP\num{5} for collision optics with \(\beta
 \end{figure}
 
 On the layout plot the four \textcolor{latwiss_red}{red patches} closest to the IP location correspond to Q\num{1}, Q\num{2}a, Q\num{2}b and Q\num{3} respectively, the triplet quadrupoles.
-The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \intro{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
+The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \concept{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
 The separation dipole D\num{1} is made of six \qty{3.4}{\meter} long normal conducting magnets while D\num{2} is a superconducting twin aperture magnet \qty{9.45}{\meter} long.
 Further quadrupoles after the triplet are matching quadrupoles and will be discussed later.
 The gray lines correspond to the location of Beam Position Monitors (BPMs), measurement instrumentation.
@@ -198,8 +197,8 @@ All IR correctors are individually powered magnets.
   \label{figure:lhc_ir_corrector_layout}
 \end{figure}
 
-In order to prevent parasitic crossings between the two beams' bunches around the IP during collisions, \intro{separation bumps} are implemented in a single transverse plane for each IP, in the form of closed orbit bumps.
-Due to the presence of these bumps, in order to reach collisions a \intro{crossing angle} is introduced.
+In order to prevent parasitic crossings between the two beams' bunches around the IP during collisions, \concept{separation bumps} are implemented in a single transverse plane for each IP, in the form of closed orbit bumps.
+Due to the presence of these bumps, in order to reach collisions a \concept{crossing angle} is introduced.
 The optics in IR\num{1} and IR\num{5} are identical except for the crossing schemes: the crossing angle is in the vertical plane at IR\num{1} and in the horizontal plane at IR\num{5}.
 Respectively, the separation bumps are in the horizontal plane at IR\num{1} and in the vertical plane at IR\num{5}.
 \Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} at collision optics, with the location of the triplets highlighted in gray and the that of the separation dipoles in yellow.
@@ -216,7 +215,7 @@ Other IRs, not of interest to this thesis, have significantly different layouts 
 \subsection{Matching Sections and Dispersion Suppressors}
 \label{subsection:matching_sections_dispersion_suppressors}
 
-Assuring the transition between the arcs and the specific optics conditions of the IRs are \intro{matching sections} and \intro{dispersion suppressors}, as can be seen on \cref{figure:ir5_and_around}.
+Assuring the transition between the arcs and the specific optics conditions of the IRs are \concept{matching sections} and \concept{dispersion suppressors}, as can be seen on \cref{figure:ir5_and_around}.
 Note that the area designated as matching section on this figure also includes the dispersion suppressor.
 Together, the two segments are responsible for matching the TWISS functions between the arcs and the IRs, and for reducing the dispersion to near-zero value, respectively.
 
@@ -249,14 +248,14 @@ The full segment, from the start of the dispersion suppressor to just before sep
 When pushing the \(\beta^{\ast}\) to smaller values, and therefore the \(\beta\)-functions in the triplets to higher ones, the chromatic effects produced by the triplet quadrupoles~\cref{equation:natural_chromaticity_approximation} increase drastically and need to be corrected.
 As the beam energy reaches its maximum, the beam size gets smaller and an aperture margin that allows to increase the \(\beta\)-functions appears in the arcs.
 
-The \intro{Achromatic Telescopic Squeeze} (ATS) optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \(\beta^{\ast}\) (the squeeze) in two stages.
-In the first one, the \intro{pre-squeeze}, the \(\beta^{\ast}\) is reduced using the matching quadrupoles around the affected IP.
+The \concept{Achromatic Telescopic Squeeze} (ATS) optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \(\beta^{\ast}\) (the squeeze) in two stages.
+In the first one, the \concept{pre-squeeze}, the \(\beta^{\ast}\) is reduced using the matching quadrupoles around the affected IP.
 As the use of these matching quadrupoles has several limits (magnet strength, chromaticity correction, orbit control), a second stage is necessary.
-In this second stage, the \intro{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the nearby IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
+In this second stage, the \concept{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the nearby IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
 Sectors \numlist{81;12;45;56} are therefore called ATS sectors.
 This modulation in the second stage sends \(\beta\)-beating waves down the arcs, which make the \(\beta\)-functions peak at the location of sextupoles and octupoles in the those arcs, enhancing their efficiency.
 
-The ratio between the peak \(\beta\)-functions induced in the arcs is called \intro{telescopic index}, or tele-index, and is denoted \(r_{Tele}\)~\cite{CERN:Fartoukh:Round_Telescopic_Optics_LHC_Large_Telescopic_Index}.
+The ratio between the peak \(\beta\)-functions induced in the arcs is called \concept{telescopic index}, or tele-index, and is denoted \(r_{Tele}\)~\cite{CERN:Fartoukh:Round_Telescopic_Optics_LHC_Large_Telescopic_Index}.
 It is defined as:
 
 \begin{equation}
@@ -281,11 +280,11 @@ It is the operational baseline of Run~\num{3}.
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
 
-The LHC operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \intro{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+The LHC operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \concept{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
 During pre-cycle no beams are present in the machine and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
 The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
 
-After the pre-cycle comes the \intro{injection} stage: beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
+After the pre-cycle comes the \concept{injection} stage: beams are injected from the Super Proton Synchrotron (SPS) at an energy of \qty{450}{\giga\electronvolt}.
 First a probe beam consisting of just a single bunch is injected to check the validity of several systems (injection interlock, orbit, tune, chromaticity and coupling control), then a \num{12}-bunches beam, and finally a physics beam meant for collisions is injected.
 At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding IPs (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
 The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
@@ -293,7 +292,7 @@ For optics measurements for instance, between one and three low intensity, non-c
 For luminosity production a larger number of high intensity bunches is injected: in the order of a few \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
 
 After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
-This process, called \intro{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
+This process, called \concept{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
 Before then the squeezing process only started once the energy had reached collision value.
 
 \begin{figure}[!hbt]
@@ -303,12 +302,12 @@ Before then the squeezing process only started once the energy had reached colli
   \label{figure:lhc_cycle}
 \end{figure}
 
-After reaching top energy, a configuration known as \intro{flat-top}, another \intro{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
+After reaching top energy, a configuration known as \concept{flat-top}, another \concept{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
 This is when the ATS scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
 
-In a final step before luminosity production, called \intro{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
-The resulting configuration, called \intro{stable beams}, is kept throughout the luminosity production for the fill.
-The fill ends when the beams are extracted from the machine, a.k.a. \intro{beam dump}, after which the cycle ends by a \intro{ramp down} of the magnets' currents.
+In a final step before luminosity production, called \concept{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
+The resulting configuration, called \concept{stable beams}, is kept throughout the luminosity production for the fill.
+The fill ends when the beams are extracted from the machine, a.k.a. \concept{beam dump}, after which the cycle ends by a \concept{ramp down} of the magnets' currents.
 Some magnets pre-cycle during the ramp down.
 
 The working point is changed several times along the cycle for stability reasons.
@@ -318,7 +317,7 @@ A final change is made in the adjust step, where the tunes are brought to (\(62.
 This last setting may be changed by machine operators during stable beams in order to optimize for beam lifetime.
 
 Starting in Run~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
-In \num{2022} a \intro{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
+In \num{2022} a \concept{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
 This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main IPs in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
 This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
 Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
@@ -331,7 +330,7 @@ Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow thi
 The quality of the LHC optics has a significant impact on the machine's performance.
 For instance, the luminosity achieved by the machine is directly determined by the \(\beta\)-functions at the IPs, as seen in \cref{section:luminosity}.
 Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
-One can then define the \intro{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
+One can then define the \concept{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
 It is defined as:
 
 \begin{equation}
@@ -361,13 +360,13 @@ Below is an introduction to those of interest for optics measurements.
 
 \subsubsection*{Beam Position Monitors and Tune Measurement}
 
-\intro{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics.
+\concept{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics.
 They measure the transverse center of charge of circulating bunches, either in a given plane for single plane BPMs, or in both planes simultaneously for dual plane BPMs.
 In the LHC, this centroid beam position can be measured on a turn-by-turn and bunch-by-bunch basis by around \num{500} dual plane BPMs across the machine.
 So-called stripline BPMs are employed in the common apertures as they can discriminate between counter-rotating bunches, while button BPMs are used in the remaining portions of the machine~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}. 
 The location of BPMs in the lattice can be seen as vertical gray lines, in an insertion region such as IR\num{5} in \cref{figure:lhc_ir5_zoomed,figure:lhc_matching_section} and in the arcs in \cref{figure:lhc_arc_cell_latwiss}.
 
-In the LHC, the \intro{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the turn-by-turn data at a specific location in IR\num{4}.
+In the LHC, the \concept{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the turn-by-turn data at a specific location in IR\num{4}.
 The BBQ is also capable of measuring an estimation of the linear coupling at the measurement location, which can be used as a rough first estimate for the coupling in the machine.
 While it is possible to assess tune and coupling with the BBQ without external excitation of the beam, the LHC chirp can generate small transverse oscillations to improve the quality of these measurements.
 
@@ -377,7 +376,7 @@ For the study of beam dynamics, measurements are done by inducing large transver
 Large oscillation amplitudes are required to provide a good signal-to-noise ratio.
 The spectral analysis of measured turn-by-turn positions provides valuable insights in all the modes contained in the particle motion, at each BPM location.
 In the LHC kicker dipole magnets are available for both beams, and located in IR\num{4}.
-These magnets can operate in three possible modes, referred to as the \intro{Tune Kicker} (MKQ), \intro{Aperture Kicker} (MKA), and the \intro{AC Dipole}.
+These magnets can operate in three possible modes, referred to as the \concept{Tune Kicker} (MKQ), \concept{Aperture Kicker} (MKA), and the \concept{AC Dipole}.
 
 The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
@@ -482,7 +481,7 @@ This impact of the AC Dipole on the optics is taken into account and compensated
 
 \subsubsection*{Spectral Analysis}
 
-As a first step the recorded raw turn-by-turn data is cleaned of noise using a \intro{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
+As a first step the recorded raw turn-by-turn data is cleaned of noise using a \concept{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
 An interpolated Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
 Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc).
 \todo{Show a figure with a BPM spectrum from a measurement?}
@@ -529,7 +528,7 @@ One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is ind
 
 \subsubsection*{K-Modulation}
 
-It is possible to directly measure the \(\beta^{\ast}\) at the IPs without beam excitation using the \intro{\(k\)-modulation} technique~\cite{IPAC:Calaga:LHC_K_Modulation}.
+It is possible to directly measure the \(\beta^{\ast}\) at the IPs without beam excitation using the \concept{\(k\)-modulation} technique~\cite{IPAC:Calaga:LHC_K_Modulation}.
 By modifying the strength of individual quadrupoles and recording the resulting tune changes, one can determine the average \(\beta\)-functions at the modulated quadrupole according to~\cite{BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
 \begin{equation}
@@ -556,7 +555,7 @@ In the LHC the \(k\)-modulation technique is the main method to determine the \(
 \label{subsection:reconstruction_linear_coupling_rdts}
 
 Of particular relevance to this thesis are the linear coupling RDTs \(f_{1001}\) and \(f_{1010}\), and it is worth spending some time detailing their reconstruction.
-As mentioned in \cref{subsec:spectral_contribution}, the \(f_{jklm}\) RDTs can be determined from the specific \intro{spectral lines} arising during the spectral analysis of turn-by-turn data.
+As mentioned in \cref{subsec:spectral_contribution}, the \(f_{jklm}\) RDTs can be determined from the specific \concept{spectral lines} arising during the spectral analysis of turn-by-turn data.
 By the term spectral lines one refers here to the Fourier transform of the complex Courant-Snyder coordinate, which corresponds to:
 
 \begin{equation}
@@ -685,7 +684,7 @@ Global corrections are better suited to compensate for widely distributed source
 
 \subsubsection*{Local Corrections}
 
-In the LHC local optics errors are determined and corrected using the \intro{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
+In the LHC local optics errors are determined and corrected using the \concept{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
 The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
 The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
 Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
@@ -711,9 +710,9 @@ This method has successfully been applied in the LHC for many years~\cite{PRAB:A
 
 \subsubsection*{Global Corrections}
 
-Global corrections are based on a \intro{response matrix} approach~\cite{PHD:Vanbavinckhove,EPAC:Tomas:Procedures_Accuracy_Estimates_Beta_Beat_Correction_LHC}.
+Global corrections are based on a \concept{response matrix} approach~\cite{PHD:Vanbavinckhove,EPAC:Tomas:Procedures_Accuracy_Estimates_Beta_Beat_Correction_LHC}.
 This matrix, constructed from the machine model and simulation codes, holds the information on the response of the model optics functions to changes made in model settings, usually magnet powering changes.
-For instance, the response to a quadrupole \intro{knob} trim\footnote{A knob trim refers to powering adjustements of a given electrical circuit powering several magnets in series or according to a given scheme.} of optics functions such as the phase advances, \(\beta\)-functions, normalized dispersion and tunes can be expressed as:
+For instance, the response to a quadrupole \concept{knob} trim\footnote{A knob trim refers to powering adjustements of a given electrical circuit powering several magnets in series or according to a given scheme.} of optics functions such as the phase advances, \(\beta\)-functions, normalized dispersion and tunes can be expressed as:
 
 \begin{equation}
   \mathbf{R} \Delta \vec{K} = \left(\Delta \overrightarrow{\phi_x}, \Delta \overrightarrow{\phi_y}, \frac{\Delta \beta_x}{\beta_x}, \frac{\Delta \beta_y}{\beta_y}, \Delta \frac{\overrightarrow{D_x}}{\sqrt{\beta_x}}, \Delta Q_x, \Delta Q_y \right) \text{ .}
