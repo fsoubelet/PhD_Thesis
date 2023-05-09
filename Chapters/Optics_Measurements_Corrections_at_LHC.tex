@@ -371,7 +371,7 @@ For the study of beam dynamics, measurements are done by inducing large transver
 Large oscillation amplitudes are required to provide a good signal-to-noise ratio.
 The spectral analysis of measured turn-by-turn positions provides valuable insights in all the modes contained in the particle motion, at each BPM location.
 In the \gls{LHC} kicker dipole magnets are available for both beams, and located in IR\num{4}.
-These magnets can operate in three possible modes, referred to as the \concept{Tune Kicker} (MKQ), \concept{Aperture Kicker} (MKA), and the \concept{AC Dipole}.
+These magnets can operate in three possible modes, referred to as the \concept{Tune Kicker} (MKQ), \concept{Aperture Kicker} (MKA), and the \concept{AC dipole}.
 
 The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
@@ -390,22 +390,22 @@ A comparison of the turn-by-turn data obtained from beam excitation with a singl
 \begin{figure}[!htb]
   \centering
   \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/kick_vs_acdipole.pdf}
-  \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC Dipole excitation (bottom).}
+  \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC dipole excitation (bottom).}
   \label{figure:kick_vs_acdipole_tbt}
 \end{figure}
 
 \subsection{Optics Measurements}
 \label{subsection:optics_measurements}
 
-Optics measurements are performed by exciting the beam and analyzing the resulting betatron oscillations.
+\Gls{optics} measurements are performed by exciting the beam and analyzing the resulting betatron oscillations.
 The various steps of the measurement and analysis process are described below.
 
 \subsubsection*{Beam Excitation}
 
-The first step of optics measurements in the LHC is to excite the beams with the AC Dipole.
+The first step of optics measurements in the LHC is to excite the beams with the \gls{AC_dipole}.
 As excitation of the beams to large amplitudes can represent a risk to the safety of the machine, such measurements are only performed with a single low intensity bunch of about \num{e10} protons.
-In the LHC, the AC Dipole has a ramp-up and ramp-down time of \num{2000} turns, and is able to drive excitations at maximum strength for \num{6600} turns before ramping down, as can be seen on \cref{figure:kick_vs_acdipole_tbt}.
-When exciting the beam, the turn-by-turn position of the bunch is measured by the BPMs across the machine and only the turns corresponding to the maximum AC Dipole strength are used for analysis.
+In the LHC, the AC dipole has a ramp-up and ramp-down time of \num{2000} turns, and is able to drive excitations at maximum strength for \num{6600} turns before ramping down, as can be seen on \cref{figure:kick_vs_acdipole_tbt}.
+When exciting the beam, the turn-by-turn position of the bunch is measured by the \glspl{BPM} across the machine and only the turns corresponding to the maximum AC dipole strength are used for analysis.
 
 It is important to note now that the forced oscillations introduce a perturbation on the optics.
 In the case of free oscillations, it was shown in \cref{chapter:theory} that the transverse motion goes according to \cref{equation:hill_solution}.
@@ -417,22 +417,22 @@ For the transverse plane \(z\), by considering \(\phi_{z,0} = 0\) at the start o
 \end{equation}
 with \(\phi_z\) and \(J_z\) the action and angle variables, respectively.
 
-When the AC Dipole is driving the beam, an equivalent parametrization exists, and noting \(z_D(s)\) the transverse driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
+When the AC dipole is driving the beam, an equivalent parametrization exists, and noting \(z_D(s)\) the transverse driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
 
 \begin{equation}
   z_D(s)=\sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right) + \sqrt{2 A \beta_{D,z}(s)} \cos \left( \phi_D \right) \text{ ,}
   \label{equation:driven_transverse_motion}
 \end{equation}
-where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,z}(s)\) is the \(\beta\)-function modified by the AC Dipole.
+where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,z}(s)\) is the \(\beta\)-function modified by the AC dipole.
 The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term only depends on \(\phi_D\).
 
-The \(\beta\)-function modified by the AC Dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
+The \(\beta\)-function modified by the AC dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
   \beta_{D,z}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta_z(s) \text{ ,}
   \label{equation:driven_beta_function}
 \end{equation}
-where \(\psi_D\) is the phase advance with respect to the AC Dipole location.% and the relation is valid for both horizontal and vertical \(\beta\)-functions.
+where \(\psi_D\) is the phase advance with respect to the AC dipole location.% and the relation is valid for both horizontal and vertical \(\beta\)-functions.
 The \(\lambda_D\) term is dependent on the gap between the driven and natural tune, and is defined by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
@@ -440,9 +440,9 @@ The \(\lambda_D\) term is dependent on the gap between the driven and natural tu
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
 in which \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap.
-In the LHC the AC Dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
+In the LHC the AC dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
 
-One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC Dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
+One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
 
 \begin{figure}[!htb]
   \centering
@@ -451,7 +451,7 @@ One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an
   \label{figure:acdipole_beta_functions_vs_nominal}
 \end{figure}
 
-One can then determine the \(\beta\)-beating induced by the AC Dipole, as defined in \cref{equation:beta_beating_definition}.
+One can then determine the \(\beta\)-beating induced by the AC dipole, as defined in \cref{equation:beta_beating_definition}.
 From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations_lambda_D} one can express this beating according to:
 
 \begin{equation}
@@ -459,31 +459,39 @@ From \cref{equation:driven_beta_function} and \cref{equation:driven_oscillations
   \label{equation:ac_dipole_beta_beating}
 \end{equation}
 with \(Q_z\) the natural transverse tune of the machine.
-\Cref{figure:ac_dipole_induced_beta_beating} shows this \(\beta\)-beating for various phase advances between the AC Dipole and an element where the observation would be made.
+\Cref{figure:ac_dipole_induced_beta_beating} shows this \(\beta\)-beating for various phase advances between the AC dipole and an element where the observation would be made.
 The vertical black lines correspond to the usual tune deltas used in LHC measurements, and the values are displayed for the two fractional tunes of a common working point for LHC measurements: \((Q_x, Q_y) = (0.28, 0.31)\).
-For these usual settings the AC Dipole induced \(\beta\)-beating reaches no more than \qty{9}{\percent}.
+For these usual settings the AC dipole induced \(\beta\)-beating reaches no more than \qty{9}{\percent}.
 
 \begin{figure}[!htb]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/bbeatings_acdipole.pdf}
-  \caption{AC Dipole induced \(\beta\)-beating as a function of \(\delta_D\), for various phase advances between the AC Dipole and a given location in the ring where the observation would be made. The results are shown for the horizontal (left) and vertical (right) planes with a common working point used for measurements.}
+  \caption{AC dipole induced \(\beta\)-beating as a function of \(\delta_D\), for various phase advances between the AC dipole and a given location in the ring where the observation would be made. The results are shown for the horizontal (left) and vertical (right) planes with a common working point used for measurements.}
   \label{figure:ac_dipole_induced_beta_beating}
 \end{figure}
 
-As a consequence, the measured oscillations, associated optics functions and \acrshortpl{RDT} will not be that of the natural machine.
-This impact of the AC Dipole on the optics is taken into account and compensated in analysis steps~\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}, and this compensation is expanded on later on in this chapter.
+As a consequence, the measured oscillations, associated optics functions and \glspl{RDT} will not be that of the natural machine.
+This impact of the AC dipole on the optics is taken into account and compensated in analysis steps~\cite{IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}, and this compensation is expanded on later on in this chapter.
 
 \subsubsection*{Spectral Analysis}
 
 As a first step the recorded raw turn-by-turn data is cleaned of noise using a \concept{Singular Value Decomposition} (SVD) approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
 An interpolated Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
 Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc).
-\todo{Show a figure with a BPM spectrum from a measurement?}
+\Cref{figure:example_spectrum} shows a horizontal spectrum obtained from a measurement during the Run~\num{2} commissioning in \num{2022}, with the main tune lines identified.
+The frequency space is zoomed for clarity.
+
+\begin{figure}[!htb]
+  \centering
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/example_bpm_spectrum.pdf}
+  \caption{Horizontal spectrum from the frequency analysis of a measurement taken during the Run~\num{2} commissioning in \num{2022}. The main (\textcolor{mplorange}{orange}) and natural (\textcolor{mplgreen}{green}) tune lines are indicated, where for instance \(0, 1\) corresponds to the \(0 \cdot Q_x + 1 \cdot Q_y = Q_y\) tune in the horizontal spectrum.}
+  \label{figure:example_spectrum}
+\end{figure}
 
 \subsubsection*{Optics Reconstruction}
 
 With knowledge of the phase information at each measuring BPM, and with knowledge of the model machine, the transverse optics functions can be determined.
-The model knowledge traditionally comes from the MAD-X (Methodical Accelerator Design) code~\cite{CODE:MADX_guide} for LHC measurements.
+The model knowledge traditionally comes from the \acrshort{MAD}-X code~\cite{CODE:MADX_guide} for LHC measurements.
 The \(\beta\)-function at a given BPM can be calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
 \begin{equation}
@@ -513,7 +521,7 @@ Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can determine 
   \label{figure:betabeating_phase_vs_amp}
 \end{figure}
 
-Other TWISS parameters can be reconstructed from the \(\beta\)-functions.
+Other Twiss parameters can be reconstructed from the phases and \(\beta\)-functions.
 Chromatic parameters are reconstructed by performing measurements at different momentum settings.
 By adjusting the frequency of the accelerating cavities, typically between \qty{-100}{\hertz} and \qty{+100}{\hertz}, the energy of the beam is changed and the dispersion is determined from the mean orbit recorded at different energies.
 Recent improvements have allowed doing so in a single measurement~\cite{PHD:Malina, IPAC:Malina:3D_Excitation}.
@@ -533,7 +541,7 @@ By modifying the strength of individual quadrupoles and recording the resulting 
   \label{equation:k_modulation_average_beta}
 \end{equation}
 where \(\Delta k\) is the quadrupole strength variation, \(L\) its length and \(\Delta Q_{x,y}\) the resulting tune variations in the machine.
-\Cref{figure:kmod_mqxa1l1} shows an example 
+\Cref{figure:kmod_mqxa1l1} shows an example of the data retrieved from the \(k\)-modulation.
 
 \begin{figure}[!htb]
   \centering
@@ -543,12 +551,13 @@ where \(\Delta k\) is the quadrupole strength variation, \(L\) its length and \(
 \end{figure}
 
 By modulating both innermost quadrupoles near the IP, one determines the average \(\beta\)-functions in these quadrupoles, which can then be propagated through the drift space in between to determine both the \(\beta^{\ast}\) value as well as any potential waist shift~\cite{PRAB:Carlier:K_Modulation_HL_LHC}.
-In the LHC the \(k\)-modulation technique is the main method to determine the \(\beta^{\ast}\) at the \acrshortpl{IP}.
+In the LHC the \(k\)-modulation technique is the main method to determine the \(\beta^{\ast}\) at the \glspl{IP}.
+Its results are also used as a better reconstruction of the \(\beta\)-function values in the inner BPMs.
 
 \subsection{Reconstruction of Linear Coupling RDTs}
 \label{subsection:reconstruction_linear_coupling_rdts}
 
-Of particular relevance to this thesis are the linear coupling RDTs \(f_{1001}\) and \(f_{1010}\), and it is worth spending some time detailing their reconstruction.
+Of particular relevance to this thesis are the linear coupling \glspl{RDT} \(f_{1001}\) and \(f_{1010}\), and it is worth spending some time detailing their reconstruction.
 As mentioned in \cref{subsec:spectral_contribution}, the \(f_{jklm}\) RDTs can be determined from the specific \concept{spectral lines} arising during the spectral analysis of turn-by-turn data.
 By the term spectral lines one refers here to the Fourier transform of the complex Courant-Snyder coordinate, which corresponds to:
 
@@ -637,13 +646,13 @@ This method has successfully been used to measure linear coupling RDTs in the LH
   \label{figure:measurement_spectrum}
 \end{figure}
 
-\subsubsection*{AC Dipole Compensation}
+\subsubsection*{AC dipole Compensation}
 
-Mentioned in \cref{subsection:optics_measurements} is the effect of AC dipole excitation on the observables, which differ from that of the natural machine.
-This effect is also present in the reconstructed coupling RDTs, and must be compensated for in order to obtain the natural machine values.
-Several compensation methods exist, with the most straightforward being the application of a rescaling factor to the reconstructed \acrshortpl{RDT}.
+Mentioned in \cref{subsection:optics_measurements} is the effect of \gls{AC_dipole} excitation on the observables, which differ from that of the natural machine.
+This effect is also present in the reconstructed coupling \glspl{RDT}, and must be compensated for in order to obtain the natural machine values.
+Several compensation methods exist, with the most straightforward being the application of a rescaling factor to the reconstructed \glspl{RDT}.
 
-Using this rescaling one can express the driven \acrshortpl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
+Using this rescaling one can express the driven \glspl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
 
 \begin{equation}
   \begin{aligned}
@@ -652,7 +661,7 @@ Using this rescaling one can express the driven \acrshortpl{RDT} as~\cite{IPAC:W
   \end{aligned}
   \label{equation:rescaling_coupling_rdts}
 \end{equation}
-where \(f_{+} = f_{1010}\) corresponds to the sum resonance, \(f_{-} = f_{1001}\) corresponds to the difference resonance, \(f_{\pm, x}^{\mathrm{driven}}\) denotes the driven \acrshort{RDT} as measured from horizontal turn-by-turn data, \(Q_{D, z}\) is the driven tune in the transverse plane \(z\) and \(Q_z\) the natural tune in the same plane.
+where \(f_{+} = f_{1010}\) corresponds to the sum resonance, \(f_{-} = f_{1001}\) corresponds to the difference resonance, \(f_{\pm, x}^{\mathrm{driven}}\) denotes the driven \gls{RDT} as measured from horizontal turn-by-turn data, \(Q_{D, z}\) is the driven tune in the transverse plane \(z\) and \(Q_z\) the natural tune in the same plane.
 Here the \(f_{\pm}\) notation is used for concisiveness.
 
 A fully analytical compensation of the AC dipole effect can be found in~\cite{REPORT:Miyamoto:Measurement_Coupling_Resonance_Driving_Terms,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole} but will not be detailed in this document.
@@ -661,7 +670,7 @@ A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider
 
 \subsubsection*{Single BPM}
 
-It is possible to approximate the coupling RDTs from the real coordinates using a single BPM, and doing the reconstruction without the momentum information.
+It is possible to approximate the coupling \glspl{RDT} from the real coordinates using a single \gls{BPM}, and doing the reconstruction without the momentum information.
 In such case where only the position data is used, however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
 For the linear coupling RDTs this means that the \(f_{1001}\) and \(f_{1010}\) will contribute to the same resonance lines and cannot be separated~\cite{PHD:Persson}.
 It may be, however, possible to neglect one of them depending on their relative strengths.
@@ -674,7 +683,7 @@ To do so, the phases of the real spectral lines are shifted in accordance with t
 \label{subsection:correction_principles}
 
 Corrections of the linear optics in the LHC are based on two different approaches.
-Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the IPs
+Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the IPs.
 
 \subsubsection*{Local Corrections}
 
@@ -693,6 +702,7 @@ For this one looks at the \(\Delta \phi\) quantity thought the segment and tries
 
 An example of a local correction of the phase advance around IP\num{5} from the LHC \num{2022} commissioning is shown in \cref{figure:example_sbs_correction}, where the phase deviation from the model values are shown across the segment together with the effect of the reconstructed errors.
 The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
+Application to the latter is detailed in the next chapter.
 This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
 \begin{figure}[!hbt]
@@ -706,7 +716,7 @@ This method has successfully been applied in the LHC for many years~\cite{PRAB:A
 
 Global corrections are based on a \concept{response matrix} approach~\cite{PHD:Vanbavinckhove,EPAC:Tomas:Procedures_Accuracy_Estimates_Beta_Beat_Correction_LHC}.
 This matrix, constructed from the machine model and simulation codes, holds the information on the response of the model optics functions to changes made in model settings, usually magnet powering changes.
-For instance, the response to a quadrupole \concept{knob} trim\footnote{A knob trim refers to powering adjustements of a given electrical circuit powering several magnets in series or according to a given scheme.} of optics functions such as the phase advances, \(\beta\)-functions, normalized dispersion and tunes can be expressed as:
+For instance, the response to a quadrupole \gls{knob} \gls{trim} of optics functions such as the phase advances, \(\beta\)-functions, normalized dispersion and tunes can be expressed as:
 
 \begin{equation}
   \mathbf{R} \Delta \vec{K} = \left(\Delta \overrightarrow{\phi_x}, \Delta \overrightarrow{\phi_y}, \frac{\Delta \beta_x}{\beta_x}, \frac{\Delta \beta_y}{\beta_y}, \Delta \frac{\overrightarrow{D_x}}{\sqrt{\beta_x}}, \Delta Q_x, \Delta Q_y \right) \text{ .}
@@ -723,3 +733,5 @@ To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, noted 
 
 The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on the correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
 By choosing weights and plugging measured optics deviations into \cref{equation:global_corrections_from_pseudo_inverse_response_matrix}, one can determine the knob trims that could correct said observed deviations.
+
+\glsresetall                                     % reset glossary entries counts for the next chapter
