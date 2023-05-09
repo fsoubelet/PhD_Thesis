@@ -151,9 +151,9 @@ As the practice is part of the training process cross-validation is only applied
 
 \section{Identification of Local Coupling Sources}
 
-In the previous chapter, the negative impact of local IR linear coupling in the LHC has been extensively discussed, as well as the necessity of its identification and mitigation.
+In the previous chapter, the negative impact of local \gls{IR} linear coupling in the \gls{LHC} has been extensively discussed, as well as the necessity of its identification and mitigation.
 The precise knowledge of a coupling source's location and relative strength would be a valuable asset for further correction.
-However, it was illustrated in \cref{section:current_correction_methods_and_their_limitations} how simply looking at patterns and jumps in the coupling RDTs was not always sufficient to accurately pinpoint the  location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
+However, it was illustrated in \cref{section:current_correction_methods_and_their_limitations} how simply looking at patterns and jumps in the coupling \glspl{RDT} was not always sufficient to accurately pinpoint the  location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
 As machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{IPAC:Fol:Machine_Learning_Methods_for_Optics_Measurements_and_Corrections_at_LHC, IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators, EPAC:Bozoki:Neural_Networks_Orbit_Control_Accelerators, IPAC:Meier:Orbit_Correction_Studies_using_Neural_Networks, EPAC:Kijima:Beam_Diagnostic_System_for_Accelerator_using_Neural_Networks, PRAB:Fol:Detection_Faulty_BPMs, EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors}, the possibility of applying machine learning techniques to the detection of local IR coupling sources in the LHC was explored.
 
 In order to perform a prediction of betatron coupling sources' locations, one first needs to compute the \(f_{1001}\) and \(f_{1010}\) coupling RDTs which will serve as input data for the model.
@@ -165,8 +165,8 @@ As from the real machine the true location of sources is unknown, no real-world 
 
 \subsection{Dataset Generation}
 
-In order to create a training dataset simulations were performed with the MAD-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles, in each IR.
-The tilt generates a skew quadrupolar component at the affected element and thus turns it into a source of coupling.
+In order to create a training dataset simulations were performed with the \acrshort{MAD}-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles, in each IR.
+The tilt generates a \gls{skew} quadrupolar component at the affected element and thus turns it into a source of coupling.
 It has to be noted though, that in simulations only quadrupole tilts - given by the \(\mathrm{DPSI}\) variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in this study.
 
 When generating the data from simulations, the introduced tilt components form the training output and the produced coupling RDTs generated from the perturbed optics functions are the input in the training dataset.
@@ -185,7 +185,7 @@ Each sample of the dataset is obtained by applying the following steps in simula
 \begin{enumerate}
     \item A truncated Gaussian distribution of tilt errors (\(\mathrm{DPSI}\)) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
     \item Quadrupoles located outside the IRs are excluded as these sources can be identified and compensated by other means.
-    \item The coupling RDTs \(f_{1001}\) and \(f_{1010}\) are calculated at each BPM from Twiss functions for Beam~\num{1}.
+    \item The coupling RDTs \(f_{1001}\) and \(f_{1010}\) are calculated at each \acrshort{BPM} from \gls{Twiss_parameters} for Beam~\num{1}.
     \item The \(\mathrm{DPSI}\) values for triplets are exported and applied to Beam 2, as these are common magnets and should share the error.
     \item A truncated Gaussian distribution similar to the one of step \num{1} is applied to the remaining quadrupoles Q\num{4} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{2}.
     \item Coupling RDTs for Beam~\num{2} are calculated at each BPM as done for Beam~\num{1}.
