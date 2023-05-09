@@ -325,7 +325,7 @@ Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow thi
 The quality of the LHC optics has a significant impact on the machine's performance.
 For instance, the luminosity achieved by the machine is directly determined by the \(\beta\)-functions at the IPs, as seen in \cref{section:luminosity}.
 Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
-One can then define the \concept{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
+One can then define the \gls{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
 It is defined as:
 
 \begin{equation}
@@ -355,42 +355,41 @@ Below is an introduction to those of interest for optics measurements.
 
 \subsubsection*{Beam Position Monitors and Tune Measurement}
 
-\concept{Beam Position Monitors} (BPMs) are one of the most crucial devices for beam diagnostics.
+\acrfullpl{BPM} are one of the most crucial devices for beam diagnostics.
 They measure the transverse center of charge of circulating bunches, either in a given plane for single plane BPMs, or in both planes simultaneously for dual plane BPMs.
-In the LHC, this centroid beam position can be measured on a turn-by-turn and bunch-by-bunch basis by around \num{500} dual plane BPMs across the machine.
+In the \gls{LHC}, this centroid beam position can be measured on a turn-by-turn and bunch-by-bunch basis by around \num{500} dual plane \glspl{BPM} across the machine.
 So-called stripline BPMs are employed in the common apertures as they can discriminate between counter-rotating bunches, while button BPMs are used in the remaining portions of the machine~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}. 
 The location of BPMs in the lattice can be seen as vertical gray lines, in an insertion region such as IR\num{5} in \cref{figure:lhc_ir5_zoomed,figure:lhc_matching_section} and in the arcs in \cref{figure:lhc_arc_cell_latwiss}.
 
-In the LHC, the \concept{Base Band Tune} (BBQ) system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the turn-by-turn data at a specific location in IR\num{4}.
-The BBQ is also capable of measuring an estimation of the linear coupling at the measurement location, which can be used as a rough first estimate for the coupling in the machine.
+In the LHC, the \gls{BBQ} system~\cite{CERN:Boccardi:LHC_Transverse_Diagnostics_Systems,CERN:Boccardi:LHC_BBQ_Tune_Chromaticity_Systems} provides continuous, passive monitoring of the tune by performing spectral analysis of the turn-by-turn data at a specific location in IR\num{4}.
+The \gls{BBQ} is also capable of measuring an estimation of the linear coupling at the measurement location, which can be used as a rough first estimate for the coupling in the machine.
 While it is possible to assess tune and coupling with the BBQ without external excitation of the beam, the LHC chirp can generate small transverse oscillations to improve the quality of these measurements.
 
 \subsubsection*{Experimental Kickers}
 
-For the study of beam dynamics, measurements are done by inducing large transverse oscillations of the beam to be picked up by the BPMs, typically much larger than natural beam size.
+For the study of beam dynamics, measurements are done by inducing large transverse oscillations of the beam to be picked up by the \glspl{BPM}, typically much larger than natural beam size.
 Large oscillation amplitudes are required to provide a good signal-to-noise ratio.
 The spectral analysis of measured turn-by-turn positions provides valuable insights in all the modes contained in the particle motion, at each BPM location.
-In the LHC kicker dipole magnets are available for both beams, and located in IR\num{4}.
+In the \gls{LHC} kicker dipole magnets are available for both beams, and located in IR\num{4}.
 These magnets can operate in three possible modes, referred to as the \concept{Tune Kicker} (MKQ), \concept{Aperture Kicker} (MKA), and the \concept{AC Dipole}.
 
 The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
 Unfortunately, at top energy the amplitude of oscillations achievable with the kickers is considerably reduced, and the beam will decohere after being kicked: the momentum distribution of particles in the bunch will cause the observed centroid of the beam to show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
-% This decoherence will lead to emittance increase.
 As a consequence a beam can only be kicked a certain number of times before needing to be replaced, and it can take up to several hours to reach the same machine configuration again, as seen in \cref{section:lhc_operational_cycle}.
 
-For optics measurements lasting oscillations are preffered, as they increase the spectral resolution and reduce noise floor in the spectral analysis of turn-by-turn data.
+For \gls{optics} measurements lasting oscillations are preffered, as they increase the spectral resolution and reduce noise floor in the spectral analysis of turn-by-turn data.
 Furthermore, a non-destructive excitation method is preferred in order not to alter the beam state, which allows for repeated measurements.
 
-Such a non-destructive, sustained excitation of the beams can be achieved with the AC Dipole.
+Such a non-destructive, sustained excitation of the beams can be achieved with the \gls{AC_dipole}.
 It is a fast oscillating dipole magnet which can generate forced driven oscillations with large amplitudes by exciting the beam at frequencies close to the natural tunes~\cite{PHD:Miyamoto,CERN:Serrano:LHC_ACDipole_Introduction}.
-Moreover, the AC Dipole strength can be ramped up and down adiabaticity~\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole} and kept constant at high amplitudes, allowing for a long lasting coherent oscillations of the beam.
-These properties, fullfilling the aforementioned requirements, make the AC Dipole the most important tool for optics measurements in the LHC.
-A comparison of the turn-by-turn data obtained from beam excitation with a single free kick and an AC Dipole is shown in \cref{figure:kick_vs_acdipole_tbt}.
+Moreover, the \gls{AC_dipole} strength can be ramped up and down adiabatically~\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole} and kept constant at high amplitudes, allowing for a long lasting coherent oscillations of the beam.
+These properties, fullfilling the aforementioned requirements, make the AC dipole the most important tool for optics measurements in the LHC.
+A comparison of the turn-by-turn data obtained from beam excitation with a single free kick and an AC dipole is shown in \cref{figure:kick_vs_acdipole_tbt}.
 
 \begin{figure}[!htb]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/kick_vs_acdipole.pdf}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/kick_vs_acdipole.pdf}
   \caption{Comparison of turn-by-turn data obtained from a single free kick (top) and an AC Dipole excitation (bottom).}
   \label{figure:kick_vs_acdipole_tbt}
 \end{figure}
