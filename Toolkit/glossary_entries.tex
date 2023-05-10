@@ -2,147 +2,143 @@
 % Argument order: id, acronym, acronym written out, description
 % Create both acronym and glossary entry with linking:
 \newcommand{\newglossaryacronym}[4]{
-        \newacronym{#1acr}{#2}{\acrlong{#1}}
-        \newglossaryentry{#1}{
-                name={#2 (#3)},
-                text={#2},
-                % symbol={#2},
-                short={#2},
-                long={#3},
-                first={#3 (#2)},
-                firstplural={#3\glspluralsuffix~(#2\glspluralsuffix)},
-                description={#4\glsadd{#1acr}}
-        }
+    \newacronym{#1acr}{#2}{\acrlong{#1}}
+    \newglossaryentry{#1}{
+        name={#2 (#3)},
+        text={#2},
+        % symbol={#2},
+        short={#2},
+        long={#3},
+        first={#3 (#2)},
+        firstplural={#3\glspluralsuffix~(#2\glspluralsuffix)},
+        description={#4\glsadd{#1acr}}
+    }
 }
 
 % ----- Nomenclature ----- %
 
 \newglossaryentry{AC_dipole}{
-        name={AC Dipole},
-        text={AC dipole},
-        description={Dipole magnet attached to an AC power source with variable frequency and strength, allowing to impose forced oscillations on the \gls{beam}. See \cref{subsection:beam_instrumentation_for_optics_measurements}}
+    name={AC Dipole},
+    text={AC dipole},
+    description={Dipole magnet attached to an AC power source with variable frequency and strength, allowing to impose forced oscillations on the \gls{beam}. See \cref{subsection:beam_instrumentation_for_optics_measurements}}
 }
 \newglossaryentry{ampdet}{
-        name={amplitude detuning},
-        description={Tune change with the transversal amplitude of a particle. See \cref{subsection:amplitude_detuning}}
+    name={amplitude detuning},
+    description={Tune change with the transversal amplitude of a particle. See \cref{subsection:amplitude_detuning}}
 }
 \newglossaryentry{beam}{
-        name={beam},
-        description={Short for "Particle Beam".  The name for the collection of all particles in an accelerator traveling in the same direction. In the \acrfull{LHC} there are two beams (Beam~\num{1} and Beam~\num{2}) traversing in opposite directions and colliding at the \glspl{IP}}
+    name={beam},
+    description={Short for "Particle Beam".  The name for the collection of all particles in an accelerator traveling in the same direction. In the \acrfull{LHC} there are two beams (Beam~\num{1} and Beam~\num{2}) traversing in opposite directions and colliding at the \glspl{IP}}
 }
 \newglossaryentry{beta-function}{
-        name={beta-function},
-        text=\(\beta\)-function,
-        description={Value of the \gls{Twiss_parameters} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
+    name={beta-function},
+    text={\(\beta\)-function},
+    description={Value of the \gls{Twiss_parameters} \(\beta\) as a function of longitudinal location. This value is closely related to the amplitude $\mathcal{A}$ of the betatron-oscillations and hence the size of the \gls{beam} at that location via the \gls{action} \glssymbol{action} by \(\mathcal{A} = \sqrt{2J\beta}\)}
 }
 \newglossaryentry{beta-beating}{
-        name={beta-beating},
-        text={\(\beta\)-beating},
-        description={Relative difference of the \glspl{beta-function} between measurement and model: \((\beta_{\mathrm{measured}} - \beta_{\mathrm{model}}) / \beta_{\mathrm{model}}\), it is a good indicator of the quality of the linear optics}
+    name={beta-beating},
+    text={\(\beta\)-beating},
+    description={Relative difference of the \glspl{beta-function} between measurement and model: \((\beta_{\mathrm{measured}} - \beta_{\mathrm{model}}) / \beta_{\mathrm{model}}\), it is a good indicator of the quality of the linear optics}
 }
 \newglossaryentry{betatron_coupling}{
-        name={betatron coupling},
-        description={Coupling between the horizontal and vertical transverse motion of a particle. Common sources of coupling are \gls{skew} quadrupoles and solenoids}
+    name={betatron coupling},
+    description={Coupling between the horizontal and vertical transverse motion of a particle. Common sources of coupling are \gls{skew} quadrupoles and solenoids}
 }
 \newglossaryentry{bunch}{
-        name={bunch},
-        description={Short for "Particle Bunch". Due to the \acrshort{RF} acceleration scheme, a continuous \gls{beam} is not possible in a synchrotron and particles become bunched}
+    name={bunch},
+    description={Short for "Particle Bunch". Due to the \acrshort{RF} acceleration scheme, a continuous \gls{beam} is not possible in a synchrotron and particles become bunched}
 }
 \newglossaryentry{closed_orbit}{
-        name={Closed Orbit},
-        text={closed orbit},
-        description={The orbit of a particle with reference momentum, sometimes also called "reference orbit" or "ideal orbit"}
+    name={Closed Orbit},
+    text={closed orbit},
+    description={The orbit of a particle with reference momentum, sometimes also called "reference orbit" or "ideal orbit"}
 }
 \newglossaryentry{courantsnyderparameter}{
-        name={Courant-Snyder Parameters},
-        user1={Courant-Snyder},
-        description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \gls{Twiss_parameters}. See for instance the \gls{beta-function}}
+    name={Courant-Snyder Parameters},
+    user1={Courant-Snyder},
+    description={Set of quantities describing the distribution of positions and momenta of the particles in a \gls{beam}. Also known as \gls{Twiss_parameters}. See for instance the \gls{beta-function}}
 }
 \newglossaryentry{experiment}{
-        name={experiment},
-        description={In the context of the \gls{LHC}, an "experiment" denotes one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glspl{IP} of the \gls{LHC}}
+    name={experiment},
+    description={In the context of the \gls{LHC}, an "experiment" denotes one of the eight particle physics detector experiments and its accompanying data-collecting research structure. The four largest detectors, \acrshort{ATLAS}, \acrshort{CMS}, \acrshort{ALICE}, \acrshort{LHCb} are located at the four \glspl{IP} of the \gls{LHC}}
 }
 \newglossaryentry{feed-down}{
-        name={feed-down},
-        description={Particles passing off-center through a multipole field experience effects akin to the influence of lower-order multipoles due to the orbit offset.}
+    name={feed-down},
+    description={Particles passing off-center through a multipole field experience effects akin to the influence of lower-order multipoles due to the orbit offset.}
 }
-% \newglossaryentry{flat_orbit}{
-%         name={flat orbit},
-%         description={Machine setup without any crossing bumps in the \glsfirstplural{IR}}
-% }
 \newglossaryentry{flat_optics}{
-        name={flat optics},
-        description={\Gls{optics} in which the \glstext{betastar} is different for both transverse planes, usually much smaller in one than in the other. See also \glstext{round_optics}}
+    name={flat optics},
+    description={\Gls{optics} in which the \glstext{betastar} is different for both transverse planes, usually much smaller in one than in the other. See also \glstext{round_optics}}
 }
 \newglossaryentry{hadron}{
-        name={hadron},
-        description={Composite subatomic particles consisting of two or more quarks, held together by strong interactions}
+    name={hadron},
+    description={Composite subatomic particles consisting of two or more quarks, held together by strong interactions}
 }
 \newglossaryentry{knob}{
-        name={knob},
-        description={A group setting of magnets powerings to be changed together}
+    name={knob},
+    description={A group setting of magnets powerings to be changed together}
 }
 \newglossaryentry{longshutdown}{
-        name={long shutdown},
-        description={Planned shutdown periods of the \gls{LHC} between \glspl{run} spanning multiple years, as opposed to the \gls{YETS}, which only lasts a few months. This time is used for repairs and upgrades of the machine, as well as general maintenance}
+    name={long shutdown},
+    description={Planned shutdown periods of the \gls{LHC} between \glspl{run} spanning multiple years, as opposed to the \gls{YETS}, which only lasts a few months. This time is used for repairs and upgrades of the machine, as well as general maintenance}
 }
 \newglossaryentry{luminosity}{
-        name={luminosity},
-        description={Tthe ratio of the number of events, i.e. collisions, detected per cross section, either per time interval ("instantaneous luminosity") or in total ("integrated luminosity", e.g. since the beginning of a year, a \gls{run} or of operation)}
+    name={luminosity},
+    description={Tthe ratio of the number of events, i.e. collisions, detected per cross section, either per time interval ("instantaneous luminosity") or in total ("integrated luminosity", e.g. since the beginning of a year, a \gls{run} or of operation)}
 }
 \newglossaryentry{MADX}{
-        name={MAD-X},
-        text={MAD-X},
-        description={Current version of the \gls{MAD} framework developed in \acrshort{BE}-\acrshort{ABP} at \acrshort{CERN}}
+    name={MAD-X},
+    text={MAD-X},
+    description={Current version of the \gls{MAD} framework developed in \acrshort{BE}-\acrshort{ABP} at \acrshort{CERN}}
 }
 \newglossaryentry{normal}{
-        name={normal magnets},
-        text=normal,
-        description={Magnet with a "normal" oriented multipole field with pole-tips off the horizontal axis. Opposed to a \gls{skew} magnet of the same order \(n\), for which the field is rotated by \(\pi / (2n)\)~\unit{\radian}}
+    name={normal magnets},
+    text={normal},
+    description={Magnet with a "normal" oriented multipole field with pole-tips off the horizontal axis. Opposed to a \gls{skew} magnet of the same order \(n\), for which the field is rotated by \(\pi / (2n)\)~\unit{\radian}}
 }
 \newglossaryentry{omc3}{
-        name={omc3},
-        text={omc3},
-        description={Python package maintained and applied by the \gls{OMC} team to analyse measurements from different accelerators and calculate corrections. See~\cite{CODE:OMC:omc3}}
+    name={omc3},
+    text={omc3},
+    description={Python package maintained and applied by the \gls{OMC} team to analyse measurements from different accelerators and calculate corrections. See~\cite{CODE:OMC:omc3}}
 }
 \newglossaryentry{optics}{
-        name={optics},
-        description={Refers to accelerator \gls{beam} optics, describing the particle motion through an accelerator as defined by the elements (i.e. magnets) of the machine. As the behaviour of a particle \gls{beam} in magnetic fields shows similarities to a light beam propagating through lenses and can be described with similar equations, a lot of theory and nomenclature has been borrowed from ray optics}
+    name={optics},
+    description={Refers to accelerator \gls{beam} optics, describing the particle motion through an accelerator as defined by the elements (i.e. magnets) of the machine. As the behaviour of a particle \gls{beam} in magnetic fields shows similarities to a light beam propagating through lenses and can be described with similar equations, a lot of theory and nomenclature has been borrowed from ray optics}
 }
 \newglossaryentry{round_optics}{
-        name={round optics},
-        description={\Gls{optics} in which the \glstext{betastar} is identical for both planes. See also: \gls{flat_optics}} 
+    name={round optics},
+    description={\Gls{optics} in which the \glstext{betastar} is identical for both planes. See also: \gls{flat_optics}} 
 }
 \newglossaryentry{run}{
-        name={run},
-        description={Consecutive years of \gls{LHC} operation, separated by long shutdowns. \Gls{run}~\num{1} has taken place from \num{2008} to \num{2013}, \Gls{run}~\num{2} from \num{2015} to \num{2018} and \Gls{run}~\num{3} started in \num{2022}}
+    name={run},
+    description={Consecutive years of \gls{LHC} operation, separated by long shutdowns. \Gls{run}~\num{1} has taken place from \num{2008} to \num{2013}, \Gls{run}~\num{2} from \num{2015} to \num{2018} and \Gls{run}~\num{3} started in \num{2022}}
 }
 \newglossaryentry{skew}{
-        name={skew magnets},
-        text=skew,
-        description={Magnet with a "skew" oriented multipole field, with pole-tips on the horizontal axis. Opposed to a \gls{normal} magnet of the same order \(n\), for which the field is rotated by \(\pi / (2n)\)~\unit{\radian}}
+    name={skew magnets},
+    text={skew},
+    description={Magnet with a "skew" oriented multipole field, with pole-tips on the horizontal axis. Opposed to a \gls{normal} magnet of the same order \(n\), for which the field is rotated by \(\pi / (2n)\)~\unit{\radian}}
 }
 \newglossaryentry{synchronous}{
-        name={synchronous particle},
-        text={synchronous},
-        description={The ideal particle that defines the reference trajectory in a circular accelerator}
+    name={synchronous particle},
+    text={synchronous},
+    description={The ideal particle that defines the reference trajectory in a circular accelerator}
 }
 \newglossaryentry{trim}{
-        name={trim},
-        description={A trim refers to powering adjustements of a given electrical circuit powering one or several magnets in series or according to a given scheme}
+    name={trim},
+    description={A trim refers to powering adjustements of a given electrical circuit powering one or several magnets in series or according to a given scheme}
 }
 \newglossaryentry{triplet}{
-        name={triplet},
-        description={Name for the final focusing quadrupoles in the \gls{IR} left and right of an \gls{IP}. In principle these consist of three magnets Q\num{1} to Q\num{3} (starting with Q1 closest to the \gls{IP}), where Q\num{1} and Q\num{3} have the same orientation (e.g. focusing) and are opposite to Q\num{2} (e.g. defocusing), depending on \gls{beam}, plane and side. In the \gls{LHC} Q\num{2} is split into two magnets, and in the \gls{HL-LHC} Q\num{1} and Q\num{2} will also each be split in two}
+    name={triplet},
+    description={Name for the final focusing quadrupoles in the \gls{IR} left and right of an \gls{IP}. In principle these consist of three magnets Q\num{1} to Q\num{3} (starting with Q1 closest to the \gls{IP}), where Q\num{1} and Q\num{3} have the same orientation (e.g. focusing) and are opposite to Q\num{2} (e.g. defocusing), depending on \gls{beam}, plane and side. In the \gls{LHC} Q\num{2} is split into two magnets, and in the \gls{HL-LHC} Q\num{1} and Q\num{2} will also each be split in two}
 }
 \newglossaryentry{tune}{
-        name={tune},
-        description={Number of betatron oscillations per turn in a circular accelerator. See also: \gls{beta-function}}
+    name={tune},
+    description={Number of betatron oscillations per turn in a circular accelerator. See also: \gls{beta-function}}
 }
 \newglossaryentry{Twiss_parameters}{
-        name={Twiss Parameters},
-        text={Twiss parameters},
-        description={See \gls{courantsnyderparameter}}
+    name={Twiss Parameters},
+    text={Twiss parameters},
+    description={See \gls{courantsnyderparameter}}
 }
 
 
