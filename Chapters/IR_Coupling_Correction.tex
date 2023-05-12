@@ -128,7 +128,7 @@ Given the data patterns and the fact that the orange case corresponds to a bette
     \label{figure:beamtest_vs_2022_sbs_abs_f1001_ir1}
 \end{figure}
 
-Furthermore, the SbS technique does not allow one to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
+Furthermore, the SbS technique does not allow to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
 Indeed, as both correctors can compensate each other one might find a good compensation of the overall IR contribution to global coupling which also deteriorates the coupling situation at the IP.
 Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
 
@@ -431,7 +431,7 @@ A full parameter space was explored, both with and without an RWS applied.
     \label{figure:beam_size_colin_vs_tilt_no_waist}
 \end{figure}
 
-The results of \cref{figure:beam_size_colin_vs_tilt_no_waist} highlight that minimization of the growth is possible though a wrong setting would enhance the phenomenon.
+The results of \cref{figure:beam_size_colin_vs_tilt_no_waist} highlight that minimization of the growth is possible, though a wrong setting would enhance the phenomenon.
 A great correlation between beam size growth from the local coupling bump (without RWS) and the \(\abs{C^{-}}\) from leaked RDTs (with RWS) is observed, which is an encouraging first result.
 \newline
 
@@ -739,7 +739,7 @@ For completeness, these are exposed in \cref{appendix:inconclusive_measurements}
 
 Later on during the \num{2022} physics run, beam time was allocated to trim in the suggested adjustments from \cref{table:rws_corrections_summary}.
 The impact of the corrections was assessed based on instantaneous luminosity measurements at the time of the trims.
-Time was found to perform measurements of the corrections' efficiencies in each IR at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
+Time was found to perform measurements of the efficiency of corrections in each IR at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
 Information on the fills used can be found in \cref{table:md_fills}.
 
 For each measurement, trims around the suggested correction adjustments were also performed in order to look for the best local setting, which might not necessarily have been found by the method.
@@ -1033,7 +1033,7 @@ The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} opti
     \label{figure:carry_over_impact_on_beam_size}
 \end{figure}
 
-The beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation through the machine, being significantly affected only in the space between Q\num{1} to Q\num{1}.
+The beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation through the machine, being significantly affected only in the space between left to right Q\num{1}.
 This behavior was also observed in~\cite{PRAB:Hofer:Coupling_Local_Observables} where the coupling RDTs themselves are only significantly affected in the same space for a similar trim.
 As the drift space right around the IP is not a constraint for aperture limitations, one can conclude that the aperture would not suffer from such a compensation scheme.
 Similarly, the impact on Beam-Beam Long Range (BBLR)~\cite{PHD:Poyet} interaction should be minimal as the increase is only significant within a few meters of the IP location itself.
@@ -1082,7 +1082,7 @@ The resulting integrated luminosity loss over a day is shown in \cref{figure:int
 \end{figure}
 
 Over a day, the integrated luminosity loss is \qty{25}{\percent} for the worst case - failure of MQSX.3L1 -, relatively to the nominal scenario with an instantaneous luminosity target of \qty{2.2e34}{\hertz\per\square\centi\meter}.
-It was also observed that operating with settings at the Beam-Beam Long Range limit would only improve the loss by a few percents in the worst case.
+It was also observed that operating with settings at the Beam-Beam Long Range limit would only improve the loss by a few percentage points in the worst case.
 An experimental MD is planned in \num{2023} to assess both the feasibility of this approach and the accuracy of these predictions.
 % \todo{Mention that this is the most viable option, and we are planning an MD on this?}
 
@@ -1153,8 +1153,8 @@ For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated
 
 Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
 Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
-Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
-For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the overall magnet.
+Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one on the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
+For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the magnet.
 
 Finally, due to the possibility of damaging what is arguably the most important magnet assembly in the machine during the procedure, this solution would only be used as a last resort.
 

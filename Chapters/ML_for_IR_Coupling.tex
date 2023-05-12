@@ -122,7 +122,7 @@ Though simple, this example highlights the importance of building a model that g
 
 One of the common ways to identify underfitting or overfitting is to provide validation data to the model in addition to the training data.
 The training set is then used to drive the learning procedure, and after training the error is evaluated on the validation set.
-When done properly, the model's performance of both training and validation sets should be nearly equal.
+When done properly, the model's performance on both training and validation sets should be nearly equal.
 If the performance on the training set is substantially higher, the model has been overfitted and further adjustments on the model complexity are then required.
 
 \subsubsection*{Regularized Regression}
@@ -161,7 +161,7 @@ The strength and variations of the coupling RDTs throughout the machine is then 
 
 In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
 Such a regression model requires a large dataset in order to be able to generalize and produce reliable results.
-As from the real machine the true location of sources is unknown, no real-world data is available for the training of machine learning models.
+As in the real machine the true location of coupling sources is unknown, no real-world data is available for the training of machine learning models.
 
 \subsection{Dataset Generation}
 
@@ -238,7 +238,7 @@ A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least
 A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all datasets.
 A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise datasets.
 
-\Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noising the reconstructed coupling RDTs is apparent.
+\Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noise on the reconstructed coupling RDTs is apparent.
 In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
 In this figure each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
 While dense, this representation allows to see the performance of the model on a wide range of noised datasets, for a single given distribution of the tilt errors.
@@ -266,7 +266,7 @@ One can notice the histogram of deviations much more narrowly centered on \num{0
 \end{figure}
 
 \Cref{figure:ridge_predictions} shows the ridge model's predictions on a sample from the same noised test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\)), where a good agreement between the predicted and the assigned true values can be observed.
-Prediction performance significantly degrades with the addition of noise, with sometimes predictions wrong by an order of magnitude or more in the worst cases.
+Prediction performance significantly degrades with the addition of noise, with sometimes predictions being off by an order of magnitude or more in the worst cases.
 
 \begin{figure}[!htb]
     \centering
