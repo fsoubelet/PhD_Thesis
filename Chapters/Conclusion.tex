@@ -7,12 +7,10 @@
 %     \item Contribution to the Field: Discuss how your research has contributed to the existing knowledge in your field. Highlight any novel or significant contributions your research has made.
 %     \item Implications and Applications: Explain the implications and applications of your research findings. Consider how your findings could be used to solve real-world problems or inform future research.
 %     \item Limitations and Future Directions: Acknowledge any limitations of your research and suggest areas for future research that could build on your findings. What is missing? What could be done in the future? How can we build up and improve even more?
-%     \item Conclusion and Significance: Sum up the overall significance of your research and the contributions it has made to the field. End on a strong note that emphasizes the importance of your research and its potential impact. Outlook and broader implications for the LHC and other machines?
 % \end{itemize}
 
 % Actual items I am thinking of in order:
 % \begin{itemize}
-%     \item In \cref{chapter:ir_local_coupling} blah blah blah. \gls{RWS}. This is where I go over the main result, highlight that I have achieved the goal. Spend some time highlighting the advantage of this new approach (in terms of operational considerations, see bullet list below) and that it is valid for other colliders.
 %     \item In \cref{chapter:ml_for_ir_coupling} talk about the machine learning approach, go over what was achieved in terms of results. Spend some time on what was not achieved, what could be done in the future. What are realistic targets for such an approach (model finding corrections, or building up on the approach of chap 3 model that could suggest optics changes to refine its predictions?).
 %     \item In \cref{chapter:other_studies} talk about the other studies in the broader concept of \gls{OMC} activities, how we could use them to tie into the approaches mentioned previously (BPMs thing could help reach the better accuracy needed for the models developed in chap 4).
 %     \item Final statement: the work presented in this thesis has contributed to the \gls{OMC} activities at the \gls{LHC} and has provided a new approach to the local \gls{IR} coupling correction. This approach has been shown to be advantageous in terms of operational considerations and has been successfully used in the \gls{LHC} during the \num{2022} commissioning. Tie into the fact that it is relevant to the other colliders. Mention both existing ones (SuperKEKB) and future ones (HLLHC, FCC, see end of PRAB paper).
@@ -35,14 +33,33 @@ The upcoming \gls{HL-LHC} upgrade is bound to drastically enhance the impact of 
 
 The objective of this work has been, in the context of contributing to the \gls{OMC} team's activities at large, to provide a new approach that can measure and correct the local \gls{IR} coupling and to experimentally determine corrections to be used in LHC operations.
 The ideal solution, which was achieved through simulations, new experimental setups, and measurements; would not impact the existing stage of local corrections that are crucial for safe operation.
-\break
 
-The first two chapters of this document provided the reader with the theoretical and technical information necessary to understand the context of this work.
-In \cref{chapter:ir_local_coupling} the 
+The first chapters of this document, \cref{chapter:theory,chapter:lhc_omc}, provided the reader with the theoretical and technical foundation necessary to understand the context of this work.
+The approach leading to the relevant quantities this work relies on, such as the \glspl{RDT} and the \glssymbol{Cminus}, was laid down.
+The specifics of both the \gls{LHC} machine and the \gls{optics} measurements were also presented, with a focus on parts relevant to \gls{betatron_coupling}.
 
-Paragraph about the experimental results.
+In \cref{chapter:ir_local_coupling} the main body of this work was presented, addressing the target of measuring and correcting the local \gls{betatron_coupling} in the LHC \glspl{IR}.
+The local coupling was introduced as the significant issue it is, and the shortcomings of the existing methods to correct it were exposed, namely the segment-by-segment technique, k-modulation and additional observables such as combined \glspl{RDT}.
+The newly developed tools for the correction - colinearity knob and \gls{RWS} - were then presented, together with the theoretical rationale behind their use and a way to determine corrections.
+The effect of each was demonstrated through extensive simulations, and an experimental setup using them to determine corrections of local coupling was laid out.
 
-Paragraph about the operation with deadge MQSX.
+Measurements with the new experimental setup in the \gls{LHC} \num{2022} commissioning, at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} =\)~\qty{30}{\centi\meter}, were presented together with the determined corrections obtained by comparing said measurements to simulations.
+These corrections were trimmed in the machine and their efficiency assessed through instantaneous \gls{luminosity} measurements.
+Great improvements in collision numbers were observed at the main \glspl{IP}: an additional \qty{9.7}{\percent} and \qty{5.2}{\percent} instantaneous luminosity at the \acrshort{ATLAS} and \acrshort{CMS} \glspl{experiment}, respectively.
+Comparison of these results to expectations from simulations revealed a disagreement, with the \acrshort{ATLAS} numbers lower than expected.
+This discrepancy was attributed to the early calibration setup of the detector, considering luminosity predictions and measurements showed great agreement at the same detector in measurements performed later in the year.
+Great agreement was observed at the \acrshort{CMS} detector.
+% Mention the garbage measurements?
+
+
+Due to radiation exposure of the corrector magnets expected to surpass their allowed limits, the impact of losing such a crucial element was studied.
+It was demonstrated through simulations that one could compensate for the loss of a single corrector magnet and guarantee both safe machine operation and squeezing of the beams down to collision configuration.
+This compensation however would happen at the cost of luminosity: up to a \qty{60}{\percent} loss of instantaneous luminosity is expected in the most affected case.
+These expectations were confirmed through beam measurements in which the loss of correctors were simulated.
+Using these numbers and taking into account the \glssymbol{betastar}-leveling as well as other parameters in the \num{2023} configuration, up to a \qty{25}{\percent} loss of integrated luminosity over a complete physics fill is expected.
+Further studies are required to determine the impact of the simultaneous loss of both correctors in a given \gls{IR} and to investigate potential solutions.
+
+% WHAT CAN BE DONE BETTER?
 
 
 
