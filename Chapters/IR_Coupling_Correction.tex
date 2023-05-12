@@ -1022,9 +1022,7 @@ Should the most powered correctors fail, the instantaneous luminosity at the aff
 Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
 
 The possible impact of this change on the aperture was also considered.
-\Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
-The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics, where the high \(\beta\)-functions make the triplet the aperture bottleneck of the machine.
-\todo{CITE APERTURE PAPER HERE}
+\Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} with the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
 
 \begin{figure}[!htb]
     \centering
@@ -1033,9 +1031,19 @@ The checks were performed for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} opti
     \label{figure:carry_over_impact_on_beam_size}
 \end{figure}
 
-The beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation through the machine, being significantly affected only in the space between left to right Q\num{1}.
+The beam sizes in the affected case are kept close to the nominal ones at less than a \qty{1}{\percent} deviation through the machine, being significantly affected only in the space between the left to right Q\num{1} quadrupoles.
 This behavior was also observed in~\cite{PRAB:Hofer:Coupling_Local_Observables} where the coupling RDTs themselves are only significantly affected in the same space for a similar trim.
-As the drift space right around the IP is not a constraint for aperture limitations, one can conclude that the aperture would not suffer from such a compensation scheme.
+\Cref{figure:lhc_ir1_30cm_apertures} shows the aperture limitations around IP\num{1} for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics, as well as representations of the beam envelopes at the same locations.
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lhc_ir1_30cm_apertures.pdf}
+    \caption{Magnets powering (top) and horizontal (middle) and vertical (bottom) aperture limitations around IP\num{1}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The \textcolor{mplb}{blue} and \textcolor{mplr}{red} shaded areas represent, in each plane, the \(3 \sigma\), \(6 \sigma\) and \(11 \sigma\) beam envelopes, from darkest to lightest respectively.}
+    \label{figure:lhc_ir1_30cm_apertures}
+\end{figure}
+
+As can be seen in \cref{figure:lhc_ir1_30cm_apertures} the triplet elements constitute the aperture bottleneck at \(\beta^{\ast} =\) \qty{30}{\centi\meter}, while the drift space right around the IP is not a constraint for aperture limitations.
+One can then conclude that the aperture would not suffer from such a compensation scheme.
 Similarly, the impact on Beam-Beam Long Range (BBLR)~\cite{PHD:Poyet} interaction should be minimal as the increase is only significant within a few meters of the IP location itself.
 
 \subsubsection*{Experimental Measurements of Carry-Over}
