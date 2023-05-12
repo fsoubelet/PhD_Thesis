@@ -1,30 +1,6 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
 
-% Suggestions from my friend ChatGPT:
-% \begin{itemize}
-%     \item Summary of Findings: Provide a concise summary of the key findings from your research. This should include both positive and negative results.
-%     \item Contribution to the Field: Discuss how your research has contributed to the existing knowledge in your field. Highlight any novel or significant contributions your research has made.
-%     \item Implications and Applications: Explain the implications and applications of your research findings. Consider how your findings could be used to solve real-world problems or inform future research.
-%     \item Limitations and Future Directions: Acknowledge any limitations of your research and suggest areas for future research that could build on your findings. What is missing? What could be done in the future? How can we build up and improve even more?
-% \end{itemize}
-
-% Actual items I am thinking of in order:
-% \begin{itemize}
-%     \item In \cref{chapter:ml_for_ir_coupling} talk about the machine learning approach, go over what was achieved in terms of results. Spend some time on what was not achieved, what could be done in the future. What are realistic targets for such an approach (model finding corrections, or building up on the approach of chap 3 model that could suggest optics changes to refine its predictions?).
-%     \item In \cref{chapter:other_studies} talk about the other studies in the broader concept of \gls{OMC} activities, how we could use them to tie into the approaches mentioned previously (BPMs thing could help reach the better accuracy needed for the models developed in chap 4).
-%     \item Final statement: the work presented in this thesis has contributed to the \gls{OMC} activities at the \gls{LHC} and has provided a new approach to the local \gls{IR} coupling correction. This approach has been shown to be advantageous in terms of operational considerations and has been successfully used in the \gls{LHC} during the \num{2022} commissioning. Tie into the fact that it is relevant to the other colliders. Mention both existing ones (SuperKEKB) and future ones (HLLHC, FCC, see end of PRAB paper).
-% \end{itemize}
-
-% Could be good points to raise in the conclusion / discussion of the PhD thesis and for future groundwork.
-% \begin{enumerate}
-%     \item Maybe something else than trimming the colin knob could be another good scenario (trim one side and change f1001 at IP differently for both beams, correct global coupling etc).
-%     \item BUT the colin means we don't change the coupling bump in the region because of phase advances (Left and Right compensate) and we can do it at high intensity!
-%     \item Probably this is not the optimal, which is one of the reasons we can't just optimize by luminosity itself with naive scans!
-%     \item For machine protection you change AS LITTLE AS POSSIBLE with high intensity -> you want the settings you have from commissioning to not be changed if possible during operations.
-%     \item Lose 2h of physics production beam time 10s of thousands in money (the RF at the moment is 10s of millions)
-% \end{enumerate}
-
 In their quest for new physics, modern particle colliders such as the \gls{LHC} are always striving to increase their \gls{luminosity} - both instantaneous and integrated - in order to reduce statistical uncertainties and increase the potential of new discoveries.
 As a result the machine is subject to constant upgrades and improvements in terms of hardware, software and operational configuration.
 In parallel to these upgrades, an ever tighter control of the \gls{beam} dynamics is necessary to ensure safe operation as well as the best possible performance out of the existing machine.
@@ -33,10 +9,12 @@ The upcoming \gls{HL-LHC} upgrade is bound to drastically enhance the impact of 
 
 The objective of this work has been, in the context of contributing to the \gls{OMC} team's activities at large, to provide a new approach that can measure and correct the local \gls{IR} coupling and to experimentally determine corrections to be used in LHC operations.
 The ideal solution, which was achieved through simulations, new experimental setups, and measurements; would not impact the existing stage of local corrections that are crucial for safe operation.
+\break 
 
 The first chapters of this document, \cref{chapter:theory,chapter:lhc_omc}, provided the reader with the theoretical and technical foundation necessary to understand the context of this work.
 The approach leading to the relevant quantities this work relies on, such as the \glspl{RDT} and the \glssymbol{Cminus}, was laid down.
 The specifics of both the \gls{LHC} machine and the \gls{optics} measurements were also presented, with a focus on parts relevant to \gls{betatron_coupling}.
+\break 
 
 In \cref{chapter:ir_local_coupling} the main body of this work was presented, addressing the target of measuring and correcting the local \gls{betatron_coupling} in the LHC \glspl{IR}.
 The local coupling was introduced as the significant issue it is, and the shortcomings of the existing methods to correct it were exposed, namely the segment-by-segment technique, k-modulation and additional observables such as combined \glspl{RDT}.
@@ -49,20 +27,38 @@ Great improvements in collision numbers were observed at the main \glspl{IP}: an
 Comparison of these results to expectations from simulations revealed a disagreement, with the \acrshort{ATLAS} numbers lower than expected.
 This discrepancy was attributed to the early calibration setup of the detector, considering luminosity predictions and measurements showed great agreement at the same detector in measurements performed later in the year.
 Great agreement was observed at the \acrshort{CMS} detector.
+The new method has the advantage of being applicable early on in commissioning with low intensity beams and without requiring a collimation setup for luminosity scans.
+Furthermore, it enables distinguishing between the two 599 beams, which could require different types of adjustments: 600 magnet realignment, orbit corrections, etc.
 % Mention the garbage measurements?
-
+% Mention the relevance to other machines here?
 
 Due to radiation exposure of the corrector magnets expected to surpass their allowed limits, the impact of losing such a crucial element was studied.
 It was demonstrated through simulations that one could compensate for the loss of a single corrector magnet and guarantee both safe machine operation and squeezing of the beams down to collision configuration.
-This compensation however would happen at the cost of luminosity: up to a \qty{60}{\percent} loss of instantaneous luminosity is expected in the most affected case.
+This compensation, however, would happen at the cost of luminosity: up to a \qty{60}{\percent} loss of instantaneous luminosity in the most affected case.
 These expectations were confirmed through beam measurements in which the loss of correctors were simulated.
 Using these numbers and taking into account the \glssymbol{betastar}-leveling as well as other parameters in the \num{2023} configuration, up to a \qty{25}{\percent} loss of integrated luminosity over a complete physics fill is expected.
-Further studies are required to determine the impact of the simultaneous loss of both correctors in a given \gls{IR} and to investigate potential solutions.
+Further studies are required for scenarios involving the simultaneous loss of both correctors in a given \gls{IR} and to investigate potential solutions.
+\break 
 
-% WHAT CAN BE DONE BETTER?
+% WHAT CAN BE DONE BETTER PARAGRAPH?
 
+\Cref{chapter:ml_local_coupling} reports on a different approach to the matter of local coupling.
+After the successful application of machine learning techniques to several other tasks in particle accelerators, including optics corrections, the possibility of using them to tackle local coupling in the \gls{LHC} \glspl{IR} was explored.
+Through extensive simulation-supported data sets, specific models were trained to predict the location of coupling sources in the form of quadrupole tilts from measured \glspl{RDT}.
+Models were obtained that achieved great prediction performance on clean data sets, reaching up to \qty{99.9}{\percent} accuracy, but did not generalize as well to realistically noisy data sets.
+As a consequence, improvements in the precision of the reconstructed \glspl{RDT} would be necessary before confidently using the models in the \gls{LHC}.
+Such improvements could be achieved with better beam instrumentation, more accurate optics reconstruction methods or other dedicated machine learning models.
+\break 
 
+\Cref{chapter:others_and_software} details additional work done in the context of the \gls{OMC} team's activities.
+Through statistical analysis, the influence of both \gls{BPM} type and \gls{beta-function} at the measuring device on the precision of the phase reconstruction in the \gls{LHC} \glspl{BPM} was determined.
+The results allowed to identify the best conditions for phase reconstruction, which could be applied in optics measurements algorithms to, for instance, select a subset of \glspl{BPM} to use for a given measurement based its requirements.
+The impact of the sextupolar contribution to the \gls{ampdet} in the \gls{LHC} was observed through simulations, and it was shown that the contribution behaved similarly to the octupolar one, exhibiting a factor \num{2} between the free and forced oscillation cases for the cross
+The substantial contribution to the \gls{OMC} team's software as well as the development of new tools was also presented, which contributed to the improvement of the optics simulations and analysis ecosystem as a whole in \acrshort{BE}-\acrshort{ABP}.
 
+% PARAGRAPH RESTATING THE OVERALL OBJECTIVES AND THE FACT THAT IT WAS ACHIEVED
+% STATE THE MAIN POSITIVE FINDINGS (THE NEW METHOD WORKS, WE MIGHT BE OK PREPARED FOR LOSING A CORRECTOR, THE ML APPROACH IS PROMISING) AND THE LESS GOOD
+% ALSO SHOULD BE MENTIONED THAT IT WAS LOOKED INTO AND THIS IS NOT ONLY AN IMPROVEMENT FOR THE LHC OPERATIONS, BUT ALSO FOR OTHER EXISTING AND FUTURE COLLIDERS
 
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
