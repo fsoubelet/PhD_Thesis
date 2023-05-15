@@ -210,7 +210,7 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
     \mathrm{M_{dip.}} = \left(
         \begin{array}{cc}
             \cos \theta                          & \rho \sin \theta \\
-            - \sin \left( \theta / \rho \right)  & \cos \theta
+            \frac{-1}{\rho} \sin \left( \theta \right)  & \cos \theta
     \end{array} \right) \text{ ,}
     \label{equation:dipole_transfer_matrix}
 \end{equation}
@@ -386,8 +386,8 @@ One can remove this dependency by performing a coordinate transformation to the 
     \end{+pmatrix}
     =
     \begin{+pmatrix}[cells={r}]
-        \frac{1}{\sqrt{\beta_z}} & \frac{\alpha_z}{\sqrt{\beta_z}} \\
-        0 & \sqrt{\beta_z}
+        \frac{1}{\sqrt{\beta_z}}        & 0 \\
+        \frac{\alpha_z}{\sqrt{\beta_z}} & \sqrt{\beta_z}
     \end{+pmatrix}
     \begin{+pmatrix}[cells={r}]
         z \\
