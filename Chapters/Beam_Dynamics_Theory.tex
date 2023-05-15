@@ -344,7 +344,12 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 \subsection{Phase Space Ellipse}
 \label{subsection:phase_space_ellipse}
 
-\todo{In 4D \(p_z\) and \(z^{\prime}\) are the same modulo a constant, but in 6D it is not the case. Could drop a line here to say that.}
+\begin{noteblock}
+    Strictly speaking, the \((z, z^{\prime})\) plane forms the \concept{trace space} for the transverse coordinate \(z\) while the \((z, p_z)\) plane forms the \concept{phase space}.
+    However, for monochromatic beams with constant momentum the angular displacement (e.g. no acceleration) \(z^{\prime}\) is linked to the transverse momentum \(p_z\) by \(p_z = \beta_r \gamma_r m_0 c z^{\prime}\), with \(m_0\) the particle's rest mass and \(\beta_r, \gamma_r\) the relativistic factors.
+    Therefore, in the following we will consider trace space and phase space as equivalent and simply refer to \textit{phase space}.
+\end{noteblock}
+
 In the linear regime all particle trajectories describe ellipses in \((z, z^{\prime})\), or \((z, p_z)\) phase space.
 The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \concept{Courant-Snyder invariant}, defines together with the \gls{Twiss_parameters} \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellipse:
 
