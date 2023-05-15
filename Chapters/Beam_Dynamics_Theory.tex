@@ -238,7 +238,7 @@ The above correspond to a \num{2}D case and should be appropriately used dependi
 For instance, for a focusing quadrupole \(\mathrm{M_{foc. quad.}}\) (\cref{equation:focusing_quad_transfer_matrix}) should be used to transform the horizontal coordinates, and since the element will be defocusing in the vertical plane \(\mathrm{M_{defoc. quad.}}\) (\cref{equation:defocusing_quad_transfer_matrix}) should be used to transform the vertical coordinates.
 
 Larger transfer matrices can be constructed in \num{4}D (or even \num{6}D when including the longitudinal coordinates) to be applied to \((x, x^{\prime}, y, y^{\prime})\) directly.
-In the uncoupled case, this corresponds to a \(4 \times 4\) matrix with the respective \num{2}D transfer matrices on the diagonal and zeros elsewhere.
+In the \concept{uncoupled} case, this corresponds to a \(4 \times 4\) matrix with the respective \num{2}D transfer matrices on the diagonal and zeros elsewhere.
 
 The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
 \begin{equation}
@@ -256,17 +256,43 @@ The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
     \label{equation:4d_transfer_matrix}
 \end{equation}
 
-\todo{Then introduce the fact that on the other diagonal it is only 0 if we have uncoupled motion. In case it is coupled, for example, with a skew quadrupole, the terms are nonzero then give the transfer matrix of a skew quadrupole (but we will talk about this later on)}
+Some elements will have non-zero terms outside the diagonal in their transfer matrix.
+This is the case of a \gls{skew} quadrupole for example, which gives a horizontal kick proportional to the vertical offset of the particle, and vice-versa.
+This leads to \concept{coupled motion} and \gls{betatron_coupling}, where the horizontal and vertical coordinates no longer evolve independently.
+The transfer matrix of a \gls{skew} quadrupole is:
 
 \begin{equation}
-    \left(\begin{array}{cccccc}
-    \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L)  \\
-    -\frac{1}{2} \sqrt{k_{1s}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & -\frac{1}{2} \sqrt{k_{1s}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L)  \\
-    \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) \\
-    -\frac{\sqrt{k_{1s}}}{2}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & -\frac{\sqrt{k_{1s}}}{2}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) \\
-    \end{array}\right)
+    \mathrm{M_{skew\ quad.}} = \begin{pmatrix}
+        M_x  & M_{xy}  \\
+        M_{yx} & M_y   \\
+    \end{pmatrix} \text{ ,}
     \label{equation:skew_quad_transfer_matrix}
 \end{equation}
+where the various \(2 \times 2\) matrices are expressed as:
+
+\begin{equation}
+    \begin{aligned}
+        M_x &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)                 &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
+            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
+        \end{pmatrix} \text{ ,} \\
+        M_{xy} &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)                &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
+            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ ,} \\
+        M_{yx} &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ ,} \\
+        M_y &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ ,}
+    \end{aligned}
+    \label{equation:skew_quad_transfer_matrix_sub_matrices}
+\end{equation}
+and \(\omega = \sqrt{k_{1s}}\) is used for clarity.
+\Gls{betatron_coupling} will be discussed in more details later on in this chapter.
 
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
