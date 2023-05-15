@@ -233,6 +233,35 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
     \label{equation:defocusing_quad_transfer_matrix}
 \end{equation}
 where \(L\) is the element length and \(\theta = L / \rho\) is the bending angle of the dipole.
+
+\todo{Talk about the fact that this is 2D, and we can switch between the appropriate matrices depending on the plane we consider (a foc. quad. in horizontal is def. in vertical so for the x coordinate we use 2.10 and for the y coordinate we use 2.11).
+We can make one big 4D matrix which is the inclusion of both (see below: Each 4x4 transfer matrix consists of two 2x2 matrices Mx, My parametrizing the transformation of the coordinates in the horizontal and the vertical planes)}
+\begin{equation}
+    \mathbf{M}=\left(\begin{array}{cc}
+    \mathbf{M}_x & \left(\begin{array}{ll}
+    0 & 0 \\
+    0 & 0
+    \end{array}\right) \\
+    \left(\begin{array}{ll}
+    0 & 0 \\
+    0 & 0
+    \end{array}\right) & \mathbf{M}_y
+    \end{array}\right)
+    \label{equation:4d_transfer_matrix}
+\end{equation}
+
+\todo{Then introduce the fact that on the other diagonal it is only 0 if we have uncoupled motion. In case it is coupled, for example, with a skew quadrupole, the terms are nonzero then give the transfer matrix of a skew quadrupole (but we will talk about this later on)}
+
+\begin{equation}
+    \left(\begin{array}{cccccc}
+    \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L)  \\
+    -\frac{1}{2} \sqrt{k_{1s}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & -\frac{1}{2} \sqrt{k_{1s}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L)  \\
+    \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) & \frac{1}{2 \sqrt{k_{1s}}}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) \\
+    -\frac{\sqrt{k_{1s}}}{2}(\sin \sqrt{k_{1s}} L+\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L-\cosh \sqrt{k_{1s}} L) & -\frac{\sqrt{k_{1s}}}{2}(\sin \sqrt{k_{1s}} L-\sinh \sqrt{k_{1s}} L) & \frac{1}{2}(\cos \sqrt{k_{1s}} L+\cosh \sqrt{k_{1s}} L) \\
+    \end{array}\right)
+    \label{equation:skew_quad_transfer_matrix}
+\end{equation}
+
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
 
@@ -511,7 +540,7 @@ Starting from the Hamiltonian equations:
 The Hamiltonian for the transverse planes for a multipole of order \(n\) is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
 
 \begin{equation}
-    \mathcal{H} = \frac{q}{p} \operatorname{Re} \left[ \left( B_n +i A_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
+    \mathcal{H}_n = \frac{q}{p} \operatorname{Re} \left[ \left( B_n +i A_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
@@ -603,10 +632,11 @@ in which, in case the \(h_n\) are small, \(h\) can be approximated as:
     \label{equation:h_thin_kick_approximation}
 \end{equation}
 
-Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in expanded terms using the action and angle variables according to:
+Using only the first order in \(h_n\), the thin kick \(h\) can be expressed in expanded terms using the action and angle variables according to~\cite{PHD:Franchi}:
+% People might fight me on this but it makes sense with my derivation and it's the expression in Franchi's thesis
 
 \begin{equation}
-    h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x - \phi_{x,0} \right) + \left(l-m\right) \left(\phi_y - \phi_{y,0} \right) \right]} \text{ ,}
+    h = \sum_{jklm} h_{jklm} \left( 2 J_x \right)^{\frac{j+k}{2}} \left( 2 J_y \right)^{\frac{l+m}{2}} e^{i \left[ \left(j-k\right) \left(\phi_x + \phi_{x,0} \right) + \left(l-m\right) \left(\phi_y + \phi_{y,0} \right) \right]} \text{ ,}
     \label{equation:h_thin_kick_expansion}
 \end{equation}
 with \(h_{jklm}\) being the \concept{Hamiltonian coefficient} encompassing the contribution of all multipoles of order \(n = j + k + l + m\). 
@@ -670,7 +700,7 @@ The generating function of the transformation \(F\) contains a large portion of 
 Similarly to \(h\) in \cref{equation:h_thin_kick_expansion}, the generating function \(F\) can be expanded in terms of the normal form coordinates according to~\cite{PHD:Franchi}:
 
 \begin{equation}
-    F = \sum_{jklm} f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}} \left(2 I_y \right)^{\frac{l+m}{2}} e^{i \left[ (j-k) \left( \psi_x - \psi_{x_0} \right) + (l-m) \left( \psi_y - \psi_{y_0} \right) \right]} \text{ ,}
+    F = \sum_{jklm} f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}} \left(2 I_y \right)^{\frac{l+m}{2}} e^{i \left[ (j-k) \left( \psi_x + \psi_{x_0} \right) + (l-m) \left( \psi_y + \psi_{y_0} \right) \right]} \text{ ,}
     \label{equation:generating_function_expansion}
 \end{equation}
 where \((I_z, \psi_z)\) are to normal form coordinates what \((J_z, \phi_z)\) are to normalized coordinates.
@@ -752,14 +782,14 @@ The inverse transformation from the new action and angle variables to the Couran
     \label{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}
 \end{equation}
 
-Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}, the linearly normalized coordinates can be expressed after \(N\) turns as~\cite{CERN:Bartolini:Normal_Form_Tracking_Beam_Data}:
+Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}, the linearly normalized coordinates can be expressed after \(N\) turns as~\cite{PHD:Franchi,CERN:Bartolini:Normal_Form_Tracking_Beam_Data}:
 
 \begin{equation}
     \begin{aligned}
-        h_x^{-}(N) & = \sqrt{2 I_x} e^{i \left( 2 \pi Q_x N - \psi_{x_0} \right)} \quad - \\
-        & \quad 2 i \sum_{jklm} j f_{jklm} \left( 2 I_x \right)^{\frac{j+k-1}{2}} \left( 2 I_y \right)^{\frac{l+m}{2}}   e^{i \left[ (1-j+k) \left( 2 \pi Q_x N - \psi_{x_0} \right) + (m-l)   \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \\
-        h_y^{-}(N) & = \sqrt{2 I_y} e^{i \left( 2 \pi Q_y N - \psi_{y_0} \right)} \quad - \\
-        & \quad 2 i \sum_{jklm} l f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}}   \left( 2 I_y \right)^{\frac{l+m-1}{2}} e^{i \left[ (k-j)   \left( 2 \pi Q_x N - \psi_{x_0} \right) + (1-l+m) \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \text{ .}
+        h_x^{-}(N) & = \sqrt{2 I_x} e^{i \left( 2 \pi Q_x N + \psi_{x_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} j f_{jklm} \left( 2 I_x \right)^{\frac{j+k-1}{2}} \left( 2 I_y \right)^{\frac{l+m}{2}}   e^{i \left[ (1-j+k) \left( 2 \pi Q_x N + \psi_{x_0} \right) + (m-l)   \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \\
+        h_y^{-}(N) & = \sqrt{2 I_y} e^{i \left( 2 \pi Q_y N + \psi_{y_0} \right)} \quad - \\
+        & \quad 2 i \sum_{jklm} l f_{jklm} \left( 2 I_x \right)^{\frac{j+k}{2}}   \left( 2 I_y \right)^{\frac{l+m-1}{2}} e^{i \left[ (k-j)   \left( 2 \pi Q_x N + \psi_{x_0} \right) + (1-l+m) \left( 2 \pi Q_y N - \psi_{y_0} \right) \right]} \text{ .}
     \end{aligned}
     \label{equation:linearly_normalized_coordinates_after_N_turns}
 \end{equation}
