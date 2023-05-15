@@ -278,6 +278,7 @@ It is the operational baseline of \Gls{run}~\num{3}.
 \label{section:lhc_operational_cycle}
 
 The \gls{LHC} operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \concept{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
+This full pre-cycle is only done after an interruption of the machine operations, such as when an intervention on an element is performed.
 During pre-cycle no beams are present in the machine and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
 The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
 
@@ -666,7 +667,7 @@ Here the \(f_{\pm}\) notation is used for concisiveness.
 
 A fully analytical compensation of the AC dipole effect can be found in~\cite{REPORT:Miyamoto:Measurement_Coupling_Resonance_Driving_Terms,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole} but will not be detailed in this document.
 A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider:NBPM_Momentum_Reconstruction_for_Linear_Coupling_RDTs}.
-\todo{Mention about the MODEL method???}
+% \todo{Mention about the MODEL method???}
 
 \subsubsection*{Single BPM}
 
@@ -701,16 +702,29 @@ For this one looks at the \(\Delta \phi\) quantity thought the segment and tries
 \end{equation}
 
 An example of a local correction of the phase advance around IP\num{5} from the LHC \num{2022} commissioning is shown in \cref{figure:example_sbs_correction}, where the phase deviation from the model values are shown across the segment together with the effect of the reconstructed errors.
-The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
-Application to the latter is detailed in the next chapter.
-This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
 \begin{figure}[!hbt]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_phase_ip5_example.pdf}
-  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. A clear error can be seen propagating.}
+  \caption{Local phase correction in IR\num{5} (vertical line indicates IP\num{5}) from the LHC \num{2022} commissioning at flat-top. The \textcolor{mplblue}{blue} line shows the measured phase deviation from model values, while the \textcolor{mplorange}{orange} line shows the effect of the reconstructed errors on the model. The \textcolor{mplgreen}{green} line shows the expected phase deviation after applying the correction.}
   \label{figure:example_sbs_correction}
 \end{figure}
+
+The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
+In the case of the coupling \glspl{RDT}, due to the lower number of magnets available for adjustment one usually tries to compensate for the \glspl{RDT} at the edges of the segment.
+One can also attempt to match for specific components of the \glspl{RDT} specifically (real and imaginary parts).
+\Cref{figure:example_sbs_correction_coupling} shows an example of a local correction of the coupling \glspl{RDT} around IP\num{2} from the LHC \num{2021} beam test.
+In this case, a good rematching at the edges of the segment means the contribution of the \gls{IR} to the rest of the machine is well compensated.]
+More details are given in the next chapter.
+
+\begin{figure}[!hbt]
+  \centering
+  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/sbs_coupling_ip2_example.pdf}
+  \caption{Local coupling RDTs correction in IR\num{2} (vertical line indicates IP\num{2}) from the LHC \num{2021} beam test. The \textcolor{mplblue}{blue} line shows the measured RDTs, while the \textcolor{mplorange}{orange} line shows the attempt at canceling the contribution at the edges of the segment with the two available correctors in the IR.}
+  \label{figure:example_sbs_correction_coupling}
+\end{figure}
+
+This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
 \subsubsection*{Global Corrections}
 
