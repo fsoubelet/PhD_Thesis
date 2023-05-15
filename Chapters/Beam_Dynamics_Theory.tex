@@ -292,7 +292,7 @@ where the various \(2 \times 2\) matrices are expressed as:
     \label{equation:skew_quad_transfer_matrix_sub_matrices}
 \end{equation}
 and \(\omega = \sqrt{k_{1s}}\) is used for clarity.
-\Gls{betatron_coupling} will be discussed in more details later on in this chapter.
+\Gls{betatron_coupling} will be discussed in more details later on, and for now only the \num{2}D case of a given plane will be considered.
 
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
@@ -314,15 +314,13 @@ where \(\mathrm{M_i}\) is the transfer matrix of the \(i\)th element in the mach
 The transformation of coordinates over a revolution is then given by:
 
 \begin{equation}
-    \left(
-        \begin{array}{c}
-            z \\
-            z^{\prime}
-        \end{array} \right)_{s_0 + C} = \mathrm{M_{OTM}} \cdot \left( 
-        \begin{array}{c}
-            z \\
-            z^{\prime}
-    \end{array} \right)_{s_0} \text{ .}
+    \begin{pmatrix}
+        z \\
+        z^{\prime}
+    \end{pmatrix}_{s_0 + C} = \mathrm{M_{OTM}} \cdot \begin{pmatrix}
+        z \\
+        z^{\prime}
+    \end{pmatrix}_{s_0} \text{ .}
     \label{equation:one_turn_coordinates_transformation}
 \end{equation}
 
@@ -362,19 +360,15 @@ The \(\alpha_z(s)\), \(\beta_z(s)\), \(\gamma_z(s)\) and \(\phi_z(s)\) are also 
 The transfer matrix can be expressed with Twiss parameters according to~\cite{AOP:COURANT:Theory_Alternating_Gradient_Synchrotron}:
 
 \begin{equation}
-    \mathrm{M} = 
-    \left( 
-    \begin{array}{ll}
+    \mathrm{M} = \begin{pmatrix}
         m_{11} & m_{12} \\
         m_{21} & m_{22}
-    \end{array} \right) 
+    \end{pmatrix}
     = 
-    \left(
-    \begin{array}{cc}
-        \cos \left( \phi_z \right) + \alpha_z \sin \left( \phi_z \right) & \beta_z \sin \left( \phi_z \right) \\
-        - \gamma_z \sin \left( \phi_z \right)                            & \cos \left( \phi_z \right) - \alpha_z \sin \left( \phi_z \right)
-    \end{array} 
-    \right) \text{ ,}
+    \begin{pmatrix}
+        \cos \left( \phi_z \right) + \alpha_z \sin \left( \phi_z \right)  &  \beta_z \sin \left( \phi_z \right) \\
+        - \gamma_z \sin \left( \phi_z \right)                             &  \cos \left( \phi_z \right) - \alpha_z \sin \left( \phi_z \right)
+    \end{pmatrix} \text{ ,}
     \label{equation:transfer_matrix_twiss_parameters}
 \end{equation}
 where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
