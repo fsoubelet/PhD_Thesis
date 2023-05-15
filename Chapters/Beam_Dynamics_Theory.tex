@@ -198,55 +198,61 @@ In this form, which makes the assumption that the magnetic field of an element i
 Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively:
 
 \begin{equation}
-    \mathrm{M_{drift}} = \left(
-        \begin{array}{ll}
+    \mathrm{M_{drift}} = 
+        \begin{pmatrix}
             1 & L \\
             0 & 1
-    \end{array} \right) \text{ ,}
+        \end{pmatrix} \text{ ,}
     \label{equation:drift_transfer_matrix}
 \end{equation}
 
 \begin{equation}
-    \mathrm{M_{dip.}} = \left(
-        \begin{array}{cc}
-            \cos \theta                          & \rho \sin \theta \\
+    \mathrm{M_{dip.}} = 
+        \begin{pmatrix}
+            \cos \theta                                 & \rho \sin \theta \\
             \frac{-1}{\rho} \sin \left( \theta \right)  & \cos \theta
-    \end{array} \right) \text{ ,}
+        \end{pmatrix} \text{ ,}
     \label{equation:dipole_transfer_matrix}
 \end{equation}
 
 \begin{equation}
-    \mathrm{M_{foc. quad.}} = \left(
-        \begin{array}{cc}
+    \mathrm{M_{foc. quad.}} = 
+        \begin{pmatrix}
             \cos \left( \sqrt{k_1} L \right)             & \frac{1}{\sqrt{k_1}} \sin \left( \sqrt{k_1} L \right) \\
             -\sqrt{k_1} \sin \left( \sqrt{k_1} L \right) & \cos \left( \sqrt{k_1} L \right)
-    \end{array} \right) \text{ ,}
+        \end{pmatrix} \text{ ,}
     \label{equation:focusing_quad_transfer_matrix}
 \end{equation}
 
 \begin{equation}
-    \mathrm{M_{defoc. quad.}} = \left(
-        \begin{array}{cc}
-            \cosh \left( \sqrt{\abs{k_1}} L \right)                 & \frac{1}{\sqrt{\abs{k_1}}} \sinh \left( \sqrt{\abs{k_1}} L \right) \\
+    \mathrm{M_{defoc. quad.}} = 
+        \begin{pmatrix}
+            \cosh \left( \sqrt{\abs{k_1}} L \right)                  & \frac{1}{\sqrt{\abs{k_1}}} \sinh \left( \sqrt{\abs{k_1}} L \right) \\
             \sqrt{\abs{k_1}} \sinh \left( \sqrt{\abs{k_1}} L \right) & \cosh \left( \sqrt{\abs{k_1}} L \right)
-    \end{array} \right) \text{ ,}
+        \end{pmatrix} \text{ ,}
     \label{equation:defocusing_quad_transfer_matrix}
 \end{equation}
 where \(L\) is the element length and \(\theta = L / \rho\) is the bending angle of the dipole.
 
-\todo{Talk about the fact that this is 2D, and we can switch between the appropriate matrices depending on the plane we consider (a foc. quad. in horizontal is def. in vertical so for the x coordinate we use 2.10 and for the y coordinate we use 2.11).
-We can make one big 4D matrix which is the inclusion of both (see below: Each 4x4 transfer matrix consists of two 2x2 matrices Mx, My parametrizing the transformation of the coordinates in the horizontal and the vertical planes)}
+The above correspond to a \num{2}D case and should be appropriately used depending on the plane.
+For instance, for a focusing quadrupole \(\mathrm{M_{foc. quad.}}\) (\cref{equation:focusing_quad_transfer_matrix}) should be used to transform the horizontal coordinates, and since the element will be defocusing in the vertical plane \(\mathrm{M_{defoc. quad.}}\) (\cref{equation:defocusing_quad_transfer_matrix}) should be used to transform the vertical coordinates.
+
+Larger transfer matrices can be constructed in \num{4}D (or even \num{6}D when including the longitudinal coordinates) to be applied to \((x, x^{\prime}, y, y^{\prime})\) directly.
+In the uncoupled case, this corresponds to a \(4 \times 4\) matrix with the respective \num{2}D transfer matrices on the diagonal and zeros elsewhere.
+
+The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
 \begin{equation}
-    \mathbf{M}=\left(\begin{array}{cc}
-    \mathbf{M}_x & \left(\begin{array}{ll}
-    0 & 0 \\
-    0 & 0
-    \end{array}\right) \\
-    \left(\begin{array}{ll}
-    0 & 0 \\
-    0 & 0
-    \end{array}\right) & \mathbf{M}_y
-    \end{array}\right)
+    \mathrm{M} = \begin{pmatrix}
+        \mathrm{M_{foc. quad.}} & \begin{pmatrix}
+                                    0 & 0 \\
+                                    0 & 0
+                                  \end{pmatrix} \\
+            
+        \begin{pmatrix}
+            0 & 0 \\
+            0 & 0
+        \end{pmatrix}           & \mathrm{M_{defoc. quad.}}
+        \end{pmatrix} \text{ .}
     \label{equation:4d_transfer_matrix}
 \end{equation}
 
