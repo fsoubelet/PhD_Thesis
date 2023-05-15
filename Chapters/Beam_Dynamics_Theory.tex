@@ -259,40 +259,8 @@ The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
 Some elements will have non-zero terms outside the diagonal in their transfer matrix.
 This is the case of a \gls{skew} quadrupole for example, which gives a horizontal kick proportional to the vertical offset of the particle, and vice-versa.
 This leads to \concept{coupled motion} and \gls{betatron_coupling}, where the horizontal and vertical coordinates no longer evolve independently.
-The transfer matrix of a \gls{skew} quadrupole is:
-
-\begin{equation}
-    \mathrm{M_{skew\ quad.}} = \begin{pmatrix}
-        M_x  & M_{xy}  \\
-        M_{yx} & M_y   \\
-    \end{pmatrix} \text{ ,}
-    \label{equation:skew_quad_transfer_matrix}
-\end{equation}
-where the various \(2 \times 2\) matrices are expressed as:
-
-\begin{equation}
-    \begin{aligned}
-        M_x &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)                 &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
-            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
-        \end{pmatrix} \text{ ,} \\
-        M_{xy} &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)                &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
-            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
-        \end{pmatrix} \text{ ,} \\
-        M_{yx} &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
-            -\frac{\omega}{2} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
-        \end{pmatrix} \text{ ,} \\
-        M_y &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
-            -\frac{\omega}{2} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)
-        \end{pmatrix} \text{ ,}
-    \end{aligned}
-    \label{equation:skew_quad_transfer_matrix_sub_matrices}
-\end{equation}
-and \(\omega = \sqrt{k_{1s}}\) is used for clarity.
-\Gls{betatron_coupling} will be discussed in more details later on, and for now only the \num{2}D case of a given plane will be considered.
+Betatron coupling will be discussed in more details later on, and for now only the \num{2}D case of a given plane will be considered.
+\break
 
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
@@ -376,6 +344,7 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 \subsection{Phase Space Ellipse}
 \label{subsection:phase_space_ellipse}
 
+\todo{In 4D \(p_z\) and \(z^{\prime}\) are the same modulo a constant, but in 6D it is not the case. Could drop a line here to say that.}
 In the linear regime all particle trajectories describe ellipses in \((z, z^{\prime})\), or \((z, p_z)\) phase space.
 The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \concept{Courant-Snyder invariant}, defines together with the \gls{Twiss_parameters} \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellipse:
 
@@ -913,24 +882,57 @@ An example of a normal and skew quadrupole is given in \cref{figure:normal_vs_sk
 \label{subsection:parametrization_of_betatron_coupling}
 
 There are different ways to parametrize coupled motion in a particle accelerator, the two most common being the Edwards-Teng~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion} and Mais-Ripken~\cite{AIP:Willeke:Methods_Beam_Optics} parametrizations.
-For coupled motion a dependency between the horizontal and vertical planes is introduced, and as such the transverse motions can no longer be described by two independent \(2 * 2\) matrices.
-Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\):
+For coupled motion a dependency between the horizontal and vertical planes is introduced, and as mentioned in \cref{subsection:equations_of_motion_and_twiss_parameters} the transverse motions can no longer be described by two independent \(2 * 2\) matrices.
+Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\) such that
 
 \begin{equation}
-    \hat{\mathbf{M}} = \left(
-        \begin{array}{ll}
-            \mathbf{P} & \mathbf{p} \\
-            \mathbf{q} & \mathbf{Q}
-    \end{array} \right) \text{ ,}
+    \hat{\mathbf{M}} = \begin{pmatrix}
+        \mathbf{P} & \mathbf{p} \\
+        \mathbf{q} & \mathbf{Q}
+    \end{pmatrix} \text{ ,}
     \label{equation:coupled_motion_matrix}
 \end{equation}
 where \(\mathbf{P}\), \(\mathbf{p}\), \(\mathbf{q}\) and \(\mathbf{Q}\) are \(2 \times 2\) matrices.
 In the absence of \gls{betatron_coupling}, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
+Magnetic elements introducing coupling between the horizontal and vertical planes have non-zero terms in the respective \(\mathbf{p}\) and \(\mathbf{q}\) of their transfer matrices.
+For instance, the transfer matrix of a \gls{skew} quadrupole is:
+
+\begin{equation}
+    \mathrm{M_{skew\ quad.}} = \begin{pmatrix}
+        M_x  & M_{xy}  \\
+        M_{yx} & M_y   \\
+    \end{pmatrix} \text{ ,}
+    \label{equation:skew_quad_transfer_matrix}
+\end{equation}
+where, using \(\omega = \sqrt{k_{1s}}\) for clarity, the various \(2 \times 2\) matrices are expressed as:
+
+\begin{equation}
+    \begin{aligned}
+        M_x &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)                 &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
+            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
+        \end{pmatrix} \text{ ,} \\
+        M_{xy} &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)                &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
+            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ ,} \\
+        M_{yx} &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ ,} \\
+        M_y &= \begin{pmatrix}
+            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)
+        \end{pmatrix} \text{ .}
+    \end{aligned}
+    \label{equation:skew_quad_transfer_matrix_sub_matrices}
+\end{equation}
 
 \subsubsection*{Edwards-Teng Parametrization}
 
-In the Edwards-Teng parametrization presented in~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion}, the linear coupling is described by a symplectic rotation \(\mathbf{R}\) of \(\hat{\mathbf{M}}\) into its normal modes form \(\overline{\mathbf{M}}\), as shown in \cref{equation:edwards_teng_parametrization}.
-In this frame the motion is decoupled.
+The effect of \gls{betatron_coupling} can, figuratively, be seen as a rotation of the beam ellipse.
+In the Edwards-Teng parametrization presented in~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion}, the linear coupling is then described by a symplectic rotation \(\mathbf{R}\) of \(\hat{\mathbf{M}}\) into its normal modes form \(\overline{\mathbf{M}}\), as shown in \cref{equation:edwards_teng_parametrization}.
+In this new frame the motion is decoupled, and all the information on the coupling is held by the matrix \(\mathbf{R}\).
 
 \begin{equation}
     \overline{\mathbf{M}} = \left(
