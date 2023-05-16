@@ -863,16 +863,21 @@ From these, instantaneous luminosities were determined according to \cref{equati
 \end{figure}
 
 While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, strong discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.5} between the measurement and prediction is present.
-This discrepancy suggests that - at least around IP\num{1} - the colinearity knob adjustment doesn't tell the full story and some other effects are at play.
-Several reasons - and most likely an interplay of them all - could explain the discrepancy:
-\begin{itemize}
-    \item The luminosity calculation of \cref{equation:luminosity_double_beams} is a simplified model which does not take in consideration effects present in the machine, such as crossing angles.
-    \item Some waist shift may be left in the machine at IP\num{1} from non-perfect corrections, leading to a lower luminosity than may be expected from simulations not including the effect.
-    \item One of the beams may be subject to a strong coupling error in an individually powered magnet in the area such as Q\num{8} which would not be felt by the other beam, meaning the colinearity knob trim is an overall good correction that however degrades one of the beams.
-    \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
-\end{itemize}
+This discrepancy suggests that - at least around IP\num{1} - the colinearity knob adjustment doesn't tell the full story and some other effects might be at play.
 
-\todo{Above listing is "a bit hand wavy" according to Tobias, go over again. Can also make a ref to next section (MQSX deaths) and the measurements there as we trust them more than those above}
+\begin{warningblock}
+    As will be seen later on in \cref{section:limited_correctors_availability}, similar measurements show a much better agreement with simulation predictions using the same calculations as in \cref{figure:expected_vs_observed_lumigains}. 
+    Those similar measurements were taken later on in the year, with higher intensity beams - leading to a higher quality of the \gls{luminosity} signal - and better detector setup and calibration.
+    This leads us to believe the IP\num{1} luminosity measurement in \cref{figure:expected_vs_observed_lumigains} might be an underestimation of the actual values, though it is not expected that the full discrepancy would be explained by this.
+\end{warningblock}
+
+% Several reasons - and most likely an interplay of them all - could explain the discrepancy:
+% \begin{itemize}
+%     \item The luminosity calculation of \cref{equation:luminosity_double_beams} is a simplified model which does not take in consideration effects present in the machine, such as crossing angles.
+%     \item Some waist shift may be left in the machine at IP\num{1} from non-perfect corrections, leading to a lower luminosity than may be expected from simulations not including the effect.
+%     \item One of the beams may be subject to a strong coupling error in an individually powered magnet in the area such as Q\num{8} which would not be felt by the other beam, meaning the colinearity knob trim is an overall good correction that however degrades one of the beams.
+%     \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
+% \end{itemize}
 
 \section{Relevance to Other Colliders}
 
