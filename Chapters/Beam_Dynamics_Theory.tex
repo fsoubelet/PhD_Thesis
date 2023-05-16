@@ -874,9 +874,21 @@ In the \gls{LHC} the main contribution to coupling comes from unwanted skew quad
 These mostly arise from normal quadrupoles mounted with a rotation error with respect to the longitudinal axis, but also from field imperfection from other magnets and feed-down from higher order magnets.
 An example of a normal and skew quadrupole is given in \cref{figure:normal_vs_skew_quadrupole}.
 
-\begin{figure}[!htb]
+\begin{figure}[!hbt]
     \centering
-    \includegraphics[width=\linewidth]{Figures/Beam_Dynamics_Theory/bfield_multipole_order_2.pdf}
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/bfield_normal_multipole_order_2.pdf}
+        \caption{Normal quadrupole.}
+        \label{subfigure:normal_quadrupole}
+    \end{subfigure}
+    \hfill
+    \begin{subfigure}[b]{0.49\textwidth}
+        \centering
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/bfield_skew_multipole_order_2.pdf}
+        \caption{Skew quadrupole.}
+        \label{subfigure:skew_quadrupole}
+    \end{subfigure}
     \caption{Illustration of a \gls{normal} (left) and \gls{skew} (right) magnetic quadrupole and their magnetic field lines.}
     \label{figure:normal_vs_skew_quadrupole}
 \end{figure}
