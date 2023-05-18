@@ -1087,8 +1087,6 @@ Assuming that the machine is close to the difference coupling resonance \(\Delta
 \end{equation}
 where \(s\) is the position around the ring, \(\beta_{x,y}\) are the horizontal and vertical \(\beta\)-functions, \(\phi_{x,y}\) are the phase advances and \(R\) is the radius of the machine.
 
-% \todo{I think I would like to mention something about~\cite{PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches} before ending this section.}
-
 \section{Luminosity}
 \label{section:luminosity}
 
@@ -1116,30 +1114,18 @@ where \(f_{\mathrm{rev}}\) is the revolution frequency of particle bunches, \(N_
 For Gaussian bunches colliding with a \concept{crossing angle} \(\theta\), where \(\sigma_s \gg \sigma_{x,y}\) and neglecting other contributions, the luminosity reduction factor is approximated by~\cite{CERN:Herr:Concept_Luminosity}:
 
 \begin{equation}
-    S \approx \frac{1}{\sqrt{1 + \left( \frac{\theta}{2} \frac{\sigma_s}{\sigma_x} \right)^2}} \text{ ,}
+    S \approx \frac{1}{\sqrt{1 + \left( \frac{\theta}{2} \frac{\sigma_s}{\sigma_x} \right)^2}} \text{ .}
     \label{equation:luminosity_reduction_factor}
 \end{equation}
-
+\\
 The luminosity can be influenced by the local presence of \gls{betatron_coupling} through its impact on beam size, as will be discussed in \cref{chapter:ir_local_coupling}.
-
 As seen in \cref{equation:gaussian_beam_transverse_beam_size} the beam sizes directly depend on the \(\beta\)-function at the \gls{IP}, \glssymbol{betastar}, which then defines the collider's performance from the point of view of the optics.
-Indeed, the smaller the \(\beta^{\ast}\) the smaller the beam sizes, and the more collisions will be produced per bunch crossing. 
-
-% The downside to small beam sizes, which is a direct consequence of the \concept{Louiville theorem}, is that they cause large beam divergence.
-% This is illustrated by the evolution of the \(\beta\)-function in the drift space around the IP:
-
-% \begin{equation}
-    % \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}}
-    % \label{equation:betafunction_drift_space}
-% \end{equation}
-% where here \(s\) is the distance from the IP.
-% As usually collisions are made to happen in the centre of large particle detectors, there is no space near the IP to place quadrupoles to keep the \(\beta\)-functions low, hence the presence of a substantial drift space.
-% The experimental \glspl{IR} will be discussed in more details in \cref{section:lhc_lattice}.
+Indeed, the smaller the \(\beta^{\ast}\) the smaller the beam sizes, and the more collisions will be produced per bunch crossing.
 
 The \concept{integrated luminosity}, the accumulated luminosity over a given period of time, is given by:
 
 \begin{equation}
-    \mathcal{L}_{\mathrm{int}} = \int_{t_1}^{t_2} \mathcal{L} \mathrm{d}t \text{ ,}
+    \mathcal{L}_{\mathrm{int}} = \int_{t_1}^{t_2} \mathcal{L} \mathrm{d}t \text{ .}
     \label{equation:integrated_luminosity}
 \end{equation}
 
