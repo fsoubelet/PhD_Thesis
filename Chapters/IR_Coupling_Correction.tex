@@ -862,23 +862,14 @@ From these, instantaneous luminosities were determined according to \cref{equati
     \label{figure:expected_vs_observed_lumigains}
 \end{figure}
 
-While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, strong discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.5} between the measurement and prediction is present.
-This discrepancy suggests that - at least around IP\num{1} - the colinearity knob adjustment doesn't tell the full story and some other effects might be at play.
+While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, some discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.26} between the measurement and prediction is present.
 
 \begin{warningblock}
     As will be seen later on in \cref{section:limited_correctors_availability}, similar measurements show a much better agreement with simulation predictions using the same calculations as in \cref{figure:expected_vs_observed_lumigains}. 
     Those similar measurements were taken later on in the year, with higher intensity beams - leading to a higher quality of the \gls{luminosity} signal - and better detector setup and calibration.
-    This leads us to believe the IP\num{1} luminosity measurement in \cref{figure:expected_vs_observed_lumigains} might be an underestimation of the actual values, though it is not expected that the full discrepancy would be explained by this.
+    This leads us to believe the IP\num{1} luminosity measurement in \cref{figure:expected_vs_observed_lumigains} might be an underestimation of the actual values.
+    The expected value for the IR\num{1} trim, from measurements presented in \cref{section:limited_correctors_availability}, would be an \qty{11.6}{\percent} luminosity increase at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 \end{warningblock}
-
-\todo{Still give a few (currently commented out) reasons?}
-% Several reasons - and most likely an interplay of them all - could explain the discrepancy:
-% \begin{itemize}
-%     \item The luminosity calculation of \cref{equation:luminosity_double_beams} is a simplified model which does not take in consideration effects present in the machine, such as crossing angles.
-%     \item Some waist shift may be left in the machine at IP\num{1} from non-perfect corrections, leading to a lower luminosity than may be expected from simulations not including the effect.
-%     \item One of the beams may be subject to a strong coupling error in an individually powered magnet in the area such as Q\num{8} which would not be felt by the other beam, meaning the colinearity knob trim is an overall good correction that however degrades one of the beams.
-%     \item Some vertical dispersion may be present at IP\num{1} which leads to an effective emittance higher in the vertical plane, making the tilt of the beam ellipse have a non-negligible impact on collision numbers.
-% \end{itemize}
 
 \section{Relevance to Other Colliders}
 
@@ -1049,7 +1040,7 @@ This behavior was also observed in~\cite{PRAB:Hofer:Coupling_Local_Observables} 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lhc_ir1_30cm_apertures.pdf}
-    \caption{Magnets powering (top) and horizontal (middle) and vertical (bottom) aperture limitations around IP\num{1}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The \textcolor{mplb}{blue} and \textcolor{mplr}{red} shaded areas represent, in each plane, the \(3 \sigma\), \(6 \sigma\) and \(11 \sigma\) beam envelopes, from darkest to lightest respectively.}
+    \caption{Magnets powering (top) and horizontal (middle) and vertical (bottom) aperture limitations around IP\num{1}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The \textcolor{mplb}{blue} and \textcolor{mplr}{red} shaded areas represent, in each plane, the \(3 \sigma\), \(6 \sigma\) and \(11 \sigma\) beam envelopes, from darkest to lightest respectively. The grey blocks represent the physical locations of various elements.}
     \label{figure:lhc_ir1_30cm_apertures}
 \end{figure}
 
@@ -1065,8 +1056,8 @@ Carrying over the correction to the left magnet was not done due to time constra
 
 \begin{noteblock}
     These are the IP\num{1} measurements mentioned in \cref{subsection:lumi_vs_expectations}, where a good agreement with expectations is observed.
-    As one can see on \cref{figure:ir1_carry_over_vs_simulation}, the luminosity change from a \num{3.5} units trim of the colinearity knob (from \num{0} to \num{3.5} on the horizontal) leads to a \qty{11.6}{\percent} increase in the instantaneous luminosity.
-    This value is higher than the \qty{9.7}{\percent} initially measured for an identical trim, and closer to the \qty{16}{\percent} expected in \cref{figure:expected_vs_observed_lumigains}.
+    As one can see on \cref{figure:ir1_carry_over_vs_simulation}, the luminosity change from a \num{3.5} units trim of the colinearity knob (from \num{0} to \num{3.5} on the horizontal) leads to an \qty{11.6}{\percent} increase in the instantaneous luminosity.
+    This value is higher than the \qty{9.7}{\percent} initially measured for an identical trim, and closer to the \qty{12.25}{\percent} expected in \cref{figure:expected_vs_observed_lumigains}.
 \end{noteblock}
 
 \begin{figure}[!htb]
