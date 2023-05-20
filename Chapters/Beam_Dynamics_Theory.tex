@@ -245,9 +245,9 @@ The above correspond to a \num{2}D case and should be appropriately used dependi
 For instance, for a focusing quadrupole \(\mathrm{M_{foc. quad.}}\) (\cref{equation:focusing_quad_transfer_matrix}) should be used to transform the horizontal coordinates, and since the element will be defocusing in the vertical plane \(\mathrm{M_{defoc. quad.}}\) (\cref{equation:defocusing_quad_transfer_matrix}) should be used to transform the vertical coordinates.
 
 Larger transfer matrices can be constructed in \num{4}D (or even \num{6}D when including the longitudinal coordinates) to be applied to \((x, x^{\prime}, y, y^{\prime})\) directly.
-In the \concept{uncoupled} case, this corresponds to a \(4 \times 4\) matrix with the respective \num{2}D transfer matrices on the diagonal and zeros elsewhere.
+In the uncoupled case, this corresponds to a \(4 \times 4\) matrix with the respective \num{2}D transfer matrices on the diagonal and zeros elsewhere.
+The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then expressed as:
 
-The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
 \begin{equation}
     \mathrm{M} = \begin{pmatrix}
         \mathrm{M_{foc. quad.}} & \begin{pmatrix}
@@ -262,12 +262,12 @@ The \num{4}D transfer matrix of a \gls{normal} focusing quadrupole is then:
         \end{pmatrix} \text{ .}
     \label{equation:4d_transfer_matrix}
 \end{equation}
+\vspace{0.5mm}
 
 Some elements will have non-zero terms outside the diagonal in their transfer matrix.
 This is the case of a \gls{skew} quadrupole for example, which gives a horizontal kick proportional to the vertical offset of the particle, and vice-versa.
-This leads to \concept{coupled motion} and \gls{betatron_coupling}, where the horizontal and vertical coordinates no longer evolve independently.
+This leads to \concept{coupled motion}, or \gls{betatron_coupling}, where the horizontal and vertical coordinates no longer evolve independently.
 Betatron coupling will be discussed in more details later on, and for now only the \num{2}D case of a given plane will be considered.
-\break
 
 The transfer matrix of a group of elements is obtained by multiplying the transfer matrices of all individual elements.
 For example, the transfer matrix corresponding to the FODO cell of \cref{figure:fodo_cell_schematic} is:
