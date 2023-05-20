@@ -7,14 +7,14 @@ For a more complete treatment of relevant accelerator physics the reader is best
 Most of the material in this section can be found in the aforementioned literature, and when not in these works explicit references to the relevant content are given.
 
 This chapter starts out with a description of linear dynamics and a parametrization of turn-by-turn motion in a circular accelerator.
-It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion, then follows with an introduction to \gls{betatron_coupling} and ends with a discussion of luminosity.
+It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion, then follows with an introduction to \gls{betatron_coupling} and ends with a discussion of \gls{luminosity}.
 
 %----------------------------------------------------------------------------------------
 
 \section{Linear Beam Dynamics}
 \label{section:linear_beam_dynamics}
 
-The linear dynamics of an accelerator are, mainly, the endeavor to bend and focus particle beams to confine them within the machine's aperture.
+The linear dynamics of an accelerator are, mainly, the endeavor to bend and focus particle \glspl{beam} to confine them within the machine's aperture.
 
 \subsection{Transport and Guiding of Charged Particles}
 \label{subsection:transport_and_guiding_of_charged_particles}
@@ -66,27 +66,26 @@ The guiding magnetic field can be expanded into a series of multipolar fields, f
 
 Bending forces are supplied by dipole magnets with a magnetic field perpendicular to the beam trajectory, while focusing is typically performed with the use of quadrupole magnets.
 Higher orders belong to the non-linear dynamics and will be discussed later on in this chapter.
-\Cref{figure:frenet_serret_system} illustrates the Frenet-Serret coordinate system traditionally used in linear beam dynamics.
+\Cref{figure:frenet_serret_system} illustrates the \concept{Frenet-Serret coordinate system} traditionally used in linear beam dynamics.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width = 0.8\linewidth]{Figures/Beam_Dynamics_Theory/Frenet_Serret_Coordinate_System.png}
+    \includegraphics[width=0.9\linewidth]{Figures/Beam_Dynamics_Theory/Frenet_Serret_Coordinate_System.png}
     \caption{The Frenet-Serret coordinate system used in accelerator physics. Here \(\hat{x}\), \(\hat{y}\), and \(\hat{s}\) form the right-handed orthogonal basis, while \(\rho\) is the local bending radius.}
     \label{figure:frenet_serret_system}
 \end{figure}
 
 The coordinate system travels longitudinally with the particle, along a reference trajectory defined by an ideal, or \gls{synchronous}, particle.
 The longitudinal curvilinear coordinate is \(s\), and denotes the position of the particle along the ideal orbit with respect to an arbitrary initial point at \(s = 0\).
-One can define a local radius of curvature, \(\rho(s)\), which depends on the local magnetic field \(\vec{B}\) and varies along ring.
-The transverse phase space is defined by \((x, x^{\prime}, y, y^{\prime})\), where \(x\) and \(y\) are a particle's coordinates in the transverse planes relative to the reference trajectory.
+One can define a local radius of curvature, \(\rho(s)\), which depends on the local magnetic field \(\vec{B}\) and varies along the ring.
+The transverse \concept{phase space} is defined by \((x, x^{\prime}, y, y^{\prime})\), where \(x\) and \(y\) are a particle's coordinates in the transverse planes relative to the reference trajectory.
 The \(x^{\prime}\) and \(y^{\prime}\) coordinates are divergent angles, with the prime indicating differentiation with respect to \(s\).
-\break
 
 In the linear regime, magnetic dipoles define the ideal orbit for a particle of \concept{reference momentum} \(p_0\).
 This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called the \gls{closed_orbit}.
-In practice the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors.
+In practice however the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors, and the two are distinct.
 Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
-This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit is shown in blue and an actual particle orbit in red.
+This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit, a closed orbit and an actual particle trajectory are shown.
 
 \begin{figure}[!htb]
     \centering
