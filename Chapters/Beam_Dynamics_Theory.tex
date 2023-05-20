@@ -99,7 +99,7 @@ As a convention, a quadrupole focusing in the horizontal plane and defocusing in
 Respectively, a quadrupole defocusing in the horizontal plane but focusing in the vertical one is referred to as a \concept{defocusing quadrupole}.
 
 A net focusing effect in both planes can be obtained with a setup of quadrupoles of alternating polarity in equal distance, a widely used configuration named the \concept{FODO cell}.
-A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an idealized dipole and quadrupole.
+A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \cref{figure:dipole_quadrupole_fields} illustrates magnetic fields in an \gls{LHC} dipole and quadrupole.
 
 \begin{figure}[!htb]
     \centering
@@ -108,34 +108,41 @@ A schematic of a FODO cell is shown in \cref{figure:fodo_cell_schematic}, and \c
     \label{figure:fodo_cell_schematic}
 \end{figure}
 
-For each magnet applying a field \(B\) one can define the \gls{beam-rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
+For each magnet applying a field \(B\) one can define the \gls{beam-rigidity} \glssymbol{beam-rigidity}, which is an indication of the field's ability to alter a particle's course based on its charge \(q\) and momentum \(p\), as:
 
 \begin{equation}
-    B \rho = \frac{p}{q} \text{ .}
+    \mathrm{B} \rho = \frac{p}{q} \text{ .}
     \label{equation:magnetic_rigidity}
 \end{equation}
 
 \begin{figure}[!hbt]
     \centering
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.495\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
-        \caption{Ideal dipole.}
-        \label{fig:ideal_dipole}
+        % \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_dipole_cos_theta.png}
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/lhc_costheta_dipole.pdf}
+        \caption{Magnetic dipole.}
+        \label{fig:magnetic_dipole}
     \end{subfigure}
     \hfill
-    \begin{subfigure}[b]{0.45\textwidth}
+    \begin{subfigure}[b]{0.485\textwidth}
         \centering
-        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
-        \caption{Ideal quadrupole.}
-        \label{fig:ideal_quadrupole}
+        % \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/ideal_quadrupole_cos_2theta.png}
+        \includegraphics[width=\textwidth]{Figures/Beam_Dynamics_Theory/lhc_cos2theta_quadrupole.pdf}
+        \caption{Magnetic quadrupole.}
+        \label{fig:magnetic_quadrupole}
     \end{subfigure}
-    \caption{Magnetic fields and forces in an idealized dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Current in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
+    \caption{Magnetic fields and forces in a dipole and a quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Currents in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
 \end{figure}
 
 \subsection{Equations of Motion and Twiss Parameters}
 \label{subsection:equations_of_motion_and_twiss_parameters}
+
+\begin{noteblock}
+    The dynamics described in the material below apply similarly for both transverse planes.
+    From now on, for clarity of the exposed expressions \(z\) will be used to denote either \(x\) or \(y\), and when explicitly needed a distinction will be made between the two transverse planes.
+\end{noteblock}
 
 The focusing from quadrupoles in a circular accelerator such as the \gls{LHC} is periodic in \(s\), with a period of at most the circumference of the machine.
 Assuming the existence of a \gls{closed_orbit}, the transverse motion of a single particle in a synchrotron with a periodic lattice is described by Hill's equation:
@@ -144,7 +151,8 @@ Assuming the existence of a \gls{closed_orbit}, the transverse motion of a singl
     z^{\prime \prime}(s) + K_z(s) z(s) = 0; \quad z = x, y; \quad z^{\prime} = \dfrac{dz}{ds} \text{ ,}
     \label{equation:hill_equation}
 \end{equation}
-where \(K_z\) represents the focusing effect of dipoles and quadrupoles in the transverse planes, and varies with \(s\) as it is dictated by magnetic elements traversed by particles.
+where \(K_z\) represents the focusing effect of dipoles and quadrupoles in the transverse plane \(z\) and varies with \(s\) given that it is dictated by the magnetic elements traversed by particles.
+
 It can be expressed according to:
 
 \begin{equation}
@@ -157,11 +165,6 @@ It can be expressed according to:
 where \(k_1(s)\) is the normalized quadrupole strength.
 A \concept{focusing quadrupole} has a \(K > 0\), a \concept{defocusing quadrupole} has \(K < 0\), and a drift space has \(K = 0\).
 The term \(\left(1 / \rho^2\right)\) in the horizontal component arises from the weak focusing caused by dipoles.
-
-\begin{noteblock}
-    The dynamics described in the material below apply similarly for both transverse planes.
-    From now on, for clarity of the exposed expressions \(z\) will be used to denote either \(x\) or \(y\).
-\end{noteblock}
 
 According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the solution with periodic boundary conditions to Hill’s equation takes the form of \cref{equation:hill_solution}:
 
@@ -345,7 +348,7 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 
 \begin{noteblock}
     Strictly speaking, the \((z, z^{\prime})\) plane forms the \concept{trace space} for the transverse coordinate \(z\) while the \((z, p_z)\) plane forms the \concept{phase space}.
-    However, for monochromatic beams with constant momentum the angular displacement (e.g. no acceleration) \(z^{\prime}\) is linked to the transverse momentum \(p_z\) by \(p_z = \beta_r \gamma_r m_0 c z^{\prime}\), with \(m_0\) the particle's rest mass and \(\beta_r, \gamma_r\) the relativistic factors.
+    However, for monochromatic beams with constant momentum (e.g. no acceleration) the angular displacement \(z^{\prime}\) is linked to the transverse momentum \(p_z\) by \(p_z = \beta_r \gamma_r m_0 c z^{\prime}\), with \(m_0\) the particle's rest mass and \(\beta_r, \gamma_r\) the relativistic factors.
     Therefore, in the following we will consider trace space and phase space as equivalent and simply refer to \textit{phase space}.
 \end{noteblock}
 
