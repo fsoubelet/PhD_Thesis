@@ -307,9 +307,9 @@ The phase advance between two points at longitudinal positions \(s_1\) and \(s_2
     \label{equation:phase_advance_definition}
 \end{equation}
 
-As particles go around the ring, they oscillate around the closed orbit within an envelope defined by the \(\beta\)-functions and the emittance.
+As particles go around the ring, they oscillate around the closed orbit within an envelope defined by the \glspl{beta-function} and the emittance.
 The number of these so-called \concept{betatron oscillations} per revolution is the \gls{tune} \(Q_z\).
-The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{x, y}\) is the total betatron phase advance of a particle over a full circumference:
+The tune is defined in \cref{equation:tune_definition}, where \(\Delta \phi_{z}\) is the total betatron phase advance of a particle over a full circumference:
 
 \begin{equation}
     Q_z = \frac{1}{2 \pi} \Delta \phi_z = \frac{1}{2 \pi} \oint_C \dfrac{ds}{\beta_z (s)} \text{ .}
@@ -323,7 +323,7 @@ The \(\alpha\)-function is defined via the derivative of the \(\beta\)-function 
     \label{equation:alpha_function}
 \end{equation}
 
-Similarly to the \(\beta\)-function, the \concept{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(x^{\prime}\) and \(y^{\prime}\).
+Similarly to the \(\beta\)-function, the \concept{gamma-function} \(\gamma_u(s)\) describes the envelope of oscillations in \(z^{\prime}\).
 Both quantities are related by the \(\alpha\)-function according to:
 
 \begin{equation}
@@ -358,12 +358,13 @@ where the \(s\) dependency of the Twiss parameters is omitted for simplicity.
 \end{noteblock}
 
 In the linear regime all particle trajectories describe ellipses in \((z, z^{\prime})\), or \((z, p_z)\) phase space.
-The geometric emittance \(\varepsilon_u\) introduced in \cref{equation:hill_solution}, also named the \concept{Courant-Snyder invariant}, defines together with the \gls{Twiss_parameters} \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellipse:
+The geometric emittance \(\varepsilon_z\) introduced in \cref{equation:hill_solution}, also named the \concept{Courant-Snyder invariant}, defines together with the \gls{Twiss_parameters} \(\alpha_z(s)\), \(\beta_z(s)\) and \(\gamma_z(s)\) the equation of the phase space ellipse:
 
 \begin{equation}
     \gamma_z(s) z(s)^{2} + 2 \alpha_z(s) z(s) z^{\prime}(s) + \beta_z(s) z^{\prime}(s)^{2} = \varepsilon_z \text{ .}
     \label{equation:ellipse_equation}
 \end{equation}
+\vspace{0.3mm}
 
 \Cref{figure:phase_space_ellipse} shows a schematic illustration of the phase space ellipse, the area \(A\) of which is defined by the geometric emittance according to:
 
