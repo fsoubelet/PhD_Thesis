@@ -132,7 +132,7 @@ For each magnet applying a field \(B\) one can define the \gls{beam-rigidity} \g
         \caption{Magnetic quadrupole.}
         \label{fig:magnetic_quadrupole}
     \end{subfigure}
-    \caption{Magnetic fields and forces in a dipole and a quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Currents in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
+    \caption{Magnetic fields in an LHC dipole and quadrupole, with a \(\cos(\theta)\) and \(\cos(2\theta)\) current distribution in the circular coil, respectively. Currents in the dipole and quadrupole coils are indicated in color. These visuals were taken from \cite{CERN:Russenschuck:CAS_Design_Magnets}.}
     \label{figure:dipole_quadrupole_fields}
 \end{figure}
 
@@ -153,7 +153,8 @@ Assuming the existence of a \gls{closed_orbit}, the transverse motion of a singl
 \end{equation}
 where \(K_z\) represents the focusing effect of dipoles and quadrupoles in the transverse plane \(z\) and varies with \(s\) given that it is dictated by the magnetic elements traversed by particles.
 
-It can be expressed according to:
+\noindent
+This focusing effect can be expressed according to:
 
 \begin{equation}
 	\begin{aligned}
@@ -171,33 +172,36 @@ According to the theorem of Floquet~\cite{BOOK:Lee:Accelerator_physics}, the sol
 \begin{equation}
     \begin{aligned}
         z(s)          &= \sqrt{\beta_{z}(s) \varepsilon_{z}} \cos \left( \phi_{z}(s) + \phi_{z,0} \right) \text{ ,} \\
-        z^{\prime}(s) &= -\sqrt{\frac{\varepsilon_z}{\beta_z(s)}} \left( \sin \left(\phi_z(s) + \phi_{z, 0} \right) + \alpha(s) \cos \left( \phi_z(s) + \phi_{z, 0} \right) \right) \text{ .}
+        z^{\prime}(s) &= -\sqrt{\frac{\varepsilon_z}{\beta_z(s)}} \left[ \sin \left(\phi_z(s) + \phi_{z, 0} \right) + \alpha(s) \cos \left( \phi_z(s) + \phi_{z, 0} \right) \right] \text{ .}
     \end{aligned}
     \label{equation:hill_solution}
 \end{equation}
+\vspace{0.5mm}
 
 These equations describe a harmonic oscillation in the transverse planes.
 Here \(\varepsilon_z\) is the \concept{geometric emittance} of a particle and is a constant of the motion at a given energy. 
-\(\phi_z(s)\) is the \concept{phase advance} and \(\alpha_z(s)\) is the \concept{alpha-function}.
-\(\beta_z(s)\) is the \concept{beta-function} and represents beam envelope, or size, around the ring: it describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
-In particle colliders such as the \gls{LHC} the \(\beta\)-functions at the \glspl{IP}, where the beams are made to collide, are commonly referred to as \(\beta_z^{\ast}\).
-The solution of Hill's equation can also be written in matrix form as:
+The \(\phi_z(s)\) and \(\alpha_z(s)\) terms are the \concept{phase advance} and the \concept{alpha-function}, respectively.
+\(\beta_z(s)\) is the \concept{beta-function} and represents the beam envelope, or size, around the ring.
+It describes the transverse position dependent amplitude of the oscillation and has the dimension of a length.
+In particle colliders such as the \gls{LHC} the \glspl{beta-function} at the \glspl{IP}, where the beams are made to collide, are commonly referred to as the \glssymbol{betastar}.
+The solution of Hill's equation (\cref{equation:hill_equation}) can also be written in matrix form as:
 
 \begin{equation}
     \begin{pmatrix}
-        z(s) \\
-        z^{\prime}(s)
-    \end{pmatrix} 
+        z \\
+        z^{\prime}
+    \end{pmatrix}_{s}
     = \mathrm{M}
     \begin{pmatrix}
-        z(0) \\
-        z^{\prime}(0)
-    \end{pmatrix} \text{ .}
+        z \\
+        z^{\prime}
+    \end{pmatrix}_{0} \text{ .}
     \label{equation:hill_solution_matrix}
 \end{equation}
+\vspace{0.5mm}
 
 In this form, which makes the assumption that the magnetic field of an element is constant along the longitudinal direction, M is called a \concept{transfer matrix}. 
-Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{drift}}\), a dipole, \(\mathrm{M_{dip.}}\), a focusing quadrupole, \(\mathrm{M_{foc. quad.}}\), and a defocusing quadrupole \(\mathrm{M_{defoc. quad.}}\), respectively:
+Below are the transfer matrices corresponding to a drift space (\(\mathrm{M_{drift}}\)), a dipole (\(\mathrm{M_{dip.}}\)), a focusing quadrupole (\(\mathrm{M_{foc. quad.}}\)) and a defocusing quadrupole (\(\mathrm{M_{defoc. quad.}}\)), respectively:
 
 \begin{equation}
     \mathrm{M_{drift}} = 
@@ -234,6 +238,7 @@ Below are the transfer matrices corresponding to a drift space, \(\mathrm{M_{dri
         \end{pmatrix} \text{ ,}
     \label{equation:defocusing_quad_transfer_matrix}
 \end{equation}
+\vspace{1.5mm}
 where \(L\) is the element length and \(\theta = L / \rho\) is the bending angle of the dipole.
 
 The above correspond to a \num{2}D case and should be appropriately used depending on the plane.
