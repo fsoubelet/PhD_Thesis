@@ -476,8 +476,8 @@ For a particle with a momentum \(p \neq p_{0}\) one defines and uses the \concep
 Such momenta offsets introduce \concept{chromatic errors} in the beam dynamics.
 Effects and parameters depending on \(\delta_p\) are called \concept{chromatic effects}.
 
-From the definition of the magnetic rigidity in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
-The deviation of an off-momentum particle orbit from that of the synchronous particle is defined by the \concept{dispersion function} \(D(s)\).
+From the definition of the \gls{beam-rigidity} in \cref{equation:magnetic_rigidity}, it follows that particles of different momenta will have different local radii of curvature when going through dipoles and therefore follow different orbits along the machine.
+The orbit deviation of an off-momentum particle from that of the synchronous particle is defined by the \concept{dispersion function} \(D(s)\).
 Its contribution to a particle's orbit in a region of non-zero dispersion is described by:
 
 \begin{equation}
@@ -492,13 +492,14 @@ Off-momentum particle positions scale linearly with dispersion, and in its prese
     z(s) = \sqrt{\varepsilon_z \beta_z(s)} \cos \left( \phi_z(s) + \phi_{z, 0} \right) + D_z(s) \delta_p \text{ .}
     \label{equation:hill_solution_with_dispersion}
 \end{equation}
+\vspace{0.5mm}
 
 Another chromatic parameter is the \concept{chromaticity} \(Q_z^{\prime}\), which describes the tune shift \(\Delta Q_z\) with particle momentum by:
 
-\begin{eqnarray}
+\begin{equation}
     Q^{\prime}_z = \frac{\Delta Q_z}{\delta_p} \text{ .}
     \label{equation:chromaticity_definition}
-\end{eqnarray}
+\end{equation}
 
 The effective focusing strength of quadrupoles, which is inversely proportional to the momentum, differs for off-momentum particles.
 The change of focusing strength due to energy deviation is:
@@ -514,6 +515,7 @@ This quadrupole error results in a tune shift proportional to the energy offset:
 	\Delta Q = \dfrac{1}{4 \pi} \int \beta(s) \Delta k_{1}(s) ds = \left[ - \frac{1}{4 \pi} \int \beta(s) k_{1}(s) ds \right] \delta_p \text{ .}
     \label{equation:tune_shift_from_dispersion}
 \end{equation}
+\vspace{0.5mm}
 
 The natural chromaticity of a linear lattice can then be approximated by~\cite{CAS:Guiducci:Chromaticity}:
 
@@ -529,7 +531,11 @@ Magnetic fields of sextupolar and higher order are called \concept{non-linear} m
 While only dipolar and quadrupolar magnetic fields are considered in the linear approximation, non-linear magnetic fields are present in most accelerators.
 They can be introduced by design or by the presence of flaws in lower order magnets, the latter having the potential to seriously disrupt the beam.
 
-The order of a multipole is labeled \(n\), with the convention that \(n = 1\) corresponds to a magnetic dipole, \(n = 2\) to a quadrupole, \(n = 3\) a sextupole, etc.
+\begin{noteblock}
+    We label \(n\) the order of a multipole.
+    This document uses the \textit{European convention} for field indices, in which \(n = 1\) corresponds to a magnetic dipole, \(n = 2\) to a quadrupole, etc.
+\end{noteblock}
+
 The magnetic field of a multipole of order \(n\) is given by:
 
 \begin{equation}
