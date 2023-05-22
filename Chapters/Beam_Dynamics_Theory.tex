@@ -547,39 +547,33 @@ The magnetic field of a multipole of order \(n\) is given by:
     \label{equation:multipole_expansion}
 \end{equation}
 
-Here \(B_n(s)\) and \(A_n(s)\) are the normal and skew multipole coefficients, respectively, where a skew magnet of order \(n\) is rotated by \(\pi / (2 n)\) with respect to its normal counterpart.
+Here \(B_n(s)\) and \(A_n(s)\) are the \gls{normal} and \gls{skew} \concept{multipole coefficients}, respectively, where a skew magnet of order \(n\) is rotated by \(\pi / (2 n)\) with respect to its normal counterpart.
 Starting from the Hamiltonian equations:
 
 \begin{equation}
     \dfrac{d \vec{p_z}}{d t} = - \frac{\partial \mathcal{H}}{\partial \vec{z}} \text{ ,} \quad \quad \quad \dfrac{d \vec{z}}{d t} = \frac{\partial \mathcal{H}}{\partial \vec{p_z}} \text{ ,}
     \label{equation:hamiltonian_equations}
 \end{equation}
-
-The Hamiltonian for the transverse planes for a multipole of order \(n\) is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
+the Hamiltonian for the transverse planes for a multipole of order \(n\) is given by \cref{equation:hamiltonian_multipole_order_n}~\cite{PHD:Tomas, PHD:Franchi}:
 
 \begin{equation}
     \mathcal{H}_n = \frac{q}{p} \operatorname{Re} \left[ \left( B_n +i A_n \right) \frac{(x + i y)^n}{n} \right] \text{ .}
     \label{equation:hamiltonian_multipole_order_n}
 \end{equation}
 
-In the linear regime, the Hamiltonian may then be written as:
+In the linear regime, this Hamiltonian may then be written as:
 
 \begin{equation}
     \mathcal{H} = \frac{1}{2} p_x^2 + \frac{1}{2} p_y^2 + \frac{1}{2} K(s) x^2 - \frac{1}{2} K(s) y^2 \text{ ,}
     \label{equation:hamiltonian_linear_lattice}
 \end{equation}
-where \(K(s)\) describes the variation of focusing strength around the ring.
-More generally, if the Hamiltonian for a normal multipole of order \(n\) is labeled \(N_n\) and that of a skew multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
+where \(K(s)\) describes the variation of the focusing strength around the ring.
+More generally, if the Hamiltonian for a \gls{normal} multipole of order \(n\) is labeled \(N_n\) and that of a \gls{skew} multipole of order \(n\) is labeled \(S_n\), then~\cite{PHD:Maclean, PHD:Persson}:
 
 \begin{equation}
     \begin{aligned}
         N_n & \propto \operatorname{Re} \left[(x + i y)^n \right] \\
-            & \propto \operatorname{Re} \left[ \sum_{k=0}^n \left(
-                \begin{array}{l}
-                    n \\
-                    k
-                \end{array} \right) 
-            i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos \phi_x \right)^{n-k} \left( \sqrt{2 J_y} \cos \phi_y \right)^k \right] \text{ ,}
+            & \propto \operatorname{Re} \left[ \sum_{k=0}^n \begin{pmatrix} n \\ k \end{pmatrix} i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos\left(\phi_x\right) \right)^{n-k} \left( \sqrt{2 J_y} \cos\left(\phi_y\right) \right)^k \right] \text{ ,}
     \end{aligned}
     \label{equation:hamiltonian_prop_normal_multipoles}
 \end{equation}
@@ -587,19 +581,13 @@ More generally, if the Hamiltonian for a normal multipole of order \(n\) is labe
 \begin{equation}
     \begin{aligned}
         S_n & \propto \operatorname{Im} \left[(x + i y)^n \right] \\
-            & \propto \operatorname{Im} \left[ \sum_{k=0}^n \left(
-                \begin{array}{l}
-                    n \\
-                    k
-                \end{array} \right) 
-            i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos \phi_x \right)^{n-k} \left( \sqrt{2 J_y} \cos \phi_y \right)^k \right] \text{ .}
+            & \propto \left[ \sum_{k=0}^n \begin{pmatrix} n \\ k \end{pmatrix} i^k \beta_x^{\frac{n-k}{2}} \beta_y^{\frac{k}{2}} \left(\sqrt{2 J_x} \cos\left(\phi_x\right) \right)^{n-k} \left( \sqrt{2 J_y} \cos\left(\phi_y\right) \right)^k \right] \text{ .}
     \end{aligned}
     \label{equation:hamiltonian_prop_skew_multipoles}
 \end{equation}
 
 The powering of non-linear magnets and the presence of magnetic errors can have a significant impact on the beam dynamics.
 Geometric errors can also contribute to the presence of non-linear components.
-
 For instance, when a particle does not pass through the magnetic center of an element it will see not only the primary field component but also perturbations of all lower orders to that of the traversed element~\cite{BOOK:Wiedemann:Particle_Accelerator_Physics}.
 This effect is called \gls{feed-down} and can be introduced by misalignment of lattice elements, which would cause the closed orbit to deviate from the ideal one and the beam to pass off-axis in magnets.
 
