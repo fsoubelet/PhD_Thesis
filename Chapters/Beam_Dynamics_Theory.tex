@@ -824,7 +824,7 @@ These calculations are in practice simpler than the former method, and conserve 
 \label{subsec:spectral_contribution}
 
 Each term in the summations of \cref{equation:linearly_normalized_coordinates_after_N_turns} corresponds to a certain mode in the beam motion and contributes to a specific frequency in the spectrum of the motion~\cite{PHD:Bengtsson}.
-Said spectrum may be determined by a frequency analysis of the turn-by-turn beam position monitor data, through means of a Fourier transform.
+Said spectrum may be determined by a frequency analysis of the turn-by-turn beam position data, through means of a Fourier transform.
 In this spectrum, an \gls{RDT} \(f_{jklm}\) at a specific location in the machine contributes to lines in the horizontal and vertical spectra according to~\cite{PHD:Bengtsson,PRAB:Franchi:Emittance_Sharing_Coupling}:
 
 \begin{equation}
@@ -846,11 +846,11 @@ More details are given in \cref{chapter:lhc_omc}.
 \label{subsection:amplitude_detuning}
 
 The \gls{ampdet} is the variation of the \gls{tune} with the single particle emittance.
-It can be described with a Taylor expansion of the tune \(Q_z\) around the unperturbed tune as:
+It can be described with a Taylor expansion of the tune \(Q_z\) around the unperturbed tune \(Q_{z, 0}\) as:
 
 \begin{equation}
     \begin{aligned}
-    Q_z \left( \varepsilon_x, \varepsilon_y \right) & =Q_{z, 0} + \frac{\partial Q_z}{\partial \varepsilon_x} \varepsilon_x + \frac{\partial Q_z}{\partial \varepsilon_y} \varepsilon_y \\
+    Q_z \left( \varepsilon_x, \varepsilon_y \right) & = Q_{z, 0} + \frac{\partial Q_z}{\partial \varepsilon_x} \varepsilon_x + \frac{\partial Q_z}{\partial \varepsilon_y} \varepsilon_y \\
                                                     & + \frac{1}{2!} \left(\frac{\partial^2 Q_z}{\partial \varepsilon_x^2} \varepsilon_x^2 + \frac{\partial^2 Q_z}{\partial \varepsilon_x \partial \varepsilon_y} \varepsilon_x \varepsilon_y + \frac{\partial^2 Q_z}{\partial \varepsilon_y^2} \varepsilon_y^2 \right) + \ldots \text{ ,}
     \end{aligned}
     \label{equation:tune_taylor_expansion}
