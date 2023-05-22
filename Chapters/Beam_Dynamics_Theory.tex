@@ -750,8 +750,8 @@ The normalized Courant-Snyder coordinates \(\left( \hat{z}, \hat{p}_z \right)\) 
 
 \begin{equation}
     \begin{aligned}
-        \hat{z}   &= \sqrt{2 J_z} \cos \left( \phi_z - \phi_{z_0} \right) \text{ ,} \\
-        \hat{p}_z &= - \sqrt{2 J_z} \sin \left( \phi_z - \phi_{z_0} \right) \text{ .}
+        \hat{z}   &= \sqrt{2 J_z} \cos \left( \phi_z + \phi_{z_0} \right) \text{ ,} \\
+        \hat{p}_z &= - \sqrt{2 J_z} \sin \left( \phi_z + \phi_{z_0} \right) \text{ .}
     \end{aligned}
     \label{equation:normalized_courant_snyder_coordinates_from_action_angle}
 \end{equation}
@@ -763,7 +763,7 @@ One can define the \concept{resonance basis} \(\left( h_x^{+}, h_x^{-}, h_y^{+},
     \label{equation:resonance_basis_definition}
 \end{equation}
 
-The transformation to the \concept{normal form coordinates} \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\) is expressed as:
+The transformation to the \concept{normal form coordinates} introduced in the previous section, \(\left( \zeta_x^{+}, \zeta_x^{-}, \zeta_y^{+}, \zeta_y^{-} \right)\), is expressed as:
 
 \begin{equation}
     \zeta_z^{\pm} = \sqrt{2 I_z} e^{\mp i \left( \psi_z + \psi_{z_0} \right)} = e^{-:F:} h_z^{\pm} \text{ .}
@@ -771,18 +771,18 @@ The transformation to the \concept{normal form coordinates} \(\left( \zeta_x^{+}
 \end{equation}
 where \((I_z, \psi_z)\) are the terms introduced in \cref{equation:generating_function_expansion}.
 
-By construction of the transformation, the one-turn map in normal form coordinates is an amplitude dependent rotation.
-It follows that the motion of these coordinates as a function of the turn number is then given by:
+By definition of the transformation, the one-turn map in normal form coordinates is an amplitude dependent rotation.
+It follows that the motion of these coordinates as a function of the turn number \(N\) is then given by:
 
 \begin{equation}
     \zeta_z^{\pm}(N) = \sqrt{2 I_z} e^{\mp i \left( 2 \pi Q_z N + \psi_{z_0} \right)} \text{ ,}
     \label{equation:normal_form_N_turn_expression}
 \end{equation}
 with \(Q_z\) the transverse tunes.
-The inverse transformation from the new action and angle variables to the Courant-Snyder variables is written, to first order, as:
+The inverse transformation from the new normal form coordinates to the resonance basis coordinates is written, to first order, as:
 
 \begin{equation}
-    h_z^{-} = e^{:F:} \zeta_z^{-} \simeq \zeta_z^{-} + \left[ F, \zeta_z^{-} \right] \text{ .}
+    h_z^{\pm} = e^{:F:} \zeta_z^{\pm} \simeq \zeta_z^{\pm} + \left[ F, \zeta_z^{\pm} \right] \text{ .}
     \label{equation:inverse_transformation_normal_form_to_courant_snyder_coordinates}
 \end{equation}
 
@@ -799,8 +799,8 @@ Using \cref{equation:normal_form_N_turn_expression} and \cref{equation:inverse_t
 \end{equation}
 
 \Cref{figure:coordinate_transformations} shows a schematic of the different transformations and changes to the one-turn map.
-While one can calculate the evolution of the \glsuseri{courantsnyderparameter} coordinates by applying the map \( \mathcal{M} \), the approach is complicated to solve.
-Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates \(\zeta_{u}^{\pm}\) using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
+While one can calculate the evolution of the Courant-Snyder coordinates by applying the map \(\mathcal{M}\), the approach is complicated to solve in the presence of non-linearities.
+Solving the one-turn map for the next turn is best done by performing a transformation to normal form coordinates \(\zeta_{z}^{\pm}\) using the generating function \(F\), applying the amplitude dependent rotation map \(R\), and transforming back to Courant-Snyder coordinates.
 These calculations are in practice simpler than the former method, and conserve non-linearities.
 
 \begin{figure}[!htb]
