@@ -75,6 +75,7 @@ Normal \gls{trim} quadrupoles, named \concept{MQT}, are primarily used for tune 
 In each arc four MQTs are rotated by \qty{45}{\degree} to form \gls{skew} quadrupoles, named \concept{MQS}, used for \gls{betatron_coupling} correction.
 \Gls{normal} and \gls{skew} sextupoles \concept{MS} and \concept{MSS}, used for natural chromaticity and chromatic coupling correction respectively, are mounted on the MQs.
 Landau octupoles \concept{MO} provide damping of coherent oscillations, and are split into two families (focusing and defocusing) powered in series, such that there are two families per arc and per beam.
+\break
 
 \Cref{figure:lhc_arc_cell_latwiss} shows a simplified layout of an LHC arc cell's elements as well as \(\beta\) and dispersion functions for \num{2022} optics at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 In the layout (top) part of the plot element powerings are indicated, with MBs in \textcolor{mplblue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) are indicated as gray patches.
@@ -83,19 +84,19 @@ Note that not all elements are indicated there.
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc_cell.pdf}
-  \caption{Simplified layout and optics functions in an LHC arc cell for \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics.}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc_cell.pdf}
+  \caption{Simplified layout (top) and optics functions (bottom) of an LHC arc cell for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics.}
   \label{figure:lhc_arc_cell_latwiss}
 \end{figure}
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc23.pdf}
-  \caption{Simplified layout and optics functions in LHC arc\num{23} for \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics.}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_arc23.pdf}
+  \caption{Simplified layout (top) and optics functions (bottom) of the LHC arc\num{23} for the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics.}
   \label{figure:lhc_arc23_latwiss}
 \end{figure}
 
-The purpose of the arcs is that of beam transport to the more specific parts of the machine.
+The purpose of the arcs is that of beam transport to the more purpose-specific parts of the machine located in the \glspl{IR}.
 
 \subsection{The LHC Experimental Interaction Regions}
 \label{subsection:lhc_eirs}
@@ -103,10 +104,7 @@ The purpose of the arcs is that of beam transport to the more specific parts of 
 In the middle of each octant, in between arcs, the \gls{LHC} hosts \concept{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
 Each of these is centered around an \acrfull{IR} where a dedicated layout is in place to fulfill the section's purpose.
 The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
-
-Of interest to this thesis are the \concept{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
-An insertion region in which beams are made to collide is called an \concept{Interaction Region}, or sometimes Experimental Interaction Region.
-In this document, when using the short form IR, it is meant to refer to an Interaction Region.
+\\
 
 \begin{table}[!hbt]
   \centering
@@ -124,9 +122,13 @@ In this document, when using the short form IR, it is meant to refer to an Inter
       IR\num{8}               & LHCb and MoEDAL Experiments, and B\num{2} Injection  \\
       \hline
   \end{tblr}
-  \caption{Description and purpose of the straight sections in the LHC}.
+  \caption{Description and purpose of the straight sections in the LHC.}
   \label{table:lhc_straight_sections}
 \end{table}
+
+Of interest to this thesis are the \concept{experimental insertions}, located in IR\num{1}, IR\num{2}, IR\num{5}, and IR\num{8}, where the beams are made to collide.
+An insertion region in which beams are made to collide is called an \concept{Interaction Region}, or sometimes Experimental Interaction Region.
+In this document, when using the short form IR, it is meant to refer to an Interaction Region.
 
 At the center of the IR, beams are made to collide at the \acrfull{IP}.
 In order to achieve high luminosity during collisions, and as shown in \cref{section:luminosity}, the \(\beta\)-functions at the IPs are squeezed to very small values.
