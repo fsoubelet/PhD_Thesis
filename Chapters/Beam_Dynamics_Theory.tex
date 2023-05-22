@@ -992,17 +992,16 @@ The relations linking these new parameters to the \gls{Twiss_parameters} can be 
 % where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
 The Mais-Ripken parameterization is the basis of the \gls{PTC}~\cite{CODE:Schmidt_Forest:PTC}'s handling of coupled dynamics. 
 
-\todo{A small "Coupling and Beam Matrix" subsubsection about the sigma matrix?}
+\subsubsection*{\todo{A small "Coupling and Beam Matrix"?}}
 
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
 In the first order, according to \cref{equation:resonance_condition}, linear coupling drives the two resonances \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
 These are respectively called the \concept{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
-To higher order \gls{betatron_coupling} may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
+% To higher order \gls{betatron_coupling} may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
 
-The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics} and through the normal form/resonance driving term formalism~\cite{PHD:Franchi}.
-
+The impact of linear coupling on the beam motion has been studied through Hamiltonian perturbation theory~\cite{PHREV:Guignard:Betatron_Coupling_Radiation,BOOK:Wiedemann:Particle_Accelerator_Physics}, and through the normal form and \gls{RDT} formalism~\cite{PHD:Franchi}.
 As the transverse tunes approach the difference resonance, the emittance is described by:
 
 \begin{equation}
@@ -1012,7 +1011,7 @@ As the transverse tunes approach the difference resonance, the emittance is desc
 and as the resonance is approached the beam motion may not become unstable.
 Instead, there is a periodic exchange of emittance between the transverse planes, which leads to a beating in the betatron oscillation amplitudes.
 
-The relation between the \concept{unperturbed tunes} \(Q_{x,y}\) and the \concept{coupled tunes} \(Q_{1,2}\) is given by~\cite{CAS:Bryant:Theory_Weak_Betatron_Coupling}:
+The relation between the \concept{unperturbed tunes} \((Q_x, Q_y)\) and the \concept{coupled tunes} \((Q_1, Q_2)\) is given by~\cite{CAS:Bryant:Theory_Weak_Betatron_Coupling}:
 
 \begin{equation}
     \begin{aligned}
@@ -1023,7 +1022,7 @@ The relation between the \concept{unperturbed tunes} \(Q_{x,y}\) and the \concep
 \end{equation}
 with \(\Delta\) being the unperturbed fractional tune split and \glssymbol{Cminus} the linear coupling coefficient, a parameter describing the strength of the coupling.
 
-When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillations modes \(Q_{1,2}\) are almost identical to the uncoupled horizontal and vertical tunes \(Q_{x,y}\).
+When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillations modes \((Q_1, Q_2)\) are almost identical to the uncoupled tunes \((Q_x, Q_y)\).
 When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
 The \glssymbol{Cminus} of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \gls{Cminus}, corresponds this separation.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
@@ -1044,7 +1043,7 @@ On the other hand, when approaching the sum resonance the emittances follow:
 
 This resonance allows for unstable motion as only the difference in emittance is constrained.
 Therefore, it is common to choose a working point far from the sum resonance.
-In the \gls{LHC}, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually more diverse and will be discussed in more details in the next chapter.}.
+In the \gls{LHC}, the working points (visible on \cref{figure:tune_diagram_fifth_order}) are set such that the linear coupling is dominated by the difference resonance: the fractional tunes are \((Q_x, Q_y) = (0.28 \text{,} 0.31)\) at injection and \((Q_x, Q_y) = (0.31 \text{,} 0.32)\) for squeezed beams and collisions\footnote{The LHC working point is actually more diverse and will be discussed in more details in the next chapter.}.
 
 \subsection{Linear Coupling Resonance Driving Terms}
 \label{subsection:measurement_coupling_rdts}
