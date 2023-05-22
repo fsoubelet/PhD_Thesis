@@ -909,7 +909,7 @@ Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\) such th
 where \(\mathbf{P}\), \(\mathbf{p}\), \(\mathbf{q}\) and \(\mathbf{Q}\) are \(2 \times 2\) matrices.
 In the absence of \gls{betatron_coupling}, it follows that \(\mathbf{p}\) and \(\mathbf{q}\) are \num{0}.
 Magnetic elements introducing coupling between the horizontal and vertical planes have non-zero terms in the respective \(\mathbf{p}\) and \(\mathbf{q}\) of their transfer matrices.
-For instance, the transfer matrix of a \gls{skew} quadrupole is:
+For instance, the transfer matrix of a \gls{skew} quadrupole can be written
 
 \begin{equation}
     \mathrm{M_{skew\ quad.}} = \begin{pmatrix}
@@ -957,7 +957,7 @@ In this new frame the motion is decoupled, and all the information on the coupli
     \label{equation:edwards_teng_parametrization}
 \end{equation}
 
-Edwards and Teng characterized the transformation \(\mathbf{R}\) by the symplectic matrix:
+Edwards and Teng have characterized the transformation \(\mathbf{R}\) with the symplectic matrix:
 
 \begin{equation}
     \mathbf{R} =\left(
@@ -991,6 +991,8 @@ The relations linking these new parameters to the \gls{Twiss_parameters} can be 
 % \end{equation}
 % where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
 The Mais-Ripken parameterization is the basis of the \gls{PTC}~\cite{CODE:Schmidt_Forest:PTC}'s handling of coupled dynamics. 
+
+\todo{A small "Coupling and Beam Matrix" subsubsection about the sigma matrix?}
 
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
