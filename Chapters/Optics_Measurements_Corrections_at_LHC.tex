@@ -184,10 +184,11 @@ An illustration of the area close to IP\num{5} for collision optics with \(\beta
 \end{figure}
 
 On the layout plot the four \textcolor{latwiss_red}{red patches} closest to the \gls{IP} location correspond to Q\num{1}, Q\num{2}a, Q\num{2}b and Q\num{3} respectively, the triplet quadrupoles.
-The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch) and D\num{2} (outer dipole), the \concept{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
+The \textcolor{latwiss_blue}{blue patches} correspond to D\num{1} (first batch closest to the IP) and D\num{2} (the furthest dipole), the \concept{separation/recombination dipoles} responsible for bringing the beams together/apart in the common region from/to their separate apertures in the arcs.
 The separation dipole D\num{1} is made of six \qty{3.4}{\meter} long normal conducting magnets while D\num{2} is a superconducting twin aperture magnet \qty{9.45}{\meter} long.
 Further quadrupoles after the triplet are matching quadrupoles and will be discussed later.
 The gray lines correspond to the location of \glspl{BPM}, measurement instrumentation.
+\break
 
 Due to the large \(\beta\)-functions in the triplet quadrupoles, as can be seen in \cref{figure:lhc_ir5_zoomed}, any magnetic error in the elements of the IR would have a strong impact on the beam dynamics.
 To enable correction of these errors, linear and non-linear corrector magnets are installed along the IR, distributed symmetrically around the IP: every corrector magnet on one side of the IP has a counterpart on the other side.
@@ -197,25 +198,29 @@ All IR correctors are individually powered magnets.
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.92\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/corrector_package.png}
-  \caption{Layout of the triplet magnets and the linear and non-linear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The skew quadrupole correctors correspond to order \(a_2\) and are located in the C\num{2} package.}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/corrector_package.png}
+  \caption{Layout of the triplet magnets and the linear and non-linear correctors in the LHC experimental insertions~\cite{CERN:Bruning:Dynap_Studies}, showing common aperture magnets. The skew quadrupole correctors correspond to order \(a_2\) and are located in the \textcolor{mplb}{C\num{2}} package.}
   \label{figure:lhc_ir_corrector_layout}
 \end{figure}
 
 In order to prevent parasitic crossings between the two beams' bunches around the IP during collisions, \concept{separation bumps} are implemented in a single transverse plane for each IP, in the form of closed orbit bumps.
 Due to the presence of these bumps, in order to reach collisions a \concept{crossing angle} is introduced.
-The optics in IR\num{1} and IR\num{5} are identical except for the crossing schemes: the crossing angle is in the vertical plane at IR\num{1} and in the horizontal plane at IR\num{5}.
-Respectively, the separation bumps are in the horizontal plane at IR\num{1} and in the vertical plane at IR\num{5}.
-\Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} at collision optics, with the location of the triplets highlighted in gray and that of the separation dipoles in yellow.
+
+The optics in IR\num{1} and IR\num{5} are identical except for the crossing schemes.
+In IR\num{1} the crossing angle is in the vertical plane while it is in the horizontal plane in IR\num{5}.
+Respectively, the separation bumps are in the horizontal plane in IR\num{1} and in the vertical plane in IR\num{5}.
+On top of the opposite planes for the separation bump and crossing angles, the schemes themselves are slightly different.
+
+\Cref{figure:lhc_crossing_schemes_ip15} shows the crossing schemes for both IR\num{1} and IR\num{5} for the \(\beta^{\ast} =\) \qty{30}{\centi\metre} collision optics, with the location of the triplets highlighted in gray and that of the separation dipoles in yellow.
 
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_crossing_schemes_ip15.pdf}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_crossing_schemes_ip15.pdf}
   \caption{Crossing schemes for IR\num{1} and IR\num{5} at collision optics.}
   \label{figure:lhc_crossing_schemes_ip15}
 \end{figure}
 
-Other IRs, not of interest to this thesis, have significantly different layouts which can be found in details in~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,PHD:Vanbavinckhove}.
+Other IRs, of lower interest to this thesis, have significantly different layouts which can be found in details in~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,PHD:Vanbavinckhove}.
 
 \subsection{Matching Sections and Dispersion Suppressors}
 \label{subsection:matching_sections_dispersion_suppressors}
