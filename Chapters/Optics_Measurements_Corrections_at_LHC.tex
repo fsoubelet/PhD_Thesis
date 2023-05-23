@@ -706,7 +706,7 @@ A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider
 
 It is possible to approximate the coupling \glspl{RDT} from the real coordinates using a single \gls{BPM}, and doing the reconstruction without the momentum information.
 In such case where only the position data is used, however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
-For the linear coupling RDTs this means that the \(f_{1001}\) and \(f_{1010}\) will contribute to the same resonance lines and cannot be separated~\cite{PHD:Persson}.
+For the coupling RDTs this means that the \(f_{1001}\) and \(f_{1010}\) will contribute to the same resonance lines and cannot be separated~\cite{PHD:Persson}.
 It may be, however, possible to neglect one of them depending on their relative strengths.
 
 Additionally, from the method described above it becomes clear that dual plane BPMs are required for coupling measurements.
@@ -716,17 +716,17 @@ To do so, the phases of the real spectral lines are shifted in accordance with t
 \subsection{Correction Principles}
 \label{subsection:correction_principles}
 
-Corrections of the linear optics in the LHC are based on two different approaches.
-Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the IPs.
+Corrections of the linear optics in the \gls{LHC} are based on two different approaches.
+Global corrections are better suited to compensate for widely distributed sources, while local corrections are focused towards the identification and compensation of strong, highly localized errors, and are mostly used around the \glspl{IP}.
 
 \subsubsection*{Local Corrections}
 
 In the LHC local optics errors are determined and corrected using the \concept{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
-The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the MAD-X code~\cite{CODE:MADX_guide}.
+The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the \gls{MADX} code~\cite{CODE:MADX_guide}.
 The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
 Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
 
-This method is mostly used in the LHC IRs, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+This method is mostly used in the LHC \glspl{IR}, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
 For this one looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
 
 \begin{equation}
@@ -744,8 +744,8 @@ An example of a local correction of the phase advance around IP\num{5} from the 
 \end{figure}
 
 The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
-In the case of the coupling \glspl{RDT}, due to the lower number of magnets available for adjustment one usually tries to compensate for the \glspl{RDT} at the edges of the segment.
-One can also attempt to match for specific components of the \glspl{RDT} specifically (real and imaginary parts).
+In the case of the coupling RDTs, due to the lower number of magnets available for adjustment one usually tries to compensate for the \glspl{RDT} at the edges of the segment.
+One can also attempt to match for specific components of the RDTs specifically (real and imaginary parts).
 \Cref{figure:example_sbs_correction_coupling} shows an example of a local correction of the coupling \glspl{RDT} around IP\num{2} from the LHC \num{2021} beam test.
 In this case, a good rematching at the edges of the segment means the contribution of the \gls{IR} to the rest of the machine is well compensated.]
 More details are given in the next chapter.
