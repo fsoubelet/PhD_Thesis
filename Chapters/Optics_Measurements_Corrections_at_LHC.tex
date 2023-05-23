@@ -438,22 +438,22 @@ When the AC dipole is driving the beam, an equivalent parametrization exists, an
   \label{equation:driven_transverse_motion}
 \end{equation}
 where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,z}(s)\) is the \(\beta\)-function modified by the AC dipole.
-The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term only depends on \(\phi_D\).
+The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillations term only depends on \(\phi_D\).
 
 The \(\beta\)-function modified by the AC dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
-  \beta_{D,z}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D\right)}{1 - \lambda_D^2} \beta_z(s) \text{ ,}
+  \beta_{D,z}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D(s)\right)}{1 - \lambda_D^2} \beta_z(s) \text{ ,}
   \label{equation:driven_beta_function}
 \end{equation}
-where \(\psi_D\) is the phase advance with respect to the AC dipole location.% and the relation is valid for both horizontal and vertical \(\beta\)-functions.
+where \(\psi_D(s)\) is the phase advance with respect to the AC dipole location.
 The \(\lambda_D\) term is dependent on the gap between the driven and natural tune, and is defined by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
   \lambda_D = \frac{\sin \left(\pi \delta_D \right)}{\sin \left(2 \pi Q_z + \pi \delta_D \right)} \text{ ,}
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
-in which \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap.
+in which \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap, often called tune delta.
 In the LHC the AC dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
 
 One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
@@ -461,7 +461,7 @@ One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an
 \begin{figure}[!htb]
   \centering
   \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/betas_nominal_vs_driven.pdf}
-  \caption{Resulting \(\beta\)-functions in a FODO lattice in the case of free (\textcolor{mplorange}{orange}) and driven (\textcolor{mplblue}{blue}) oscillations.}
+  \caption{Resulting vertical \(\beta\)-functions in a FODO lattice in the case of free (\textcolor{mplorange}{orange}) and driven (\textcolor{mplblue}{blue}) oscillations.}
   \label{figure:acdipole_beta_functions_vs_nominal}
 \end{figure}
 
