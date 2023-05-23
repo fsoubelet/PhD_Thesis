@@ -590,6 +590,9 @@ By the term spectral lines one refers here to the Fourier transform of the compl
   \end{aligned}
   \label{equation:spectral_lines}
 \end{equation}
+\vspace{0.1mm}
+
+\noindent
 in which \(H\) indicates a line in the spectrum of horizontal turn-by-turn data, and \(V\) a line in the spectrum of vertical turn-by-turn data.
 
 As seen in \cref{equation:spectral_lines} the Courant-Snyder variables defined in \cref{equation:resonance_basis_definition} are needed.
@@ -599,12 +602,16 @@ Since the momentum present in the expression of \(h_z^\pm\) is not a quantity di
   \hat{p}_{z_n} = \frac{\hat{z}_{n+1} - \hat{z}_n \cos \left(\Delta \phi_z\right)}{\sin \left(\Delta \phi_z\right)}  \text{ ,} \quad z = x, y \text{ ,}
   \label{equation:momentum_from_two_bpms}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 with \(\Delta \phi_z\) the phase advance between the \(n^{\mathrm{th}}\) and \((n+1)^{\mathrm{th}}\) BPMs in the transverse \(z\) plane.
-In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main line and the coupling line.
+In \cref{equation:momentum_from_two_bpms} it is assumed that the region between the two BPMs is free of coupling sources as well as non-linearities contributing to the main line and the coupling line in each spectrum.
 
 With the information from two BPMs, one can compute the spectral lines according to \cref{equation:spectral_lines}.
-Starting from \cref{equation:rdt_contribution_to_spectrum_line} one can subsitute \(j = 1\), \(k = 0\), \(l = 0\), \(m = 1\) and obtain \(H(0, 1) = \abs{f_{1001}} \left(2 I_y \right)^{\frac{1}{2}}\).
-With the proper values for \(j,k,l,m\) and using lines from the vertical spectrum one can cancel out the dependence of the action and look to obtain \(\abs{f_{1001}}\).
+Starting from \cref{equation:rdt_contribution_to_spectrum_line}, one can for instance subsitute \(j = 1\), \(k = 0\), \(l = 0\), \(m = 1\) and obtain \(H(0, 1) = \abs{f_{1001}} \left(2 I_y \right)^{\frac{1}{2}}\), the amplitude of the line at \(Q_y\) in the horizontal spectrum.
+
+With the proper values for \(j,k,l,m\) and using lines from the vertical spectrum one can cancel out the dependence on the action and look to obtain \(\abs{f_{1001}}\).
 However, it is possible - and likely - that the BPM calibrations aren't perfect, in which cases the measured and real coordinates differ:
 
 \begin{equation}
@@ -613,9 +620,10 @@ However, it is possible - and likely - that the BPM calibrations aren't perfect,
     y^{\mathrm{meas}} &= C_y y^{\mathrm{real}}  \text{ .}
   \end{aligned}
 \end{equation}
+\vspace{1pt}
 
 One can cancel out the \(C_{x,y}\) factors by dividing any line amplitude by that of the main line, to create normalized spectral lines.
-Of interest for the linear coupling RDTS are the following:
+Of interest for the coupling \glspl{RDT} are the following:
 
 \begin{equation}
   \begin{aligned}
@@ -626,7 +634,11 @@ Of interest for the linear coupling RDTS are the following:
   \end{aligned}
   \label{equation:normalized_spectral_lines}
 \end{equation}
-where \(A_{0,1}\) and \(B_{1,0}\) contain \(f_{1001}\) whereas \(A_{0,-1}\) and \(B_{-1,0}\) contain \(f_{1010}\).
+\vspace{1pt}
+
+\noindent
+where the \(A_{0,1}\) and \(B_{1,0}\) normalized spectral lines contain information on \(f_{1001}\) whereas the \(A_{0,-1}\) and \(B_{-1,0}\) ones contain \(f_{1010}\).
+
 By combining these normalized spectral lines, it has been shown that the amplitudes of the coupling RDTs may be expressed as~\cite{CERN:Franchi:Computation_Coupling_Resonance_Driving_Term_Single_BPM,PRAB:Tomas:CERN_LHC_OMC}:
 
 \begin{equation}
@@ -636,6 +648,9 @@ By combining these normalized spectral lines, it has been shown that the amplitu
   \end{gathered}
   \label{equation:coupling_rdts_amplitude_from_spectral_lines}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 and the phases as:
 
 \begin{equation}
@@ -645,6 +660,7 @@ and the phases as:
   \end{gathered}
   \label{equation:coupling_rdts_phase_from_spectral_lines}
 \end{equation}
+\vspace{1pt}
 
 Here \(H(1,0)\) corresponds to the line in the horizontal spectrum at \(Q_x\) while \(H(0, 1)\) corresponds to the line at \(Q_y\) in the same spectrum.
 In \cite{PRAB:Franchi:First_Simultaneous} a table is given that relates various spectral lines to amplitudes and phases of the corresponding resonances and RDTs.
