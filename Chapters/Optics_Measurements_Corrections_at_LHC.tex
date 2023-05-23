@@ -282,16 +282,16 @@ It is defined as:
   \label{figure:lhc_ats_scheme}
 \end{figure}
 
-This ATS optics scheme has been used in the LHC starting Run~\num{2} and allowed reducing the collision optics \(\beta^{\ast}\) from its design value of \qty{55}{\centi\meter} to \qty{30}{\centi\meter}.
-It is the operational baseline of \Gls{run}~\num{3}.
+This ATS optics scheme has been used in the LHC starting \Gls{run}~\num{2} and allowed reducing the collision optics \glssymbol{betastar} from its design value of \qty{55}{\centi\meter} to \qty{30}{\centi\meter}.
+It is the operational baseline of Run~\num{3}.
 
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
 
 The \gls{LHC} operational cycle~\cite{Report:LHCModes}, illustrated in \cref{figure:lhc_cycle}, begins with a \concept{pre-cycle} of certain magnetic elements~\cite{Report:LHCMagnetsPreCycles}.
-This full pre-cycle is only done after an interruption of the machine operations, such as when an intervention on an element is performed.
-During pre-cycle no beams are present in the machine and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
-The exact nature of the pre-cycle depends on the magnetic elements, and a pre-cycle is not necessarily performed before each fill.
+A full pre-cycle is only done after an interruption of the machine operations, such as when a technical intervention is performed.
+During the pre-cycle no beams are present in the machine and the respective element currents are increased up to several \unit{\tera\electronvolt} beam energy configuration, to ensure the reproducibility of the magnetic fields over successive fills.
+The exact nature of the pre-cycle depends on the magnetic elements.%, and a pre-cycle is not necessarily performed before each fill.
 
 After the pre-cycle comes the \concept{injection} stage: beams are injected from the \gls{SPS} at an energy of \qty{450}{\giga\electronvolt}.
 First a probe beam consisting of just a single bunch is injected to check the validity of several systems (injection interlock, orbit, tune, chromaticity and coupling control), then a \num{12}-bunches beam, and finally a physics beam meant for collisions is injected.
@@ -300,16 +300,16 @@ The number of bunches, their intensity and their filling pattern~\cite{Report:LH
 For \gls{optics} measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
 For luminosity production a larger number of high intensity bunches is injected: in the order of a few \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
 
-After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
-This process, called \concept{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
-Before then the squeezing process only started once the energy had reached collision value.
-
 \begin{figure}[!hbt]
   \centering
-  \includegraphics*[width=0.99\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
+  \includegraphics*[width=\linewidth]{Figures/Optics_Measurements_Corrections_at_LHC/lhc_cycle.pdf}
   \caption{Simplified illustration of the LHC nominal cycle.}
   \label{figure:lhc_cycle}
 \end{figure}
+
+After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
+This process, called \concept{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
+Before then the squeezing process only started once the energy had reached collision value.
 
 After reaching top energy, a configuration known as \concept{flat-top}, another \concept{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
 This is when the \acrshort{ATS} scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
