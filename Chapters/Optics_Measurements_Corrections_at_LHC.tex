@@ -504,7 +504,7 @@ The frequency space is zoomed for clarity.
 
 \subsubsection*{Optics Reconstruction}
 
-With knowledge of the phase information at each measuring BPM, and with knowledge of the model machine, the transverse optics functions can be determined.
+With knowledge of the phase information at each measuring \gls{BPM}, and with knowledge of the model machine, the transverse optics functions can be determined.
 The model knowledge traditionally comes from the \gls{MADX} code~\cite{CODE:MADX_guide} for LHC measurements.
 The \(\beta\)-function at a given BPM can be calculated from the measured phases of \num{3} BPMs \((i, j, k)\), according to~\cite{PHD:Castro,BOOK:Minty:Measurements_Control_Charged_Particle_Beams}:
 
@@ -512,20 +512,28 @@ The \(\beta\)-function at a given BPM can be calculated from the measured phases
   \beta_z^{\mathrm{phase}}(s_i) = \frac{\cot \left(\phi_z(i \rightarrow j)\right) + \cot \left(\phi_z(i \rightarrow k)\right)}{\cot \left(\phi^m_z(i \rightarrow j)\right) + \cot \left(\phi^m_z(i \rightarrow k)\right)} \beta^m_z(s_i)  \text{ ,} \quad z = x, y \text{ ,}
   \label{equation:beta_from_phase}
 \end{equation}
-where the superscript \(^m\) denotes the model values and \(\phi_z(i \rightarrow j)\) is the phase advance between the \(i^{\mathrm{th}}\) and \(j^{\mathrm{th}}\) BPMs.
-This method has been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it then only depends on the measured phase advances and is independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
+\vspace{0.3mm}
 
-From \cref{equation:single_particle_action} one infers that the \(\beta\)-function can also be determined directly from the amplitude \(A\) of the oscillations recorded at BPMs.
-Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can determine the calibration-dependent~\cite{PRAB:GarciaTabares:BPM_Calibration} \(\beta\)-function according to:
+\noindent
+where the superscript \(^m\) denotes the model values and \(\phi_z(i \rightarrow j)\) is the phase advance between the \(i^{\mathrm{th}}\) and \(j^{\mathrm{th}}\) BPMs.
+The BPMs do not necessarily need to be consecutive, and specific phase advances between the chosen BPMs increase the precision of the measurement.
+This method has also been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it then only depends on the measured phase advances and is fully independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
+
+From \cref{equation:single_particle_action} one infers that the \(\beta\)-function can also be determined directly from the amplitude \(A\) of the oscillations recorded at BPMs:
 
 \begin{equation}
-  \begin{gathered}
-    \beta_z^{\mathrm{amp}}(s_i) = \frac{A_z^2(s_i)}{2 J_z} \text{ ,} \\
-    2 J_z                       = \frac{\sum_n \left(\frac{\mathrm{peak-to-peak}}{2}\right)^2 / \beta^m_z}{n} \text{ .}
-  \end{gathered}
+  \beta_z^{\mathrm{amp}}(s_i) = \frac{A_z^2(s_i)}{2 J_z} \text{ .}
   \label{equation:beta_from_amplitude}
 \end{equation}
 
+Using the peak-to-peak oscillation amplitude over \(n\) BPMs, one can determine the calibration-dependent~\cite{PRAB:GarciaTabares:BPM_Calibration} term \(J_z\) according to:
+
+\begin{equation}
+  2 J_z = \frac{\sum_n \left(\frac{\mathrm{peak-to-peak}}{2}\right)^2 / \beta^m_z}{n} \text{ .}
+  \label{equation:J_from_peak_to_peak}
+\end{equation}
+
+The reconstructed \gls{beta-function} from amplitude is dependent on the calibration of measuring BPMs.
 \Cref{figure:betabeating_phase_vs_amp} shows the \(\beta\)-beating reconstructed from phase and from amplitude for a \num{2022} LHC measurement at \(\beta^{\ast} =\) \qty{30}{\centi\meter}, where the lower precision from reconstructing from amplitude can be seen.
 
 \begin{figure}[!htb]
