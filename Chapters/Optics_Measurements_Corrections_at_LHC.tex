@@ -676,12 +676,12 @@ From the amplitude and phase information of \cref{equation:coupling_rdts_amplitu
 \vspace{1pt}
 
 In \cref{figure:example_spectrum}, which shows a spectrum from an LHC measurement during the \num{2022} commissioning, the coupling lines are visible and highlighted.
-This method has successfully been used to measure linear coupling RDTs in the LHC since Run~\num{1}~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
+This reconstruction method has successfully been used to measure linear coupling RDTs in the LHC since Run~\num{1}~\cite{PRAB:Benedikt:Driving_Term_Experiments_CERN,IPAC:Persson:Automatic_Coupling_Correction_LHC_Injection_Oscillations,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole}.
 
 \subsubsection*{AC dipole Compensation}
 
 Mentioned in \cref{subsection:optics_measurements} is the effect of \gls{AC_dipole} excitation on the observables, which differ from that of the natural machine.
-This effect is also present in the reconstructed coupling \glspl{RDT}, and must be compensated for in order to obtain the natural machine values.
+This effect is also present in the reconstructed coupling \glspl{RDT}, and must be compensated for in order to obtain the natural machine's values.
 Several compensation methods exist, with the most straightforward being the application of a rescaling factor to the reconstructed \glspl{RDT}.
 
 Using this rescaling one can express the driven \glspl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
@@ -693,12 +693,14 @@ Using this rescaling one can express the driven \glspl{RDT} as~\cite{IPAC:Wegsch
   \end{aligned}
   \label{equation:rescaling_coupling_rdts}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 where \(f_{+} = f_{1010}\) corresponds to the sum resonance, \(f_{-} = f_{1001}\) corresponds to the difference resonance, \(f_{\pm, x}^{\mathrm{driven}}\) denotes the driven \gls{RDT} as measured from horizontal turn-by-turn data, \(Q_{D, z}\) is the driven tune in the transverse plane \(z\) and \(Q_z\) the natural tune in the same plane.
 Here the \(f_{\pm}\) notation is used for concisiveness.
 
 A fully analytical compensation of the AC dipole effect can be found in~\cite{REPORT:Miyamoto:Measurement_Coupling_Resonance_Driving_Terms,IPAC:Miyamoto:Measurement_Coupling_RDTs_LHC_AC_Dipole} but will not be detailed in this document.
 A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider:NBPM_Momentum_Reconstruction_for_Linear_Coupling_RDTs}.
-% \todo{Mention about the MODEL method???}
 
 \subsubsection*{Single BPM}
 
