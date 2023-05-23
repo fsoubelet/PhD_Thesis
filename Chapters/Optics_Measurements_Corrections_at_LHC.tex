@@ -315,7 +315,7 @@ After reaching top energy, a configuration known as \concept{flat-top}, another 
 This is when the \acrshort{ATS} scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
 
 In a final step before luminosity production, called \concept{adjust}, the last few needed parameters are adjusted to bring the beams into collision: tunes, crossing angles, collapse of the separation bumps.
-The resulting configuration, called \concept{stable beams}, is kept throughout the luminosity production for the fill.
+The resulting configuration, called \concept{stable beams}, is kept throughout the fill for luminosity production.
 The fill ends when the beams are extracted from the machine, a.k.a. \concept{beam dump}, after which the cycle ends by a \concept{ramp down} of the magnets' currents.
 Some magnets pre-cycle during the ramp down.
 
@@ -326,24 +326,25 @@ A final change is made in the adjust step, where the tunes are brought to (\(62.
 This last setting may be changed by machine operators during stable beams in order to optimize for beam lifetime.
 
 Starting in \Gls{run}~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
-In \num{2022} a \concept{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at a \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \(\beta^{\ast}\) is progressively reduced to \qty{30}{\centi\meter} during stable beams.
-This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main IPs in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
+In \num{2022} a \concept{\(\beta^{\ast}\)-leveling} was introduced, were collisions start at \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \glssymbol{betastar} is progressively reduced to \qty{30}{\centi\meter} during stable beams.
+This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main \glspl{IP} in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
 This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
-Starting in \num{2023} an anti-telesqueeze is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at LHCb (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
+Starting in \num{2023} an \concept{anti-telesqueeze} is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at \acrshort{LHCb} (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
 
 \section{Optics Measurements and Corrections}
 \label{section:optics_measurements_and_corrections}
 
-The quality of the LHC optics has a significant impact on the machine's performance.
-For instance, the luminosity achieved by the machine is directly determined by the \(\beta\)-functions at the IPs, as seen in \cref{section:luminosity}.
+The quality of the \gls{LHC} optics has a significant impact on the machine's performance.
+For instance, the luminosity achieved by the machine is directly determined by the \glspl{beta-function} at the \glspl{IP}, as seen in \cref{section:luminosity}.
 Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
-One can then define the \gls{beta-beating}, a good indicator of the quality of the linear optics, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
+One can then define the \gls{beta-beating}, a good indicator of the quality of the linear \gls{optics}, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
 It is defined as:
 
 \begin{equation}
   \frac{\Delta \beta_z(s)}{\beta_z(s)} = \frac{\beta_z(s)_{\mathrm{measured}} - \beta_z(s)_{\mathrm{model}}}{\beta_z(s)_{\mathrm{model}}} \quad \text { where } z = x, y \text{ .}
   \label{equation:beta_beating_definition}
 \end{equation}
+\vspace{0.3mm}
 
 In order to verify the machine's beam optics and find any potential faults, or deviations from the model values, beam measurements are necessary.
 From these, comparisons to model values are made which allow for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring back the optics as close to the nominal scenario as possible.
