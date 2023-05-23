@@ -743,11 +743,11 @@ An example of a local correction of the phase advance around IP\num{5} from the 
   \label{figure:example_sbs_correction}
 \end{figure}
 
-The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \acrshortpl{RDT}.
-In the case of the coupling RDTs, due to the lower number of magnets available for adjustment one usually tries to compensate for the \glspl{RDT} at the edges of the segment.
+The concept from \cref{equation:sbs_delta_phi} can be applied to other observables such as the \(\beta\)-functions or the coupling \glspl{RDT}.
+In the case of the coupling RDTs, due to the lower number of magnets available for adjustment one usually tries to compensate for the RDTs at the edges of the segment.
 One can also attempt to match for specific components of the RDTs specifically (real and imaginary parts).
-\Cref{figure:example_sbs_correction_coupling} shows an example of a local correction of the coupling \glspl{RDT} around IP\num{2} from the LHC \num{2021} beam test.
-In this case, a good rematching at the edges of the segment means the contribution of the \gls{IR} to the rest of the machine is well compensated.]
+\Cref{figure:example_sbs_correction_coupling} shows an example of a local correction of the coupling RDTs around IP\num{2} from the LHC \num{2021} beam test.
+In this case, a good rematching at the edges of the segment means the contribution of the \gls{IR} to the global coupling is well compensated.
 More details are given in the next chapter.
 
 \begin{figure}[!hbt]
@@ -757,7 +757,7 @@ More details are given in the next chapter.
   \label{figure:example_sbs_correction_coupling}
 \end{figure}
 
-This method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
+The segment-by-segment method has successfully been applied in the LHC for many years~\cite{PRAB:Aiba:First_Beating_Measurement_LHC,PRAB:Tomas:Record_Low_Beta_Beating_in_the_LHC,PRAB:Persson:LHC_Optics_Commissioning_OnePercent}.
 
 \subsubsection*{Global Corrections}
 
@@ -778,7 +778,7 @@ To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, noted 
   \label{equation:global_corrections_from_pseudo_inverse_response_matrix}
 \end{equation}
 
-The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on the correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
+The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
 By choosing weights and plugging measured optics deviations into \cref{equation:global_corrections_from_pseudo_inverse_response_matrix}, one can determine the knob trims that could correct said observed deviations.
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
