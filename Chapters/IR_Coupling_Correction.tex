@@ -42,17 +42,17 @@ Due to their location the MQSX correctors are single aperture magnets, meaning t
 This means finding a correction has the additional constraint that it is applied to both beam~\numlist{1;2} simultaneously, and should be a compromise that works for both beams.
 As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
 
-During the late \num{2018} ion run in the LHC \Gls{run}~\num{2}, it was observed that while global coupling was well corrected, a local coupling bump in the IR\num{2} had a significant impact on collisions and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
+During the late \num{2018} ion run in the LHC \Gls{run}~\num{2}, it was observed that while global coupling was well corrected, a local coupling bump in IR\num{2} had a significant impact on collisions and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
 Investigations revealed that a coupling bump around IP\num{2} led to a strong increase in beam size and a drop in collisions.
 Importantly, the incident highlighted that no method existed to correct for the coupling specifically at the IP location.
 
-\Cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump at IP\num{1} or IP\num{5}, for the LHC at \(\beta^{*}=\) \qty{30}{\centi\meter} and for the \acrshort{HL-LHC} at \(\beta^{*}=\) \qty{15}{\centi\meter}.
+\Cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump at one of the main IPs, for the LHC at \(\beta^{*}=\)~\qty{30}{\centi\meter} and for the \acrshort{HL-LHC} at \(\beta^{*}=\)~\qty{15}{\centi\meter}.
 These results highlight the necessity of a proper handling of local coupling for the Run~\num{3}, as well as for the HL-LHC where the tolerance is about a factor \num{4} lower.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
-    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP made with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}% Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the much larger \(\beta\)-functions in the triplet.}
+    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as relative instantaneous luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP generated with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}% Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the much larger \(\beta\)-functions in the triplet.}
     \label{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}
 \end{figure}
 
