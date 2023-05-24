@@ -220,24 +220,28 @@ In the case of only skew quadrupolar coupling sources \cref{equation:deltaqmin_g
 \end{equation}
 
 In the case of the MQSX magnets, given the \(\sim\)~\qty{180}{\degree} phase advance between the two correctors, the contribution to the global coupling can be written as:
+% \begin{equation}
+%     \begin{aligned}
+%         \Delta C^{-} &= \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w \\
+%                      &= \frac{1}{2 \pi} \left( \sqrt{\beta_x^l \beta_y^l} k_S^l L + \sqrt{\beta_x^r \beta_y^r} k_S^r L \right) ,
+%     \end{aligned}
+%     \label{equation:deltaqmin_only_mqsxs}
+% \end{equation}
+
 \begin{equation}
-    \begin{aligned}
-        \Delta C^{-} &= \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w \\
-                     &= \frac{1}{2 \pi} \left( \sqrt{\beta_x^l \beta_y^l} k_S^l L + \sqrt{\beta_x^r \beta_y^r} k_S^r L \right) ,
-    \end{aligned}
+    \Delta C^{-} = \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w = \frac{1}{2 \pi} \left( \sqrt{\beta_x^l \beta_y^l} k_S^l L + \sqrt{\beta_x^r \beta_y^r} k_S^r L \right) ,
     \label{equation:deltaqmin_only_mqsxs}
 \end{equation}
 with \(k_S^w L = J_w\) the integrated strength of the skew quadrupole at position \(w\), and \(l\) and \(r\) superscripts denoting the corrector left or right of the IP, respectively.
-\newline
 
 Since for \gls{round_optics} in the LHC the \glspl{beta-function} are by design identical at the two correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and those have identical lengths, with opposite powering settings as defined in \cref{table:colinearity_knob} and assuming a good \(\beta\)-beating correction this contribution reduces to \num{0}.
 Therefore, the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
-\Cref{figure:colinearity_knob_effect} shows the effect of the colinearity knob at different strengths on the \(f_{1001}\).
+\Cref{figure:colinearity_knob_effect} shows the effect of the colinearity knob on the \(f_{1001}\).
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
-    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob, in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling in the machine. The locations of the MQSX corrector magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
+    \includegraphics*[width=0.92\textwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
+    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob, in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling. The locations of the MQSX corrector magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
     \label{figure:colinearity_knob_effect}
 \end{figure}
 
