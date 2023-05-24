@@ -63,7 +63,7 @@ For instance, beam sizes are calculated from the \(\beta_{kj}\) terms according 
     \langle z \rangle = \sqrt{\varepsilon_1 \beta_{1z} + \varepsilon_2 \beta_{2z}}, \quad z \in\{x, y\} ,
     \label{equation:lebedev_beam_size}
 \end{equation}
-where \(\varepsilon_1\) and \(\varepsilon_2\) are the horizontal and vertical emittances, respectively.
+in which the \(\varepsilon_1\) and \(\varepsilon_2\) terms represent the horizontal and vertical emittances, respectively.
 
 The validity of this calculation has been verified in simulations by comparing its results to those obtained from other means.
 \Cref{figure:lebedev_vs_tracking} shows the relative deviation between computed beam sizes at IP\num{5}, calculated either according to \cref{equation:lebedev_beam_size} or from tracking a particle distribution, under various strengths of local coupling.
@@ -105,7 +105,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 
 \begin{figure}
     \centering
-    \includegraphics*[width=0.99\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
+    \includegraphics*[width=\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
     \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other.}
     \label{figure:guess_rdts}
 \end{figure}
@@ -113,6 +113,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 \subsubsection*{Segment-by-Segment}
 
 The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
+
 Firstly, due to unfavorable phase advances in between \acrshortpl{BPM} in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
 As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
