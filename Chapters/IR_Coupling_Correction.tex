@@ -488,6 +488,9 @@ The highlighted difference between the two curves is then fully explained by the
 Applying a trim of the colinearity knob setting linearly translates the curves of \cref{figure:full_scenario_determine_correction} horizontally.
 This behavior is valid and verifiable in both simulation and measurements.
 Therefore, one looks to determine a colinearity knob trim that, if applied in the machine, would bring the measurement's \(\abs{C^{-}}\) minimization point to that of the simulation.
+As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
+In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
+The value is different from that of the minimization in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} as there global sources are also compensated while this correction aims at compensating only the local sources.
 
 \begin{figure}[!htb]
     \centering
@@ -495,10 +498,6 @@ Therefore, one looks to determine a colinearity knob trim that, if applied in th
     \caption{Relative IP beam sizes when compared to the nominal scenario (\textcolor{mplblue}{blue}) when inputting the local errors used in the study for \cref{figure:full_scenario_determine_correction} (\textcolor{mplorange}{orange}) and after applying the suggested correction (\textcolor{mplgreen}{green}). The black dotted line represents the threshold of a \qty{1}{\percent} beam size increase from the nominal scenario.}
     \label{figure:full_scenario_correction_efficiency}
 \end{figure}
-
-As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
-In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
-The value is different from that of the minimization in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} as there global sources are also compensated while this correction aims at compensating only the local sources.
 
 When only considering the local sources used for the results in \cref{figure:full_scenario_determine_correction} and inputting the correction trim suggested, one obtains a good compensation of the beam sizes at IP\num{1}.
 \Cref{figure:full_scenario_correction_efficiency} shows the impact of these local errors and the effect of applying the suggested correction trim.
