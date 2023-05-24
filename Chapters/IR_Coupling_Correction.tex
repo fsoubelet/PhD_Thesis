@@ -648,13 +648,6 @@ As a first step, the validity of the experimental setup was verified by trimming
 Similar checks were done for both beams and both IRs.
 The \glspl{beta-function} in these measurements are reconstructed with the \acrshort{OMC} codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
 
-\begin{figure}[!htb]
-    \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rematching_knob_efficiency.pdf}
-    \caption{The beam~\num{1} \(\beta\)-beating observed at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} for the corrected machine (\textcolor{butter}{yellow}), from the implementation of the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after applying the optics re-matching knob (\textcolor{scarletred}{red}). The highlighted area (\textcolor{highlightorange}{orange}) shows where magnetic elements are affected by the knobs.}
-    \label{figure:ir5_rws_rematching}
-\end{figure}
-
 The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} additional \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
 Considering the state of the machine at the time of these measurements, it can be considered that the optics re-matching shows great efficiency.
 Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-functions reconstruction close the IPs is of relatively low quality.
@@ -663,7 +656,13 @@ After confirming the validity of the optics knobs and with the waist shift in th
 At each setting, a few measurements were taken by method of beam excitation, from which the coupling \glspl{RDT} were computed.
 As the \gls{optics} are affected - and re-matched - differently for beam~\num{1} and beam~\num{2}, a scan of the colinearity knob was performed for each beam and for each IR.
 Different scans were done with different granularity due to time constraints.
-\break
+
+\begin{figure}[!htb]
+    \centering
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/rematching_knob_efficiency.pdf}
+    \caption{The beam~\num{1} \(\beta\)-beating observed at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\)~\qty{30}{\centi\meter} for the corrected machine (\textcolor{butter}{yellow}), from the implementation of the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after applying the optics re-matching knob (\textcolor{scarletred}{red}). The highlighted area (\textcolor{highlightorange}{orange}) shows where magnetic elements are affected by the knobs.}
+    \label{figure:ir5_rws_rematching}
+\end{figure}
 
 For each measurement the RDTs across the machine are normalized to the base case with no RWS, global coupling corrected and no colinearity knob trim.
 Only then is the \glssymbol{Cminus} computed according to \cref{equation:deltaqmin_from_f1001}.
