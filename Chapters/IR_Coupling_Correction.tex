@@ -395,10 +395,10 @@ Phase advances are also changed, but by a very small amount.
 \end{figure}
 \break
 
-When applying a Rigid Waist Shift and breaking the optics symmetry of the IR, on can observe a leakage of the coupling RDTs outside the limits of the initial coupling bump.
-These RDTs will then have a residual presence in the machine, which can be measured and reconstructed from turn-by-turn data from BPMs with more suitable phase advances.
+When applying a Rigid Waist Shift and breaking the optics symmetry of the IR, one can observe a leakage of the coupling \glspl{RDT} outside the limits of the initial coupling bump.
+These RDTs will then have a residual presence in the machine, which can be measured and reconstructed from turn-by-turn data from \glspl{BPM} with more suitable phase advances.
 As a consequence, under an RWS even a local coupling bump that would normally be invisible to the rest of the machine will have a direct impact on the global coupling, measured as the \glssymbol{Cminus}.
-This can be seen in \cref{figure:knob_to_cminus_with_waist}, where changes in the setting of the colinearity knob now have a strong effect on the \(\abs{C^{-}}\) when an RWS is applied in the machine.
+This can be seen in \cref{figure:knob_to_cminus_with_waist}, where changes in the setting of the colinearity knob now have a strong effect on the \glssymbol{Cminus} when an RWS is applied in the relevant \gls{IR}.
 
 \begin{figure}[!htb]
     \centering
@@ -410,12 +410,12 @@ This can be seen in \cref{figure:knob_to_cminus_with_waist}, where changes in th
 As previously mentioned, since the bump is not actually perfectly closed the \textcolor{mplorange}{orange} line in \cref{figure:knob_to_cminus_with_waist} is not completely flat and reaches up to \(\sim\)~\num{1e-5}, which is well below the measurement accuracy for the \(\abs{C^{-}}\).
 The behavior seen in \cref{figure:knob_to_cminus_with_waist}, though theoretical, has been experimentally tested and confirmed in the machine~\cite{CERN:Persson:Local_Coupling_IP}.
 Importantly, this behavior opens the possibility of using an RWS to probe IR local coupling through the measured global coupling.
-\newline
 
-Simulations have been done to investigate the feasibility of finding local coupling correction settings using an RWS, using the \(\beta^{\ast} = \) \qty{30}{cm} optics of \num{2022}.
+Simulations have been done to investigate the feasibility of finding local coupling correction settings using an RWS, with the \(\beta^{\ast} = \) \qty{30}{cm} optics of \num{2022}.
 At both IR\num{1} and IR\num{5} a local coupling bump was created by introducing identical tilt errors in triplet quadrupoles Q\num{3} - thus giving a skew quadrupolar component - and the colinearity knob was powered for compensation.
 A full parameter space was explored, both with and without an RWS applied.
 \Cref{figure:cminus_colin_vs_tilt_with_waist} shows the values of the resulting \(\abs{C^{-}}\) across the parameter space when an RWS is applied.
+\Cref{figure:beam_size_colin_vs_tilt_no_waist} shows the resulting IP beam size increase as a ratio to the nominal beam size across the same parameter space.
 
 \begin{figure}[!htb]
     \centering
@@ -423,8 +423,6 @@ A full parameter space was explored, both with and without an RWS applied.
     \caption{Resulting \(\abs{C^{-}}\) (\cref{equation:deltaqmin_from_f1001}) for various combinations of tilt error and colinearity knob settings, when applying an RWS.}
     \label{figure:cminus_colin_vs_tilt_with_waist}
 \end{figure}
-
-\Cref{figure:beam_size_colin_vs_tilt_no_waist} shows the resulting beam size increase as a ratio to the nominal beam size across the same parameter space.
 
 \begin{figure}[!htb]
     \centering
