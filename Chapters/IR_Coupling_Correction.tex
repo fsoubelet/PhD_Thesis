@@ -241,11 +241,9 @@ Therefore, the knob induces a closed coupling bump going from corrector to corre
 One can observe that in all cases without global coupling (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} lines) the \(\abs{f_{1001}}\) falls down to \num{0} outside the MQSX to MQSX zone.
 When global coupling is present the \(\abs{f_{1001}}\) goes back to its original value outside the limits of the bump.
 A similar plot can be obtained for the \(f_{1010}\).
-
 The reader might notice how the amplitude of the RDT does not fall down to exactly \num{0} in the \textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} cases.
 As mentioned above the phase advance between the two magnets if off of exactly \(\pi\) by \qty{1}{\percent}, and similarly the \(\sqrt{\beta_x \beta_y}\) term is not perfectly equal on each side but off by \qty{0.1}{\percent}.
 For all intents and purposes though, these deviations are small enough that the contribution can be considered \num{0}.
-\newline
 
 Thus, the colinearity knob is an effective tool to introduce a closed coupling bump in between the MQSXs.
 It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
@@ -265,7 +263,7 @@ An RWS is achieved by unbalancing the powering strength of the triplet quadrupol
 
 The \gls{knob} is designed so that a \gls{trim} setting of \num{1} will result in a \qty{0.5}{\percent} change in the triplet knob powering (individual magnet trims are not used), which creates a waist shift of \(\sim\)\qty{43.5}{\centi\meter} to the left or right of the IP depending on the unit setting of the knob.
 The definition of the knob is given in \cref{table:rigid_waist_shift_knob}.
-A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.
+A full definition of the RWS knobs as implemented and used in the LHC can be found in \cref{section:rigid_waist_shift_knobs_lsa}.\\
 
 \begin{table}[!hbt]
     \centering
@@ -282,7 +280,7 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 \end{table}
 
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified.
-These were determined in MAD-X simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
+These were determined in \gls{MAD-X} simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
 Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical for the two main experiments.
 
 \begin{figure}[!htb]
