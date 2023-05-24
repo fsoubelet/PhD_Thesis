@@ -280,7 +280,7 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 \end{table}
 
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified.
-These were determined in \gls{MAD-X} simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
+These were determined in \gls{MADX} simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
 Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical for the two main experiments.
 
 \begin{figure}[!htb]
@@ -301,19 +301,21 @@ The purpose of this setup is detailed in \cref{subsection:rws_application_and_si
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics[width=0.99\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
+    \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
     \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios. An identical result is found for IP\num{5}.}
     \label{figure:rigid_waist_shift_knob_effect_on_betas}
 \end{figure}
 
 \subsubsection*{Optics Impact and Rematching}
 
-Predictably, the application of an RWS as described above has a strong impact on the optics across the machine: the significant change of \(\beta\)-functions in the triplets sends a beating wave from the IR to the rest of the machine.
-Applying an RWS with a unit setting of \num{1}, as defined in \cref{table:rigid_waist_shift_knob}, leads to a \numrange[range-phrase = --]{20}{30}\unit{\percent} increase in \gls{beta-beating} in the machine, depending on the observed beam and plane.
+Predictably, the application of a Rigid Waist Shift as described above has a strong impact on the optics across the machine.
+This is due to the significant change of \(\beta\)-functions in the triplets, which sends a beating wave from the IR to the rest of the machine.
+Applying an RWS with a unit setting of \num{1}, as defined in \cref{table:rigid_waist_shift_knob}, leads to a \numrange[range-phrase = --]{20}{30}\unit{\percent} increase in peak \gls{beta-beating} throughout the machine, depending on the observed beam and plane.
 
 This can be observed in \cref{figure:rigid_waist_shift_betabeating}, where in simulations an RWS was implemented with a unit setting of \num{1} at IP\num{1} and the optics deviations from the nominal scenario were determined across the machine for both beams.
 The most affected beam and plane depends on the setting of the RWS: in \cref{figure:rigid_waist_shift_betabeating} beam~\num{1} horizontal and beam~\num{2} vertical are most affected, but these would be beam~\num{1} vertical and beam~\num{2} horizontal if the RWS was applied with a setting of \num{-1}.
-Naturally, some strong outliers can be observed in the vicinity of the IP, corresponding to the desired deviation at the IP and in the triplets.
+Naturally, some strong outliers can be observed in the vicinity of the IP, which correspond to the desired deviation at the IP and in the triplets induced by the \gls{knob} \gls{trim}.
+\break
 
 \begin{figure}[!htb]
     \centering
@@ -325,7 +327,6 @@ Naturally, some strong outliers can be observed in the vicinity of the IP, corre
 Such a deviation of the optics has an impact on correction knobs.
 For instance, simulations show that application of the RWS causes a \qty{15}{\percent} deviation from the achieved \gls{Cminus} to the target value set through the LHC global coupling knobs, used for coupling correction with the arc skew quadrupoles.
 Additionally, the optics deviations will change the impact of any errors probed while the RWS is trimmed in, namely the skew quadrupolar impact on the \(\abs{C^{-}}\) (see \cref{equation:deltaqmin_guignard}).
-\newline
 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
