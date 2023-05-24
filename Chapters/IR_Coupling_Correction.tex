@@ -632,20 +632,21 @@ The final correction settings determined with the segment-by-segment technique a
                                           &  \textbf{RQXS.3R8}                     &  \num{-5}                                                                &     \num{-5}          \\
         \hline
     \end{tblr}
-    \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning (right) and their values as used during the LHC Run~\num{2} (left).}
+    \caption{Local IR skew quadrupole correctors powering at the four main LHC IRs as determined with the segment-by-segment technique in the \num{2022} commissioning and their values as used during the LHC Run~\num{2}.}
     \label{table:sbs_corrections}
 \end{table}
 
 \subsection{Rigid Waist Shift Corrections}
 \label{subsection:rws_pos_measurements_corrections}
 
-The RWS method was implemented in both IR\num{1} and IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} to determine final correction settings in the form of adjustments from the SbS corrections.
+The RWS method was implemented in both IR\num{1} and IR\num{5} at \qty{6.8}{\tera\electronvolt} and \(\beta^{*}=\) \qty{30}{\centi\meter} to determine final correction settings in the form of adjustments from the SbS corrections presented above.
 Relevant fills used for these measurements can be found in \cref{table:run3_fills}.
+\break
 
 As a first step, the validity of the experimental setup was verified by trimming the RWS in the machine and then checking the efficiency of the optics rematching knobs.
-\Cref{figure:ir5_rws_rematching} shows the \(\beta\)-beating across the machine for beam~\num{1} before any knob application (\textcolor{butter}{yellow}), from applying the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after the application of the optics re-matching knob (\textcolor{scarletred}{red}).
+\Cref{figure:ir5_rws_rematching} shows the \gls{beta-beating} across the machine for beam~\num{1} before any knob application (\textcolor{butter}{yellow}), from applying the RWS in IR\num{5} (\textcolor{skyblue}{blue}) and after the application of the optics re-matching knob (\textcolor{scarletred}{red}).
 Similar checks were done for both beams and both IRs.
-The \(\beta\)-functions in these measurements are reconstructed with the OMC codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
+The \glspl{beta-function} in these measurements are reconstructed with the \acrshort{OMC} codes according to~\cite{PRAB:Wegscheider:Analytical_N_BPM}.
 
 \begin{figure}[!htb]
     \centering
@@ -654,20 +655,20 @@ The \(\beta\)-functions in these measurements are reconstructed with the OMC cod
     \label{figure:ir5_rws_rematching}
 \end{figure}
 
-The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} \textit{additional} \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
+The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} additional \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
 Considering the state of the machine at the time of these measurements, it can be considered that the optics re-matching shows great efficiency.
 Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-functions reconstruction close the IPs is of relatively low quality.
 
-After confirming the validity of the optics knobs, with the waist shift in the machine scans of the colinearity knob (\cref{table:colinearity_knob}) were performed.
-At each setting, a few measurements were taken by method of beam excitation, from which the coupling RDTs were computed.
-As the optics are affected - and re-matched - differently for beam~\num{1} and beam~\num{2}, a scan of the colinearity knob is performed for each beam and for each IR.
+After confirming the validity of the optics knobs and with the waist shift in the machine, scans of the colinearity knob (\cref{table:colinearity_knob}) were performed.
+At each setting, a few measurements were taken by method of beam excitation, from which the coupling \glspl{RDT} were computed.
+As the \gls{optics} are affected - and re-matched - differently for beam~\num{1} and beam~\num{2}, a scan of the colinearity knob was performed for each beam and for each IR.
 Different scans were done with different granularity due to time constraints.
+\break
 
 For each measurement the RDTs across the machine are normalized to the base case with no RWS, global coupling corrected and no colinearity knob trim.
-Only then the \(\abs{C^{-}}\) is computed according to \cref{equation:deltaqmin_from_f1001}.
+Only then is the \glssymbol{Cminus} computed according to \cref{equation:deltaqmin_from_f1001}.
 Then the variations due to the changes of the colinearity knob are visualized and compared to simulations.
 In said simulations, the global coupling of the machine is reproduced by introducing the coupling correction knobs implemented in the machine.
-\newline
 
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement} comparisons are shown between scan measurements and simulations for IR\num{1} for beam~\num{1} and beam~\num{2}, then IR\num{5} for beam~\num{1} and beam~\num{2}, respectively.
 The delta between minimization settings, corresponding to the suggested correction adjustment, is highlighted on each plot.
