@@ -104,9 +104,9 @@ where \(N_{n}\) is the number of protons per bunch in beam \(n\), \(f_{rev}\) th
 
 While the coupling \glspl{RDT} contain information on the coupling situation in the machine, looking at their patterns along the ring is not a good indicator of the situation in a specific location.
 For instance, \cref{figure:guess_rdts} shows the reconstructed coupling RDTs from two measurements taken during the LHC \num{2022} commissioning.
-One of these measurements corresponds to a \qty{20}{\percent} lower measured luminosity at IP\num{1} compared to the other, but it is not possible to tell which is which from looking at the RDTs alone.
+One of these measurements corresponds to a \qty{20}{\percent} lower measured luminosity at IP\num{1} compared to the other, however it is not possible to tell those apart from looking at the RDTs alone.
 
-\begin{figure}
+\begin{figure}[!htb]
     \centering
     \includegraphics*[width=\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
     \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other.}
@@ -116,14 +116,13 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 \subsubsection*{Segment-by-Segment}
 
 The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
-
 Firstly, due to unfavorable phase advances in between \acrshortpl{BPM} in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
 As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
 
 As a consequence, the reconstruction of coupling RDTs in close proximity to the IPs is inaccurate.
 \Cref{figure:beamtest_vs_2022_sbs_abs_f1001_ir1} shows the amplitude of the coupling RDTs propagated with the SbS technique in the IR\num{1} segment, from measurements taken during the LHC \num{2021} beam tests and \num{2022} commissioning.
-Not only can large error bars can be noticed on the reconstructed data points, but no given case appears to be specifically better than the other while the \textcolor{mplorange}{orange} line (\num{2022} commissioning) corresponds to a better correction than the \textcolor{mplblue}{blue} one (\num{2021} beam tests).
+Not only can large error bars be noticed on the reconstructed data points, but no given case appears to be specifically better than the other while the \textcolor{mplorange}{orange} line (\num{2022} commissioning) corresponds to a better correction than the \textcolor{mplblue}{blue} one (\num{2021} beam tests).
 Given the data patterns and the fact that the orange case corresponds to a better correction, it does not appear that the SbS technique gives a good indication of the local coupling at the IP.
 
 \begin{figure}[!htb]
