@@ -326,11 +326,11 @@ Naturally, some strong outliers can be observed in the vicinity of the IP, which
 
 Such a deviation of the optics has an impact on correction knobs.
 For instance, simulations show that application of the RWS causes a \qty{15}{\percent} deviation from the achieved \gls{Cminus} to the target value set through the LHC global coupling knobs, used for coupling correction with the arc skew quadrupoles.
-Additionally, the optics deviations will change the impact of any errors probed while the RWS is trimmed in, namely the skew quadrupolar impact on the \(\abs{C^{-}}\) (see \cref{equation:deltaqmin_guignard}).
+Additionally, the optics deviations will change the impact of any errors probed while the RWS is trimmed in, namely the skew quadrupolar impact on the \gls{Cminus} (see \cref{equation:deltaqmin_guignard}).
 
 In order to limit this impact on the optics and guarantee good measurements under an RWS, new correction knobs have been developed that make use of individually powered quadrupoles Q\num{4} to Q\num{10} (included). 
 These knobs tune the optics functions and rematch them at the edges of the IR in the large sense.
-They were designed with the MAD-X code and a software developed for the occasion that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
+They were designed with the \gls{MADX} code and a software developed for the occasion that can create these experimental configurations for a given IP in the machine~\cite{CODE:Soubelet:pyrws}.
 
 These knobs are obtained from simulations after applying an RWS in a given IR and iterating several matching routines for quantities of interest at different locations in the machine.
 Importantly, no involved magnet sees its powering change by more than \(\sim\)\qty{3}{\percent} with the application of these knobs, which allows for respecting the powering limits of individually powered elements.
