@@ -1010,26 +1010,28 @@ As seen in \cref{section:colinearity_knob}, the contribution of one magnet can b
 For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of an MQSX magnet with  \(\mathrm{K_{1S}} =\)~\qty{-4E-4}{\per\square\meter} at this location.
 It could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}, since the optics conditions at the correctors are identical.
 This compensation corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
-As such, should one MQSX fail its counterpart could still compensate for the \gls{IR}'s contribution to global coupling.
 
+As such, should one MQSX fail it would still be possible to compensate for the \gls{IR}'s contribution to global coupling by properly powering its counterpart.
 It would therefore be possible to fulfill the first correction stage mentioned in \cref{section:current_correction_methods_and_their_limitations} and to squeeze the beams down to \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 Minimizing coupling at the IP, however, would not be possible anymore as it requires trimming both magnets simultaneously.
 The operational impact of losing one of the correctors would then be that of a potentially strong coupling at the IP.
 
-Simulations were done with the MAD-X code to assess the impact of missing a specific corrector magnet and compensating its effect by carrying its correction setting over to its counterpart on the other side of the IP.
-The powering settings from \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} were used, as determined with the RWS, and beam size increases were determined from Ripken parameters according to \cref{equation:lebedev_beam_size}.
+Simulations were done with the \gls{MADX} code to assess the impact of missing a specific corrector magnet and compensating its effect by carrying its correction setting over to its counterpart on the other side of the IP.
+In these simulations the powering settings from \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} were used, as determined with the \gls{RWS}, and beam size increases were determined from Ripken parameters according to \cref{equation:lebedev_beam_size}.
 From these, the changes in instantaneous luminosity were calculated according to \cref{equation:luminosity_double_beams}.
-\Cref{figure:lumi_vs_trims_vs_betastars} shows the expected luminosity reduction from the nominal case for various trims of the colinearity knob corresponding to different missing MQSX magnets, for different \(\beta^{\ast}\) optics.
+
+\Cref{figure:lumi_vs_trims_vs_betastars} shows the expected instantaneous luminosity reduction from the nominal case for various trims of the colinearity knob corresponding to different missing MQSX magnets, for different \(\beta^{\ast}\) optics.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lumi_vs_betastars_colin_trims.pdf}
-    \caption{Expected luminosity reduction for various trims of the colinearity knob at IP\num{1}/IP\num{5} for different \(\beta^{\ast}\) optics.}
+    \caption{Expected instantaneous luminosity reduction for various trims of the colinearity knob at IP\num{1}/IP\num{5} for different \(\beta^{\ast}\) optics. Each line corresponds to the trim necessary to compensate for a specific corrector's powering.}
     \label{figure:lumi_vs_trims_vs_betastars}
 \end{figure}
 
 Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\) \qty{30}{\centi\meter}: by up to \qty{60}{\percent}.
 Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
+\newpage
 
 The possible impact of this change on the aperture was also considered.
 \Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} with the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
