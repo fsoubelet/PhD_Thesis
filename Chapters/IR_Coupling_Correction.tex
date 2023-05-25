@@ -846,9 +846,9 @@ The adjustments determined with the RWS have been incorporated into the nominal 
 \subsection{Comparison to Expectations}
 \label{subsection:lumi_vs_expectations}
 
-Simple simulations were performed to compare the observed luminosity improvements to what one would expect from correcting the suspected local errors.
+Simulations were performed to compare the observed luminosity improvements to what one would expect from correcting the suspected local errors.
 As the adjustments were determined in terms of unit setting of the colinearity knob, one can consider these an accurate representation of the error that was left - and corrected - in the machine.
-For instance, a correction of \(\Delta_{\mathrm{colin}} = 5\) suggests that the local error that was corrected in the machine could be reproduced by introducing a \num{-5} trim of the colinearity knob in simulations.
+For instance, a correction of \(\Delta_{\mathrm{colin}} = 5\) suggests that the corrected local error in the machine could be reproduced by introducing a \num{-5} trim of the colinearity knob in simulations.
 
 In these simulations, done at \qty{6.8}{\tera\electronvolt} using the \num{2022} optics, the nominal machine setup was reproduced and the suspected errors at either IR\num{1} or IR\num{5} were introduced in the form of a powering of the colinearity knob with the opposite values as those from \cref{table:rws_corrections_summary}.
 Beam sizes were determined (\cref{equation:lebedev_beam_size}) for both beams in each case: with the trim of the colinearity knob, corresponding to the errored case; and without any trim, corresponding to the corrected case.
@@ -865,34 +865,39 @@ From these, instantaneous luminosities were determined according to \cref{equati
 While the expected luminosity gains at IP\num{5} are in agreement with the observed ones, some discrepancies are present for IP\num{1} data and a factor \(\sim\)\num{1.26} between the measurement and prediction is present.
 
 \begin{warningblock}
-    As will be seen later on in \cref{section:limited_correctors_availability}, similar measurements show a much better agreement with simulation predictions using the same calculations as in \cref{figure:expected_vs_observed_lumigains}. 
-    Those similar measurements were taken later on in the year, with higher intensity beams - leading to a higher quality of the \gls{luminosity} signal - and better detector setup and calibration.
-    This leads us to believe the IP\num{1} luminosity measurement in \cref{figure:expected_vs_observed_lumigains} might be an underestimation of the actual values.
+    As will be seen later on in \cref{section:limited_correctors_availability}, similar measurements show a much better agreement with IP1 simulation predictions using the same calculations as in \cref{figure:expected_vs_observed_lumigains}. 
+    Those measurements were taken later on in the year, with higher intensity beams - thus a higher quality of the \gls{luminosity} signal - and better detector setup and calibration.
+    This leads us to believe the IP\num{1} luminosity measurement in \cref{figure:expected_vs_observed_lumigains} is an underestimation of the actual values.
     The expected value for the IR\num{1} trim, from measurements presented in \cref{section:limited_correctors_availability}, would be an \qty{11.6}{\percent} luminosity increase at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 \end{warningblock}
 
 \section{Relevance to Other Colliders}
 
-For any collider the requirement of small \(\beta\)-functions for collisions is a key design parameter, and leads to using a doublet or triplet of quadrupoles to achieve the necessary intense focusing of the beams at the IP.
+For any collider the requirement of small \glspl{beta-function} for collisions is a key design parameter, and leads to using a doublet or triplet of quadrupoles to achieve the necessary intense focusing of the beams at the IP.
 On either side of the collision point, in the drift space leading to the first quadrupole the \(\beta\)-functions evolve as:
 
 \begin{equation}
-    \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}} \text{ .}
+    % \beta(s) = \beta^{\ast} + \frac{s^2}{\beta^{\ast}} \text{ .}
+    \beta(s) = \beta^{\ast} + s^2 / \beta^{\ast} \text{ .}
     \label{equation:collider_drift_space_beta_function}
 \end{equation}
-where \(\beta^{\ast}\) is the \(\beta\)-function at the IP and \(s\) denotes the distance from the IP.
-Using \(L^*\) as the length of this drift space, the phase advance from IP point to said quadrupole is expressed as:
+where \glssymbol{betastar} is the \(\beta\)-function at the \gls{IP} and \(s\) denotes the distance from the IP.
+Using \(L^*\) as the length of this drift space, the phase advance from the IP to said quadrupole is expressed as:
 
 \begin{equation}
     \mu = \int_0^{L^*} \frac{1}{\beta(s)} ds = \int_0^{L^*} \frac{\beta^{\ast}}{\beta^{\ast}{}^2 + s^2} ds \text{ ,}
     \label{equation:collider_drift_space_phase_advance_integral}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 which one can integrate to obtain:
 
 \begin{equation}
     \mu = \beta^{\ast} \left[\frac{1}{\beta^{\ast}} \tan^{-1} \left(\frac{s}{\beta^{\ast}} \right) \right]_0^{L^*} = \tan^{-1} \left(\frac{L^*}{\beta^{\ast}} \right) \text{ .}
     \label{equation:collider_drift_space_phase_advance_integrated}
 \end{equation}
+\vspace{1pt}
 
 Then, for traditionally \(L^* \gg \beta^{\ast}\) one gets:
 
@@ -906,7 +911,7 @@ This can be seen in \cref{figure:fccee_phases_to_ip5} for the FCC-ee~\cite{EPJST
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/fccee_phases_to_ip5.pdf}
+    \includegraphics*[width=0.89\textwidth]{Figures/IR_Coupling_Correction/fccee_phases_to_ip5.pdf}
     \caption{Phase advances relative to IP\num{5} at in the FCC-ee V22 lattice, in the Z operation mode at \qty{45.6}{\giga\electronvolt} and \(\beta^{\ast}=\)~\qty{10}{\centi\meter}.}
     \label{figure:fccee_phases_to_ip5}
 \end{figure}
