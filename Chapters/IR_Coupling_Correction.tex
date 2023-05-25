@@ -280,20 +280,20 @@ A full definition of the RWS knobs as implemented and used in the LHC can be fou
 \end{table}
 
 \Cref{figure:rigid_waist_shift_knob_effect_on_waist} shows how applying the knob in a given IR displaces the beam's waists away from the IP location, and also shows how the \(\beta\)-functions at the IP location are modified.
-These were determined in \gls{MADX} simulations, using the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
+These were determined in \gls{MADX} simulations, using the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}, by applying the RWS with different strengths settings at IP\num{1} and determining the waist, both numerically with a fine lattice slicing and analytically as described in~\cite{PRAB:Carlier:KModulation_HiLumi}.
 Similar results are obtained when performing these simulations for IP\num{5} as the design optics are identical for the two main experiments.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_waist_effect_combined.pdf}
-    \caption{Simulated effect of the designed Rigid Waist Shift knob as defined in \cref{table:rigid_waist_shift_knob} on the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP as the waist is displaced, respectively.}
+    \caption{Simulated effect of the designed Rigid Waist Shift knob as defined in \cref{table:rigid_waist_shift_knob} on the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}. The \textcolor{mplblue}{blue} line represents the waist displacement from the design location. The \textcolor{mplorange}{orange} and \textcolor{mplgreen}{green} lines represent the horizontal and vertical \(\beta\)-functions change at the IP as the waist is displaced, respectively.}
     \label{figure:rigid_waist_shift_knob_effect_on_waist}
 \end{figure}
 
 The waist displacement from the design location (\textcolor{mplblue}{blue} line) is almost completely linear with the knob setting.
 One can note that the minima of the parabolas indicating the change of \(\beta\)-functions at the IP (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange} curves) are not found at exactly the zero knob setting, which is because the LHC design optics include a very small waist at IP\num{1} and IP\num{5}.
 
-In \cref{figure:rigid_waist_shift_knob_effect_on_betas} one can observe how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.
+In \cref{figure:rigid_waist_shift_knob_effect_on_betas} one can observe how the \(\beta\)-functions are affected by the application of an RWS, also simulated with the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}.
 In this simulation the lattice was sliced to improve the resolution of the data points, which explains the smoother lines compared to, for instance, \cref{figure:lhc_ir5_zoomed}.
 One can observe how the (anti-)symmetry of the optics in the IR is broken when applying the knob (full vs dashed lines): the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) \(\beta\)-functions do not mirror each other anymore.
 Inset zooms are included around the location of the MQSX magnets (\textcolor{mqsx_green}{green} vertical lines), showing how the horizontal and vertical \(\beta\)-functions are modified in their vicinity.
@@ -302,7 +302,7 @@ The purpose of this setup is detailed in \cref{subsection:rws_application_and_si
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rigid_waist_shift_betas_effect.pdf}
-    \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios. An identical result is found for IP\num{5}.}
+    \caption{Simulated effect of the designed RWS knob on the \(\beta\)-functions around IP\num{1}, with the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}. The \(\beta\)-functions for both the horizontal (\textcolor{mplb}{blue}) and vertical (\textcolor{mplr}{red}) planes are shown for the nominal (full lines) and shifted waists (dashed lines) scenarios. An identical result is found for IP\num{5}.}
     \label{figure:rigid_waist_shift_knob_effect_on_betas}
 \end{figure}
 
@@ -358,7 +358,7 @@ One can observe how the deviation between the two cases is negligible close to t
 \begin{figure}[!htb]
     \centering
     \includegraphics[width=\textwidth]{Figures/IR_Coupling_Correction/rws_ir1_rematching.pdf}
-    \caption{Simulated \(\beta\)-functions around IP\num{1} when applying an RWS, before (full lines) and after (dashed lines) application of the rematching knobs, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.}
+    \caption{Simulated \(\beta\)-functions around IP\num{1} when applying an RWS, before (full lines) and after (dashed lines) application of the rematching knobs, with the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}.}
     \label{figure:rws_ir1_rematching_betas}
 \end{figure}
 
@@ -381,7 +381,7 @@ Phase advances are also changed, but by a very small amount.
         MQSX.3R[IP]                            &    \num{5199.142377}       &     \num{5396.527580}                            \\
         \hline
     \end{tblr}
-    \caption{Values of the \(\sqrt{\beta_x \beta_y}\) term in \cref{equation:deltaqmin_only_mqsxs} at the MQSX magnets around IP\num{1} or IP\num{5} without (left) and with (right) the application of an RWS, with the \(\beta^{\ast} =\) \qty{30}{\centi\metre} optics of \num{2022}.}
+    \caption{Values of the \(\sqrt{\beta_x \beta_y}\) term in \cref{equation:deltaqmin_only_mqsxs} at the MQSX magnets around IP\num{1} or IP\num{5} without (left) and with (right) the application of an RWS, with the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}.}
     \label{table:sqrt_betas_from_rws}
 \end{table}
 
@@ -1012,7 +1012,7 @@ It could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5
 This compensation corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
 
 As such, should one MQSX fail it would still be possible to compensate for the \gls{IR}'s contribution to global coupling by properly powering its counterpart.
-It would therefore be possible to fulfill the first correction stage mentioned in \cref{section:current_correction_methods_and_their_limitations} and to squeeze the beams down to \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
+It would therefore be possible to fulfill the first correction stage mentioned in \cref{section:current_correction_methods_and_their_limitations} and to squeeze the beams down to \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 Minimizing coupling at the IP, however, would not be possible anymore as it requires trimming both magnets simultaneously.
 The operational impact of losing one of the correctors would then be that of a potentially strong coupling at the IP.
 
@@ -1029,12 +1029,12 @@ From these, the changes in instantaneous luminosity were calculated according to
     \label{figure:lumi_vs_trims_vs_betastars}
 \end{figure}
 
-Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\) \qty{30}{\centi\meter}: by up to \qty{60}{\percent}.
+Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}: by up to \qty{60}{\percent}.
 Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
 \newpage
 
 The possible impact of this change on the aperture was also considered.
-\Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} with the \(\beta^{\ast} =\) \qty{30}{\centi\meter} optics of \num{2023}, from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
+\Cref{figure:carry_over_impact_on_beam_size} shows the relative change in beam size around IP\num{1} with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} optics of \num{2023}, from the most important trim: carrying over the correction of the MQSX left of IP\num{1} to the MQSX right of IP\num{1}.
 
 \begin{figure}[!htb]
     \centering
@@ -1050,18 +1050,18 @@ This behavior was also observed in~\cite{PRAB:Hofer:Coupling_Local_Observables} 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lhc_ir1_30cm_apertures.pdf}
-    \caption{Magnets powering (top) and horizontal (middle) and vertical (bottom) aperture limitations around IP\num{1}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The \textcolor{mplb}{blue} and \textcolor{mplr}{red} shaded areas represent, in each plane, the \(3 \sigma\), \(6 \sigma\) and \(11 \sigma\) beam envelopes, from darkest to lightest respectively. The grey blocks represent the physical locations of various elements.}
+    \caption{Magnets powering (top) and horizontal (middle) and vertical (bottom) aperture limitations around IP\num{1}, at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}. The \textcolor{mplb}{blue} and \textcolor{mplr}{red} shaded areas represent, in each plane, the \(3 \sigma\), \(6 \sigma\) and \(11 \sigma\) beam envelopes, from darkest to lightest respectively. The grey blocks represent the physical locations of various elements.}
     \label{figure:lhc_ir1_30cm_apertures}
 \end{figure}
 
-As can be seen in \cref{figure:lhc_ir1_30cm_apertures} the triplet elements constitute the aperture bottleneck at \(\beta^{\ast} =\) \qty{30}{\centi\meter}, while the drift space right around the IP is not a constraint for aperture limitations.
+As can be seen in \cref{figure:lhc_ir1_30cm_apertures} the triplet elements constitute the aperture bottleneck at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}, while the drift space right around the IP is not a constraint for aperture limitations.
 One can then conclude that the aperture would not suffer from such a compensation scheme.
 Similarly, the impact on Beam-Beam Long Range (BBLR)~\cite{PHD:Poyet} interaction should be minimal as the increase is only significant within a meter of the \gls{IP} location itself.
 
 \subsubsection*{Experimental Measurements of Carry-Over}
 
 Measurements were conducted in late \num{2022} to assess the accuracy of these predictions.
-A comparison of instantaneous luminosity loss from carrying over the left corrector's powering to the right one at IR\num{1} is shown in \cref{figure:ir1_carry_over_vs_simulation}, at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
+A comparison of instantaneous luminosity loss from carrying over the left corrector's powering to the right one at IR\num{1} is shown in \cref{figure:ir1_carry_over_vs_simulation}, measured at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 Carrying over the correction to the left magnet was not done due to time constraints.
 
 \begin{noteblock}
@@ -1073,17 +1073,17 @@ Carrying over the correction to the left magnet was not done due to time constra
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/ir1_scan_vs_simu.pdf}
-    \caption{Luminosity drop from correction carry-over to the right MQSX at IR\num{1} at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The vertical grey line indicates the nominal operating point after the RWS correction adjustments.}
+    \caption{Luminosity drop from correction carry-over to the right MQSX at IR\num{1} at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}. The vertical grey line indicates the nominal operating point after the RWS correction adjustments.}
     \label{figure:ir1_carry_over_vs_simulation}
 \end{figure}
 
-\Cref{figure:ir5_carry_over_vs_simulations} shows a similar comparison for IR\num{5}, also at \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
+\Cref{figure:ir5_carry_over_vs_simulations} shows a similar comparison for IR\num{5}, also at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
 Due to time constraints again, however, the trim could not be fully done when carrying over the correction to the right corrector.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/ir5_scans_vs_simu.pdf}
-    \caption{Luminosity drop from correction carry-overs in both directions at IR\num{5} at \(\beta^{\ast} =\) \qty{30}{\centi\meter}. The vertical grey line indicates the nominal operating point after the RWS correction adjustments.}
+    \caption{Luminosity drop from correction carry-overs in both directions at IR\num{5} at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}. The vertical grey line indicates the nominal operating point after the RWS correction adjustments.}
     \label{figure:ir5_carry_over_vs_simulations}
 \end{figure}
 
@@ -1114,7 +1114,7 @@ An \gls{MD} is planned in \num{2023} to assess both the feasibility of this appr
 
 There is a possibility that \textit{both} MQSXs in a given IR fail.
 In this case the compensation of a corrector's contribution by its counterpart - as described above - would no longer be possible, and the uncompensated global coupling coming from the IR would be too large at small \(\beta^{\ast}\) for safe machine operation.
-Simulation results suggest that it would not be feasible to squeeze to the optics below \(\beta^{\ast} =\) \qty{90}{\centi\meter}, and new solutions would be needed in order to be able to provide collisions to the experiments.
+Simulation results suggest that it would not be feasible to squeeze to the optics below \(\beta^{\ast} =\)~\qty{90}{\centi\meter}, and new solutions would be needed in order to be able to provide collisions to the experiments.
 
 \subsubsection*{Tilt of Triplet Elements}
 
