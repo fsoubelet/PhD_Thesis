@@ -938,8 +938,8 @@ As such, for the aforementioned accelerators but also more generally for most ci
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
 
-Magnets lifetime studies done during LS\num{2} have projected that some magnets in the main IRs will reach their radiation dose limit during Run~\num{3}~\cite{PRES:Cerutti:TripletLifetime_Evian}, including the MQSX magnets used for local coupling correction.
-\Cref{table:correctors_peak_dose}, reproduced from~\cite{PRES:Cerutti:TripletLifetime_Evian}, shows the expected total received dose for the skew quadrupole corrector magnets in the main IRs, for various scenarios.
+Magnets lifetime studies done during the \gls{longshutdown}~\num{2} (LS\num{2}) have projected that some magnets in the main \glspl{IR} will reach their radiation dose limit during \Gls{run}~\num{3}~\cite{PRES:Cerutti:TripletLifetime_Evian}, including the MQSX magnets used for local coupling correction.
+\Cref{table:correctors_peak_dose}, reproduced from data presented in~\cite{PRES:Cerutti:TripletLifetime_Evian}, shows the expected total received dose for the skew quadrupole corrector magnets in the main IRs, for various scenarios.
 % In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
 
 % \begin{table}[!htb]
@@ -991,25 +991,26 @@ One can notice that the MQSXs at both IR\num{1} and IR\num{5} are expected to su
 The study itself highlights:
 
 \begin{quoteblock}
-    [\dots] assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.1 and four MQSX by the end of 2024.
+    [\dots] assuming a limit of \qty{6}{\mega\gray} for the corrector magnets in the triplet, this is expected to be reached in the four MCBX.\num{1} and four MQSX by the end of 2024.
 \end{quoteblock}
 
 It is then warranted to prepare for one or more failures at some point during \Gls{run}~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
 For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing corrector.
-The MQSX magnets in IR\num{2} and IR\num{8} are not considered at risk but were still included in some of these studies.
+The MQSX magnets in IR\num{2} and IR\num{8}, though not considered at risk, were still included in some of these studies.
 
 \subsection{Operating with a Missing Corrector}
 
 Should an MQSX stop functioning the priority is to ensure safe machine operation.
-In the first place the impact of a \textit{single} corrector failure around one of the main experiments was investigated.
+In the first place the impact of a single corrector failure around one of the main experiments was investigated.
 
 \subsubsection*{Correction Load Carry Over}
 
 As seen in \cref{section:colinearity_knob}, the contribution of one magnet can be replicated by its counterpart with a similar powering setting.
-For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of a \(\mathrm{K_{1S}}\) of \qty{-4E-4}{\per\square\meter} from an MQSX magnet at this location, which could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}.
-This corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
-As such, should one MQSX fail its counterpart could still compensate for the \acrshort{IR}'s contribution to global coupling.
+For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of an MQSX magnet with  \(\mathrm{K_{1S}} =\)~\qty{-4E-4}{\per\square\meter} at this location.
+It could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}, since the optics conditions at the correctors are identical.
+This compensation corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
+As such, should one MQSX fail its counterpart could still compensate for the \gls{IR}'s contribution to global coupling.
 
 It would therefore be possible to fulfill the first correction stage mentioned in \cref{section:current_correction_methods_and_their_limitations} and to squeeze the beams down to \(\beta^{\ast} =\) \qty{30}{\centi\meter}.
 Minimizing coupling at the IP, however, would not be possible anymore as it requires trimming both magnets simultaneously.
