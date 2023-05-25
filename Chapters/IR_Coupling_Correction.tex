@@ -1128,32 +1128,40 @@ Simulation results suggest that it would not be feasible to squeeze to the optic
 
 A potential solution to mitigate the impact of corrector failures is to tilt a close triplet quadrupole, introducing a \gls{skew} component in the element's field and relying on this contribution to perform the correction in place of the skew quadrupole corrector.
 
-Studies were made to determine which Q\num{2} or Q\num{3} tilt would be needed to take on the coupling contribution of its closest MQSX, assuming it stops working.
+Studies were performed to determine the amount of Q\num{2} or Q\num{3} tilting that would be needed to take on the coupling contribution of its closest MQSX, assuming it stops working.
 In each study an error was introduced in the form of the corrector's opposite powering, and a simple parametric scan was made of the introduced tilt angle.
-\Cref{figure:ir1_compensate_left_with_q3} shows the coupling RDTs' amplitude at IP\num{1} for various tilts of Q\num{3} on the left of the IP, assuming a failure of the skew quadrupole left of the IP, MQSX.\num{3}L\num{1}.
+\Cref{figure:ir1_compensate_left_with_q3} shows the coupling \glspl{RDT}' amplitude at IP\num{1} for various tilts of Q\num{3} on the left of the IP, assuming a failure of the left \gls{skew} quadrupole MQSX.\num{3}L\num{1}.
 Notice the log scale of the vertical axis.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/ir1_compensate_left_with_q3.pdf}
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/ir1_compensate_left_with_q3.pdf}
     \caption{The amplitude of the coupling RDTs at IP\num{1} for various tilts of the triplet quadrupole Q\num{3} left of the IP, assuming a failure of the skew quadrupole corrector MQSX.\num{3}L\num{1}.}
     \label{figure:ir1_compensate_left_with_q3}
 \end{figure}
 
-\Cref{figure:ir5_compensate_right_with_q2} shows the coupling RDTs' amplitude at IP\num{5} for various tilts of Q\num{2} on the right of the IP, assuming a failure of the skew quadrupole right of the IP, MQSX.\num{3}L\num{5}.
-On each figure, the location of the tilt setting that would minimize coupling at the IP is highlighted with a vertical line.
-In all cases a good compensation can be achieved.
+\Cref{figure:ir5_compensate_right_with_q2} shows the coupling RDTs' amplitude at IP\num{5} for various tilts of Q\num{2} on the right of the IP, assuming a failure of the right \gls{skew} quadrupole MQSX.\num{3}R\num{5}.
+On each figure, the location of the tilt setting that would minimize coupling at the IP is highlighted with a vertical \textcolor{mplr}{red} dashed line.
+In all studied cases a good compensation can be achieved.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.95\textwidth]{Figures/IR_Coupling_Correction/ir5_compensate_right_with_q2.pdf}
+    \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/ir5_compensate_right_with_q2.pdf}
     \caption{The amplitude of the coupling RDTs at IP\num{5} for various tilts of the triplet quadrupole Q\num{2} right of the IP, assuming a failure of the skew quadrupole corrector MQSX.\num{3}R\num{5}.}
     \label{figure:ir5_compensate_right_with_q2}
 \end{figure}
 
 \Cref{table:compensation_triplet_tilts} shows the determined tilt angles necessary for compensation for each scenario.
 The necessary tilts using Q\num{2} or Q\num{3} range between \num{-2} and \qty{2.85}{\milli\radian}, with the most impactful ones at IR\num{1} and IR\num{5} - due to higher \(\beta\)-functions in the triplets - between \num{-1.65} and \qty{2.325}{\milli\radian}.
-It would also be possible to use lower values by tilting both elements simultaneously, in opposite directions.
+Note that it would also be possible to use lower values by tilting both elements simultaneously, in opposite directions.
+
+It is worth noting that tilting a triplet quadrupole by that much has very little impact on the optics.
+For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated by a tilt of the Q\num{3} close to it, an additional \qty{0.16}{\percent} \gls{beta-beating} would be added through the machine, which is negligible.
+
+Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
+Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
+Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one on the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
+For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the magnet.
 
 \begin{table}[!htb]
     \centering
@@ -1179,14 +1187,6 @@ It would also be possible to use lower values by tilting both elements simultane
     \caption{Necessary tilt angles of either Q\num{2} or Q\num{3} triplet elements to compensate for the loss of the closest skew quadrupole corrector/ Results are shown for IR\num{2} and IR\num{8}, but only IR\num{1} and IR\num{5} are at risk of failure.}
     \label{table:compensation_triplet_tilts}
 \end{table}
-
-It is worth noting that tilting a triplet quadrupole by that much has very little impact on the optics.
-For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated by a tilt of the Q\num{3} close to it, an additional \qty{0.16}{\percent} \(\beta\)-beating would be added through the machine, which is negligible.
-
-Discussions were engaged with the Machine Protection group to determine the practical feasibility of such a solution, and several issues were raised.
-Firstly, the LHC triplet alignment systems are not meant for tilt alignment, but for vertical alignment of the magnet assemblies.
-Additionally, the alignment system relies on supporting jacks positioned at each end of the assemblies: two bellows on the IP side and one on the non IP side for Q2 triplets, for instance~\cite{IPAC:Micolon:LHC_Triplet_Magnet_Supporting_System, IWAA:Durand:Remote_Positioning_LHC_Inner_Triplet}.
-For this reason, with only three supporting jacks it is not possible to achieve a pure tilt of the assembly, and an attempt to do so would result in both a partial tilt and misalignment of the magnet.
 
 Finally, due to the possibility of damaging what is arguably the most important magnet assembly in the machine during the procedure, this solution would only be used as a last resort.
 
