@@ -176,17 +176,17 @@ As in the real machine the true location of coupling sources is unknown, no real
 
 \subsection{Dataset Generation}
 
-In order to create a training dataset simulations were performed with the \acrshort{MAD}-X~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles, in each IR.
+In order to create a training dataset simulations were performed with the \gls{MADX}~\cite{CODE:MADX_guide} code, in which random rotations around the \(s\)-axis are introduced into individually powered IR quadrupoles, in each IR.
 The tilt generates a \gls{skew} quadrupolar component at the affected element and thus turns it into a source of coupling.
-It has to be noted though, that in simulations only quadrupole tilts - given by the \(\mathrm{DPSI}\) variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in this study.
+It has to be noted though, that in simulations only quadrupole tilts - given by the DPSI variable in MAD-X - were used to generate coupling sources, which means other potential sources such as feed-down from higher order magnets were ignored in this study.
 
-When generating the data from simulations, the introduced tilt components form the training output and the produced coupling RDTs generated from the perturbed optics functions are the input in the training dataset.
+When generating the data from simulations, the introduced tilt components form the training output and the produced coupling \glspl{RDT} generated from the perturbed optics functions are the input in the training dataset.
 The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.
 \Cref{figure:ml_local_sources_rdts} shows the reconstructed coupling RDTs for a given simulation in which a truncated Gaussian distribution of tilts was assigned to all independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_rdts_combined.pdf}
+    \includegraphics*[width=0.91\textwidth]{Figures/ML_for_IR_Coupling/ml_local_sources_rdts_combined.pdf}
     \caption{Beam~\num{1} (top) and Beam~\num{2} (bottom) coupling RDTs \(f_{1001}\) (\textcolor{mplblue}{blue}) and \(f_{1010}\) (\textcolor{mplorange}{orange}) after the implementation of tilt errors in the independently powered IR quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8}, for the \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast}=\)~\qty{30}{\centi\meter} optics.}
     \label{figure:ml_local_sources_rdts}
 \end{figure}
@@ -194,17 +194,17 @@ The data was generated for both Beam 1 and 2 using the \(\beta^{\ast}=\)~\qty{30
 The standard deviation of the applied tilt errors Gaussian distribution was aligned with expected values from the element alignment precision in the LHC, after discussions with the alignment group.
 Each sample of the dataset is obtained by applying the following steps in simulations:
 \begin{enumerate}
-    \item A truncated Gaussian distribution of tilt errors (\(\mathrm{DPSI}\)) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
+    \item A truncated Gaussian distribution of tilt errors (MAD-X DPSI) is applied to quadrupoles Q\num{1} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{1}.
     \item Quadrupoles located outside the IRs are excluded as these sources can be identified and compensated by other means.
     \item The coupling RDTs \(f_{1001}\) and \(f_{1010}\) are calculated at each \acrshort{BPM} from \gls{Twiss_parameters} for Beam~\num{1}.
-    \item The \(\mathrm{DPSI}\) values for triplets are exported and applied to Beam 2, as these are common magnets and should share the error.
+    \item The DPSI values for triplets are exported and applied to Beam 2, as these are common magnets and should share the error.
     \item A truncated Gaussian distribution similar to the one of step \num{1} is applied to the remaining quadrupoles Q\num{4} to Q\num{11} in IRs \numlist{1;2;5;8} for Beam~\num{2}.
-    \item Coupling RDTs for Beam~\num{2} are calculated at each BPM as done for Beam~\num{1}.
+    \item Coupling RDTs for Beam~\num{2} are calculated at each \acrshort{BPM} as done for Beam~\num{1}.
     \item The real and imaginary parts of the coupling RDTs at each BPM and for each beam are concatenated in order to obtain a single vector of values for a given sample.
 \end{enumerate}
 
-To train the model the relation is flipped, and the introduced tilt errors have to be found based on given coupling RDTs computed from the perturbed optics.
-Therefore, the coupling RDTs reconstructed at each BPM are considered as model input and a vector containing the predicted \(\mathrm{DPSI}\) value attributed to each affected quadrupole is the desired output.
+To train the model the relation is flipped, and the introduced tilt errors have to be predicted based on given coupling RDTs computed from the perturbed optics.
+Therefore, the coupling \glspl{RDT} reconstructed at each BPM are considered as model input and a vector containing the predicted DPSI value attributed to each affected quadrupole is the desired output.
 \Cref{figure:ml_supervised_training_schematic} shows a conceptual schematic of the dataset generation and supervised model training process for this given application.
 % More specifically,each block is repeated many times: the former during dataset generation and the latter for supervised training.
 
@@ -216,7 +216,7 @@ Therefore, the coupling RDTs reconstructed at each BPM are considered as model i
 \end{figure}
 
 A dataset of \num{50000} samples (each an individual simulation following the steps above) was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
-Each sample pair consists in \num{4424} inputs - real and imaginary parts of each coupling RDT for each BPM for each beam - and \num{160} outputs: one \(\mathrm{DPSI}\) value at each affected IR quadrupole.
+Each sample pair consists in \num{4424} inputs - real and imaginary parts of each coupling RDT for each BPM for each beam - and \num{160} outputs: one DPSI value at each affected IR quadrupole.
 
 In addition, in order to reproduce the uncertainty of the RDTs reconstructed from measurements, both train and test datasets were augmented by adding Gaussian noise to the RDTs.
 The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run~\num{2}.
@@ -272,7 +272,7 @@ One can notice the histogram of deviations much more narrowly centered on \num{0
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.7\textwidth]{Figures/ML_for_IR_Coupling/ridge_histograms.pdf}
-    \caption{Histograms of the true applied \(\mathrm{DPSI}\) values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
+    \caption{Histograms of the true applied DPSI values (\textcolor{ridgepurple}{purple}), the values predicted by the Ridge model (\textcolor{ridgeblue}{blue}) and the deviations from the predictions to the true values (\textcolor{ridgesalmon}{pink}) for a noised sample in the test dataset (\(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} and \(\sigma_{\mathrm{Arcs, IRs}} = 10^{-5}\)).}
     \label{figure:ridge_histograms}
 \end{figure}
 
@@ -282,7 +282,7 @@ Prediction performance significantly degrades with the addition of noise, with s
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=0.95\textwidth]{Figures/ML_for_IR_Coupling/ml_ridge_regression_sample_predictions.pdf}
-    \caption{True assigned (\textcolor{mplblue}{blue}) and predicted (\textcolor{mplorange}{orange}) \(\mathrm{DPSI}\) values with a ridge model for a given test dataset sample. Here the magnet names have been switched for numbers in order to improve clarity.}
+    \caption{True assigned (\textcolor{mplblue}{blue}) and predicted (\textcolor{mplorange}{orange}) DPSI values with a ridge model for a given test dataset sample. Here the magnet names have been switched for numbers in order to improve clarity.}
     \label{figure:ridge_predictions}
 \end{figure}
 
