@@ -166,12 +166,13 @@ The precise knowledge of a coupling source's location and relative strength woul
 However, it was illustrated in \cref{section:current_correction_methods_and_their_limitations} how simply looking at patterns and jumps in the coupling \glspl{RDT} was not always sufficient to accurately pinpoint the  location of a source, nor can it be used in locations with little instrumentation or unfavorable conditions.
 As machine learning techniques have found their application in a wide range of particle accelerator control tasks in the past~\cite{IPAC:Fol:Machine_Learning_Methods_for_Optics_Measurements_and_Corrections_at_LHC, IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators, EPAC:Bozoki:Neural_Networks_Orbit_Control_Accelerators, IPAC:Meier:Orbit_Correction_Studies_using_Neural_Networks, EPAC:Kijima:Beam_Diagnostic_System_for_Accelerator_using_Neural_Networks, PRAB:Fol:Detection_Faulty_BPMs, EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors}, the possibility of applying machine learning techniques to the detection of local IR coupling sources in the LHC was explored.
 
-In order to perform a prediction of betatron coupling sources' locations, one first needs to compute the \(f_{1001}\) and \(f_{1010}\) coupling RDTs which will serve as input data for the model.
+In order to perform a prediction of \gls{betatron_coupling} sources' locations, one first needs to compute the \(f_{1001}\) and \(f_{1010}\) coupling \glspl{RDT} which will serve as input data for the model.
 The strength and variations of the coupling RDTs throughout the machine is then used to estimate the location of coupling sources and their relative strengths.
+Though it was highlighted in \cref{section:current_correction_methods_and_their_limitations} that looking at coupling RDTs through the machine did not allow evaluating coupling at the \gls{IP} (see \cref{figure:guess_rdts}), their pattern provides information on sources; and the amount of data and nature of the task fits a statistical model more than a human eye.
 
 In terms of machine learning, this task can be defined as a regression problem that can be solved by training a model using measurements and corresponding solutions.
 Such a regression model requires a large dataset in order to be able to generalize and produce reliable results.
-As in the real machine the true location of coupling sources is unknown, no real-world data is available for the training of machine learning models.
+As in the real machine the true location of coupling sources is unknown, no real-world data is available for model training.
 
 \subsection{Dataset Generation}
 
