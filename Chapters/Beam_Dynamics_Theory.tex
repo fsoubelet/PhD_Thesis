@@ -992,7 +992,80 @@ The relations linking these new parameters to the \gls{Twiss_parameters} can be 
 % where \(\sin \phi = \pm \sqrt{u}\) is the rotation of the x-y plane. When φ = 0 there is no coupling and β x = β 11
 The Mais-Ripken parameterization is the basis of the \gls{PTC}~\cite{CODE:Schmidt_Forest:PTC}'s handling of coupled dynamics. 
 
-\subsubsection*{\todo{A small "Coupling and Beam Matrix"?}}
+\subsubsection*{Coupling and Beam Matrix}
+
+Considering the \num{2}D case of a given transverse direction the so-called \concept{beam matrix} or \concept{sigma matrix}, which is the covariance matrix of the particle distribution, is expressed as:
+
+\begin{equation}
+    \sigma = \begin{pmatrix}
+        \sigma_{11} & \sigma_{12} \\
+        \sigma_{21} & \sigma_{22}
+    \end{pmatrix} = \begin{pmatrix}
+        \left\langle z^2 \right\rangle   & \left\langle z p_z \right\rangle   \\
+        \left\langle p_z z \right\rangle & \left\langle p_{z}^2 \right\rangle
+    \end{pmatrix}  \text{ .}
+    \label{equation:2d_sigma_matrix}
+\end{equation}
+\vspace{1pt}
+
+\noindent
+where the brackets indicate an average over all particles in the beam.
+Note that this matrix is symmetric with \(\sigma_{12} = \sigma_{21}\).
+
+Considering that the \gls{Twiss_parameters} and the emittance defining the phase space ellipse are related to the various moments of the beam distribution as
+
+\begin{equation}
+    \begin{gathered}
+        \epsilon_z = \sqrt{\left\langle z^2 \right\rangle \left\langle p_z^2 \right\rangle - \left\langle z p_z \right\rangle^2}  \text{ ,}  \\
+        \beta_z    = \frac{\left\langle z^2 \right\rangle}{\epsilon_z}                                                            \text{ ,}  \\
+        \alpha_z   = -\frac{\left\langle z p_z \right\rangle}{\epsilon_z}                                                         \text{ ,}  \\
+        \gamma_z   = \frac{\left\langle p_z^2 \right\rangle}{\epsilon_z}                                                          \text{ ,}
+    \end{gathered}
+\end{equation}
+one can relate them to the sigma matrix via the emittance through:
+
+\begin{equation}
+    \sigma = \varepsilon_z \begin{pmatrix}
+        \beta_z & - \alpha_z \\
+        - \alpha_z & \gamma_z
+    \end{pmatrix}  \text{ .}
+    \label{equation:2d_sigma_matrix_to_twiss_parameters}
+\end{equation}
+\vspace{1pt}
+
+\noindent
+When considering the full \num{4}D transverse space one can express the beam matrix \(\Sigma\) as a block diagonal \(4 \times 4\) matrix with the respective horizontal and vertical sigma matrices on the diagonal and zeros elsewhere.
+In the presence of coupling, the general covariance matrix has non-zero terms outside its diagonal and takes the form of \cref{equation:4d_sigma_matrix}:
+
+% See https://research.bangor.ac.uk/portal/files/28932262/untitled.pdf
+\begin{equation}
+    \Sigma = \begin{pmatrix} 
+        \sigma_{11} & \sigma_{12} & \sigma_{13} & \sigma_{14} \\
+        \sigma_{21} & \sigma_{22} & \sigma_{23} & \sigma_{24} \\
+        \sigma_{31} & \sigma_{32} & \sigma_{33} & \sigma_{34} \\
+        \sigma_{41} & \sigma_{42} & \sigma_{43} & \sigma_{44}
+    \end{pmatrix} = \begin{pmatrix}
+        \left\langle x^2 \right\rangle           &  \left\langle x p_x \right\rangle           &  \left\langle x y \right\rangle           &  \left\langle x p_y \right\rangle           \\
+        \left\langle x p_x \right\rangle  &  \left\langle p_x^2 \right\rangle         &  \left\langle p_x y \right\rangle  &  \left\langle p_x p_y \right\rangle  \\
+        \left\langle x y \right\rangle           &  \left\langle p_x y \right\rangle           &  \left\langle y^2 \right\rangle           &  \left\langle y p_y \right\rangle           \\
+        \left\langle x p_y \right\rangle  &  \left\langle p_x p_y \right\rangle  &  \left\langle y p_y \right\rangle  &  \left\langle p_y^2 \right\rangle
+    \end{pmatrix} \text{ .}
+    \label{equation:4d_sigma_matrix}
+\end{equation}
+\vspace{1pt}
+
+Through \(\Sigma\) the coupling can be characterized by the values of the cross-planes elements \(\left\langle x y \right\rangle\), \(\left\langle x p_y \right\rangle\), \(\left\langle p_x y \right\rangle\) and \(\left\langle p_x p_y \right\rangle\).
+Through the symmetry (for instance, \(\left\langle x y \right\rangle = \left\langle y x \right\rangle\)) only those four terms are needed.
+
+The angle of rotation \(\theta\) in the Edwards-Teng parametrization is related to these terms through~\cite{}:
+
+% See: https://ados.web.psi.ch/opa/inside.pdf Eq. (37)
+\begin{equation}
+    \tan{2 \theta} = \frac{2 \Sigma_{xy}}{\Sigma_{xx} - \Sigma_{yy}} = \frac{2 \sigma_{13}}{\sigma_{11} \sigma_{33}} \text{ .}
+    \label{equation:edwards_teng_theta_to_sigma_matrix_terms}
+\end{equation}
+
+In the Mais-Ripken parameterization, the Ripken parameters are constructed in order to be related to the \(\Sigma\) matrix in a similar way than shown in \cref{equation:2d_sigma_matrix_to_twiss_parameters} for the \num{2}D uncoupled case.
 
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
