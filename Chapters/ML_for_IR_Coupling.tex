@@ -25,15 +25,15 @@ The focus is kept only on particular concepts relevant to the work presented in 
 
 \subsection{Defining a Machine Learning Task}
 
-In the context of machine learning, the \textit{learning} refers to the process of performance improvement.
-Generally speaking, a given model can improve its performance by adjusting its parameters with respect to provided data in order to refine the approximation function that is derived from said data. 
+In the context of machine learning, \concept{learning} refers to the process of improving performance.
+Generally speaking a model can improve its performance by adjusting its parameters with respect to provided data, in order to refine the approximation function that is derived from said data. 
 It is important to note that a trained model will always remain an approximation of the relationship in the underlying data, but with a good enough training this approximation should be sufficiently reliable for the specific task at hand.
 The requirements on the model's performance in terms of accuracy, precision and reliability depend on a particular task and application domain.
 
-The chosen performance criteria, the type of experience to be obtained via learning and the specific approach and algorithm are specific to the task that should be learned.
+The chosen performance criteria, the type of experience to be gained through learning and the specific approach and algorithm are specific to the task that must be learned.
 These three parameters - task, measure of performance and source of experience - are the fundamentals of a well-defined machine learning problem.
 In practice, it is reflected in the selection of appropriate learning method and function approximation algorithm, definition of the loss function and its acceptable values, as well as the preparation of data.
-The latter usually appears to be non-trivial and can require dedicated techniques and algorithms. % e.g. for feature extraction or correlation analysis.
+The latter can be non-trivial and require dedicated techniques and algorithms.
 
 \subsection{Supervised and Unsupervised Learning}
 
@@ -46,10 +46,10 @@ They are suitable for tasks such as anomaly detection, signal denoising, dimensi
 % Clustering groups unlabeled data based on their similarities or differences, association finds relationships between variables in a given dataset and dimensionality reduction reduces the number of data inputs to a manageable size while also preserving the data integrity.
 
 \concept{Supervised learning} is characterized by the use of labeled datasets.
-These datasets are used to train - or \textit{supervise} - the model to learn how to accurately classify data or predict outcomes.
+These datasets are used to train - or supervise - the model to learn how to accurately classify data or predict outcomes.
 During the training, predictions are computed from the inputs and compared to the known corresponding outputs.
-By adjusting the parameters of the model - or approximation function - the quantified difference between computed predictions and correct outputs, the so-called \textit{loss function}, is minimized.
-% By providing known labeled inputs and outputs, the model can measure its accuracy and adjust its parameters to improve during the learning.
+By adjusting the parameters of the model - or approximation function - the quantified difference between computed predictions and correct outputs, the so-called \concept{loss function}, is minimized.
+% Providing known labeled inputs and outputs allows the model to measure its accuracy and adjust its parameters during learning.
 Supervised learning is typically used for \concept{classification} and \concept{regression} tasks.
 Classification tasks aim to accurately assign test data into specific categories, and regression tasks aim to understand and approximate the relationship between dependent and independent variables in order to predict the outcome of a given input.
 
