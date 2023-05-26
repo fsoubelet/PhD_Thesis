@@ -241,7 +241,7 @@ Similarly, several such datasets were created for different standard deviation o
 
 \subsection{Model Training and Evaluation}
 
-In this study models have been evaluated based on their \(R^2\) scores (coefficient of determination) as well as the normalized mean absolute error between the true output values and the model predictions.
+In this study models have been evaluated based on their \(R^2\) scores, or coefficient of determination, as well as the normalized mean absolute error between the true output values and the model predictions.
 Several models suited for regression tasks were tested, that are listed below, and a minimal amount of hyperparameter tuning was performed.
 
 Each model was trained and evaluated on the various datasets generated, in order to assess their performance and usability in various realistic contexts of noise in the data. 
@@ -250,7 +250,7 @@ A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} an
 A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise datasets.
 
 \Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noise on the reconstructed coupling RDTs is apparent.
-In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}.
+In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} in this case.
 In this figure each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
 While dense, this representation allows to see the performance of the model on a wide range of noised datasets, for a single given distribution of the tilt errors.
 
@@ -261,9 +261,9 @@ While dense, this representation allows to see the performance of the model on a
     \label{figure:ridge_performance}
 \end{figure}
 
-To the left of the plot at data points corresponding to low noise levels in IR BPMs, where for two of the curves (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange}) the model's performance is excellent.
-Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green}) leads to a significant performance drop.
-Point to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
+To the left of the plot are data points corresponding to low noise levels in IR BPMs, where for two of the curves (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange}) the model's performance is excellent.
+Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green} curve) leads to a significant performance drop.
+Points to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
 
 \Cref{figure:ridge_histograms} shows histograms of the distributions of true attributed errors, of the ridge regressor's predictions and of deviations to the true values.
 These were obtained by evaluating the model on a noised dataset with \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\) (corresponding to the third leftmost point on the \textcolor{mplorange}{orange} curve in \cref{figure:ridge_performance}).
