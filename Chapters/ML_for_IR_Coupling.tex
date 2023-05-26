@@ -90,19 +90,26 @@ For instance, this is the case when fitting a one dimensional polynomial functio
     p(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_n x^n \text{ ,}
     \label{equation:polynomial_function}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 where \((a_0, \ldots, a_n)\) is a vector of coefficients of size \(n+1\).
 One way to train a model to approximate such a function is to reduce the problem to linear regression~\cite{BOOK:ShalevShwartz:Understanding_Machine_Learning}.
 To do so one can introduce a mapping such that \(\psi(x)=\left(1, x, x^2, \ldots, x^n\right)\), which reduces the problem to:
+
 \begin{equation}
     p(\psi(x)) = a_0 + a_1 x + a_2 x^2 + \ldots + a_n x^n = \langle \vec{a}, \psi(x) \rangle \text{ ,}
     \label{equation:polynomial_function_linear_mapping}
 \end{equation}
+\vspace{1pt}
+
+\noindent
 and the optimal vector \(\vec{a}\) can be found by minimizing the residual sum of squares (RSS) as in \cref{equation:least_squares_rss}.
 
 \subsection{Generalization, Underfitting and Overfitting}
 \label{subsection:generalization_underfitting_overfitting}
 
-In supervised learning, one tries to train a model capable of making correct predictions on \textit{new}, unseen data based on the experience and tuning acquired on the training data's known outputs.
+In supervised learning, one tries to train a model capable of making correct predictions on new, unseen data based on the experience and tuning acquired on the training data's known outputs.
 This ability to predict on new data is called \concept{generalization}, and is the most important aspect of the built model~\cite{PR:Rosenblatt:Perceptron,BOOK:Bishop:Neural_Networks_Pattern_Recognition}.
 A separate and unrelated test dataset is usually used in order to evaluate the predictive power of the model.
 Most of the time, training and test datasets share enough similarities - properties and relations in the underlying data - such that the model can accurately predict on the test set.
