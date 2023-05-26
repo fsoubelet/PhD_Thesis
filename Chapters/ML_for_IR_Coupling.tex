@@ -117,7 +117,6 @@ Most of the time, training and test datasets share enough similarities - propert
 However, in the case of highly complex models high accuracy can be achieved on the training data with poor prediction performance on the test data.
 When too complex, models can tend to fit very closely to individual data points in the training data and extrapolate unexisting relations that will later on perform badly on new data.
 This phenomenon is called \concept{overfitting}.
-
 Similarly, when too simple for the data at hand the model will not be able to capture the underlying relations and will not be able to perform accurate predictions even on training data.
 This is referred to as \concept{underfitting}.
 
@@ -126,7 +125,7 @@ Though simple, this example highlights the importance of building a model that g
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.99\textwidth]{Figures/ML_for_IR_Coupling/ml_underfitting_overfitting.pdf}
+    \includegraphics*[width=\textwidth]{Figures/ML_for_IR_Coupling/ml_underfitting_overfitting.pdf}
     \caption{Three examples showcasing models approximating (\textcolor{mplblue}{blue}) a true function (\textcolor{mplorange}{orange}) after training on provided samples (\textcolor{mplb}{dark blue}). Of the three models one is too simple and underfits (left), one generalizes properly (middle), and one is too complex and overfits (right). This plot was reproduced from the \textit{scikit-learn} documentation~\cite{CODE:scikit-learn, Website:ScikitLearn:Overfitting_Example}.}
     \label{figure:ml_underfitting_overfitting}
 \end{figure}
@@ -138,7 +137,7 @@ If the performance on the training set is substantially higher, the model has be
 
 \subsubsection*{Regularized Regression}
 
-A potential approach to avoid overfitting is to apply regularization during the model training, by imposing a penalty on the update of the model's parameters.
+A potential approach to avoid overfitting is to apply regularization during the model training by imposing a penalty on the update of the model's parameters.
 As the model parameters are updated to attempt to fit every incoming input-output pair, the penalty constrains the change of these parameters such that the model becomes more robust against variations in the data.
 This technique is known as \textit{L2 regularization}, and in the context of supervised regression \concept{ridge regression}~\cite{MIT:Rifkin:Regularized_Least_Squares}.
 
