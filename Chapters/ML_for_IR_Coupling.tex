@@ -287,34 +287,35 @@ Prediction performance significantly degrades with the addition of noise, with s
 \end{figure}
 
 Results showing the best \(R^{2}\) scores obtained by each model on both clean and noised datasets are presented in \cref{table:ml_models_comparison}, where the ridge regressor clearly outperforms its counterparts.
-
 \begin{table}[!hbt]
     \centering
     \begin{tblr}{colspec={ccc}}
         \hline
-        \textbf{Model}             &   Clean Data     &   Noised Data     \\
+        \SetCell[r=2,c=1]{m,c} Model & \SetCell[c=2]{c} \(R^2\) Score       \\
+        \cline{2,3}
+                                     &  Clean Data      &  Noised Data      \\
         \hline
-        Ridge Regressor            &   \num{0.9911}   &   \num{0.8934}    \\
-        Linear Regression          &   \num{0.9913}   &   \num{0.5638}    \\
-        Decision Tree Regressor    &   \num{0.1385}   &   \num{-0.0018}   \\
-        Random Forest Regressor    &   \num{0.0175}   &   \num{-0.0009}   \\
+        Ridge Regressor              &   \num{0.9911}   &   \num{0.8934}    \\
+        Linear Regression            &   \num{0.9913}   &   \num{0.5638}    \\
+        Decision Tree Regressor      &   \num{0.1385}   &   \num{-0.0018}   \\
+        Random Forest Regressor      &   \num{0.0175}   &   \num{-0.0009}   \\
         \hline
     \end{tblr}
     \caption{Comparison of the \(R^2\) score averaged over \num{1000} samples taken from the test dataset for different models. For the results in this table, the standard deviations of the applied noise were \(\sigma = 10^{-4}\) for IR BPMs and  \(\sigma = 10^{-6}\) for arc BPMs. The distribution of tilt errors had a standard deviation of \(\sigma =\)~\qty{1E-4}{\radian}.}
     \label{table:ml_models_comparison}
 \end{table}
 
-From the results on clean data or low noise levels in \cref{figure:ridge_performance,table:ml_models_comparison}, one can view this study as a good proof of principle for the application of machine learning to coupling sources detection.
+From the results on clean data or low noise levels in \cref{figure:ridge_performance,table:ml_models_comparison}, one can view this study as a good proof of principle for the application of machine learning to \gls{IR} coupling sources detection.
 However, with realistic noise levels even the best performing model is not yet good enough to be used in operation or incorporated in correction techniques.
-Nonetheless, while predictions might not yield accurate numbers they still provide a good indication of suspected locations of coupling sources, which may be valuable for the alignment group.
+Nonetheless, while predictions on noised data might not yield totally accurate numbers they still provide a good indication of suspected locations of coupling sources, which may be valuable for the alignment group.
 
 There is also potential for performance improvements.
 Assigning more computing resources to the determination of model parameters through hyperparameter tuning is a first step towards better performance, but will not circumvent certain models' shortcomings.
 More complex models such as Convolutional Neural Networks (CNNs) have in the past been successfully used with impressive success on regression tasks - such as in \acrshort{HEP}~\cite{JOI:Aurisano:Convolutional_Neural_Network_Neutrino_Event_Classifier} and recently in optics measurements studies~\cite{IPAC:Fol:Optics_Corrections_Using_Machine_Learning_in_the_LHC} - and would be a promising tool that could yield better prediction accuracy especially on noised datasets.
-Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling RDTs data using another model trained for the task - this has been successfully done with auto-encoder neural networks~\cite{IPAC:Fol:Denoising_Optics_Measurements_Autoencoder_Neural_Networks} - before feeding the results to the above prediction models.
+Another avenue of improvements would be to create a pipeline where first a denoising step is applied on the coupling \glspl{RDT} data using another model trained for the task - this has been successfully done with auto-encoder neural networks~\cite{IPAC:Fol:Denoising_Optics_Measurements_Autoencoder_Neural_Networks} - before feeding the results to the above prediction models.
 With good enough noise cleaning, the prediction models should reach the level of performance displayed in this study on clean or low noise datasets.
 
-Currently, the main limitation of these trained models comes from the fact that only skew quadrupole components were considered in the study for the introduction of coupling.
+Currently, another limitation of these trained models is the fact that only \gls{skew} quadrupole components were considered in the study for the introduction of coupling.
 In the real machine, other effects such as field errors in higher order magnets or orbit offsets in sextupoles would also lead to a coupling contribution, which the models would try to and blame on a quadrupole.
 However, the effect of higher orders to coupling is small and assuming most contributions are in the form of tilted quadrupoles is reasonable.
 Circumventing the limitation would be feasible but need much more complex and inclusive simulations.
