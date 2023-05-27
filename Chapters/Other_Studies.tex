@@ -21,7 +21,7 @@ In the \gls{LHC} and many other circular colliders \gls{BPM} measurement data co
 As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \glspl{beta-function} lead to better signal-to-noise ratios on measurements, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
 This study was performed to investigate the influence of these properties on the precision of the reconstructed phase values from turn-by-turn data.
 
-In practice the presence of systematic errors can influence different sets of measurements to not be totally independent.
+In practice the presence of systematic errors can prevent different sets of measurements from being independent.
 In the following study measurements are assumed to be independent and \concept{identically distributed normal random variables} (IIDs), meaning repeating the same BPM measurement in identical conditions will spawn a range of values forming a Gaussian distribution.
 As no sets of measurements were available that made use of specific groups of BPMs, a statistical analysis on the phase errors from previous measurements was needed to differentiate between BPMs of interest. 
 Using the underlying properties of the measurements-derived distributions, one can numerically infer the impact on the phase measurement error of specific subgroups of measuring devices.
@@ -285,7 +285,7 @@ Tracking was performed under in the case of both free and AC dipole forced oscil
 Several scenarios corresponding to different tune separations for the driven motion were explored, namely \(\Delta Q_x =\)~\num{-1e-2} and \(\Delta Q_x =\)~\num{-5e-3}, resulting in driven fractional horizontal tunes of \(Q_{Dx} =\)~\num{0.30} and \(Q_{Dx} =\)~\num{0.305}, respectively
 A small initial amplitude was applied in the vertical plane in order to enable measuring the vertical tune.
 
-The AC dipole ramp-up and flattop times were chosen as used in optics measurements in the LHC, to preserve the adiabaticity of the process.
+The AC dipole ramp-up and flattop excitation length were chosen as used in optics measurements in the LHC, to preserve the adiabaticity of the process.
 Turn-by-turn data was gathered at all BPMs during the tracking, and the resulting file was analyzed as done for LHC measurements.
 Both the natural tunes and actions were derived from harmonic and then optics analysis of the data.
 
@@ -338,6 +338,9 @@ Again, halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings us clo
 Measurement of strictly the sextupolar amplitude detuning is not feasible in the LHC as other sources would entangle with the sextupolar contribution.
 Particle tracking simulations have confirmed the ability to measure sextupolar amplitude detuning with an AC dipole and a sextupolar contribution to amplitude detuning in the LHC models.
 Additionally, with small enough tune separation this contribution behaves similarly to the octupolar amplitude detuning one when comparing the case of forced motion and free oscillations.
+
+\todo{Maybe one could measure a delta meaning that one change strength somewhere and see the difference.}
+\todo{Also the conclusion should be that it has been demonstrated.}
 
 \section{Summary}
 
