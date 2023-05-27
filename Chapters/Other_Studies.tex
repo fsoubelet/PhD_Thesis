@@ -312,7 +312,7 @@ Results are compiled in \cref{table:detuning_coefficients_results}.
     \label{figure:vertical_detuning_comparison}
 \end{figure}
 
-For the direct detuning (\cref{figure:horizontal_detuning_comparison}) where a factor \num{2} is expected - the fit to free oscillations data gives a detuning coefficient of \qty{13.14}{\micro\per\meter}, which makes the expected detuning coefficient for the forced oscillations around \qty{26.3}{\micro\per\meter}.
+For the direct detuning (\cref{figure:horizontal_detuning_comparison}) where a factor \num{2} is expected the fit to free oscillations data gives a detuning coefficient of \qty{13.14}{\micro\per\meter}, which makes the expected detuning coefficient for the forced oscillations around \qty{26.3}{\micro\per\meter}.
 With a tune separation of \(\Delta Q_x =\)~\num{-1e-2} this coefficient is determined at \qty{24.04}{\micro\per\meter}, within a \qty{10}{\percent} margin of the expected value.
 Halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings this coefficient closer to the factor \num{2}, now within a \qty{5}{\percent} margin.
 This change is attributed to the modification of the \(\beta\)-function and phase advances by the AC dipole: the \(\beta_{D,z}\) term in \cref{equation:driven_transverse_motion}, which is assumed close enough to \(\beta_z\) in the factor \num{2} hypothesis.
@@ -333,7 +333,7 @@ Again, halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings us clo
         Driven (\(\Delta Q_x = -0.005\))            &  \num{25.01}   &  \num{-15.50}                                    \\
         \hline
     \end{tblr}
-    \caption{Direct and cross term detuning coefficients for free and forced motion, determined the linear regression performing on tracking data.}
+    \caption{Direct and cross term detuning coefficients for free and forced motion, determined from tracking data with a linear regression.}
     \label{table:detuning_coefficients_results}
 \end{table}
 
@@ -341,29 +341,18 @@ Again, halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings us clo
 
 Measurement of strictly the sextupolar amplitude detuning is not feasible in the LHC as other sources would entangle with the sextupolar contribution.
 Particle tracking simulations have confirmed the ability to measure sextupolar amplitude detuning with an AC dipole and a sextupolar contribution to amplitude detuning in the LHC models.
+The negligible contribution of the sextupolar sources to the amplitude detuning in the \gls{LHC} compared to other typical sources has been demonstrated, both in the presence and absence of \gls{AC_dipole} driven motion.
 Additionally, with small enough tune separation this contribution behaves similarly to the octupolar amplitude detuning one when comparing the case of forced motion and free oscillations.
-
-\todo{Maybe one could measure a delta meaning that one change strength somewhere and see the difference.}
-\todo{Also the conclusion should be that it has been demonstrated.}
 
 \section{Summary}
 
 A statistical analysis of the phase reconstruction precision in the \gls{LHC} was performed, while differentiating between \gls{BPM} categories.
 The results confirmed the influence of both BPM type and the \glspl{beta-function} at the measuring device on the precision of the phase reconstruction, with up to a factor \num{3} between the best and worst performing BPMs.
 This knowledge could be applied in optics measurements algorithms to, for instance, select a subset of BPMs to use for a given measurement based its requirements.
+Such an analysis presents a clear improvement avenue for the reconstruction of optics functions in a circular accelerator and the improvement of computed global corrections.
 
-A second simulation-based study was performed to investigate the sextupolar contribution to the \gls{ampdet} in the LHC, which cannot not be directly observed in the machine due to being entangled with other contributions.
+A second simulation-based study was performed to investigate the sextupolar contribution to the \gls{ampdet} in the LHC. %, which cannot not be directly observed in the machine due to being entangled with other contributions.
 A clear contribution, though relatively small compared to that of other sources, was observed.
 The suspected behavior of this contribution, similar to that of the octupolar amplitude detuning, was confirmed.
 
-% Substantial effort put into the maintenance and development of the software suite used by the \acrshort{OMC} team, both for analysis and simulation codes, was presented.
-
 \glsresetall                                     % reset glossary entries counts for the next chapter
-
-
-
-
-
-
-Even if they don't have a large effect normally, if there had been a different scaling with the AC-dipole maybe they would?
-Now we know that they don't, that is also a result.
