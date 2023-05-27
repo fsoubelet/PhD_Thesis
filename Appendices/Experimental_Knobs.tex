@@ -1,9 +1,9 @@
 \chapter{Experimental Knobs Designed for the LHC}
 \label{appendix:experimental_knobs}
 
-One can find in this Appendix the full information of the different experimental knobs that were designed for the \acrshort{LHC}.
+One can find in this Appendix the full information of the different experimental \glspl{knob} that were designed for the \acrshort{LHC}.
 The knobs are reported below as they have been implemented in the \gls{LSA} framework~\cite{ICALEPS:Jacquet:LHC_Software_Architecture} and used in the \num{2022} commissioning.
-In each case, the values correspond to a \gls{trim} factor of \num{1} for the \gls{knob}, unless indicated otherwise, and scale linearly with the trim factor.
+In each case, the values correspond to a \gls{trim} factor of \num{1} for the knob, unless indicated otherwise, and scale linearly with the trim factor.
 These knobs have been designed for all beam processes of the LHC \Gls{run}~\num{3} optics as they were at the time of the \num{2022} commissioning, for a beam energy of \qty{6800}{\giga\electronvolt}.
 
 %----------------------------------------------------------------------------------------
@@ -11,9 +11,8 @@ These knobs have been designed for all beam processes of the LHC \Gls{run}~\num{
 \section{Definitions of the Colinearity Knobs}
 \label{section:colinearity_knobs_lsa}
 
-% \Cref{table:lsa_ip1_colinearity_knob,table:lsa_ip5_colinearity_knob} show the settings used in LSA to define the colinearity knobs at IR\num{1} and IR\num{5}.
 \Cref{table:lsa_colinearity_knobs} shows the settings used in \gls{LSA} to define the colinearity knobs at IR\num{1} and IR\num{5}.
-These knobs control the skew quadrupole correctors left and right of the \gls{IP}, the MQSX magnets.
+These knobs control the \gls{skew} quadrupole correctors left and right of the \gls{IP}, the MQSX magnets.
 
 \begin{table}[!hbt]
     \begin{subtable}[h]{0.5\textwidth}
@@ -50,8 +49,9 @@ These knobs control the skew quadrupole correctors left and right of the \gls{IP
 \section{Definitions of the Rigid Waist Shift Knobs}
 \label{section:rigid_waist_shift_knobs_lsa}
 
-\Cref{table:lsa_rigid_waist_shift_knobs} shows the settings used in \gls{LSA} to define the \gls{RWS} \glspl{knob} at IR\num{1} and IR\num{5}.
+\Cref{table:lsa_rigid_waist_shift_knobs} shows the settings used in \gls{LSA} to define the \gls{RWS} knobs at IR\num{1} and IR\num{5}.
 These knobs control the triplet magnets left and right of the \gls{IP} in order to move all four betatron waists simultaneously.
+A trim of the \gls{RWS} acts on the common powering circuit of the triplet magnet.
 
 \begin{table}[!hbt]
     \begin{subtable}[h]{0.45\textwidth}
