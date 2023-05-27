@@ -239,8 +239,6 @@ The ability to accurately compute key statistical values on phase advance measur
 \section{Simulations of Sextupolar Amplitude Detuning in the LHC}
 \label{section:sextupolar_amplitude_detuning}
 
-\todo{For the sextupoles, say that this is of importance to understand how the impact of the sextupolar corrections on our amplitude detuning measurements. Even if they don't have a large effect normally, if there had been a different scaling with the AC-dipole maybe they would? Now we know that they don't, that is also a result.}
-
 As mentioned in \cref{subsection:amplitude_detuning}, a measurement of the machine non-linearities can be obtained by characterizing the \gls{ampdet}: the dependency of the tune as a function of the amplitude of particle oscillations.
 Amplitude detuning traditionally comes from octupolar fields and is used for beam stabilization against collective effects~\cite{BOOK:Chao:Collective_instabilities,PRAB:Karpov:Thresholds_Loss_Landau_Damping}.
 More generally, it comes from multipolar fields of even order \(m = 2n\), where \(n\) is a natural number strictly higher than one since quadrupolar fields provide a linear behavior.
@@ -248,10 +246,11 @@ More generally, it comes from multipolar fields of even order \(m = 2n\), where 
 Analytical formulae from \cite{REPORT:Bengtsson:Smear_Tune_Shift, BOOK:Lee:Accelerator_physics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering} show that second order terms of sextupole strengths contribute to free amplitude detuning.
 It has previously been suspected that the forced amplitude detuning induced by sextupolar fields would behave similarly than that already studied for octupolar fields in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
 
-This study aims to first demonstrate the possibility of observing this amplitude detuning with \gls{AC_dipole} excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}, and of confirming the similarity of its behavior to that of the octupolar one.
+This study aims to first demonstrate the possibility of observing this amplitude detuning with \gls{AC_dipole} excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}, and also to confirm the similarity of its behavior to that of the octupolar one.
+Additionally, doing so would help understand the impact of our sextupolar corrections on amplitude detuning measurements, which may be non-negligible.
 Simulations were performed to investigate the sextupolar amplitude detuning in the \gls{LHC} lattice, both through forced oscillations with AC dipole and free oscillations up to similarly high amplitudes.
 
-\subsection*{Amplitude Detuning with an AC dipole}
+\subsection*{Amplitude Detuning with an AC Dipole}
 
 The feasibility of direct amplitude detuning measurement with an AC dipole was demonstrated in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, as well as its benefits compared to the previously traditional technique of exciting the beam to large amplitudes with a single kick.
 In the same paper, the authors go over the linear motion of particles and differentiate two cases.
@@ -354,3 +353,11 @@ The suspected behavior of this contribution, similar to that of the octupolar am
 % Substantial effort put into the maintenance and development of the software suite used by the \acrshort{OMC} team, both for analysis and simulation codes, was presented.
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
+
+
+
+
+
+
+Even if they don't have a large effect normally, if there had been a different scaling with the AC-dipole maybe they would?
+Now we know that they don't, that is also a result.
