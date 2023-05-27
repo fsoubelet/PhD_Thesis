@@ -198,32 +198,32 @@ This way, one can determine the standard deviation on the phase advance reconstr
 Due to the presence of many outliers (see \cref{figure:bpms_betas_histogram}) in measurement data and the lack of a sufficient number of data points in some BPM type categories, in the following the calculation from either the chi-square (\cref{equation:stdev_from_chi2_mode}) or chi (\cref{equation:stdev_from_chi_mean}) distribution was used, depending on the specific BPM subgroup.
 
 Optics analysis was run on turn-by-turn data, BPMs were categorized based on their types~\cite{CERN:Equipment_Codes} and the value of \(\beta\)-functions at their locations, and both the chi distributions and the chi-square distributions were generated as detailed above.
-\Cref{figure:grid_distributions_standard_standard} shows the distributions of phase errors for different \(\beta\)-functions combinations among so-called \textit{standard} BPMs, the most common ones in the LHC.
+\Cref{figure:grid_distributions_standard_standard} shows the distributions of phase errors for different \(\beta\)-functions combinations among standard arc BPMs, the most common ones in the LHC.
 
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/Other_Studies/phase_grid_distributions_errors_standard_standard.pdf}
-    \caption{Phase error distributions for different BPM \(\beta\) combinations, for \textit{standard} to \textit{standard} type BPMs.}
+    \caption{Phase error distributions for different BPM \(\beta\) combinations, between standard arc BPMs.}
     \label{figure:grid_distributions_standard_standard}
 \end{figure}
 
 For each of these cases, the standard deviation on phase advance is computed using either \cref{equation:stdev_from_chi2_mode} or \cref{equation:stdev_from_chi_mean}.
 Depending on parameters set for the optics analysis one might have to apply a correcting factor of \(\sqrt{N-1}\) - with \(N\) being the number of measurements used for the analysis - to compensate for this factor being already present in calculations performed by the analysis software.
 Namely, choosing to ignore \(t\)-value correction and single file uncertainty makes this factor appear in the optics calculations and requires to leave it out in later on analysis.
-Values inferred with this method for an LHC Run~\num{2} for \textit{standard} type BPMs can be seen in \cref{figure:phase_error_heatmap_standard_bpms}, and for \textit{warm} type BPMs in \cref{figure:phase_error_heatmap_warm_bpms}.
+Values inferred with this method for an LHC Run~\num{2} for standard arc BPMs can be seen in \cref{figure:phase_error_heatmap_standard_bpms}, and for \textit{warm} type BPMs in \cref{figure:phase_error_heatmap_warm_bpms}.
 Results were computed for all BPM types but are not all shown.
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.95\textwidth]{Figures/Other_Studies/phase_stdev_heatmap_mrad_standard_standard.pdf}
-    \caption{Computed standard deviations on phase advances between \textit{standard} to \textit{standard} type BPMs for the LHC Run~\num{2} (\num{2018}, \(\beta^{\ast} =\)~\qty{30}{\centi\meter}) for different \(\beta\)-functions combinations of these BPMs.}
+    \includegraphics*[width=0.84\textwidth]{Figures/Other_Studies/phase_stdev_heatmap_mrad_standard_standard.pdf}
+    \caption{Computed standard deviations on phase advances between standard arc BPMs for the LHC Run~\num{2} (\num{2018}, \(\beta^{\ast} =\)~\qty{30}{\centi\meter}) for different \(\beta\)-functions combinations of these BPMs.}
     \label{figure:phase_error_heatmap_standard_bpms}
 \end{figure}
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.95\textwidth]{Figures/Other_Studies/phase_stdev_heatmap_mrad_warm_warm.pdf}
-    \caption{Computed standard deviations on phase advances between \textit{warm} to \textit{warm} type BPMs for the LHC Run~\num{2} (\num{2018}, \(\beta^{\ast} =\)~\qty{30}{\centi\meter}) for different \(\beta\)-functions combinations of these BPMs. Empty slots correspond to \(\beta\)-functions ranges where no BPMs of this type are present.}
+    \includegraphics*[width=0.84\textwidth]{Figures/Other_Studies/phase_stdev_heatmap_mrad_warm_warm.pdf}
+    \caption{Computed standard deviations on phase advances between \textit{warm} type BPMs for the LHC Run~\num{2} (\num{2018}, \(\beta^{\ast} =\)~\qty{30}{\centi\meter}) for different \(\beta\)-functions combinations of these BPMs. Empty slots correspond to \(\beta\)-functions ranges where no BPMs of this type are present.}
     \label{figure:phase_error_heatmap_warm_bpms}
 \end{figure}
 
@@ -232,7 +232,7 @@ Similarly, phase advances between measuring BPMs placed at higher \(\beta\)-func
 
 \subsection*{Conclusions}
 
-Assuming the normal nature of BPM measurements, one can make use of the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase advances while also differentiating between categories of BPMs, without performing measurements involving only BPMs of interest.
+Assuming the normal nature of \gls{BPM} measurements, one can make use of the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase advances while also differentiating between categories of BPMs, without performing measurements involving only BPMs of interest.
 The dependency of said standard deviation on both measuring BPMs' types and their \(\beta\)-functions was confirmed.
 The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in harmonic analysis or optimizing BPM selection in the N-BPM method.
 
