@@ -68,7 +68,7 @@ A trim of the \gls{RWS} acts on the common powering circuit of the triplet magne
             MQXA\num{3}.R\num{1}/K\num{1}  &  \num{-4.38891E-5}  \\
             \hline
         \end{tblr}
-        \caption{Knobs for IR\num{1}.}
+        \caption{RWS knob for IR\num{1}.}
         \label{table:lsa_ip1_rigid_waist_shift}
     \end{subtable}
     \hfill
@@ -86,7 +86,7 @@ A trim of the \gls{RWS} acts on the common powering circuit of the triplet magne
             MQXA\num{3}.R\num{5}/K\num{1}  &  \num{-4.38891E-5}  \\
             \hline
         \end{tblr}
-        \caption{Knobs for IR\num{5}.}
+        \caption{RWS knob for IR\num{5}.}
         \label{table:lsa_ip5_rigid_waist_shift}
     \end{subtable}
     \caption{Definitions of the Rigid Waist Shift knobs for IR\num{1} (left) and IR\num{5} (right) as implemented in LSA.}
@@ -96,9 +96,9 @@ A trim of the \gls{RWS} acts on the common powering circuit of the triplet magne
 \section{Definitions of the Optics Rematching Knobs}
 \label{section:optics_rematching_knobs_lsa}
 
-\Cref{table:lsa_ip1_pos_rematching_knob,table:lsa_ip1_neg_rematching_knob} show the settings used in \gls{LSA} to define the optics rematching knobs needed after applying the \acrlong{RWS} \gls{knob}, at IR\num{1}.
+\Cref{table:lsa_ip1_pos_rematching_knob,table:lsa_ip1_neg_rematching_knob} show the settings used in \gls{LSA} to define the \gls{optics} rematching knobs needed after applying the \gls{RWS} \gls{knob}, at IR\num{1}.
 \Cref{table:lsa_ip1_pos_rematching_knob} gives the settings that rematch the optics when the IR\num{1} RWS knob is trimmed with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the IR\num{1} RWS knob is applied with a factor of \num{-1}.
-These knobs control the independent magnets Q\num{4} to q\num{10} left and right of the \gls{IP} for both beams.
+These knobs control the independent magnets Q\num{4} to Q\num{10} left and right of the \gls{IP} for both beams.
 
 \begin{table}[!hbt]
     \centering
@@ -122,7 +122,7 @@ These knobs control the independent magnets Q\num{4} to q\num{10} left and right
         RQ{10}.R\num{1}B[\num{12}]/K\num{1}  &  \num{-1.960854E-5}    &  \num{-1.257251E-4}    \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for an applied Rigid Waist Shift knob trimmed with a factor \num{1}.}
+    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for a Rigid Waist Shift knob trimmed with a factor \num{1}.}
     \label{table:lsa_ip1_pos_rematching_knob}
 \end{table}
 
@@ -148,13 +148,13 @@ These knobs control the independent magnets Q\num{4} to q\num{10} left and right
         RQ{10}.R\num{1}B[\num{12}]/K\num{1}  &  \num{-4.208946E-5}    &  \num{4.750863E-5}     \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for an applied Rigid Waist Shift knob trimmed with a factor \num{-1}.}
+    \caption{Definition of the optics rematching knob for IR\num{1} as implemented in LSA. These settings rematch the optics for a Rigid Waist Shift knob trimmed with a factor \num{-1}.}
     \label{table:lsa_ip1_neg_rematching_knob}
 \end{table}
 
-\Cref{table:lsa_ip5_pos_rematching_knob,table:lsa_ip5_neg_rematching_knob} show the settings used in LSA to define the optics rematching knobs needed after applying the Rigid Waist Shift knob, at IR\num{5}.
-\Cref{table:lsa_ip5_pos_rematching_knob} gives the settings that rematch the optics when the IR\num{5} RWS knob is trimmed with a factor of \num{1}, while \cref{table:lsa_ip1_neg_rematching_knob} gives the settings that rematch the optics when the IR\num{5} RWS knob is applied with a factor of \num{-1}.
-These knobs control the independent magnets Q\num{4} to q\num{10} left and right of the IP for both beams.
+Similarly, \cref{table:lsa_ip5_pos_rematching_knob,table:lsa_ip5_neg_rematching_knob} show the settings used in \gls{LSA} to define the optics rematching knobs needed after applying the Rigid Waist Shift knob, at IR\num{5}.
+\Cref{table:lsa_ip5_pos_rematching_knob} gives the settings that rematch the optics when the IR\num{5} RWS knob is trimmed with a factor of \num{1}, while \cref{table:lsa_ip5_neg_rematching_knob} gives the settings that rematch the optics when the IR\num{5} RWS knob is applied with a factor of \num{-1}.
+These knobs control the independent magnets Q\num{4} to Q\num{10} left and right of the IP for both beams.
 
 \begin{table}[!hbt]
     \centering
@@ -178,7 +178,7 @@ These knobs control the independent magnets Q\num{4} to q\num{10} left and right
         RQ{10}.R\num{5}B[\num{12}]/K\num{1}  &  \num{3.1220939E-5}    &  \num{-1.199213E-4}    \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for an applied Rigid Waist Shift knob trimmed with a factor \num{1}.}
+    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for a Rigid Waist Shift knob trimmed with a factor \num{1}.}
     \label{table:lsa_ip5_pos_rematching_knob}
 \end{table}
 
@@ -204,7 +204,7 @@ These knobs control the independent magnets Q\num{4} to q\num{10} left and right
         RQ{10}.R\num{5}B[\num{12}]/K\num{1}  &  \num{-6.293434E-5}    &  \num{4.006792E-5}     \\
         \hline
     \end{tblr}
-    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for an applied Rigid Waist Shift knob trimmed with a factor \num{-1}.}
+    \caption{Definition of the optics rematching knob for IR\num{5} as implemented in LSA. These settings rematch the optics for a Rigid Waist Shift knob trimmed with a factor \num{-1}.}
     \label{table:lsa_ip5_neg_rematching_knob}
 \end{table}
 
