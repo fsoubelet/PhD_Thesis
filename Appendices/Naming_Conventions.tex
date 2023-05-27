@@ -23,24 +23,24 @@ From the standpoint of lattice definitions there are eight IPs, although this is
 An \acrlong{IP} in the strict sense is a location where the two beams are made to collide, which only happens in the center of octants \numlist{1;2;5;8} where \glspl{experiment} are located.
 It is assumed through this document that when an IP or IR is mentioned, it refers to one of these octants.
 
-Regardless of hosting an IP, all octants have in common that they host a long straight section in the middle as part of the insertion.
-While the arcs can be considered generally uniform across LHC, the various long sections differ from octant to octant.
+Regardless of hosting an \gls{IP}, all octants have in common that they host a long straight section in the middle as part of the insertion.
+While the arcs can be considered generally uniform across the \gls{LHC}, the various long sections differ from octant to octant.
 
-As the base pattern of the LHC arcs is a FODO lattice, the machine can be broken up into half-cells containing one quadrupole each.
+As the base pattern of the \gls{LHC} arcs is a FODO lattice, the machine can be broken up into \concept{half-cells} containing one quadrupole each.
 As a result each half-cell is assigned a number such that the \(i^{\mathrm{th}}\) quadrupole away from the center of its octant is associated with the \(i^{\mathrm{th}}\) half-cell.
-With this in mind, the general naming convention can be summarized as:
+With this in consideration, the general naming convention can be summarized as:
 
 \begin{equation*}
-        \langle \mathrm{TYPE} \rangle \langle \mathrm{SPECIAL} \rangle . \langle \mathrm{EXTRA} \rangle \langle \mathrm{HALF\_CELL} \rangle \langle \mathrm {LR} \rangle \langle \mathrm{OCTANT} \rangle . \mathrm{B} \langle \mathrm{12} \rangle
+    \langle \mathrm{TYPE} \rangle \langle \mathrm{SPECIAL} \rangle . \langle \mathrm{EXTRA} \rangle \langle \mathrm{HALF\_CELL} \rangle \langle \mathrm {LR} \rangle \langle \mathrm{OCTANT} \rangle . \mathrm{B} \langle \mathrm{12} \rangle
     \label{equation:lhc_naming_nomenclature}
 \end{equation*}
 
-The entries in the definition above are defined as follows:
+In the definition above the various entries are defined as follows:
 \begin{itemize}
     \item \(\mathrm{TYPE}\): Entry specifying the type of element. Examples are given in \cref{table:element_prefix_examples}.
-    \item \(\mathrm{SPECIAL}\): \textit{Optional} entry which can be used to subtype an element, e.g. \(\mathrm{H}\) or \(\mathrm{V}\) to signify that the element is acting on the horizontal or vertical plane.
-    \item \(\mathrm{EXTRA}\): \textit{Optional} entry used to separate between otherwise identically named elements in regard to their type and number. E.g. \(\mathrm{A}\), \(\mathrm{B}\), \(\mathrm{C}\) to separate between three bending magnets in the same half-cell.
-    \item \(\mathrm{LR}\): Entry specifying which side of the closest IP the element is on. The values for this entry are either \(\mathrm{L}\) (\textit{left}) or \(\mathrm{R}\) (\textit{right}).
+    \item \(\mathrm{SPECIAL}\): \textit{Optional} entry which can be used to subtype an element, e.g. H or V to signify that the element is acting on the horizontal or vertical plane.
+    \item \(\mathrm{EXTRA}\): \textit{Optional} entry used to separate between otherwise identically named elements in regard to their type and number. E.g. A, B, C to separate between three bending magnets in the same half-cell.
+    \item \(\mathrm{LR}\): Entry specifying which side of the closest IP the element is on. The values for this entry are either L (left) or R (right).
     \item \(\mathrm{OCTANT}\): Entry specifying the octant the element is a part of. Valid entries are integers from \numrange{1}{8}.
     \item \(\mathrm{12}\): \textit{Optional} entry specifying which beam the element is part of. This is either \num{1} or \num{2}, unless the element is shared between the two beams in which case the element name ends with the \(\mathrm{OCTANT}\) entry.
 \end{itemize}
@@ -59,12 +59,13 @@ The entries in the definition above are defined as follows:
         Drift             & \(\mathrm{DRIFT}\)    \\
         \hline
     \end{tblr}
-    \caption{Example prefixes for different LHC element types. An extensive list of all elements can be found at~\cite{CERN:Equipment_Codes}}.
+    \caption{Example prefixes for different LHC element types. An extensive list of all elements can be found at~\cite{CERN:Equipment_Codes}.}
     \label{table:element_prefix_examples}
 \end{table}
 
 Let us illustrate with examples.
-The element \(\mathrm{MQ.25L5.B1}\) is a quadrupole on the left side of IP\num{5}, in the \(25^{th}\) half-cell counting from IP\num{5} and for beam~\num{1}.
+The element MQ.\num{25}L\num{5}.B\num{1} is a quadrupole on the left side of IP\num{5}, in the \(25^{\mathrm{th}}\) half-cell counting from IP\num{5} and for beam~\num{1}.
+\break
 
 The special identifier can be used in multiple ways.
 For instance \(\mathrm{MQML.10R1.B1}\) is a different type of quadrupole in half-cell \num{10}, on the right side of IP\num{1} for beam~\num{1}.
