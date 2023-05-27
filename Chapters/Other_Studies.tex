@@ -1,17 +1,21 @@
 \chapter{Optics Studies}
 \label{chapter:others_and_software}
 
-Two further studies performed during the course of this thesis are presented in this chapter.
-The first one is a statistical analysis of the phase measurement error in the \gls{LHC}, that aimed to determine the influence of the measuring \glspl{BPM} on the phase error.
-The second one is an investigation on the sextupolar contribution to amplitude detuning in the LHC.
+The \gls{luminosity} delivered to the \glspl{experiment} is not the only metric from the point of view of the \gls{optics} in the \gls{LHC}.
+Measuring and correcting the phase advance through the machine is crucial for optics measurements and corrections.
+Similarly, the measurement and correction of amplitude detuning is essential in order to understand and prevent instabilities in the machine.
+These are relevant not only to the \gls{LHC} but for any circular accelerator.
 
-% In parallel to other works presented in this document, a substantial effort was put into software developments to improve both analysis and simulation tools.
-% The relevant contributions and achievements over the course of this work are succinctly presented in the last section of this chapter.
+Two further optics studies performed during the course of this thesis are presented in this chapter.
+The first one is a statistical analysis of the phase measurement error in the \gls{LHC}, that aimed to determine the influence of the measuring \glspl{BPM} on the phase error.
+The second one is an investigation on the sextupolar contribution to amplitude detuning in the \gls{LHC}.
 
 %----------------------------------------------------------------------------------------
 
 \section{Phase Error Dependency on BPM Type and Location}
 \label{section:phase_error_dependency_on_bpm_type_and_location}
+
+\todo{For the phase say that the global corrections are relies on the best possible phase measurement and by paring them correctly this could improve the correction achieved. Emphasis that all machines have this issue and that the issue is general. Remove any phrases like this is to contribute to the OMC-team.}
 
 In the \gls{LHC} and many other circular colliders \gls{BPM} measurement data constitutes the primary source for \gls{optics} properties computation.
 As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \glspl{beta-function} lead to better signal-to-noise ratios on measurements, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
@@ -235,6 +239,8 @@ The ability to accurately compute key statistical values on phase advance measur
 
 \section{Simulations of Sextupolar Amplitude Detuning in the LHC}
 \label{section:sextupolar_amplitude_detuning}
+
+\todo{For the sextupoles, say that this is of importance to understand how the impact of the sextupolar corrections on our amplitude detuning measurements. Even if they don't have a large effect normally, if there had been a different scaling with the AC-dipole maybe they would? Now we know that they don't, that is also a result.}
 
 As mentioned in \cref{subsection:amplitude_detuning}, a measurement of the machine non-linearities can be obtained by characterizing the \gls{ampdet}: the dependency of the tune as a function of the amplitude of particle oscillations.
 Amplitude detuning traditionally comes from octupolar fields and is used for beam stabilization against collective effects~\cite{BOOK:Chao:Collective_instabilities,PRAB:Karpov:Thresholds_Loss_Landau_Damping}.
