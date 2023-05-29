@@ -36,7 +36,7 @@ For this, in the LHC the local coupling correction is done by measuring the RDTs
 The corrections are determined with the Segment-by-Segment technique described in \cref{subsection:correction_principles}, and try to compensate for the triplets' contribution as well as possible.
 Though this compensation is rarely perfect, the residual contribution is usually small enough to be handled by the skew quadrupole correctors present in the LHC arcs (see \cref{subsection:lhc_arcs}).
 This correction is essential in order to reach low \glssymbol{betastar} with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter} the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \glssymbol{Cminus} by the amount of \num{0.33}, too high for the arc correctors to handle.
-While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable such as a tune change or transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
+While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable, for instance the impossibility to independently control the tunes, a change of working point or transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
 Due to their location the MQSX correctors are single aperture magnets, meaning that both beams pass through a single cavity in the element and feel the same magnetic field.
 This means finding a correction has the additional constraint that it is applied to both beam~\numlist{1;2} simultaneously, and should be a compromise that works for both beams.
@@ -52,7 +52,7 @@ These results highlight the necessity of a proper handling of local coupling for
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\textwidth]{Figures/IR_Coupling_Correction/lhc_vs_hllhc_combined.pdf}
-    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as relative instantaneous luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP generated with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}% Beam sizes are calculated according to \cref{equation:lebedev_beam_size} and luminosities according to \cref{equation:luminosity_double_beams}. In the case of the HL-LHC, the relative beam size increase and subsequent luminosity loss are greater due to the much larger \(\beta\)-functions in the triplet.}
+    \caption{Relative values of the RMS beam size at IP\num{1} (\textcolor{mplblue}{blue}) as well as relative instantaneous luminosity (\textcolor{mplorange}{orange}) for different strengths of a local coupling bump around the IP generated with skew quadrupoles, for the LHC (filled) and HL-LHC v1.5 (dashed) collision optics.}
     \label{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}
 \end{figure}
 
