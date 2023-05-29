@@ -35,11 +35,10 @@ Using these numbers and taking into account the \glssymbol{betastar}-leveling as
 Further studies are required for scenarios involving the simultaneous loss of both correctors in a given \gls{IR} and to investigate potential solutions.
 \break
 
-% \Cref{chapter:ml_local_coupling} reports on a different approach to the matter of local coupling.
-After the successful application of machine learning techniques to several other tasks in particle accelerators, including optics corrections, the possibility of using them to tackle local coupling in the \gls{LHC} \glspl{IR} was explored.
+After the successful application of machine learning techniques to several other tasks in particle accelerators, including optics corrections, the possibility of using them for a different approach to tackle local coupling in the \gls{LHC} \glspl{IR} was explored.
 Through extensive simulation-supported data sets, specific models were trained to predict the location of coupling sources in the form of quadrupole tilts from measured \glspl{RDT}.
-Models were obtained that achieved great prediction performance on clean data sets, reaching up to \qty{99}{\percent} accuracy, but did not generalize as well to realistically noisy data sets.
-As a consequence, improvements in the precision of the reconstructed \glspl{RDT} would be necessary before confidently using the models in the \gls{LHC}.
+Models were obtained that achieved great prediction performance on clean data sets but did not generalize as well to realistically noisy data sets.
+Nonetheless, these models show promising results but improvements in the precision of the reconstructed \glspl{RDT} would be necessary before confidently using the models in the \gls{LHC}.
 Such improvements could be achieved with better beam instrumentation, more accurate optics reconstruction methods or other dedicated machine learning models.
 \break
 
@@ -49,13 +48,12 @@ The results allowed to identify the best conditions for phase reconstruction, wh
 The impact of the sextupolar contribution to the \gls{ampdet} in the \gls{LHC} was observed through simulations, and it was shown that the contribution behaved similarly to the octupolar one, exhibiting a factor \num{2} between the free and forced oscillation cases for the direct detuning term, while exhibiting a similar cross detuning term.
 The substantial contribution to the \gls{OMC} team's software as well as the development of new tools was also presented, which contributed to the improvement of the optics simulations and analysis ecosystem as a whole in \acrshort{BE}-\acrshort{ABP}.
 \break
-\todo{The ML shows promising results but is not precise enough with the current instrumentation or method.}
+\todo{The phase advance, shows the potential of paring BPMs for better phase and potentially beta measurement.}
 
 The overall goal of this thesis has been to develop a new approach to the measurement and correction of local \gls{betatron_coupling} in the \gls{LHC} \glspl{IR}.
 Different methods were developed and tested including, mainly, a new experimental setup which was used to measure and correct local coupling in the \gls{LHC} \num{2022} commissioning, improving the instantaneous luminosity at the \acrshort{ATLAS} and \acrshort{CMS} \glspl{experiment}.
 This new method is relevant for typical conditions of an Interaction Region, and therefore relevant for other existing colliders such as SuperKEKB, but also future machines such as the \gls{HL-LHC} and the \gls{FCC} variants.
 The work presented in this document contributes to the improved performance and understanding of the \gls{LHC}, but also potentially other present and future particle colliders.
 
-\todo{The phase advance, shows the potential of paring BPMs for better phase and potentially beta measurement.}
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
