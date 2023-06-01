@@ -1161,23 +1161,23 @@ For instance, in the case that the MQSX.\num{3}L\num{1} fails and is compensated
 
 \begin{table}[!htb]
     \centering
-    \begin{tblr}{colspec={cccc}}
+    \begin{tblr}{colspec={ccccc}}
         \hline
-        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Failing Magnet} & \SetCell[c=2]{c} Necessary Tilt for Compensation               \\
-        \cline{3,4}
-                                          &                                               &  Q2 Tilt [\unit{\milli\radian}]    &    Q3 Tilt [\unit{\milli\radian}]  \\
+        \SetCell[r=2,c=1]{c} \textbf{IR}  &  \SetCell[r=2,c=1]{c} \textbf{Failing Magnet}  &  \SetCell[r=2,c=1]{c} \textbf{\(K_{1\mathrm{S}}\)~[\qty{1e-4}{\per\square\meter}]}  &  \SetCell[c=2]{c} Necessary Tilt for Compensation                       \\
+        \cline{4,5}
+                                          &                                                &                                                                                     &  Q2 Tilt [\unit{\milli\radian}]    &    Q3 Tilt [\unit{\milli\radian}]  \\
         \hline
-        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{MQSX.3L1}                            &  \num{-1.65}                       &     \num{2.325}                    \\
-                                          &  \textbf{MQSX.3R1}                            &  \num{0.5}                         &     \num{-0.7}                     \\
+        \SetCell[r=2,c=1]{c} \textbf{IR1} &  \textbf{MQSX.3L1}                             &  \num{11.5}                                                                         &  \num{-1.65}                       &     \num{2.325}                    \\
+                                          &  \textbf{MQSX.3R1}                             &  \num{3.5}                                                                          &  \num{0.5}                         &     \num{-0.7}                     \\
         \hline[dashed]
-        \SetCell[r=2,c=1]{c} \textbf{IR2} &  \textbf{MQSX.3L2}                            &  \num{-1.97}                       &     \num{2.85}                     \\
-                                          &  \textbf{MQSX.3R2}                            &  \num{1.97}                        &     \num{-2.85}                    \\
+        \SetCell[r=2,c=1]{c} \textbf{IR2} &  \textbf{MQSX.3L2}                             &  \num{-14}                                                                          &  \num{-1.97}                       &     \num{2.85}                     \\
+                                          &  \textbf{MQSX.3R2}                             &  \num{-14}                                                                          &  \num{1.97}                        &     \num{-2.85}                    \\
         \hline[dashed]
-        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{MQSX.3L5}                            &  \num{-1.15}                       &     \num{1.6}                      \\
-                                          &  \textbf{MQSX.3R5}                            &  \num{0.575}                       &     \num{-0.8}                     \\
+        \SetCell[r=2,c=1]{c} \textbf{IR5} &  \textbf{MQSX.3L5}                             &  \num{8}                                                                            &  \num{-1.15}                       &     \num{1.6}                      \\
+                                          &  \textbf{MQSX.3R5}                             &  \num{4}                                                                            &  \num{0.575}                       &     \num{-0.8}                     \\
         \hline[dashed]
-        \SetCell[r=2,c=1]{c} \textbf{IR8} &  \textbf{MQSX.3L8}                            &  \num{-0.725}                       &     \num{1}                       \\
-                                          &  \textbf{MQSX.3R8}                            &  \num{0.725}                        &     \num{-1}                      \\
+        \SetCell[r=2,c=1]{c} \textbf{IR8} &  \textbf{MQSX.3L8}                             &  \num{-5}                                                                           &  \num{-0.725}                      &     \num{1}                        \\
+                                          &  \textbf{MQSX.3R8}                             &  \num{-5}                                                                           &  \num{0.725}                       &     \num{-1}                       \\
         \hline[dashed]
     \end{tblr}
     \caption{Necessary tilt angles of either Q\num{2} or Q\num{3} triplet elements to compensate for the loss of the closest skew quadrupole corrector/ Results are shown for IR\num{2} and IR\num{8}, but only IR\num{1} and IR\num{5} are at risk of failure.}
