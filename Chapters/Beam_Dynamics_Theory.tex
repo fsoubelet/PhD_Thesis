@@ -918,17 +918,17 @@ For instance, the transfer matrix of a \gls{skew} quadrupole can be written
     \end{pmatrix} \text{ ,}
     \label{equation:skew_quad_transfer_matrix}
 \end{equation}
-where, using \(\omega = \sqrt{k_{1s}}\) for clarity, the various \(2 \times 2\) matrices are expressed as:
+where, using \(\omega = \sqrt{k_{1s}} \ge 0\) for clarity, the various \(2 \times 2\) matrices are expressed as~\cite{Lecture:Wolski:Dynamical_Maps_Linear_Elements}:
 
 \begin{equation}
     \begin{aligned}
         \mathbf{M_x} &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)                 &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
-            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
+            \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)        &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
         \end{pmatrix} \text{ ,} \\
         \mathbf{M_{xy}} &= \begin{pmatrix}
-            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)                &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
-            -\frac{1}{2} \omega \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
+            \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)        &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
+            -\frac{\omega}{2} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
         \end{pmatrix} \text{ ,} \\
         \mathbf{M_{yx}} &= \begin{pmatrix}
             \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
