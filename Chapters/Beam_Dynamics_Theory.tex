@@ -912,9 +912,9 @@ Magnetic elements introducing coupling between the horizontal and vertical plane
 For instance, the transfer matrix of a \gls{skew} quadrupole can be written
 
 \begin{equation}
-    \mathrm{M_{skew\ quad.}} = \begin{pmatrix}
-        M_x  & M_{xy}  \\
-        M_{yx} & M_y   \\
+    \mathbf{M}_\mathrm{skew\ quad.} = \begin{pmatrix}
+        \mathbf{M_x}    & \mathbf{M_{xy}}  \\
+        \mathbf{M_{yx}} & \mathbf{M_y}   \\
     \end{pmatrix} \text{ ,}
     \label{equation:skew_quad_transfer_matrix}
 \end{equation}
@@ -922,19 +922,19 @@ where, using \(\omega = \sqrt{k_{1s}}\) for clarity, the various \(2 \times 2\) 
 
 \begin{equation}
     \begin{aligned}
-        M_x &= \begin{pmatrix}
+        \mathbf{M_x} &= \begin{pmatrix}
             \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)                 &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
             -\frac{1}{2} \omega \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right) \right)
         \end{pmatrix} \text{ ,} \\
-        M_{xy} &= \begin{pmatrix}
+        \mathbf{M_{xy}} &= \begin{pmatrix}
             \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)                &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
             -\frac{1}{2} \omega \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
         \end{pmatrix} \text{ ,} \\
-        M_{yx} &= \begin{pmatrix}
+        \mathbf{M_{yx}} &= \begin{pmatrix}
             \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right) \\
             -\frac{\omega}{2} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) - \cosh \left(\omega L\right)\right)
         \end{pmatrix} \text{ ,} \\
-        M_y &= \begin{pmatrix}
+        \mathbf{M_y} &= \begin{pmatrix}
             \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)              &  \frac{1}{2 \omega} \left( \sin \left(\omega L\right) + \sinh \left(\omega L\right)\right) \\
             -\frac{\omega}{2} \left( \sin \left(\omega L\right) - \sinh \left(\omega L\right)\right)  &  \frac{1}{2} \left( \cos \left(\omega L\right) + \cosh \left(\omega L\right)\right)
         \end{pmatrix} \text{ .}
