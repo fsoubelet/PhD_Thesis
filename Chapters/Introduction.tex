@@ -13,13 +13,13 @@ Accelerator physics as a branch of physics has its roots nearly a century ago wi
 Since then accelerator physics has grown into a mature field of research with applications ranging from cancer treatment and the production of medical isotopes to material science such as the analysis of archeological items, but also many industrial uses.
 
 However, \gls{HEP} - the study of the fundamental constituents of matter - has historically been the main drive to push the boundaries of accelerator science.
-Respectively, one of the most significant contributions of this field has been the design, construction and operation of particle colliders providing data for experiments at the forefront of \gls{HEP} research, such as the \gls{LHC} at \acrshort{CERN}, the highest energy and most technologically advanced particle accelerator yet built.
-These contributions recently culminated with the discovery of the Higgs boson by the \acrshort{ATLAS} and \acrshort{CMS} experiments at the \acrshort{LHC} in \num{2012}~\cite{PLB:ATLAS:Observation_Higgs_Boson, PLB:CMS:Observation_Higgs_Boson}, which Peter Higgs and François Englert were awarded the \num{2013} Nobel Prize in Physics for theorizing nearly \num{50} years prior~\cite{PRL:Higgs:Broken_Symmetries_Masses_Gauge_Bosons,PRL:Englert:Broken_Symmetry_Mass_Gauge_Vector_Mesons}.
+One of the most significant contributions of this field has been the design, construction and operation of particle colliders providing data for experiments at the forefront of \gls{HEP} research, such as the \gls{LHC} at \acrshort{CERN}, the highest energy and most technologically advanced particle accelerator yet built.
+These contributions recently culminated with the discovery of the Higgs boson by the \acrshort{ATLAS} and \acrshort{CMS} experiments at the \acrshort{LHC} in \num{2012}~\cite{PLB:ATLAS:Observation_Higgs_Boson, PLB:CMS:Observation_Higgs_Boson}, which Peter Higgs and François Englert were awarded the \num{2013} Nobel Prize in Physics for predicting nearly \num{50} years prior~\cite{PRL:Higgs:Broken_Symmetries_Masses_Gauge_Bosons,PRL:Englert:Broken_Symmetry_Mass_Gauge_Vector_Mesons}.
 
-Since then experiments at the \gls{LHC} keep analyzing data from collisions to probe in more details the now uncovered mechanisms, as well as attempt to discover physics beyond the Standard Model such as supersymmetry or dark matter.
+Since then experiments at the \gls{LHC} keep analyzing data from collisions to probe in more detail the now uncovered mechanisms, as well as attempt to discover physics beyond the Standard Model such as supersymmetry or dark matter.
 To this end, the LHC has kept pushing its performance to even higher energies and \gls{luminosity}.
 The machine has already undergone two \glspl{longshutdown} during which it was upgraded, and is currently in the \Gls{run}~\num{3} of its operation.
-Another shutdown is planed a few years from now to upgrade the accelerator to the \gls{HL-LHC}~\cite{Website:HLLHC}, which aims to increase the \gls{luminosity} of the collider by a factor of \num{10}.
+Another shutdown is planned a few years from now to upgrade the accelerator to the \gls{HL-LHC}~\cite{Website:HLLHC}, which aims to increase the \gls{luminosity} of the collider by a factor of \num{10}.
 
 Increasing the luminosity of the machine however is not without its challenges and limitations, and in order to achieve an optimal performance an understanding and control of the dynamics of the particle beams is essential.
 One such limitation to the delivery of optimal \gls{luminosity} is the so-called local linear \gls{betatron_coupling} in the \glspl{IR}, which can lead to a significant decrease in collision numbers if left uncorrected.
@@ -29,16 +29,16 @@ By addressing this issue, the research presented in this document aims to contri
 
 \section{Thesis Outline}
 
-This document exposes work done on the matter of local linear coupling correction in the LHC, and of this thesis at large.
+This document describes work done on the matter of local linear coupling correction in the LHC, and of this thesis at large.
 Across studies a focus is kept on the main \glspl{IR} of the \gls{LHC}, \numlist{1;5}, which are more error-sensitive due to their optics configurations.
 
 As a first step and to allow the reader to follow the details of this work, \cref{chapter:theory} gives an in-depth introduction to the world of accelerator physics and beam dynamics.
 The chapter starts with the linear beam dynamics as the core foundation to any particle accelerator, then carries on with non-linear phenomenology present in more complex machines in order to introduce necessary concepts and quantities of interest to the work presented in this document, such as \glspl{RDT}.
 A section is dedicated to \gls{betatron_coupling} and its parametrization, and another to \gls{luminosity} as a key performance indicator of a collider.
 
-Also in view of helping the reader follows \cref{chapter:lhc_omc} which opens on a comprehensive overview of the \gls{LHC} machine and its operation in \Gls{run}~\num{3}, with particular attention given to the main \glspl{IR}.
-The second half of the chapter offers a dive into the practice of \gls{OMC} as done at the \gls{LHC} by the \gls{OMC} team.
-Insight is given on each step, going from data acquisition methods and devices to the reconstruction of quantities of interest and the determination of adjustments that would bring the machine closer to its nominal state.
+\Cref{chapter:lhc_omc} opens with a comprehensive overview of the \gls{LHC} machine and its operation in \Gls{run}~\num{3}, with particular attention given to the main \glspl{IR}.
+The second half of the chapter dives into the practice of \gls{OMC} as done at the \gls{LHC} by the \gls{OMC} team.
+Insight is given on each step, from data acquisition methods and devices to the reconstruction of quantities of interest and the determination of adjustments that would bring the machine closer to its desired, nominal state.
 
 The main body of work for this thesis, which offers a new experimental setup and correction method for local linear coupling in the \gls{LHC} \glspl{IR}, is detailed in \cref{chapter:ir_local_coupling}.
 The chapter opens by providing the reader with a justification of the need for local linear coupling correction both for the \gls{LHC} and the future \gls{HL-LHC} machine.
@@ -48,7 +48,7 @@ Experimental measurements and data analysis from the method's application in the
 A short section is dedicated to the relevance of this method for other existing or future colliders.
 Finally, the chapter offers an assessment of the realistic eventuality of one or more failure of the dedicated magnets used for coupling correction and the explored solutions.
 
-In line with the themes of the \gls{LIV.DAT}~\cite{Website:LIVDAT} a machine learning based approach to the subject of local linear coupling has been explored, that is presented in \cref{chapter:ml_local_coupling}, which starts with a minimal overview of the relevant machine learning concepts.
+In line with the themes of the \gls{LIV.DAT}~\cite{Website:LIVDAT} a machine learning-based approach to the subject of local linear coupling has been explored, that is presented in \cref{chapter:ml_local_coupling}, which starts with a minimal overview of the relevant machine learning concepts.
 The new approach to local linear coupling is presented with a focus on the data preparation, model training and achieved results.
 A discussion on the potential of this machine learning approach is held, as well as the challenges to overcome to make it fully viable in \gls{LHC} operations.
 
