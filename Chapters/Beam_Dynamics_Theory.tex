@@ -7,7 +7,7 @@ For a more complete treatment of relevant accelerator physics the reader is best
 Most of the material herein can be found in the aforementioned literature, and when not in these works explicit references to the relevant content are given.
 
 This chapter starts out with a description of linear dynamics and a parametrization of turn-by-turn motion in a circular accelerator.
-It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion and introduce \glspl{RDT}, then follows with an introduction to \gls{betatron_coupling} and ends with a discussion of \gls{luminosity}.
+It then moves on to aspects of non-linear dynamics and the use of normal form to obtain the non-linear motion and introduce \glspl{RDT}, then follows up with an introduction to \gls{betatron_coupling} and ends with a discussion of \gls{luminosity}.
 
 %----------------------------------------------------------------------------------------
 
@@ -20,7 +20,7 @@ The linear dynamics of an accelerator are, mainly, the endeavor to bend and focu
 \label{subsection:transport_and_guiding_of_charged_particles}
 
 To force the beam's particles into a closed trajectory, they are subjected to magnetic fields that deflect their trajectories.
-The force exerted onto the beam is the Lorentz force \(F_{L}\) given by the equation:
+The force exerted on the beam is the Lorentz force \(F_{L}\) given by the equation:
 
 \begin{equation}
     \vec{F_L} = \dfrac{d\vec{p}}{dt} = q (\vec{E} + \vec{v} \times \vec{B}) \text{ ,}
@@ -83,7 +83,7 @@ The \(x^{\prime}\) and \(y^{\prime}\) coordinates are divergent angles, with the
 
 In the linear regime, magnetic dipoles define the ideal orbit for a particle of \concept{reference momentum} \(p_0\).
 This ideal orbit goes through the magnetic center of all elements in the machine to close back on itself after a revolution, and is called the \gls{closed_orbit}.
-In practice however the real closed orbit will deviate from the ideal designed orbit due to various effects such as dipolar field errors, and the two are distinct.
+In practice however the real closed orbit will deviate from the ideal orbit due to various effects such as dipolar field errors, and the two are distinct.
 Particles within the beam are distributed in amplitude and oscillate around the closed orbit, which corresponds to the path of a particle with zero amplitude within the beam, because of focusing forces. 
 This is illustrated in \cref{figure:design_vs_particle_orbit} where a conceptualized design orbit, a closed orbit and an actual particle trajectory are shown.
 
@@ -380,7 +380,7 @@ The geometric emittance \(\varepsilon_z\) introduced in \cref{equation:hill_solu
     \label{figure:phase_space_ellipse}
 \end{figure}
 
-According to the \concept{Liouville theorem} the phase space volume - the ellipse area \(A\) - is a constant in a closed system.
+According to the \concept{Liouville theorem}, the phase space volume - the ellipse area \(A\) - is a constant in a closed system.
 When accelerating the beam this theorem no longer holds true and the geometric emittance \(\varepsilon_z\) will decrease as the beam energy increases.
 One can then construct the \concept{normalized emittance}, which is invariant with beam energy, based on the relativistic beta and gamma:
 
@@ -406,7 +406,7 @@ For a Gaussian shaped beam the transverse beam size is:
     \label{equation:gaussian_beam_transverse_beam_size}
 \end{equation}
 with \(\varepsilon_z^{\mathrm{beam}}\) the beam emittance, typically defined as the emittance corresponding to a \(1 \sigma\) amplitude of the Gaussian charge distribution.
-In the case of more general particle distributions an alternative definition of the beam emittance is often used~\cite{CERN:Muller:Beam_Matter_Covariance_Matrix_Emittance, CAS:BuonBeam_Phase_Space_Emittance}:
+In the case of more general particle distributions, an alternative definition of the beam emittance is often used~\cite{CERN:Muller:Beam_Matter_Covariance_Matrix_Emittance, CAS:BuonBeam_Phase_Space_Emittance}:
 
 \begin{equation}
     \varepsilon_z^{\mathrm{rms}} = \sqrt{\left\langle z \right\rangle^{2} \left\langle z^{\prime} \right\rangle^{2} - \left\langle zz^{\prime} \right\rangle^{2}} \text{ .}
@@ -437,7 +437,7 @@ One can remove this dependency by performing a coordinate transformation to the 
 \noindent
 where the Courant-Snyder coordinates are denoted with a hat \ \(\hat{ }\).
 An identical transformation exists to go from \((z, p_z)\) to \((\hat{z}, \hat{p}_z)\) coordinates.
-In this new system particles follow circular trajectories in phase space.
+In this new system, particles follow circular trajectories in phase space.
 \Cref{figure:phase_space_linear_physical_normalized_coordinates} provides an illustrative representation of phase space in both physical and normalized coordinates for an accelerator with linear elements only.
 In the new representation, the elliptical phase space is transformed into a simpler circular phase space where the motion corresponds to simple rotations, fully described by, and depending only on, the \gls{action} and angle variables \((J_z, \phi_z)\).
 \vspace{3mm}
