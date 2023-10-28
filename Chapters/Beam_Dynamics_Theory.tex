@@ -285,7 +285,7 @@ It can be expressed as:
     \mathrm{M_{OTM}} = \mathrm{M_N} \cdot \mathrm{M_{N-1}} \cdot \ldots \cdot \mathrm{M_2} \cdot \mathrm{M_1} \text{ ,}
     \label{equation:one_turn_map}
 \end{equation}
-where \(\mathrm{M_i}\) is the transfer matrix of the \(i\)th element in the machine.
+where \(\mathrm{M_i}\) is the transfer matrix of the \(i^{\mathrm{th}}\) in the machine.
 The transformation of coordinates over a revolution is then given by:
 
 \begin{equation}
@@ -739,9 +739,9 @@ Resonances up to order \(n = 5\) are shown in \cref{figure:tune_diagram_fifth_or
 \end{figure}
 
 Commonly, the label of a given resonance is written as \(\left( n_1, n_2 \right)\), where \(n_1 = \left( j - k \right)\) and \(n_2 = \left( l - m \right)\).
-Every generating function term \(f_{jklm}\), and equivalently every Hamiltonian term \(h_{jklm}\), is associated with a specific resonance defined by the values of \(j\), \(k\), \(l\), and \(m\).
+Every generating function term \(f_{jklm}\) and, equivalently, every Hamiltonian term \(h_{jklm}\), is associated with a specific resonance defined by the values of \(j\), \(k\), \(l\), and \(m\).
 
-The \glspl{RDT} vary in amplitude through the machine as they depend on local multipole strength of contributing sources.
+The \glspl{RDT} vary in amplitude through the machine as they depend on the local multipole strength of contributing sources.
 Characteristically, the \(f_{jklm}\) terms show abrupt jumps at the location of relevant sources.
 
 \subsection{Resonance Basis and Normal Form Coordinates}
@@ -896,7 +896,7 @@ An example of a normal and skew quadrupole is given in \cref{figure:normal_vs_sk
 \label{subsection:parametrization_of_betatron_coupling}
 
 There are different ways to parametrize coupled motion in a particle accelerator, the two most common being the Edwards-Teng~\cite{IEEE:Edwards:Parametrization_Linear_Coupled_Motion} and Mais-Ripken~\cite{AIP:Willeke:Methods_Beam_Optics} parametrizations.
-For coupled motion a dependency between the horizontal and vertical planes is introduced, and as mentioned in \cref{subsection:equations_of_motion_and_twiss_parameters} the transverse motions can no longer be described by two independent \(2 \times 2\) matrices.
+For coupled motion a dependency between the horizontal and vertical planes is introduced, and as mentioned in \cref{subsection:equations_of_motion_and_twiss_parameters} the transverse motion can no longer be described by two independent \(2 \times 2\) matrices.
 Instead, it is described by a \(4 \times 4\) matrix \(\hat{\mathbf{M}}\) such that
 
 \begin{equation}
@@ -1054,7 +1054,7 @@ In the presence of coupling, the general covariance matrix has non-zero terms ou
 \end{equation}
 \vspace{1pt}
 
-Through \(\Sigma\) the coupling can be characterized by the values of the cross-planes elements \(\left\langle x y \right\rangle\), \(\left\langle x p_y \right\rangle\), \(\left\langle p_x y \right\rangle\) and \(\left\langle p_x p_y \right\rangle\).
+Through \(\Sigma\) the coupling can be characterized by the values of the cross-plane elements \(\left\langle x y \right\rangle\), \(\left\langle x p_y \right\rangle\), \(\left\langle p_x y \right\rangle\) and \(\left\langle p_x p_y \right\rangle\).
 Through the symmetry (for instance, \(\left\langle x y \right\rangle = \left\langle y x \right\rangle\)) only those four terms are needed.
 
 The angle of rotation \(\theta\) in the Edwards-Teng parametrization is related to these terms through~\cite{EPAC:Cai:Luminosity_of_Asymmetric_e+e-_Collider_with_Coupling_Lattices}:
@@ -1065,12 +1065,12 @@ The angle of rotation \(\theta\) in the Edwards-Teng parametrization is related 
     \label{equation:edwards_teng_theta_to_sigma_matrix_terms}
 \end{equation}
 
-In the Mais-Ripken parameterization, the Ripken parameters are constructed in order to be related to the \(\Sigma\) matrix in a similar way than shown in \cref{equation:2d_sigma_matrix_to_twiss_parameters} for the \num{2}D uncoupled case.
+In the Mais-Ripken parameterization, the Ripken parameters are constructed in order to be related to the \(\Sigma\) matrix in a similar way to that shown in \cref{equation:2d_sigma_matrix_to_twiss_parameters} for the \num{2}D uncoupled case.
 
 \subsection{Coupled Motion}
 \label{subsection:coupled_motion}
 
-In the first order, according to \cref{equation:resonance_condition}, linear coupling drives the two resonances \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
+To the first order, according to \cref{equation:resonance_condition}, linear coupling drives the two resonances \(Q_x + Q_y = p\) and \(Q_x - Q_y = p\), with \(p \in \mathcal{Z}\).
 These are respectively called the \concept{sum and difference resonances}, and in their vicinity the beam dynamics are heavily influenced.
 % To higher order \gls{betatron_coupling} may also give stationary terms in the Hamiltonian (a tune shift), driving the \(2 Q_x\) and \(2 Q_y\) resonances, but these effects are typically negligible.
 
@@ -1095,9 +1095,9 @@ The relation between the \concept{unperturbed tunes} \((Q_x, Q_y)\) and the \con
 \end{equation}
 with \(\Delta\) being the unperturbed fractional tune split and \glssymbol{Cminus} the linear coupling coefficient, a parameter describing the strength of the coupling.
 
-When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillations modes \((Q_1, Q_2)\) are almost identical to the uncoupled tunes \((Q_x, Q_y)\).
-When the tunes are moved closer together, approching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
-The \glssymbol{Cminus} of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \gls{Cminus}, corresponds this separation.
+When \(\Delta \gg \abs{C^{-}}\), away from the resonance, the observed oscillation modes \((Q_1, Q_2)\) are almost identical to the uncoupled tunes \((Q_x, Q_y)\).
+When the tunes are moved closer together, approaching the difference resonance (\(\Delta \rightarrow 0\)), the perturbed tunes are forced apart by the coupling and a minimal tune separation \(\Delta Q_{\mathrm{min}}\) can be observed.
+The \glssymbol{Cminus} of \cref{equation:unperturbed_tunes_to_coupled_tunes}, named the \gls{Cminus}, corresponds to this separation.
 \Cref{figure:closest_tune_approach} shows an illustration of the phenomenon in the vicinity of the resonance, where both the unperturbed (dashed) and coupled (colored) fractional tunes are plotted against the uncoupled tune split.
 
 \begin{figure}[!htb]
@@ -1125,7 +1125,7 @@ Linear coupling in the \gls{LHC} is dominated by the contribution of \gls{skew} 
 According to the resonance relation of \cref{equation:resonance_condition} and as seen in \cref{subsection:coupled_motion}, this gives rise to the \glspl{RDT} \(f_{1001}\) and \(f_{0110}\), which correspond to the \(Q_x - Q_y = p\) difference resonance; and \(f_{1010}\) which corresponds to the \(Q_x + Q_y = p\) sum resonance.
 
 The \(f_{1001}\) and \(f_{0110}\) describe the same dynamics but the former is for the horizontal plane while the latter is for the vertical plane.
-Since they describe the same dynamics it is custom to label both of them as \(f_{1001}\), which is a convention used throughout this document.
+Since they describe the same dynamics it is customary to label both of them as \(f_{1001}\), which is a convention used throughout this document.
 
 It was mentioned in \cref{subsection:coupled_motion} that the \gls{LHC} working point is selected to be close to the stable difference resonance, and as a consequence in the LHC the \(\abs{f_{1001}}\) dominates relative to the \(\abs{f_{1010}}\).
 These \glspl{RDT} can be expressed as a function of the uncoupled lattice parameters at the location of both the coupling-contributing elements and the observation point \(s\) as~\cite{PHREV:Guignard:Betatron_Coupling_Radiation}:
@@ -1137,7 +1137,7 @@ These \glspl{RDT} can be expressed as a function of the uncoupled lattice parame
     \end{aligned}
     \label{equation:coupling_rdts_from_skew_quads}
 \end{equation}
-where \(k_l\) is the \(l\)th integrated \gls{skew} quadrupole strength, \(\beta_{x,y}^{l}\) are the \glspl{beta-function} at the location of the \(l\)th skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l\)th skew quadrupole to the observation point at the longitudinal coordinate \(s\).
+where \(k_l\) is the \(l^{\mathrm{th}}\) integrated \gls{skew} quadrupole strength, \(\beta_{x,y}^{l}\) are the \glspl{beta-function} at the location of the \(l^{\mathrm{th}}\) skew quadrupole, \(Q_{x,y}\) are the horizontal and vertical tunes, and \(\Delta \phi_{x,y}^{s l}\) are the phase advances from the \(l^{\mathrm{th}}\) skew quadrupole to the observation point at the longitudinal coordinate \(s\).
 The summation is done over all contributing \gls{skew} quadrupoles.
 
 These \glspl{RDT} can be related to the strength of the coupling \(\Delta Q_{\mathrm{min}}\), and as such the \glssymbol{Cminus} can be expressed in relation to the \(f_{1001}\) \gls{RDT}.
