@@ -681,11 +681,11 @@ This reconstruction method has successfully been used to measure linear coupling
 
 \subsubsection*{AC dipole Compensation}
 
-Mentioned in \cref{subsection:optics_measurements} is the effect of \gls{AC_dipole} excitation on the observables, which differ from that of the natural machine.
+Mentioned in \cref{subsection:optics_measurements} is the effect of \gls{AC_dipole} excitation on the observables, which differ from those of the natural machine.
 This effect is also present in the reconstructed coupling \glspl{RDT}, and must be compensated for in order to obtain the natural machine's values.
 Several compensation methods exist, with the most straightforward being the application of a rescaling factor to the reconstructed \glspl{RDT}.
 
-Using this rescaling one can express the driven \glspl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
+Using this rescaling, one can express the driven \glspl{RDT} as~\cite{IPAC:Wegscheider:Forced_Coupling_Resonance_Driving_Terms}:
 
 \begin{equation}
   \begin{aligned}
@@ -706,9 +706,9 @@ A comparison of these methods' efficiency can be found in~\cite{IPAC:Wegscheider
 \subsubsection*{Single BPM}
 
 It is possible to approximate the coupling \glspl{RDT} from the real coordinates using a single \gls{BPM}, and doing the reconstruction without the momentum information.
-In such case where only the position data is used, however, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
+In this case, where only the position data is used, the spectal analysis will mix up lines \(Z(a,b)\) and \(Z(-a, -b)\) as it cannot distinguish one from the other.
 For the coupling RDTs this means that the \(f_{1001}\) and \(f_{1010}\) will contribute to the same resonance lines and cannot be separated~\cite{PHD:Persson}.
-It may be, however, possible to neglect one of them depending on their relative strengths.
+It may, however, be possible to neglect one of them depending on their relative strengths.
 
 Additionally, from the method described above it becomes clear that dual plane BPMs are required for coupling measurements.
 In case such instrumentation is not available, one can numerically construct a pseudo dual plane BPM by virtually shifting a vertical plane monitor towards the location of the nearest horizontal one, or inversely.
@@ -725,7 +725,7 @@ Global corrections are better suited to compensate for widely distributed source
 In the LHC local optics errors are determined and corrected using the \concept{Segment-by-Segment} (SbS) technique~\cite{PRAB:Tomas:CERN_LHC_OMC,PRAB:Tomas:Review_Linear_Optics_Measurements}.
 The technique treats a section - or segment - of the accelerator as an independent beam line and propagates optics parameters measured at the start of the segment through the line using the \gls{MADX} code~\cite{CODE:MADX_guide}.
 The propagated optics parameters may be compared with the observation and one then tries to find correction settings - powering changes of selected magnets - that would best reproduce these propagated optics.
-Thereby, inverting the settings found and applying the inverted values in the machine corrects the measured errors.
+Inverting the settings found and applying the inverted values in the machine corrects the measured errors.
 
 This method is mostly used in the LHC \glspl{IR}, where the \(\beta\)-beating is corrected by compensating the discrepancies in the betatron phase, which has the same impact as correcting the \(\beta\)-beating directly but proved to be a more precise and local observable~\cite{PRAB:Tomas:CERN_LHC_OMC}.
 For this one looks at the \(\Delta \phi\) quantity thought the segment and tries to minimze it:
@@ -772,14 +772,14 @@ For instance, the response to a quadrupole \gls{knob} \gls{trim} of optics funct
 \end{equation}
 
 Here \(\mathbf{R}\) is a \(M \times N\) matrix, where \(N\) is the number of adjusted quadrupole knobs and \(M\) is the number of observation points, usually the number of BPMs.
-To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, noted here \(\mathbf{R^{-1}}\), is calculated and multiplied with the measured deviations from the model.
+To calculate corrections the pseudo-inverse of the \(\mathbf{R}\) matrix, denoted \(\mathbf{R^{-1}}\), is calculated and multiplied with the measured deviations from the model.
 
 \begin{equation}
   \Delta \vec{K} = \mathbf{R^{-1}} \left(w_1 \Delta \overrightarrow{\phi_x}, w_2 \Delta \overrightarrow{\phi_y}, w_3 \frac{\Delta \beta_x}{\beta_x}, w_4 \frac{\Delta \beta_y}{\beta_y}, w_5 \Delta \frac{\overrightarrow{D_x}}{\sqrt{\beta_x}}, w_6 \Delta Q_x, w_7 \Delta Q_y \right) \text{ .}
   \label{equation:global_corrections_from_pseudo_inverse_response_matrix}
 \end{equation}
 
-The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on correcting a given quantity, ignore some parameters completely or to balance the corrections between all properties.
+The \(w_1 \ldots w_7\) terms are weights which can be adjusted to either focus on correcting a given quantity, to ignore some parameters completely or to balance the corrections between all properties.
 By choosing weights and plugging measured optics deviations into \cref{equation:global_corrections_from_pseudo_inverse_response_matrix}, one can determine the knob trims that could correct said observed deviations.
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
