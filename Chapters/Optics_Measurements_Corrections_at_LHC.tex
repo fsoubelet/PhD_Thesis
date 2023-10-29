@@ -338,7 +338,7 @@ Starting in \num{2023} an \concept{anti-telesqueeze} is performed in the ramp to
 The quality of the \gls{LHC} optics has a significant impact on the machine's performance.
 For instance, the luminosity achieved by the machine is directly determined by the \glspl{beta-function} at the \glspl{IP}, as seen in \cref{section:luminosity}.
 Furthermore, a good control of the \(\beta\)-functions is essential for safe beam operations due to the destructive power of the LHC beams, and the machine is subject to strict limits on the deviation from model values~\cite{CERN:Bruning:Field_Quality_Spec_LHC_Main_Dipoles}.
-One can then define the \gls{beta-beating}, a good indicator of the quality of the linear \gls{optics}, as the relative deviation of the machine's \(\beta\)-functions from that of the designed values.
+One can then define the \gls{beta-beating}, a good indicator of the quality of the linear \gls{optics}, as the relative deviation of the machine's \(\beta\)-functions from that of the design values.
 It is defined as:
 
 \begin{equation}
@@ -348,7 +348,7 @@ It is defined as:
 \vspace{0.3mm}
 
 In order to verify the machine's beam optics and find any potential faults, or deviations from the model values, beam measurements are necessary.
-From these, comparisons to model values are made which allow for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring back the optics as close to the nominal scenario as possible.
+From these, comparisons to model values are made which allow for an assessment and understanding of the errors in the machine; and corrections can be calculated and applied to bring the optics as close to the nominal scenario as possible.
 As the linear optics functions impact the non-linear phenomenology of an accelerator, a well understood and corrected linear optics is a pre-requisite to study of the non-linear dynamics.
 
 \Cref{figure:virgin_vs_corrected_lhcb2} shows the \(\beta\)-beating for beam~\num{2} of the LHC in its \num{2022} virgin\footnote{The term \textit{virgin} refers to the state of the machine without any corrections.} state and with all determined corrections trimmed in, at the end of the commissioning phase.
@@ -387,17 +387,17 @@ The spectral analysis of measured turn-by-turn positions provides valuable insig
 In the \gls{LHC} kicker dipole magnets are available for both beams, and are located in IR\num{4}.
 These magnets can operate in three possible modes, referred to as the \concept{Tune Kicker} (MKQ), \concept{Aperture Kicker} (MKA), and the \concept{AC dipole}.
 
-The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
+The tune and aperture kickers~\cite{CERN:Barlow:Control_MKQA_LHC,IPMS:Carlier:Kicker_Pulse_Generator_Measurement_Tune_Dynamic_Aperture_LHC} operate as traditional kicker magnets: ramping their magnetic field up and down in a single turn, applying a transverse kick to the beam and then allowing free motion.
 The name only refers to the amplitude of induced oscillations: lower strength to measure the tune and higher strength to measure the available dynamic aperture.
 Unfortunately, at top energy the amplitude of oscillations achievable with the kickers is considerably reduced.
-Additionally the beam will decohere after being kicked: the momentum distribution of particles in the bunch will cause the observed centroid of the beam to show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
+Additionally, the beam will decohere after being kicked: the momentum distribution of particles in the bunch will cause the observed centroid of the beam to show a decaying oscillation~\cite{Report:Meller:Decoherence_Kicked_Beams}.
 As a consequence a beam can only be kicked a certain number of times before needing to be replaced, and it can take up to several hours to reach the same machine configuration again, as the cycle detailed in \cref{section:lhc_operational_cycle} needs to be respected.
 
-For \gls{optics} measurements lasting oscillations are preffered, as they increase the spectral resolution and reduce noise floor in the spectral analysis of turn-by-turn data.
+For \gls{optics} measurements lasting oscillations are preferred, as they increase the spectral resolution and reduce the noise floor in the spectral analysis of turn-by-turn data.
 Furthermore, a non-destructive excitation method is preferred in order not to alter the beam state, which allows for repeated measurements.
 
-Such a non-destructive, sustained excitation of the beams can be achieved with the \gls{AC_dipole}.
-It is a fast oscillating dipole magnet which can generate forced driven oscillations with large amplitudes by exciting the beam at frequencies close to the natural tunes~\cite{PHD:Miyamoto,CERN:Serrano:LHC_ACDipole_Introduction}.
+Such a non-destructive, sustained excitation of the beams can be achieved with an \gls{AC_dipole}.
+It is a rapidly oscillating dipole magnet which can generate forced driven oscillations with large amplitudes by exciting the beam at frequencies close to the natural tunes~\cite{PHD:Miyamoto,CERN:Serrano:LHC_ACDipole_Introduction}.
 Moreover, the AC dipole strength can be ramped up and down adiabatically~\cite{PRAB:Tomas:Adiabaticity_Ramping_Process_AC_Dipole} and kept constant at high amplitudes, allowing for long lasting coherent oscillations of the beam.
 These properties, fullfilling the aforementioned requirements, make the AC dipole the most important tool for optics measurements in the LHC.
 A comparison of the turn-by-turn data obtained from beam excitation with a single free kick and an AC dipole is shown in \cref{figure:kick_vs_acdipole_tbt}.
