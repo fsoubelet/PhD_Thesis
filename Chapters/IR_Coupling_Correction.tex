@@ -2,10 +2,10 @@
 \label{chapter:ir_local_coupling}
 
 The linear optics and coupling correction usually constitute the first phase of machine commissioning as both are major contributors to the performance of colliders, and are required to be under good control for the next phases of commissioning.
-In recent years, significant efforts have been made to improve the measurement and correction of linear and non-linear global coupling both in the \gls{LHC}~\cite{PRAB:Tomas:Review_Linear_Optics_Measurements, IPAC:Tomas:Measurement_Coupling_RDTs_LHC_AC_Dipole, PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches, PRAB:Maclean:First_Nonlinear_Errors, PRAB:Maclean:Optics_Commissioning_Nonlinear_Era, PRAB:Persson:Chromatic_Coupling_Correction, PRAB:Tomas:ADECTA, IPAC:Maclean:ADECTA_Octupoles, PRAB:Biancacci:AC_Dipoles_Localize_Sources_Beam_Coupling_Impedance, CERN:Maclean:Demonstration_Coupling_Correction_Below_PerMil_LHC} and other synchrotrons~\cite{PRAB:Tian:Genetic_Algorithms_Storage_Ring, PRAB:Ohnishi:Measurement_Chromatic_XY_Coupling, PRAB:Carla:Local_Transverse_Coupling_Impedance_Measurements_Synchrotron_Light_Source, PRAB:Shen:Application_Independent_Component_Analysis_AC_Dipole_Based_Optics_Measurement_Correction_Relativistic_Heavy_Ion_Collider, PRAB:Sagan:Betatron_Phase_Coupling_Measurements_Cornell_Electron_Positron_Storage_Ring, PRAB:Fischer:Robust_Linear_Coupling_Correction_NTurn_Maps, ARXIV:Franchi:Error_Analysis_Linear_Optics_Measurements_Turn_Turn_Beam_Position_Data_Circular_Accelerators, PRAB:Tomas:Measurement_Local_Global_Resonance_Terms, NIMP:Yang:Method_Simultaneous_Linear_Optics_Coupling_Correction_Storage_Rings_Turn_Turn_Beam_Position_Monitor_Data, NIMP:Xiaobiao:Online_Optimization_Accelerators, IEEE:Raka:Measurement_Linear_Coupling_Brookhaven_AGS, PRAB:Franchi:Vertical_Emittance_Reduction_Preservation_Electron_Storage_Rings_Resonance_Driving_Terms_Correction, NIMP:Aiba:Ultra_Low_Vertical_Emittance_SLS_Systematic_Random_Optimization}, as its effect can lead to instabilities and unwanted dynamics in the machine~\cite{IPAC:Maclean:Effect_Coupling_Nonlinear_Observables, PRAB:Carver:Transverse_Instabilities_With_Coupling, PRAB:Franchi:Emittance_Sharing_Coupling, EPAC:Metral:Destabilising_Effect_Linear_Coupling_HERA_Proton_Ring, PRAB:Biancacci:AC_Dipoles_Localize_Sources_Beam_Coupling_Impedance}.
+In recent years, significant efforts have been made to improve the measurement and correction of linear and non-linear global coupling both in the \gls{LHC}~\cite{PRAB:Tomas:Review_Linear_Optics_Measurements, IPAC:Tomas:Measurement_Coupling_RDTs_LHC_AC_Dipole, PRAB:Calaga:Coupling_Merging_Hamiltonian_Matrix_Approaches, PRAB:Maclean:First_Nonlinear_Errors, PRAB:Maclean:Optics_Commissioning_Nonlinear_Era, PRAB:Persson:Chromatic_Coupling_Correction, PRAB:Tomas:ADECTA, IPAC:Maclean:ADECTA_Octupoles, PRAB:Biancacci:AC_Dipoles_Localize_Sources_Beam_Coupling_Impedance, CERN:Maclean:Demonstration_Coupling_Correction_Below_PerMil_LHC} and other synchrotrons~\cite{PRAB:Tian:Genetic_Algorithms_Storage_Ring, PRAB:Ohnishi:Measurement_Chromatic_XY_Coupling, PRAB:Carla:Local_Transverse_Coupling_Impedance_Measurements_Synchrotron_Light_Source, PRAB:Shen:Application_Independent_Component_Analysis_AC_Dipole_Based_Optics_Measurement_Correction_Relativistic_Heavy_Ion_Collider, PRAB:Sagan:Betatron_Phase_Coupling_Measurements_Cornell_Electron_Positron_Storage_Ring, PRAB:Fischer:Robust_Linear_Coupling_Correction_NTurn_Maps, ARXIV:Franchi:Error_Analysis_Linear_Optics_Measurements_Turn_Turn_Beam_Position_Data_Circular_Accelerators, PRAB:Tomas:Measurement_Local_Global_Resonance_Terms, NIMP:Yang:Method_Simultaneous_Linear_Optics_Coupling_Correction_Storage_Rings_Turn_Turn_Beam_Position_Monitor_Data, NIMP:Xiaobiao:Online_Optimization_Accelerators, IEEE:Raka:Measurement_Linear_Coupling_Brookhaven_AGS, PRAB:Franchi:Vertical_Emittance_Reduction_Preservation_Electron_Storage_Rings_Resonance_Driving_Terms_Correction, NIMP:Aiba:Ultra_Low_Vertical_Emittance_SLS_Systematic_Random_Optimization}, as their effects can lead to instabilities and unwanted dynamics in the machine~\cite{IPAC:Maclean:Effect_Coupling_Nonlinear_Observables, PRAB:Carver:Transverse_Instabilities_With_Coupling, PRAB:Franchi:Emittance_Sharing_Coupling, EPAC:Metral:Destabilising_Effect_Linear_Coupling_HERA_Proton_Ring, PRAB:Biancacci:AC_Dipoles_Localize_Sources_Beam_Coupling_Impedance}.
 
-In the LHC local coupling correction has so far been done with the SbS technique~\cite{PRAB:Tomas:CERN_LHC_OMC}.
-The method, however, suffers inherent weaknesses making it not local enough for coupling corrections at the collisions' location.
+In the LHC, local coupling correction has so far been done with the Segment-by-Segment technique~\cite{PRAB:Tomas:CERN_LHC_OMC}.
+The method, however, suffers inherent weaknesses making it not local enough for coupling corrections at the collisions points.
 This chapter, which constitutes the core of this thesis, presents a new method that was developed to determine corrections of \gls{betatron_coupling} at the \glspl{IP}.
 An overview of the various experimental measurements taken for this work can be found in \cref{appendix:measurement_fills}.
 
@@ -16,12 +16,12 @@ An overview of the various experimental measurements taken for this work can be 
 
 In the LHC, corrections of local \gls{IR} linear coupling are of importance to keep a good control of beam sizes at the IPs and hence the luminosity performance, as well as to prevent a significant impact on the beam dynamics.
 
-In \cref{equation:coupling_rdts_from_skew_quads} the contribution of elements to the linear coupling \glspl{RDT} is given, where contributing elements are typically skew quadrupoles and solenoids.
+In \cref{equation:coupling_rdts_from_skew_quads}, the contribution of elements to the linear coupling \glspl{RDT} is given, where contributing elements are typically skew quadrupoles and solenoids.
 The amplitude of the contribution is dominated by the integrated strength of the magnet \(k L\) as well as the \(\sqrt{\beta_x \beta_y}\) term at the location of the magnet.
-Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional \gls{skew} quadrupolar component, once can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a significant contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
+Given that a tilted quadrupole interacts with the beam as a straight quadrupole with an additional \gls{skew} quadrupolar component, one can see from \cref{figure:ir5_and_around} that any tilt in the triplet quadrupoles would generate a significant contribution to the coupling RDTs due to the very high \(\beta\)-functions in these magnets.
 
 \Cref{figure:triplet_tilts_to_rdts} shows the coupling RDTs' amplitudes from tilts in triplet quadrupoles, with the \(\beta^{\ast} =\)~\qty{30}{\centi\meter} \num{2022} optics~\cite{CODE:acc-models-lhc}.
-In this \gls{MADX} simulation triplets around IP\num{1} were assigned random tilts within \(\pm\)~\qty{1.5}{\milli\radian}, and these were the only contribution to coupling in the machine.
+In this \gls{MADX} simulation, triplets around IP\num{1} were assigned random tilts within \(\pm\)~\qty{1.5}{\milli\radian}, and these were the only contribution to coupling in the machine.
 Nevertheless, this contribution amounted to a \glssymbol{Cminus} of \num{3.84e-2}, already too high for machine operation.
 
 \begin{figure}[!htb]
@@ -35,16 +35,16 @@ As a consequence, the IR contribution - mainly the triplets - to global coupling
 For this, in the LHC the local coupling correction is done by measuring the RDTs in the vicinity of the IP and using the MQSX \gls{skew} quadrupole correctors introduced in \cref{subsection:lhc_eirs} and showcased in \cref{figure:lhc_ir5_zoomed,figure:lhc_ir_corrector_layout} for correction.
 The corrections are determined with the Segment-by-Segment technique described in \cref{subsection:correction_principles}, and try to compensate for the triplets' contribution as well as possible.
 Though this compensation is rarely perfect, the residual contribution is usually small enough to be handled by the skew quadrupole correctors present in the LHC arcs (see \cref{subsection:lhc_arcs}).
-This correction is essential in order to reach low \glssymbol{betastar} with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter} the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \glssymbol{Cminus} by the amount of \num{0.33}, too high for the arc correctors to handle.
-While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable, for instance the impossibility to independently control the tunes, a change of working point or transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
+This correction is essential in order to reach low \glssymbol{betastar} with good optics control: at \(\beta^{*}=\) \qty{30}{\centi\meter}, the local errors compensated in Run~\num{2}~\cite{CERN:Persson:LHCOpticsCorrectionsEvian2019} would contribute to the \glssymbol{Cminus} by the amount of \num{0.33}, too much for the arc correctors to handle.
+While such coupling in the machine is not inherently unstable in itself, it leads to other effects causing the machine to be unstable, for instance the impossibility of independently controlling the tunes, a change of working point or transverse instabilities from loss of Landau damping~\cite{MASTERS:Soubelet:Optics_Octupole_PyHEADTAIL,PRAB:Carver:Transverse_Instabilities_With_Coupling}.
 
-Due to their location the MQSX correctors are single aperture magnets, meaning that both beams pass through a single cavity in the element and feel the same magnetic field.
+Due to their location, the MQSX correctors are single aperture magnets, meaning that both beams pass through a single cavity in the element and feel the same magnetic field.
 This means finding a correction has the additional constraint that it is applied to both beam~\numlist{1;2} simultaneously, and should be a compromise that works for both beams.
-As the triplet quadrupoles - also single aperture magnets - are expected to be most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
+As the triplet quadrupoles - also single aperture magnets - are expected to cause most of the contribution to local coupling, the local error to be corrected should be the same for both beams and such an arrangement of correctors is manageable.
 
 During the late \num{2018} ion run in the LHC \Gls{run}~\num{2}, it was observed that while global coupling was well corrected, a local coupling bump in IR\num{2} had a significant impact on collisions and led to a reduction of the luminosity at the affected IP by up to \qty{50}{\percent}~\cite{IPAC:Jowett:LHC_2018_Heavy_Ion_Run, IPAC:Tomas:Run2_Experience_View_LHC_HLLHC, CERN:Persson:LHCOpticsCorrectionsEvian2019}.
-Investigations revealed that a coupling bump around IP\num{2} led to a strong increase in beam size and a drop in collisions.
-Importantly, the incident highlighted that no method existed to correct for the coupling specifically at the IP location.
+Investigations revealed that a coupling bump around IP\num{2} led to a strong increase in beam size and a drop in collision rate.
+Importantly, the incident highlighted that no method existed to correct for the coupling specifically at the IP.
 
 \Cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths} shows the expected beam size growth and luminosity decrease from various strengths of such a local coupling bump at one of the main IPs, for the LHC at \(\beta^{*}=\)~\qty{30}{\centi\meter} and for the \acrshort{HL-LHC} at \(\beta^{*}=\)~\qty{15}{\centi\meter}.
 These results highlight the necessity of a proper handling of local coupling for the Run~\num{3}, as well as for the HL-LHC where the tolerance is about a factor \num{4} lower.
@@ -77,7 +77,7 @@ In all cases the relative deviation is below \qty{0.25}{\percent}.
 \end{figure}
 
 At the LHC IPs with round beams, as is the case in Run~\num{3}, the effect of the beam's tilt induced by linear coupling is negligible and its impact fully manifests as an increase in the beam size, as was the case at IP\num{2} in \num{2018}.
-\Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{1} (similar for IP\num{5}) under various strengths of a local coupling bump.
+\Cref{figure:ip_ellipses_from_coupling} shows a reconstruction of transverse beam sizes at IP\num{1} (similar for IP\num{5}) for various strengths of a local coupling bump.
 While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a negligible tilt effect, the beam size in the most affected case is about \qty{250}{\percent} of the uncoupled case.
 
 \begin{figure}[!htb]
@@ -88,7 +88,7 @@ While the beam ellipses show a \(\gg\) \qty{99}{\percent} overlap indicating a n
 \end{figure}
 \break
 
-Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}, in the absence of crossing angles, are done so according to~\cite{CERN:Herr:Concept_Luminosity}:
+Instantaneous luminosities calculated for~\cref{figure:lhc_vs_hllhc_beam_size_and_lumi_growths}, in the absence of crossing angles, are given by~\cite{CERN:Herr:Concept_Luminosity}:
 
 \begin{equation}
     \mathcal{L} = \frac{N_1 N_2 f_{rev} N_b}{2 \pi \sqrt{\left( \sigma_{x, 1}^2 + \sigma_{x, 2}^2 \right)} \sqrt{\left( \sigma_{y, 1}^2 + \sigma_{y, 2}^2 \right)}} ,
