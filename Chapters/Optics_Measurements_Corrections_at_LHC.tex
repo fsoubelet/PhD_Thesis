@@ -1,7 +1,7 @@
 \chapter{Optics Measurements and Corrections at the LHC}
 \label{chapter:lhc_omc}
 
-The \gls{LHC} is a \qty{26.659}{\kilo\metre} synchrotron collider located at the \gls{CERN}, on the French-Swiss border.
+The \gls{LHC} is a \qty{26.659}{\kilo\metre} long synchrotron collider located at the \gls{CERN}, on the French-Swiss border.
 It is part of \gls{CERN}'s Accelerator Complex, illustrated in \cref{figure:cern_accelerator_complex}, a chain of particle accelerators progressively bringing protons and heavy ions up to an energy of \qty{6.8}{\tera\electronvolt} per beam as of \num{2023}.
 
 \begin{figure}[!htb]
@@ -39,7 +39,7 @@ An illustration and a detailed description on naming conventions can be found in
 \end{figure}
 
 Beam~\num{1} rotates clockwise in its ring when viewing the \gls{LHC} from above, and Beam~\num{2} rotates counter-clockwise as viewed from above.
-The beams occupy separate apertures, or beam pipes, except in the \glspl{IR} where they are made to collide.
+The beams occupy separate apertures - or beam pipes - side by side except in the \glspl{IR} where they are made to collide.
 The layout of the \gls{LHC} can be seen in simplified schematic form in~\cref{figure:lhc_schematic_layout}, and full details can be found in the \gls{LHC} Design Report~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,BOOK:Bruning:LHC_Design_Report_Infrastructure,BOOK:Benedikt:LHC_Design_Report_Injector_Chain}.
 
 \subsection{The LHC Arcs}
@@ -62,7 +62,7 @@ The MBs are all powered in series and, for size constraint reasons~\cite{BOOK:Br
 The MQs are themselves also powered in series but split in two families: one power circuit is dedicated to MQF magnets and another circuit for the MQD magnets, where each arc holds a circuit for each family.
 As a consequence, these elements can only be trimmed in groups.
 
-As a part of the main assemblies are superconducting \concept{spool piece magnets}, correctors used for the local compensation of magnetic errors in the main arc magnets~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.
+Part of the main assemblies are superconducting \concept{spool piece magnets}, correctors used for the local compensation of magnetic errors in the main arc magnets~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring}.
 These include sextupole correctors, sextupolar spool pieces named \concept{MCS} and mounted on the ends of every main dipole, used to correct \(b_3\) errors of the MBs.
 Similarly, octupole and decapole spool pieces are included and used for the compensation of \(b_4\) and \(b_5\) errors in the main arc magnets, respectively.
 The octupole correctors are named \concept{MCO} while the decapole correctors are named \concept{MCD}, and both are nested together in an assembly named \concept{MCDO} which is mounted on the end of every second MB.
@@ -78,8 +78,9 @@ Landau octupoles \concept{MO} provide damping of coherent oscillations, and are 
 \break
 
 \Cref{figure:lhc_arc_cell_latwiss} shows a simplified layout of an LHC arc cell's elements as well as \(\beta\) and dispersion functions for \num{2022} optics at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
-In the layout (top) part of the plot elements powering are indicated, with MBs in \textcolor{mplblue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow}, MOs in \textcolor{latwiss_green}{green} and beam position monitors (BPMs) are indicated as grey patches.
-Note that not all elements are indicated there.
+In the layout (top) part of the plot the powering of elements is indicated, with MBs in \textcolor{mplblue}{blue}, MQs in \textcolor{latwiss_red}{red}, MSs in \textcolor{latwiss_yellow}{yellow} and MOs in \textcolor{latwiss_green}{green}.
+Beam position monitors (BPMs) are indicated as grey patches.
+Note that not all elements are indicated.
 \Cref{figure:lhc_arc23_latwiss} shows a similar plot but across LHC arc\num{23} for the same optics.
 
 \begin{figure}[!hbt]
@@ -103,7 +104,7 @@ The purpose of the arcs is that of beam transport to the more purpose-specific p
 
 In the middle of each octant, in between arcs, the \gls{LHC} hosts \concept{long straight sections} (see \cref{appendix:naming_conventions} for details) with specific purposes.
 Each of these is centered around an \acrfull{IR} where a dedicated layout is in place to fulfill the section's purpose.
-The purpose of each straight section is briefly stated on \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
+The purpose of each straight section is briefly stated in \cref{figure:lhc_schematic_layout} and detailed in \cref{table:lhc_straight_sections}.
 \\
 
 \begin{table}[!hbt]
@@ -168,7 +169,7 @@ During collisions involving ions (Pb-Pb and p-Pb) the \(\beta^{\ast}\) is reduce
   \label{table:lhc_betastars_configurations}
 \end{table}
 
-In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a superconducting \concept{triplet} of quadrupoles just before the IP, on either side~\cite{CERN:Ostojic:Improved_Optical_System_LHC_Triplet}.
+In order to achieve a small \(\beta^{\ast}\) at the IPs, the beams are focused using a superconducting \concept{triplet} of quadrupoles, on either side of and close to the IP~\cite{CERN:Ostojic:Improved_Optical_System_LHC_Triplet}.
 The triplet is optimized to be symmetric~\cite{CERN:DAmico:Analysis_Generic_Insertions}, with Q\num{1} and Q\num{3} being the same length at \qty{6.3}{\meter} and Q\num{2} split into two sub-magnets Q\num{2}a and Q\num{2}b of \qty{5.5}{\meter} each.
 All three magnets are powered in series but can be adjusted individually using dedicated \gls{trim} converters~\cite{PAC:Bordry:LHC_Inner_Triplet_Powering}.
 
@@ -220,7 +221,7 @@ On top of the opposite planes for the separation bump and crossing angles, the s
   \label{figure:lhc_crossing_schemes_ip15}
 \end{figure}
 
-Other IRs, of lower interest to this thesis, have significantly different layouts which can be found in details in~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,PHD:Vanbavinckhove}.
+Other IRs, of lower interest to this thesis, have significantly different layouts which can be found in detail in~\cite{BOOK:Bruning:LHC_Design_Report_Main_Ring,PHD:Vanbavinckhove}.
 
 \subsection{Matching Sections and Dispersion Suppressors}
 \label{subsection:matching_sections_dispersion_suppressors}
@@ -258,14 +259,14 @@ The full segment from the start of the dispersion suppressor to just before sepa
 When pushing the \glssymbol{betastar} to smaller values, and therefore the \glspl{beta-function} in the triplets to higher ones, the chromatic effects produced by the triplet quadrupoles~(\cref{equation:natural_chromaticity_approximation}) increase drastically and need to be corrected.
 As the beam energy reaches its maximum, the beam size gets smaller and an aperture margin that allows to increase the \(\beta\)-functions appears in the arcs.
 
-The \gls{ATS} optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists in splitting the reduction of the \glssymbol{betastar} - the squeeze - in two stages.
+The \gls{ATS} optics scheme~\cite{CERN:Fartoukh:ATS_Report,PRAB:Fartoukh:Achromatic_Telescopic_Squeeze,IPAC:Pojer:LHC_ATS_Experience} consists of splitting the reduction of the \glssymbol{betastar} - the squeeze - into two stages.
 In the first one, the \concept{pre-squeeze}, the \(\beta^{\ast}\) is reduced using the matching quadrupoles around the affected IP.
 To ease the strain on these quadrupoles (magnet strength, need for chromaticity correction and orbit control) a second stage is performed.
-In this second stage, the \concept{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the nearby IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
+In this stage, the \concept{tele-squeeze}, the \(\beta^{\ast}\) is reduced by using the matching quadrupoles in the adjacent IRs: IR\num{2} and IR\num{8} for the tele-squeeze of IR\num{1}, and IR\num{4} and IR\num{6} for the tele-squeeze of IR\num{5}.
 Sectors \numlist{81;12;45;56} are therefore called ATS sectors.
 This modulation in the second stage sends \(\beta\)-beating waves down the arcs, which make the \glspl{beta-function} peak at the location of sextupoles and octupoles in those arcs, enhancing their efficiency.
 
-The ratio between the peak \(\beta\)-functions induced in the arcs is called \concept{telescopic index}, or tele-index, and is denoted \(r_{Tele}\)~\cite{CERN:Fartoukh:Round_Telescopic_Optics_LHC_Large_Telescopic_Index}.
+The ratio between the peak \(\beta\)-functions induced in the arcs is called the \concept{telescopic index}, or tele-index, and is denoted \(r_{Tele}\)~\cite{CERN:Fartoukh:Round_Telescopic_Optics_LHC_Large_Telescopic_Index}.
 It is defined as:
 
 \begin{equation}
@@ -282,8 +283,8 @@ It is defined as:
   \label{figure:lhc_ats_scheme}
 \end{figure}
 
-This ATS optics scheme has been used in the LHC starting \Gls{run}~\num{2} and allowed reducing the collision optics \glssymbol{betastar} from its design value of \qty{55}{\centi\meter} to \qty{30}{\centi\meter}.
-It is the operational baseline of Run~\num{3}.
+This ATS optics scheme has been used in the LHC since \Gls{run}~\num{2} and allowed the reduction of the collision optics \glssymbol{betastar} from its design value of \qty{55}{\centi\meter} to \qty{30}{\centi\meter}.
+It is the operational baseline for Run~\num{3}.
 
 \section{The Operational Cycle of the LHC}
 \label{section:lhc_operational_cycle}
@@ -298,7 +299,7 @@ First a probe beam consisting of just a single bunch is injected to check the va
 At injection optics the \(\beta^{\ast}_{x,y}\) at the main colliding \glspl{IP} (IP\num{1} and IP\num{5}) is \qty{11}{\metre}.
 The number of bunches, their intensity and their filling pattern~\cite{Report:LHCStandardFillingSchemes} depends strongly on the experimental demands.
 For \gls{optics} measurements for instance, between one and three low intensity, non-colliding bunches of about \num{e10} protons per bunch are injected for each beam.
-For luminosity production a larger number of high intensity bunches is injected: in the order of a few \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
+For luminosity production a larger number of high intensity bunches is injected: of the order of a few \num{e3} bunches, with \(\ge\) \num{e11} protons per bunch.
 
 \begin{figure}[!hbt]
   \centering
@@ -309,7 +310,7 @@ For luminosity production a larger number of high intensity bunches is injected:
 
 After injection, the beam energy is increased up to collision energy (\qty{6.8}{\tera\electronvolt} in Run~3) while the beams are squeezed and the \(\beta^{\ast}\) reduced.
 This process, called \concept{combined ramp and squeeze}, has been used in the LHC since 2017~\cite{IPAC:Camillocci:CombinedRampAndSqueeze}.
-Before then the squeezing process only started once the energy had reached collision value.
+Before then, the squeezing process only started once the energy had reached collision value.
 
 After reaching top energy, a configuration known as \concept{flat-top}, another \concept{squeeze} is performed to bring the \(\beta^{\ast}\) to collision value.
 This is when the \acrshort{ATS} scheme mentioned in \cref{subsection:lhc_ats_optics_scheme} happens.
@@ -328,7 +329,7 @@ This last setting may be changed by machine operators during stable beams in ord
 Starting in \Gls{run}~\num{3}, some additional complexities were added to the cycle that are not shown in \cref{figure:lhc_cycle}.
 In \num{2022} a \concept{\(\beta^{\ast}\)-leveling} was introduced, where collisions start at \(\beta^{\ast} =\)~\qty{60}{\centi\meter} and the \glssymbol{betastar} is progressively reduced to \qty{30}{\centi\meter} during stable beams.
 This is done in order to limit pile-up for the experiments (at around \num{52} events per bunch crossing for the main \glspl{IP} in \num{2022}) and the impact on the triplets' cryogenics capacity~\cite{CERN:Fartoukh:LHC_Config_Run3, CERN:Ferlin:Cryogenics}.
-This \(\beta^{\ast}\)-leveling is moved to start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
+This \(\beta^{\ast}\)-leveling will start at \(\beta^{\ast} =\)~\qty{1.2}{\meter} in \num{2023} and \num{2024}, with a higher pile-up value.
 Starting in \num{2023} an \concept{anti-telesqueeze} is performed in the ramp to allow this earlier leveling, and a crossing-angle rotation at \acrshort{LHCb} (IP\num{8}) is done when reaching flat-top in order to maintain physics conditions at the IP regardless of the LHCb spectrometer polarity~\cite{CERN:Fartoukh:LHC_Config_Run3}.
 
 \section{Optics Measurements and Corrections}
