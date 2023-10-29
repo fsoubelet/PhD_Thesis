@@ -210,7 +210,7 @@ A full definition of the knobs as implemented and used in the LHC can be found i
     \label{table:colinearity_knob}
 \end{table}
 
-In the case of only skew quadrupolar coupling sources \cref{equation:deltaqmin_guignard} becomes a summation over the individual sources and the \(j(s)\) term becomes \(J_w\) - the integrated skew quadrupole strength of the source indexed by \(w\) - in that summation:
+In the case of only skew quadrupolar coupling sources, \cref{equation:deltaqmin_guignard} becomes a summation over the individual sources and the \(j(s)\) term becomes \(J_w\) - the integrated skew quadrupole strength of the source indexed by \(w\) - in that summation:
 \begin{equation}
     \begin{aligned}
         \left| C^{-} \right| &= \left| \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w e^{-i \left( \phi_x-\phi_y \right) + i \frac{s \Delta}{R}} \right| \\
@@ -225,27 +225,28 @@ In the case of the MQSX magnets, given the \(\sim\)~\qty{180}{\degree} phase adv
     \Delta C^{-} = \frac{1}{2 \pi} \sum_w \sqrt{\beta_x^w \beta_y^w} J_w = \frac{1}{2 \pi} \left( \sqrt{\beta_x^l \beta_y^l} k_S^l L + \sqrt{\beta_x^r \beta_y^r} k_S^r L \right) ,
     \label{equation:deltaqmin_only_mqsxs}
 \end{equation}
-with \(k_S^w L = J_w\) the integrated strength of the skew quadrupole at position \(w\), and \(l\) and \(r\) superscripts denoting the corrector left or right of the IP, respectively.
+with \(k_S^w L = J_w\) the integrated strength of the skew quadrupole at position \(w\).
+The \(l\) and \(r\) superscripts denote the corrector left or right of the IP, respectively.
 
-Since for \gls{round_optics} in the LHC the \glspl{beta-function} are by design identical at the two correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and those have identical lengths, with opposite powering settings as defined in \cref{table:colinearity_knob} and assuming a good \(\beta\)-beating correction this contribution reduces to \num{0}.
-Therefore, the knob induces a closed coupling bump going from corrector to corrector around the IP without impacting the machine's global coupling.
+Since, for \gls{round_optics} in the LHC the \glspl{beta-function} are by design identical at the correctors left and right of the IP (see \cref{figure:lhc_ir5_zoomed}) and those have identical lengths, with opposite powering settings as defined in \cref{table:colinearity_knob} and assuming a good \(\beta\)-beating correction, this contribution reduces to \num{0}.
+Therefore, the knob induces a closed coupling bump going from corrector to corrector around the IP without affecting the machine's global coupling.
 \Cref{figure:colinearity_knob_effect} shows the effect of the colinearity knob on the \(f_{1001}\).
 
 \begin{figure}[!htb]
     \centering
-    \includegraphics*[width=0.92\textwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
-    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} under various strengths of the colinearity knob, in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling. The locations of the MQSX corrector magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
+    \includegraphics*[width=0.9\textwidth]{Figures/IR_Coupling_Correction/colinearity_knob_effect.pdf}
+    \caption{Amplitude of the \(f_{1001}\) RDT in the vicinity of IP\num{1} for various settings of the colinearity knob, in the absence (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple}) and presence (\textcolor{mplred}{red}) of global coupling. The locations of the MQSX corrector magnets are highlighted as \textcolor{mqsx_green}{green} vertical lines.}
     \label{figure:colinearity_knob_effect}
 \end{figure}
 
 One can observe that in all cases without global coupling (\textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} lines) the \(\abs{f_{1001}}\) falls down to \num{0} outside the MQSX to MQSX zone.
-When global coupling is present the \(\abs{f_{1001}}\) goes back to its original value outside the limits of the bump.
+When global coupling is present, the \(\abs{f_{1001}}\) goes back to its original value outside the limits of the bump.
 A similar plot can be obtained for the \(\abs{f_{1010}}\).
 The reader might notice how the amplitude of the RDT does not fall down to exactly \num{0} in the \textcolor{mplblue}{blue}, \textcolor{mplorange}{orange} and \textcolor{mplpurple}{purple} cases.
-As mentioned above the phase advance between the two magnets if off of exactly \(\pi\) by \qty{1}{\percent}, and similarly the \(\sqrt{\beta_x \beta_y}\) term is not perfectly equal on each side but off by \qty{0.1}{\percent}.
-For all intents and purposes though, these deviations are small enough that the contribution can be considered \num{0}.
+As mentioned above the phase advance between the two magnets deviates from \(\pi\) by \qty{1}{\percent}, and similarly the \(\sqrt{\beta_x \beta_y}\) term is not perfectly equal on each side but changes by \qty{0.1}{\percent}.
+For all intents and purposes though, these deviations are small enough for the contribution to be negligible.
 
-Thus, the colinearity knob is an effective tool to introduce a closed coupling bump in between the MQSXs.
+Therefore, the colinearity knob is an effective tool to introduce a closed coupling bump in between the MQSXs.
 It can be used to modify the coupling specifically at the IP without changing the situation outside the IR, and can therefore act as a second step to adjust coupling locally without affecting the compensation of the IR coupling contribution.
 One now needs a way to relate the coupling at the IP to some reliable observable, which is achieved with a new optics setup as presented below.
 
