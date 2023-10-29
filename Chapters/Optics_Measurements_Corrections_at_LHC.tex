@@ -419,10 +419,10 @@ The various steps of the measurement and analysis process are described below.
 
 The first step of optics measurements in the LHC is to excite the beams with the \gls{AC_dipole}.
 As excitation of the beams to large amplitudes can represent a risk to the safety of the machine, such measurements are only performed with one to three low intensity bunches of about \num{e10} protons each.
-In the LHC, the AC dipole has a ramp-up and ramp-down time of \num{2000} turns, and is able to drive excitations at maximum strength for \num{6600} turns before ramping down, as can be seen on \cref{figure:kick_vs_acdipole_tbt}.
+In the LHC, the AC dipole has a ramp-up and ramp-down time of \num{2000} turns, and is able to drive excitations at maximum strength for \num{6600} turns before ramping down, as can be seen in \cref{figure:kick_vs_acdipole_tbt}.
 When exciting the beam, the turn-by-turn position of the bunch is measured by the \glspl{BPM} across the machine and only the turns corresponding to the maximum AC dipole strength are used for analysis.
 
-It is important to note now that the forced oscillations introduce a perturbation on the optics.
+It is important to note that the forced oscillations introduce a perturbation on the optics.
 In the case of free oscillations, it was shown in \cref{chapter:theory} that the transverse motion goes according to \cref{equation:hill_solution}.
 For the transverse plane \(z\), by considering \(\phi_{z,0} = 0\) at the start of machine one gets:
 
@@ -432,16 +432,16 @@ For the transverse plane \(z\), by considering \(\phi_{z,0} = 0\) at the start o
 \end{equation}
 where \(\phi_z\) and \(J_z\) are the action and angle variables introduced in \cref{subsection:phase_space_ellipse}, respectively.
 
-When the AC dipole is driving the beam, an equivalent parametrization exists, and noting \(z_D(s)\) the transverse driven coordinate one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
+When the AC dipole is driving the beam, an equivalent parametrization exists, and denoting the transverse driven coordinate as \(z_D(s)\) one can express it as~\cite{PHD:Miyamoto,PRAB:Tomas:Normal_Form_Particle_Motion_AC_Dipole}:
 
 \begin{equation}
   z_D(s)=\sqrt{2 J_z \beta_z(s)} \cos \left( \phi_z \right) + \sqrt{2 A \beta_{D,z}(s)} \cos \left( \phi_D \right) \text{ ,}
   \label{equation:driven_transverse_motion}
 \end{equation}
 where \(A\) and \(\phi_D\) are respectively the action and angle variables of the forced oscillations, and \(\beta_{D,z}(s)\) is the \(\beta\)-function modified by the AC dipole.
-The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillations term only depends on \(\phi_D\).
+The form of \cref{equation:driven_transverse_motion} makes the assumption that the forced oscillation term depends only on \(\phi_D\).
 
-The \(\beta\)-function modified by the AC dipole, corresponding to the perturbed optics under forced oscillations, is given as~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
+The \(\beta\)-function modified by the AC dipole, corresponding to the perturbed optics under forced oscillations, is given by~\cite{PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation}:
 
 \begin{equation}
   \beta_{D,z}(s) = \frac{1 + \lambda_D^2 - 2 \lambda_D \cos \left(\psi_D(s)\right)}{1 - \lambda_D^2} \beta_z(s) \text{ ,}
@@ -454,8 +454,8 @@ The \(\lambda_D\) term is dependent on the gap between the driven and natural tu
   \lambda_D = \frac{\sin \left(\pi \delta_D \right)}{\sin \left(2 \pi Q_z + \pi \delta_D \right)} \text{ ,}
   \label{equation:driven_oscillations_lambda_D}
 \end{equation}
-in which \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap, often called tune delta.
-In the LHC the AC dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
+where \(\delta_D = Q_D - Q_z\) corresponds to the aforementioned gap, often called the tune delta.
+In the LHC, the AC dipole is usually driven with \(\delta_{D,x} = -0.01\) and \(\delta_{D,y} = 0.012\).
 
 One can see in \cref{figure:acdipole_beta_functions_vs_nominal} the impact of an AC dipole on the vertical \(\beta\)-function in a simple FODO lattice, where the difference between the free and forced cases is apparent.
 
@@ -490,9 +490,9 @@ This impact of the AC dipole on the optics is taken into account and compensated
 
 \subsubsection*{Spectral Analysis}
 
-As a first step the recorded raw turn-by-turn data is cleaned of noise using a \gls{SVD} approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
+As a first step, the recorded raw turn-by-turn data is cleaned of noise using a \gls{SVD} approach~\cite{PRAB:Calaga:Statistical_Analysis_RHIC_BPMs}.
 An interpolated Fourier Transform is then performed on the cleaned data~\cite{PHD:Malina,IPAC:Malina:Harpy_Fast_Simple}, which provides information about the phase and the measured amplitude at each BPM.
-Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc).
+Automatic outlier detection is available based on the spectra of BPMs, both as an automated step~\cite{PRAB:Fol:Detection_Faulty_BPMs} and a manual step (removing BPMs with exact-zero signals, wrong tune lines etc.).
 \Cref{figure:example_spectrum} shows a horizontal spectrum obtained from a measurement during the Run~\num{2} commissioning in \num{2022}, with the main tune lines identified.
 The frequency space is zoomed for clarity.
 
@@ -518,7 +518,7 @@ The \(\beta\)-function at a given BPM can be calculated from the measured phases
 \noindent
 where the superscript \(^m\) denotes the model values and \(\phi_z(i \rightarrow j)\) is the phase advance between the \(i^{\mathrm{th}}\) and \(j^{\mathrm{th}}\) BPMs.
 The BPMs do not necessarily need to be consecutive, and specific phase advances between the chosen BPMs increase the precision of the measurement.
-This method has also been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which allows to improve its precision as it then only depends on the measured phase advances and is fully independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
+This method has also been extended to use specifically chosen combinations of \(N\) BPMs~\cite{PRAB:Langner:N_BPM_Method,PRAB:Wegscheider:Analytical_N_BPM_Method}, which improves its precision as it then only depends on the measured phase advances and is fully independent of BPM calibration~\cite{PRAB:Langner:Optics_Measurement_Algorithms_Error_Analysis_Proton_Energy_Frontier}.
 
 From \cref{equation:single_particle_action} one infers that the \(\beta\)-function can also be determined directly from the amplitude \(A\) of the oscillations recorded at BPMs:
 
@@ -546,7 +546,7 @@ The reconstructed \gls{beta-function} from amplitude is dependent on the calibra
 
 Other Twiss parameters can be reconstructed from the phases and \(\beta\)-functions.
 Chromatic parameters are reconstructed by performing measurements at different momentum settings.
-By adjusting the frequency of the accelerating cavities, typically between \qty{-100}{\hertz} and \qty{+100}{\hertz} of the nominal setting, the energy of the beam is changed and the dispersion is then determined from the mean orbit recorded at different energies.
+By adjusting the frequency of the accelerating cavities, typically between \qty{-100}{\hertz} and +\qty{100}{\hertz} of the nominal setting, the energy of the beam is changed and the dispersion is then determined from the mean orbit recorded at different energies.
 Recent improvements have allowed doing so in a single measurement by modulating the RF frequency while transversely exciting the beam~\cite{PHD:Malina, IPAC:Malina:3D_Excitation}.
 
 One can also compute the normalized dispersion \(D / \sqrt{\beta}\) which is independent from model values and BPM calibration~\cite{PAC:Calaga:BPM_Calibration_Independent_LHC_Optics_Correction}.
