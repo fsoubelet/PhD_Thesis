@@ -109,7 +109,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 \begin{figure}[!htb]
     \centering
     \includegraphics*[width=\linewidth]{Figures/IR_Coupling_Correction/similar_rdts_different_ip1_lumi.pdf}
-    \caption{Similarly looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other.}
+    \caption{Similar looking coupling RDTs from two measurements (top and bottom) taken during the LHC \num{2022} commissioning. One scenario leads to a \qty{20}{\percent} instantaneous luminosity decrease at IP\num{1} compared to the other.}
     \label{figure:guess_rdts}
 \end{figure}
 
@@ -117,7 +117,7 @@ One of these measurements corresponds to a \qty{20}{\percent} lower measured lum
 
 The Segment-by-Segment technique mentioned in \cref{section:local_ir_coupling} and used to implement local corrections in the LHC IRs suffers from inherent limitations making it unsuitable for the correction of coupling at the IP.
 Firstly, due to unfavorable phase advances in between \acrshortpl{BPM} in the IRs, it is difficult to get a good measurement of the coupling RDTs in these regions.
-As these are reconstructed from the \(h_z^\pm\) coordinates they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
+As these are reconstructed from the \(h_z^\pm\) coordinates, they require reconstruction of the momentum (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 Knowing that the phase advance in the IRs is \(\sim 0\) from BPM to BPM, and \(\sim \pi\) from one side of the IP to the other, one can see through \cref{equation:momentum_from_two_bpms} why the momentum reconstruction is difficult at BPMs around an IP.
 
 As a consequence, the reconstruction of coupling RDTs in close proximity to the IPs is inaccurate.
@@ -134,8 +134,8 @@ Given the data patterns and the fact that the orange case corresponds to a bette
 
 Furthermore, the SbS technique does not allow to differentiate the contribution of one individual corrector from the other in the LHC IRs, making it difficult to find the correct balance of left and right powering settings.
 Indeed, as both correctors can compensate each other one might find a good compensation of the overall IR contribution to global coupling which also deteriorates the coupling situation at the IP.
-Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide a measurement to estimate the coupling at the IP as there are no BPMs at the location.
-In such a case where both correctors compensate for each other SbS would not allow to notice the degradation of the coupling at IP.
+Additionally, as the coupling RDTs are reconstructed at BPMs the method cannot provide an estimate of coupling at the IP where there are no BPMs.
+In such a case where both correctors compensate for each other, SbS would not allow a degradation of the coupling at IP to be detected.
 
 \subsubsection*{Combined Coupling Resonance Driving Terms}
 
@@ -156,7 +156,7 @@ These have the advantage that they can be reconstructed directly from the partic
 
 Although the CRDTs seemed to work well in straightforward simulations, they were found to not be useful when it came to applying them to more realistic cases or real measurement data.
 \Cref{figure:crdt_fxy_nominal_vs_colin_md_2018} shows the reconstructed CRDT \(|\hat{F}_{XY}|\) from measurements done in a late \num{2018} \gls{MD}, computed with the \acrshort{OMC} team's analysis tools~\cite{CODE:OMC:omc3}.
-During the MD the first investigations were made on local coupling at the IP, and while little data was collected overall due to a dump of beam~\num{1} it provides a good test bed for a new observable candidate.
+During the MD, the first investigations were made of local coupling at the IP, and while little data was collected due to a dump of beam~\num{1}, they provide a good test bed for a new observable candidate.
 Information about the MD fill can be found in \cref{appendix:measurement_fills}.
 
 \begin{figure}[!htb]
@@ -174,17 +174,17 @@ For this reason, the CRDTs were not considered further.
 
 The usual technique to get a measurement of the \(\beta\)-functions at the IP is k-modulation (see \cref{subsection:optics_measurements}).
 Unfortunately, previous studies have shown that k-modulation measurements are robust against the presence of local coupling, both analytically~\cite{PRAB:Hofer:Coupling_Local_Observables, PRAB:Carlier:KModulation_HiLumi} and experimentally in a dedicated \gls{MD}~\cite{CERN:Persson:Local_Coupling_IP}.
-This prevents the possibility of driving a correction directly by measuring the \(\beta\)-functions variation at an IP from coupling. 
+This prevents the possibility of driving a correction directly by measuring the \(\beta\)-function variations at an IP from coupling. 
 
 \subsubsection*{A Short Recap}
 
 To summarize so far, control of local coupling in the \gls{LHC} \glspl{IR} is an important goal that should be tackled for \Gls{run}~\num{3}.
-Coupling corrections determined with the segment-by-segment method allow compensating for the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
-However, existing methods do not provide a reliable way to drive a minimization of coupling at the IP.
+Coupling corrections determined with the segment-by-segment method allow compensation of the IR's contribution to global coupling and are crucial to allow squeezing of the beams as well as safe machine operation.
+However, existing methods do not provide a reliable way to minimize coupling at the IP.
 To achieve this goal, two new things are needed:
 \begin{enumerate}
-    \item A way to adjust for the coupling at the IP without affecting the rest of the machine, so as not to temper with the compensation of the IR's contribution to global coupling.
-    \item A reliable way to measure coupling at the IP in order to drive the correction.
+    \item A way of adjusting the coupling at the IP without affecting the rest of the machine, so as not to spoil the compensation of the IR's contribution to global coupling.
+    \item A reliable way of measuring coupling at the IP in order to derive the correction.
 \end{enumerate}
 The former can be achieved with a \gls{knob} described in \cref{section:colinearity_knob}, while the latter was achieved with a new \gls{optics} configuration presented in \cref{section:rigid_waist_shift_for_local_coupling_correction}.
 
