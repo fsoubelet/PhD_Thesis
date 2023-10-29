@@ -376,11 +376,11 @@ Phase advances are also changed, but by a very small amount.
     \centering
     \begin{tblr}{colspec={ccc}}
         \hline
-        \SetCell[r=2,c=1]{m,c} \textbf{Magnet} & \SetCell[c=2]{c} \textbf{\(\sqrt{\beta_x \beta_y}\) [\unit{\square\meter}]}   \\
-        \cline{2,3}                            &  Without an RWS            &    With an RWS                                   \\
+        \SetCell[r=2,c=1]{m,c} \textbf{Magnet} & \SetCell[c=2]{c} \textbf{\(\sqrt{\beta_x \beta_y}\) [\unit{\meter}]}   \\
+        \cline{2,3}                            &  Without an RWS            &    With an RWS                            \\
         \hline
-        MQSX.3L[IP]                            &    \num{5193.084265}       &     \num{5186.603944}                            \\
-        MQSX.3R[IP]                            &    \num{5199.142377}       &     \num{5396.527580}                            \\
+        MQSX.3L[IP]                            &    \num{5193.084}       &     \num{5186.603}                           \\
+        MQSX.3R[IP]                            &    \num{5199.142}       &     \num{5396.527}                           \\
         \hline
     \end{tblr}
     \caption{Values of the \(\sqrt{\beta_x \beta_y}\) term in \cref{equation:deltaqmin_only_mqsxs} at the MQSX magnets around IP\num{1} or IP\num{5} without (left) and with (right) the application of an RWS, with the \(\beta^{\ast} =\)~\qty{30}{\centi\metre} optics of \num{2022}.}
@@ -414,9 +414,9 @@ The behavior seen in \cref{figure:knob_to_cminus_with_waist}, though theoretical
 Importantly, this behavior opens the possibility of using an RWS to probe IR local coupling through the measured global coupling.
 
 Simulations have been done to investigate the feasibility of finding local coupling correction settings using an RWS, with the \(\beta^{\ast} = \) \qty{30}{cm} optics of \num{2022}.
-At both IR\num{1} and IR\num{5} a local coupling bump was created by introducing identical tilt errors in triplet quadrupoles Q\num{3} - thus giving a skew quadrupolar component - and the colinearity knob was powered for compensation.
-A full parameter space was explored, both with and without an RWS applied.
-\Cref{figure:cminus_colin_vs_tilt_with_waist} shows the values of the resulting \(\abs{C^{-}}\) across the parameter space when an RWS is applied.
+At both IR\num{1} and IR\num{5}, a local coupling bump was created by introducing identical tilt errors in triplet quadrupoles Q\num{3} - thus giving a skew quadrupolar component - and the colinearity knob was powered for compensation.
+The full parameter space was explored, both with and without an RWS applied.
+\Cref{figure:cminus_colin_vs_tilt_with_waist} shows the values of the resulting \(\abs{C^{-}}\) when an RWS is applied.
 \Cref{figure:beam_size_colin_vs_tilt_no_waist} shows the resulting IP beam size increase as a ratio to the nominal beam size across the same parameter space.
 
 \begin{figure}[!htb]
