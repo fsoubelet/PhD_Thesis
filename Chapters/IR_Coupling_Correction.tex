@@ -921,7 +921,7 @@ As such, for the aforementioned accelerators but also more generally for most ci
 \section{Operation with Limited Correctors Availability}
 \label{section:limited_correctors_availability}
 
-Magnets lifetime studies done during the \gls{longshutdown}~\num{2} (LS\num{2}) have projected that some magnets in the main \glspl{IR} will reach their radiation dose limit during \Gls{run}~\num{3}~\cite{PRES:Cerutti:TripletLifetime_Evian}, including the MQSX magnets used for local coupling correction.
+Magnet lifetime studies done during the \gls{longshutdown}~\num{2} (LS\num{2}) have projected that some magnets in the main \glspl{IR} will reach their radiation dose limit during \Gls{run}~\num{3}~\cite{PRES:Cerutti:TripletLifetime_Evian}, including the MQSX magnets used for local coupling correction.
 \Cref{table:correctors_peak_dose}, reproduced from data presented in~\cite{PRES:Cerutti:TripletLifetime_Evian}, shows the expected total received dose for the skew quadrupole corrector magnets in the main IRs, for various scenarios.
 % In \textcolor{red}{red} are highlighted the values exceeding design dose limits.
 
@@ -979,19 +979,19 @@ The study itself highlights\footnote{Although this quote mentions \qty{6}{\mega\
 
 It is then warranted to prepare for one or more failures at some point during \Gls{run}~\num{3}, which would drastically impact the LHC's operations, potentially shutting the machine down depending on the severity of the failures.
 It was therefore necessary to investigate the operational impact of losing one or more MQSX magnets in the main IRs, specifically in terms of machine safety and luminosity production.
-For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing corrector.
-The MQSX magnets in IR\num{2} and IR\num{8}, though not considered at risk, were still included in some of these studies.
+For this, different failure scenarios and containment options were investigated that would try and compensate for one or more missing correctors.
+The MQSX magnets in IR\num{2} and IR\num{8}, though not considered at risk, were nonetheless included in some of these studies.
 
 \subsection{Operating with a Missing Corrector}
 
-Should an MQSX stop functioning the priority is to ensure safe machine operation.
-In the first place the impact of a single corrector failure around one of the main experiments was investigated.
+Should an MQSX stop functioning, the priority is to ensure safe machine operation.
+In the first place, the impact of a single corrector failure around one of the main experiments was investigated.
 
 \subsubsection*{Correction Load Carry Over}
 
 As seen in \cref{section:colinearity_knob}, the contribution of one magnet can be replicated by its counterpart with a similar powering setting.
 For instance, looking at \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections}, if the MQSX.\num{3}R\num{5} were to fail the loss of contribution to global coupling would be that of an MQSX magnet with  \(\mathrm{K_{1S}} =\)~\qty{-4E-4}{\per\square\meter} at this location.
-It could be compensated by modifying the powering setting of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}, since the optics conditions at the correctors are identical.
+It could be compensated by modifying the powering of MQSX.\num{3}L\num{5} by \qty{4E-4}{\per\square\meter}, since the optics conditions at the correctors are identical.
 This compensation corresponds to a trim of \num{-4} units of the colinearity knob around IP\num{5} (see \cref{table:colinearity_knob}).
 
 As such, should one MQSX fail it would still be possible to compensate for the \gls{IR}'s contribution to global coupling by properly powering its counterpart.
@@ -1000,7 +1000,7 @@ Minimizing coupling at the IP, however, would not be possible anymore as it requ
 The operational impact of losing one of the correctors would then be that of a potentially strong coupling at the IP.
 
 Simulations were done with the \gls{MADX} code to assess the impact of missing a specific corrector magnet and compensating its effect by carrying its correction setting over to its counterpart on the other side of the IP.
-In these simulations the powering settings from \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} were used, as determined with the \gls{RWS}, and beam size increases were determined from Ripken parameters according to \cref{equation:lebedev_beam_size}.
+In these simulations the power settings from \cref{table:run2_vs_sbs_run3_vs_rws_run3_corrections} were used, as determined with the \gls{RWS}, and beam size increases were determined from Ripken parameters according to \cref{equation:lebedev_beam_size}.
 From these, the changes in instantaneous luminosity were calculated according to \cref{equation:luminosity_double_beams}.
 
 \Cref{figure:lumi_vs_trims_vs_betastars} shows the expected instantaneous luminosity reduction from the nominal case for various trims of the colinearity knob corresponding to different missing MQSX magnets, for different \(\beta^{\ast}\) optics.
@@ -1012,8 +1012,8 @@ From these, the changes in instantaneous luminosity were calculated according to
     \label{figure:lumi_vs_trims_vs_betastars}
 \end{figure}
 
-Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop considerably at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}: by up to \qty{60}{\percent}.
-Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any failing one.
+Should the most powered correctors fail, the instantaneous luminosity at the affected IP is expected to drop by up to \qty{60}{\percent} at \(\beta^{\ast} =\)~\qty{30}{\centi\meter}.
+Importantly, as the powering limit of the MQSXs is \(\mathrm{K_{1S}} =\) \qty{30E-4}{\per\square\meter}, it would be possible to compensate for any single failing MQSX.
 \newpage
 
 The possible impact of this change on the aperture was also considered.
@@ -1111,7 +1111,7 @@ Simulation results suggest that it would not be feasible to squeeze to the optic
 
 \subsubsection*{Tilt of Triplet Elements}
 
-A potential solution to mitigate the impact of corrector failures is to tilt a close triplet quadrupole, introducing a \gls{skew} component in the element's field and relying on this contribution to perform the correction in place of the skew quadrupole corrector.
+A potential solution to mitigate the impact of corrector failures is to physically tilt a close triplet quadrupole, introducing a \gls{skew} component in the element's field and relying on this contribution to perform the correction in place of the defecting corrector.
 
 Studies were performed to determine the amount of Q\num{2} or Q\num{3} tilting that would be needed to take on the coupling contribution of its closest MQSX, assuming it stops working.
 In each study an error was introduced in the form of the corrector's opposite powering, and a simple parametric scan was made of the introduced tilt angle.
@@ -1191,7 +1191,7 @@ We have presented a new method - the Rigid Waist Shift - which was developed spe
 The method allows one to determine a powering adjustment of the correctors from the values determined with Segment-by-Segment that optimizes the coupling at the IP location.
 The method's validity has been demonstrated in simulations and with experimental data taken in the LHC \num{2022} commissioning, where the determined corrections led to a measured instantaneous luminosity gain of \qty{9.7}{\percent} and \qty{5.2}{\percent} at the ATLAS and CMS experiments, respectively.
 These corrections are now the baseline values used in the machine for physics production.
-Some care was given to look into the relevance of this method for other existing and future colliders, and we have shown that for most circular collider layouts the Rigid Waist Shift could be a viable solution to tackle local linear coupling.
+The relevance of this method was investigated for other existing and future colliders, and we have shown that for most circular collider layouts the Rigid Waist Shift could be a viable solution to tackle local linear coupling.
 \newline
 
 Magnet lifetime studies conducted during the Long Shutdown~\num{2} have shown that the dedicated correctors are expected to reach their radiation dose limit during Run~\num{3}, and it is realistic to expect one or more failures.
