@@ -786,8 +786,8 @@ The overall improvement from the complete trim is estimated from the individual 
 
 \Cref{table:rws_lumi_gains} gives a summary of the observed luminosity improvements for each performed trim, at both \(\beta^{\ast} =\)~\qty{30}{\centi\meter} and \(\beta^{\ast} =\)~\qty{42}{\centi\meter}.
 Overall great improvements are obtained throughout, with the largest gains recorded for IP\num{1}.
-It is expected to observe lower gains at a higher \(\beta^{\ast}\) since the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard_singular} is substantially lower in the triplets for the less squeezed optics, resulting in a smaller effect of any tilt error.
-It is also expected to notice a lower improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1} after segment-by-segment corrections, and the subsequent smaller applied correction recovers less luminosity.\\
+It is expected that lower gains are observed at higher \(\beta^{\ast}\) as the \(\sqrt{\beta_x \beta_y}\) term of \cref{equation:deltaqmin_guignard_singular} is substantially lower in the triplets for the less squeezed optics, resulting in a smaller effect of any tilt error.
+It is also expected that there be a smaller improvement at the CMS detector based on the numbers in \cref{table:rws_corrections_summary}: a lower suggested adjustment indicates a smaller coupling error remains in IR\num{5} than in IR\num{1} after segment-by-segment corrections, and the subsequent smaller applied correction recovers less luminosity.\\
 
 \begin{table}[!htb]
     \centering
@@ -865,7 +865,7 @@ On either side of the collision point, in the drift space leading to the first q
     \label{equation:collider_drift_space_beta_function}
 \end{equation}
 where \glssymbol{betastar} is the \(\beta\)-function at the \gls{IP} and here \(s\) denotes the distance \textit{from} the IP.
-Using \(L^*\) as the length of this drift space, the phase advance from the IP to said quadrupole is expressed as:
+Using \(L^*\) as the length of this drift space, the phase advance from the IP to the first quadrupole is expressed as:
 
 \begin{equation}
     \mu = \int_0^{L^*} \frac{1}{\beta(s)} ds = \int_0^{L^*} \frac{\beta^{\ast}}{\beta^{\ast}{}^2 + s^2} ds \text{ ,}
@@ -889,7 +889,7 @@ Then, for traditionally \(L^* \gg \beta^{\ast}\) one gets:
     \label{equation:collider_drift_space_phase_advance_approximation}
 \end{equation}
 
-As a consequence, for a typical collider layout the phase advance from left to right doublet / triplet quadrupoles is \(\sim \pi\).
+As a consequence, for a typical collider layout, the phase advance from left to right doublet / triplet quadrupoles is \(\sim \pi\).
 This can be seen in \cref{figure:fccee_phases_to_ip5} for the \acrshort{FCC}-ee~\cite{EPJST:Abada:FCCee_Lepton_Collider} V\num{22} lattice in the Z operation mode, which uses an asymmetric doublet of quadrupoles.
 
 \begin{figure}[!htb]
@@ -899,7 +899,7 @@ This can be seen in \cref{figure:fccee_phases_to_ip5} for the \acrshort{FCC}-ee~
     \label{figure:fccee_phases_to_ip5}
 \end{figure}
 
-As a further direct consequence, tilts in said quadrupoles are susceptible to create a coupling bump around the IP.
+As a further direct consequence, tilts in these quadrupoles are likely to create a coupling bump around the IP.
 This can be seen, again for the FCC-ee V\num{22} lattice, in \cref{figure:fccee_ip5_coupling_bump}.
 
 \begin{figure}[!htb]
@@ -912,7 +912,7 @@ This can be seen, again for the FCC-ee V\num{22} lattice, in \cref{figure:fccee_
 Furthermore, the segment-by-segment limitations encountered in the \gls{LHC} would also be present: no observation point is present at the \gls{IP}, and due to the large \(\beta\)-functions in the doublet quadrupoles the phase advance from element to element close to the IP is very close to \num{0}, making the accurate reconstruction of coupling \glspl{RDT} difficult (see \cref{subsection:reconstruction_linear_coupling_rdts}).
 
 These conditions were confirmed in existing and future machines.
-The \gls{HL-LHC} and FCC-hh lattices being based on the LHC's, they share the same limitations that have been exposed in this chapter.
+The \gls{HL-LHC} and FCC-hh lattices, being based on the LHC's, share the limitations that have been exposed in this chapter.
 The FCC-ee V\num{22} lattice, as shown above, also exhibits these conditions and could suffer from a close coupling bump from doublet tilts.
 Another existing collider, SuperKEKB, has also encountered non-trivial issues with local coupling in their High Energy Ring~\cite{ICFA:Morita:Optics_Corrections_including_IP_Local_Coupling_at_SuperKEKB}.
 
