@@ -434,15 +434,15 @@ The full parameter space was explored, both with and without an RWS applied.
 \end{figure}
 
 The results of \cref{figure:beam_size_colin_vs_tilt_no_waist} highlight that minimization of the growth is possible, though a wrong setting would enhance the phenomenon.
-A great correlation between beam size growth from the local coupling bump (without RWS, see \cref{figure:cminus_colin_vs_tilt_with_waist}) and the \glssymbol{Cminus} from leaked RDTs (with RWS, see \cref{figure:beam_size_colin_vs_tilt_no_waist}) is observed.
+A strong correlation between beam size growth from the local coupling bump (without RWS, see \cref{figure:cminus_colin_vs_tilt_with_waist}) and the \glssymbol{Cminus} from leaked RDTs (with RWS, see \cref{figure:beam_size_colin_vs_tilt_no_waist}) is observed.
 
 Simulations replicating a more complex scenario - akin to operational conditions - were also performed.
 In these, tilt errors were introduced in triplet quadrupoles Q\num{3} as previously to create a closed local coupling bump around the IP.
-Additionally, some tilt errors were added to an individually powered quadrupole in IR\num{5} (for instance Q\num{5}) to include the presence of expected residual local coupling errors in the other main IR, which contribute to the global coupling by the amount of \num{1e-3}.
+Additionally, some tilt errors were added to an individually powered quadrupole in IR\num{5} (for instance Q\num{5}) to simulate the presence of the expected residual local coupling errors in the other main IR, which contribute to the global coupling by the amount of \num{1e-3}.
 Some global coupling sources were also added with a dedicated knob~\cite{CERN:Tomas:Optimizing_Global_Coupling_Knobs_LHC} that bring the global coupling to \num{1e-2}, which was then corrected through a routine and brought down to \(\sim\)\num{3e-3}, a level similar to what can be achieved in the machine~\cite{PRES:Persson:Transverse_Coupling_OMC_OP,PRES:Persson:Transverse_Coupling_Stability_HLLHC_WP2}.
-The RWS and colinearity knobs were then powered to different settings, and the resulting \glssymbol{Cminus} and IP beam sizes were determined in all settings combinations.
+The RWS and colinearity knobs were then powered to different settings, and the resulting \glssymbol{Cminus} and IP beam sizes were determined for all settings combinations.
 
-Similar to the previous studies made for \cref{figure:cminus_colin_vs_tilt_with_waist,figure:beam_size_colin_vs_tilt_no_waist}, an entire parameter space of implemented errors and corrections has been explored.
+Similar to the previous studies made for \cref{figure:cminus_colin_vs_tilt_with_waist,figure:beam_size_colin_vs_tilt_no_waist}, an entire parameter space of implemented errors and corrections was explored.
 The evolution of both the \(\abs{C^{-}}\) and the beam size growth at IP\num{1} for one of these simulations can be seen in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 These curves would correspond to a vertical line in \cref{figure:cminus_colin_vs_tilt_with_waist,figure:beam_size_colin_vs_tilt_no_waist}, but with a realistic scenario.
 
@@ -454,7 +454,7 @@ These curves would correspond to a vertical line in \cref{figure:cminus_colin_vs
 \end{figure}
 
 It can be observed that settings minimizing the measured \(\abs{C^{-}}\) under an RWS are very close to minimizing the coupling induced beam size increase without said RWS.
-Here these settings also compensate for the contribution of the other added sources, on top of the local ones.
+Here, these settings also compensate for the contribution of the other added sources, on top of the local ones.
 Similarly to previous studies a great correlation is observed, and across the parameter space one computes a \num{0.96} Pearson correlation coefficient between the quantities shown in \cref{figure:full_scenario_colin_correction_dqmin_lebedev}.
 This confirms the link between the measured \(\abs{C^{-}}\) and the quantities of interest at the IP location.
 To summarize:
@@ -485,12 +485,12 @@ This is illustrated in \cref{figure:full_scenario_determine_correction}.
 \Cref{figure:full_scenario_determine_correction} shows the resulting \(\abs{C^{-}}\) values under an RWS during a colinearity knob scan, for one of the simulation scenarios mentioned previously (\cref{figure:full_scenario_colin_correction_dqmin_lebedev}) (\textcolor{mplblue}{blue}), and a similar scenario in which no local coupling sources were implemented in IR\num{1} (\textcolor{mplorange}{orange}).
 The former represents what would be measured in the machine, including the contribution of local sources.
 The latter represents a simulation to compare such a measurement to, which includes all contributions to global coupling except for the IR local sources.
-The highlighted difference between the two curves is then fully explained by the local sources.
+The difference between the two curves is then fully explained by the local sources.
 
 Applying a trim of the colinearity knob setting linearly translates the curves of \cref{figure:full_scenario_determine_correction} horizontally.
 This behavior is valid and verifiable in both simulations and measurements.
 Therefore, one looks to determine a colinearity knob trim that, if applied in the machine, would bring the measurement's \(\abs{C^{-}}\) minimization point to that of the simulation.
-As this difference if fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
+As this difference is fully explained by local sources, this trim contains the information on the local error in terms of colinearity knob setting: powering of the corrector magnets.
 In \cref{figure:full_scenario_determine_correction} the minima are highlighted with vertical lines and the aforementioned correction trim is determined from the relative position of these two minima.
 The value is different from that of the minimization in \cref{figure:full_scenario_colin_correction_dqmin_lebedev} as there global sources are also compensated while this correction aims at compensating only the local sources.
 
@@ -503,7 +503,7 @@ The value is different from that of the minimization in \cref{figure:full_scenar
 
 When only considering the local sources used for the results in \cref{figure:full_scenario_determine_correction} and inputting the correction trim suggested, one obtains a good compensation of the beam sizes at IP\num{1}.
 \Cref{figure:full_scenario_correction_efficiency} shows the impact of these local errors and the effect of applying the suggested correction trim.
-The exactitude and effectiveness of the determined correction can be improved by performing more granular scans of the colinearity knob, but the values used are representative of what can be done in measurements.
+The exactitude and effectiveness of the determined correction can be improved by performing higher resolution scans of the colinearity knob, but the values used are representative of what can be done in measurements.
 
 \subsubsection*{Reproducing the Machine's Coupling}
 
@@ -523,7 +523,7 @@ In all investigated scenarios the achieved \(\abs{C^{-}}\) before applying the R
 It was found that, to the levels of coupling we achieve after correcting the machine the distribution and implementation of sources had little impact on the minimization point of the \(\abs{C^{-}}\) curve under an RWS, as long as the overall pattern of the \(f_{1001}\) and the level of coupling measured in the machine were accurately reproduced.
 
 One can see in \cref{figure:global_coupling_modeling_impact} how the minimization point is relatively unchanged by the global coupling implementation method within the precision of the mesh step used for the scan, which was chosen to reflect that achievable in the machine.
-As a consequence, in simulations this reproduction was done by including the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
+As a consequence, this coupling contribution was simulated using the coupling correction knobs implemented in the machine, as determined during earlier commissioning steps.
 
 \subsection{Rigid Waist Shift Procedure}
 
@@ -537,7 +537,7 @@ Using those, the complete correction procedure for local linear coupling is then
 \begin{enumerate}
     \item Firstly, calculating and applying a correction of the IR contribution to global coupling based on RDTs from turn-by-turn measurements, using the SbS technique.
     \item Secondly, breaking the optics symmetry between the right and left-hand side of the IP by applying an RWS, and performing a scan of the colinearity knob.
-    \item Finally, analyzing the measurements data and comparing it to simulations in order to find a colinearity knob adjustment setting that minimizes the global coupling, without impacting the correction found in step~\num{1}.
+    \item Finally, analyzing the data and comparing them to simulations in order to find a colinearity knob adjustment that minimizes the global coupling, without impacting the correction found in step~\num{1}.
 \end{enumerate}
 
 These measurements can be performed for each IR and for each beam, and the subsequent determined corrections can then be directly applied in the machine.
@@ -652,7 +652,7 @@ The \glspl{beta-function} in these measurements are reconstructed with the \acrs
 
 The measured impact is in agreement with what was expected from earlier simulations (see \cref{subsection:rigid_waist_shift}), leading to a \num{15}-\qty{25}{\percent} additional \(\beta\)-beating in the machine depending on the observed beam and plane; while the re-matching knob brought this beating back to about \qty{5}{\percent} where it was previously kept thanks to existing corrections.
 Considering the state of the machine at the time of these measurements, it can be considered that the optics re-matching shows great efficiency.
-Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-functions reconstruction close the IPs is of relatively low quality.
+Naturally, some strong deviations are noticed close to IP\num{5} (going out of range of the y-axis) as the optics there are changed on purpose, but also because \(\beta\)-function reconstruction close the IPs is of relatively low quality.
 
 After confirming the validity of the optics knobs and with the waist shift in the machine, scans of the colinearity knob (\cref{table:colinearity_knob}) were performed.
 At each setting, a few measurements were taken by method of beam excitation, from which the coupling \glspl{RDT} were computed.
@@ -666,7 +666,7 @@ Different scans were done with different granularity due to time constraints.
     \label{figure:ir5_rws_rematching}
 \end{figure}
 
-For each measurement the RDTs across the machine are normalized to the base case with no RWS, global coupling corrected and no colinearity knob trim.
+For each measurement, the RDTs across the machine are normalized to the base case with no RWS, global coupling corrected and no colinearity knob trim.
 Only then is the \glssymbol{Cminus} computed according to \cref{equation:deltaqmin_from_f1001}.
 Then the variations due to the changes of the colinearity knob are visualized and compared to simulations.
 In said simulations, the global coupling of the machine is reproduced by introducing the coupling correction knobs implemented in the machine at the time of measurements.
@@ -674,7 +674,7 @@ In said simulations, the global coupling of the machine is reproduced by introdu
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement} comparisons are shown between simulations and scan measurements at IR\num{1} for beam~\num{1} and beam~\num{2}, then IR\num{5} for beam~\num{1} and beam~\num{2}, respectively.
 The delta between minimization settings, corresponding to the suggested correction adjustment, is highlighted on each plot.
 The relatively low range of achieved \glssymbol{Cminus} values is due to the aforementioned \glspl{RDT} normalization.
-The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has showcased little global coupling to be corrected while beam~\num{1} required significantly stronger global coupling corrections, as well as local adjustments for different arcs.
+The noticeably different behavior of beam~\num{1} and beam~\num{2} simulations is explained by the different coupling situation in each beam: throughout commissioning beam~\num{2} has required only small global coupling corrections while beam~\num{1} required significantly stronger ones, as well as local adjustments for different arcs.
 As these are reproduced in simulations, this difference in behavior is unsurprising.
 
 \begin{figure}[!htb]
@@ -706,7 +706,7 @@ As these are reproduced in simulations, this difference in behavior is unsurpris
 \end{figure}
 
 In \cref{figure:ir1_b1_pos_measurement,figure:ir1_b2_pos_measurement,figure:ir5_b1_pos_measurement,figure:ir5_b2_pos_measurement}, simulations for beam~\num{2} suggest that the (small) reproduced global coupling has little effect on the procedure, and the colinearity knob scan could almost be used alone to determine the corrections.
-For beam~\num{1} simulations however the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and this highlights the need to compare the scan measurements to simulations.
+For beam~\num{1} simulations, however, the impact of the reproduced global coupling appears much more substantial, as was the case in the machine, and this highlights the need to compare the scan measurements to simulations.
 Overall, this comparison is needed in the case that there are significant coupling errors in the arcs.
 It is worth noting that both beams' measurements converge to similar correction suggestions.
 \break
