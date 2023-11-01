@@ -1,32 +1,33 @@
 \chapter{Conclusion}
 \label{chapter:conclusion}
 
-In the quest for new physics, modern particle colliders such as the \gls{LHC} are always striving to increase their \gls{luminosity} - both instantaneous and integrated - in order to reduce statistical uncertainties and increase the potential of new discoveries.
-As a result the machine is subject to constant upgrades and improvements in terms of hardware, software and operational configuration.
-In parallel to these upgrades, an ever tighter control of the \gls{beam} dynamics is necessary to ensure safe operation as well as the best possible performance out of the existing machine.
+In the quest for new physics, modern particle colliders such as the \gls{LHC} are always striving to increase their \gls{luminosity} - both instantaneous and integrated - in order to reduce statistical uncertainties and increase the potential for new discoveries.
+As a result, the machine is subject to constant upgrades and improvements in terms of hardware, software and operational configuration.
+In parallel to these upgrades, an ever tighter control of the \gls{beam} dynamics is necessary to ensure safe operation as well as the best possible performance of the machine.
 
-One such performance limitation in the \gls{LHC} is the proper handling of local \gls{betatron_coupling} in the \glspl{IR} which, if left uncorrected, has the potential to degrade or even interrupt beam operations, as well as reduce the collision numbers as was observed during an incident in \num{2018}.
+One performance limitation in the \gls{LHC} is the proper handling of local \gls{betatron_coupling} in the \glspl{IR} which, if left uncorrected, has the potential to degrade or even interrupt beam operations, as well as to reduce the collision rates as was observed during an incident in \num{2018}.
 The upcoming \gls{HL-LHC} upgrade is bound to drastically enhance the impact of any uncorrected local coupling on the machine's performance, warranting a dedicated effort on this topic.
 The objective of this work has been to provide a novel approach that can measure and correct the local \gls{IR} coupling and to experimentally determine corrections to improve \gls{LHC} operations.
 \break
 
-The main body of the presented work addresses the target of measuring and correcting the local \gls{betatron_coupling} in the LHC \glspl{IR}.
-The shortcomings of existing local \gls{IR} measurements methods for local coupling (segment-by-segment technique, k-modulation and alternative observables such as combined \glspl{RDT}) justified the creation of new tools.
-The newly developed tools, the colinearity \gls{knob} and \gls{RWS}, allow relating relevant quantities of interest to strong observables such as the \glspl{RDT} and the \glssymbol{Cminus} in order to drive a correction.
+The main body of the presented work addresses the problem of measuring and correcting the local \gls{betatron_coupling} in the LHC \glspl{IR}.
+The shortcomings of existing local \gls{IR} measurement methods for local coupling (segment-by-segment technique, k-modulation and alternative observables such as combined \glspl{RDT}) justified the creation of new tools.
+The newly developed tools, the colinearity \gls{knob} and \gls{RWS}, allow relevant quantities of interest to be related to strong observables such as the \glspl{RDT} and the \glssymbol{Cminus} in order to drive a correction.
 The effect of each was demonstrated through extensive simulations, and an experimental setup to use them for the determination of corrections was laid out.
 
-Measurements with the new experimental setup in the \gls{LHC} \num{2022} commissioning, at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} =\)~\qty{30}{\centi\meter}, were presented together with the determined corrections obtained by comparing said measurements to simulations.
+Measurements using the new experimental setup during the \gls{LHC} \num{2022} commissioning, at \qty{6.8}{\tera\electronvolt} and \(\beta^{\ast} =\)~\qty{30}{\centi\meter} were presented, together with the determined corrections obtained by comparing the measurements to simulations.
 These corrections were trimmed in the machine and their efficiency assessed through instantaneous \gls{luminosity} measurements.
-Great improvements in collision numbers were observed at the main \glspl{IP}: an additional \qty{9.7}{\percent} and \qty{3.5}{\percent} instantaneous luminosity at the \acrshort{ATLAS} and \acrshort{CMS} \glspl{experiment}, respectively.
+Great improvements in collision rates were observed at the main \glspl{IP}: an additional \qty{9.7}{\percent} and \qty{3.5}{\percent} instantaneous luminosity at the \acrshort{ATLAS} and \acrshort{CMS} \glspl{experiment}, respectively.
 Comparison of these results to expectations from simulations revealed a disagreement, with the \acrshort{ATLAS} numbers lower than expected.
-This discrepancy was attributed to the early calibration setup of the detector, considering luminosity predictions and measurements showed great agreement at the same detector in identical measurements performed later in the year with higher intensity beams.
+This discrepancy was attributed to the early calibration setup of the detector.
+Luminosity predictions and measurements showed a much improved agreement at the same detector in identical measurements performed later in the year with higher intensity beams.
 Good agreement was observed at the \acrshort{CMS} detector.
 
-This new method allowed measuring, quantifying and correcting, for the first time, the previously unmeasurable local \gls{betatron_coupling} in the \gls{LHC} \glspl{IR}.
-It has the advantage of being applicable early on in commissioning with low intensity beams and enables distinguishing between the two beams, which could require different types of adjustments: magnet realignment, orbit corrections, etc.
+This new method allowed the measurement, quantification and correction, for the first time, of the local \gls{betatron_coupling} in the \gls{LHC} \glspl{IR}.
+It has the advantage of being applicable early on in commissioning with low intensity beams and enables distinction between the two beams, which could require different types of adjustments: magnet realignment, orbit corrections, etc.
 Furthermore, it has been shown to be relevant and applicable to both existing and future colliders.
 
-Due to radiation exposure of the corrector magnets expected to surpass their allowed limits, the impact of losing such a crucial element was studied.
+As the radiation exposure of the used \gls{LHC} corrector magnets is expected to surpass the allowed limit during the \gls{LHC} \Gls{run}~\num{3}, the impact of losing these crucial elements was studied.
 It was demonstrated through simulations that one could compensate for the loss of a single corrector magnet and guarantee both safe machine operation and squeezing of the beams down to collision configuration.
 This compensation, however, would happen at the cost of luminosity: up to a \qty{60}{\percent} loss of instantaneous luminosity in the most affected case.
 These expectations were confirmed through beam measurements in which the loss of correctors were simulated.
@@ -36,22 +37,22 @@ Further studies are required for scenarios involving the simultaneous loss of bo
 
 After the successful application of machine learning techniques to several other tasks in particle accelerators, including optics corrections, the possibility of using them for a different approach to tackle local coupling in the \gls{LHC} \glspl{IR} was explored.
 Through extensive simulation-supported data sets, specific models were trained to predict the location of coupling sources in the form of quadrupole tilts from measured \glspl{RDT}.
-Models were obtained that achieved great prediction performance on clean data sets but did not generalize as well to realistically noisy data sets.
-Nonetheless, these models show promising results but improvements in the precision of the reconstructed \glspl{RDT} would be necessary before confidently using the models in the \gls{LHC}.
-Such improvements could be achieved with better beam instrumentation, more accurate optics reconstruction methods or other dedicated machine learning models.
+Models were obtained that achieved good prediction performance on clean data sets but did not generalize well to realistically noisy data sets.
+These models show promising results but improvements in the precision of the reconstructed \glspl{RDT} would be necessary before they could confidently be used in the \gls{LHC}.
+Such improvements could be achieved with better beam instrumentation, more accurate optics reconstruction methods or the use of additional, dedicated machine learning models.
 \break
 
-Additional \gls{optics} studies were performed that contributed to the understanding of the \gls{LHC} \gls{optics} and potential measurement methods improvements.
-Through statistical analysis, the influence of both \gls{BPM} type and \gls{beta-function} at the measuring device on the precision of the phase reconstruction in the \gls{LHC} \glspl{BPM} was determined.
-The results allowed, without dedicated measurements, to identify the best conditions for phase reconstruction.
-This result has the potential to be applied in optics measurements algorithms to, for instance, select a subset of \glspl{BPM} for better phase and potentially \glspl{beta-function} measurement.
-The impact of the sextupolar contribution to the \gls{ampdet} in the \gls{LHC}, never measured, was demonstrated through simulations and was shown to behave similarly as the first order octupolar amplitude detuning under forced oscillations.
-The determined negligible aspect of the contribution as well as its now confirmed behavior allows to discard it safely from amplitude detuning measurements when characterizing the non-linearities of the machine.
+Additional studies were performed that contributed to the understanding of the \gls{LHC} \gls{optics} and potential measurement method improvements.
+Through statistical analysis, the influence of both \gls{BPM} type and \gls{beta-function} at the measuring device on the precision of the phase reconstruction in the \gls{LHC} was determined.
+The results allowed, without dedicated measurements, identification of the best conditions for phase reconstruction.
+This result has the potential to be applied in optics measurements algorithms to, for instance, select a subset of \glspl{BPM} for better phase and potentially \gls{beta-function} measurements.
+The impact of the sextupolar contribution to the \gls{ampdet} in the \gls{LHC}, never previously measured, was demonstrated through simulations and was shown to behave similarly to the first order octupolar amplitude detuning under forced oscillations.
+The determined negligible level of the contribution, as well as its now confirmed behavior, allow it to be safely neglected from amplitude detuning measurements when characterizing the non-linearities of the machine.
 \break
 
 The overall goal of this thesis has been to develop a new approach to the measurement and correction of local \gls{betatron_coupling} in the \gls{LHC} \glspl{IR}.
 Different methods were developed and tested including, mainly, a new experimental setup which was used to measure and correct local coupling in the \gls{LHC} \num{2022} commissioning, improving the instantaneous luminosity at the \acrshort{ATLAS} and \acrshort{CMS} \glspl{experiment}.
-This new method is relevant for typical conditions of an Interaction Region, and therefore relevant for other existing colliders such as SuperKEKB, but also future machines such as the \gls{HL-LHC} and the \gls{FCC} variants.
+This new method is relevant for typical conditions in an Interaction Region, and therefore relevant for other existing colliders such as SuperKEKB, but also future machines such as the \gls{HL-LHC} and the \gls{FCC}.
 The work presented in this document contributes to the improved performance and understanding of the \gls{LHC}, but also potentially other present and future particle colliders.
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
