@@ -4,7 +4,7 @@
 Machine learning methods have found their application in a variety of fields including technology development, scientific research, medical diagnosis and business insights.
 The now widespread application of machine learning techniques demonstrates their applicability to various challenges and tasks.
 
-In recent years machine learning has been successfully applied to various areas of accelerator physics~\cite{PRAB:Edelen:Machine_Learning_Optimization_Particle_Accelerator_Systems,PRAB:Gao:Bayesian_Optimization_Trajectory_Alignment,PRAB:Ivanov:Physics_Based_Deep_Neural_Networks_Beam_Dynamics,PRL:Roussel:Phase_Space_Reconstruction_Neural_Networks,PRAB:Kranjcevic:Multiobjective_Optimization_Dynamic_Aperture,PRL:Jalas:Bayesian_Optimization_Laser_Plasma_Accelerator,PRL:Duris:Bayesian_Optimization_Free_Electron_Laser,IPAC:Biedron:Adding_Data_Science_and_More_Intelligence_to_Our_Accelerator_Toolbox,IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators,PRAB:Emma:Machine_Learning_Longitudinal_Phase_Space_Prediction,IBIC:Xu:Machine_Learning_Image_Processing_Technology_Application_in_Bunch_Longitudinal_Phase_Data_Information_Extraction}, including at the \gls{LHC}~\cite{PRAB:Fol:Detection_Faulty_BPMs,EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors,PHD:Fol:Application_ML_Beam_Optics}.
+In recent years, machine learning has been successfully applied to various areas of accelerator physics~\cite{PRAB:Edelen:Machine_Learning_Optimization_Particle_Accelerator_Systems,PRAB:Gao:Bayesian_Optimization_Trajectory_Alignment,PRAB:Ivanov:Physics_Based_Deep_Neural_Networks_Beam_Dynamics,PRL:Roussel:Phase_Space_Reconstruction_Neural_Networks,PRAB:Kranjcevic:Multiobjective_Optimization_Dynamic_Aperture,PRL:Jalas:Bayesian_Optimization_Laser_Plasma_Accelerator,PRL:Duris:Bayesian_Optimization_Free_Electron_Laser,IPAC:Biedron:Adding_Data_Science_and_More_Intelligence_to_Our_Accelerator_Toolbox,IEEE:Edelen:Neural_Networks_Modeling_Control_Particle_Accelerators,PRAB:Emma:Machine_Learning_Longitudinal_Phase_Space_Prediction,IBIC:Xu:Machine_Learning_Image_Processing_Technology_Application_in_Bunch_Longitudinal_Phase_Data_Information_Extraction}, including at the \gls{LHC}~\cite{PRAB:Fol:Detection_Faulty_BPMs,EPJP:Fol:Supervised_Learning_Reconstruction_Magnet_Errors,PHD:Fol:Application_ML_Beam_Optics}.
 The primary purpose of the work presented hereafter is to explore the possibility of applying machine learning techniques to the subject of local \gls{IR} coupling in the LHC.
 
 %----------------------------------------------------------------------------------------
@@ -20,19 +20,19 @@ The key characteristics of machine learning are described by T. Mitchell as~\cit
 \end{quoteblock}
 
 A key characteristic distinguishing machine learning from conventional programming is the program's ability to automatically achieve performance improvements based on provided data.
-This section provides a quick introduction to relevant paradigms and concepts of machine learning, primarily derived from~\cite{BOOK:Mitchell:Machine_Learning,BOOK:Hastie:Elements_Statistical_Learning} where one can find detailed discussions on the subject.
-The focus is kept only on particular concepts relevant to the work presented in this chapter.
+This section provides a quick introduction to some relevant machine learning paradigms and concepts, primarily derived from~\cite{BOOK:Mitchell:Machine_Learning,BOOK:Hastie:Elements_Statistical_Learning} where one can find detailed discussions on the subject.
+The focus is kept on concepts relevant to the work presented in this chapter.
 
 \subsection{Defining a Machine Learning Task}
 
 In the context of machine learning, \concept{learning} refers to the process of improving performance.
-Generally speaking a model can improve its performance by adjusting its parameters with respect to provided data, in order to refine the approximation function that is derived from said data. 
-It is important to note that a trained model will always remain an approximation of the relationship in the underlying data, but with a good enough training this approximation should be sufficiently reliable for the specific task at hand.
+Generally speaking a model can improve its performance by adjusting its parameters with respect to provided data, in order to refine the approximation function that is derived from that data. 
+It is important to note that a trained model will always remain an approximation of the relationship in the underlying data, but with good enough training this approximation should be sufficiently reliable for the specific task at hand.
 The requirements on the model's performance in terms of accuracy, precision and reliability depend on a particular task and application domain.
 
 The chosen performance criteria, the type of experience to be gained through learning and the specific approach and algorithm are specific to the task that must be learned.
 These three parameters - task, measure of performance and source of experience - are the fundamentals of a well-defined machine learning problem.
-In practice, it is reflected in the selection of appropriate learning method and function approximation algorithm, definition of the loss function and its acceptable values, as well as the preparation of data.
+In practice, it is reflected in the selection of an appropriate learning method and function approximation algorithm, definition of the loss function and its acceptable values, as well as the preparation of data.
 The latter can be non-trivial and require dedicated techniques and algorithms.
 
 \subsection{Supervised and Unsupervised Learning}
@@ -40,7 +40,7 @@ The latter can be non-trivial and require dedicated techniques and algorithms.
 Two main approaches are available in machine learning depending on the problem definition and the availability and structure of the learning examples.
 
 \concept{Unsupervised learning} is characterized by the use of unlabeled datasets.
-Unsupervised learning algorithms solve tasks where only input data is available, and are used to analyze and cluster inputs by discovering patterns in data without the need for human intervention, hence them being \textit{unsupervised}.
+Unsupervised learning algorithms solve tasks where only input data is available, and are used to analyze and cluster inputs by discovering patterns in data without the need for human intervention, hence they are \textit{unsupervised}.
 They are suitable for tasks such as anomaly detection, signal denoising, dimensionality reduction, and feature extraction.
 % They are used for tasks such as clustering, association and dimensionality reduction.
 % Clustering groups unlabeled data based on their similarities or differences, association finds relationships between variables in a given dataset and dimensionality reduction reduces the number of data inputs to a manageable size while also preserving the data integrity.
@@ -72,7 +72,7 @@ In a simple case (see \cref{figure:ml_underfitting_overfitting} below) \(\hat{y}
 In this case the model parameters \(w\) are then represented as an \(N \times K\) matrix.
 
 Typically, linear regression models are trained using the \concept{least squares} method, which minimizes the residual sum of squared errors between the predicted and actual output values.
-Given a set of \(N\) samples from the training dataset, and \(y\) being the true output for a given sample, the linear model's parameters are updated during training with each incoming sample, minimizing:
+Given a set of \(N\) samples from the training dataset, and with \(y\) being the true output for a given sample, the linear model's parameters are updated during training with each incoming sample, minimizing:
 
 \begin{equation}
     RSS(\hat{w}) = \sum_{m=1}^{N} (y_m - \hat{y}_m)^2 \text{ .}
@@ -114,7 +114,7 @@ This ability to predict on new data is called \concept{generalization}, and is t
 A separate and unrelated test dataset is usually used in order to evaluate the predictive power of the model.
 Most of the time, training and test datasets share enough similarities - properties and relations in the underlying data - such that the model can accurately predict on the test set.
 
-However, in the case of highly complex models high accuracy can be achieved on the training data with poor prediction performance on the test data.
+However, in the case of highly complex models, high accuracy can be achieved on the training data with poor prediction performance on the test data.
 When too complex, models can tend to fit very closely to individual data points in the training data and extrapolate unexisting relations that will later on perform badly on new data.
 This phenomenon is called \concept{overfitting}.
 Similarly, when too simple for the data at hand the model will not be able to capture the underlying relations and will not be able to perform accurate predictions even on training data.
@@ -133,7 +133,7 @@ Though simple, this example highlights the importance of building a model that g
 One of the common ways to identify underfitting or overfitting is to provide validation data to the model in addition to the training data.
 The training set is then used to drive the learning procedure, and after training the error is evaluated on the validation set.
 When done properly, the model's performance on both training and validation sets should be nearly equal.
-If the performance on the training set is substantially higher, the model has been overfitted and further adjustments on the model complexity are then required.
+If the performance on the training set is substantially better, the model has been overfitted and further adjustments on the model complexity are then required.
 
 \subsubsection*{Regularized Regression}
 
@@ -149,13 +149,13 @@ The regression task is formulated as:
     \label{equation:ridge_regression_regularization}
 \end{equation}
 where \(w\) is the matrix containing the parameters of the model, \(\vec{x}\) is the input data vector and \(\vec{y}\) the vector of targets to be predicted by the model.
-With higher values of \(\alpha\) the changes in model parameters are reduced at each update step, helping to not overreact to correlated changes in the data.
+With higher values of \(\alpha\) the changes in model parameters are reduced at each update step, preventing overreactions to correlated changes in the data.
 
 It is also possible to mitigate overfitting by decreasing the number of input features while retaining only uncorrelated features for function approximation by the model.
 \concept{Lasso regression}~\cite{JRSS:Tibshirani:Regression_Shrinkage_Selection_Via_Lasso} uses an \(L1\) norm to drive some regression coefficients to \(0\), which improves the model in terms of variance and allows for automatic feature selection.
 
-To tune additional model parameters such as the ridge penalty \(\alpha\) or the number of input features to be retained in Lasso regression one can use \concept{cross-validation}, a resampling method which consists in randomly dividing the dataset into equally sized parts.
-For instance, the dataset is divided in ten subsets and the model is fitted on nine of those while the loss is computed on the remaining subset.
+To tune additional model parameters such as the ridge penalty \(\alpha\) or the number of input features to be retained in Lasso regression one can use \concept{cross-validation}, a resampling method which consists of randomly dividing the dataset into equally sized parts.
+For instance, the dataset is divided into ten subsets and the model is fitted on nine of those while the loss is computed on the remaining subset.
 This procedure is repeated for each of the ten subsets to be used for loss computation, and all ten estimates of the prediction error are averaged.
 As the practice is part of the training process cross-validation is only applied to the training dataset, and the test dataset is still used only to evaluate a trained model's performance on unobserved data.
 
