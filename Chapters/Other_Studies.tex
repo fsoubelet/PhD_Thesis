@@ -238,25 +238,25 @@ The ability to accurately compute key statistical values on phase advance measur
 \section{Simulations of Sextupolar Amplitude Detuning in the LHC}
 \label{section:sextupolar_amplitude_detuning}
 
-As mentioned in \cref{subsection:amplitude_detuning}, a measurement of the machine non-linearities can be obtained by characterizing the \gls{ampdet}: the dependency of the tune as a function of the amplitude of particle oscillations.
+As mentioned in \cref{subsection:amplitude_detuning}, a measurement of the machine non-linearities can be obtained by characterizing the \gls{ampdet}: the dependency of the tune on the amplitude of particle oscillations.
 Amplitude detuning traditionally comes from octupolar fields and is used for beam stabilization against collective effects~\cite{BOOK:Chao:Collective_instabilities,PRAB:Karpov:Thresholds_Loss_Landau_Damping}.
 More generally, it comes from multipolar fields of even order \(m = 2n\), where \(n\) is a natural number strictly higher than one since quadrupolar fields provide a linear behavior.
 
 Analytical formulae from \cite{REPORT:Bengtsson:Smear_Tune_Shift, BOOK:Lee:Accelerator_physics,BOOK:Chao:Handbook_Accelerator_Physics_Engineering} show that second order terms of sextupole strengths contribute to free amplitude detuning.
-It has previously been suspected that the forced amplitude detuning induced by sextupolar fields would behave similarly than that already studied for octupolar fields in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
+It has previously been suspected that the forced amplitude detuning induced by sextupolar fields would behave similarly to that already studied for octupolar fields in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
 
-This study aims to first demonstrate the possibility of observing this amplitude detuning with \gls{AC_dipole} excitation as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}, and also to confirm the similarity of its behavior to that of the octupolar one.
-Additionally, doing so would help understand the impact of our sextupolar corrections on amplitude detuning measurements, which may be non-negligible.
-Simulations were performed to investigate the sextupolar amplitude detuning in the \gls{LHC} lattice, both through forced oscillations with AC dipole and free oscillations up to similarly high amplitudes.
+This study aims to first demonstrate the possibility of observing this amplitude detuning using \gls{AC_dipole} excitation, as previous works have shown that not all higher order effects can be measured with driven oscillations~\cite{PRAB:Persson:Suppression_Amplitude_Dependent_Closest_Tune_Approach}, and also to confirm the similarity of its behavior to that of the octupolar one.
+This will aid the understanding of the impact of our sextupolar corrections on amplitude detuning measurements, which may be non-negligible.
+Simulations were performed to investigate the sextupolar amplitude detuning in the \gls{LHC} lattice, both through forced oscillations using AC dipole and free oscillations up to similarly high amplitudes.
 
 \subsection*{Amplitude Detuning with an AC Dipole}
 
 The feasibility of direct amplitude detuning measurement with an AC dipole was demonstrated in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, as well as its benefits compared to the previously traditional technique of exciting the beam to large amplitudes with a single kick.
-In the same paper, the authors go over the linear motion of particles and differentiate two cases.
+In the same paper, the authors go over the linear motion of particles and distinguish two cases.
 The parametrization of the transverse coordinate \(z\) in the case of free and forced oscillations with an AC dipole is given by \cref{equation:free_transverse_motion} and \cref{equation:driven_transverse_motion}, respectively.
 
 Analysis of the \gls{beta-function} of the driven particle, \(\beta_D\), can be found in~\cite{PHD:Miyamoto,PRAB:Miyamoto:Parametrization_Driven_Betatron_Oscillation,PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}.
-It is derived, still in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole}, that for multipoles of even order \(m = 2n\) the amplitude detuning in the case of horizontally driven oscillations is given by
+It is derived in~\cite{PRAB:White:Direct_Amplitude_Detuning_AC_Dipole} that for multipoles of even order \(m = 2n\), the amplitude detuning in the case of horizontally driven oscillations is given by
 
 \begin{equation}
     \begin{aligned}
@@ -279,13 +279,13 @@ Tracking simulations were performed to investigate this effect.
 \subsection*{Amplitude Detuning via Particle Tracking}
 
 On-momentum particles were tracked with the \gls{MADX} code through the \gls{LHC} lattice of \num{2018}, with \(\beta^{\ast} =\)~\qty{30}{\centi\meter} optics.
-In the setup, non-linearities were stripped down to the only contribution of sextupoles: no magnet errors, crossing angles or orbit bumps were included; and neither octupoles nor higher order magnets were powered.
+In the setup, non-linearities were stripped down to the contribution of sextupoles only: no magnet errors, crossing angles or orbit bumps were included; and neither octupoles nor higher order magnets were powered.
 This way the only non-negligible contribution to amplitude detuning is the sextupolar one.
 Sextupoles were powered with strengths similar to what was used in operation.
 
 Tracking was performed in the case of both free and AC dipole forced oscillations in the horizontal plane, with similar amplitudes.
 Several scenarios corresponding to different tune separations for the driven motion were explored, namely \(\Delta Q_x =\)~\num{-1e-2} and \(\Delta Q_x =\)~\num{-5e-3}, resulting in driven fractional horizontal tunes of \(Q_{Dx} =\)~\num{0.30} and \(Q_{Dx} =\)~\num{0.305}, respectively
-A small initial amplitude was applied in the vertical plane in order to enable measuring the vertical tune.
+A small initial amplitude was applied in the vertical plane in order to enable the measurement of the vertical tune.
 
 The AC dipole ramp-up and flattop excitation length were chosen as used in optics measurements in the LHC, to preserve the adiabaticity of the process.
 Turn-by-turn data was gathered at all \glspl{BPM} during the tracking, and the resulting file was analyzed as done for LHC measurements.
@@ -311,13 +311,13 @@ Results are compiled in \cref{table:detuning_coefficients_results}.
     \label{figure:vertical_detuning_comparison}
 \end{figure}
 
-For the direct detuning (\cref{figure:horizontal_detuning_comparison}) where a factor \num{2} is expected the fit to free oscillations data gives a detuning coefficient of \qty{13.14}{\micro\per\meter}, which makes the expected detuning coefficient for the forced oscillations around \qty{26.3}{\micro\per\meter}.
-With a tune separation of \(\Delta Q_x =\)~\num{-1e-2} this coefficient is determined at \qty{24.04}{\micro\per\meter}, within a \qty{10}{\percent} margin of the expected value.
+For the direct detuning (\cref{figure:horizontal_detuning_comparison}), where a factor \num{2} is expected, the fit to free oscillations data gives a detuning coefficient of \qty{13.14}{\micro\per\meter}, which makes the expected detuning coefficient for the forced oscillations around \qty{26.3}{\micro\per\meter}.
+With a tune separation of \(\Delta Q_x =\)~\num{-1e-2}, this coefficient is determined at \qty{24.04}{\micro\per\meter}, within a \qty{10}{\percent} margin of the expected value.
 Halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings this coefficient closer to the factor \num{2}, now within a \qty{5}{\percent} margin.
 This change is attributed to the modification of the \(\beta\)-function and phase advances by the AC dipole: the \(\beta_{D,z}\) term in \cref{equation:driven_transverse_motion}, which is assumed close enough to \(\beta_z\) in the factor \num{2} hypothesis.
 As the relative difference between \(\beta_{D,z}\) and \(\beta_z\) reduces with the tune separation, this behavior is expected.
 
-For the cross detuning (\cref{figure:vertical_detuning_comparison}) where a factor \num{1} is expected, similar results are observed: the driven motion's detuning coefficient is determined at \qty{-15.99}{\micro\per\meter}, reasonably close to the \qty{-14.94}{\micro\per\meter} in the case of free oscillations.
+For the cross detuning (\cref{figure:vertical_detuning_comparison}) where a factor \num{1} is expected, similar results are observed: the driven motion's detuning coefficient is determined to be \qty{-15.99}{\micro\per\meter}, reasonably close to the \qty{-14.94}{\micro\per\meter} in the case of free oscillations.
 Again, halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings us closer to the factor \num{1}.
 
 \begin{table}[!htb]
@@ -338,18 +338,18 @@ Again, halving the tune separation to \(\Delta Q_x =\)~\num{-5e-3} brings us clo
 
 \subsection*{Conclusions}
 
-Measurement of strictly the sextupolar amplitude detuning has not been done so far in the LHC.
+Measurement of the sextupolar amplitude detuning has not been done so far in the LHC.
 The negligible contribution of the sextupolar sources to the amplitude detuning in the \gls{LHC} compared to other typical sources has been demonstrated, both in the presence and absence of \gls{AC_dipole} driven motion.
-Additionally, with small enough tune separation this contribution behaves similarly to the octupolar amplitude detuning one when comparing the case of forced motion and free oscillations.
+Additionally, with small enough tune separation, this contribution behaves similarly to octupolar amplitude detuning when comparing the case of forced motion and free oscillations.
 
 \section{Summary}
 
-A statistical analysis of the phase reconstruction precision in the \gls{LHC} was performed, while differentiating between \gls{BPM} categories.
-The results confirmed the influence of both BPM type and the \glspl{beta-function} at the measuring device on the precision of the phase reconstruction, with up to a factor \num{3} between the best and worst performing BPMs.
-This knowledge could be applied in optics measurements algorithms to, for instance, select a subset of BPMs to use for a given measurement based on its requirements.
+A statistical analysis of the phase reconstruction precision in the \gls{LHC} was performed, distinguishing between \gls{BPM} categories.
+The results confirmed the influence of both BPM type and the \glspl{beta-function} at the measuring device on the precision of the phase reconstruction, with up to a factor of \num{3} between the best and worst performing BPMs.
+This knowledge could be applied in optics measurements algorithms to, for instance, select a subset of BPMs to use for a given measurement.
 Such an analysis presents a clear improvement avenue for the reconstruction of optics functions in a circular accelerator and the improvement of computed global corrections.
 
-A second simulation-based study was performed to investigate the sextupolar contribution to the \gls{ampdet} in the LHC. %, which cannot not be directly observed in the machine due to being entangled with other contributions.
+A second simulation-based study was performed to investigate the sextupolar contribution to \gls{ampdet} in the LHC. %, which cannot not be directly observed in the machine due to being entangled with other contributions.
 A clear contribution, though relatively small compared to that of other sources, was observed.
 The suspected behavior of this contribution in the presence of AC dipole forced oscillations, similar to that of the octupolar amplitude detuning, was confirmed.
 
