@@ -216,7 +216,7 @@ Therefore, the coupling \glspl{RDT} reconstructed at each BPM are considered as 
 \end{figure}
 
 A dataset of \num{50000} samples (each an individual simulation following the steps above) was divided into train and test sets (\qty{75}{\percent} and \qty{25}{\percent} respectively).
-Each sample pair consists in \num{4424} inputs - real and imaginary parts of each coupling RDT for each BPM for each beam - and \num{160} outputs: one DPSI value at each affected IR quadrupole.
+Each sample pair consists of \num{4424} inputs - real and imaginary parts of each coupling RDT for each BPM for each beam - and \num{160} outputs: one DPSI value at each affected IR quadrupole.
 
 In addition, in order to reproduce the uncertainty of the RDTs reconstructed from measurements, both train and test datasets were augmented by adding Gaussian noise to the RDTs.
 The standard deviation of the added noise was determined by a statistical analysis of several measurements from the LHC Run~\num{2}.
@@ -242,17 +242,17 @@ Similarly, several such datasets were created for different standard deviation o
 \subsection{Model Training and Evaluation}
 
 In this study models have been evaluated based on their \(R^2\) scores, or coefficient of determination, as well as the normalized mean absolute error between the true output values and the model predictions.
-Several models suited for regression tasks were tested, that are listed below, and a minimal amount of hyperparameter tuning was performed.
+Several models suited for regression tasks were tested, and a minimal amount of hyperparameter tuning was performed.
 
 Each model was trained and evaluated on the various datasets generated, in order to assess their performance and usability in various realistic contexts of noise in the data. 
 A simple least squares linear regression~\cite{PNAS:Lai:Strong_Consistency_Least_Squares_Estimates_Regression_Models} showed very good results on clean data, however its performance dropped drastically when applied to the noised datasets, down to unusable accuracy.
 A decision tree regressor~\cite{BOOK:Breiman:Classification_Regression_Trees} and a random forest regressor~\cite{ML:Breiman:Random_Forests} showed poor performance on all datasets.
-A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showcased good performance on both clean and relatively low-noise datasets.
+A ridge regressor model (see \cref{subsection:generalization_underfitting_overfitting}) showed good performance on both clean and relatively low-noise datasets.
 
 \Cref{figure:ridge_performance} shows the test performance of the ridge regressor~\cite{MIT:Rifkin:Regularized_Least_Squares} on noised datasets depending on the level of noise added to different BPMs, where the impact of noise on the reconstructed coupling RDTs is apparent.
 In the top plot the Mean Absolute Error (MAE) - the sum of absolute errors divided by the sample size - was normalized to the standard deviation of the applied magnet tilts, \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian} in this case.
 In this figure each curve represents a noise level applied to arc BPMs data while each point on these curves corresponds to a noise level applied to the inner BPMs.
-While dense, this representation allows to see the performance of the model on a wide range of noised datasets, for a single given distribution of the tilt errors.
+While dense, this representation allows visualizing the performance of the model for a wide range of noised datasets, for a single given distribution of the tilt errors.
 
 \begin{figure}[!htb]
     \centering
@@ -263,7 +263,7 @@ While dense, this representation allows to see the performance of the model on a
 
 To the left of the plot are data points corresponding to low noise levels in IR BPMs, where for two of the curves (\textcolor{mplblue}{blue} and \textcolor{mplorange}{orange}) the model's performance is excellent.
 Moving up one order of magnitude in the arc BPMs noise level (\textcolor{mplgreen}{green} curve) leads to a significant performance drop.
-Points to the right of the plot, corresponding to increasing noise in IR BPMs data, also showcase a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
+Points to the right of the plot, corresponding to increasing noise in IR BPMs data, show a drop in performance down to an unusable model, with \(R^2 = 0.54\) in the worst case.
 
 \Cref{figure:ridge_histograms} shows histograms of the distributions of true attributed errors, of the ridge regressor's predictions and of deviations to the true values.
 These were obtained by evaluating the model on a noised dataset with \(\sigma_{\mathrm{DPSI}} =\)~\qty{1E-4}{\radian}, \(\sigma_{\mathrm{IRs}} = 10^{-5}\) and \(\sigma_{\mathrm{arcs}} = 10^{-6}\) (corresponding to the third leftmost point on the \textcolor{mplorange}{orange} curve in \cref{figure:ridge_performance}).
@@ -324,13 +324,13 @@ Circumventing the limitation would be feasible but need much more complex and in
 \label{section:ml_conclusions_outlooks}
 
 Following the successful application of machine learning methods to various tasks in particle accelerators in recent years, we explored the possibility of training machine learning models to predict linear coupling sources in the \gls{LHC} \glspl{IR} in the form of quadrupole tilts.
-Several datasets were generated for training, corresponding to realistic tilt error distributions and noise levels aiming to reproduce measurements uncertainty.
+Several datasets were generated for training, corresponding to realistic tilt error distributions and noise levels aiming to reproduce measurement uncertainties.
 
 We have shown that specific machine learning models among those tested are capable of predicting the IR quadrupole tilts by assigning a representative value to specific magnets with good accuracy on datasets generated from simulations.
-A ridge regressor shows the best performance among the tested models, including on datasets with reasonably small amounts of noise.
+A ridge regressor shows the best performance among the tested models, including on datasets with small amounts of noise.
 
 While usability in operation would require better accuracy on datasets with higher noise, this is a successful proof of concept for the application of machine learning techniques to the subject of local coupling corrections in particle accelerators.
 Potential improvements such as using previously successful but more complex models and workflows have been identified which could allow to improve the performance of models discussed in this study.
-On the other hand, upgrading to better beam instrumentation that would yield more precise reconstructed coupling \acrshortpl{RDT} would also allow using the currently developed models with confidence.
+On the other hand, upgrading to better beam instrumentation that would yield more precise reconstructed coupling \acrshortpl{RDT} would also allow the use of the currently developed models with confidence.
 
 \glsresetall                                     % reset glossary entries counts for the next chapter
