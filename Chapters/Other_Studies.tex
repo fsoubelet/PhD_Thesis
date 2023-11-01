@@ -1,29 +1,29 @@
 \chapter{Optics Studies}
 \label{chapter:others_and_software}
 
-The \gls{luminosity} delivered to the \glspl{experiment} is not the only metric from the point of view of the \gls{optics} in the \gls{LHC}.
+The \gls{luminosity} delivered to the \glspl{experiment} is not the only performance metric from the point of view of the \gls{optics} in the \gls{LHC}.
 Measuring and correcting the phase advance through the machine is crucial for optics measurements and corrections.
 Similarly, the measurement and correction of amplitude detuning is essential in order to understand and prevent instabilities in the machine.
 These are relevant not only to the \gls{LHC} but for any circular accelerator.
 
 Two further optics studies performed during the course of this thesis are presented in this chapter.
-The first one is a statistical analysis of the phase measurement error in the \gls{LHC}, that aimed to determine the influence of the measuring \glspl{BPM} on the phase error.
-The second one is an investigation on the sextupolar contribution to amplitude detuning in the \gls{LHC}.
+The first one is a statistical analysis of the phase measurement error in the \gls{LHC}, that aimed to determine the influence of the \glspl{BPM} on the phase error.
+The second one is an investigation of the sextupolar contribution to amplitude detuning in the \gls{LHC}.
 
 %----------------------------------------------------------------------------------------
 
 \section{Phase Error Dependency on BPM Type and Location}
 \label{section:phase_error_dependency_on_bpm_type_and_location}
 
-In the \gls{LHC} and many other circular accelerators \gls{BPM} measurement data constitutes the primary source for \gls{optics} properties computation.
+In the \gls{LHC} and many other circular accelerators, \gls{BPM} measurement data constitutes the primary source for \gls{optics} properties computation.
 Since the computation of global corrections (see \cref{subsection:correction_principles}) relies on obtaining the best possible phase measurement, it is valuable to understand the limitations and potential means of improvement of said measurement.
 As different BPM types~\cite{CERN:Equipment_Codes} have different measurement resolution, and higher \glspl{beta-function} lead to better signal-to-noise ratios on measurements, these measurements and the subsequent results were suspected to be substantially affected by both the type of BPM used for the measurements and the value of the \(\beta\)-functions at the measuring devices.
 This study was performed to investigate the influence of these properties on the precision of the reconstructed phase values from turn-by-turn data.
 
-In practice the presence of systematic errors can prevent different sets of measurements from being independent.
+In practice, the presence of systematic errors can prevent different sets of measurements from being independent.
 In the following study measurements are assumed to be independent and \concept{identically distributed normal random variables} (IIDs), meaning repeating the same BPM measurement in identical conditions will spawn a range of values forming a Gaussian distribution.
-As no sets of measurements were available that made use of specific groups of BPMs, a statistical analysis on the phase errors from previous measurements was needed to differentiate between BPMs of interest. 
-Using the underlying properties of the measurements-derived distributions, one can numerically infer the impact on the phase measurement error of specific subgroups of measuring devices.
+As no sets of measurements were available that made use of specific groups of BPMs, a statistical analysis of the phase errors from previous measurements was needed to differentiate between BPMs of interest. 
+Using the underlying properties of the measurement-derived distributions, one can numerically infer the impact on the phase measurement error of specific subgroups of measuring devices.
 
 \subsection*{Measurement Data and Underlying Distributions}
 
@@ -58,7 +58,7 @@ which corresponds to a normal distribution with its mean being the sum of the tw
 Respectively, one can deduce the same for the subtraction of two IIDs by changing the signs.
 
 In particle accelerators, phase advances are measured from BPM to BPM and are, in the simplest form, the result of a subtraction.
-As a consequence the repeated phase advance measurements obtained from a given BPM pair form a normal distribution with average phase advance \(\bar{\varphi}\) and standard deviation \(\sigma_{\mu}\).
+As a consequence, the repeated phase advance measurements obtained from a given BPM pair form a normal distribution with average phase advance \(\bar{\varphi}\) and standard deviation \(\sigma_{\mu}\).
 Traditionally, the error on phase advance is computed via the standard deviation of \(N\) measurements:
 
 \begin{equation}
@@ -68,7 +68,7 @@ Traditionally, the error on phase advance is computed via the standard deviation
 
 This means the squares of phase advance (and phase advance error) values \(\varepsilon^2\) form a chi-square distribution, with a number of degrees of freedom  \(k = N - 1\) since the sample mean is subtracted.
 Therefore, grouping sufficient BPM pairs of the same type or with similar \(\beta\)-functions, and computing the distribution of their \(\varepsilon^2\) one obtains a chi-square distribution.
-\Cref{figure:square_errors_histograms} shows those chi-square distributions for different ranges of \(\beta\)-functions combinations between measuring BPMs.
+\Cref{figure:square_errors_histograms} shows those chi-square distributions for different ranges of \(\beta\)-function combinations between measuring BPMs.
 
 \begin{figure}[!htb]
     \centering
@@ -169,9 +169,9 @@ The determination of the standard deviation of \cref{equation:stdev_from_chi2_mo
     \label{equation:stdev_from_chi_mode}
 \end{equation}
 
-However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but suffer from the quality of the fit, or try to detect the highest bins from the distribution's histogram but suffer from bin resolution and outlier data points skewing the result.
+However, for non-perfect distributions it is numerically difficult to accurately detect this mode: one can use the mode of a fitted probability density function (as done in \cref{figure:chisquare_demo_fit} on a perfect chi-square distribution) but this will suffer from the quality of the fit; or try to detect the highest bins from the distribution's histogram but this suffers from bin width and outlier data points skewing the result.
 
-It is possible to use other properties than the mode.
+It is possible to use properties other than the mode.
 For instance, similarly shown as previously for the mode, one can compute back the desired standard deviation using the mean of the chi distribution through:
 
 \begin{equation}
@@ -198,7 +198,7 @@ This way, one can determine the standard deviation on the phase advance reconstr
 Due to the presence of many outliers (see \cref{figure:bpms_betas_histogram}) in measurement data and the lack of a sufficient number of data points in some BPM type categories, in the following the calculation from either the chi-square (\cref{equation:stdev_from_chi2_mode}) or chi (\cref{equation:stdev_from_chi_mean}) distribution was used, depending on the specific BPM subgroup.
 
 Optics analysis was run on turn-by-turn data, BPMs were categorized based on their types~\cite{CERN:Equipment_Codes} and the value of \(\beta\)-functions at their locations, and both the chi distributions and the chi-square distributions were generated as detailed above.
-\Cref{figure:grid_distributions_standard_standard} shows the distributions of phase errors for different \(\beta\)-functions combinations among standard arc BPMs, the most common ones in the LHC.
+\Cref{figure:grid_distributions_standard_standard} shows the distributions of phase errors for different \(\beta\)-function combinations among standard arc BPMs, the most common ones in the LHC.
 
 \begin{figure}[!htb]
     \centering
@@ -208,8 +208,7 @@ Optics analysis was run on turn-by-turn data, BPMs were categorized based on the
 \end{figure}
 
 For each of these cases, the standard deviation on phase advance is computed using either \cref{equation:stdev_from_chi2_mode} or \cref{equation:stdev_from_chi_mean}.
-Depending on parameters set for the optics analysis one might have to apply a correcting factor of \(\sqrt{N-1}\) - with \(N\) being the number of measurements used for the analysis - to compensate for this factor being already present in calculations performed by the analysis software.
-Namely, choosing to ignore \(t\)-value correction and single file uncertainty makes this factor appear in the optics calculations and requires to leave it out in later on analysis.
+Depending on parameters set for the optics analysis one might have to apply a correcting factor of \(\sqrt{N-1}\) - with \(N\) being the number of measurements used for the analysis - to compensate for this factor being already present in calculations performed by the analysis software (choosing to ignore the \(t\)-value correction and single file uncertainty makes this factor appear in the optics calculations and requires that it is removed in later on analysis).
 Values inferred with this method for an LHC Run~\num{2} for standard arc BPMs can be seen in \cref{figure:phase_error_heatmap_standard_bpms}, and for \textit{warm} type BPMs in \cref{figure:phase_error_heatmap_warm_bpms}.
 Results were computed for all BPM types but are not all shown.
 
@@ -232,9 +231,9 @@ Similarly, phase advances between measuring BPMs placed at higher \(\beta\)-func
 
 \subsection*{Conclusions}
 
-Assuming the normal nature of \gls{BPM} measurements, one can use the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase advances while also differentiating between BPMs categories, without performing measurements involving only BPMs of interest.
-The dependency of said standard deviation on both measuring BPMs' types and their \(\beta\)-functions was confirmed and quantified.
-The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values later on computed from phase - while differentiating on arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in harmonic analysis or optimizing BPM selection in the N-BPM method.
+Assuming the normal nature of \gls{BPM} measurements, one can use the underlying properties of the chi-square and chi statistical distributions in order to compute the standard deviation of phase advances while also differentiating between BPMs categories, without performing measurements involving only the BPMs of interest.
+The dependency of said standard deviation on both BPMs' types and their \(\beta\)-functions was confirmed and quantified.
+The ability to accurately compute key statistical values on phase advance measurements - but also potentially a number of optics values which are computed from phase - while differentiating between arbitrary BPM categories opens up potential applications in analysis algorithms, for instance refining the phase accuracy in harmonic analysis or optimizing BPM selection in the N-BPM method.
 
 \section{Simulations of Sextupolar Amplitude Detuning in the LHC}
 \label{section:sextupolar_amplitude_detuning}
