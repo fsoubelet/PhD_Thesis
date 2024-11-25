@@ -1,0 +1,121 @@
+\documentclass[
+12pt,
+cover=a4,
+spinewidth=11mm,
+markcolor=black,
+bleedwidth=0mm,
+marklength=0mm]{bookcover}
+
+\usepackage{xcolor}
+\usepackage{tgheros}                             % Use the TeX Gyre Heros font
+\usepackage{amsmath, amsfonts, amssymb}          % all the good math stuff
+\usepackage{siunitx}                             % good macros for SI units
+\usepackage{microtype}                           % improves kerning, only include in last stages of compilation, takes time!
+
+\begin{document}
+
+% =================================
+%              COVER
+% =================================
+\begin{bookcover}
+
+\definecolor{bookcolor}{HTML}{E1AD30}               % Color used in Mael's cover (he goes 70%)
+\bookcovercomponent{color}{bg whole}{bookcolor!70}  % At 70% here
+
+% Color of the text
+\definecolor{textcolor}{HTML}{000000}
+\color{textcolor}
+
+
+% -----------------------
+%         SPINE
+% -----------------------
+\bookcovercomponent{center}{spine}[2mm, 3mm, 2mm, 3mm]{
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+    \vfill
+    \rotatebox[origin=c]{-90}{%
+        \fontsize{11pt}{11pt}\selectfont\bfseries\scshape{%
+        PhD Thesis \;\;--\;\;  Local Interaction Region Coupling Correction for the LHC \;\;--\;\; Félix Soubelet}%
+    }
+    \vfill
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+}
+
+
+% -----------------------
+%         FRONT
+% -----------------------
+% Text and picture on the front cover
+% Minimum of 7mm margins with no text on it
+\bookcovercomponent{normal}{front}[17mm, 20mm, 17mm, 20mm] % left, bottom, right, top
+{
+    % Redefine the geometry of the page
+    % That's the same of the rest of the document, without the includehead and footer
+    % Right and left are also the same
+    % 3 lines
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+    % Title
+    \makebox[\partwidth][c]{\parbox{\partwidth-0.5cm}{
+        \vspace{2.1cm}
+        \begin{flushright}
+            \fontsize{34pt}{34pt}\selectfont
+            \bfseries
+            \MakeUppercase{
+                Local Interaction Region Coupling Correction for the LHC
+            }
+        \end{flushright}
+        % Small text
+        \vspace{.1em}
+        \fontsize{11pt}{15pt}\selectfont
+        \begin{flushright}
+            Thesis submitted to the University of Liverpool,\\ School of Physical Sciences
+        \end{flushright}
+    }}
+    % Big vertical space
+    \vfill
+    % Author
+    \fontsize{15pt}{0pt}\selectfont%
+    \bfseries\noindent\scshape Félix Soubelet
+    % 2 rules
+    \par
+    \vspace{0.3em}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-2pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+}
+
+
+% -----------------------
+%         BACK
+% -----------------------
+% Text on the back cover
+\bookcovercomponent{normal}{back}[17mm, 20mm, 17mm, 20mm]{
+    % Lines
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}\vspace{-4pt}
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}
+    \vspace{1.3cm}
+
+    {\centering\bfseries\Large ABSTRACT\\[10mm]}%
+
+    % Make a box slightly smaller than the width of the document
+    \makebox[\partwidth][c]{\parbox{\partwidth-1.2cm}{
+        %\fontspec{Linux Libertine O}
+        \fontsize{11pt}{11pt}\selectfont
+        In order to further expand our knowledge of the structure of matter and the workings of our universe, scientists are constantly seeking to collide particles at ever-increasing energies and with higher luminosity. So is the task of the Large Hadron Collider (LHC) at CERN, the highest energy particle accelerator and collider to date, and the goal of its future upgrade into the High-Luminosity Large Hadron Collider (HL-LHC). This constant progress in performance requires more intense beams and smaller beam sizes at collision points as well as a tight control of these parameters. Thus, successful operation of large-scale particle colliders heavily depends on the precise correction of magnet field or alignment errors present in the machine.
+        \\
+        
+        In the LHC, transverse betatron coupling has been shown to have a significant impact on both the beam dynamics and luminosity production due to uncompensated sources close to the Interaction Points (IPs). However, current measurement methods are not sufficient for precise local coupling measurement at the IP, and the impact of these sources has so far been left uncompensated. This thesis covers work done in an effort to determine and correct Interaction Region (IR) local coupling.
+        \\
+
+        A key tool presented in this document is the designed Rigid Waist Shift (RWS), a new optics configuration which allows the determination of local coupling corrections based on correlated global variables such as the closest tune approach \(\left| C^{-} \right|\). The validity of this new method has been demonstrated through simulations and experimental measurements taken during the LHC Run~\num{3} commissioning in~\num{2022}, where determined corrections were applied and led to a measured luminosity increase of \qty{9.7}{\percent} and \qty{3.5}{\percent} at the ATLAS and CMS detectors, respectively. Additionally, the application of machine learning techniques for high complexity problems such as the detection of coupling sources in the LHC has been explored, yielding promising results but requiring some more improvements to be operationally viable. Finally, optics studies which revealed avenues for improvements in the optics measurements done at the LHC are also presented.
+    }}
+
+    \vfill
+
+    \noindent\rule[0.5em]{\partwidth}{1.5pt}%\vspace{-4pt}
+    %\noindent\rule[0.5em]{\partwidth}{1.5pt}
+}
+
+\end{bookcover}
+\end{document}
