@@ -3,54 +3,54 @@
 %----------------------------------------------------------------------------------------
 
 % ----- Classic Things ----- %
-\usepackage[utf8]{inputenc}                      % required for inputting international characters
-\usepackage[T1]{fontenc}                         % output font encoding for international characters
-\usepackage[autostyle=true]{csquotes}            % required to generate language-dependent quotes in the bibliography
+\usepackage[utf8]{inputenc}                        % required for inputting international characters
+\usepackage[T1]{fontenc}                           % output font encoding for international characters
+\usepackage[autostyle=true]{csquotes}              % required to generate language-dependent quotes in the bibliography
 
 
 % ----- Maths Related ----- %
-\usepackage{amsmath, amsfonts, amssymb}          % all the good math stuff
-\usepackage{siunitx}                             % good macros for SI units
+\usepackage{amsmath, amsfonts, amssymb}            % all the good math stuff
+\usepackage{siunitx}                               % good macros for SI units
 
 
 % ----- Figures Related ----- %
-\usepackage{tikz}                                % create and include Tikz figures
+\usepackage{tikz}                                  % create and include Tikz figures
 \usetikzlibrary{matrix}
-\usepackage{caption}                             % this and below are used for the
-\usepackage{subcaption}                          % subfigures throughout the document
+\usepackage{caption}                               % this and below are used for the
+\usepackage{subcaption}                            % subfigures throughout the document
 
 
 % ----- Tables Related ----- %
-\usepackage{tabularray}                          % holy grail of tables
-\UseTblrLibrary{amsmath}                         % Makes tabularray load amsmath and register better environments
+\usepackage{tabularray}                            % holy grail of tables
+\UseTblrLibrary{amsmath}                           % Makes tabularray load amsmath and register better environments
 
 
 % ----- Document Formating Related ----- %
-\usepackage{titlesec}                            % to style chapter titles
-\usepackage{awesomebox}                          % awesome boxes, includes fontawesome
-\usepackage{appendix}                            % to make appendix appear properly in the table of content
-\usepackage{xurl}                                % urls can break anywhere
+\usepackage{titlesec}                              % to style chapter titles
+\usepackage{awesomebox}                            % awesome boxes, includes fontawesome
+\usepackage{appendix}                              % to make appendix appear properly in the table of content
+\usepackage{xurl}                                  % urls can break anywhere
 \usepackage[
     bibstyle=numeric,
     citestyle=numeric-comp,
     sorting=none
-]{biblatex}                                      % citations and bibliography
-\usepackage{orcidlink}                           % include hyperlink patch to people's ORCID page | load after hyperref
-\usepackage{microtype}                           % improves kerning, only include in last stages of compilation, takes time!
+]{biblatex}                                        % citations and bibliography
+\usepackage{orcidlink}                             % include hyperlink patch to people's ORCID page | load after hyperref
+\usepackage{microtype}                             % improves kerning, only include in last stages of compilation, takes time!
 
 % Acronyms ------------------
 \usepackage[
-    acronym,                                     % add acronym type
-    toc,                                         % add to toc
-    section=section,                             % sections (glossary, acronyms) are actually sections
-    nonumberlist,                                % remove backref numbers
+    acronym,                                       % add acronym type
+    toc,                                           % add to toc
+    section=section,                               % sections (glossary, acronyms) are actually sections
+    nonumberlist,                                  % remove backref numbers
 ]{glossaries}
 \newcommand{\symboltype}{symbolslist}
-\newglossary[slg]{symbolslist}{syi}{syg}{Symbols}% create symbolslist
+\newglossary[slg]{symbolslist}{syi}{syg}{Symbols}  % create symbolslist
 
 % ----- References, Cross-Linking and Links Related ----- %
-\usepackage{hyperref}                            % hyperlinks through the document | load before cleveref
-\usepackage[capitalise, nameinlink]{cleveref}    % get smart references across the document | load last
+\usepackage{hyperref}                              % hyperlinks through the document | load before cleveref
+\usepackage[capitalise, nameinlink]{cleveref}      % get smart references across the document | load last
 
 % ----- Fonts Related ----- %
 % \usepackage{utopia}                              % Use the Palatino font
