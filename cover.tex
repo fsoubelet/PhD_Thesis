@@ -1,6 +1,7 @@
 \documentclass[
-12pt,
-cover=a4,
+12pt,               % DO NOT USE COVER=A4
+coverheight=297mm,  % height of A4
+coverwidth=210mm,   % width of A4
 spinewidth=11mm,
 markcolor=black,
 bleedwidth=0mm,
@@ -8,19 +9,15 @@ marklength=0mm]{bookcover}
 
 
 \usepackage[T1]{fontenc}
-\usepackage{xcolor}
-% \usepackage{fontspec}
-% \usepackage{tgadventor}                          % Tex Gyre Adventor font (for titles)
+\usepackage{svg}                                 % To include SVG graphics
+\usepackage{xcolor}                              % To define the background color
+\usepackage{fontspec}                            % Change font temporarily
+\usepackage{tgadventor}                          % Tex Gyre Adventor font (for titles)
 \usepackage{tgheros}                             % TeX Gyre Heros font (for body)
 \usepackage{amsmath, amsfonts, amssymb}          % all the good math stuff
 \usepackage{siunitx}                             % good macros for SI units
-\usepackage{microtype}                           % improves kerning, only include in last stages of compilation, takes time!
+\usepackage{microtype}                           % improves kerning
 
-
-%-----------------------------------------------------------------------
-% \setmainfont{TeX Gyre Heros}                     % Main font, same as PhD thesis (Tex Gyre Heros)
-% \setsansfont{TeX Gyre Adventor}                  % Sans Serif Font (for titles)
-%-----------------------------------------------------------------------
 
 \begin{document}
 
@@ -29,7 +26,7 @@ marklength=0mm]{bookcover}
 % =================================
 \begin{bookcover}
 
-% \definecolor{bookcolor}{HTML}{E1AD30}               % Color used in Mael's cover (he goes 70%)
+% \definecolor{bookcolor}{HTML}{E1AD30}             % Color used in Mael's cover (he goes 70%)
 \definecolor{bookcolor}{RGB}{46, 84, 143}
 \bookcovercomponent{color}{bg whole}{bookcolor!80}  % At 80% here
 
@@ -44,10 +41,17 @@ marklength=0mm]{bookcover}
 \bookcovercomponent{center}{spine}[2mm, 3mm, 2mm, 3mm]{
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
     \vfill
+    % \rotatebox[origin=c]{-90}{
+    %     \fontsize{11pt}{11pt}
+    %     \selectfont
+    %     \bfseries
+    %     PhD Thesis \;\;--\;\;  Local Interaction Region Coupling Correction for the LHC \;\;--\;\; Félix Soubelet
+    % }
     \rotatebox[origin=c]{-90}{
-        \fontsize{11pt}{11pt}\selectfont\bfseries\scshape{
-        PhD Thesis \;\;--\;\;  Local Interaction Region Coupling Correction for the LHC \;\;--\;\; Félix Soubelet
-        }
+        \fontsize{14pt}{10pt}
+        \selectfont
+        \bfseries
+        {\fontspec{TeX Gyre Adventor}PhD Thesis \;\;--\;\;  Local Interaction Region Coupling Correction for the LHC \;\;--\;\; Félix Soubelet}
     }
     \vfill
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
@@ -67,27 +71,36 @@ marklength=0mm]{bookcover}
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
     % Title and subtitle
     \makebox[\partwidth][c]{\parbox{\partwidth-0.5cm}{
-        \vspace{2.1cm}
+        \vspace{2.3cm}
         \begin{flushright}
-            \fontsize{34pt}{34pt}\selectfont
+            \fontsize{33pt}{36pt}
+            \selectfont
             \bfseries
-            \MakeUppercase{Local Interaction Region Coupling Correction for the LHC}
+            {\fontspec{TeX Gyre Adventor}\MakeUppercase{Local Interaction Region Coupling Correction\\ for the LHC\\}}
         \end{flushright}
         % Small text
-        \vspace{.1em}
-        \fontsize{11pt}{15pt}\selectfont
+        \vspace{.5em}
+        \fontsize{15pt}{18pt}\selectfont
         \begin{flushright}
             Thesis submitted to the University of Liverpool,\\
-            School of Physical Sciences,\\
-            for the degree of
+            School of Physical Sciences,
+            for the degree of\\
             Doctor in Philosophy
         \end{flushright}
     }}
     % Big vertical space
     \vfill
+    {
+    \hfill
+    \includesvg[width=12cm]{bfield_skew_multipole_order_2_PuOr2.svg}
+    \hfill
+    }
+    \vfill
     % Author
-    \fontsize{15pt}{0pt}\selectfont
-    \bfseries\noindent\scshape Félix Soubelet
+    \fontsize{16pt}{0pt}\selectfont
+    \bfseries\noindent Félix Soubelet
+    % \fontsize{12pt}{0pt}\selectfont
+    % {\fontspec{TeX Gyre Adventor}\bfseries\noindent Félix Soubelet}
     % Two lines
     \par
     \vspace{0.25em}
@@ -106,11 +119,12 @@ marklength=0mm]{bookcover}
     \noindent\rule[0.5em]{\partwidth}{1.5pt}
     \vspace{1.3cm}
 
-    {\centering\bfseries\Large ABSTRACT\\[10mm]}%
+    {\fontspec{TeX Gyre Adventor}\centering\bfseries\Huge ABSTRACT\\[10mm]}
+    % {\centering\bfseries\Large ABSTRACT\\[10mm]}
 
     % Make a box slightly smaller than the width of the document
     \makebox[\partwidth][c]{\parbox{\partwidth-1.2cm}{
-        \fontsize{11pt}{11pt}\selectfont
+        \fontsize{13pt}{16pt}\selectfont
         In order to further expand our knowledge of the structure of matter and the workings of our universe, scientists are constantly seeking to collide particles at ever-increasing energies and with higher luminosity. So is the task of the Large Hadron Collider (LHC) at CERN, the highest energy particle accelerator and collider to date, and the goal of its future upgrade into the High-Luminosity Large Hadron Collider (HL-LHC). This constant progress in performance requires more intense beams and smaller beam sizes at collision points as well as a tight control of these parameters. Thus, successful operation of large-scale particle colliders heavily depends on the precise correction of magnet field or alignment errors present in the machine.
         \\
         
