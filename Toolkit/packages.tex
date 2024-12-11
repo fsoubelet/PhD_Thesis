@@ -6,7 +6,9 @@
 \usepackage[utf8]{inputenc}                        % required for inputting international characters
 \usepackage[T1]{fontenc}                           % output font encoding for international characters
 \usepackage[autostyle=true]{csquotes}              % required to generate language-dependent quotes in the bibliography
-
+\usepackage[cmyk]{xcolor}                          % the print office wants CMYK color definitions
+\selectcolormodel{natural}                         % Until we load ninecolors and tabularray (see https://tex.stackexchange.com/questions/614621/tabularray-and-rgb-xcolor-option)
+\usepackage{ninecolors}                            % Load now with compat for xcolor
 
 % ----- Maths Related ----- %
 \usepackage{amsmath, amsfonts, amssymb}            % all the good math stuff
@@ -21,6 +23,7 @@
 
 
 % ----- Tables Related ----- %
+\selectcolormodel{cmyk}                            % back to CMYK just before tabularray (for printshop)
 \usepackage{tabularray}                            % holy grail of tables
 \UseTblrLibrary{amsmath}                           % Makes tabularray load amsmath and register better environments
 
